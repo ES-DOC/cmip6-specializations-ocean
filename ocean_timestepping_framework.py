@@ -51,7 +51,7 @@ DETAILS['timestepping_tracers_scheme'] = (
     'ENUM:ocean_timestepping_types','1.1',
     'Time stepping tracer scheme')
 
-DETAILS['barotropic_solver_schem'] = (
+DETAILS['barotropic_solver_scheme'] = (
     'ENUM:ocean_timestepping_types','1.1',
     'Barotropic solver scheme')
 
