@@ -28,7 +28,7 @@ from collections import OrderedDict
 #
 # Scientific context of the process
 # --------------------------------------------------------------------
-DESCRIPTION = 'Characteristics of ocean advection'
+DESCRIPTION = 'Properties of ocean advection'
 
 # --------------------------------------------------------------------
 # PROCESS: DETAILS
@@ -68,6 +68,7 @@ SUB_PROCESSES['vert_tra_adv_scheme'] = {
 SUB_PROCESS_DETAILS = OrderedDict()
 
 SUB_PROCESS_DETAILS['momemtum_adv_details'] = {
+    'description': 'Properties of lateral momemtum advection scheme in ocean',
     'properties': [
         ('type', 'ENUM:adv_mom_scheme_types', '1.1',
          'Type of lateral momemtum advection scheme in ocean'),
@@ -79,6 +80,7 @@ SUB_PROCESS_DETAILS['momemtum_adv_details'] = {
 }
 
 SUB_PROCESS_DETAILS['lat_tra_adv_scheme_details'] = {
+    'description':'Properties of lateral tracer advection scheme in ocean',
     'properties': [
         ('type', 'ENUM:adv_tra_scheme_types', '1.1',
          'Type of lateral tracer advection scheme in ocean'),
@@ -88,6 +90,7 @@ SUB_PROCESS_DETAILS['lat_tra_adv_scheme_details'] = {
 }
 
 SUB_PROCESS_DETAILS['vert_tra_adv_scheme_details'] = {
+    'description': 'Properties of vertical tracer advection scheme in ocean',
     'properties': [
         ('type', 'ENUM:adv_tra_scheme_types', '1.1',
          'Type of vertical tracer advection scheme in ocean'),
