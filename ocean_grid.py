@@ -19,7 +19,7 @@ ID = 'cmip6.ocean.grid'
 # --------------------------------------------------------------------
 # INTERNAL VARIABLES (do not change)
 # --------------------------------------------------------------------
-_TYPE = 'cim.2.science.key_properties'
+_TYPE = 'cim.2.science.grid'
 
 from collections import OrderedDict
 

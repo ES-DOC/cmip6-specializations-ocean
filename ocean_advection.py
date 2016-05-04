@@ -19,7 +19,7 @@ ID = 'cmip6.ocean.advection'
 # --------------------------------------------------------------------
 # INTERNAL VARIABLES (do not change)
 # --------------------------------------------------------------------
-_TYPE = 'cim.2.science.key_properties'
+_TYPE = 'cim.2.science.process'
 
 from collections import OrderedDict
 
@@ -36,7 +36,6 @@ DESCRIPTION = 'Characteristics of ocean advection'
 # Sets of details for the process
 # --------------------------------------------------------------------
 DETAILS = OrderedDict()
-
 
 # --------------------------------------------------------------------
 # PROCESS: SUB PROCESSES

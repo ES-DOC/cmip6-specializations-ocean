@@ -19,7 +19,7 @@ ID = 'cmip6.ocean.timestepping_framework'
 # --------------------------------------------------------------------
 # INTERNAL VARIABLES (do not change)
 # --------------------------------------------------------------------
-_TYPE = 'cim.2.science.key_properties'
+_TYPE = 'cim.2.science.process'
 
 from collections import OrderedDict
 
@@ -58,7 +58,6 @@ DETAILS['barotropic_solver_scheme'] = (
 DETAILS['barotropic_momentum_scheme'] = (
     'ENUM:ocean_timestepping_types','1.1',
     'Barotropic momentum scheme')
-
 
 # --------------------------------------------------------------------
 # PROCESS: SUB PROCESSES
