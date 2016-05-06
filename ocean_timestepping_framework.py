@@ -41,9 +41,9 @@ DETAILS['timestepping_attributes'] = {
     'description': 'Properties of time stepping in ocean',
     'properties': [
         ('time_step', 'int', '1.1',
-         'Ocean time step in seconds'),
+            'Ocean time step in seconds'),
         ('diurnal_cycle', 'ENUM:diurnal_cycle_types', '1.1',
-         'Diurnal cycle type'),
+            'Diurnal cycle type'),
     ]
 }
 

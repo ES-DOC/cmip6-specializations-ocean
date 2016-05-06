@@ -71,7 +71,7 @@ SUB_PROCESS_DETAILS['momemtum_adv_details'] = {
     'description': 'Properties of lateral momemtum advection scheme in ocean',
     'properties': [
         ('type', 'ENUM:adv_mom_scheme_types', '1.1',
-         'Type of lateral momemtum advection scheme in ocean'),
+            'Type of lateral momemtum advection scheme in ocean'),
         ('mom_adv_scheme_name', 'str', '1.1',
             'Name of ocean momemtum advection scheme'),
         ('mom_adv_ALE', 'bool', '1.1',
@@ -83,7 +83,7 @@ SUB_PROCESS_DETAILS['lat_tra_adv_scheme_details'] = {
     'description':'Properties of lateral tracer advection scheme in ocean',
     'properties': [
         ('type', 'ENUM:adv_tra_scheme_types', '1.1',
-         'Type of lateral tracer advection scheme in ocean'),
+            'Type of lateral tracer advection scheme in ocean'),
         ('flux_limiter','bool', '1.1',
             'Monotonic flux limiter for vertical tracer advection scheme in ocean ?'),
    ]
@@ -93,7 +93,7 @@ SUB_PROCESS_DETAILS['vert_tra_adv_scheme_details'] = {
     'description': 'Properties of vertical tracer advection scheme in ocean',
     'properties': [
         ('type', 'ENUM:adv_tra_scheme_types', '1.1',
-         'Type of vertical tracer advection scheme in ocean'),
+            'Type of vertical tracer advection scheme in ocean'),
         ('flux_limiter','bool', '1.1',
             'Monotonic flux limiter for vertical tracer advection scheme in ocean ?'),
    ]
