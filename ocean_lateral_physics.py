@@ -67,7 +67,6 @@ SUB_PROCESSES['lateral_physics_tracers'] = {
                 ],
 }
 
-
 # --------------------------------------------------------------------
 # PROCESS: SUB PROCESSES: DETAILS
 #
