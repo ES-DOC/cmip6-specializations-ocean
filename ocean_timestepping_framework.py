@@ -47,7 +47,7 @@ DETAILS['timestepping_attributes'] = {
     ]
 }
 
-# TODO: do these DETAILS have the right syntax ?
+# This is the compact notation used of only one property
 DETAILS['timestepping_tracers_scheme'] = (
     'ENUM:ocean_timestepping_types','1.1',
     'Time stepping tracer scheme')
