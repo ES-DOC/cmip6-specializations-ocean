@@ -38,7 +38,7 @@ DESCRIPTION = 'Key properties of the ocean'
 DETAILS = OrderedDict()
 
 DETAILS['general'] = {
-    'properties' = [
+    'properties': [
         ('model_family', 'ENUM:model_family_type', '1.1',
          'Type of ocean model.'),
         ('basic_approximations', 'ENUM:basic_approximations_attributes', '1.N',
@@ -50,7 +50,7 @@ DETAILS['general'] = {
 
 DETAILS['seawater_properties'] = {
     'description': 'Physical properties of seawater in ocean',
-    'properties' = [
+    'properties' : [
         ('seawater_eos_type', 'ENUM:seawater_eos_types', '1.1',
          'Type of EOS for sea water'),
         ('ocean_freezing_point', 'str', '1.1',
@@ -62,7 +62,7 @@ DETAILS['seawater_properties'] = {
 
 DETAILS['bathymetry'] = {
     'description':'Properties of bathymetry in ocean',
-    'properties' = [
+    'properties' : [
         ('bathymetry_reference_dates', 'ENUM:ocean_bathymetry_ref_dates', '1.1'
          'Reference date of bathymetry'),
         ('ocean_bathymetry_type', 'bool', '1.1',
