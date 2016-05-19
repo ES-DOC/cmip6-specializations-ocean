@@ -50,7 +50,7 @@ KEY_PROPERTIES = ['ocean_key_properties']
 #
 # Processes simulated within the realm
 # --------------------------------------------------------------------
-PROCESSES = ['ocean_timestepping_framework',
+SIMULATES = ['ocean_timestepping_framework',
              'ocean_advection',
              'ocean_lateral_physics',
              'ocean_vertical_physics',
