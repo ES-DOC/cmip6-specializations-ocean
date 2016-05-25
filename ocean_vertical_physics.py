@@ -90,7 +90,7 @@ SUB_PROCESS_DETAILS['bndlayer_mixing_tracers'] = {
     ]
 }
 
-SUB_PROCESS_DETAILS['bndlayer_momentum_tracers'] = {
+SUB_PROCESS_DETAILS['bndlayer_mixing_momentum'] = {
     'description': 'Properties of boundary layer (BL) mixing on momentum in the ocean ',
     'properties': [
         ('type', 'ENUM:bndlayer_mixing_types', '1.1',

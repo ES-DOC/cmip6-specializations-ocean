@@ -102,7 +102,7 @@ SUB_PROCESS_DETAILS['lateral_physics_mom_eddy_viscosity_coeff'] = {
         ]
 }
 
-SUB_PROCESS_DETAILS['lateral_physics_tracers_operator'] = {
+SUB_PROCESS_DETAILS['lateral_physics_tracers_details'] = {
     'description': 'Properties of lateral physics for tracers in ocean',
     'properties': [
         ('mesoscale_closure','bool','1.1',
