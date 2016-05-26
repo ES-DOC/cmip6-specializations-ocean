@@ -63,7 +63,7 @@ DETAILS['boundary_forcing_details'] = {
 # --------------------------------------------------------------------
 SUB_PROCESSES = OrderedDict()
 
-SUB_PROCESSES['momemtum_forcing'] = {
+SUB_PROCESSES['momentum_forcing'] = {
     'description': 'Key properties of momentum boundary forcing in the ocean',
     'details': ['momentum_bottom_friction',
                 'momentum_lateral_friction'],
@@ -84,7 +84,7 @@ SUB_PROCESSES['tracer_forcing'] = {
 # --------------------------------------------------------------------
 SUB_PROCESS_DETAILS = OrderedDict()
 
-SUB_PROCESS_DETAILS['momemtum_bottom_friction'] = {
+SUB_PROCESS_DETAILS['momentum_bottom_friction'] = {
     'description': 'Properties of momentum bottom friction in ocean',
     'properties': [
         ('type', 'ENUM:mom_bottom_friction_types', '1.1',
@@ -92,7 +92,7 @@ SUB_PROCESS_DETAILS['momemtum_bottom_friction'] = {
         ]
 }
 
-SUB_PROCESS_DETAILS['momemtum_lateral_friction'] = {
+SUB_PROCESS_DETAILS['momentum_lateral_friction'] = {
    'description': 'Properties of momentum lateral friction in ocean',
     'properties': [
         ('type', 'ENUM:mom_lateral_friction_types', '1.1',
