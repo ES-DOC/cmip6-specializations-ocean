@@ -8,7 +8,9 @@
 
 
 """
-from utils import validate_key
+from utils import is_required
+from utils import is_type
+from utils import is_collection
 
 
 
@@ -29,10 +31,15 @@ def validate(realm, process, sub_process):
     """
     # Set helper fields.
     _set_helper_fields(realm, process, sub_process)
-  
-    # Validate sub-process fields.
-    validate_key(sub_process, "description")
-    validate_key(sub_process, "details", expected_type=list)
+
+    # Validate description.
+    is_required(sub_process, "description")
+    is_type(sub_process, "description", str)
+
+    # Validate details.
+    is_required(sub_process, "details")
+    is_type(sub_process, "details", list)
+    is_collection(sub_process, "details", str)
 
     # Validate sub-process detail keys.
     for key in sub_process['details']:

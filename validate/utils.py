@@ -21,27 +21,107 @@ _QC_STATES = {
 
 
 def is_required(target, field):
-    try:
-        getattr(target, field)
-    except AttributeError:
-        err = "Missing field: {}".format(field)
-        target.ERRORS.append(err)
+    """Validates a required field.
+
+    """
+    is_error = False
+    if isinstance(target, dict):
+        errors = target['ERRORS']
     else:
-        return True
+        errors = target.ERRORS
+
+    if isinstance(target, dict):
+        is_error = field not in target
+    else:
+        is_error = not hasattr(target, field)
+
+    if is_error:
+        err = "Missing field: {}".format(field)
+        errors.append(err)
 
 
 def is_expected(target, field, expected):
-    try:
-        actual = getattr(target, field)
-    except AttributeError:
-        return
+    """Validates an field with an expected value.
+
+    """
+    is_error = False
+    if isinstance(target, dict):
+        errors = target['ERRORS']
     else:
-        if actual != expected:
-            err = "Invalid field: {}.  Actual value={}.  Expected value={}".format(field, actual, expected)
-            target.ERRORS.append(err)
+        errors = target.ERRORS
+
+    if isinstance(target, dict):
+        if field in target:
+            is_error = target[field] != expected
+    else:
+        if hasattr(target, field):
+            is_error = getattr(target, field) != expected
+
+    if is_error:
+        err = "Invalid field value: {}.  Expected value={}".format(field, expected)
+        errors.append(err)
+
+
+def is_type(target, field, expected):
+    """Validates a required field.
+
+    """
+    is_error = False
+    if isinstance(target, dict):
+        errors = target['ERRORS']
+    else:
+        errors = target.ERRORS
+
+    if isinstance(target, dict):
+        if field in target:
+            is_error = not isinstance(target[field], expected)
+    else:
+        if hasattr(target, field):
+            is_error = not isinstance(getattr(target, field), expected)
+
+    if is_error:
+        err = "Invalid field type: {}.  Expected type={}".format(field, expected)
+        errors.append(err)
+
+
+def is_collection(target, field, expected):
+    """Validates a field is a collection with all its members of a certain type.
+
+    """
+    is_error = False
+    if isinstance(target, dict):
+        errors = target['ERRORS']
+    else:
+        errors = target.ERRORS
+
+    collection = None
+    if isinstance(target, dict):
+        if field in target:
+            collection = target[field]
+    else:
+        if hasattr(target, field):
+            collection = getattr(target, field)
+
+    if collection:
+        try:
+            iter(collection)
+        except TypeError:
+            pass
+        else:
+            for i in collection:
+                if not isinstance(i, expected):
+                    is_error = True
+                    break
+
+    if is_error:
+        err = "Invalid collection: {}.  All items must be of type={}".format(field, expected)
+        errors.append(err)
 
 
 def is_in(target, field, collection):
+    """Validates a field is within a collection.
+
+    """
     try:
         item = getattr(target, field)
     except AttributeError:
@@ -50,100 +130,6 @@ def is_in(target, field, collection):
         if item not in collection:
             err = "Invalid field: {}.  Not a member of {}".format(field, list(collection))
             target.ERRORS.append(err)
-
-
-def is_type(target, field, expected):
-    try:
-        actual = getattr(target, field)
-    except AttributeError:
-        return
-    else:
-        actual = type(actual)
-        if actual != expected:
-            err = "Invalid field type: {}.  Actual type={}.  Expected type={}".format(field, actual, expected)
-            target.ERRORS.append(err)
-
-
-def is_collection(target, field, expected):
-    try:
-        iter(getattr(target, field))
-    except (AttributeError, TypeError):
-        return
-    else:
-        for i in iter(getattr(target, field)):
-            if not isinstance(i, expected):
-                err = "Invalid collection: {}.  All items must be of type={}".format(field, expected)
-                target.ERRORS.append(err)
-
-
-def validate_key(
-    obj,
-    attr,
-    expected_type=str,
-    expected_val=None,
-    whitelist=None
-    ):
-    """Validates a dictionary attribute.
-
-    """
-    errors = obj['ERRORS']
-
-    if attr not in obj:
-        err = "Missing key: {}".format(attr)
-        errors.append(err)
-        return
-
-    attr_val = obj[attr]
-    if type(attr_val) != expected_type:
-        err = "Invalid value type: {} :: {} is invalid, must be {}".format(attr, type(attr_val), expected_type)
-        errors.append(err)
-        return
-
-    if expected_val and attr_val != expected_val:
-        err = "{} is invalid.  Actual={}.  Expected={}".format(attr, attr_val, expected_val)
-        errors.append(err)
-        return
-
-    if whitelist and attr_val not in whitelist:
-        err = "{} is invalid.  Expected value must be one of: {}".format(attr, list(whitelist))
-        errors.append(err)
-        return
-
-
-def validate_attr(
-    module,
-    attr,
-    expected_type=str,
-    expected_val=None,
-    whitelist=None
-    ):
-    """Validates a module attribute.
-
-    """
-    errors = module.ERRORS
-
-    try:
-        getattr(module, attr)
-    except AttributeError:
-        err = "Missing attribute: {}".format(attr)
-        errors.append(err)
-        return
-
-    attr_val = getattr(module, attr)
-    if type(attr_val) != expected_type:
-        err = "Invalid value type: {} :: {} is invalid, must be {}".format(attr, type(attr_val), expected_type)
-        errors.append(err)
-        return
-
-    if expected_val and attr_val != expected_val:
-        err = "{} is invalid.  Actual={}.  Expected={}".format(attr, attr_val, expected_val)
-        errors.append(err)
-        return
-
-    if whitelist and attr_val not in whitelist:
-        err = "{} is invalid.  Expected value must be one of: {}".format(attr, list(whitelist))
-        errors.append(err)
-        return
 
 
 def validate_std(module):

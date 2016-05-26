@@ -8,7 +8,6 @@
 
 
 """
-from utils import validate_attr
 from utils import validate_std
 
 
