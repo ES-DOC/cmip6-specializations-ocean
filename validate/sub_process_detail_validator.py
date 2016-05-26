@@ -15,12 +15,12 @@ from utils_mapping import map_defn
 from utils_mapping import map_property
 
 
+
 # Set of valid cardinalities.
 _CARDINALITIES = {'0.1', '1.1', '0.N', '1.N'}
 
 # Set of valid types.
 _TYPES = {'bool', 'float', 'int', 'str'}
-
 
 
 def _validate_property(errors, defn):
