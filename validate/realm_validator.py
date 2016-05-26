@@ -55,12 +55,10 @@ def validate(realm, processes):
     is_expected(realm, "KEY_PROPERTIES", "{}_key_properties".format(realm.KEY))
 
     # Validate PROCESSES.
-    is_required(realm, "PROCESSES")
-    is_type(realm, "PROCESSES", list)
-    is_collection(realm, "PROCESSES", str)
-
-    # Validate process keys.
-    for key in realm.PROCESSES:
-        if key not in realm.PROCESS_KEYS:
-            err = "Invalid process key: {}".format(key)
-            realm.ERRORS.append(err)
+    if is_required(realm, "PROCESSES") and \
+       is_type(realm, "PROCESSES", list) and \
+       is_collection(realm, "PROCESSES", str):
+        for key in realm.PROCESSES:
+            if key not in realm.PROCESS_KEYS:
+                err = "Invalid process key: {}".format(key)
+                realm.ERRORS.append(err)

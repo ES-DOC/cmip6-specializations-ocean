@@ -17,7 +17,6 @@ import grid_validator
 import key_properties_validator
 import process_validator
 import realm_validator
-import sub_process_validator
 import utils
 
 
@@ -43,35 +42,37 @@ _ARGS = _ARGS.parse_args()
 _REPORT_BREAK = "------------------------------------------------------------------------"
 
 
-# Set specialization modules.
-modules, realm, grid, key_properties, processes = utils.get_specializations(_ARGS.input_dir)
+def _validate():
+    """Validates the specialization set.
 
-# Set helper fields.
-for module in modules:
-    module.ERRORS = []
+    """
+    # Set specialization modules.
+    modules, realm, grid, key_properties, processes = utils.get_specializations(_ARGS.input_dir)
 
-# Validate realm.
-realm_validator.validate(realm, processes)
+    # Set helper fields.
+    for module in modules:
+        module.ERRORS = []
 
-# Validate grid.
-if grid:
-    grid_validator.validate(realm, grid)
+    # Validate realm.
+    realm_validator.validate(realm, processes)
 
-# Validate key properties.
-if key_properties:
-    key_properties_validator.validate(realm, key_properties)
+    # Validate grid.
+    if grid:
+        grid_validator.validate(realm, grid)
 
-# Validate processes.
-for process in processes:
-    process_validator.validate(realm, process)
+    # Validate key properties.
+    if key_properties:
+        key_properties_validator.validate(realm, key_properties)
 
-# Validate sub-processes.
-for process in processes:
-    for sub_process in process.SUB_PROCESSES:
-        sub_process_validator.validate(realm, process, sub_process)
+    # Validate processes.
+    for process in processes:
+        process_validator.validate(realm, process)
+
+    return [m for m in modules if m.ERRORS]
+
 
 # Set errors.
-in_error = [m for m in modules if m.ERRORS]
+in_error = _validate()
 error_count = 0 if not in_error else len(reduce(operator.add, [m.ERRORS for m in in_error]))
 
 # Set report.

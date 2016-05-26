@@ -25,19 +25,14 @@ def is_required(target, field):
 
     """
     is_error = False
-    if isinstance(target, dict):
-        errors = target['ERRORS']
-    else:
-        errors = target.ERRORS
-
-    if isinstance(target, dict):
-        is_error = field not in target
-    else:
-        is_error = not hasattr(target, field)
+    errors = target.ERRORS
+    is_error = not hasattr(target, field)
 
     if is_error:
         err = "Missing field: {}".format(field)
         errors.append(err)
+    else:
+        return True
 
 
 def is_expected(target, field, expected):
@@ -60,6 +55,8 @@ def is_expected(target, field, expected):
     if is_error:
         err = "Invalid field value: {}.  Expected value={}".format(field, expected)
         errors.append(err)
+    else:
+        return True
 
 
 def is_type(target, field, expected):
@@ -82,6 +79,8 @@ def is_type(target, field, expected):
     if is_error:
         err = "Invalid field type: {}.  Expected type={}".format(field, expected)
         errors.append(err)
+    else:
+        return True
 
 
 def is_collection(target, field, expected):
@@ -89,33 +88,32 @@ def is_collection(target, field, expected):
 
     """
     is_error = False
-    if isinstance(target, dict):
-        errors = target['ERRORS']
-    else:
-        errors = target.ERRORS
-
+    errors = target.ERRORS
     collection = None
-    if isinstance(target, dict):
-        if field in target:
-            collection = target[field]
-    else:
-        if hasattr(target, field):
-            collection = getattr(target, field)
 
-    if collection:
-        try:
-            iter(collection)
-        except TypeError:
-            pass
-        else:
-            for i in collection:
-                if not isinstance(i, expected):
-                    is_error = True
-                    break
+    if hasattr(target, field):
+        collection = getattr(target, field)
+
+    try:
+        iter(collection)
+    except TypeError:
+        return
+
+    try:
+        collection = collection.values()
+    except AttributeError:
+        pass
+
+    for i in collection:
+        if not isinstance(i, expected):
+            is_error = True
+            break
 
     if is_error:
         err = "Invalid collection: {}.  All items must be of type={}".format(field, expected)
         errors.append(err)
+    else:
+        return True
 
 
 def is_in(target, field, collection):
@@ -130,6 +128,8 @@ def is_in(target, field, collection):
         if item not in collection:
             err = "Invalid field: {}.  Not a member of {}".format(field, list(collection))
             target.ERRORS.append(err)
+        else:
+            return True
 
 
 def validate_std(module):
@@ -183,3 +183,26 @@ def get_specializations(input_dir):
 
     return modules, realm, grid, key_properties, processes
 
+
+def set_default(target, attr, value):
+    """Sets a default value upon an object.
+
+    """
+    try:
+        getattr(target, attr)
+    except AttributeError:
+        setattr(target, attr, value)
+
+
+
+def map_defn(obj, key):
+    """Maps a definition to a first class object.
+
+    """
+    result = lambda: None
+    result.key = key
+    result.ERRORS = []
+    for k, v in obj.items():
+        setattr(result, k, v)
+
+    return result
