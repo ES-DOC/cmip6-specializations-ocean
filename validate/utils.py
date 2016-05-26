@@ -192,17 +192,3 @@ def set_default(target, attr, value):
         getattr(target, attr)
     except AttributeError:
         setattr(target, attr, value)
-
-
-
-def map_defn(obj, key):
-    """Maps a definition to a first class object.
-
-    """
-    result = lambda: None
-    result.key = key
-    result.ERRORS = []
-    for k, v in obj.items():
-        setattr(result, k, v)
-
-    return result

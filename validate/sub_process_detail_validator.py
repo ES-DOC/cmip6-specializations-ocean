@@ -11,7 +11,8 @@
 from utils import is_required
 from utils import is_type
 from utils import is_collection
-from utils import map_defn
+from utils_mapping import map_defn
+from utils_mapping import map_property
 
 
 # Set of valid cardinalities.
@@ -32,11 +33,7 @@ def _validate_property(errors, defn):
         return
 
     # Map definition.
-    p = lambda: None
-    p.name = defn[0]
-    p.type = defn[1]
-    p.cardinality = defn[2]
-    p.description = defn[3]
+    p = map_property(defn)
 
     # Validate property name.
     if not isinstance(p.name, str):
