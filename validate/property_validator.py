@@ -8,11 +8,7 @@
 
 
 """
-# Set of valid cardinalities.
-_CARDINALITIES = {'0.1', '1.1', '0.N', '1.N'}
-
-# Set of valid types.
-_TYPES = {'bool', 'float', 'int', 'str'}
+import constants
 
 
 
@@ -30,25 +26,25 @@ def validate(defn):
 
     # Validate property name.
     if not isinstance(name, str):
-        errors.append("name is invalid: [{}]".format(name))
+        errors.append("name is invalid :: [{}]".format(name))
     # TODO apply regex
 
     # Validate property type.
     if not isinstance(type_, str):
-        errors.append("type is invalid: [{}]".format(type_))
+        errors.append("type is invalid :: [{}]".format(type_))
     elif type_.startswith("ENUM:"):
         # TODO verify enums
         pass
-    elif type_ not in _TYPES:
-        errors.append("type is invalid [{}]".format(type_))
+    elif type_ not in constants.TYPES:
+        errors.append("type is invalid :: [{}]".format(type_))
 
     # Validate property cardinality.
-    if cardinality not in _CARDINALITIES:
-        errors.append("cardinality is invalid: [{}]".format(cardinality))
+    if cardinality not in constants.CARDINALITIES:
+        errors.append("cardinality is invalid :: [{}]".format(cardinality))
 
     # Validate property description.
     if not isinstance(description, str):
-        errors.append("description is invalid: [{}]".format(description))
+        errors.append("description is invalid :: [{}]".format(description))
     # TODO apply regex
 
     return ["property-{}".format(e) for e in errors]

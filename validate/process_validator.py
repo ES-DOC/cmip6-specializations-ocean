@@ -10,10 +10,10 @@
 """
 import collections
 
-import process_details_validator
+import details_validator
+import enum_validator
 import sub_process_validator
 import sub_process_detail_validator
-import enum_validator
 from utils import set_default
 from utils import validate_spec
 from utils import validate_std
@@ -31,10 +31,10 @@ def _validate_sub_process(p_defn, sp_key, sp_defn):
     errors = sub_process_validator.validate(sp_key, sp_defn)
     if not errors:
         for spd_key in [k for k in sp_defn['details'] if not k in p_defn.SUB_PROCESS_DETAILS]:
-            err = "sub-process error: {} has an invalid detail key: {}".format(sp_key, spd_key)
+            err = "has an invalid detail key: {}".format(spd_key)
             errors.append(err)
 
-    return errors
+    return ["SUB_PROCESSES['{}'] {}".format(sp_key, e) for e in errors]
 
 
 def validate(key, defn):
@@ -64,22 +64,12 @@ def validate(key, defn):
 
     # Level-2 validation.
     for pd_key, pd_defn in defn.DETAILS.items():
-        errors += process_details_validator.validate(pd_key, pd_defn)
+        errors += details_validator.validate(pd_key, pd_defn)
     for e_key, e_defn in defn.ENUMERATIONS.items():
         errors += enum_validator.validate(e_key, e_defn)
     for sp_key, sp_defn in defn.SUB_PROCESSES.items():
         errors += _validate_sub_process(defn, sp_key, sp_defn)
     for spd_key, spd_defn in defn.SUB_PROCESS_DETAILS.items():
-        errors += sub_process_detail_validator.validate(spd_key, spd_defn)
-
-    # Escape if level-2 errors.
-    if errors:
-        return errors
-
-    # Level-3 validation.
-    for sp_key, sp_defn in defn.SUB_PROCESSES.items():
-        for spd_key in [k for k in sp_defn['details'] if not k in defn.SUB_PROCESS_DETAILS]:
-            err = "sub-process error: {} has an invalid detail key: {}".format(sp_key, spd_key)
-            errors.append(err)
+        errors += ["SUB_PROCESS_DETAILS['{}'] :: {}".format(spd_key, e) for e in sub_process_detail_validator.validate(spd_key, spd_defn)]
 
     return errors

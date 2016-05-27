@@ -1,8 +1,8 @@
 """
-.. module:: sub_process_validator.py
+.. module:: discretisation_validator.py
    :license: GPL/CeCIL
    :platform: Unix, Windows
-   :synopsis: Validates a CMIP6 scientific sub-process specialization.
+   :synopsis: Validates a CMIP6 discretisation specialization.
 
 .. moduleauthor:: Mark Conway-Greenslade <momipsl@ipsl.jussieu.fr>
 
@@ -11,8 +11,8 @@
 def validate(key, defn):
     """Validates a scientific sub-process specialization.
 
-    :param str key: Sub-process key.
-    :param dict defn: Sub-process definition.
+    :param str key: Discretisation key.
+    :param dict defn: Discretisation definition.
 
     """
     errors = []

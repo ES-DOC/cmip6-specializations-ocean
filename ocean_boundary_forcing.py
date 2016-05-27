@@ -37,7 +37,6 @@ DESCRIPTION = 'Properties of boundary forcing within the ocean component'
 # --------------------------------------------------------------------
 DETAILS = OrderedDict()
 
-
 DETAILS['boundary_forcing_details'] = {
     'description': 'Properties of boundary forcing',
     'properties': [

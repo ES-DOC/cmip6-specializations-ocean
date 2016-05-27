@@ -32,6 +32,13 @@ QC_STATUS = 'draft'
 ID = 'cmip6.ocean'
 
 # --------------------------------------------------------------------
+# REALM: DESCRIPTION
+#
+# Scientific context of this scientific realm
+# --------------------------------------------------------------------
+DESCRIPTION = 'Ocean realm specialization'
+
+# --------------------------------------------------------------------
 # REALM: REALM
 #
 # Canonical name for the domain of this scientific realm

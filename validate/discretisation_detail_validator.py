@@ -1,8 +1,8 @@
 """
-.. module:: sub_process_validator.py
+.. module:: discretisation_detail_validator.py
    :license: GPL/CeCIL
    :platform: Unix, Windows
-   :synopsis: Validates a CMIP6 scientific sub-process specialization.
+   :synopsis: Validates a CMIP6 scientific discretisation detail specialization.
 
 .. moduleauthor:: Mark Conway-Greenslade <momipsl@ipsl.jussieu.fr>
 

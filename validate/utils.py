@@ -12,16 +12,14 @@ import collections
 import imp
 import os
 
+import constants
 
-
-# Set of valid QC states.
-_QC_STATES = {
-    'draft',
-    'complete'
-    }
 
 
 def get_cim_id(module):
+    """Reurns the expected cim id of a module.
+
+    """
     parts = [module.__name__.split("_")[0], "_".join(module.__name__.split("_")[1:])]
     parts = [i for i in parts if i]
 
@@ -46,6 +44,12 @@ def validate_std(module, cim_type):
     elif not isinstance(module.CONTACT, str):
         errors.append("CONTACT property must be a string")
 
+    # Validate DESCRIPTION.
+    if not hasattr(module, 'DESCRIPTION'):
+        errors.append("DESCRIPTION property is missing")
+    elif not isinstance(module.DESCRIPTION, str):
+        errors.append("DESCRIPTION property must be a string")
+
     # Validate ID.
     if not hasattr(module, 'ID'):
         errors.append("ID property is missing")
@@ -63,8 +67,8 @@ def validate_std(module, cim_type):
     # Validate QC_STATUS.
     if not hasattr(module, 'QC_STATUS'):
         errors.append("QC_STATUS property is missing")
-    elif module.QC_STATUS not in _QC_STATES:
-        errors.append("QC_STATUS is invalid. Valid set = {}".format(list(_QC_STATES)))
+    elif module.QC_STATUS not in constants.QC_STATES:
+        errors.append("QC_STATUS is invalid. Valid set = {}".format(list(constants.QC_STATES)))
 
     return errors
 

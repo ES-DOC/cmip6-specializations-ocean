@@ -12,11 +12,6 @@ import property_validator
 
 
 
-# Set of valid cardinalities.
-_CARDINALITIES = {'0.1', '1.1', '0.N', '1.N'}
-
-
-
 def _validate_inline(name, defn):
     """Validates an in-line property specialization.
 
@@ -43,9 +38,9 @@ def _validate_group(key, defn):
     if "properties" not in defn:
         errors.append("has no properties")
     elif not isinstance(defn['properties'], list):
-        errors.append("properties must be a list")
+        errors.append("properties must defined as a list")
     elif [p for p in defn['properties'] if not isinstance(p, tuple) or len(p) != 4]:
-        errors.append("properties must be 4 member tuples")
+        errors.append("all properties must be 4 member tuples")
     else:
         for defn in defn['properties']:
             errors += property_validator.validate(defn)
