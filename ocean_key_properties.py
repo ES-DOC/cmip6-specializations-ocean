@@ -38,13 +38,14 @@ DESCRIPTION = 'Key properties of the ocean'
 DETAILS = OrderedDict()
 
 DETAILS['general'] = {
+    'description': 'General key properties in ocean',
     'properties': [
         ('model_family', 'ENUM:model_family_type', '1.1',
-         'Type of ocean model.'),
+            'Type of ocean model.'),
         ('basic_approximations', 'ENUM:basic_approximations_attributes', '1.N',
-         'Basic approximations made in the ocean.',),
+            'Basic approximations made in the ocean.',),
         ('prognostic_variables', 'ENUM:prognostic_vars_types', '1.N',
-         'List of prognostic variables in the ocean component.'),
+            'List of prognostic variables in the ocean component.'),
     ]
 }
 
@@ -52,31 +53,33 @@ DETAILS['seawater_properties'] = {
     'description': 'Physical properties of seawater in ocean',
     'properties' : [
         ('seawater_eos_type', 'ENUM:seawater_eos_types', '1.1',
-         'Type of EOS for sea water'),
+            'Type of EOS for sea water'),
         ('ocean_freezing_point', 'str', '1.1',
-         'Describe freezing point in ocean (fixed or varying)'),
+            'Describe freezing point in ocean (fixed or varying)'),
         ('ocean_specific_heat', 'str', '1.1',
-         'Describe specific heat in ocean (fixed or varying)'),
+            'Describe specific heat in ocean (fixed or varying)'),
     ]
 }
 
 DETAILS['bathymetry'] = {
-    'description':'Properties of bathymetry in ocean',
+    'description': 'Properties of bathymetry in ocean',
     'properties' : [
-        ('bathymetry_reference_dates', 'ENUM:ocean_bathymetry_ref_dates', '1.1'
-         'Reference date of bathymetry'),
+        ('bathymetry_reference_dates', 'ENUM:ocean_bathymetry_ref_dates', '1.1',
+            'Reference date of bathymetry'),
         ('ocean_bathymetry_type', 'bool', '1.1',
-         'Is the bathymetry fixed in time in the ocean ?'),
+            'Is the bathymetry fixed in time in the ocean ?'),
         ('ocean_smoothing', 'str', '1.1',
-         'Describe any smoothing or hand editing of bathymetry in ocean'),
+            'Describe any smoothing or hand editing of bathymetry in ocean'),
         ('ocean_bathymetry_source', 'str', '1.1',
-         'Describe source of bathymetry in ocean'),
+            'Describe source of bathymetry in ocean'),
     ]
 }
 
 DETAILS['nonoceanic_waters'] = (
-    'str', '0.1',
-    'Describe if/how isolated seas and river mouth mixing or other specific treatment is performed')
+    'str',
+    '0.1',
+    'Describe if/how isolated seas and river mouth mixing or other specific treatment is performed'
+    )
 
 # --------------------------------------------------------------------
 # KEY PROPERTIES: EXTENT

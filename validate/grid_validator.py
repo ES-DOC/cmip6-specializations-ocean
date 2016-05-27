@@ -63,8 +63,8 @@ def validate(key, defn):
         return errors
 
     # Level-2 validation.
-    for pd_key, pd_defn in defn.DETAILS.items():
-        errors += details_validator.validate(pd_key, pd_defn)
+    for dt_key, dt_defn in defn.DETAILS.items():
+        errors += details_validator.validate(dt_key, dt_defn)
     for e_key, e_defn in defn.ENUMERATIONS.items():
         errors += enum_validator.validate(e_key, e_defn)
     for d_key, d_defn in defn.DISCRETISATION.items():
