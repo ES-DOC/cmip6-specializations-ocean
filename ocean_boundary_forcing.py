@@ -41,18 +41,18 @@ DETAILS = OrderedDict()
 DETAILS['boundary_forcing_details'] = {
     'description': 'Properties of boundary forcing',
     'properties': [
-        ('surface_pressure', 'str', '1.1'
-        'Describe how surface pressure is transmitted to ocean (via sea-ice, nothing specific,...)'),
-        ('momentum_flux_correction', 'str', '0.1'
-        'Describe any type of ocean surface momentum flux correction and, if applicable, how it is applied and where.'),
-        ('tracers_flux_correction', 'str', '0.1'
-        'Describe any type of ocean surface tracers flux correction and, if applicable, how it is applied and where.'),
-        ('wave_effects', 'str', '1.1'
-        'Describe if/how wave effects are modelled at ocean surface.'),
-        ('river_runoff_budget', 'str', '1.1'
-        'Describe how river runoff from land surface is routed to ocean and any global adjustment done.'),
-        ('geothermal_heating', 'str', '1.1'
-        'Describe if/how geothermal heating is present at ocean bottom.'),
+        ('surface_pressure', 'str', '1.1',
+            'Describe how surface pressure is transmitted to ocean (via sea-ice, nothing specific,...)'),
+        ('momentum_flux_correction', 'str', '0.1',
+            'Describe any type of ocean surface momentum flux correction and, if applicable, how it is applied and where.'),
+        ('tracers_flux_correction', 'str', '0.1',
+            'Describe any type of ocean surface tracers flux correction and, if applicable, how it is applied and where.'),
+        ('wave_effects', 'str', '1.1',
+            'Describe if/how wave effects are modelled at ocean surface.'),
+        ('river_runoff_budget', 'str', '1.1',
+            'Describe how river runoff from land surface is routed to ocean and any global adjustment done.'),
+        ('geothermal_heating', 'str', '1.1',
+            'Describe if/how geothermal heating is present at ocean bottom.'),
     ]
 }
 

@@ -8,49 +8,8 @@
 
 
 """
-# Set of valid cardinalities.
-_CARDINALITIES = {'0.1', '1.1', '0.N', '1.N'}
+import property_validator
 
-# Set of valid types.
-_TYPES = {'bool', 'float', 'int', 'str'}
-
-
-def _validate_property(defn):
-    """Validates a detail property definition.
-
-    :param str key: Sub-process detail key.
-    :param module defn: Sub-process detail definition.
-
-    """
-    errors = []
-
-    # Unpack definition.
-    name, type_, cardinality, description = defn
-
-    # Validate property name.
-    if not isinstance(name, str):
-        errors.append("name is invalid: [{}]".format(name))
-    # TODO apply regex
-
-    # Validate property type.
-    if not isinstance(type_, str):
-        errors.append("type is invalid: [{}]".format(type_))
-    elif type_.startswith("ENUM:"):
-        # TODO verify enums
-        pass
-    elif type_ not in _TYPES:
-        errors.append("type is invalid [{}]".format(type_))
-
-    # Validate property cardinality.
-    if cardinality not in _CARDINALITIES:
-        errors.append("cardinality is invalid: [{}]".format(cardinality))
-
-    # Validate property description.
-    if not isinstance(description, str):
-        errors.append("description is invalid: [{}]".format(description))
-    # TODO apply regex
-
-    return ["property-{}".format(e) for e in errors]
 
 
 def validate(key, defn):
@@ -77,6 +36,6 @@ def validate(key, defn):
         errors.append("properties must be 4 member tuples")
     else:
         for defn in defn['properties']:
-            errors += _validate_property(defn)
+            errors += property_validator.validate(defn)
 
     return ["{}: sub-process-detail {}".format(key, e) for e in errors]

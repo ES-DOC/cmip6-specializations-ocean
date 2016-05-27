@@ -10,6 +10,7 @@
 """
 import collections
 
+import process_details_validator
 import sub_process_validator
 import sub_process_detail_validator
 import enum_validator
@@ -62,12 +63,14 @@ def validate(key, defn):
         return errors
 
     # Level-2 validation.
+    for pd_key, pd_defn in defn.DETAILS.items():
+        errors += process_details_validator.validate(pd_key, pd_defn)
+    for e_key, e_defn in defn.ENUMERATIONS.items():
+        errors += enum_validator.validate(e_key, e_defn)
     for sp_key, sp_defn in defn.SUB_PROCESSES.items():
         errors += _validate_sub_process(defn, sp_key, sp_defn)
     for spd_key, spd_defn in defn.SUB_PROCESS_DETAILS.items():
         errors += sub_process_detail_validator.validate(spd_key, spd_defn)
-    for e_key, e_defn in defn.ENUMERATIONS.items():
-        errors += enum_validator.validate(e_key, e_defn)
 
     # Escape if level-2 errors.
     if errors:
