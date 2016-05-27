@@ -9,12 +9,13 @@
 
 """
 import collections
-from utils import is_collection
-from utils import is_required
-from utils import is_type
-from utils import set_default
-from utils import validate_std
+
 import sub_process_validator
+import sub_process_detail_validator
+import enum_validator
+from utils import set_default
+from utils import validate_spec
+from utils import validate_std
 
 
 
@@ -22,64 +23,60 @@ import sub_process_validator
 _CIM_2_PROCESS = "cim.2.science.process"
 
 
-def _set_helper_fields(realm, process):
-    """Inject helper attributes used downstream.
+def _validate_sub_process(p_defn, sp_key, sp_defn):
+    """Validates an associated sub-prcess.
 
     """
-    process.CIM_ID = "{}.{}".format(
-        realm.CIM_ID, process.__name__[len(realm.CIM_ID) + 1:])
-    process.CIM_TYPE = _CIM_2_PROCESS
-    process.KEY = process.__name__
-    set_default(process, 'DETAILS', collections.OrderedDict())
-    set_default(process, 'ENUMERATIONS', collections.OrderedDict())
-    set_default(process, 'SUB_PROCESSES', collections.OrderedDict())
-    set_default(process, 'SUB_PROCESS_DETAILS', collections.OrderedDict())
+    errors = sub_process_validator.validate(sp_key, sp_defn)
+    if not errors:
+        for spd_key in [k for k in sp_defn['details'] if not k in p_defn.SUB_PROCESS_DETAILS]:
+            err = "sub-process error: {} has an invalid detail key: {}".format(sp_key, spd_key)
+            errors.append(err)
+
+    return errors
 
 
-def _validate_sub_processes(realm, process):
-    for key, defn in process.SUB_PROCESSES.items():
-        sub_process_validator.validate(realm, process, defn, key)
-
-
-
-
-def validate(realm, process):
+def validate(key, defn):
     """Validates a scientific process specialization.
 
-    :param module realm: Realm specialization being validated.
-    :param module process: Process specialization being validated.
+    :param str key: Process key.
+    :param module defn: Process definition.
 
     """
-    # Set helper fields.
-    _set_helper_fields(realm, process)
+    # Set defaults for optional fields.
+    set_default(defn, 'DETAILS', collections.OrderedDict())
+    set_default(defn, 'ENUMERATIONS', collections.OrderedDict())
+    set_default(defn, 'SUB_PROCESSES', collections.OrderedDict())
+    set_default(defn, 'SUB_PROCESS_DETAILS', collections.OrderedDict())
 
-    # Validate standard attributes.
-    validate_std(process)
+    # Level-1 validation.
+    errors = []
+    errors += validate_std(defn, _CIM_2_PROCESS)
+    errors += validate_spec(defn, "DETAILS", (dict, tuple))
+    errors += validate_spec(defn, "ENUMERATIONS")
+    errors += validate_spec(defn, "SUB_PROCESSES")
+    errors += validate_spec(defn, "SUB_PROCESS_DETAILS")
 
-    # Validate DETAILS.
-    is_required(process, "DETAILS")
-    is_type(process, "DETAILS", collections.OrderedDict)
-    is_collection(process, "DETAILS", (dict, tuple))
+    # Escape if level-1 errors.
+    if errors:
+        return errors
 
-    # Validate ENUMERATIONS.
-    is_required(process, "ENUMERATIONS")
-    is_type(process, "ENUMERATIONS", collections.OrderedDict)
-    is_collection(process, "ENUMERATIONS", dict)
+    # Level-2 validation.
+    for sp_key, sp_defn in defn.SUB_PROCESSES.items():
+        errors += _validate_sub_process(defn, sp_key, sp_defn)
+    for spd_key, spd_defn in defn.SUB_PROCESS_DETAILS.items():
+        errors += sub_process_detail_validator.validate(spd_key, spd_defn)
+    for e_key, e_defn in defn.ENUMERATIONS.items():
+        errors += enum_validator.validate(e_key, e_defn)
 
-    # Validate SUB_PROCESSES.
-    is_required(process, "SUB_PROCESSES")
-    is_type(process, "SUB_PROCESSES", collections.OrderedDict)
-    is_collection(process, "SUB_PROCESSES", dict)
+    # Escape if level-2 errors.
+    if errors:
+        return errors
 
-    # Validate SUB_PROCESS_DETAILS.
-    is_required(process, "SUB_PROCESS_DETAILS")
-    is_type(process, "SUB_PROCESS_DETAILS", collections.OrderedDict)
-    is_collection(process, "SUB_PROCESS_DETAILS", dict)
+    # Level-3 validation.
+    for sp_key, sp_defn in defn.SUB_PROCESSES.items():
+        for spd_key in [k for k in sp_defn['details'] if not k in defn.SUB_PROCESS_DETAILS]:
+            err = "sub-process error: {} has an invalid detail key: {}".format(sp_key, spd_key)
+            errors.append(err)
 
-    # Escape if any errors at this point.
-    if process.ERRORS:
-        return
-
-    # Validate sub-processes.
-    for key, defn in process.SUB_PROCESSES.items():
-        sub_process_validator.validate(realm, process, defn, key)
+    return errors

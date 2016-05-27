@@ -9,56 +9,53 @@
 
 """
 from utils import validate_std
-from utils import is_collection
-from utils import is_expected
-from utils import is_required
-from utils import is_type
+
 
 
 # CIM 2 type name.
 _CIM_2_REALM = "cim.2.science.scientific_realm"
 
 
-def _set_helper_fields(realm, processes):
-    """Inject helper attributes used downstream.
-
-    """
-    realm.CIM_ID = realm.__name__
-    realm.CIM_TYPE = _CIM_2_REALM
-    realm.KEY = realm.__name__
-    realm.PROCESS_KEYS = [p.__name__ for p in processes]
-
-
-def validate(realm, processes):
+def validate(key, defn, processes):
     """Validates a scientific realm specialization.
 
-    :param module realm: Realm specialization being validated.
-    :param list processes: Set of associated process specializations being validated.
+    :param str key: Realm key.
+    :param module defn: Realm definition.
 
     """
-    # Set helper fields.
-    _set_helper_fields(realm, processes)
+    defn.PROCESS_KEYS = [p.__name__ for p in processes]
 
     # Validate standard attributes.
-    validate_std(realm)
+    errors = []
+    errors += validate_std(defn, _CIM_2_REALM)
 
     # Validate REALM.
-    is_required(realm, "REALM")
-    is_expected(realm, "REALM", realm.KEY)
+    if not hasattr(defn, "REALM"):
+        errors.append("REALM is missing")
+    elif not defn.REALM == key:
+        errors.append("REALM must be = {}".format(key))
 
     # Validate GRID.
-    is_required(realm, "GRID")
-    is_expected(realm, "GRID", "{}_grid".format(realm.KEY))
+    if not hasattr(defn, "GRID"):
+        errors.append("GRID is missing")
+    elif not defn.GRID == "{}_grid".format(key):
+        errors.append("GRID must be = {}".format("{}_grid".format(key)))
 
     # Validate KEY_PROPERTIES.
-    is_required(realm, "KEY_PROPERTIES")
-    is_expected(realm, "KEY_PROPERTIES", "{}_key_properties".format(realm.KEY))
+    if not hasattr(defn, "KEY_PROPERTIES"):
+        errors.append("KEY_PROPERTIES property is missing")
+    elif not defn.KEY_PROPERTIES == "{}_key_properties".format(key):
+        errors.append("KEY_PROPERTIES must be = {}".format("{}_key_properties".format(key)))
 
     # Validate PROCESSES.
-    if is_required(realm, "PROCESSES") and \
-       is_type(realm, "PROCESSES", list) and \
-       is_collection(realm, "PROCESSES", str):
-        for key in realm.PROCESSES:
-            if key not in realm.PROCESS_KEYS:
-                err = "Invalid process key: {}".format(key)
-                realm.ERRORS.append(err)
+    if not hasattr(defn, "PROCESSES"):
+        errors.append("PROCESSES property is missing")
+    elif not isinstance(defn.PROCESSES, list):
+        errors.append("PROCESSES must be a list of process keys")
+    else:
+        for process_key in defn.PROCESSES:
+            if process_key not in defn.PROCESS_KEYS:
+                err = "invalid process key: {}".format(process_key)
+                errors.append(err)
+
+    return ["realm: {}".format(e) for e in errors]

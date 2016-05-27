@@ -11,27 +11,22 @@
 from utils import validate_std
 
 
+
 # CIM 2 type name.
 _CIM_2_KEY_PROPERTIES = "cim.2.science.key_properties"
 
 
-def _set_helper_fields(realm, key_properties):
-    """Inject helper attributes used downstream.
+def validate(key, defn):
+    """Validates a scientific grid specialization.
+
+    :param str key: Key properties key.
+    :param module defn: Key properties definition.
 
     """
-    key_properties.CIM_ID = "{}.{}".format(realm.CIM_ID, key_properties.__name__[len(realm.CIM_ID) + 1:])
-    key_properties.CIM_TYPE = _CIM_2_KEY_PROPERTIES
-
-
-def validate(realm, key_properties):
-    """Validates a scientific key properties specialization.
-
-    :param module realm: Realm specialization being validated.
-    :param module key_properties: Key properties specialization being validated.
-
-    """
-    # Set helper fields.
-    _set_helper_fields(realm, key_properties)
+    errors = []
 
     # Validate standard attributes.
-    validate_std(key_properties)
+    errors += validate_std(defn, _CIM_2_KEY_PROPERTIES)
+
+    return ["key-properties: {}".format(e) for e in errors]
+

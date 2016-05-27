@@ -8,6 +8,7 @@
 
 
 """
+import collections
 import imp
 import os
 
@@ -20,141 +21,69 @@ _QC_STATES = {
     }
 
 
-def is_required(target, field):
-    """Validates a required field.
+def get_cim_id(module):
+    parts = [module.__name__.split("_")[0], "_".join(module.__name__.split("_")[1:])]
+    parts = [i for i in parts if i]
 
-    """
-    is_error = False
-    errors = target.ERRORS
-    is_error = not hasattr(target, field)
-
-    if is_error:
-        err = "Missing field: {}".format(field)
-        errors.append(err)
-    else:
-        return True
+    return "cmip6.{}".format(".".join(parts))
 
 
-def is_expected(target, field, expected):
-    """Validates an field with an expected value.
-
-    """
-    is_error = False
-    if isinstance(target, dict):
-        errors = target['ERRORS']
-    else:
-        errors = target.ERRORS
-
-    if isinstance(target, dict):
-        if field in target:
-            is_error = target[field] != expected
-    else:
-        if hasattr(target, field):
-            is_error = getattr(target, field) != expected
-
-    if is_error:
-        err = "Invalid field value: {}.  Expected value={}".format(field, expected)
-        errors.append(err)
-    else:
-        return True
-
-
-def is_type(target, field, expected):
-    """Validates a required field.
-
-    """
-    is_error = False
-    if isinstance(target, dict):
-        errors = target['ERRORS']
-    else:
-        errors = target.ERRORS
-
-    if isinstance(target, dict):
-        if field in target:
-            is_error = not isinstance(target[field], expected)
-    else:
-        if hasattr(target, field):
-            is_error = not isinstance(getattr(target, field), expected)
-
-    if is_error:
-        err = "Invalid field type: {}.  Expected type={}".format(field, expected)
-        errors.append(err)
-    else:
-        return True
-
-
-def is_collection(target, field, expected):
-    """Validates a field is a collection with all its members of a certain type.
-
-    """
-    is_error = False
-    errors = target.ERRORS
-    collection = None
-
-    if hasattr(target, field):
-        collection = getattr(target, field)
-
-    try:
-        iter(collection)
-    except TypeError:
-        return
-
-    try:
-        collection = collection.values()
-    except AttributeError:
-        pass
-
-    for i in collection:
-        if not isinstance(i, expected):
-            is_error = True
-            break
-
-    if is_error:
-        err = "Invalid collection: {}.  All items must be of type={}".format(field, expected)
-        errors.append(err)
-    else:
-        return True
-
-
-def is_in(target, field, collection):
-    """Validates a field is within a collection.
-
-    """
-    try:
-        item = getattr(target, field)
-    except AttributeError:
-        return
-    else:
-        if item not in collection:
-            err = "Invalid field: {}.  Not a member of {}".format(field, list(collection))
-            target.ERRORS.append(err)
-        else:
-            return True
-
-
-def validate_std(module):
+def validate_std(module, cim_type):
     """Validates a modules standard attributes.
 
     """
-    # Validate AUTHORS.
-    is_required(module, "AUTHORS")
-    is_type(module, "AUTHORS", str)
+    errors = []
 
     # Validate AUTHORS.
-    is_required(module, "CONTACT")
-    is_type(module, "CONTACT", str)
+    if not hasattr(module, 'AUTHORS'):
+        errors.append("AUTHORS property is missing")
+    elif not isinstance(module.AUTHORS, str):
+        errors.append("AUTHORS property must be a string")
+
+    # Validate AUTHORS.
+    if not hasattr(module, 'CONTACT'):
+        errors.append("CONTACT property is missing")
+    elif not isinstance(module.CONTACT, str):
+        errors.append("CONTACT property must be a string")
 
     # Validate ID.
-    is_required(module, "ID")
-    is_expected(module, "ID", "cmip6.{}".format(module.CIM_ID))
+    if not hasattr(module, 'ID'):
+        errors.append("ID property is missing")
+    elif not isinstance(module.ID, str):
+        errors.append("ID property must be a string")
+    elif not module.ID == get_cim_id(module):
+        errors.append("ID must be = {}".format(get_cim_id(module)))
 
     # Validate _TYPE.
-    is_required(module, "_TYPE")
-    is_expected(module, "_TYPE", module.CIM_TYPE)
+    if not hasattr(module, '_TYPE'):
+        errors.append("_TYPE property is missing")
+    elif module._TYPE != cim_type:
+        errors.append("_TYPE must be = {}".format(cim_type))
 
-    # Validate _TYPE.
-    is_required(module, "QC_STATUS")
-    is_in(module, "QC_STATUS", _QC_STATES)
+    # Validate QC_STATUS.
+    if not hasattr(module, 'QC_STATUS'):
+        errors.append("QC_STATUS property is missing")
+    elif module.QC_STATUS not in _QC_STATES:
+        errors.append("QC_STATUS is invalid. Valid set = {}".format(list(_QC_STATES)))
+
+    return errors
+
+
+def validate_spec(target, attr, types=(dict, )):
+    errors = []
+
+    if not hasattr(target, attr):
+        errors.append("{} is missing".format(attr))
+    elif not isinstance(getattr(target, attr), collections.OrderedDict):
+        errors.append("{} must be an OrderedDict".format(attr))
+    else:
+        for key, defn in getattr(target, attr).items():
+            if not isinstance(defn, types):
+
+                err = "{}[{}]: must be a {}".format(attr, key, " or ".join([i.__name__ for i in types]))
+                errors.append(err)
+
+    return errors
 
 
 def get_specializations(input_dir):
@@ -181,7 +110,14 @@ def get_specializations(input_dir):
         else:
             processes.append(module)
 
-    return modules, realm, grid, key_properties, processes
+    return realm, grid, key_properties, processes
+
+
+def get_specialization(input_dir, key):
+    """Returns specialization modules organized by type.
+
+    """
+    raise NotImplementedError()
 
 
 def set_default(target, attr, value):

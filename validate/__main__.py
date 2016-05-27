@@ -9,6 +9,7 @@
 
 """
 import argparse
+import collections
 import datetime
 import operator
 import os
@@ -46,34 +47,35 @@ def _validate():
     """Validates the specialization set.
 
     """
-    # Set specialization modules.
-    modules, realm, grid, key_properties, processes = utils.get_specializations(_ARGS.input_dir)
+    errors = collections.defaultdict(list)
 
-    # Set helper fields.
-    for module in modules:
-        module.ERRORS = []
+    # Set specialization modules.
+    realm, grid, key_properties, processes = utils.get_specializations(_ARGS.input_dir)
 
     # Validate realm.
-    realm_validator.validate(realm, processes)
+    key, defn = realm.__name__, realm
+    errors[defn] += realm_validator.validate(key, defn, processes)
 
     # Validate grid.
     if grid:
-        grid_validator.validate(realm, grid)
+        key, defn = grid.__name__, grid
+        errors[grid] += grid_validator.validate(key, defn)
 
     # Validate key properties.
     if key_properties:
-        key_properties_validator.validate(realm, key_properties)
+        key, defn = key_properties.__name__, key_properties
+        errors[key_properties] += key_properties_validator.validate(key, defn)
 
     # Validate processes.
-    for process in processes:
-        process_validator.validate(realm, process)
+    for key, defn in [(p.__name__, p) for p in processes]:
+        errors[defn] += process_validator.validate(key, defn)
 
-    return [m for m in modules if m.ERRORS]
+    return {k: v for k, v in errors.items() if v}
 
 
 # Set errors.
 in_error = _validate()
-error_count = 0 if not in_error else len(reduce(operator.add, [m.ERRORS for m in in_error]))
+error_count = 0 if not in_error else len(reduce(operator.add, in_error.values()))
 
 # Set report.
 report = []
@@ -91,10 +93,10 @@ else:
     report.append(_REPORT_BREAK)
 
     # Set report errors.
-    for module in in_error:
+    for module, errors in in_error.items():
         report.append("{}.py".format(module.__name__))
-        for idx, err in enumerate(module.ERRORS):
-            report.append("#{}\t{}.".format(idx + 1, err))
+        for idx, err in enumerate(errors):
+            report.append("Error #{}:\t{}.".format(idx + 1, err))
         report.append("")
 
 # Write to stdout.

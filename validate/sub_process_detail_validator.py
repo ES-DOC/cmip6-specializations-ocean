@@ -8,14 +8,6 @@
 
 
 """
-from utils import is_required
-from utils import is_type
-from utils import is_collection
-from utils_mapping import map_defn
-from utils_mapping import map_property
-
-
-
 # Set of valid cardinalities.
 _CARDINALITIES = {'0.1', '1.1', '0.N', '1.N'}
 
@@ -23,67 +15,68 @@ _CARDINALITIES = {'0.1', '1.1', '0.N', '1.N'}
 _TYPES = {'bool', 'float', 'int', 'str'}
 
 
-def _validate_property(errors, defn):
+def _validate_property(defn):
     """Validates a detail property definition.
 
-    """
-    # Validate property is a 4 member tuple.
-    if len(defn) != 4:
-        errors.append("detail property not a 4 member tuple")
-        return
+    :param str key: Sub-process detail key.
+    :param module defn: Sub-process detail definition.
 
-    # Map definition.
-    p = map_property(defn)
+    """
+    errors = []
+
+    # Unpack definition.
+    name, type_, cardinality, description = defn
 
     # Validate property name.
-    if not isinstance(p.name, str):
-        errors.append("detail property name is invalid {}".format(p.name))
-    else:
-        # Apply regex
-        pass
+    if not isinstance(name, str):
+        errors.append("name is invalid: [{}]".format(name))
+    # TODO apply regex
 
     # Validate property type.
-    if not isinstance(p.type, str):
-        errors.append("detail property type is invalid {}".format(p.type))
-    elif p.type.startswith("ENUM"):
+    if not isinstance(type_, str):
+        errors.append("type is invalid: [{}]".format(type_))
+    elif type_.startswith("ENUM:"):
+        # TODO verify enums
         pass
-    elif p.type not in _TYPES:
-        errors.append("detail property [{}] contains an invalid type".format(p.type))
+    elif type_ not in _TYPES:
+        errors.append("type is invalid [{}]".format(type_))
 
     # Validate property cardinality.
-    if p.cardinality not in _CARDINALITIES:
-        errors.append("detail property [{}] contains an invalid cardinality".format(p.cardinality))
+    if cardinality not in _CARDINALITIES:
+        errors.append("cardinality is invalid: [{}]".format(cardinality))
 
     # Validate property description.
-    if not isinstance(p.description, str):
-        errors.append("detail property description is invalid {}".format(p.description))
+    if not isinstance(description, str):
+        errors.append("description is invalid: [{}]".format(description))
+    # TODO apply regex
+
+    return ["property-{}".format(e) for e in errors]
 
 
-def validate(process, defn, key):
+def validate(key, defn):
     """Validates a scientific sub-process specialization.
 
-    :param module realm: Realm specialization being validated.
-    :param module process: Process specialization being validated.
-    :param dict sub_process: Sub-process specialization being validated.
-    :param str sub_process_key: Unique key associated with sub-process.
+    :param str key: Sub-process detail key.
+    :param module defn: Sub-process detail definition.
 
     """
-    details = map_defn(defn, key)
+    errors = []
 
     # Validate description.
-    is_required(details, "description")
-    is_type(details, "description", str)
+    if "description" not in defn:
+        errors.append("has no description")
+    elif not isinstance(defn['description'], str):
+        errors.append("description must be a string")
 
     # Validate properties.
-    if is_required(details, "properties") and \
-       is_type(details, "properties", list) and \
-       is_collection(details, "properties", tuple):
-        for defn in details.properties:
-            _validate_property(details.ERRORS, defn)
+    if "properties" not in defn:
+        errors.append("has no properties")
+    elif not isinstance(defn['properties'], list):
+        errors.append("properties must be a list")
+    elif [p for p in defn['properties'] if not isinstance(p, tuple) or len(p) != 4]:
+        errors.append("properties must be 4 member tuples")
+    else:
+        for defn in defn['properties']:
+            errors += _validate_property(defn)
 
-
-    # Append errors to process error collection.
-    process.ERRORS += ["Invalid sub-process={} :: {}".format(key, e)
-                       for e in details.ERRORS]
-
-
+    return ["{}: sub-process-detail {}".format(key, e) for e in errors]

@@ -11,27 +11,21 @@
 from utils import validate_std
 
 
+
 # CIM 2 type name.
 _CIM_2_GRID = "cim.2.science.grid"
 
 
-def _set_helper_fields(realm, grid):
-    """Inject helper attributes used downstream.
-
-    """
-    grid.CIM_ID = "{}.{}".format(realm.CIM_ID, grid.__name__[len(realm.CIM_ID) + 1:])
-    grid.CIM_TYPE = _CIM_2_GRID
-
-
-def validate(realm, grid):
+def validate(key, defn):
     """Validates a scientific grid specialization.
 
-    :param module realm: Realm specialization being validated.
-    :param module grid: Grid specialization being validated.
+    :param str key: Grid key.
+    :param module defn: Grid definition.
 
     """
-    # Set helper fields.
-    _set_helper_fields(realm, grid)
+    errors = []
 
     # Validate standard attributes.
-    validate_std(grid)
+    errors += validate_std(defn, _CIM_2_GRID)
+
+    return ["grid: {}".format(e) for e in errors]
