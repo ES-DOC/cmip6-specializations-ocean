@@ -11,9 +11,9 @@
 import collections
 
 import details_validator
-import discretisation_validator
 import discretisation_detail_validator
 import enum_validator
+from details_container_validator import validate as validate_details_container
 from utils import validate_spec
 from utils import validate_std
 from utils import set_default
@@ -24,17 +24,13 @@ from utils import set_default
 _CIM_2_GRID = "cim.2.science.grid"
 
 
-def _validate_discretisation(g_defn, d_key, d_defn):
+def _validate_discretisation(g_defn, key, defn):
     """Validates an associated discretisation.
 
     """
-    errors = discretisation_validator.validate(d_key, d_defn)
-    if not errors:
-        for dd_key in [k for k in d_defn['details'] if not k in g_defn.DISCRETISATION_DETAILS]:
-            err = "has an invalid detail key: {}".format(dd_key)
-            errors.append(err)
+    errors = validate_details_container(key, defn, g_defn.DISCRETISATION_DETAILS)
 
-    return ["DISCRETISATION['{}'] {}".format(d_key, e) for e in errors]
+    return ["DISCRETISATION['{}'] {}".format(key, e) for e in errors]
 
 
 def validate(key, defn):

@@ -23,8 +23,6 @@ def validate(key, defn, processes):
     :param module defn: Realm definition.
 
     """
-    defn.PROCESS_KEYS = [p.__name__ for p in processes]
-
     # Validate standard attributes.
     errors = []
     errors += validate_std(defn, _CIM_2_REALM)
@@ -53,8 +51,9 @@ def validate(key, defn, processes):
     elif not isinstance(defn.PROCESSES, list):
         errors.append("PROCESSES must be a list of process keys")
     else:
+        process_keys = [p.__name__ for p in processes]
         for process_key in defn.PROCESSES:
-            if process_key not in defn.PROCESS_KEYS:
+            if process_key not in process_keys:
                 err = "invalid process key: {}".format(process_key)
                 errors.append(err)
 

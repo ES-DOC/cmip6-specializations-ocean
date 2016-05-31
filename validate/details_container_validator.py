@@ -1,5 +1,5 @@
 """
-.. module:: discretisation_validator.py
+.. module:: details_container_validator.py
    :license: GPL/CeCIL
    :platform: Unix, Windows
    :synopsis: Validates a CMIP6 discretisation specialization.
@@ -8,7 +8,7 @@
 
 
 """
-def validate(key, defn):
+def validate(key, defn, details_collection):
     """Validates a scientific sub-process specialization.
 
     :param str key: Discretisation key.
@@ -30,5 +30,10 @@ def validate(key, defn):
         errors.append("details must be a list")
     elif [i for i in defn["details"] if not isinstance(i, str)]:
         errors.append("details contains invalid key(s)")
+
+    if not errors:
+        for key in [k for k in defn['details'] if not k in details_collection]:
+            err = "has an invalid detail key: {}".format(key)
+            errors.append(err)
 
     return errors

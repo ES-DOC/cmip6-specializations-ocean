@@ -10,8 +10,9 @@
 """
 import collections
 
-import details_validator
-import enum_validator
+from details_container_validator import validate as validate_details_container
+from details_validator import validate as validate_details
+from enum_validator import validate as validate_enum
 from utils import set_default
 from utils import validate_spec
 from utils import validate_std
@@ -20,6 +21,29 @@ from utils import validate_std
 
 # CIM 2 type name.
 _CIM_2_KEY_PROPERTIES = "cim.2.science.key_properties"
+
+# Set of fields.
+_FIELDS = {
+    'DETAILS',
+    'ENUMERATIONS',
+    'EXTENT',
+    'EXTENT_DETAILS',
+    'EXTRA_CONSERVATION_PROPERTIES',
+    'EXTRA_CONSERVATION_PROPERTIES_DETAILS',
+    'RESOLUTION',
+    'RESOLUTION_DETAILS',
+    'TUNING_APPLIED',
+    'TUNING_APPLIED_DETAILS',
+    }
+
+
+def _validate(kp_defn, typeof, key, defn):
+    """Validates an associated resolution.
+
+    """
+    errors = validate_details_container(key, defn, getattr(kp_defn, "{}_DETAILS".format(typeof)))
+
+    return ["{}['{}'] {}".format(typeof, key, e) for e in errors]
 
 
 def validate(key, defn):
@@ -30,24 +54,34 @@ def validate(key, defn):
 
     """
     # Set defaults for optional fields.
-    set_default(defn, 'DETAILS', collections.OrderedDict())
-    set_default(defn, 'ENUMERATIONS', collections.OrderedDict())
+    for field in _FIELDS:
+        set_default(defn, field, collections.OrderedDict())
 
-    # Validate standard attributes.
     # Level-1 validation.
     errors = []
     errors += validate_std(defn, _CIM_2_KEY_PROPERTIES)
-    errors += validate_spec(defn, "DETAILS", (dict, tuple))
-    errors += validate_spec(defn, "ENUMERATIONS")
+    for field in _FIELDS:
+        if field.endswith("DETAILS"):
+            errors += validate_spec(defn, field, (dict, tuple))
+        else:
+            errors += validate_spec(defn, field)
 
     # Escape if level-1 errors.
     if errors:
         return errors
 
     # Level-2 validation.
-    for dt_key, dt_defn in defn.DETAILS.items():
-        errors += details_validator.validate(dt_key, dt_defn)
-    for e_key, e_defn in defn.ENUMERATIONS.items():
-        errors += enum_validator.validate(e_key, e_defn)
+    for k, d in defn.DETAILS.items():
+        errors += validate_details(k, d)
+    for k, d in defn.ENUMERATIONS.items():
+        errors += validate_enum(k, d)
+    for field in {
+        'EXTENT',
+        'EXTRA_CONSERVATION_PROPERTIES',
+        'RESOLUTION',
+        'TUNING_APPLIED'
+        }:
+        for k, d in getattr(defn, field).items():
+            errors += _validate(defn, field, k, d)
 
     return errors
