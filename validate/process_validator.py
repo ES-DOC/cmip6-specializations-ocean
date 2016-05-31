@@ -23,14 +23,27 @@ from utils import validate_std
 # CIM 2 type name.
 _CIM_2_PROCESS = "cim.2.science.process"
 
+# Set of fields.
+_FIELDS = {
+    'DETAILS',
+    'ENUMERATIONS',
+    'SUB_PROCESSES',
+    'SUB_PROCESS_DETAILS'
+    }
 
-def _validate_sub_process(p_defn, sp_key, sp_defn):
+# Map of fields to acceptable file value types.
+_FIELD_TYPE_MAP = {
+    'DETAILS': (dict, tuple)
+}
+
+
+def _validate_sub_process(defn, sp_key, sp_defn):
     """Validates an associated sub-prcess.
 
     """
     errors = sub_process_validator.validate(sp_key, sp_defn)
     if not errors:
-        for spd_key in [k for k in sp_defn['details'] if not k in p_defn.SUB_PROCESS_DETAILS]:
+        for spd_key in [k for k in sp_defn['details'] if not k in defn.SUB_PROCESS_DETAILS]:
             err = "has an invalid detail key: {}".format(spd_key)
             errors.append(err)
 
@@ -45,31 +58,30 @@ def validate(key, defn):
 
     """
     # Set defaults for optional fields.
-    set_default(defn, 'DETAILS', collections.OrderedDict())
-    set_default(defn, 'ENUMERATIONS', collections.OrderedDict())
-    set_default(defn, 'SUB_PROCESSES', collections.OrderedDict())
-    set_default(defn, 'SUB_PROCESS_DETAILS', collections.OrderedDict())
+    for field in _FIELDS:
+        set_default(defn, field, collections.OrderedDict())
 
     # Level-1 validation.
     errors = []
     errors += validate_std(defn, _CIM_2_PROCESS)
-    errors += validate_spec(defn, "DETAILS", (dict, tuple))
-    errors += validate_spec(defn, "ENUMERATIONS")
-    errors += validate_spec(defn, "SUB_PROCESSES")
-    errors += validate_spec(defn, "SUB_PROCESS_DETAILS")
+    for field in _FIELDS:
+        try:
+            errors += validate_spec(defn, field, _FIELD_TYPE_MAP[field])
+        except KeyError:
+            errors += validate_spec(defn, field)
 
     # Escape if level-1 errors.
     if errors:
         return errors
 
     # Level-2 validation.
-    for pd_key, pd_defn in defn.DETAILS.items():
-        errors += details_validator.validate(pd_key, pd_defn)
-    for e_key, e_defn in defn.ENUMERATIONS.items():
-        errors += enum_validator.validate(e_key, e_defn)
-    for sp_key, sp_defn in defn.SUB_PROCESSES.items():
-        errors += _validate_sub_process(defn, sp_key, sp_defn)
-    for spd_key, spd_defn in defn.SUB_PROCESS_DETAILS.items():
-        errors += ["SUB_PROCESS_DETAILS['{}'] :: {}".format(spd_key, e) for e in sub_process_detail_validator.validate(spd_key, spd_defn)]
+    for key_, defn_ in defn.DETAILS.items():
+        errors += details_validator.validate(key_, defn_, defn.ENUMERATIONS)
+    for key_, defn_ in defn.ENUMERATIONS.items():
+        errors += enum_validator.validate(key_, defn_)
+    for key_, defn_ in defn.SUB_PROCESSES.items():
+        errors += _validate_sub_process(defn, key_, defn_)
+    for key_, defn_ in defn.SUB_PROCESS_DETAILS.items():
+        errors += ["SUB_PROCESS_DETAILS['{}'] :: {}".format(key_, e) for e in sub_process_detail_validator.validate(key_, defn_, defn.ENUMERATIONS)]
 
     return errors

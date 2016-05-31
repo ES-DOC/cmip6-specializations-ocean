@@ -12,7 +12,7 @@ import constants
 
 
 
-def validate(defn):
+def validate(defn, enums):
     """Validates a detail property definition.
 
     :param str key: Sub-process detail key.
@@ -20,6 +20,7 @@ def validate(defn):
 
     """
     errors = []
+    enums = enums.keys()
 
     # Unpack definition.
     name, type_, cardinality, description = defn
@@ -30,13 +31,13 @@ def validate(defn):
     # TODO apply regex
 
     # Validate property type.
-    if not isinstance(type_, str):
-        errors.append("type is invalid :: [{}]".format(type_))
+    if not isinstance(type_, (str, unicode)):
+        errors.append("type is invalid :: {}".format(type_))
     elif type_.startswith("ENUM:"):
-        # TODO verify enums
-        pass
+        if type_[5:] not in enums:
+            errors.append("enum key is invalid :: {}".format(type_))
     elif type_ not in constants.TYPES:
-        errors.append("type is invalid :: [{}]".format(type_))
+        errors.append("type is invalid :: {}".format(type_))
 
     # Validate property cardinality.
     if cardinality not in constants.CARDINALITIES:
@@ -44,6 +45,8 @@ def validate(defn):
 
     # Validate property description.
     if not isinstance(description, str):
+        errors.append("description is invalid :: [{}]".format(description))
+    elif not description.strip():
         errors.append("description is invalid :: [{}]".format(description))
     # TODO apply regex
 

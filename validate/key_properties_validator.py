@@ -41,7 +41,8 @@ def _validate(kp_defn, typeof, key, defn):
     """Validates an associated resolution.
 
     """
-    errors = validate_details_container(key, defn, getattr(kp_defn, "{}_DETAILS".format(typeof)))
+    details = getattr(kp_defn, "{}_DETAILS".format(typeof))
+    errors = validate_details_container(key, defn, details)
 
     return ["{}['{}'] {}".format(typeof, key, e) for e in errors]
 
@@ -71,17 +72,17 @@ def validate(key, defn):
         return errors
 
     # Level-2 validation.
-    for k, d in defn.DETAILS.items():
-        errors += validate_details(k, d)
-    for k, d in defn.ENUMERATIONS.items():
-        errors += validate_enum(k, d)
+    for key_, defn_ in defn.DETAILS.items():
+        errors += validate_details(key_, defn_, defn.ENUMERATIONS)
+    for key_, defn_ in defn.ENUMERATIONS.items():
+        errors += validate_enum(key_, defn_)
     for field in {
         'EXTENT',
         'EXTRA_CONSERVATION_PROPERTIES',
         'RESOLUTION',
         'TUNING_APPLIED'
         }:
-        for k, d in getattr(defn, field).items():
-            errors += _validate(defn, field, k, d)
+        for key_, defn_ in getattr(defn, field).items():
+            errors += _validate(defn, field, key_, defn_)
 
     return errors

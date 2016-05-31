@@ -12,17 +12,17 @@ import property_validator
 
 
 
-def _validate_inline(name, defn, container):
+def _validate_inline(name, defn, enums, container):
     """Validates an in-line property specialization.
 
     """
     type_, cardinality, description = defn
-    errors = property_validator.validate((name, type_, cardinality, description))
+    errors = property_validator.validate((name, type_, cardinality, description), enums)
 
     return ["{}[{}] :: {}".format(container, name, e) for e in errors]
 
 
-def _validate_group(key, defn, container):
+def _validate_group(key, defn, enums, container):
     """Validates an property group specialization.
 
     """
@@ -43,12 +43,12 @@ def _validate_group(key, defn, container):
         errors.append("all properties must be 4 member tuples")
     else:
         for defn in defn['properties']:
-            errors += property_validator.validate(defn)
+            errors += property_validator.validate(defn, enums)
 
     return ["{}['{}']: {}".format(container, key, e) for e in errors]
 
 
-def validate(key, defn, container="DETAILS"):
+def validate(key, defn, enums, container="DETAILS"):
     """Validates a scientific sub-process specialization.
 
     :param str key: Sub-process detail key.
@@ -57,4 +57,4 @@ def validate(key, defn, container="DETAILS"):
     """
     func = _validate_inline if isinstance(defn, tuple) else _validate_group
 
-    return func(key, defn, container)
+    return func(key, defn, enums, container)

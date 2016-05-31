@@ -9,23 +9,24 @@
 
 """
 def validate(key, defn, details_collection):
-    """Validates a scientific sub-process specialization.
+    """Validates a set of details pertaining to a details specialization container.
 
-    :param str key: Discretisation key.
-    :param dict defn: Discretisation definition.
+    :param str key: Specialization detail key.
+    :param dict defn: Specialization detail definition.
+    :param list defn: Associated specialization detail collection.
 
     """
     errors = []
 
     # Validate description.
     if "description" not in defn:
-        errors.append("description is missing")
+        errors.append("has no description")
     elif not isinstance(defn["description"], str):
         errors.append("description must be a string")
 
     # Validate details.
     if "details" not in defn:
-        errors.append("details are missing")
+        errors.append("has no details")
     elif not isinstance(defn["details"], list):
         errors.append("details must be a list")
     elif [i for i in defn["details"] if not isinstance(i, str)]:

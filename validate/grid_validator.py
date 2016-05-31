@@ -11,7 +11,6 @@
 import collections
 
 import details_validator
-import discretisation_detail_validator
 import enum_validator
 from details_container_validator import validate as validate_details_container
 from utils import validate_spec
@@ -31,6 +30,16 @@ def _validate_discretisation(g_defn, key, defn):
     errors = validate_details_container(key, defn, g_defn.DISCRETISATION_DETAILS)
 
     return ["DISCRETISATION['{}'] {}".format(key, e) for e in errors]
+
+
+def _validate(kp_defn, typeof, key, defn):
+    """Validates an associated resolution.
+
+    """
+    details = getattr(kp_defn, "{}_DETAILS".format(typeof))
+    errors = validate_details_container(key, defn, details)
+
+    return ["{}['{}'] {}".format(typeof, key, e) for e in errors]
 
 
 def validate(key, defn):
@@ -60,12 +69,12 @@ def validate(key, defn):
 
     # Level-2 validation.
     for dt_key, dt_defn in defn.DETAILS.items():
-        errors += details_validator.validate(dt_key, dt_defn)
+        errors += details_validator.validate(dt_key, dt_defn, defn.ENUMERATIONS)
     for e_key, e_defn in defn.ENUMERATIONS.items():
         errors += enum_validator.validate(e_key, e_defn)
     for d_key, d_defn in defn.DISCRETISATION.items():
         errors += _validate_discretisation(defn, d_key, d_defn)
-    for dd_key, dd_defn in defn.DISCRETISATION_DETAILS.items():
-        errors += ["DISCRETISATION_DETAILS['{}'] :: {}".format(dd_key, e) for e in discretisation_detail_validator.validate(dd_key, dd_defn)]
+    for key_, defn_ in defn.DISCRETISATION.items():
+        errors += _validate(defn, "DISCRETISATION", key_, defn_)
 
     return errors

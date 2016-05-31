@@ -12,11 +12,12 @@ import property_validator
 
 
 
-def validate(key, defn):
+def validate(key, defn, enums):
     """Validates a scientific sub-process specialization.
 
     :param str key: Sub-process detail key.
     :param module defn: Sub-process detail definition.
+    :param list enums: Set of allowed enumerations.
 
     """
     errors = []
@@ -35,7 +36,7 @@ def validate(key, defn):
     elif [p for p in defn['properties'] if not isinstance(p, tuple) or len(p) != 4]:
         errors.append("properties must be 4 member tuples")
     else:
-        for defn in defn['properties']:
-            errors += property_validator.validate(defn)
+        for defn_ in defn['properties']:
+            errors += property_validator.validate(defn_, enums)
 
     return errors

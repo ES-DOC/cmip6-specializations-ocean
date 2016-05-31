@@ -74,6 +74,9 @@ def validate_std(module, cim_type):
 
 
 def validate_spec(target, attr, types=(dict, )):
+    """Validates a specialization collection.
+
+    """
     errors = []
 
     if not hasattr(target, attr):
@@ -83,7 +86,6 @@ def validate_spec(target, attr, types=(dict, )):
     else:
         for key, defn in getattr(target, attr).items():
             if not isinstance(defn, types):
-
                 err = "{}[{}]: must be a {}".format(attr, key, " or ".join([i.__name__ for i in types]))
                 errors.append(err)
 
