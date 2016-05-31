@@ -10,9 +10,9 @@
 """
 import collections
 
-import details_validator
-import enum_validator
-from details_container_validator import validate as validate_details_container
+import validate_details
+import validate_details_container
+import validate_enum
 from utils import validate_spec
 from utils import validate_std
 from utils import set_default
@@ -27,7 +27,7 @@ def _validate_discretisation(g_defn, key, defn):
     """Validates an associated discretisation.
 
     """
-    errors = validate_details_container(key, defn, g_defn.DISCRETISATION_DETAILS)
+    errors = validate_details_container.validate(key, defn, g_defn.DISCRETISATION_DETAILS)
 
     return ["DISCRETISATION['{}'] {}".format(key, e) for e in errors]
 
@@ -69,9 +69,9 @@ def validate(key, defn):
 
     # Level-2 validation.
     for dt_key, dt_defn in defn.DETAILS.items():
-        errors += details_validator.validate(dt_key, dt_defn, defn.ENUMERATIONS)
+        errors += validate_details.validate(dt_key, dt_defn, defn.ENUMERATIONS)
     for e_key, e_defn in defn.ENUMERATIONS.items():
-        errors += enum_validator.validate(e_key, e_defn)
+        errors += validate_enum.validate(e_key, e_defn)
     for d_key, d_defn in defn.DISCRETISATION.items():
         errors += _validate_discretisation(defn, d_key, d_defn)
     for key_, defn_ in defn.DISCRETISATION.items():

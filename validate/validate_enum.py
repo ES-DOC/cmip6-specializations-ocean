@@ -8,7 +8,7 @@
 
 
 """
-import enum_member_validator
+import validate_enum_member
 
 
 
@@ -38,6 +38,6 @@ def validate(key, defn):
         errors.append("members must defined as tuples: (name, description)")
     else:
         for m_defn in defn['members']:
-        	errors += enum_member_validator.validate(m_defn)
+        	errors += validate_enum_member.validate(m_defn)
 
     return ["enum {} :: {}".format(key, e) for e in errors]

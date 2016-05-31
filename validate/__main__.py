@@ -47,10 +47,11 @@ def _validate():
     """Validates the specialization set.
 
     """
-    errors = collections.defaultdict(list)
-
     # Set specialization modules.
     realm, grid, key_properties, processes = utils.get_specializations(_ARGS.input_dir)
+
+    # Initialise errors.
+    errors = collections.defaultdict(list)
 
     # Validate realm.
     key, defn = realm.__name__, realm

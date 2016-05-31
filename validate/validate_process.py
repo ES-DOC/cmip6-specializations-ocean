@@ -10,10 +10,10 @@
 """
 import collections
 
-import details_validator
-import enum_validator
-import sub_process_validator
-import sub_process_detail_validator
+import validate_details
+import validate_enum
+import validate_sub_process
+import validate_sub_process_detail
 from utils import set_default
 from utils import validate_spec
 from utils import validate_std
@@ -41,7 +41,7 @@ def _validate_sub_process(defn, sp_key, sp_defn):
     """Validates an associated sub-prcess.
 
     """
-    errors = sub_process_validator.validate(sp_key, sp_defn)
+    errors = validate_sub_process.validate(sp_key, sp_defn)
     if not errors:
         for spd_key in [k for k in sp_defn['details'] if not k in defn.SUB_PROCESS_DETAILS]:
             err = "has an invalid detail key: {}".format(spd_key)
@@ -76,12 +76,12 @@ def validate(key, defn):
 
     # Level-2 validation.
     for key_, defn_ in defn.DETAILS.items():
-        errors += details_validator.validate(key_, defn_, defn.ENUMERATIONS)
+        errors += validate_details.validate(key_, defn_, defn.ENUMERATIONS)
     for key_, defn_ in defn.ENUMERATIONS.items():
-        errors += enum_validator.validate(key_, defn_)
+        errors += validate_enum.validate(key_, defn_)
     for key_, defn_ in defn.SUB_PROCESSES.items():
         errors += _validate_sub_process(defn, key_, defn_)
     for key_, defn_ in defn.SUB_PROCESS_DETAILS.items():
-        errors += ["SUB_PROCESS_DETAILS['{}'] :: {}".format(key_, e) for e in sub_process_detail_validator.validate(key_, defn_, defn.ENUMERATIONS)]
+        errors += ["SUB_PROCESS_DETAILS['{}'] :: {}".format(key_, e) for e in validate_sub_process_detail.validate(key_, defn_, defn.ENUMERATIONS)]
 
     return errors

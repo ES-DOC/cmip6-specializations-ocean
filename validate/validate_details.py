@@ -8,7 +8,7 @@
 
 
 """
-import property_validator
+import validate_property
 
 
 
@@ -17,7 +17,7 @@ def _validate_inline(name, defn, enums, container):
 
     """
     type_, cardinality, description = defn
-    errors = property_validator.validate((name, type_, cardinality, description), enums)
+    errors = validate_property.validate((name, type_, cardinality, description), enums)
 
     return ["{}[{}] :: {}".format(container, name, e) for e in errors]
 
@@ -43,7 +43,7 @@ def _validate_group(key, defn, enums, container):
         errors.append("all properties must be 4 member tuples")
     else:
         for defn in defn['properties']:
-            errors += property_validator.validate(defn, enums)
+            errors += validate_property.validate(defn, enums)
 
     return ["{}['{}']: {}".format(container, key, e) for e in errors]
 

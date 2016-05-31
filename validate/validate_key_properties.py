@@ -10,9 +10,9 @@
 """
 import collections
 
-from details_container_validator import validate as validate_details_container
-from details_validator import validate as validate_details
-from enum_validator import validate as validate_enum
+import validate_details
+import validate_details_container
+import validate_enum
 from utils import set_default
 from utils import validate_spec
 from utils import validate_std
@@ -42,7 +42,7 @@ def _validate(kp_defn, typeof, key, defn):
 
     """
     details = getattr(kp_defn, "{}_DETAILS".format(typeof))
-    errors = validate_details_container(key, defn, details)
+    errors = validate_details_container.validate(key, defn, details)
 
     return ["{}['{}'] {}".format(typeof, key, e) for e in errors]
 
@@ -73,9 +73,9 @@ def validate(key, defn):
 
     # Level-2 validation.
     for key_, defn_ in defn.DETAILS.items():
-        errors += validate_details(key_, defn_, defn.ENUMERATIONS)
+        errors += validate_details.validate(key_, defn_, defn.ENUMERATIONS)
     for key_, defn_ in defn.ENUMERATIONS.items():
-        errors += validate_enum(key_, defn_)
+        errors += validate_enum.validate(key_, defn_)
     for field in {
         'EXTENT',
         'EXTRA_CONSERVATION_PROPERTIES',

@@ -8,7 +8,7 @@
 
 
 """
-import property_validator
+import validate_property
 
 
 
@@ -37,6 +37,6 @@ def validate(key, defn, enums):
         errors.append("properties must be 4 member tuples")
     else:
         for defn_ in defn['properties']:
-            errors += property_validator.validate(defn_, enums)
+            errors += validate_property.validate(defn_, enums)
 
     return errors
