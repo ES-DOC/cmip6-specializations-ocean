@@ -26,79 +26,81 @@ def get_cim_id(module):
     return "cmip6.{}".format(".".join(parts))
 
 
-def validate_std(module, cim_type):
+def validate_std(ctx, cim_type):
     """Validates a modules standard attributes.
 
     """
-    errors = []
+    # Validate AUTHORS.
+    if not hasattr(ctx.module, 'AUTHORS'):
+        ctx.add("AUTHORS property is missing")
+    elif not isinstance(ctx.module.AUTHORS, str):
+        ctx.add("AUTHORS property must be a string")
 
     # Validate AUTHORS.
-    if not hasattr(module, 'AUTHORS'):
-        errors.append("AUTHORS property is missing")
-    elif not isinstance(module.AUTHORS, str):
-        errors.append("AUTHORS property must be a string")
-
-    # Validate AUTHORS.
-    if not hasattr(module, 'CONTACT'):
-        errors.append("CONTACT property is missing")
-    elif not isinstance(module.CONTACT, str):
-        errors.append("CONTACT property must be a string")
+    if not hasattr(ctx.module, 'CONTACT'):
+        ctx.add("CONTACT property is missing")
+    elif not isinstance(ctx.module.CONTACT, str):
+        ctx.add("CONTACT property must be a string")
 
     # Validate DESCRIPTION.
-    if not hasattr(module, 'DESCRIPTION'):
-        errors.append("DESCRIPTION property is missing")
-    elif not isinstance(module.DESCRIPTION, str):
-        errors.append("DESCRIPTION property must be a string")
+    if not hasattr(ctx.module, 'DESCRIPTION'):
+        ctx.add("DESCRIPTION property is missing")
+    elif not isinstance(ctx.module.DESCRIPTION, str):
+        ctx.add("DESCRIPTION property must be a string")
 
     # Validate ID.
-    if not hasattr(module, 'ID'):
-        errors.append("ID property is missing")
-    elif not isinstance(module.ID, str):
-        errors.append("ID property must be a string")
-    elif not module.ID == get_cim_id(module):
-        errors.append("ID must be = {}".format(get_cim_id(module)))
+    if not hasattr(ctx.module, 'ID'):
+        ctx.add("ID property is missing")
+    elif not isinstance(ctx.module.ID, str):
+        ctx.add("ID property must be a string")
+    elif not ctx.module.ID == get_cim_id(ctx.module):
+        ctx.add("ID must be = {}".format(get_cim_id(ctx.module)))
 
     # Validate _TYPE.
-    if not hasattr(module, '_TYPE'):
-        errors.append("_TYPE property is missing")
-    elif module._TYPE != cim_type:
-        errors.append("_TYPE must be = {}".format(cim_type))
+    if not hasattr(ctx.module, '_TYPE'):
+        ctx.add("_TYPE property is missing")
+    elif ctx.module._TYPE != cim_type:
+        ctx.add("_TYPE must be = {}".format(cim_type))
 
     # Validate QC_STATUS.
-    if not hasattr(module, 'QC_STATUS'):
-        errors.append("QC_STATUS property is missing")
-    elif module.QC_STATUS not in constants.QC_STATES:
-        errors.append("QC_STATUS is invalid. Valid set = {}".format(list(constants.QC_STATES)))
-
-    return errors
+    if not hasattr(ctx.module, 'QC_STATUS'):
+        ctx.add("QC_STATUS property is missing")
+    elif ctx.module.QC_STATUS not in constants.QC_STATES:
+        ctx.add("QC_STATUS is invalid. Valid set = {}".format(list(constants.QC_STATES)))
 
 
-def validate_spec(target, attr, types=(dict, )):
+def validate_spec(ctx, attr, types=(dict, )):
     """Validates a specialization collection.
 
     """
-    errors = []
-
-    if not hasattr(target, attr):
-        errors.append("{} is missing".format(attr))
-    elif not isinstance(getattr(target, attr), collections.OrderedDict):
-        errors.append("{} must be an OrderedDict".format(attr))
+    if not hasattr(ctx.module, attr):
+        ctx.add("{} is missing".format(attr))
+    elif not isinstance(getattr(ctx.module, attr), collections.OrderedDict):
+        ctx.add("{} must be an OrderedDict".format(attr))
     else:
-        for key, defn in getattr(target, attr).items():
+        for key, defn in getattr(ctx.module, attr).items():
             if not isinstance(defn, types):
                 err = "{}[{}]: must be a {}".format(attr, key, " or ".join([i.__name__ for i in types]))
-                errors.append(err)
-
-    return errors
+                ctx.add(err)
 
 
-def get_specializations(input_dir):
+def get_specializations(input_dir, realm):
     """Returns specialization modules organized by type.
 
+    :param str input_dir: Directory within which modules reside.
+    :param str realm: Name of realm being processed.
+
     """
+    def is_target(filename):
+        """Returns flag indicating whether a module is a specialization target or not.
+
+        """
+        return not filename.startswith('_') and \
+               filename.endswith('.py') and \
+               filename.startswith(realm)
+
     # Load specialization modules.
-    modules = sorted([i for i in os.listdir(input_dir)
-                     if not i.startswith('_') and i.endswith('.py')])
+    modules = sorted([i for i in os.listdir(input_dir) if is_target(i)])
     modules = [os.path.join(input_dir, m) for m in modules]
     modules = [(m.split("/")[-1].split(".")[0], m) for m in modules]
     modules = [imp.load_source(name, fpath) for name, fpath in modules]
@@ -117,13 +119,6 @@ def get_specializations(input_dir):
             processes.append(module)
 
     return realm, grid, key_properties, processes
-
-
-def get_specialization(input_dir, key):
-    """Returns specialization modules organized by type.
-
-    """
-    raise NotImplementedError()
 
 
 def set_default(target, attr, value):

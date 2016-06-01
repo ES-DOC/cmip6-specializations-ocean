@@ -9,15 +9,15 @@
 
 """
 import argparse
-import collections
 import datetime
 import operator
 import os
 
-import grid_validator
-import key_properties_validator
-import process_validator
-import realm_validator
+from context import ValidationContext
+from validate_grid import validate as validate_grid
+from validate_key_properties import validate as validate_key_properties
+from validate_process import validate as validate_process
+from validate_realm import validate as validate_realm
 import utils
 
 
@@ -42,40 +42,16 @@ _ARGS = _ARGS.parse_args()
 # Report section break.
 _REPORT_BREAK = "------------------------------------------------------------------------"
 
+# Set specializations.
+realm, grid, key_properties, processes = \
+    utils.get_specializations(_ARGS.input_dir, _ARGS.realm)
 
-def _validate():
-    """Validates the specialization set.
-
-    """
-    # Set specialization modules.
-    realm, grid, key_properties, processes = utils.get_specializations(_ARGS.input_dir)
-
-    # Initialise errors.
-    errors = collections.defaultdict(list)
-
-    # Validate realm.
-    key, defn = realm.__name__, realm
-    errors[defn] += realm_validator.validate(key, defn, processes)
-
-    # Validate grid.
-    if grid:
-        key, defn = grid.__name__, grid
-        errors[grid] += grid_validator.validate(key, defn)
-
-    # Validate key properties.
-    if key_properties:
-        key, defn = key_properties.__name__, key_properties
-        errors[key_properties] += key_properties_validator.validate(key, defn)
-
-    # Validate processes.
-    for key, defn in [(p.__name__, p) for p in processes]:
-        errors[defn] += process_validator.validate(key, defn)
-
-    return {k: v for k, v in errors.items() if v}
-
+# Set validator.
+validator = ValidationContext(realm, grid, key_properties, processes)
+validator.validate()
 
 # Set errors.
-in_error = _validate()
+in_error = validator.get_errors()
 error_count = 0 if not in_error else len(reduce(operator.add, in_error.values()))
 
 # Set report.

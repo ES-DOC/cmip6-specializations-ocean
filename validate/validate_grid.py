@@ -10,9 +10,9 @@
 """
 import collections
 
-import validate_details
-import validate_details_container
-import validate_enum
+from validate_details import validate as validate_details
+from validate_enum import validate as validate_enum
+from validate_details_container import validate as validate_details_container
 from utils import validate_spec
 from utils import validate_std
 from utils import set_default
@@ -22,59 +22,51 @@ from utils import set_default
 # CIM 2 type name.
 _CIM_2_GRID = "cim.2.science.grid"
 
+# Set of fields.
+_FIELDS = {
+    'DETAILS': (dict, tuple),
+    'ENUMERATIONS': (dict, ),
+    'DISCRETISATION': (dict, ),
+    'DISCRETISATION_DETAILS': (dict, )
+    }
 
-def _validate_discretisation(g_defn, key, defn):
-    """Validates an associated discretisation.
+
+def _validate(mod, attr, key, obj):
+    """Validates an associated details container.
 
     """
-    errors = validate_details_container.validate(key, defn, g_defn.DISCRETISATION_DETAILS)
+    details = getattr(mod, "{}_DETAILS".format(attr))
+    errors = validate_details_container(key, obj, details)
 
-    return ["DISCRETISATION['{}'] {}".format(key, e) for e in errors]
-
-
-def _validate(kp_defn, typeof, key, defn):
-    """Validates an associated resolution.
-
-    """
-    details = getattr(kp_defn, "{}_DETAILS".format(typeof))
-    errors = validate_details_container(key, defn, details)
-
-    return ["{}['{}'] {}".format(typeof, key, e) for e in errors]
+    return ["{}['{}'] {}".format(attr, key, e) for e in errors]
 
 
-def validate(key, defn):
+def validate(ctx):
     """Validates a scientific grid specialization.
 
-    :param str key: Grid key.
-    :param module defn: Grid definition.
+    :param ValidationContext ctx: Validation contextual information.
 
     """
+    # Set helper vars.
+    mod = ctx.grid
+
     # Set defaults for optional fields.
-    set_default(defn, 'ENUMERATIONS', collections.OrderedDict())
-    set_default(defn, 'DETAILS', collections.OrderedDict())
-    set_default(defn, 'DISCRETISATION', collections.OrderedDict())
-    set_default(defn, 'DISCRETISATION_DETAILS', collections.OrderedDict())
+    for field in _FIELDS.keys():
+        set_default(mod, field, collections.OrderedDict())
 
     # Level-1 validation.
-    errors = []
-    errors += validate_std(defn, _CIM_2_GRID)
-    errors += validate_spec(defn, "ENUMERATIONS")
-    errors += validate_spec(defn, "DETAILS", (dict, tuple))
-    errors += validate_spec(defn, "DISCRETISATION")
-    errors += validate_spec(defn, "DISCRETISATION_DETAILS")
+    validate_std(ctx, _CIM_2_GRID)
+    for field, types in _FIELDS.items():
+        validate_spec(ctx, field, types)
 
     # Escape if level-1 errors.
-    if errors:
-        return errors
+    if ctx.errors[mod]:
+        return
 
     # Level-2 validation.
-    for dt_key, dt_defn in defn.DETAILS.items():
-        errors += validate_details.validate(dt_key, dt_defn, defn.ENUMERATIONS)
-    for e_key, e_defn in defn.ENUMERATIONS.items():
-        errors += validate_enum.validate(e_key, e_defn)
-    for d_key, d_defn in defn.DISCRETISATION.items():
-        errors += _validate_discretisation(defn, d_key, d_defn)
-    for key_, defn_ in defn.DISCRETISATION.items():
-        errors += _validate(defn, "DISCRETISATION", key_, defn_)
-
-    return errors
+    for key, obj in mod.DETAILS.items():
+        ctx.errors[mod] += validate_details(key, obj, mod.ENUMERATIONS)
+    for key, obj in mod.ENUMERATIONS.items():
+        ctx.errors[mod] += validate_enum(key, obj)
+    for key, obj in mod.DISCRETISATION.items():
+        ctx.errors[mod] += _validate(mod, "DISCRETISATION", key, obj)

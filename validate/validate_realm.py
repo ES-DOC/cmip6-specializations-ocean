@@ -16,45 +16,44 @@ from utils import validate_std
 _CIM_2_REALM = "cim.2.science.scientific_realm"
 
 
-def validate(key, defn, processes):
+def validate(ctx):
     """Validates a scientific realm specialization.
 
-    :param str key: Realm key.
-    :param module defn: Realm definition.
+    :param ValidationContext ctx: Validation contextual information.
 
     """
+    # Set helper vars.
+    mod = ctx.realm
+
     # Validate standard attributes.
-    errors = []
-    errors += validate_std(defn, _CIM_2_REALM)
+    validate_std(ctx, _CIM_2_REALM)
 
     # Validate REALM.
-    if not hasattr(defn, "REALM"):
-        errors.append("REALM is missing")
-    elif not defn.REALM == key:
-        errors.append("REALM must be = {}".format(key))
+    if not hasattr(mod, "REALM"):
+        ctx.add("REALM is missing")
+    elif not mod.REALM == ctx.realm_key:
+        ctx.add("REALM must be = {}".format(ctx.realm_key))
 
     # Validate GRID.
-    if not hasattr(defn, "GRID"):
-        errors.append("GRID is missing")
-    elif not defn.GRID == "{}_grid".format(key):
-        errors.append("GRID must be = {}".format("{}_grid".format(key)))
+    if not hasattr(mod, "GRID"):
+        ctx.add("GRID is missing")
+    elif not mod.GRID == "{}_grid".format(ctx.realm_key):
+        ctx.add("GRID must be = {}".format("{}_grid".format(ctx.realm_key)))
 
     # Validate KEY_PROPERTIES.
-    if not hasattr(defn, "KEY_PROPERTIES"):
-        errors.append("KEY_PROPERTIES property is missing")
-    elif not defn.KEY_PROPERTIES == "{}_key_properties".format(key):
-        errors.append("KEY_PROPERTIES must be = {}".format("{}_key_properties".format(key)))
+    if not hasattr(mod, "KEY_PROPERTIES"):
+        ctx.add("KEY_PROPERTIES property is missing")
+    elif not mod.KEY_PROPERTIES == "{}_key_properties".format(ctx.realm_key):
+        ctx.add("KEY_PROPERTIES must be = {}".format("{}_key_properties".format(ctx.realm_key)))
 
     # Validate PROCESSES.
-    if not hasattr(defn, "PROCESSES"):
-        errors.append("PROCESSES property is missing")
-    elif not isinstance(defn.PROCESSES, list):
-        errors.append("PROCESSES must be a list of process keys")
+    if not hasattr(mod, "PROCESSES"):
+        ctx.add("PROCESSES property is missing")
+    elif not isinstance(mod.PROCESSES, list):
+        ctx.add("PROCESSES must be a list of process keys")
     else:
-        process_keys = [p.__name__ for p in processes]
-        for process_key in defn.PROCESSES:
+        process_keys = [p.__name__ for p in ctx.processes]
+        for process_key in mod.PROCESSES:
             if process_key not in process_keys:
                 err = "invalid process key: {}".format(process_key)
-                errors.append(err)
-
-    return ["realm: {}".format(e) for e in errors]
+                ctx.add(err)

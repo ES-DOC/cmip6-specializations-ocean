@@ -10,10 +10,10 @@
 """
 import collections
 
-import validate_details
-import validate_enum
-import validate_sub_process
-import validate_sub_process_detail
+from validate_details import validate as validate_details
+from validate_enum import validate as validate_enum
+from validate_sub_process import validate as validate_sub_process
+from validate_sub_process_detail import validate as validate_sub_process_detail
 from utils import set_default
 from utils import validate_spec
 from utils import validate_std
@@ -23,65 +23,57 @@ from utils import validate_std
 # CIM 2 type name.
 _CIM_2_PROCESS = "cim.2.science.process"
 
-# Set of fields.
-_FIELDS = {
-    'DETAILS',
-    'ENUMERATIONS',
-    'SUB_PROCESSES',
-    'SUB_PROCESS_DETAILS'
-    }
-
 # Map of fields to acceptable file value types.
-_FIELD_TYPE_MAP = {
-    'DETAILS': (dict, tuple)
+_FIELDS = {
+    'DETAILS': (dict, tuple),
+    'ENUMERATIONS': (dict, ),
+    'SUB_PROCESSES': (dict, ),
+    'SUB_PROCESS_DETAILS': (dict, ),
 }
 
 
-def _validate_sub_process(defn, sp_key, sp_defn):
+def _validate_sub_process(mod, key, obj):
     """Validates an associated sub-prcess.
 
     """
-    errors = validate_sub_process.validate(sp_key, sp_defn)
+    errors = validate_sub_process(key, obj)
     if not errors:
-        for spd_key in [k for k in sp_defn['details'] if not k in defn.SUB_PROCESS_DETAILS]:
-            err = "has an invalid detail key: {}".format(spd_key)
+        for key_ in [k for k in obj['details'] if not k in mod.SUB_PROCESS_DETAILS]:
+            err = "has an invalid detail key: {}".format(key_)
             errors.append(err)
 
-    return ["SUB_PROCESSES['{}'] {}".format(sp_key, e) for e in errors]
+    return ["SUB_PROCESSES['{}'] {}".format(key, e) for e in errors]
 
 
-def validate(key, defn):
+def validate(ctx):
     """Validates a scientific process specialization.
 
-    :param str key: Process key.
-    :param module defn: Process definition.
+    :param ValidationContext ctx: Validation contextual information.
 
     """
+    # Set helper vars.
+    mod = ctx.process
+
     # Set defaults for optional fields.
-    for field in _FIELDS:
-        set_default(defn, field, collections.OrderedDict())
+    for field in _FIELDS.keys():
+        set_default(mod, field, collections.OrderedDict())
 
     # Level-1 validation.
-    errors = []
-    errors += validate_std(defn, _CIM_2_PROCESS)
-    for field in _FIELDS:
-        try:
-            errors += validate_spec(defn, field, _FIELD_TYPE_MAP[field])
-        except KeyError:
-            errors += validate_spec(defn, field)
+    validate_std(ctx, _CIM_2_PROCESS)
+    for field, types in _FIELDS.items():
+        validate_spec(ctx, field, types)
 
     # Escape if level-1 errors.
-    if errors:
-        return errors
+    if ctx.errors[mod]:
+        return
 
     # Level-2 validation.
-    for key_, defn_ in defn.DETAILS.items():
-        errors += validate_details.validate(key_, defn_, defn.ENUMERATIONS)
-    for key_, defn_ in defn.ENUMERATIONS.items():
-        errors += validate_enum.validate(key_, defn_)
-    for key_, defn_ in defn.SUB_PROCESSES.items():
-        errors += _validate_sub_process(defn, key_, defn_)
-    for key_, defn_ in defn.SUB_PROCESS_DETAILS.items():
-        errors += ["SUB_PROCESS_DETAILS['{}'] :: {}".format(key_, e) for e in validate_sub_process_detail.validate(key_, defn_, defn.ENUMERATIONS)]
-
-    return errors
+    for key, obj in mod.DETAILS.items():
+        ctx.errors[mod] += validate_details(key, obj, mod.ENUMERATIONS)
+    for key, obj in mod.ENUMERATIONS.items():
+        ctx.errors[mod] += validate_enum(key, obj)
+    for key, obj in mod.SUB_PROCESSES.items():
+        ctx.errors[mod] += _validate_sub_process(mod, key, obj)
+    for key, obj in mod.SUB_PROCESS_DETAILS.items():
+        ctx.errors[mod] += ["SUB_PROCESS_DETAILS['{}'] :: {}".format(key, e) for e in
+                            validate_sub_process_detail(key, obj, mod.ENUMERATIONS)]

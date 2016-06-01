@@ -10,9 +10,9 @@
 """
 import collections
 
-import validate_details
-import validate_details_container
-import validate_enum
+from validate_details import validate as validate_details
+from validate_details_container import validate as validate_details_container
+from validate_enum import validate as validate_enum
 from utils import set_default
 from utils import validate_spec
 from utils import validate_std
@@ -24,65 +24,61 @@ _CIM_2_KEY_PROPERTIES = "cim.2.science.key_properties"
 
 # Set of fields.
 _FIELDS = {
-    'DETAILS',
-    'ENUMERATIONS',
-    'EXTENT',
-    'EXTENT_DETAILS',
-    'EXTRA_CONSERVATION_PROPERTIES',
-    'EXTRA_CONSERVATION_PROPERTIES_DETAILS',
-    'RESOLUTION',
-    'RESOLUTION_DETAILS',
-    'TUNING_APPLIED',
-    'TUNING_APPLIED_DETAILS',
+    'DETAILS': (dict, tuple),
+    'ENUMERATIONS': (dict, ),
+    'EXTENT': (dict, ),
+    'EXTENT_DETAILS': (dict, tuple),
+    'EXTRA_CONSERVATION_PROPERTIES': (dict, ),
+    'EXTRA_CONSERVATION_PROPERTIES_DETAILS': (dict, tuple),
+    'RESOLUTION': (dict, ),
+    'RESOLUTION_DETAILS': (dict, tuple),
+    'TUNING_APPLIED': (dict, ),
+    'TUNING_APPLIED_DETAILS': (dict, tuple)
     }
 
 
-def _validate(kp_defn, typeof, key, defn):
-    """Validates an associated resolution.
+def _validate(mod, attr, key, obj):
+    """Validates an associated details container.
 
     """
-    details = getattr(kp_defn, "{}_DETAILS".format(typeof))
-    errors = validate_details_container.validate(key, defn, details)
+    details = getattr(mod, "{}_DETAILS".format(attr))
+    errors = validate_details_container(key, obj, details)
 
-    return ["{}['{}'] {}".format(typeof, key, e) for e in errors]
+    return ["{}['{}'] {}".format(attr, key, e) for e in errors]
 
 
-def validate(key, defn):
+def validate(ctx):
     """Validates a scientific grid specialization.
 
-    :param str key: Key properties key.
-    :param module defn: Key properties definition.
+    :param ValidationContext ctx: Validation contextual information.
 
     """
+    # Set helper vars.
+    mod = ctx.key_properties
+
     # Set defaults for optional fields.
-    for field in _FIELDS:
-        set_default(defn, field, collections.OrderedDict())
+    for field in _FIELDS.keys():
+        set_default(mod, field, collections.OrderedDict())
 
     # Level-1 validation.
-    errors = []
-    errors += validate_std(defn, _CIM_2_KEY_PROPERTIES)
-    for field in _FIELDS:
-        if field.endswith("DETAILS"):
-            errors += validate_spec(defn, field, (dict, tuple))
-        else:
-            errors += validate_spec(defn, field)
+    validate_std(ctx, _CIM_2_KEY_PROPERTIES)
+    for field, types in _FIELDS.items():
+        validate_spec(ctx, field, types)
 
     # Escape if level-1 errors.
-    if errors:
-        return errors
+    if ctx.errors[mod]:
+        return
 
     # Level-2 validation.
-    for key_, defn_ in defn.DETAILS.items():
-        errors += validate_details.validate(key_, defn_, defn.ENUMERATIONS)
-    for key_, defn_ in defn.ENUMERATIONS.items():
-        errors += validate_enum.validate(key_, defn_)
+    for key, obj in mod.DETAILS.items():
+        ctx.errors[mod] += validate_details(key, obj, mod.ENUMERATIONS)
+    for key, obj in mod.ENUMERATIONS.items():
+        ctx.errors[mod] += validate_enum(key, obj)
     for field in {
         'EXTENT',
         'EXTRA_CONSERVATION_PROPERTIES',
         'RESOLUTION',
         'TUNING_APPLIED'
         }:
-        for key_, defn_ in getattr(defn, field).items():
-            errors += _validate(defn, field, key_, defn_)
-
-    return errors
+        for key, obj in getattr(mod, field).items():
+            ctx.errors[mod] += _validate(mod, field, key, obj)

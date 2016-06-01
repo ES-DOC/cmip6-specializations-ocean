@@ -15,8 +15,8 @@ import constants
 def validate(defn, enums):
     """Validates a detail property definition.
 
-    :param str key: Sub-process detail key.
-    :param module defn: Sub-process detail definition.
+    :param module defn: Property specialisation definition.
+    :param dict enums: Set of defined enumerations.
 
     """
     errors = []
