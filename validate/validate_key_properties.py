@@ -18,7 +18,6 @@ from utils import validate_spec
 from utils import validate_std
 
 
-
 # CIM 2 type name.
 _CIM_2_KEY_PROPERTIES = "cim.2.science.key_properties"
 

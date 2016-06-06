@@ -104,7 +104,7 @@ SUB_PROCESS_DETAILS['vert_tra_adv_scheme_details'] = {
 # --------------------------------------------------------------------
 ENUMERATIONS = OrderedDict()
 
-ENUMERATIONS['mom_adv_scheme_type'] = {
+ENUMERATIONS['adv_mom_scheme_types'] = {
     'description': 'Type of lateral momemtum advection scheme in ocean',
     'members': [
             ('Flux form', 'tbd'),
@@ -112,7 +112,7 @@ ENUMERATIONS['mom_adv_scheme_type'] = {
      ]
 }
 
-ENUMERATIONS['tra_adv_scheme_type'] = {
+ENUMERATIONS['adv_tra_scheme_types'] = {
     'description': 'Type of tracer advection scheme in ocean',
     'members':[
             ('Centred 2nd order', 'tbd'),

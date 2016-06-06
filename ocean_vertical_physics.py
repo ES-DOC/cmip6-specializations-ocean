@@ -166,7 +166,7 @@ ENUMERATIONS['interior_mixing_types'] = {
     'description': 'Types of interior mixing in ocean',
     'members': [
         ('Constant value', 'tbd'),
-        ('Turbulent closure - TKE', 'tbd'),
+        ('Turbulent closure / TKE', 'tbd'),
         ('Turbulent closure - Mellor-Yamada', 'tbd'),
         ('Richardson number dependent - PP', 'tbd'),
         ('Richardson number dependent - KT', 'tbd'),

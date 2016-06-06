@@ -8,40 +8,44 @@
 
 
 """
+import re
+
 import validate_enum_member
 
 
 
-def validate(key, defn):
-    """Validates a scientific sub-process specialization.
+# Regular expressions.
+_RE_ENUM_NAME = '^[a-z_]+$'
 
-    :param str key: Sub-process detail key.
-    :param module defn: Sub-process detail definition.
+
+def validate(name, obj):
+    """Validates an enumeration.
+
+    :param str name: Enumeration name.
+    :param dict obj: Enumeration definition.
 
     """
     errors = []
 
+    # Validate name.
+    if not re.match(_RE_ENUM_NAME, name):
+        errors.append("name is invalid - must be lower_case_underscore")
+
     # Validate description.
-    if "description" not in defn:
-        errors.append("has no description")
-    elif not isinstance(defn['description'], str):
+    if "description" not in obj:
+        errors.append("description is required")
+    elif not isinstance(obj['description'], str):
         errors.append("description must be a string")
 
     # Validate members.
-    if "members" not in defn:
-        errors.append("has no members")
-
-    elif not isinstance(defn['members'], list):
-        errors.append("members must be a list")
-
-    elif not len(defn['members']):
-        errors.append("members is an empty list")
-
-    elif [m for m in defn['members'] if not isinstance(m, tuple) or len(m) != 2]:
-        errors.append("members must defined as tuples: (name, description)")
-
+    if "members" not in obj:
+        errors.append("members is required")
+    elif not isinstance(obj['members'], list) or \
+         not len(obj['members']) or \
+         [m for m in obj['members'] if not isinstance(m, tuple) or len(m) != 2]:
+        errors.append("members must defined as a list of tuples: (name, description)")
     else:
-        for m_defn in defn['members']:
-        	errors += validate_enum_member.validate(m_defn)
+        for m_obj in obj['members']:
+        	errors += validate_enum_member.validate(m_obj)
 
-    return ["enum {} :: {}".format(key, e) for e in errors]
+    return ["ENUMERATION[{}] :: {}".format(name, e) for e in errors]

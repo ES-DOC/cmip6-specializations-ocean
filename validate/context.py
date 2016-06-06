@@ -11,6 +11,7 @@
 """
 import collections
 
+from utils import set_default
 from validate_grid import validate as validate_grid
 from validate_key_properties import validate as validate_key_properties
 from validate_process import validate as validate_process
@@ -36,7 +37,17 @@ class ValidationContext(object):
         self.processes = processes
 
 
-    def add(self, msg):
+    @property
+    def modules(self):
+        """Gets set of specialization modules.
+
+        """
+        result = [self.realm, self.grid, self.key_properties] + self.processes
+
+        return [m for m in result if m]
+
+
+    def error(self, msg):
         """Adds an error to the managed collection.
 
         """

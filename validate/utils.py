@@ -32,41 +32,41 @@ def validate_std(ctx, cim_type):
     """
     # Validate AUTHORS.
     if not hasattr(ctx.module, 'AUTHORS'):
-        ctx.add("AUTHORS property is missing")
+        ctx.error("AUTHORS property is missing")
     elif not isinstance(ctx.module.AUTHORS, str):
-        ctx.add("AUTHORS property must be a string")
+        ctx.error("AUTHORS property must be a string")
 
     # Validate AUTHORS.
     if not hasattr(ctx.module, 'CONTACT'):
-        ctx.add("CONTACT property is missing")
+        ctx.error("CONTACT property is missing")
     elif not isinstance(ctx.module.CONTACT, str):
-        ctx.add("CONTACT property must be a string")
+        ctx.error("CONTACT property must be a string")
 
     # Validate DESCRIPTION.
     if not hasattr(ctx.module, 'DESCRIPTION'):
-        ctx.add("DESCRIPTION property is missing")
+        ctx.error("DESCRIPTION property is missing")
     elif not isinstance(ctx.module.DESCRIPTION, str):
-        ctx.add("DESCRIPTION property must be a string")
+        ctx.error("DESCRIPTION property must be a string")
 
     # Validate ID.
     if not hasattr(ctx.module, 'ID'):
-        ctx.add("ID property is missing")
+        ctx.error("ID property is missing")
     elif not isinstance(ctx.module.ID, str):
-        ctx.add("ID property must be a string")
+        ctx.error("ID property must be a string")
     elif not ctx.module.ID == get_cim_id(ctx.module):
-        ctx.add("ID must be = {}".format(get_cim_id(ctx.module)))
+        ctx.error("ID must be = {}".format(get_cim_id(ctx.module)))
 
     # Validate _TYPE.
     if not hasattr(ctx.module, '_TYPE'):
-        ctx.add("_TYPE property is missing")
+        ctx.error("_TYPE property is missing")
     elif ctx.module._TYPE != cim_type:
-        ctx.add("_TYPE must be = {}".format(cim_type))
+        ctx.error("_TYPE must be = {}".format(cim_type))
 
     # Validate QC_STATUS.
     if not hasattr(ctx.module, 'QC_STATUS'):
-        ctx.add("QC_STATUS property is missing")
+        ctx.error("QC_STATUS property is missing")
     elif ctx.module.QC_STATUS not in constants.QC_STATES:
-        ctx.add("QC_STATUS is invalid. Valid set = {}".format(list(constants.QC_STATES)))
+        ctx.error("QC_STATUS is invalid. Valid set = {}".format(list(constants.QC_STATES)))
 
 
 def validate_spec(ctx, attr, types=(dict, )):
@@ -74,15 +74,14 @@ def validate_spec(ctx, attr, types=(dict, )):
 
     """
     if not hasattr(ctx.module, attr):
-        ctx.add("{} is missing".format(attr))
+        ctx.error("{} is missing".format(attr))
     elif not isinstance(getattr(ctx.module, attr), collections.OrderedDict):
-        ctx.add("{} must be an OrderedDict".format(attr))
+        ctx.error("{} must be an OrderedDict".format(attr))
     else:
         for key, defn in getattr(ctx.module, attr).items():
             if not isinstance(defn, types):
                 err = "{}[{}]: must be a {}".format(attr, key, " or ".join([i.__name__ for i in types]))
-                ctx.add(err)
-
+                ctx.error(err)
 
 def get_specializations(input_dir, realm):
     """Returns specialization modules organized by type.

@@ -40,9 +40,9 @@ DETAILS = OrderedDict()
 DETAILS['general'] = {
     'description': 'General key properties in ocean',
     'properties': [
-        ('model_family', 'ENUM:model_family_type', '1.1',
+        ('model_family', 'ENUM:model_family_types', '1.1',
             'Type of ocean model.'),
-        ('basic_approximations', 'ENUM:basic_approximations_attributes', '1.N',
+        ('basic_approximations', 'ENUM:ocean_basic_approx_types', '1.N',
             'Basic approximations made in the ocean.',),
         ('prognostic_variables', 'ENUM:prognostic_vars_types', '1.N',
             'List of prognostic variables in the ocean component.'),
@@ -64,7 +64,7 @@ DETAILS['seawater_properties'] = {
 DETAILS['bathymetry'] = {
     'description': 'Properties of bathymetry in ocean',
     'properties' : [
-        ('bathymetry_reference_dates', 'ENUM:ocean_bathymetry_ref_dates', '1.1',
+        ('bathymetry_reference_dates', 'ENUM:bathymetry_ref_dates', '1.1',
             'Reference date of bathymetry'),
         ('ocean_bathymetry_type', 'bool', '1.1',
             'Is the bathymetry fixed in time in the ocean ?'),
@@ -166,6 +166,16 @@ EXTRA_CONSERVATION_PROPERTIES_DETAILS['conservation_details'] = {
 # KEY PROPERTIES: ENUMERATIONS
 # --------------------------------------------------------------------
 ENUMERATIONS = OrderedDict()
+
+ENUMERATIONS['model_family_types'] = {
+    'description': 'Types of ocean models',
+    'members': [
+        ('AAA','tbd'),
+        ('BBB', 'tbd'),
+        ('CCC', 'tbd'),
+        ('DDD', 'tbd')
+    ]
+}
 
 ENUMERATIONS['ocean_basic_approx_types'] = {
     'description': 'Types of basic approximation in ocean',
