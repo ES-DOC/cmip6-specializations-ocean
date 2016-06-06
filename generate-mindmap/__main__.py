@@ -15,6 +15,8 @@ import xml.etree.ElementTree as ET
 
 from model import Realm
 from generator import Generator
+from utils import get_specializations
+
 
 
 # Set directory from which module is being run.
@@ -51,6 +53,9 @@ _ARGS.add_argument(
     default=os.path.join(_DIR, "stylesheet.conf")
     )
 _ARGS = _ARGS.parse_args()
+
+# Derive specialization modules.
+# mod, grid, key_properties, processes = get_specializations(input_dir, realm_name)
 
 # Set realm wrapper.
 realm = Realm(_ARGS.input_dir, _ARGS.realm)

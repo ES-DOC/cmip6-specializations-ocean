@@ -20,41 +20,8 @@ _URL = "https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/
 
 
 
-class Realm(object):
-    """Wraps a realm specialization.
-
-    """
-    def __init__(self, input_dir, realm_name):
-        """Instance constructor.
-
-        """
-        mod, grid, key_properties, processes = \
-            utils.get_specializations(input_dir, realm_name)
-
-        self.name = mod.REALM
-        self.description = mod.DESCRIPTION
-        self.grid = grid
-        self.id = "cmip6.{}".format(self.name)
-        self.key_properties = key_properties
-        self.processes = [Process(self, i) for i in processes]
-        self.style_type = "realm"
-        self.url = "{}{}.py".format(_URL, self.name)
-
-
-    @property
-    def notes(self):
-        """Returns notes.
-
-        """
-        return [
-            ("Description", self.description),
-            ("ID", self.id),
-            ("Python Definition", self.url)
-        ]
-
-
-class Process(object):
-    """Wraps a process specialization.
+class SpecializationModule(object):
+    """Wraps a standard specialization module.
 
     """
     def __init__(self, owner, mod):
@@ -66,19 +33,15 @@ class Process(object):
         self.description = mod.DESCRIPTION
         self.full_name = mod.__name__.split(".")[-1]
         self.mod = mod
-        self.name = "_".join(mod.__name__.split(".")[-1].split("_")[1:])
         self.qc_status = mod.QC_STATUS
-        self.style_type = "process"
-
-        self.url = "{}{}.py".format(_URL, self.full_name)
-        self.id = "{}.{}".format(owner.id, self.name)
-
-        try:
-            mod.SUB_PROCESSES
-        except AttributeError:
-            self.sub_processes = []
+        if owner:
+            self.name = "_".join(mod.__name__.split(".")[-1].split("_")[1:])
+            self.id = "{}.{}".format(owner.id, self.name)
+            self.url = "{}{}.py".format(_URL, self.full_name)
         else:
-            self.sub_processes = [SubProcess(self, i, j) for i, j in mod.SUB_PROCESSES.items()]
+            self.name = mod.REALM
+            self.id = "cmip6.{}".format(self.name)
+            self.url = "{}{}.py".format(_URL, self.name)
 
 
     @property
@@ -91,6 +54,78 @@ class Process(object):
             ("ID", self.id),
             ("Python Definition", self.url)
         ]
+
+
+class Realm(SpecializationModule):
+    """Wraps a realm specialization.
+
+    """
+    def __init__(self, input_dir, realm_name):
+        """Instance constructor.
+
+        """
+        mod, grid, key_properties, processes = \
+            utils.get_specializations(input_dir, realm_name)
+
+        super(Realm, self).__init__(None, mod)
+
+        self.style_type = "realm"
+        self.grid = Grid(self, grid)
+        self.key_properties = KeyProperties(self, key_properties)
+        self.processes = [Process(self, i) for i in processes]
+
+
+    @property
+    def notes(self):
+        """Returns notes.
+
+        """
+        return [
+            ("Description", self.description),
+            ("ID", self.id),
+            ("Python Definition", self.url)
+        ]
+
+
+class Process(SpecializationModule):
+    """Wraps a process specialization.
+
+    """
+    def __init__(self, owner, mod):
+        """Instance constructor.
+
+        """
+        super(Process, self).__init__(owner, mod)
+
+        self.style_type = "process"
+        try:
+            mod.SUB_PROCESSES
+        except AttributeError:
+            self.sub_processes = []
+        else:
+            self.sub_processes = [SubProcess(self, i, j) for i, j in mod.SUB_PROCESSES.items()]
+
+
+class Grid(SpecializationModule):
+    """Wraps a grid specialization.
+
+    """
+    def __init__(self, owner, mod):
+        """Instance constructor.
+
+        """
+        super(Grid, self).__init__(owner, mod)
+
+
+class KeyProperties(SpecializationModule):
+    """Wraps a key properties specialization.
+
+    """
+    def __init__(self, owner, mod):
+        """Instance constructor.
+
+        """
+        super(KeyProperties, self).__init__(owner, mod)
 
 
 class SubProcess(object):
@@ -229,8 +264,6 @@ class EnumChoice(object):
         """Instance constructor.
 
         """
-        if description and description != 'tbd':
-            print owner.id, description
         self.description = description
         self.id = "{}.{}".format(owner.id, value)
         self.value = value
