@@ -62,13 +62,13 @@ DETAILS['boundary_forcing_details'] = {
 # --------------------------------------------------------------------
 SUB_PROCESSES = OrderedDict()
 
-SUB_PROCESSES['momentum_forcing'] = {
+SUB_PROCESSES['momentum'] = {
     'description': 'Key properties of momentum boundary forcing in the ocean',
     'details': ['momentum_bottom_friction',
                 'momentum_lateral_friction'],
 }
 
-SUB_PROCESSES['tracer_forcing'] = {
+SUB_PROCESSES['tracer'] = {
     'description': 'Key properties of tracer boundary forcing in the ocean',
     'details': ['tracers_sunlight_penetration',
                 'tracers_surface_salinity_atmos',

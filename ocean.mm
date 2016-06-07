@@ -142,14 +142,14 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Using ALE for vertical advection ? (if vertical coordinates are sigma)</dd><dt><b>ID</b></dt><dd>cmip6.ocean.advection.momemtum_adv_scheme.momemtum_adv_details.mom_adv_ALE</dd><dt><b>Type</b></dt><dd>bool</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
+        <dt><b>Description</b></dt><dd>Using ALE for vertical advection ? (if vertical coordinates are sigma)</dd><dt><b>ID</b></dt><dd>cmip6.ocean.advection.momemtum_adv_scheme.momemtum_adv_details.mom_adv_ALE</dd><dt><b>Type</b></dt><dd>bool</dd><dt><b>Cardinality</b></dt><dd>0.1</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Using ALE for vertical advection ? (if vertical coordinates are sigma)</dd><dt><b>ID</b></dt><dd>cmip6.ocean.advection.momemtum_adv_scheme.momemtum_adv_details.mom_adv_ALE</dd><dt><b>Type</b></dt><dd>bool</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
+        <dt><b>Description</b></dt><dd>Using ALE for vertical advection ? (if vertical coordinates are sigma)</dd><dt><b>ID</b></dt><dd>cmip6.ocean.advection.momemtum_adv_scheme.momemtum_adv_details.mom_adv_ALE</dd><dt><b>Type</b></dt><dd>bool</dd><dt><b>Cardinality</b></dt><dd>0.1</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_advection.py" STYLE="bubble" TEXT="mom_adv_scheme_name"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
@@ -313,291 +313,291 @@
         <dt><b>Description</b></dt><dd>Properties of boundary forcing within the ocean component</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary_forcing</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_boundary_forcing.py</dd>
     </dl>
   </body>
-</html></richcontent><node BACKGROUND_COLOR="#ACF0F2" COLOR="#000000" FOLDED="false" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_boundary_forcing.py" STYLE="bubble" TEXT="momentum_forcing"><font BOLD="True" NAME="courier" SIZE="12" /><richcontent TYPE="NOTE"><html>
+</html></richcontent><node BACKGROUND_COLOR="#ACF0F2" COLOR="#000000" FOLDED="false" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_boundary_forcing.py" STYLE="bubble" TEXT="momentum"><font BOLD="True" NAME="courier" SIZE="12" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Key properties of momentum boundary forcing in the ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary_forcing.momentum_forcing</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_boundary_forcing.py</dd>
+        <dt><b>Description</b></dt><dd>Key properties of momentum boundary forcing in the ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary_forcing.momentum</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_boundary_forcing.py</dd>
     </dl>
   </body>
 </html></richcontent><node BACKGROUND_COLOR="#F3FFE2" COLOR="#000000" FOLDED="true" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_boundary_forcing.py" STYLE="bubble" TEXT="momentum_bottom_friction"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Properties of momentum bottom friction in ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary_forcing.momentum_forcing.momentum_bottom_friction</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_boundary_forcing.py</dd>
+        <dt><b>Description</b></dt><dd>Properties of momentum bottom friction in ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary_forcing.momentum.momentum_bottom_friction</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_boundary_forcing.py</dd>
     </dl>
   </body>
 </html></richcontent><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_boundary_forcing.py" STYLE="bubble" TEXT="type"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Type of momentum bottom friction in ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary_forcing.momentum_forcing.momentum_bottom_friction.type</dd><dt><b>Type</b></dt><dd>enum</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
+        <dt><b>Description</b></dt><dd>Type of momentum bottom friction in ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary_forcing.momentum.momentum_bottom_friction.type</dd><dt><b>Type</b></dt><dd>enum</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Type of momentum bottom friction in ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary_forcing.momentum_forcing.momentum_bottom_friction.type</dd><dt><b>Type</b></dt><dd>enum</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
+        <dt><b>Description</b></dt><dd>Type of momentum bottom friction in ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary_forcing.momentum.momentum_bottom_friction.type</dd><dt><b>Type</b></dt><dd>enum</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
     </dl>
   </body>
 </html></richcontent><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Constant drag coefficient"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.momentum-forcing.momentum-bottom-friction.type.constant-drag-coefficient</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.momentum.momentum-bottom-friction.type.constant-drag-coefficient</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Linear"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.momentum-forcing.momentum-bottom-friction.type.linear</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.momentum.momentum-bottom-friction.type.linear</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Non-linear"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.momentum-forcing.momentum-bottom-friction.type.non-linear</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.momentum.momentum-bottom-friction.type.non-linear</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Non-linear (drag function of speed of tides)"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.momentum-forcing.momentum-bottom-friction.type.non-linear-(drag-function-of-speed-of-tides)</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.momentum.momentum-bottom-friction.type.non-linear-(drag-function-of-speed-of-tides)</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="None"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.momentum-forcing.momentum-bottom-friction.type.none</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.momentum.momentum-bottom-friction.type.none</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Other"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.momentum-forcing.momentum-bottom-friction.type.other</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.momentum.momentum-bottom-friction.type.other</dd>
     </dl>
   </body>
 </html></richcontent></node></node></node><node BACKGROUND_COLOR="#F3FFE2" COLOR="#000000" FOLDED="true" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_boundary_forcing.py" STYLE="bubble" TEXT="momentum_lateral_friction"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Properties of momentum lateral friction in ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary_forcing.momentum_forcing.momentum_lateral_friction</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_boundary_forcing.py</dd>
+        <dt><b>Description</b></dt><dd>Properties of momentum lateral friction in ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary_forcing.momentum.momentum_lateral_friction</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_boundary_forcing.py</dd>
     </dl>
   </body>
 </html></richcontent><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_boundary_forcing.py" STYLE="bubble" TEXT="type"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Type of momentum lateral friction in ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary_forcing.momentum_forcing.momentum_lateral_friction.type</dd><dt><b>Type</b></dt><dd>enum</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
+        <dt><b>Description</b></dt><dd>Type of momentum lateral friction in ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary_forcing.momentum.momentum_lateral_friction.type</dd><dt><b>Type</b></dt><dd>enum</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Type of momentum lateral friction in ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary_forcing.momentum_forcing.momentum_lateral_friction.type</dd><dt><b>Type</b></dt><dd>enum</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
+        <dt><b>Description</b></dt><dd>Type of momentum lateral friction in ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary_forcing.momentum.momentum_lateral_friction.type</dd><dt><b>Type</b></dt><dd>enum</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
     </dl>
   </body>
 </html></richcontent><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Free-slip"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.momentum-forcing.momentum-lateral-friction.type.free-slip</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.momentum.momentum-lateral-friction.type.free-slip</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="No-slip"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.momentum-forcing.momentum-lateral-friction.type.no-slip</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.momentum.momentum-lateral-friction.type.no-slip</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="None"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.momentum-forcing.momentum-lateral-friction.type.none</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.momentum.momentum-lateral-friction.type.none</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Other"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.momentum-forcing.momentum-lateral-friction.type.other</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.momentum.momentum-lateral-friction.type.other</dd>
     </dl>
   </body>
-</html></richcontent></node></node></node></node><node BACKGROUND_COLOR="#ACF0F2" COLOR="#000000" FOLDED="false" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_boundary_forcing.py" STYLE="bubble" TEXT="tracer_forcing"><font BOLD="True" NAME="courier" SIZE="12" /><richcontent TYPE="NOTE"><html>
+</html></richcontent></node></node></node></node><node BACKGROUND_COLOR="#ACF0F2" COLOR="#000000" FOLDED="false" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_boundary_forcing.py" STYLE="bubble" TEXT="tracer"><font BOLD="True" NAME="courier" SIZE="12" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Key properties of tracer boundary forcing in the ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary_forcing.tracer_forcing</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_boundary_forcing.py</dd>
+        <dt><b>Description</b></dt><dd>Key properties of tracer boundary forcing in the ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary_forcing.tracer</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_boundary_forcing.py</dd>
     </dl>
   </body>
 </html></richcontent><node BACKGROUND_COLOR="#F3FFE2" COLOR="#000000" FOLDED="true" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_boundary_forcing.py" STYLE="bubble" TEXT="tracers_sunlight_penetration"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Properties of sunlight penetration scheme in ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary_forcing.tracer_forcing.tracers_sunlight_penetration</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_boundary_forcing.py</dd>
+        <dt><b>Description</b></dt><dd>Properties of sunlight penetration scheme in ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary_forcing.tracer.tracers_sunlight_penetration</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_boundary_forcing.py</dd>
     </dl>
   </body>
 </html></richcontent><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_boundary_forcing.py" STYLE="bubble" TEXT="scheme"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Type of sunlight penetration scheme in ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary_forcing.tracer_forcing.tracers_sunlight_penetration.scheme</dd><dt><b>Type</b></dt><dd>enum</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
+        <dt><b>Description</b></dt><dd>Type of sunlight penetration scheme in ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary_forcing.tracer.tracers_sunlight_penetration.scheme</dd><dt><b>Type</b></dt><dd>enum</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Type of sunlight penetration scheme in ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary_forcing.tracer_forcing.tracers_sunlight_penetration.scheme</dd><dt><b>Type</b></dt><dd>enum</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
+        <dt><b>Description</b></dt><dd>Type of sunlight penetration scheme in ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary_forcing.tracer.tracers_sunlight_penetration.scheme</dd><dt><b>Type</b></dt><dd>enum</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
     </dl>
   </body>
 </html></richcontent><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="1 extinction depth"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.tracer-forcing.tracers-sunlight-penetration.scheme.1-extinction-depth</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.tracer.tracers-sunlight-penetration.scheme.1-extinction-depth</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="2 extinction depth"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.tracer-forcing.tracers-sunlight-penetration.scheme.2-extinction-depth</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.tracer.tracers-sunlight-penetration.scheme.2-extinction-depth</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="3 extinction depth"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.tracer-forcing.tracers-sunlight-penetration.scheme.3-extinction-depth</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.tracer.tracers-sunlight-penetration.scheme.3-extinction-depth</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Other"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.tracer-forcing.tracers-sunlight-penetration.scheme.other</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.tracer.tracers-sunlight-penetration.scheme.other</dd>
     </dl>
   </body>
 </html></richcontent></node></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_boundary_forcing.py" STYLE="bubble" TEXT="tracers_sun_extinct_depth"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Describe and list extinctions depths for sunlight penetration scheme (if applicable).</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary_forcing.tracer_forcing.tracers_sunlight_penetration.tracers_sun_extinct_depth</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd>
+        <dt><b>Description</b></dt><dd>Describe and list extinctions depths for sunlight penetration scheme (if applicable).</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary_forcing.tracer.tracers_sunlight_penetration.tracers_sun_extinct_depth</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Describe and list extinctions depths for sunlight penetration scheme (if applicable).</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary_forcing.tracer_forcing.tracers_sunlight_penetration.tracers_sun_extinct_depth</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd>
+        <dt><b>Description</b></dt><dd>Describe and list extinctions depths for sunlight penetration scheme (if applicable).</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary_forcing.tracer.tracers_sunlight_penetration.tracers_sun_extinct_depth</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_boundary_forcing.py" STYLE="bubble" TEXT="tracers_sun_ocean_colour"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Is the ocean sunlight penetration scheme ocean colour dependent ?</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary_forcing.tracer_forcing.tracers_sunlight_penetration.tracers_sun_ocean_colour</dd><dt><b>Type</b></dt><dd>bool</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
+        <dt><b>Description</b></dt><dd>Is the ocean sunlight penetration scheme ocean colour dependent ?</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary_forcing.tracer.tracers_sunlight_penetration.tracers_sun_ocean_colour</dd><dt><b>Type</b></dt><dd>bool</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Is the ocean sunlight penetration scheme ocean colour dependent ?</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary_forcing.tracer_forcing.tracers_sunlight_penetration.tracers_sun_ocean_colour</dd><dt><b>Type</b></dt><dd>bool</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
+        <dt><b>Description</b></dt><dd>Is the ocean sunlight penetration scheme ocean colour dependent ?</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary_forcing.tracer.tracers_sunlight_penetration.tracers_sun_ocean_colour</dd><dt><b>Type</b></dt><dd>bool</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
     </dl>
   </body>
 </html></richcontent></node></node><node BACKGROUND_COLOR="#F3FFE2" COLOR="#000000" FOLDED="true" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_boundary_forcing.py" STYLE="bubble" TEXT="tracers_surface_salinity_atmos"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Properties of surface salinity forcing from atmos in ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary_forcing.tracer_forcing.tracers_surface_salinity_atmos</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_boundary_forcing.py</dd>
+        <dt><b>Description</b></dt><dd>Properties of surface salinity forcing from atmos in ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary_forcing.tracer.tracers_surface_salinity_atmos</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_boundary_forcing.py</dd>
     </dl>
   </body>
 </html></richcontent><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_boundary_forcing.py" STYLE="bubble" TEXT="scheme"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Type of surface salinity forcing from atmos in ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary_forcing.tracer_forcing.tracers_surface_salinity_atmos.scheme</dd><dt><b>Type</b></dt><dd>enum</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
+        <dt><b>Description</b></dt><dd>Type of surface salinity forcing from atmos in ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary_forcing.tracer.tracers_surface_salinity_atmos.scheme</dd><dt><b>Type</b></dt><dd>enum</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Type of surface salinity forcing from atmos in ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary_forcing.tracer_forcing.tracers_surface_salinity_atmos.scheme</dd><dt><b>Type</b></dt><dd>enum</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
+        <dt><b>Description</b></dt><dd>Type of surface salinity forcing from atmos in ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary_forcing.tracer.tracers_surface_salinity_atmos.scheme</dd><dt><b>Type</b></dt><dd>enum</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
     </dl>
   </body>
 </html></richcontent><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Freshwater flux"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.tracer-forcing.tracers-surface-salinity-atmos.scheme.freshwater-flux</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.tracer.tracers-surface-salinity-atmos.scheme.freshwater-flux</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Other"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.tracer-forcing.tracers-surface-salinity-atmos.scheme.other</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.tracer.tracers-surface-salinity-atmos.scheme.other</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Virtual salt flux"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.tracer-forcing.tracers-surface-salinity-atmos.scheme.virtual-salt-flux</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.tracer.tracers-surface-salinity-atmos.scheme.virtual-salt-flux</dd>
     </dl>
   </body>
 </html></richcontent></node></node></node><node BACKGROUND_COLOR="#F3FFE2" COLOR="#000000" FOLDED="true" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_boundary_forcing.py" STYLE="bubble" TEXT="tracers_surface_salinity_seaice"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Properties of surface salinity forcing from sea ice in ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary_forcing.tracer_forcing.tracers_surface_salinity_seaice</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_boundary_forcing.py</dd>
+        <dt><b>Description</b></dt><dd>Properties of surface salinity forcing from sea ice in ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary_forcing.tracer.tracers_surface_salinity_seaice</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_boundary_forcing.py</dd>
     </dl>
   </body>
 </html></richcontent><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_boundary_forcing.py" STYLE="bubble" TEXT="scheme"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Type of surface salinity forcing from sea ice in ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary_forcing.tracer_forcing.tracers_surface_salinity_seaice.scheme</dd><dt><b>Type</b></dt><dd>enum</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
+        <dt><b>Description</b></dt><dd>Type of surface salinity forcing from sea ice in ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary_forcing.tracer.tracers_surface_salinity_seaice.scheme</dd><dt><b>Type</b></dt><dd>enum</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Type of surface salinity forcing from sea ice in ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary_forcing.tracer_forcing.tracers_surface_salinity_seaice.scheme</dd><dt><b>Type</b></dt><dd>enum</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
+        <dt><b>Description</b></dt><dd>Type of surface salinity forcing from sea ice in ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary_forcing.tracer.tracers_surface_salinity_seaice.scheme</dd><dt><b>Type</b></dt><dd>enum</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
     </dl>
   </body>
 </html></richcontent><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Freshwater flux"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.tracer-forcing.tracers-surface-salinity-seaice.scheme.freshwater-flux</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.tracer.tracers-surface-salinity-seaice.scheme.freshwater-flux</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Other"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.tracer-forcing.tracers-surface-salinity-seaice.scheme.other</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.tracer.tracers-surface-salinity-seaice.scheme.other</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Virtual salt flux"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.tracer-forcing.tracers-surface-salinity-seaice.scheme.virtual-salt-flux</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.tracer.tracers-surface-salinity-seaice.scheme.virtual-salt-flux</dd>
     </dl>
   </body>
 </html></richcontent></node></node></node></node></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="false" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_lateral_physics.py" POSITION="left" STYLE="bubble" TEXT="lateral_physics"><font BOLD="True" NAME="courier" SIZE="12" /><richcontent TYPE="NOTE"><html>
@@ -1258,494 +1258,494 @@
         <dt><b>Description</b></dt><dd>Characteristics of ocean vertical physics</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_vertical_physics.py</dd>
     </dl>
   </body>
-</html></richcontent><node BACKGROUND_COLOR="#ACF0F2" COLOR="#000000" FOLDED="false" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_vertical_physics.py" STYLE="bubble" TEXT="ocean_bndlayer_mixing"><font BOLD="True" NAME="courier" SIZE="12" /><richcontent TYPE="NOTE"><html>
+</html></richcontent><node BACKGROUND_COLOR="#ACF0F2" COLOR="#000000" FOLDED="false" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_vertical_physics.py" STYLE="bubble" TEXT="boundary_layer_mixing"><font BOLD="True" NAME="courier" SIZE="12" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Properties of boundary layer mixing in the ocean (aka mixed layer)</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.ocean_bndlayer_mixing</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_vertical_physics.py</dd>
+        <dt><b>Description</b></dt><dd>Properties of boundary layer mixing in the ocean (aka mixed layer)</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.boundary_layer_mixing</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_vertical_physics.py</dd>
     </dl>
   </body>
 </html></richcontent><node BACKGROUND_COLOR="#F3FFE2" COLOR="#000000" FOLDED="true" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_vertical_physics.py" STYLE="bubble" TEXT="bndlayer_mixing_momentum"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Properties of boundary layer (BL) mixing on momentum in the ocean </dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.ocean_bndlayer_mixing.bndlayer_mixing_momentum</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_vertical_physics.py</dd>
+        <dt><b>Description</b></dt><dd>Properties of boundary layer (BL) mixing on momentum in the ocean </dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.boundary_layer_mixing.bndlayer_mixing_momentum</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_vertical_physics.py</dd>
     </dl>
   </body>
 </html></richcontent><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_vertical_physics.py" STYLE="bubble" TEXT="background"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Background BL mixing of momentum coefficient, (schema and value in m2/s - may by none)</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.ocean_bndlayer_mixing.bndlayer_mixing_momentum.background</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
+        <dt><b>Description</b></dt><dd>Background BL mixing of momentum coefficient, (schema and value in m2/s - may by none)</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.boundary_layer_mixing.bndlayer_mixing_momentum.background</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Background BL mixing of momentum coefficient, (schema and value in m2/s - may by none)</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.ocean_bndlayer_mixing.bndlayer_mixing_momentum.background</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
+        <dt><b>Description</b></dt><dd>Background BL mixing of momentum coefficient, (schema and value in m2/s - may by none)</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.boundary_layer_mixing.bndlayer_mixing_momentum.background</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_vertical_physics.py" STYLE="bubble" TEXT="closure_order"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>If turbulent BL mixing of momentum, specific order of closure (0, 1, 2.5, 3)</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.ocean_bndlayer_mixing.bndlayer_mixing_momentum.closure_order</dd><dt><b>Type</b></dt><dd>float</dd><dt><b>Cardinality</b></dt><dd>0.1</dd>
+        <dt><b>Description</b></dt><dd>If turbulent BL mixing of momentum, specific order of closure (0, 1, 2.5, 3)</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.boundary_layer_mixing.bndlayer_mixing_momentum.closure_order</dd><dt><b>Type</b></dt><dd>float</dd><dt><b>Cardinality</b></dt><dd>0.1</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>If turbulent BL mixing of momentum, specific order of closure (0, 1, 2.5, 3)</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.ocean_bndlayer_mixing.bndlayer_mixing_momentum.closure_order</dd><dt><b>Type</b></dt><dd>float</dd><dt><b>Cardinality</b></dt><dd>0.1</dd>
+        <dt><b>Description</b></dt><dd>If turbulent BL mixing of momentum, specific order of closure (0, 1, 2.5, 3)</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.boundary_layer_mixing.bndlayer_mixing_momentum.closure_order</dd><dt><b>Type</b></dt><dd>float</dd><dt><b>Cardinality</b></dt><dd>0.1</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_vertical_physics.py" STYLE="bubble" TEXT="constant"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>If constant BL mixing of momentum, specific coefficient (m2/s)</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.ocean_bndlayer_mixing.bndlayer_mixing_momentum.constant</dd><dt><b>Type</b></dt><dd>int</dd><dt><b>Cardinality</b></dt><dd>0.1</dd>
+        <dt><b>Description</b></dt><dd>If constant BL mixing of momentum, specific coefficient (m2/s)</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.boundary_layer_mixing.bndlayer_mixing_momentum.constant</dd><dt><b>Type</b></dt><dd>int</dd><dt><b>Cardinality</b></dt><dd>0.1</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>If constant BL mixing of momentum, specific coefficient (m2/s)</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.ocean_bndlayer_mixing.bndlayer_mixing_momentum.constant</dd><dt><b>Type</b></dt><dd>int</dd><dt><b>Cardinality</b></dt><dd>0.1</dd>
+        <dt><b>Description</b></dt><dd>If constant BL mixing of momentum, specific coefficient (m2/s)</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.boundary_layer_mixing.bndlayer_mixing_momentum.constant</dd><dt><b>Type</b></dt><dd>int</dd><dt><b>Cardinality</b></dt><dd>0.1</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_vertical_physics.py" STYLE="bubble" TEXT="type"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Type of boundary layer mixing for momentum in ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.ocean_bndlayer_mixing.bndlayer_mixing_momentum.type</dd><dt><b>Type</b></dt><dd>enum</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
+        <dt><b>Description</b></dt><dd>Type of boundary layer mixing for momentum in ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.boundary_layer_mixing.bndlayer_mixing_momentum.type</dd><dt><b>Type</b></dt><dd>enum</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Type of boundary layer mixing for momentum in ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.ocean_bndlayer_mixing.bndlayer_mixing_momentum.type</dd><dt><b>Type</b></dt><dd>enum</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
+        <dt><b>Description</b></dt><dd>Type of boundary layer mixing for momentum in ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.boundary_layer_mixing.bndlayer_mixing_momentum.type</dd><dt><b>Type</b></dt><dd>enum</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
     </dl>
   </body>
 </html></richcontent><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Constant value"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.ocean-bndlayer-mixing.bndlayer-mixing-momentum.type.constant-value</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.boundary-layer-mixing.bndlayer-mixing-momentum.type.constant-value</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Imbeded as isopycnic vertical coordinate"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.ocean-bndlayer-mixing.bndlayer-mixing-momentum.type.imbeded-as-isopycnic-vertical-coordinate</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.boundary-layer-mixing.bndlayer-mixing-momentum.type.imbeded-as-isopycnic-vertical-coordinate</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Other"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.ocean-bndlayer-mixing.bndlayer-mixing-momentum.type.other</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.boundary-layer-mixing.bndlayer-mixing-momentum.type.other</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Richardson number dependent - KT"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.ocean-bndlayer-mixing.bndlayer-mixing-momentum.type.richardson-number-dependent---kt</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.boundary-layer-mixing.bndlayer-mixing-momentum.type.richardson-number-dependent---kt</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Richardson number dependent - PP"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.ocean-bndlayer-mixing.bndlayer-mixing-momentum.type.richardson-number-dependent---pp</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.boundary-layer-mixing.bndlayer-mixing-momentum.type.richardson-number-dependent---pp</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Turbulent closure - Bulk Mixed Layer"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.ocean-bndlayer-mixing.bndlayer-mixing-momentum.type.turbulent-closure---bulk-mixed-layer</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.boundary-layer-mixing.bndlayer-mixing-momentum.type.turbulent-closure---bulk-mixed-layer</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Turbulent closure - KPP"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.ocean-bndlayer-mixing.bndlayer-mixing-momentum.type.turbulent-closure---kpp</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.boundary-layer-mixing.bndlayer-mixing-momentum.type.turbulent-closure---kpp</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Turbulent closure - Mellor-Yamada"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.ocean-bndlayer-mixing.bndlayer-mixing-momentum.type.turbulent-closure---mellor-yamada</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.boundary-layer-mixing.bndlayer-mixing-momentum.type.turbulent-closure---mellor-yamada</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Turbulent closure - TKE"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.ocean-bndlayer-mixing.bndlayer-mixing-momentum.type.turbulent-closure---tke</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.boundary-layer-mixing.bndlayer-mixing-momentum.type.turbulent-closure---tke</dd>
     </dl>
   </body>
 </html></richcontent></node></node></node><node BACKGROUND_COLOR="#F3FFE2" COLOR="#000000" FOLDED="true" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_vertical_physics.py" STYLE="bubble" TEXT="bndlayer_mixing_tracers"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Properties of boundary layer (BL) mixing on tracers in the ocean </dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.ocean_bndlayer_mixing.bndlayer_mixing_tracers</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_vertical_physics.py</dd>
+        <dt><b>Description</b></dt><dd>Properties of boundary layer (BL) mixing on tracers in the ocean </dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.boundary_layer_mixing.bndlayer_mixing_tracers</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_vertical_physics.py</dd>
     </dl>
   </body>
 </html></richcontent><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_vertical_physics.py" STYLE="bubble" TEXT="background"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Background BL mixing of tracers coefficient, (schema and value in m2/s - may by none)</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.ocean_bndlayer_mixing.bndlayer_mixing_tracers.background</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
+        <dt><b>Description</b></dt><dd>Background BL mixing of tracers coefficient, (schema and value in m2/s - may by none)</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.boundary_layer_mixing.bndlayer_mixing_tracers.background</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Background BL mixing of tracers coefficient, (schema and value in m2/s - may by none)</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.ocean_bndlayer_mixing.bndlayer_mixing_tracers.background</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
+        <dt><b>Description</b></dt><dd>Background BL mixing of tracers coefficient, (schema and value in m2/s - may by none)</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.boundary_layer_mixing.bndlayer_mixing_tracers.background</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_vertical_physics.py" STYLE="bubble" TEXT="closure_order"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>If turbulent BL mixing of tracers, specific order of closure (0, 1, 2.5, 3)</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.ocean_bndlayer_mixing.bndlayer_mixing_tracers.closure_order</dd><dt><b>Type</b></dt><dd>float</dd><dt><b>Cardinality</b></dt><dd>0.1</dd>
+        <dt><b>Description</b></dt><dd>If turbulent BL mixing of tracers, specific order of closure (0, 1, 2.5, 3)</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.boundary_layer_mixing.bndlayer_mixing_tracers.closure_order</dd><dt><b>Type</b></dt><dd>float</dd><dt><b>Cardinality</b></dt><dd>0.1</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>If turbulent BL mixing of tracers, specific order of closure (0, 1, 2.5, 3)</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.ocean_bndlayer_mixing.bndlayer_mixing_tracers.closure_order</dd><dt><b>Type</b></dt><dd>float</dd><dt><b>Cardinality</b></dt><dd>0.1</dd>
+        <dt><b>Description</b></dt><dd>If turbulent BL mixing of tracers, specific order of closure (0, 1, 2.5, 3)</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.boundary_layer_mixing.bndlayer_mixing_tracers.closure_order</dd><dt><b>Type</b></dt><dd>float</dd><dt><b>Cardinality</b></dt><dd>0.1</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_vertical_physics.py" STYLE="bubble" TEXT="constant"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>If constant BL mixing of tracers, specific coefficient (m2/s)</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.ocean_bndlayer_mixing.bndlayer_mixing_tracers.constant</dd><dt><b>Type</b></dt><dd>int</dd><dt><b>Cardinality</b></dt><dd>0.1</dd>
+        <dt><b>Description</b></dt><dd>If constant BL mixing of tracers, specific coefficient (m2/s)</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.boundary_layer_mixing.bndlayer_mixing_tracers.constant</dd><dt><b>Type</b></dt><dd>int</dd><dt><b>Cardinality</b></dt><dd>0.1</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>If constant BL mixing of tracers, specific coefficient (m2/s)</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.ocean_bndlayer_mixing.bndlayer_mixing_tracers.constant</dd><dt><b>Type</b></dt><dd>int</dd><dt><b>Cardinality</b></dt><dd>0.1</dd>
+        <dt><b>Description</b></dt><dd>If constant BL mixing of tracers, specific coefficient (m2/s)</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.boundary_layer_mixing.bndlayer_mixing_tracers.constant</dd><dt><b>Type</b></dt><dd>int</dd><dt><b>Cardinality</b></dt><dd>0.1</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_vertical_physics.py" STYLE="bubble" TEXT="type"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Type of boundary layer mixing for tracers in ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.ocean_bndlayer_mixing.bndlayer_mixing_tracers.type</dd><dt><b>Type</b></dt><dd>enum</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
+        <dt><b>Description</b></dt><dd>Type of boundary layer mixing for tracers in ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.boundary_layer_mixing.bndlayer_mixing_tracers.type</dd><dt><b>Type</b></dt><dd>enum</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Type of boundary layer mixing for tracers in ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.ocean_bndlayer_mixing.bndlayer_mixing_tracers.type</dd><dt><b>Type</b></dt><dd>enum</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
+        <dt><b>Description</b></dt><dd>Type of boundary layer mixing for tracers in ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.boundary_layer_mixing.bndlayer_mixing_tracers.type</dd><dt><b>Type</b></dt><dd>enum</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
     </dl>
   </body>
 </html></richcontent><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Constant value"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.ocean-bndlayer-mixing.bndlayer-mixing-tracers.type.constant-value</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.boundary-layer-mixing.bndlayer-mixing-tracers.type.constant-value</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Imbeded as isopycnic vertical coordinate"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.ocean-bndlayer-mixing.bndlayer-mixing-tracers.type.imbeded-as-isopycnic-vertical-coordinate</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.boundary-layer-mixing.bndlayer-mixing-tracers.type.imbeded-as-isopycnic-vertical-coordinate</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Other"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.ocean-bndlayer-mixing.bndlayer-mixing-tracers.type.other</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.boundary-layer-mixing.bndlayer-mixing-tracers.type.other</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Richardson number dependent - KT"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.ocean-bndlayer-mixing.bndlayer-mixing-tracers.type.richardson-number-dependent---kt</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.boundary-layer-mixing.bndlayer-mixing-tracers.type.richardson-number-dependent---kt</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Richardson number dependent - PP"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.ocean-bndlayer-mixing.bndlayer-mixing-tracers.type.richardson-number-dependent---pp</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.boundary-layer-mixing.bndlayer-mixing-tracers.type.richardson-number-dependent---pp</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Turbulent closure - Bulk Mixed Layer"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.ocean-bndlayer-mixing.bndlayer-mixing-tracers.type.turbulent-closure---bulk-mixed-layer</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.boundary-layer-mixing.bndlayer-mixing-tracers.type.turbulent-closure---bulk-mixed-layer</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Turbulent closure - KPP"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.ocean-bndlayer-mixing.bndlayer-mixing-tracers.type.turbulent-closure---kpp</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.boundary-layer-mixing.bndlayer-mixing-tracers.type.turbulent-closure---kpp</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Turbulent closure - Mellor-Yamada"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.ocean-bndlayer-mixing.bndlayer-mixing-tracers.type.turbulent-closure---mellor-yamada</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.boundary-layer-mixing.bndlayer-mixing-tracers.type.turbulent-closure---mellor-yamada</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Turbulent closure - TKE"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.ocean-bndlayer-mixing.bndlayer-mixing-tracers.type.turbulent-closure---tke</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.boundary-layer-mixing.bndlayer-mixing-tracers.type.turbulent-closure---tke</dd>
     </dl>
   </body>
-</html></richcontent></node></node></node></node><node BACKGROUND_COLOR="#ACF0F2" COLOR="#000000" FOLDED="false" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_vertical_physics.py" STYLE="bubble" TEXT="ocean_interior_mixing"><font BOLD="True" NAME="courier" SIZE="12" /><richcontent TYPE="NOTE"><html>
+</html></richcontent></node></node></node></node><node BACKGROUND_COLOR="#ACF0F2" COLOR="#000000" FOLDED="false" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_vertical_physics.py" STYLE="bubble" TEXT="interior_mixing"><font BOLD="True" NAME="courier" SIZE="12" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Properties of interior vertical mixing in the ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.ocean_interior_mixing</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_vertical_physics.py</dd>
+        <dt><b>Description</b></dt><dd>Properties of interior vertical mixing in the ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.interior_mixing</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_vertical_physics.py</dd>
     </dl>
   </body>
 </html></richcontent><node BACKGROUND_COLOR="#F3FFE2" COLOR="#000000" FOLDED="true" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_vertical_physics.py" STYLE="bubble" TEXT="interior_mixing_momentum"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Properties of interior mixing on momentum in the ocean </dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.ocean_interior_mixing.interior_mixing_momentum</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_vertical_physics.py</dd>
+        <dt><b>Description</b></dt><dd>Properties of interior mixing on momentum in the ocean </dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.interior_mixing.interior_mixing_momentum</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_vertical_physics.py</dd>
     </dl>
   </body>
 </html></richcontent><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_vertical_physics.py" STYLE="bubble" TEXT="background"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Background interior mixing of momentum coefficient, (schema and value in m2/s - may by none)</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.ocean_interior_mixing.interior_mixing_momentum.background</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
+        <dt><b>Description</b></dt><dd>Background interior mixing of momentum coefficient, (schema and value in m2/s - may by none)</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.interior_mixing.interior_mixing_momentum.background</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Background interior mixing of momentum coefficient, (schema and value in m2/s - may by none)</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.ocean_interior_mixing.interior_mixing_momentum.background</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
+        <dt><b>Description</b></dt><dd>Background interior mixing of momentum coefficient, (schema and value in m2/s - may by none)</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.interior_mixing.interior_mixing_momentum.background</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_vertical_physics.py" STYLE="bubble" TEXT="constant"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>If constant interior mixing of momentum, specific coefficient (m2/s)</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.ocean_interior_mixing.interior_mixing_momentum.constant</dd><dt><b>Type</b></dt><dd>int</dd><dt><b>Cardinality</b></dt><dd>0.1</dd>
+        <dt><b>Description</b></dt><dd>If constant interior mixing of momentum, specific coefficient (m2/s)</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.interior_mixing.interior_mixing_momentum.constant</dd><dt><b>Type</b></dt><dd>int</dd><dt><b>Cardinality</b></dt><dd>0.1</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>If constant interior mixing of momentum, specific coefficient (m2/s)</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.ocean_interior_mixing.interior_mixing_momentum.constant</dd><dt><b>Type</b></dt><dd>int</dd><dt><b>Cardinality</b></dt><dd>0.1</dd>
+        <dt><b>Description</b></dt><dd>If constant interior mixing of momentum, specific coefficient (m2/s)</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.interior_mixing.interior_mixing_momentum.constant</dd><dt><b>Type</b></dt><dd>int</dd><dt><b>Cardinality</b></dt><dd>0.1</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_vertical_physics.py" STYLE="bubble" TEXT="profile"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Is the background interior mixing using a vertical profile for momentum (i.e is NOT constant) ?</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.ocean_interior_mixing.interior_mixing_momentum.profile</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
+        <dt><b>Description</b></dt><dd>Is the background interior mixing using a vertical profile for momentum (i.e is NOT constant) ?</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.interior_mixing.interior_mixing_momentum.profile</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Is the background interior mixing using a vertical profile for momentum (i.e is NOT constant) ?</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.ocean_interior_mixing.interior_mixing_momentum.profile</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
+        <dt><b>Description</b></dt><dd>Is the background interior mixing using a vertical profile for momentum (i.e is NOT constant) ?</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.interior_mixing.interior_mixing_momentum.profile</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_vertical_physics.py" STYLE="bubble" TEXT="type"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Type of interior mixing for momentum in ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.ocean_interior_mixing.interior_mixing_momentum.type</dd><dt><b>Type</b></dt><dd>enum</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
+        <dt><b>Description</b></dt><dd>Type of interior mixing for momentum in ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.interior_mixing.interior_mixing_momentum.type</dd><dt><b>Type</b></dt><dd>enum</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Type of interior mixing for momentum in ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.ocean_interior_mixing.interior_mixing_momentum.type</dd><dt><b>Type</b></dt><dd>enum</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
+        <dt><b>Description</b></dt><dd>Type of interior mixing for momentum in ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.interior_mixing.interior_mixing_momentum.type</dd><dt><b>Type</b></dt><dd>enum</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
     </dl>
   </body>
 </html></richcontent><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Constant value"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.ocean-interior-mixing.interior-mixing-momentum.type.constant-value</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.interior-mixing.interior-mixing-momentum.type.constant-value</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Imbeded as isopycnic vertical coordinate"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.ocean-interior-mixing.interior-mixing-momentum.type.imbeded-as-isopycnic-vertical-coordinate</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.interior-mixing.interior-mixing-momentum.type.imbeded-as-isopycnic-vertical-coordinate</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Other"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.ocean-interior-mixing.interior-mixing-momentum.type.other</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.interior-mixing.interior-mixing-momentum.type.other</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Richardson number dependent - KT"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.ocean-interior-mixing.interior-mixing-momentum.type.richardson-number-dependent---kt</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.interior-mixing.interior-mixing-momentum.type.richardson-number-dependent---kt</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Richardson number dependent - PP"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.ocean-interior-mixing.interior-mixing-momentum.type.richardson-number-dependent---pp</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.interior-mixing.interior-mixing-momentum.type.richardson-number-dependent---pp</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Turbulent closure - Mellor-Yamada"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.ocean-interior-mixing.interior-mixing-momentum.type.turbulent-closure---mellor-yamada</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.interior-mixing.interior-mixing-momentum.type.turbulent-closure---mellor-yamada</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Turbulent closure / TKE"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.ocean-interior-mixing.interior-mixing-momentum.type.turbulent-closure-/-tke</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.interior-mixing.interior-mixing-momentum.type.turbulent-closure-/-tke</dd>
     </dl>
   </body>
 </html></richcontent></node></node></node><node BACKGROUND_COLOR="#F3FFE2" COLOR="#000000" FOLDED="true" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_vertical_physics.py" STYLE="bubble" TEXT="interior_mixing_tracers"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Properties of interior mixing on tracers in the ocean </dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.ocean_interior_mixing.interior_mixing_tracers</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_vertical_physics.py</dd>
+        <dt><b>Description</b></dt><dd>Properties of interior mixing on tracers in the ocean </dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.interior_mixing.interior_mixing_tracers</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_vertical_physics.py</dd>
     </dl>
   </body>
 </html></richcontent><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_vertical_physics.py" STYLE="bubble" TEXT="background"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Background interior mixing of tracers coefficient, (schema and value in m2/s - may by none)</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.ocean_interior_mixing.interior_mixing_tracers.background</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
+        <dt><b>Description</b></dt><dd>Background interior mixing of tracers coefficient, (schema and value in m2/s - may by none)</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.interior_mixing.interior_mixing_tracers.background</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Background interior mixing of tracers coefficient, (schema and value in m2/s - may by none)</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.ocean_interior_mixing.interior_mixing_tracers.background</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
+        <dt><b>Description</b></dt><dd>Background interior mixing of tracers coefficient, (schema and value in m2/s - may by none)</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.interior_mixing.interior_mixing_tracers.background</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_vertical_physics.py" STYLE="bubble" TEXT="constant"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>If constant interior mixing of tracers, specific coefficient (m2/s)</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.ocean_interior_mixing.interior_mixing_tracers.constant</dd><dt><b>Type</b></dt><dd>int</dd><dt><b>Cardinality</b></dt><dd>0.1</dd>
+        <dt><b>Description</b></dt><dd>If constant interior mixing of tracers, specific coefficient (m2/s)</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.interior_mixing.interior_mixing_tracers.constant</dd><dt><b>Type</b></dt><dd>int</dd><dt><b>Cardinality</b></dt><dd>0.1</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>If constant interior mixing of tracers, specific coefficient (m2/s)</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.ocean_interior_mixing.interior_mixing_tracers.constant</dd><dt><b>Type</b></dt><dd>int</dd><dt><b>Cardinality</b></dt><dd>0.1</dd>
+        <dt><b>Description</b></dt><dd>If constant interior mixing of tracers, specific coefficient (m2/s)</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.interior_mixing.interior_mixing_tracers.constant</dd><dt><b>Type</b></dt><dd>int</dd><dt><b>Cardinality</b></dt><dd>0.1</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_vertical_physics.py" STYLE="bubble" TEXT="profile"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Is the background interior mixing using a vertical profile for tracers (i.e is NOT constant) ?</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.ocean_interior_mixing.interior_mixing_tracers.profile</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
+        <dt><b>Description</b></dt><dd>Is the background interior mixing using a vertical profile for tracers (i.e is NOT constant) ?</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.interior_mixing.interior_mixing_tracers.profile</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Is the background interior mixing using a vertical profile for tracers (i.e is NOT constant) ?</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.ocean_interior_mixing.interior_mixing_tracers.profile</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
+        <dt><b>Description</b></dt><dd>Is the background interior mixing using a vertical profile for tracers (i.e is NOT constant) ?</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.interior_mixing.interior_mixing_tracers.profile</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_vertical_physics.py" STYLE="bubble" TEXT="type"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Type of interior mixing for tracers in ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.ocean_interior_mixing.interior_mixing_tracers.type</dd><dt><b>Type</b></dt><dd>enum</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
+        <dt><b>Description</b></dt><dd>Type of interior mixing for tracers in ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.interior_mixing.interior_mixing_tracers.type</dd><dt><b>Type</b></dt><dd>enum</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Type of interior mixing for tracers in ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.ocean_interior_mixing.interior_mixing_tracers.type</dd><dt><b>Type</b></dt><dd>enum</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
+        <dt><b>Description</b></dt><dd>Type of interior mixing for tracers in ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.interior_mixing.interior_mixing_tracers.type</dd><dt><b>Type</b></dt><dd>enum</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
     </dl>
   </body>
 </html></richcontent><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Constant value"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.ocean-interior-mixing.interior-mixing-tracers.type.constant-value</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.interior-mixing.interior-mixing-tracers.type.constant-value</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Imbeded as isopycnic vertical coordinate"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.ocean-interior-mixing.interior-mixing-tracers.type.imbeded-as-isopycnic-vertical-coordinate</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.interior-mixing.interior-mixing-tracers.type.imbeded-as-isopycnic-vertical-coordinate</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Other"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.ocean-interior-mixing.interior-mixing-tracers.type.other</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.interior-mixing.interior-mixing-tracers.type.other</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Richardson number dependent - KT"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.ocean-interior-mixing.interior-mixing-tracers.type.richardson-number-dependent---kt</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.interior-mixing.interior-mixing-tracers.type.richardson-number-dependent---kt</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Richardson number dependent - PP"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.ocean-interior-mixing.interior-mixing-tracers.type.richardson-number-dependent---pp</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.interior-mixing.interior-mixing-tracers.type.richardson-number-dependent---pp</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Turbulent closure - Mellor-Yamada"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.ocean-interior-mixing.interior-mixing-tracers.type.turbulent-closure---mellor-yamada</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.interior-mixing.interior-mixing-tracers.type.turbulent-closure---mellor-yamada</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Turbulent closure / TKE"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.ocean-interior-mixing.interior-mixing-tracers.type.turbulent-closure-/-tke</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.interior-mixing.interior-mixing-tracers.type.turbulent-closure-/-tke</dd>
     </dl>
   </body>
 </html></richcontent></node></node></node></node></node></node></map>

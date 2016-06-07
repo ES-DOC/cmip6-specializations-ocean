@@ -74,7 +74,7 @@ SUB_PROCESS_DETAILS['momemtum_adv_details'] = {
             'Type of lateral momemtum advection scheme in ocean'),
         ('mom_adv_scheme_name', 'str', '1.1',
             'Name of ocean momemtum advection scheme'),
-        ('mom_adv_ALE', 'bool', '1.1',
+        ('mom_adv_ALE', 'bool', '0.1',
             'Using ALE for vertical advection ? (if vertical coordinates are sigma)'),
     ]
 }

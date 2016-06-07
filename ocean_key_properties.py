@@ -170,10 +170,11 @@ ENUMERATIONS = OrderedDict()
 ENUMERATIONS['model_family_types'] = {
     'description': 'Types of ocean models',
     'members': [
-        ('AAA','tbd'),
-        ('BBB', 'tbd'),
-        ('CCC', 'tbd'),
-        ('DDD', 'tbd')
+        ('OGCM','tbd'),
+        ('slab ocean', 'tbd'),
+        ('mixed layer ocean', 'tbd'),
+        ('Other', 'tbd'),
+
     ]
 }
 
@@ -183,7 +184,7 @@ ENUMERATIONS['ocean_basic_approx_types'] = {
         ('Primitive equations','tbd'),
         ('Non-hydrostatic', 'tbd'),
         ('Boussinesq', 'tbd'),
-            ('Other', 'tbd')
+        ('Other', 'tbd')
     ]
 }
 

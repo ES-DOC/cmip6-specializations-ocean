@@ -16,6 +16,11 @@ CONTACT = 'Eric Guilyardi'
 # Set to realm specialization authors.
 # --------------------------------------------------------------------
 AUTHORS = 'Eric Guilyardi'
+CONTRIBUTORS = ''
+CHANGE_HISTORY = [
+{'date':'now', 'what':'ewirfuhgweuyfgewy', 'who':'me'},
+{'date':'now', 'what':'ewirfuhgweuyfgewy', 'who':'me'}
+    ]
 
 # --------------------------------------------------------------------
 # QUALITY CONTROL STATUS

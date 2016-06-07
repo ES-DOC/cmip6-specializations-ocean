@@ -56,13 +56,13 @@ DETAILS['vertical_physics_details'] = {
 # --------------------------------------------------------------------
 SUB_PROCESSES = OrderedDict()
 
-SUB_PROCESSES['ocean_bndlayer_mixing'] = {
+SUB_PROCESSES['boundary_layer_mixing'] = {
     'description': 'Properties of boundary layer mixing in the ocean (aka mixed layer)',
-    'details': ['bndlayer_mixing_tracers',
+    'details': ['tracers',
                 'bndlayer_mixing_momentum'],
 }
 
-SUB_PROCESSES['ocean_interior_mixing'] = {
+SUB_PROCESSES['interior_mixing'] = {
     'description': 'Properties of interior vertical mixing in the ocean',
     'details': ['interior_mixing_tracers',
                 'interior_mixing_momentum'],
@@ -76,7 +76,7 @@ SUB_PROCESSES['ocean_interior_mixing'] = {
 # --------------------------------------------------------------------
 SUB_PROCESS_DETAILS = OrderedDict()
 
-SUB_PROCESS_DETAILS['bndlayer_mixing_tracers'] = {
+SUB_PROCESS_DETAILS['boundary_layer_mixing:tracers'] = {
     'description': 'Properties of boundary layer (BL) mixing on tracers in the ocean ',
     'properties': [
         ('type', 'ENUM:bndlayer_mixing_types', '1.1',
