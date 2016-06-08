@@ -18,6 +18,7 @@ from utils_parser import Parser
 
 
 
+# HTML snippet for a set of notes.
 _NOTES = """
 <html>
   <head></head>
@@ -29,7 +30,18 @@ _NOTES = """
 </html>
 """
 
+# HTML snippet for a note.
 _NOTE = "<dt><b>{}</b></dt><dd>{}</dd>"
+
+# Set of configuration sections.
+_CONFIG_SECTIONS = [
+    "realm",
+    "process",
+    "sub-process",
+    "detail",
+    "detail-property",
+    "enum-choice"
+    ]
 
 
 
@@ -53,6 +65,9 @@ class _Configuration(object):
 
 
 class Generator(Parser):
+    """Specialization to mindmap generator.
+
+    """
     def __init__(self, realm, stylesheet):
         """Instance constructor.
 
@@ -65,11 +80,7 @@ class Generator(Parser):
         self.nodes = {}
 
 
-    def run(self):
-        self.parse()
-
-
-    def _set_node(self, parent, owner, text=None, style=None):
+    def _emit_node(self, parent, owner, text=None, style=None):
         """Sets a mindmap node.
 
         """
@@ -101,11 +112,11 @@ class Generator(Parser):
         self.nodes[owner] = ET.SubElement(parent, 'node', atts)
 
         # Set node font / notes.
-        self._set_font(owner, cfg)
-        self._set_notes(owner)
+        self._emit_font(owner, cfg)
+        self._emit_notes(owner)
 
 
-    def _set_font(self, owner, cfg):
+    def _emit_font(self, owner, cfg):
         """Styles a node with font information.
 
         """
@@ -116,26 +127,34 @@ class Generator(Parser):
             })
 
 
-    def _set_notes(self, owner):
+    def _emit_notes(self, owner, notes=None):
         """Set notes associated with a node.
 
         """
+        # Get node parent.
+        if not isinstance(owner, ET.Element):
+            parent = self.nodes[owner]
+        else:
+            parent = owner
+
         # Skip if owner does not define notes.
-        try:
-            notes = owner.notes
-        except AttributeError:
-            return
+        if not notes:
+            try:
+                notes = owner.notes
+            except AttributeError:
+                return
 
         # Convert notes to HTML.
-        notes = [_NOTE.format(k, v) for k, v in owner.notes]
+        notes = [_NOTE.format(k, v) for k, v in notes]
         notes = _NOTES.format("".join(notes))
 
+
         # Inject notes into mindmap.
-        content = ET.SubElement(self.nodes[owner], 'richcontent', {"TYPE": "NOTE"})
+        content = ET.SubElement(parent, 'richcontent', {"TYPE": "NOTE"})
         content.append(ET.fromstring(notes))
 
 
-    def _set_collection_node(self, owner, collection_type, style_type):
+    def _emit_collection_node(self, owner, collection_type, style_type):
         """Sets a collection node, i..e a node that simply wraps items.
 
         """
@@ -148,29 +167,52 @@ class Generator(Parser):
             })
 
 
+    def _emit_legend(self, realm):
+        """Emits mindmap legend.
+
+        """
+        cfg = self.cfg.get_section
+        legend = ET.SubElement(self.nodes[realm], 'node', {
+            'STYLE': "bubble",
+            'TEXT': "legend",
+            'POSITION': "left"
+            })
+        for section in _CONFIG_SECTIONS:
+            node = ET.SubElement(legend, 'node', {
+                'BACKGROUND_COLOR': cfg(section)['bg-color'],
+                'COLOR': cfg(section)['font-color'],
+                'STYLE': "bubble",
+                'TEXT': section
+                })
+            self._emit_notes(node, notes=[
+                ('Description', cfg(section)['description']),
+                ])
+
+
     def on_realm_parse(self, realm):
         """On realm parse event handler.
 
         """
         self.mmap = ET.Element('map', {})
-        self._set_node(self.mmap, realm, style="fork")
+        self._emit_node(self.mmap, realm, style="fork")
+        self._emit_legend(realm)
 
 
     def on_process_parse(self, realm, process):
         """On process parse event handler.
 
         """
-        self._set_node(realm, process)
-        self._set_notes(process)
-        if process.details:
-            self._set_collection_node(process, "details", "detail")
+        self._emit_node(realm, process)
+        self._emit_notes(process)
+        # if process.details:
+        #     self._emit_collection_node(process, "details", "detail")
 
 
     def on_subprocess_parse(self, process, subprocess):
         """On sub-process parse event handler.
 
         """
-        self._set_node(process, subprocess)
+        self._emit_node(process, subprocess)
 
 
     def on_detail_parse(self, owner, detail):
@@ -178,16 +220,17 @@ class Generator(Parser):
 
         """
         if isinstance(owner, Process):
-            self._set_node(self.nodes[str(owner) + "details"], detail)
+            self._emit_node(owner, detail)
+            # self._emit_node(self.nodes[str(owner) + "details"], detail)
         else:
-            self._set_node(owner, detail)
+            self._emit_node(owner, detail)
 
 
     def on_detail_property_parse(self, owner, detail_property):
         """On detail property parse event handler.
 
         """
-        self._set_node(owner, detail_property)
-        self._set_notes(detail_property)
+        self._emit_node(owner, detail_property)
+        self._emit_notes(detail_property)
         for choice in detail_property.choices:
-            self._set_node(detail_property, choice, text=choice.value)
+            self._emit_node(detail_property, choice, text=choice.value)

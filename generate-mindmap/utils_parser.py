@@ -25,8 +25,8 @@ class Parser(object):
         self.verbose = verbose
 
 
-    def parse(self):
-        """Parses the CMIP6 vocabulary raising events as it does so.
+    def run(self):
+        """Runs the parser raising events as it does so.
 
         """
         # Raise realm parse event.

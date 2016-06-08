@@ -50,7 +50,7 @@ _ARGS.add_argument(
     help="Path to a spreadsheet configuration file.",
     dest="stylesheet",
     type=str,
-    default=os.path.join(_DIR, "stylesheet.conf")
+    default=os.path.join(_DIR, "generator.conf")
     )
 _ARGS = _ARGS.parse_args()
 

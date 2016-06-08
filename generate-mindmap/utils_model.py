@@ -164,14 +164,13 @@ class Detail(object):
     """Wraps a detail specialization.
 
     """
-    def __init__(self, mod, container, full_name, obj):
+    def __init__(self, mod, container, name, obj):
         """Instance constructor.
 
         """
-        name = full_name.split(":")[-1]
-        
+        # Contract name where container is referenced as part of the name.
+        name = name.split(":")[-1]
         self.id = "{}.{}".format(container.id, name)
-        print self.id
         self.name = name
         self.obj = obj
         self.style_type = "detail"

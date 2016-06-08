@@ -1,11 +1,53 @@
-<map><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="false" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean.py" STYLE="fork" TEXT="ocean"><font BOLD="True" NAME="courier" SIZE="14" /><richcontent TYPE="NOTE"><html>
+<map><node BACKGROUND_COLOR="" COLOR="#000000" FOLDED="false" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean.py" STYLE="fork" TEXT="ocean"><font BOLD="True" NAME="courier" SIZE="14" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
         <dt><b>Description</b></dt><dd>Ocean realm specialization</dd><dt><b>ID</b></dt><dd>cmip6.ocean</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean.py</dd>
     </dl>
   </body>
-</html></richcontent><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="false" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_advection.py" STYLE="bubble" TEXT="advection"><font BOLD="True" NAME="courier" SIZE="12" /><richcontent TYPE="NOTE"><html>
+</html></richcontent><node POSITION="left" STYLE="bubble" TEXT="legend"><node BACKGROUND_COLOR="" COLOR="#000000" STYLE="bubble" TEXT="realm"><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>Scientific area of a numerical model.</dd>
+    </dl>
+  </body>
+</html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" STYLE="bubble" TEXT="process"><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>Provides structure for description of a process simulated within a particular model realm.</dd>
+    </dl>
+  </body>
+</html></richcontent></node><node BACKGROUND_COLOR="#ACF0F2" COLOR="#000000" STYLE="bubble" TEXT="sub-process"><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>Provides structure for description of part of a process simulated within a particular model realm. Typically this will be a part of process which shares common properties.</dd>
+    </dl>
+  </body>
+</html></richcontent></node><node BACKGROUND_COLOR="#F3FFE2" COLOR="#000000" STYLE="bubble" TEXT="detail"><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>Provides details of specific properties of a process, sub-process, key properties, etc.  There are two possible specialisations expected: (1) A detail_vocabulary is identified, and a cardinality is assigned to that for possible responses; (2) Detail is used to provide a collection or a set of properties which are defined in the sub-class.</dd>
+    </dl>
+  </body>
+</html></richcontent></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" STYLE="bubble" TEXT="detail-property"><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>A property associated with a detail defined as a 4 member tuple: name, type, cardinality, description.</dd>
+    </dl>
+  </body>
+</html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" STYLE="bubble" TEXT="enum-choice"><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>Scientific area of a numerical model.</dd>
+    </dl>
+  </body>
+</html></richcontent></node></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="false" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_advection.py" STYLE="bubble" TEXT="advection"><font BOLD="True" NAME="courier" SIZE="12" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
@@ -313,7 +355,7 @@
         <dt><b>Description</b></dt><dd>Properties of boundary forcing within the ocean component</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary_forcing</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_boundary_forcing.py</dd>
     </dl>
   </body>
-</html></richcontent><node BACKGROUND_COLOR="#F3FFE2" COLOR="#000000" STYLE="bubble" TEXT="details"><node BACKGROUND_COLOR="#F3FFE2" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="boundary_forcing_details"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
+</html></richcontent><node BACKGROUND_COLOR="#F3FFE2" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="boundary_forcing_details"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
@@ -404,7 +446,7 @@
         <dt><b>Description</b></dt><dd>Describe if/how wave effects are modelled at ocean surface.</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary_forcing.boundary_forcing_details.wave_effects</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
     </dl>
   </body>
-</html></richcontent></node></node></node><node BACKGROUND_COLOR="#ACF0F2" COLOR="#000000" FOLDED="false" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_boundary_forcing.py" STYLE="bubble" TEXT="momentum"><font BOLD="True" NAME="courier" SIZE="12" /><richcontent TYPE="NOTE"><html>
+</html></richcontent></node></node><node BACKGROUND_COLOR="#ACF0F2" COLOR="#000000" FOLDED="false" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_boundary_forcing.py" STYLE="bubble" TEXT="momentum"><font BOLD="True" NAME="courier" SIZE="12" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
@@ -705,7 +747,7 @@
         <dt><b>Description</b></dt><dd>Characteristics of ocean lateral physics</dd><dt><b>ID</b></dt><dd>cmip6.ocean.lateral_physics</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_lateral_physics.py</dd>
     </dl>
   </body>
-</html></richcontent><node BACKGROUND_COLOR="#F3FFE2" COLOR="#000000" STYLE="bubble" TEXT="details"><node BACKGROUND_COLOR="#F3FFE2" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="ocean_transient_eddy_representation"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
+</html></richcontent><node BACKGROUND_COLOR="#F3FFE2" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="ocean_transient_eddy_representation"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
@@ -747,7 +789,7 @@
         <dt><b>Description</b></dt><dd>No transient eddies in ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.lateral-physics.ocean-transient-eddy-representation.scheme.none</dd>
     </dl>
   </body>
-</html></richcontent></node></node></node></node><node BACKGROUND_COLOR="#ACF0F2" COLOR="#000000" FOLDED="false" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_lateral_physics.py" STYLE="bubble" TEXT="momentum"><font BOLD="True" NAME="courier" SIZE="12" /><richcontent TYPE="NOTE"><html>
+</html></richcontent></node></node></node><node BACKGROUND_COLOR="#ACF0F2" COLOR="#000000" FOLDED="false" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_lateral_physics.py" STYLE="bubble" TEXT="momentum"><font BOLD="True" NAME="courier" SIZE="12" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
@@ -1363,7 +1405,7 @@
         <dt><b>Description</b></dt><dd>Characteristics of ocean time stepping framework</dd><dt><b>ID</b></dt><dd>cmip6.ocean.timestepping_framework</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_timestepping_framework.py</dd>
     </dl>
   </body>
-</html></richcontent><node BACKGROUND_COLOR="#F3FFE2" COLOR="#000000" STYLE="bubble" TEXT="details"><node BACKGROUND_COLOR="#F3FFE2" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="timestepping_attributes"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
+</html></richcontent><node BACKGROUND_COLOR="#F3FFE2" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="timestepping_attributes"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
@@ -1419,7 +1461,7 @@
         <dt><b>Description</b></dt><dd>Ocean time step in seconds</dd><dt><b>ID</b></dt><dd>cmip6.ocean.timestepping_framework.timestepping_attributes.time_step</dd><dt><b>Type</b></dt><dd>int</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
     </dl>
   </body>
-</html></richcontent></node></node></node></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="false" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_uplow_boundaries.py" STYLE="bubble" TEXT="uplow_boundaries"><font BOLD="True" NAME="courier" SIZE="12" /><richcontent TYPE="NOTE"><html>
+</html></richcontent></node></node></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="false" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_uplow_boundaries.py" STYLE="bubble" TEXT="uplow_boundaries"><font BOLD="True" NAME="courier" SIZE="12" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
@@ -1433,7 +1475,7 @@
         <dt><b>Description</b></dt><dd>Properties of ocean upper and lower boundaries</dd><dt><b>ID</b></dt><dd>cmip6.ocean.uplow_boundaries</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_uplow_boundaries.py</dd>
     </dl>
   </body>
-</html></richcontent><node BACKGROUND_COLOR="#F3FFE2" COLOR="#000000" STYLE="bubble" TEXT="details"><node BACKGROUND_COLOR="#F3FFE2" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="bottom_boundary_layer"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
+</html></richcontent><node BACKGROUND_COLOR="#F3FFE2" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="bottom_boundary_layer"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
@@ -1587,7 +1629,7 @@
         <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.uplow-boundaries.free-surface.scheme.other</dd>
     </dl>
   </body>
-</html></richcontent></node></node></node></node></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="false" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_vertical_physics.py" STYLE="bubble" TEXT="vertical_physics"><font BOLD="True" NAME="courier" SIZE="12" /><richcontent TYPE="NOTE"><html>
+</html></richcontent></node></node></node></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="false" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_vertical_physics.py" STYLE="bubble" TEXT="vertical_physics"><font BOLD="True" NAME="courier" SIZE="12" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
@@ -1601,7 +1643,7 @@
         <dt><b>Description</b></dt><dd>Characteristics of ocean vertical physics</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_vertical_physics.py</dd>
     </dl>
   </body>
-</html></richcontent><node BACKGROUND_COLOR="#F3FFE2" COLOR="#000000" STYLE="bubble" TEXT="details"><node BACKGROUND_COLOR="#F3FFE2" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="vertical_physics_details"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
+</html></richcontent><node BACKGROUND_COLOR="#F3FFE2" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="vertical_physics_details"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
@@ -1678,7 +1720,7 @@
         <dt><b>Description</b></dt><dd>Describe how tide induced mixing is modelled (barotropic, baroclinic, none)</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics.vertical_physics_details.tide_induced_mixing</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
     </dl>
   </body>
-</html></richcontent></node></node></node><node BACKGROUND_COLOR="#ACF0F2" COLOR="#000000" FOLDED="false" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_vertical_physics.py" STYLE="bubble" TEXT="boundary_layer_mixing"><font BOLD="True" NAME="courier" SIZE="12" /><richcontent TYPE="NOTE"><html>
+</html></richcontent></node></node><node BACKGROUND_COLOR="#ACF0F2" COLOR="#000000" FOLDED="false" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_vertical_physics.py" STYLE="bubble" TEXT="boundary_layer_mixing"><font BOLD="True" NAME="courier" SIZE="12" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
