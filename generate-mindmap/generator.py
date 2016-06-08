@@ -36,6 +36,8 @@ _NOTE = "<dt><b>{}</b></dt><dd>{}</dd>"
 # Set of configuration sections.
 _CONFIG_SECTIONS = [
     "realm",
+    "grid",
+    "key-properties",
     "process",
     "sub-process",
     "detail",
@@ -85,7 +87,7 @@ class Generator(Parser):
 
         """
         # Get section style config.
-        cfg = self.cfg.get_section(owner.style_type)
+        cfg = self.cfg.get_section(owner.cfg_section)
 
         # Initialise mindmap node attributes.
         atts = {
@@ -154,11 +156,11 @@ class Generator(Parser):
         content.append(ET.fromstring(notes))
 
 
-    def _emit_collection_node(self, owner, collection_type, style_type):
+    def _emit_collection_node(self, owner, collection_type, cfg_section):
         """Sets a collection node, i..e a node that simply wraps items.
 
         """
-        cfg = self.cfg.get_section(style_type)
+        cfg = self.cfg.get_section(cfg_section)
         self.nodes[str(owner) + collection_type] = ET.SubElement(self.nodes[owner], 'node', {
             "STYLE": "bubble",
             'COLOR': cfg['font-color'],
@@ -198,14 +200,26 @@ class Generator(Parser):
         self._emit_legend(realm)
 
 
+    def on_grid_parse(self, realm, grid):
+        """On grid parse event handler.
+
+        """
+        self._emit_node(realm, grid)
+
+
+    def on_key_properties_parse(self, realm, key_properties):
+        """On key_properties parse event handler.
+
+        """
+        self._emit_node(realm, key_properties)
+
+
     def on_process_parse(self, realm, process):
         """On process parse event handler.
 
         """
         self._emit_node(realm, process)
         self._emit_notes(process)
-        # if process.details:
-        #     self._emit_collection_node(process, "details", "detail")
 
 
     def on_subprocess_parse(self, process, subprocess):
@@ -219,11 +233,7 @@ class Generator(Parser):
         """On process detail parse event handler.
 
         """
-        if isinstance(owner, Process):
-            self._emit_node(owner, detail)
-            # self._emit_node(self.nodes[str(owner) + "details"], detail)
-        else:
-            self._emit_node(owner, detail)
+        self._emit_node(owner, detail)
 
 
     def on_detail_property_parse(self, owner, detail_property):

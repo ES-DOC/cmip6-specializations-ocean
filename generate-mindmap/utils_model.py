@@ -24,11 +24,12 @@ class SpecializationModule(object):
     """Wraps a standard specialization module.
 
     """
-    def __init__(self, owner, mod):
+    def __init__(self, owner, mod, cfg_section):
         """Instance constructor.
 
         """
         self.authors = mod.AUTHORS
+        self.cfg_section = cfg_section
         self.contact = mod.CONTACT
         self.description = mod.DESCRIPTION
         self.full_name = mod.__name__.split(".")[-1]
@@ -72,11 +73,10 @@ class Realm(SpecializationModule):
         # Unpack specializations.
         mod, grid, key_properties, processes = specializations
 
-        super(Realm, self).__init__(None, mod)
+        super(Realm, self).__init__(None, mod, "realm")
 
-        self.style_type = "realm"
-        self.grid = Grid(self, grid)
-        self.key_properties = KeyProperties(self, key_properties)
+        self.grid = Grid(self, grid) if grid else None
+        self.key_properties = KeyProperties(self, key_properties) if key_properties else None
         self.processes = [Process(self, i) for i in processes]
 
 
@@ -88,9 +88,7 @@ class Process(SpecializationModule):
         """Instance constructor.
 
         """
-        super(Process, self).__init__(realm, mod)
-
-        self.style_type = "process"
+        super(Process, self).__init__(realm, mod, "process")
 
         try:
             mod.DETAILS
@@ -111,11 +109,18 @@ class Grid(SpecializationModule):
     """Wraps a grid specialization.
 
     """
-    def __init__(self, owner, mod):
+    def __init__(self, realm, mod):
         """Instance constructor.
 
         """
-        super(Grid, self).__init__(owner, mod)
+        super(Grid, self).__init__(realm, mod, "grid")
+
+        try:
+            mod.DETAILS
+        except AttributeError:
+            self.details = []
+        else:
+            self.details = [Detail(mod, self, i, j) for i, j in mod.DETAILS.items() if isinstance(j, dict)]
 
 
 class KeyProperties(SpecializationModule):
@@ -126,7 +131,14 @@ class KeyProperties(SpecializationModule):
         """Instance constructor.
 
         """
-        super(KeyProperties, self).__init__(owner, mod)
+        super(KeyProperties, self).__init__(owner, mod, "key-properties")
+
+        try:
+            mod.DETAILS
+        except AttributeError:
+            self.details = []
+        else:
+            self.details = [Detail(mod, self, i, j) for i, j in mod.DETAILS.items() if isinstance(j, dict)]
 
 
 class SubProcess(object):
@@ -145,7 +157,7 @@ class SubProcess(object):
         self.description = obj.get('description', name)
         self.id = "{}.{}".format(process.id, name)
         self.process = process
-        self.style_type = "sub-process"
+        self.cfg_section = "sub-process"
         self.url = process.url
         self.details = [Detail(process.mod, self, i, process.mod.SUB_PROCESS_DETAILS[i])
                         for i in obj['details']]
@@ -176,7 +188,7 @@ class Detail(object):
         self.id = "{}.{}".format(container.id, name)
         self.name = name
         self.obj = obj
-        self.style_type = "detail"
+        self.cfg_section = "detail"
         self.description = self.obj['description']
         self.properties = [DetailProperty(mod, self, i) for i in self.obj['properties']]
 
@@ -203,7 +215,7 @@ class DetailProperty(object):
         self.name, self.typeof, self.cardinality, self.description = obj
         self.container = container
         self.mod = mod
-        self.style_type = "detail-property"
+        self.cfg_section = "detail-property"
 
 
     @property
@@ -267,7 +279,7 @@ class EnumChoice(object):
         self.description = description
         self.id = "{}.{}".format(owner.id, value)
         self.value = value
-        self.style_type = "enum-choice"
+        self.cfg_section = "enum-choice"
 
 
     @property
