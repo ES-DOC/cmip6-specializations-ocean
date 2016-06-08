@@ -135,14 +135,15 @@ class Generator(Parser):
         content.append(ET.fromstring(notes))
 
 
-    def _set_collection_node(self, owner, collection_type):
+    def _set_collection_node(self, owner, collection_type, style_type):
         """Sets a collection node, i..e a node that simply wraps items.
 
         """
+        cfg = self.cfg.get_section(style_type)
         self.nodes[str(owner) + collection_type] = ET.SubElement(self.nodes[owner], 'node', {
             "STYLE": "bubble",
-            'COLOR': "#000000",
-            'BACKGROUND_COLOR': "#F3FFE2",
+            'COLOR': cfg['font-color'],
+            'BACKGROUND_COLOR': cfg['bg-color'],
             "TEXT": collection_type
             })
 
@@ -162,7 +163,7 @@ class Generator(Parser):
         self._set_node(realm, process)
         self._set_notes(process)
         if process.details:
-            self._set_collection_node(process, "details")
+            self._set_collection_node(process, "details", "detail")
 
 
     def on_subprocess_parse(self, process, subprocess):
