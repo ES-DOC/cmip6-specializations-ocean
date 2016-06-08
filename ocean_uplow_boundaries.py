@@ -37,7 +37,7 @@ DESCRIPTION = 'Properties of ocean upper and lower boundaries'
 # --------------------------------------------------------------------
 DETAILS = OrderedDict()
 
-DETAILS['ocean_free_surface'] = {
+DETAILS['free_surface'] = {
     'description': 'Properties of free surface in ocean',
     'properties': [
         ('scheme', 'ENUM:free_surface_types', '1.1',
@@ -47,7 +47,7 @@ DETAILS['ocean_free_surface'] = {
      ]
 }
 
-DETAILS['ocean_bottom_boundary_layer'] = {
+DETAILS['bottom_boundary_layer'] = {
     'description': 'Properties of bottom boundary layer in ocean',
     'properties': [
         ('type', 'ENUM:bottom_bl_types', '1.1',

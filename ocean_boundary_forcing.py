@@ -65,17 +65,13 @@ SUB_PROCESSES = OrderedDict()
 
 SUB_PROCESSES['momentum'] = {
     'description': 'Key properties of momentum boundary forcing in the ocean',
-    'details': ['momentum_bottom_friction',
-                'momentum_lateral_friction'],
+    'details': ['bottom_friction', 'lateral_friction']
 }
 
-SUB_PROCESSES['tracer'] = {
+SUB_PROCESSES['tracers'] = {
     'description': 'Key properties of tracer boundary forcing in the ocean',
-    'details': ['tracers_sunlight_penetration',
-                'tracers_surface_salinity_atmos',
-                'tracers_surface_salinity_seaice',],
+    'details': ['sunlight_penetration', 'surface_salinity_atmos', 'surface_salinity_seaice']
 }
-
 
 # --------------------------------------------------------------------
 # PROCESS: SUB PROCESSES: DETAILS
@@ -84,7 +80,7 @@ SUB_PROCESSES['tracer'] = {
 # --------------------------------------------------------------------
 SUB_PROCESS_DETAILS = OrderedDict()
 
-SUB_PROCESS_DETAILS['momentum_bottom_friction'] = {
+SUB_PROCESS_DETAILS['momentum:bottom_friction'] = {
     'description': 'Properties of momentum bottom friction in ocean',
     'properties': [
         ('type', 'ENUM:mom_bottom_friction_types', '1.1',
@@ -92,7 +88,7 @@ SUB_PROCESS_DETAILS['momentum_bottom_friction'] = {
         ]
 }
 
-SUB_PROCESS_DETAILS['momentum_lateral_friction'] = {
+SUB_PROCESS_DETAILS['momentum:lateral_friction'] = {
    'description': 'Properties of momentum lateral friction in ocean',
     'properties': [
         ('type', 'ENUM:mom_lateral_friction_types', '1.1',
@@ -100,7 +96,7 @@ SUB_PROCESS_DETAILS['momentum_lateral_friction'] = {
         ]
 }
 
-SUB_PROCESS_DETAILS['tracers_sunlight_penetration'] = {
+SUB_PROCESS_DETAILS['tracers:sunlight_penetration'] = {
     'description': 'Properties of sunlight penetration scheme in ocean',
     'properties': [
          ('scheme', 'ENUM:sunlight_penetration_scheme_types', '1.1',
@@ -112,7 +108,7 @@ SUB_PROCESS_DETAILS['tracers_sunlight_penetration'] = {
         ]
 }
 
-SUB_PROCESS_DETAILS['tracers_surface_salinity_atmos'] = {
+SUB_PROCESS_DETAILS['tracers:surface_salinity_atmos'] = {
     'description': 'Properties of surface salinity forcing from atmos in ocean',
     'properties': [
         ('scheme', 'ENUM:surface_salinity_forcing_types', '1.1',
@@ -120,7 +116,7 @@ SUB_PROCESS_DETAILS['tracers_surface_salinity_atmos'] = {
         ]
 }
 
-SUB_PROCESS_DETAILS['tracers_surface_salinity_seaice'] = {
+SUB_PROCESS_DETAILS['tracers:surface_salinity_seaice'] = {
     'description': 'Properties of surface salinity forcing from sea ice in ocean',
     'properties': [
         ('scheme', 'ENUM:surface_salinity_forcing_types', '1.1',

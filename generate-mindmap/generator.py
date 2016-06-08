@@ -13,7 +13,8 @@ import json
 
 import xml.etree.ElementTree as ET
 
-from parser import Parser
+from utils_model import Process
+from utils_parser import Parser
 
 
 
@@ -62,14 +63,13 @@ class Generator(Parser):
         self.mmap = None
         self.maps = {}
         self.nodes = {}
-        self.positions = {}
 
 
     def run(self):
         self.parse()
 
 
-    def _set_node(self, parent, owner, text=None, style=None, position=None):
+    def _set_node(self, parent, owner, text=None, style=None):
         """Sets a mindmap node.
 
         """
@@ -93,10 +93,6 @@ class Generator(Parser):
         else:
             atts['LINK'] = owner.url
 
-        # Set node position (right | left).
-        if position:
-            atts['POSITION'] = position
-
         # Get node parent.
         if not isinstance(parent, ET.Element):
             parent = self.nodes[parent]
@@ -105,16 +101,14 @@ class Generator(Parser):
         self.nodes[owner] = ET.SubElement(parent, 'node', atts)
 
         # Set node font / notes.
-        self._set_font(owner)
+        self._set_font(owner, cfg)
         self._set_notes(owner)
 
 
-    def _set_font(self, owner):
+    def _set_font(self, owner, cfg):
         """Styles a node with font information.
 
         """
-        cfg = self.cfg.get_section(owner.style_type)
-
         ET.SubElement(self.nodes[owner], 'font', {
             'BOLD': str(cfg['font-bold']),
             'NAME': cfg['font-name'],
@@ -141,6 +135,18 @@ class Generator(Parser):
         content.append(ET.fromstring(notes))
 
 
+    def _set_collection_node(self, owner, collection_type):
+        """Sets a collection node, i..e a node that simply wraps items.
+
+        """
+        self.nodes[str(owner) + collection_type] = ET.SubElement(self.nodes[owner], 'node', {
+            "STYLE": "bubble",
+            'COLOR': "#000000",
+            'BACKGROUND_COLOR': "#F3FFE2",
+            "TEXT": collection_type
+            })
+
+
     def on_realm_parse(self, realm):
         """On realm parse event handler.
 
@@ -153,9 +159,10 @@ class Generator(Parser):
         """On process parse event handler.
 
         """
-        self.positions[process] = 'left' if len(self.positions) % 2 == 0 else 'right'
-        self._set_node(realm, process, position=self.positions[process])
+        self._set_node(realm, process)
         self._set_notes(process)
+        if process.details:
+            self._set_collection_node(process, "details")
 
 
     def on_subprocess_parse(self, process, subprocess):
@@ -169,7 +176,10 @@ class Generator(Parser):
         """On process detail parse event handler.
 
         """
-        self._set_node(owner, detail)
+        if isinstance(owner, Process):
+            self._set_node(self.nodes[str(owner) + "details"], detail)
+        else:
+            self._set_node(owner, detail)
 
 
     def on_detail_property_parse(self, owner, detail_property):

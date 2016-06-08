@@ -60,12 +60,14 @@ class Realm(SpecializationModule):
     """Wraps a realm specialization.
 
     """
-    def __init__(self, input_dir, realm_name):
+    def __init__(self, specializations):
         """Instance constructor.
 
+        :param tuple specializations: Set of realm related specialization.
+
         """
-        mod, grid, key_properties, processes = \
-            utils.get_specializations(input_dir, realm_name)
+        # Unpack specializations.
+        mod, grid, key_properties, processes = specializations
 
         super(Realm, self).__init__(None, mod)
 
@@ -75,29 +77,25 @@ class Realm(SpecializationModule):
         self.processes = [Process(self, i) for i in processes]
 
 
-    @property
-    def notes(self):
-        """Returns notes.
-
-        """
-        return [
-            ("Description", self.description),
-            ("ID", self.id),
-            ("Python Definition", self.url)
-        ]
-
-
 class Process(SpecializationModule):
     """Wraps a process specialization.
 
     """
-    def __init__(self, owner, mod):
+    def __init__(self, realm, mod):
         """Instance constructor.
 
         """
-        super(Process, self).__init__(owner, mod)
+        super(Process, self).__init__(realm, mod)
 
         self.style_type = "process"
+
+        try:
+            mod.DETAILS
+        except AttributeError:
+            self.details = []
+        else:
+            self.details = [Detail(mod, self, i, j) for i, j in mod.DETAILS.items() if isinstance(j, dict)]
+
         try:
             mod.SUB_PROCESSES
         except AttributeError:
@@ -136,6 +134,9 @@ class SubProcess(object):
         """Instance constructor.
 
         """
+        # Expand full sub-process detail keys.
+        obj['details'] = ["{}:{}".format(name, i) for i in obj['details']]
+
         self.obj = obj
         self.name = name
         self.description = obj.get('description', name)
@@ -143,7 +144,7 @@ class SubProcess(object):
         self.process = process
         self.style_type = "sub-process"
         self.url = process.url
-        self.details = [Detail(process, self, i)
+        self.details = [Detail(process.mod, self, i, process.mod.SUB_PROCESS_DETAILS[i])
                         for i in obj['details']]
 
 
@@ -163,20 +164,19 @@ class Detail(object):
     """Wraps a detail specialization.
 
     """
-    def __init__(self, process, sub_process, name):
+    def __init__(self, mod, container, full_name, obj):
         """Instance constructor.
 
         """
-        self.mod = process.mod
-        self.id = "{}.{}".format(sub_process.id, name)
+        name = full_name.split(":")[-1]
+        
+        self.id = "{}.{}".format(container.id, name)
+        print self.id
         self.name = name
-        self.obj = process.mod.SUB_PROCESS_DETAILS[name]
-        self.process = process
+        self.obj = obj
         self.style_type = "detail"
-        self.sub_process = sub_process
-        self.url = process.url
         self.description = self.obj['description']
-        self.properties = [DetailProperty(self, i) for i in self.obj['properties']]
+        self.properties = [DetailProperty(mod, self, i) for i in self.obj['properties']]
 
 
     @property
@@ -186,8 +186,7 @@ class Detail(object):
         """
         return [
             ("Description", self.description),
-            ("ID", self.id),
-            ("Python Definition", self.url)
+            ("ID", self.id)
         ]
 
 
@@ -195,15 +194,14 @@ class DetailProperty(object):
     """Wraps a detail-property specialization.
 
     """
-    def __init__(self, container, obj):
+    def __init__(self, mod, container, obj):
         """Instance constructor.
 
         """
         self.name, self.typeof, self.cardinality, self.description = obj
         self.container = container
-        self.mod = container.mod
+        self.mod = mod
         self.style_type = "detail-property"
-        self.url = container.url
 
 
     @property

@@ -40,14 +40,6 @@ class Parser(object):
             self._parse_process(self.realm, process)
 
 
-    def on_specialization_parse(self, specialization):
-        """On specialization parse event handler.
-
-        """
-
-        pass
-
-
     def on_realm_parse(self, realm):
         """On realm parse event handler.
 
@@ -92,6 +84,9 @@ class Parser(object):
             log("parsing: {}".format(process.id))
         self.on_process_parse(realm, process)
 
+        # Parse details.
+        self._parse_details(process)
+
         # Parse child sub-processes.
         sub_processes = sorted(process.sub_processes, key = lambda sp: sp.name)
         for sub_process in sub_processes:
@@ -108,11 +103,16 @@ class Parser(object):
         self.on_subprocess_parse(process, sub_process)
 
         # Iterate set of sub-process details.
-        for detail in sorted(sub_process.details, key = lambda i: i.id):
-            # Raise sub-process detail parse event.
+        self._parse_details(sub_process)
+
+
+    def _parse_details(self, owner):
+        # Iterate set of details.
+        for detail in sorted(owner.details, key = lambda i: i.id):
+            # Raise detail parse event.
             if self.verbose:
                 log("parsing: {}".format(detail.id))
-            self.on_detail_parse(sub_process, detail)
+            self.on_detail_parse(owner, detail)
 
             # Iterate set of detail properties.
             for detail_property in sorted(detail.properties, key = lambda i: i.id):

@@ -46,17 +46,17 @@ SUB_PROCESSES = OrderedDict()
 
 SUB_PROCESSES['momemtum_adv_scheme'] = {
     'description': 'Properties of lateral momemtum advection scheme in ocean',
-    'details': ['momemtum_adv_details']
+    'details': ['details']
 }
 
 SUB_PROCESSES['lat_tra_adv_scheme'] = {
     'description': 'Properties of lateral tracer advection scheme in ocean',
-    'details': ['lat_tra_adv_scheme_details']
+    'details': ['details']
 }
 
 SUB_PROCESSES['vert_tra_adv_scheme'] = {
     'description': 'Properties of vertical momemtum advection scheme in ocean',
-    'details': ['vert_tra_adv_scheme_details']
+    'details': ['details']
 }
 
 
@@ -67,7 +67,7 @@ SUB_PROCESSES['vert_tra_adv_scheme'] = {
 # --------------------------------------------------------------------
 SUB_PROCESS_DETAILS = OrderedDict()
 
-SUB_PROCESS_DETAILS['momemtum_adv_details'] = {
+SUB_PROCESS_DETAILS['momemtum_adv_scheme:details'] = {
     'description': 'Properties of lateral momemtum advection scheme in ocean',
     'properties': [
         ('type', 'ENUM:adv_mom_scheme_types', '1.1',
@@ -79,7 +79,7 @@ SUB_PROCESS_DETAILS['momemtum_adv_details'] = {
     ]
 }
 
-SUB_PROCESS_DETAILS['lat_tra_adv_scheme_details'] = {
+SUB_PROCESS_DETAILS['lat_tra_adv_scheme:details'] = {
     'description':'Properties of lateral tracer advection scheme in ocean',
     'properties': [
         ('type', 'ENUM:adv_tra_scheme_types', '1.1',
@@ -89,7 +89,7 @@ SUB_PROCESS_DETAILS['lat_tra_adv_scheme_details'] = {
    ]
 }
 
-SUB_PROCESS_DETAILS['vert_tra_adv_scheme_details'] = {
+SUB_PROCESS_DETAILS['vert_tra_adv_scheme:details'] = {
     'description': 'Properties of vertical tracer advection scheme in ocean',
     'properties': [
         ('type', 'ENUM:adv_tra_scheme_types', '1.1',

@@ -13,9 +13,9 @@ import os
 
 import xml.etree.ElementTree as ET
 
-from model import Realm
 from generator import Generator
 from utils import get_specializations
+from utils_model import Realm
 
 
 
@@ -54,11 +54,8 @@ _ARGS.add_argument(
     )
 _ARGS = _ARGS.parse_args()
 
-# Derive specialization modules.
-# mod, grid, key_properties, processes = get_specializations(input_dir, realm_name)
-
 # Set realm wrapper.
-realm = Realm(_ARGS.input_dir, _ARGS.realm)
+realm = Realm(get_specializations(_ARGS.input_dir, _ARGS.realm))
 
 # Run generator.
 generator = Generator(realm, _ARGS.stylesheet)

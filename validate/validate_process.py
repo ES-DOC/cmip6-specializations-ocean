@@ -36,9 +36,18 @@ def _validate_sub_process(mod, key, obj):
     """Validates an associated sub-prcess.
 
     """
+    def _get_invalid_detail_keys():
+        """Gets invalid sub-process detail keys.
+
+        """
+        keys = [(k, "{}:{}".format(key, k)) for k in obj['details']]
+
+        return [k[0] for k in keys if not k[1] in mod.SUB_PROCESS_DETAILS]
+
+
     errors = validate_sub_process(key, obj)
     if not errors:
-        for key_ in [k for k in obj['details'] if not k in mod.SUB_PROCESS_DETAILS]:
+        for key_ in _get_invalid_detail_keys():
             err = "has an invalid detail key: {}".format(key_)
             errors.append(err)
 
@@ -76,4 +85,4 @@ def validate(ctx):
         ctx.errors[mod] += _validate_sub_process(mod, key, obj)
     for key, obj in mod.SUB_PROCESS_DETAILS.items():
         ctx.errors[mod] += ["SUB_PROCESS_DETAILS['{}'] :: {}".format(key, e) for e in
-                            validate_sub_process_detail(key, obj, mod.ENUMERATIONS)]
+                            validate_sub_process_detail(mod, key, obj)]
