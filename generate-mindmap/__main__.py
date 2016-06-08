@@ -23,7 +23,7 @@ from utils_model import Realm
 _DIR = os.path.dirname(__file__)
 
 # Set command line arguments.
-_ARGS = argparse.ArgumentParser("Validates a set of CMIP6 specializations.")
+_ARGS = argparse.ArgumentParser("Generates a CMIP6 realm mindmap.")
 _ARGS.add_argument(
     "--dest",
     help="Path to a directory into which xmind defintions will be written.",
@@ -33,22 +33,22 @@ _ARGS.add_argument(
     )
 _ARGS.add_argument(
     "--realm",
-    help="Name of realm being validated.",
+    help="Name of realm being processed.",
     dest="realm",
     type=str,
     default=os.path.dirname(_DIR).split("-")[-1]
     )
 _ARGS.add_argument(
     "--input",
-    help="Path to a directory in which specializations reside.",
+    help="Path to a directory in which realm specializations reside.",
     dest="input_dir",
     type=str,
     default=os.path.dirname(_DIR)
     )
 _ARGS.add_argument(
-    "--stylesheet",
-    help="Path to a spreadsheet configuration file.",
-    dest="stylesheet",
+    "--config",
+    help="Path to a generator configuration file.",
+    dest="config",
     type=str,
     default=os.path.join(_DIR, "generator.conf")
     )
@@ -58,7 +58,7 @@ _ARGS = _ARGS.parse_args()
 realm = Realm(get_specializations(_ARGS.input_dir, _ARGS.realm))
 
 # Run generator.
-generator = Generator(realm, _ARGS.stylesheet)
+generator = Generator(realm, _ARGS.config)
 generator.run()
 
 # Write mindmap.

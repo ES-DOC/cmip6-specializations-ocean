@@ -68,13 +68,13 @@ class Generator(Parser):
     """Specialization to mindmap generator.
 
     """
-    def __init__(self, realm, stylesheet):
+    def __init__(self, realm, cfg_fpath):
         """Instance constructor.
 
         """
         super(Generator, self).__init__(realm)
 
-        self.cfg = _Configuration(stylesheet)
+        self.cfg = _Configuration(cfg_fpath)
         self.mmap = None
         self.maps = {}
         self.nodes = {}

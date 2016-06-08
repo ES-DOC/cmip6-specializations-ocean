@@ -44,7 +44,7 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Scientific area of a numerical model.</dd>
+        <dt><b>Description</b></dt><dd>A choice within an enumeration.</dd>
     </dl>
   </body>
 </html></richcontent></node></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="false" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_advection.py" STYLE="bubble" TEXT="advection"><font BOLD="True" NAME="courier" SIZE="12" /><richcontent TYPE="NOTE"><html>
