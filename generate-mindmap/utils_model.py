@@ -52,7 +52,10 @@ class SpecializationModule(object):
         return [
             ("Description", self.description),
             ("ID", self.id),
-            ("Python Definition", self.url)
+            ("Python Definition", self.url),
+            ("QC status", self.qc_status),
+            ("Contact", self.contact),
+            ("Authors", self.authors),
         ]
 
 

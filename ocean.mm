@@ -2,7 +2,7 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Ocean realm specialization</dd><dt><b>ID</b></dt><dd>cmip6.ocean</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean.py</dd>
+        <dt><b>Description</b></dt><dd>Ocean realm specialization</dd><dt><b>ID</b></dt><dd>cmip6.ocean</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean.py</dd><dt><b>QC status</b></dt><dd>draft</dd><dt><b>Contact</b></dt><dd>Eric Guilyardi</dd><dt><b>Authors</b></dt><dd>Eric Guilyardi</dd>
     </dl>
   </body>
 </html></richcontent><node POSITION="left" STYLE="bubble" TEXT="legend"><node BACKGROUND_COLOR="" COLOR="#000000" STYLE="bubble" TEXT="realm"><richcontent TYPE="NOTE"><html>
@@ -51,14 +51,14 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Properties of ocean advection</dd><dt><b>ID</b></dt><dd>cmip6.ocean.advection</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_advection.py</dd>
+        <dt><b>Description</b></dt><dd>Properties of ocean advection</dd><dt><b>ID</b></dt><dd>cmip6.ocean.advection</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_advection.py</dd><dt><b>QC status</b></dt><dd>draft</dd><dt><b>Contact</b></dt><dd>Eric Guilyardi</dd><dt><b>Authors</b></dt><dd>Eric Guilyardi</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Properties of ocean advection</dd><dt><b>ID</b></dt><dd>cmip6.ocean.advection</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_advection.py</dd>
+        <dt><b>Description</b></dt><dd>Properties of ocean advection</dd><dt><b>ID</b></dt><dd>cmip6.ocean.advection</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_advection.py</dd><dt><b>QC status</b></dt><dd>draft</dd><dt><b>Contact</b></dt><dd>Eric Guilyardi</dd><dt><b>Authors</b></dt><dd>Eric Guilyardi</dd>
     </dl>
   </body>
 </html></richcontent><node BACKGROUND_COLOR="#ACF0F2" COLOR="#000000" FOLDED="false" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_advection.py" STYLE="bubble" TEXT="lat_tra_adv_scheme"><font BOLD="True" NAME="courier" SIZE="12" /><richcontent TYPE="NOTE"><html>
@@ -345,14 +345,14 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Properties of boundary forcing within the ocean component</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary_forcing</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_boundary_forcing.py</dd>
+        <dt><b>Description</b></dt><dd>Properties of boundary forcing within the ocean component</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary_forcing</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_boundary_forcing.py</dd><dt><b>QC status</b></dt><dd>draft</dd><dt><b>Contact</b></dt><dd>Eric Guilyardi</dd><dt><b>Authors</b></dt><dd>Eric Guilyardi</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Properties of boundary forcing within the ocean component</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary_forcing</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_boundary_forcing.py</dd>
+        <dt><b>Description</b></dt><dd>Properties of boundary forcing within the ocean component</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary_forcing</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_boundary_forcing.py</dd><dt><b>QC status</b></dt><dd>draft</dd><dt><b>Contact</b></dt><dd>Eric Guilyardi</dd><dt><b>Authors</b></dt><dd>Eric Guilyardi</dd>
     </dl>
   </body>
 </html></richcontent><node BACKGROUND_COLOR="#F3FFE2" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="boundary_forcing_details"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
@@ -737,14 +737,14 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Characteristics of ocean lateral physics</dd><dt><b>ID</b></dt><dd>cmip6.ocean.lateral_physics</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_lateral_physics.py</dd>
+        <dt><b>Description</b></dt><dd>Characteristics of ocean lateral physics</dd><dt><b>ID</b></dt><dd>cmip6.ocean.lateral_physics</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_lateral_physics.py</dd><dt><b>QC status</b></dt><dd>draft</dd><dt><b>Contact</b></dt><dd>Eric Guilyardi</dd><dt><b>Authors</b></dt><dd>Eric Guilyardi</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Characteristics of ocean lateral physics</dd><dt><b>ID</b></dt><dd>cmip6.ocean.lateral_physics</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_lateral_physics.py</dd>
+        <dt><b>Description</b></dt><dd>Characteristics of ocean lateral physics</dd><dt><b>ID</b></dt><dd>cmip6.ocean.lateral_physics</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_lateral_physics.py</dd><dt><b>QC status</b></dt><dd>draft</dd><dt><b>Contact</b></dt><dd>Eric Guilyardi</dd><dt><b>Authors</b></dt><dd>Eric Guilyardi</dd>
     </dl>
   </body>
 </html></richcontent><node BACKGROUND_COLOR="#F3FFE2" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="ocean_transient_eddy_representation"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
@@ -1395,14 +1395,14 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Characteristics of ocean time stepping framework</dd><dt><b>ID</b></dt><dd>cmip6.ocean.timestepping_framework</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_timestepping_framework.py</dd>
+        <dt><b>Description</b></dt><dd>Characteristics of ocean time stepping framework</dd><dt><b>ID</b></dt><dd>cmip6.ocean.timestepping_framework</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_timestepping_framework.py</dd><dt><b>QC status</b></dt><dd>draft</dd><dt><b>Contact</b></dt><dd>Eric Guilyardi</dd><dt><b>Authors</b></dt><dd>Eric Guilyardi</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Characteristics of ocean time stepping framework</dd><dt><b>ID</b></dt><dd>cmip6.ocean.timestepping_framework</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_timestepping_framework.py</dd>
+        <dt><b>Description</b></dt><dd>Characteristics of ocean time stepping framework</dd><dt><b>ID</b></dt><dd>cmip6.ocean.timestepping_framework</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_timestepping_framework.py</dd><dt><b>QC status</b></dt><dd>draft</dd><dt><b>Contact</b></dt><dd>Eric Guilyardi</dd><dt><b>Authors</b></dt><dd>Eric Guilyardi</dd>
     </dl>
   </body>
 </html></richcontent><node BACKGROUND_COLOR="#F3FFE2" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="timestepping_attributes"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
@@ -1465,14 +1465,14 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Properties of ocean upper and lower boundaries</dd><dt><b>ID</b></dt><dd>cmip6.ocean.uplow_boundaries</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_uplow_boundaries.py</dd>
+        <dt><b>Description</b></dt><dd>Properties of ocean upper and lower boundaries</dd><dt><b>ID</b></dt><dd>cmip6.ocean.uplow_boundaries</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_uplow_boundaries.py</dd><dt><b>QC status</b></dt><dd>draft</dd><dt><b>Contact</b></dt><dd>Eric Guilyardi</dd><dt><b>Authors</b></dt><dd>Eric Guilyardi</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Properties of ocean upper and lower boundaries</dd><dt><b>ID</b></dt><dd>cmip6.ocean.uplow_boundaries</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_uplow_boundaries.py</dd>
+        <dt><b>Description</b></dt><dd>Properties of ocean upper and lower boundaries</dd><dt><b>ID</b></dt><dd>cmip6.ocean.uplow_boundaries</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_uplow_boundaries.py</dd><dt><b>QC status</b></dt><dd>draft</dd><dt><b>Contact</b></dt><dd>Eric Guilyardi</dd><dt><b>Authors</b></dt><dd>Eric Guilyardi</dd>
     </dl>
   </body>
 </html></richcontent><node BACKGROUND_COLOR="#F3FFE2" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="bottom_boundary_layer"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
@@ -1633,14 +1633,14 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Characteristics of ocean vertical physics</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_vertical_physics.py</dd>
+        <dt><b>Description</b></dt><dd>Characteristics of ocean vertical physics</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_vertical_physics.py</dd><dt><b>QC status</b></dt><dd>draft</dd><dt><b>Contact</b></dt><dd>Eric Guilyardi</dd><dt><b>Authors</b></dt><dd>Eric Guilyardi</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Characteristics of ocean vertical physics</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_vertical_physics.py</dd>
+        <dt><b>Description</b></dt><dd>Characteristics of ocean vertical physics</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical_physics</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_vertical_physics.py</dd><dt><b>QC status</b></dt><dd>draft</dd><dt><b>Contact</b></dt><dd>Eric Guilyardi</dd><dt><b>Authors</b></dt><dd>Eric Guilyardi</dd>
     </dl>
   </body>
 </html></richcontent><node BACKGROUND_COLOR="#F3FFE2" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="vertical_physics_details"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
