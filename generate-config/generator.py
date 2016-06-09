@@ -23,7 +23,6 @@ from utils_parser import Parser
 
 # Map of output types to keys.
 _JSON_KEYS = {
-    Realm: "realm",
     Grid: "grid",
     KeyProperties: "keyProperties",
     Process: "process"
@@ -68,13 +67,12 @@ class Generator(Parser):
         """Returns generated output as a text blob.
 
         """
-        obj = collections.OrderedDict()
+        obj = self._maps[self.realm]
+        # obj = collections.OrderedDict()
         for mod, mod_obj in self._maps.items():
             if type(mod) not in _JSON_KEYS.keys():
                 continue
-            if isinstance(mod, Grid):
-                print mod
-            if isinstance(mod, Process):
+            elif isinstance(mod, Process):
                 obj['processes'] = obj.get('processes') or []
                 obj['processes'].append(mod_obj)
             else:

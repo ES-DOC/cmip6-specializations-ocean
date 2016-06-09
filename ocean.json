@@ -1,10 +1,8 @@
 {
-    "realm": {
-        "label": "Ocean", 
-        "description": "Ocean realm specialization", 
-        "id": "cmip6.ocean", 
-        "contact": "Eric Guilyardi"
-    }, 
+    "label": "Ocean", 
+    "description": "Ocean realm specialization", 
+    "id": "cmip6.ocean", 
+    "contact": "Eric Guilyardi", 
     "grid": {
         "label": "Grid", 
         "description": "Ocean grid and discretisation", 
