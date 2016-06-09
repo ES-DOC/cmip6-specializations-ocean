@@ -78,8 +78,70 @@ class Generator(Parser):
 
         self.cfg = _Configuration(cfg_fpath)
         self.mmap = None
-        self.maps = {}
         self.nodes = {}
+
+
+    @property
+    def output(self):
+        """Returns generated output as a text blob.
+
+        """
+        return ET.tostring(self.mmap)
+
+
+    def on_realm_parse(self, realm):
+        """On realm parse event handler.
+
+        """
+        self.mmap = ET.Element('map', {})
+        self._emit_node(self.mmap, realm, style="fork")
+        self._emit_legend(realm)
+
+
+    def on_grid_parse(self, realm, grid):
+        """On grid parse event handler.
+
+        """
+        self._emit_node(realm, grid)
+
+
+    def on_key_properties_parse(self, realm, key_properties):
+        """On key_properties parse event handler.
+
+        """
+        self._emit_node(realm, key_properties)
+
+
+    def on_process_parse(self, realm, process):
+        """On process parse event handler.
+
+        """
+        self._emit_node(realm, process)
+        self._emit_notes(process)
+
+
+    def on_subprocess_parse(self, process, subprocess):
+        """On sub-process parse event handler.
+
+        """
+        self._emit_node(process, subprocess)
+
+
+    def on_detail_parse(self, owner, detail):
+        """On process detail parse event handler.
+
+        """
+        self._emit_node(owner, detail)
+
+
+    def on_detail_property_parse(self, owner, detail_property):
+        """On detail property parse event handler.
+
+        """
+        self._emit_node(owner, detail_property)
+        self._emit_notes(detail_property)
+        for choice in detail_property.choices:
+            self._emit_node(detail_property, choice, text=choice.value)
 
 
     def _emit_node(self, parent, owner, text=None, style=None):
@@ -189,58 +251,3 @@ class Generator(Parser):
             self._emit_notes(node, notes=[
                 ('Description', cfg(section)['description']),
                 ])
-
-
-    def on_realm_parse(self, realm):
-        """On realm parse event handler.
-
-        """
-        self.mmap = ET.Element('map', {})
-        self._emit_node(self.mmap, realm, style="fork")
-        self._emit_legend(realm)
-
-
-    def on_grid_parse(self, realm, grid):
-        """On grid parse event handler.
-
-        """
-        self._emit_node(realm, grid)
-
-
-    def on_key_properties_parse(self, realm, key_properties):
-        """On key_properties parse event handler.
-
-        """
-        self._emit_node(realm, key_properties)
-
-
-    def on_process_parse(self, realm, process):
-        """On process parse event handler.
-
-        """
-        self._emit_node(realm, process)
-        self._emit_notes(process)
-
-
-    def on_subprocess_parse(self, process, subprocess):
-        """On sub-process parse event handler.
-
-        """
-        self._emit_node(process, subprocess)
-
-
-    def on_detail_parse(self, owner, detail):
-        """On process detail parse event handler.
-
-        """
-        self._emit_node(owner, detail)
-
-
-    def on_detail_property_parse(self, owner, detail_property):
-        """On detail property parse event handler.
-
-        """
-        self._emit_node(owner, detail_property)
-        self._emit_notes(detail_property)
-        for choice in detail_property.choices:
-            self._emit_node(detail_property, choice, text=choice.value)

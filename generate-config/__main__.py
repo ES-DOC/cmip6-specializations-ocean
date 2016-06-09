@@ -11,6 +11,8 @@
 import argparse
 import os
 
+import xml.etree.ElementTree as ET
+
 from generator import Generator
 from utils import get_specializations
 from utils_model import Realm
@@ -21,10 +23,10 @@ from utils_model import Realm
 _DIR = os.path.dirname(__file__)
 
 # Set command line arguments.
-_ARGS = argparse.ArgumentParser("Generates a CMIP6 realm mindmap.")
+_ARGS = argparse.ArgumentParser("Generates a CMIP6 realm config file for input into a 3rd party system.")
 _ARGS.add_argument(
     "--dest",
-    help="Path to a directory into which xmind defintions will be written.",
+    help="Path to a directory into which realm config file will be written.",
     dest="dest",
     type=str,
     default=os.path.dirname(_DIR)
@@ -43,23 +45,16 @@ _ARGS.add_argument(
     type=str,
     default=os.path.dirname(_DIR)
     )
-_ARGS.add_argument(
-    "--config",
-    help="Path to a generator configuration file.",
-    dest="config",
-    type=str,
-    default=os.path.join(_DIR, "generator.conf")
-    )
 _ARGS = _ARGS.parse_args()
 
 # Set realm wrapper.
 realm = Realm(get_specializations(_ARGS.input_dir, _ARGS.realm))
 
 # Run generator.
-generator = Generator(realm, _ARGS.config)
+generator = Generator(realm)
 generator.run()
 
 # Write mindmap.
-fpath = os.path.join(_ARGS.dest, "{}.mm".format(_ARGS.realm))
+fpath = os.path.join(_ARGS.dest, "{}.json".format(_ARGS.realm))
 with open(fpath, 'w') as fstream:
     fstream.write(generator.output)
