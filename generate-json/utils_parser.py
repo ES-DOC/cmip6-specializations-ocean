@@ -72,8 +72,43 @@ class Parser(object):
         pass
 
 
+    def on_grid_discretisation_parse(self, realm, grid, discretisation):
+        """On grid discretisation parse event handler.
+
+        """
+        pass
+
+
     def on_key_properties_parse(self, realm, key_properties):
         """On key_properties parse event handler.
+
+        """
+        pass
+
+
+    def on_key_properties_conservation_parse(self, realm, grid, conservation):
+        """On key-properties conservation parse event handler.
+
+        """
+        pass
+
+
+    def on_key_properties_extent_parse(self, realm, grid, extent):
+        """On key-properties extent parse event handler.
+
+        """
+        pass
+
+
+    def on_key_properties_resolution_parse(self, realm, grid, resolution):
+        """On key-properties resolution parse event handler.
+
+        """
+        pass
+
+
+    def on_key_properties_tuning_parse(self, realm, grid, tuning):
+        """On key-properties tuning parse event handler.
 
         """
         pass
@@ -100,8 +135,15 @@ class Parser(object):
         pass
 
 
-    def on_detail_property_parse(self, owner, detail):
+    def on_detail_property_parse(self, detail, prop):
         """On process detail parse event handler.
+
+        """
+        pass
+
+
+    def on_detail_property_choice_parse(self, detail, prop, choice):
+        """On process detail property choice parse event handler.
 
         """
         pass
@@ -111,26 +153,37 @@ class Parser(object):
         """Parses a grid.
 
         """
-        # Raise process parse event.
         if self.verbose:
             log("parsing: {}".format(grid.id))
-        self.on_grid_parse(realm, grid)
 
-        # Parse details.
+        self.on_grid_parse(realm, grid)
         self._parse_details(grid)
+        if grid.discretisation:
+            self.on_grid_discretisation_parse(realm, grid, grid.discretisation)
+            self._parse_details(grid.discretisation)
 
 
     def _parse_key_properties(self, realm, key_properties):
         """Parses key properties.
 
         """
-        # Raise process parse event.
         if self.verbose:
             log("parsing: {}".format(key_properties.id))
-        self.on_key_properties_parse(realm, key_properties)
 
-        # Parse details.
+        self.on_key_properties_parse(realm, key_properties)
         self._parse_details(key_properties)
+        if key_properties.conservation:
+            self.on_key_properties_conservation_parse(realm, key_properties, key_properties.conservation)
+            self._parse_details(key_properties.conservation)
+        if key_properties.extent:
+            self.on_key_properties_extent_parse(realm, key_properties, key_properties.extent)
+            self._parse_details(key_properties.extent)
+        if key_properties.resolution:
+            self.on_key_properties_resolution_parse(realm, key_properties, key_properties.resolution)
+            self._parse_details(key_properties.resolution)
+        if key_properties.tuning:
+            self.on_key_properties_tuning_parse(realm, key_properties, key_properties.tuning)
+            self._parse_details(key_properties.tuning)
 
 
     def _parse_process(self, realm, process):
@@ -165,6 +218,9 @@ class Parser(object):
 
 
     def _parse_details(self, owner):
+        """Parses a collection of details.
+
+        """
         # Iterate set of details.
         for detail in sorted(owner.details, key = lambda i: i.id):
             # Raise detail parse event.
@@ -173,8 +229,12 @@ class Parser(object):
             self.on_detail_parse(owner, detail)
 
             # Iterate set of detail properties.
-            for detail_property in sorted(detail.properties, key = lambda i: i.id):
+            for prop in sorted(detail.properties, key = lambda i: i.id):
                 # Raise detail-property parse event.
                 if self.verbose:
-                    log("parsing: {}".format(detail_property.id))
-                self.on_detail_property_parse(detail, detail_property)
+                    log("parsing: {}".format(prop.id))
+                self.on_detail_property_parse(detail, prop)
+
+                # Iterate set of detail property choices.
+                for choice in prop.choices:
+                    self.on_detail_property_choice_parse(detail, prop, choice)

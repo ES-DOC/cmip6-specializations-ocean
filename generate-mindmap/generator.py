@@ -3,7 +3,7 @@
 """
 .. module:: write_cmip6_xmind.py
    :platform: Unix, Windows
-   :synopsis: Rewrites cmip6 vocab defintions to xmind files.
+   :synopsis: Rewrites a cmip6 realm specialization to mindmap.
 
 .. moduleauthor:: Mark Conway-Greenslade <momipsl@ipsl.jussieu.fr>
 
@@ -14,6 +14,7 @@ import json
 import xml.etree.ElementTree as ET
 
 from utils_model import Process
+from utils_model import SpecializationModule
 from utils_parser import Parser
 
 
@@ -105,11 +106,25 @@ class Generator(Parser):
         self._emit_node(realm, grid)
 
 
+    def on_grid_discretisation_parse(self, realm, grid, discretisation):
+        """On grid discretisation parse event handler.
+
+        """
+        self._emit_node(grid, discretisation, cfg_section="grid")
+
+
     def on_key_properties_parse(self, realm, key_properties):
         """On key_properties parse event handler.
 
         """
         self._emit_node(realm, key_properties)
+
+
+    def on_key_properties_conservation_parse(self, realm, key_properties, conservation):
+        """On grid discretisation parse event handler.
+
+        """
+        self._emit_node(key_properties, conservation, cfg_section="key-properties")
 
 
     def on_process_parse(self, realm, process):
@@ -134,22 +149,22 @@ class Generator(Parser):
         self._emit_node(owner, detail)
 
 
-    def on_detail_property_parse(self, owner, detail_property):
+    def on_detail_property_parse(self, detail, detail_property):
         """On detail property parse event handler.
 
         """
-        self._emit_node(owner, detail_property)
+        self._emit_node(detail, detail_property)
         self._emit_notes(detail_property)
         for choice in detail_property.choices:
             self._emit_node(detail_property, choice, text=choice.value)
 
 
-    def _emit_node(self, parent, owner, text=None, style=None):
+    def _emit_node(self, parent, owner, text=None, style=None, cfg_section=None):
         """Sets a mindmap node.
 
         """
         # Get section style config.
-        cfg = self.cfg.get_section(owner.cfg_section)
+        cfg = self.cfg.get_section(cfg_section if cfg_section else owner.cfg_section)
 
         # Initialise mindmap node attributes.
         atts = {
@@ -181,7 +196,7 @@ class Generator(Parser):
 
 
     def _emit_font(self, owner, cfg):
-        """Styles a node with font information.
+        """Set node font information.
 
         """
         ET.SubElement(self.nodes[owner], 'font', {
@@ -192,43 +207,29 @@ class Generator(Parser):
 
 
     def _emit_notes(self, owner, notes=None):
-        """Set notes associated with a node.
+        """Set mindmap notes.
 
         """
-        # Get node parent.
+        # Set parent mm node.
         if not isinstance(owner, ET.Element):
             parent = self.nodes[owner]
         else:
             parent = owner
 
-        # Skip if owner does not define notes.
+        # Set notes.
         if not notes:
             try:
                 notes = owner.notes
             except AttributeError:
                 return
 
-        # Convert notes to HTML.
-        notes = [_NOTE.format(k, v) for k, v in notes]
+        # Convert to HTML.
+        notes = [_NOTE.format(k, v) for k, v in notes if v]
         notes = _NOTES.format("".join(notes))
 
-
-        # Inject notes into mindmap.
+        # Extend mindmap.
         content = ET.SubElement(parent, 'richcontent', {"TYPE": "NOTE"})
         content.append(ET.fromstring(notes))
-
-
-    def _emit_collection_node(self, owner, collection_type, cfg_section):
-        """Sets a collection node, i..e a node that simply wraps items.
-
-        """
-        cfg = self.cfg.get_section(cfg_section)
-        self.nodes[str(owner) + collection_type] = ET.SubElement(self.nodes[owner], 'node', {
-            "STYLE": "bubble",
-            'COLOR': cfg['font-color'],
-            'BACKGROUND_COLOR': cfg['bg-color'],
-            "TEXT": collection_type
-            })
 
 
     def _emit_legend(self, realm):

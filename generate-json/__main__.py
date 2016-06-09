@@ -11,8 +11,6 @@
 import argparse
 import os
 
-import xml.etree.ElementTree as ET
-
 from generator import Generator
 from utils import get_specializations
 from utils_model import Realm

@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 """
-.. module:: write_cmip6_xmind.py
+.. module:: generator.py
    :platform: Unix, Windows
-   :synopsis: Rewrites cmip6 vocab defintions to xmind files.
+   :synopsis: Rewrites a cmip6 realm specialization to json.
 
 .. moduleauthor:: Mark Conway-Greenslade <momipsl@ipsl.jussieu.fr>
 
@@ -14,6 +14,7 @@ import json
 
 
 from utils_model import Grid
+from utils_model import GridDiscretisation
 from utils_model import KeyProperties
 from utils_model import Process
 from utils_model import Realm
@@ -38,8 +39,8 @@ class _Configuration(object):
         """Instance constructor.
 
         """
-        with open(fpath, 'r') as f:
-            self._data = json.loads(f.read())
+        with open(fpath, 'r') as fstream:
+            self._data = json.loads(fstream.read())
 
 
     def get_section(self, key):
@@ -95,6 +96,12 @@ class Generator(Parser):
 
         """
         pass
+        # for spec, obj in self._maps.items():
+        #     if isinstance(spec, GridD):
+
+        #     print spec
+        # # self._maps[discretisation] = obj
+        # # self._maps[grid]['discretisation'] = obj
 
 
     def on_grid_parse(self, realm, grid):
@@ -106,6 +113,18 @@ class Generator(Parser):
         self._maps[grid] = obj
 
 
+    def on_grid_discretisation_parse(self, realm, grid, discretisation):
+        """On grid discretisation parse event handler.
+
+        """
+        obj = collections.OrderedDict()
+        obj['label'] = "Discretisation"
+        obj['description'] = discretisation.description
+
+        self._maps[discretisation] = obj
+        self._maps[grid]['discretisation'] = obj
+
+
     def on_key_properties_parse(self, realm, key_properties):
         """On key_properties parse event handler.
 
@@ -113,6 +132,18 @@ class Generator(Parser):
         obj = self._map_module(key_properties)
 
         self._maps[key_properties] = obj
+
+
+    def on_key_properties_conservation_parse(self, realm, grid, conservation):
+        """On key-properties conservation parse event handler.
+
+        """
+        obj = collections.OrderedDict()
+        obj['label'] = "Conservation"
+        obj['description'] = conservation.description
+
+        self._maps[conservation] = obj
+        self._maps[grid]['conservation'] = obj
 
 
     def on_process_parse(self, realm, process):
@@ -129,7 +160,7 @@ class Generator(Parser):
 
         """
         obj = collections.OrderedDict()
-        obj['label'] = self._format_name(subprocess.name)
+        obj['label'] = self._get_label(subprocess.name)
         obj['description'] = subprocess.description
         obj['id'] = subprocess.id
 
@@ -144,35 +175,60 @@ class Generator(Parser):
         """On process detail parse event handler.
 
         """
+        if owner not in self._maps:
+            return
+
         obj = collections.OrderedDict()
-        obj['label'] = self._format_name(detail.name)
+        obj['label'] = self._get_label(detail.name)
         obj['description'] = detail.description
         obj['id'] = detail.id
 
-        container = self._maps[owner]
-        container['details'] = container.get('details') or []
-        container['details'].append(obj)
+        owner = self._maps[owner]
+        owner['details'] = owner.get('details') or []
+        owner['details'].append(obj)
 
         self._maps[detail] = obj
 
 
-    def on_detail_property_parse(self, owner, detail_property):
+    def on_detail_property_parse(self, detail, prop):
         """On detail property parse event handler.
 
         """
         obj = collections.OrderedDict()
-        obj['label'] = self._format_name(detail_property.name)
-        obj['description'] = detail_property.description
-        obj['id'] = detail_property.id
+        obj['label'] = self._get_label(prop.name)
+        obj['description'] = prop.description
+        obj['id'] = prop.id
 
-        obj['cardinality'] = detail_property.cardinality
-        obj['type'] = detail_property.typeof
+        obj['cardinality'] = prop.cardinality
+        obj['type'] = "enum" if prop.typeof.find("ENUM") >= 0 else prop.typeof
 
-        container = self._maps[owner]
-        container['properties'] = container.get('properties') or []
-        container['properties'].append(obj)
+        if prop.enum:
+            obj['enum'] = {
+                'label': prop.enum.name,
+                'id': prop.enum.id,
+                'description': prop.enum.description,
+                'isOpen': True,
+                'choices': []
+            }
 
-        self._maps[detail_property] = obj
+        detail = self._maps[detail]
+        detail['properties'] = detail.get('properties') or []
+        detail['properties'].append(obj)
+
+        self._maps[prop] = obj
+
+
+    def on_detail_property_choice_parse(self, detail, prop, choice):
+        """On process detail property choice parse event handler.
+
+        """
+        obj = collections.OrderedDict()
+        obj['label'] = choice.value
+        obj['description'] = choice.description
+
+        prop = self._maps[prop]
+        prop['enum']['choices'] = prop['enum']['choices'] or []
+        prop['enum']['choices'].append(obj)
 
 
     def _map_module(self, mod):
@@ -180,7 +236,7 @@ class Generator(Parser):
 
         """
         obj = collections.OrderedDict()
-        obj['label'] = self._format_name(mod.name)
+        obj['label'] = self._get_label(mod.name)
         obj['description'] = mod.description
         obj['id'] = mod.id
         obj['contact'] = mod.contact
@@ -188,7 +244,10 @@ class Generator(Parser):
         return obj
 
 
-    def _format_name(self, name):
+    def _get_label(self, name):
+        """Returns a name formatted as a label for UI purposes.
+
+        """
         name = name.replace("_", " ")
 
         return " ".join("{}{}".format(n[0].upper(), n[1:]) for n in name.split(" "))

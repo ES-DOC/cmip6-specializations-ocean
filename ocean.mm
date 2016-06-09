@@ -2,7 +2,7 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Ocean realm specialization</dd><dt><b>ID</b></dt><dd>cmip6.ocean</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean.py</dd><dt><b>QC status</b></dt><dd>draft</dd><dt><b>Contact</b></dt><dd>Eric Guilyardi</dd><dt><b>Authors</b></dt><dd>Eric Guilyardi</dd>
+        <dt><b>Description</b></dt><dd>Ocean realm specialization</dd><dt><b>ID</b></dt><dd>cmip6.ocean</dd><dt><b>Python Definition</b></dt><dd>https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean.py</dd><dt><b>QC status</b></dt><dd>draft</dd><dt><b>Contact</b></dt><dd>Eric Guilyardi</dd><dt><b>Authors</b></dt><dd>Eric Guilyardi</dd><dt><b>Contributors</b></dt><dd>David Hassle</dd>
     </dl>
   </body>
 </html></richcontent><node POSITION="left" STYLE="bubble" TEXT="legend"><node BACKGROUND_COLOR="" COLOR="#000000" STYLE="bubble" TEXT="realm"><richcontent TYPE="NOTE"><html>
@@ -93,28 +93,28 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.grid.horizontal-grid.horizontal-grid-type.latlon</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>horiz-grid-types.latlon</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Other"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.grid.horizontal-grid.horizontal-grid-type.other</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>horiz-grid-types.other</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Rotated north pole"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.grid.horizontal-grid.horizontal-grid-type.rotated-north-pole</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>horiz-grid-types.rotated-north-pole</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Two north poles (ORCA-style)"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.grid.horizontal-grid.horizontal-grid-type.two-north-poles-(orca-style)</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>horiz-grid-types.two-north-poles-(orca-style)</dd>
     </dl>
   </body>
 </html></richcontent></node></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="number_of_xy_gridpoints"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
@@ -152,7 +152,231 @@
         <dt><b>Description</b></dt><dd>Number of vertical levels</dd><dt><b>ID</b></dt><dd>cmip6.ocean.grid.vertical_grid.number_of_levels</dd><dt><b>Type</b></dt><dd>int</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
     </dl>
   </body>
-</html></richcontent></node></node></node><node BACKGROUND_COLOR="#ffff66" COLOR="#000000" FOLDED="false" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_key_properties.py" STYLE="bubble" TEXT="key_properties"><font BOLD="True" NAME="courier" SIZE="12" /><richcontent TYPE="NOTE"><html>
+</html></richcontent></node></node><node BACKGROUND_COLOR="#ccccff" COLOR="#000000" FOLDED="false" STYLE="bubble" TEXT="discretisation"><font BOLD="True" NAME="courier" SIZE="12" /><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>Type of discretisation scheme in ocean</dd>
+    </dl>
+  </body>
+</html></richcontent><node BACKGROUND_COLOR="#F3FFE2" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="vertical_discretisation"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>Properties of vertical coordinate in ocean</dd>
+    </dl>
+  </body>
+</html></richcontent><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="partial_steps"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>Using partial steps with Z or Z* vertical coordinate in ocean ?</dd><dt><b>ID</b></dt><dd>None.partial_steps</dd><dt><b>Type</b></dt><dd>bool</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
+    </dl>
+  </body>
+</html></richcontent><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>Using partial steps with Z or Z* vertical coordinate in ocean ?</dd><dt><b>ID</b></dt><dd>None.partial_steps</dd><dt><b>Type</b></dt><dd>bool</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
+    </dl>
+  </body>
+</html></richcontent></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="vertical_coord_type"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>Type of vertical coordinates in ocean</dd><dt><b>ID</b></dt><dd>None.vertical_coord_type</dd><dt><b>Type</b></dt><dd>enum</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
+    </dl>
+  </body>
+</html></richcontent><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>Type of vertical coordinates in ocean</dd><dt><b>ID</b></dt><dd>None.vertical_coord_type</dd><dt><b>Type</b></dt><dd>enum</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
+    </dl>
+  </body>
+</html></richcontent><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Hybrid / ALE"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>vertical-coord-types.hybrid-/-ale</dd>
+    </dl>
+  </body>
+</html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Hybrid / Z+S"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>vertical-coord-types.hybrid-/-z+s</dd>
+    </dl>
+  </body>
+</html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Hybrid / Z+isopycnic"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>vertical-coord-types.hybrid-/-z+isopycnic</dd>
+    </dl>
+  </body>
+</html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Hybrid / other"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>vertical-coord-types.hybrid-/-other</dd>
+    </dl>
+  </body>
+</html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Isopycnic - other"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>Other density-based coordinate</dd><dt><b>ID</b></dt><dd>vertical-coord-types.isopycnic---other</dd>
+    </dl>
+  </body>
+</html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Isopycnic - sigma 0"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>Density referenced to the surface</dd><dt><b>ID</b></dt><dd>vertical-coord-types.isopycnic---sigma-0</dd>
+    </dl>
+  </body>
+</html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Isopycnic - sigma 2"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>Density referenced to 2000 m</dd><dt><b>ID</b></dt><dd>vertical-coord-types.isopycnic---sigma-2</dd>
+    </dl>
+  </body>
+</html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Isopycnic - sigma 4"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>Density referenced to 4000 m</dd><dt><b>ID</b></dt><dd>vertical-coord-types.isopycnic---sigma-4</dd>
+    </dl>
+  </body>
+</html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Other"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>vertical-coord-types.other</dd>
+    </dl>
+  </body>
+</html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="P*"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>vertical-coord-types.p*</dd>
+    </dl>
+  </body>
+</html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Pressure referenced (P)"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>vertical-coord-types.pressure-referenced-(p)</dd>
+    </dl>
+  </body>
+</html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="S-coordinate"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>vertical-coord-types.s-coordinate</dd>
+    </dl>
+  </body>
+</html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Z**"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>vertical-coord-types.z**</dd>
+    </dl>
+  </body>
+</html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Z*-coordinate"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>vertical-coord-types.z*-coordinate</dd>
+    </dl>
+  </body>
+</html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Z-coordinate"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>vertical-coord-types.z-coordinate</dd>
+    </dl>
+  </body>
+</html></richcontent></node></node></node><node BACKGROUND_COLOR="#F3FFE2" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="horizontal_discretisation"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>Type of horizontal discretisation scheme in ocean</dd>
+    </dl>
+  </body>
+</html></richcontent><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="horiz_discret_scheme"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>Horizontal discretisation scheme in ocean</dd><dt><b>ID</b></dt><dd>None.horiz_discret_scheme</dd><dt><b>Type</b></dt><dd>enum</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
+    </dl>
+  </body>
+</html></richcontent><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>Horizontal discretisation scheme in ocean</dd><dt><b>ID</b></dt><dd>None.horiz_discret_scheme</dd><dt><b>Type</b></dt><dd>enum</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
+    </dl>
+  </body>
+</html></richcontent><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Finite difference / Arakawa B-grid"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>horiz-scheme-types.finite-difference-/-arakawa-b-grid</dd>
+    </dl>
+  </body>
+</html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Finite difference / Arakawa C-grid"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>horiz-scheme-types.finite-difference-/-arakawa-c-grid</dd>
+    </dl>
+  </body>
+</html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Finite difference / Arakawa E-grid"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>horiz-scheme-types.finite-difference-/-arakawa-e-grid</dd>
+    </dl>
+  </body>
+</html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Finite elements"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>horiz-scheme-types.finite-elements</dd>
+    </dl>
+  </body>
+</html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Finite volumes"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>horiz-scheme-types.finite-volumes</dd>
+    </dl>
+  </body>
+</html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Other"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>horiz-scheme-types.other</dd>
+    </dl>
+  </body>
+</html></richcontent></node></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="ocean_pole_singularity_treatment"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>Describe how the North Pole singularity is treated (filter, pole rotation/displacement, artificial island, ...)</dd><dt><b>ID</b></dt><dd>None.ocean_pole_singularity_treatment</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
+    </dl>
+  </body>
+</html></richcontent><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>Describe how the North Pole singularity is treated (filter, pole rotation/displacement, artificial island, ...)</dd><dt><b>ID</b></dt><dd>None.ocean_pole_singularity_treatment</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
+    </dl>
+  </body>
+</html></richcontent></node></node></node></node><node BACKGROUND_COLOR="#ffff66" COLOR="#000000" FOLDED="false" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_key_properties.py" STYLE="bubble" TEXT="key_properties"><font BOLD="True" NAME="courier" SIZE="12" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
@@ -184,42 +408,42 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.key-properties.bathymetry.bathymetry-reference-dates.21000-years-bp</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>bathymetry-ref-dates.21000-years-bp</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="6000 years BP"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.key-properties.bathymetry.bathymetry-reference-dates.6000-years-bp</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>bathymetry-ref-dates.6000-years-bp</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="LGM"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Last Glacial Maximum</dd><dt><b>ID</b></dt><dd>cmip6.ocean.key-properties.bathymetry.bathymetry-reference-dates.lgm</dd>
+        <dt><b>Description</b></dt><dd>Last Glacial Maximum</dd><dt><b>ID</b></dt><dd>bathymetry-ref-dates.lgm</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Other"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.key-properties.bathymetry.bathymetry-reference-dates.other</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>bathymetry-ref-dates.other</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Pliocene"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.key-properties.bathymetry.bathymetry-reference-dates.pliocene</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>bathymetry-ref-dates.pliocene</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Present day"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.key-properties.bathymetry.bathymetry-reference-dates.present-day</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>bathymetry-ref-dates.present-day</dd>
     </dl>
   </body>
 </html></richcontent></node></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="ocean_bathymetry_source"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
@@ -289,28 +513,28 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.key-properties.general.basic-approximations.boussinesq</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>ocean-basic-approx-types.boussinesq</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Non-hydrostatic"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.key-properties.general.basic-approximations.non-hydrostatic</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>ocean-basic-approx-types.non-hydrostatic</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Other"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.key-properties.general.basic-approximations.other</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>ocean-basic-approx-types.other</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Primitive equations"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.key-properties.general.basic-approximations.primitive-equations</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>ocean-basic-approx-types.primitive-equations</dd>
     </dl>
   </body>
 </html></richcontent></node></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="model_family"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
@@ -331,28 +555,28 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.key-properties.general.model-family.ogcm</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>model-family-types.ogcm</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Other"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.key-properties.general.model-family.other</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>model-family-types.other</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="mixed layer ocean"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.key-properties.general.model-family.mixed-layer-ocean</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>model-family-types.mixed-layer-ocean</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="slab ocean"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.key-properties.general.model-family.slab-ocean</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>model-family-types.slab-ocean</dd>
     </dl>
   </body>
 </html></richcontent></node></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="prognostic_variables"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
@@ -373,56 +597,56 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.key-properties.general.prognostic-variables.conservative-temperature</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>prognostic-vars-types.conservative-temperature</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Other"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Other prognostic variables</dd><dt><b>ID</b></dt><dd>cmip6.ocean.key-properties.general.prognostic-variables.other</dd>
+        <dt><b>Description</b></dt><dd>Other prognostic variables</dd><dt><b>ID</b></dt><dd>prognostic-vars-types.other</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Potential temperature"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.key-properties.general.prognostic-variables.potential-temperature</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>prognostic-vars-types.potential-temperature</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="SSH"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Sea Surface Height</dd><dt><b>ID</b></dt><dd>cmip6.ocean.key-properties.general.prognostic-variables.ssh</dd>
+        <dt><b>Description</b></dt><dd>Sea Surface Height</dd><dt><b>ID</b></dt><dd>prognostic-vars-types.ssh</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Salinity"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.key-properties.general.prognostic-variables.salinity</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>prognostic-vars-types.salinity</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="U-velocity"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.key-properties.general.prognostic-variables.u-velocity</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>prognostic-vars-types.u-velocity</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="V-velocity"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.key-properties.general.prognostic-variables.v-velocity</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>prognostic-vars-types.v-velocity</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="W-velocity"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.key-properties.general.prognostic-variables.w-velocity</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>prognostic-vars-types.w-velocity</dd>
     </dl>
   </body>
 </html></richcontent></node></node></node><node BACKGROUND_COLOR="#F3FFE2" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="seawater_properties"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
@@ -478,35 +702,112 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.key-properties.seawater-properties.seawater-eos-type.jackett-et-al.-2006</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>seawater-eos-types.jackett-et-al.-2006</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Linear"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.key-properties.seawater-properties.seawater-eos-type.linear</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>seawater-eos-types.linear</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Mc Dougall et al."><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.key-properties.seawater-properties.seawater-eos-type.mc-dougall-et-al.</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>seawater-eos-types.mc-dougall-et-al.</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Other"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.key-properties.seawater-properties.seawater-eos-type.other</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>seawater-eos-types.other</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="TEOS 2010"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.key-properties.seawater-properties.seawater-eos-type.teos-2010</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>seawater-eos-types.teos-2010</dd>
+    </dl>
+  </body>
+</html></richcontent></node></node></node><node BACKGROUND_COLOR="#ffff66" COLOR="#000000" FOLDED="false" STYLE="bubble" TEXT="conservation"><font BOLD="True" NAME="courier" SIZE="12" /><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>Conservation in the ocean component</dd>
+    </dl>
+  </body>
+</html></richcontent><node BACKGROUND_COLOR="#F3FFE2" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="conservation_details"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>Properties conserved in the ocean component</dd>
+    </dl>
+  </body>
+</html></richcontent><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="conservation_scheme"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>Conservation scheme in ocean</dd><dt><b>ID</b></dt><dd>None.conservation_scheme</dd><dt><b>Type</b></dt><dd>enum</dd><dt><b>Cardinality</b></dt><dd>1.N</dd>
+    </dl>
+  </body>
+</html></richcontent><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>Conservation scheme in ocean</dd><dt><b>ID</b></dt><dd>None.conservation_scheme</dd><dt><b>Type</b></dt><dd>enum</dd><dt><b>Cardinality</b></dt><dd>1.N</dd>
+    </dl>
+  </body>
+</html></richcontent><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Energy"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>conservation-props-types.energy</dd>
+    </dl>
+  </body>
+</html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Enstrophy"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>conservation-props-types.enstrophy</dd>
+    </dl>
+  </body>
+</html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Other"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>conservation-props-types.other</dd>
+    </dl>
+  </body>
+</html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Salt"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>conservation-props-types.salt</dd>
+    </dl>
+  </body>
+</html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Volume of ocean"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>conservation-props-types.volume-of-ocean</dd>
+    </dl>
+  </body>
+</html></richcontent></node></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="ocean_conservation_method"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>Describe how conservation properties are ensured in ocean</dd><dt><b>ID</b></dt><dd>None.ocean_conservation_method</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
+    </dl>
+  </body>
+</html></richcontent><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>Describe how conservation properties are ensured in ocean</dd><dt><b>ID</b></dt><dd>None.ocean_conservation_method</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd>
     </dl>
   </body>
 </html></richcontent></node></node></node></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="false" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_advection.py" STYLE="bubble" TEXT="advection"><font BOLD="True" NAME="courier" SIZE="12" /><richcontent TYPE="NOTE"><html>
@@ -569,63 +870,63 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.advection.lat-tra-adv-scheme.details.type.centred-2nd-order</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>adv-tra-scheme-types.centred-2nd-order</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Centred 4th order"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.advection.lat-tra-adv-scheme.details.type.centred-4th-order</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>adv-tra-scheme-types.centred-4th-order</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="MUSCL"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.advection.lat-tra-adv-scheme.details.type.muscl</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>adv-tra-scheme-types.muscl</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Other"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.advection.lat-tra-adv-scheme.details.type.other</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>adv-tra-scheme-types.other</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Piecewise Parabolic method"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.advection.lat-tra-adv-scheme.details.type.piecewise-parabolic-method</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>adv-tra-scheme-types.piecewise-parabolic-method</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Prather 2nd moment (PSOM)"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.advection.lat-tra-adv-scheme.details.type.prather-2nd-moment-(psom)</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>adv-tra-scheme-types.prather-2nd-moment-(psom)</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="QUICKEST"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.advection.lat-tra-adv-scheme.details.type.quickest</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>adv-tra-scheme-types.quickest</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Sweby"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.advection.lat-tra-adv-scheme.details.type.sweby</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>adv-tra-scheme-types.sweby</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Total Variance Dissipation (TVD)"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.advection.lat-tra-adv-scheme.details.type.total-variance-dissipation-(tvd)</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>adv-tra-scheme-types.total-variance-dissipation-(tvd)</dd>
     </dl>
   </body>
 </html></richcontent></node></node></node></node><node BACKGROUND_COLOR="#ACF0F2" COLOR="#000000" FOLDED="false" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_advection.py" STYLE="bubble" TEXT="momemtum_adv_scheme"><font BOLD="True" NAME="courier" SIZE="12" /><richcontent TYPE="NOTE"><html>
@@ -688,14 +989,14 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.advection.momemtum-adv-scheme.details.type.flux-form</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>adv-mom-scheme-types.flux-form</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Vector form"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.advection.momemtum-adv-scheme.details.type.vector-form</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>adv-mom-scheme-types.vector-form</dd>
     </dl>
   </body>
 </html></richcontent></node></node></node></node><node BACKGROUND_COLOR="#ACF0F2" COLOR="#000000" FOLDED="false" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_advection.py" STYLE="bubble" TEXT="vert_tra_adv_scheme"><font BOLD="True" NAME="courier" SIZE="12" /><richcontent TYPE="NOTE"><html>
@@ -744,63 +1045,63 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.advection.vert-tra-adv-scheme.details.type.centred-2nd-order</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>adv-tra-scheme-types.centred-2nd-order</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Centred 4th order"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.advection.vert-tra-adv-scheme.details.type.centred-4th-order</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>adv-tra-scheme-types.centred-4th-order</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="MUSCL"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.advection.vert-tra-adv-scheme.details.type.muscl</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>adv-tra-scheme-types.muscl</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Other"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.advection.vert-tra-adv-scheme.details.type.other</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>adv-tra-scheme-types.other</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Piecewise Parabolic method"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.advection.vert-tra-adv-scheme.details.type.piecewise-parabolic-method</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>adv-tra-scheme-types.piecewise-parabolic-method</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Prather 2nd moment (PSOM)"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.advection.vert-tra-adv-scheme.details.type.prather-2nd-moment-(psom)</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>adv-tra-scheme-types.prather-2nd-moment-(psom)</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="QUICKEST"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.advection.vert-tra-adv-scheme.details.type.quickest</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>adv-tra-scheme-types.quickest</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Sweby"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.advection.vert-tra-adv-scheme.details.type.sweby</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>adv-tra-scheme-types.sweby</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Total Variance Dissipation (TVD)"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.advection.vert-tra-adv-scheme.details.type.total-variance-dissipation-(tvd)</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>adv-tra-scheme-types.total-variance-dissipation-(tvd)</dd>
     </dl>
   </body>
 </html></richcontent></node></node></node></node></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="false" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_boundary_forcing.py" STYLE="bubble" TEXT="boundary_forcing"><font BOLD="True" NAME="courier" SIZE="12" /><richcontent TYPE="NOTE"><html>
@@ -940,42 +1241,42 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.momentum.bottom-friction.type.constant-drag-coefficient</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>mom-bottom-friction-types.constant-drag-coefficient</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Linear"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.momentum.bottom-friction.type.linear</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>mom-bottom-friction-types.linear</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Non-linear"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.momentum.bottom-friction.type.non-linear</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>mom-bottom-friction-types.non-linear</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Non-linear (drag function of speed of tides)"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.momentum.bottom-friction.type.non-linear-(drag-function-of-speed-of-tides)</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>mom-bottom-friction-types.non-linear-(drag-function-of-speed-of-tides)</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="None"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.momentum.bottom-friction.type.none</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>mom-bottom-friction-types.none</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Other"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.momentum.bottom-friction.type.other</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>mom-bottom-friction-types.other</dd>
     </dl>
   </body>
 </html></richcontent></node></node></node><node BACKGROUND_COLOR="#F3FFE2" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="lateral_friction"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
@@ -1003,28 +1304,28 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.momentum.lateral-friction.type.free-slip</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>mom-lateral-friction-types.free-slip</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="No-slip"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.momentum.lateral-friction.type.no-slip</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>mom-lateral-friction-types.no-slip</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="None"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.momentum.lateral-friction.type.none</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>mom-lateral-friction-types.none</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Other"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.momentum.lateral-friction.type.other</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>mom-lateral-friction-types.other</dd>
     </dl>
   </body>
 </html></richcontent></node></node></node></node><node BACKGROUND_COLOR="#ACF0F2" COLOR="#000000" FOLDED="false" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_boundary_forcing.py" STYLE="bubble" TEXT="tracers"><font BOLD="True" NAME="courier" SIZE="12" /><richcontent TYPE="NOTE"><html>
@@ -1059,28 +1360,28 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.tracers.sunlight-penetration.scheme.1-extinction-depth</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>sunlight-penetration-scheme-types.1-extinction-depth</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="2 extinction depth"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.tracers.sunlight-penetration.scheme.2-extinction-depth</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>sunlight-penetration-scheme-types.2-extinction-depth</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="3 extinction depth"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.tracers.sunlight-penetration.scheme.3-extinction-depth</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>sunlight-penetration-scheme-types.3-extinction-depth</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Other"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.tracers.sunlight-penetration.scheme.other</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>sunlight-penetration-scheme-types.other</dd>
     </dl>
   </body>
 </html></richcontent></node></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="tracers_sun_extinct_depth"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
@@ -1136,21 +1437,21 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.tracers.surface-salinity-atmos.scheme.freshwater-flux</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>surface-salinity-forcing-types.freshwater-flux</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Other"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.tracers.surface-salinity-atmos.scheme.other</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>surface-salinity-forcing-types.other</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Virtual salt flux"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.tracers.surface-salinity-atmos.scheme.virtual-salt-flux</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>surface-salinity-forcing-types.virtual-salt-flux</dd>
     </dl>
   </body>
 </html></richcontent></node></node></node><node BACKGROUND_COLOR="#F3FFE2" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="surface_salinity_seaice"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
@@ -1178,21 +1479,21 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.tracers.surface-salinity-seaice.scheme.freshwater-flux</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>surface-salinity-forcing-types.freshwater-flux</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Other"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.tracers.surface-salinity-seaice.scheme.other</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>surface-salinity-forcing-types.other</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Virtual salt flux"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.boundary-forcing.tracers.surface-salinity-seaice.scheme.virtual-salt-flux</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>surface-salinity-forcing-types.virtual-salt-flux</dd>
     </dl>
   </body>
 </html></richcontent></node></node></node></node></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="false" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_lateral_physics.py" STYLE="bubble" TEXT="lateral_physics"><font BOLD="True" NAME="courier" SIZE="12" /><richcontent TYPE="NOTE"><html>
@@ -1234,21 +1535,21 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Full resolution of eddies</dd><dt><b>ID</b></dt><dd>cmip6.ocean.lateral-physics.ocean-transient-eddy-representation.scheme.eddy-active</dd>
+        <dt><b>Description</b></dt><dd>Full resolution of eddies</dd><dt><b>ID</b></dt><dd>latphys-transient-eddy-types.eddy-active</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Eddy admitting"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Some eddy activity permitted by resolution</dd><dt><b>ID</b></dt><dd>cmip6.ocean.lateral-physics.ocean-transient-eddy-representation.scheme.eddy-admitting</dd>
+        <dt><b>Description</b></dt><dd>Some eddy activity permitted by resolution</dd><dt><b>ID</b></dt><dd>latphys-transient-eddy-types.eddy-admitting</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="None"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>No transient eddies in ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.lateral-physics.ocean-transient-eddy-representation.scheme.none</dd>
+        <dt><b>Description</b></dt><dd>No transient eddies in ocean</dd><dt><b>ID</b></dt><dd>latphys-transient-eddy-types.none</dd>
     </dl>
   </body>
 </html></richcontent></node></node></node><node BACKGROUND_COLOR="#ACF0F2" COLOR="#000000" FOLDED="false" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_lateral_physics.py" STYLE="bubble" TEXT="momentum"><font BOLD="True" NAME="courier" SIZE="12" /><richcontent TYPE="NOTE"><html>
@@ -1339,28 +1640,28 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.lateral-physics.momentum.eddy-viscosity-coeff.type.constant</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>latphys-eddy-visc-coeff-types.constant</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Other"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.lateral-physics.momentum.eddy-viscosity-coeff.type.other</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>latphys-eddy-visc-coeff-types.other</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Space varying"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.lateral-physics.momentum.eddy-viscosity-coeff.type.space-varying</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>latphys-eddy-visc-coeff-types.space-varying</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Time + space varying (Smagorinsky)"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.lateral-physics.momentum.eddy-viscosity-coeff.type.time-+-space-varying-(smagorinsky)</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>latphys-eddy-visc-coeff-types.time-+-space-varying-(smagorinsky)</dd>
     </dl>
   </body>
 </html></richcontent></node></node></node><node BACKGROUND_COLOR="#F3FFE2" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="operator"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
@@ -1388,42 +1689,42 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.lateral-physics.momentum.operator.direction.geopotential</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>latphys-operator-direc-types.geopotential</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Horizontal"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.lateral-physics.momentum.operator.direction.horizontal</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>latphys-operator-direc-types.horizontal</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Iso-level"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.lateral-physics.momentum.operator.direction.iso-level</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>latphys-operator-direc-types.iso-level</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Isoneutral"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.lateral-physics.momentum.operator.direction.isoneutral</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>latphys-operator-direc-types.isoneutral</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Isopycnal"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.lateral-physics.momentum.operator.direction.isopycnal</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>latphys-operator-direc-types.isopycnal</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Other"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.lateral-physics.momentum.operator.direction.other</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>latphys-operator-direc-types.other</dd>
     </dl>
   </body>
 </html></richcontent></node></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="discretisation"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
@@ -1444,28 +1745,28 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.lateral-physics.momentum.operator.discretisation.flux-limiter</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>latphys-operator-discret-types.flux-limiter</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Fourth order"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Fourth order</dd><dt><b>ID</b></dt><dd>cmip6.ocean.lateral-physics.momentum.operator.discretisation.fourth-order</dd>
+        <dt><b>Description</b></dt><dd>Fourth order</dd><dt><b>ID</b></dt><dd>latphys-operator-discret-types.fourth-order</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Other"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.lateral-physics.momentum.operator.discretisation.other</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>latphys-operator-discret-types.other</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Second order"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Second order</dd><dt><b>ID</b></dt><dd>cmip6.ocean.lateral-physics.momentum.operator.discretisation.second-order</dd>
+        <dt><b>Description</b></dt><dd>Second order</dd><dt><b>ID</b></dt><dd>latphys-operator-discret-types.second-order</dd>
     </dl>
   </body>
 </html></richcontent></node></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="order"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
@@ -1486,21 +1787,21 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Fourth order</dd><dt><b>ID</b></dt><dd>cmip6.ocean.lateral-physics.momentum.operator.order.bi-harmonic</dd>
+        <dt><b>Description</b></dt><dd>Fourth order</dd><dt><b>ID</b></dt><dd>latphys-operator-order-types.bi-harmonic</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Harmonic"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Second order</dd><dt><b>ID</b></dt><dd>cmip6.ocean.lateral-physics.momentum.operator.order.harmonic</dd>
+        <dt><b>Description</b></dt><dd>Second order</dd><dt><b>ID</b></dt><dd>latphys-operator-order-types.harmonic</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Other"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.lateral-physics.momentum.operator.order.other</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>latphys-operator-order-types.other</dd>
     </dl>
   </body>
 </html></richcontent></node></node></node></node><node BACKGROUND_COLOR="#ACF0F2" COLOR="#000000" FOLDED="false" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_lateral_physics.py" STYLE="bubble" TEXT="tracers"><font BOLD="True" NAME="courier" SIZE="12" /><richcontent TYPE="NOTE"><html>
@@ -1598,14 +1899,14 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Gent and McWilliams</dd><dt><b>ID</b></dt><dd>cmip6.ocean.lateral-physics.tracers.eddy-induced-velocity.type.gm</dd>
+        <dt><b>Description</b></dt><dd>Gent and McWilliams</dd><dt><b>ID</b></dt><dd>latphys-eiv-types.gm</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Other"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.lateral-physics.tracers.eddy-induced-velocity.type.other</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>latphys-eiv-types.other</dd>
     </dl>
   </body>
 </html></richcontent></node></node></node><node BACKGROUND_COLOR="#F3FFE2" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="eddy_viscosity_coeff"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
@@ -1689,28 +1990,28 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.lateral-physics.tracers.eddy-viscosity-coeff.type.constant</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>latphys-eddy-visc-coeff-types.constant</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Other"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.lateral-physics.tracers.eddy-viscosity-coeff.type.other</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>latphys-eddy-visc-coeff-types.other</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Space varying"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.lateral-physics.tracers.eddy-viscosity-coeff.type.space-varying</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>latphys-eddy-visc-coeff-types.space-varying</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Time + space varying (Smagorinsky)"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.lateral-physics.tracers.eddy-viscosity-coeff.type.time-+-space-varying-(smagorinsky)</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>latphys-eddy-visc-coeff-types.time-+-space-varying-(smagorinsky)</dd>
     </dl>
   </body>
 </html></richcontent></node></node></node><node BACKGROUND_COLOR="#F3FFE2" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="operator"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
@@ -1738,42 +2039,42 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.lateral-physics.tracers.operator.direction.geopotential</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>latphys-operator-direc-types.geopotential</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Horizontal"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.lateral-physics.tracers.operator.direction.horizontal</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>latphys-operator-direc-types.horizontal</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Iso-level"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.lateral-physics.tracers.operator.direction.iso-level</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>latphys-operator-direc-types.iso-level</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Isoneutral"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.lateral-physics.tracers.operator.direction.isoneutral</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>latphys-operator-direc-types.isoneutral</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Isopycnal"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.lateral-physics.tracers.operator.direction.isopycnal</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>latphys-operator-direc-types.isopycnal</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Other"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.lateral-physics.tracers.operator.direction.other</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>latphys-operator-direc-types.other</dd>
     </dl>
   </body>
 </html></richcontent></node></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="discretisation"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
@@ -1794,28 +2095,28 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.lateral-physics.tracers.operator.discretisation.flux-limiter</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>latphys-operator-discret-types.flux-limiter</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Fourth order"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Fourth order</dd><dt><b>ID</b></dt><dd>cmip6.ocean.lateral-physics.tracers.operator.discretisation.fourth-order</dd>
+        <dt><b>Description</b></dt><dd>Fourth order</dd><dt><b>ID</b></dt><dd>latphys-operator-discret-types.fourth-order</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Other"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.lateral-physics.tracers.operator.discretisation.other</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>latphys-operator-discret-types.other</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Second order"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Second order</dd><dt><b>ID</b></dt><dd>cmip6.ocean.lateral-physics.tracers.operator.discretisation.second-order</dd>
+        <dt><b>Description</b></dt><dd>Second order</dd><dt><b>ID</b></dt><dd>latphys-operator-discret-types.second-order</dd>
     </dl>
   </body>
 </html></richcontent></node></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="order"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
@@ -1836,21 +2137,21 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Fourth order</dd><dt><b>ID</b></dt><dd>cmip6.ocean.lateral-physics.tracers.operator.order.bi-harmonic</dd>
+        <dt><b>Description</b></dt><dd>Fourth order</dd><dt><b>ID</b></dt><dd>latphys-operator-order-types.bi-harmonic</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Harmonic"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Second order</dd><dt><b>ID</b></dt><dd>cmip6.ocean.lateral-physics.tracers.operator.order.harmonic</dd>
+        <dt><b>Description</b></dt><dd>Second order</dd><dt><b>ID</b></dt><dd>latphys-operator-order-types.harmonic</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Other"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.lateral-physics.tracers.operator.order.other</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>latphys-operator-order-types.other</dd>
     </dl>
   </body>
 </html></richcontent></node></node></node></node></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="false" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_timestepping_framework.py" STYLE="bubble" TEXT="timestepping_framework"><font BOLD="True" NAME="courier" SIZE="12" /><richcontent TYPE="NOTE"><html>
@@ -1892,21 +2193,21 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>No diurnal cycle in ocean</dd><dt><b>ID</b></dt><dd>cmip6.ocean.timestepping-framework.timestepping-attributes.diurnal-cycle.none</dd>
+        <dt><b>Description</b></dt><dd>No diurnal cycle in ocean</dd><dt><b>ID</b></dt><dd>diurnal-cycle-types.none</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Specific treatment"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Specific treament</dd><dt><b>ID</b></dt><dd>cmip6.ocean.timestepping-framework.timestepping-attributes.diurnal-cycle.specific-treatment</dd>
+        <dt><b>Description</b></dt><dd>Specific treament</dd><dt><b>ID</b></dt><dd>diurnal-cycle-types.specific-treatment</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Via coupling"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Diurnal cycle via coupling frequency</dd><dt><b>ID</b></dt><dd>cmip6.ocean.timestepping-framework.timestepping-attributes.diurnal-cycle.via-coupling</dd>
+        <dt><b>Description</b></dt><dd>Diurnal cycle via coupling frequency</dd><dt><b>ID</b></dt><dd>diurnal-cycle-types.via-coupling</dd>
     </dl>
   </body>
 </html></richcontent></node></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="time_step"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
@@ -1990,21 +2291,21 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.uplow-boundaries.bottom-boundary-layer.type.acvective</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>bottom-bl-types.acvective</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Diffusive"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.uplow-boundaries.bottom-boundary-layer.type.diffusive</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>bottom-bl-types.diffusive</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Other"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.uplow-boundaries.bottom-boundary-layer.type.other</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>bottom-bl-types.other</dd>
     </dl>
   </body>
 </html></richcontent></node></node></node><node BACKGROUND_COLOR="#F3FFE2" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="free_surface"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
@@ -2046,49 +2347,49 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.uplow-boundaries.free-surface.scheme.linear-filtered</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>free-surface-types.linear-filtered</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Linear implicit"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.uplow-boundaries.free-surface.scheme.linear-implicit</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>free-surface-types.linear-implicit</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Linear semi-explicit"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.uplow-boundaries.free-surface.scheme.linear-semi-explicit</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>free-surface-types.linear-semi-explicit</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Non-linear filtered"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.uplow-boundaries.free-surface.scheme.non-linear-filtered</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>free-surface-types.non-linear-filtered</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Non-linear implicit"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.uplow-boundaries.free-surface.scheme.non-linear-implicit</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>free-surface-types.non-linear-implicit</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Non-linear semi-explicit"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.uplow-boundaries.free-surface.scheme.non-linear-semi-explicit</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>free-surface-types.non-linear-semi-explicit</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Other"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.uplow-boundaries.free-surface.scheme.other</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>free-surface-types.other</dd>
     </dl>
   </body>
 </html></richcontent></node></node></node></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="false" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_vertical_physics.py" STYLE="bubble" TEXT="vertical_physics"><font BOLD="True" NAME="courier" SIZE="12" /><richcontent TYPE="NOTE"><html>
@@ -2130,28 +2431,28 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.vertical-physics-details.convection-type.enhanced-vertical-diffusion</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>vertphys-convection-types.enhanced-vertical-diffusion</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Included in turbulence closure"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.vertical-physics-details.convection-type.included-in-turbulence-closure</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>vertphys-convection-types.included-in-turbulence-closure</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Non-penetrative convective adjustment"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.vertical-physics-details.convection-type.non-penetrative-convective-adjustment</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>vertphys-convection-types.non-penetrative-convective-adjustment</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Other"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.vertical-physics-details.convection-type.other</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>vertphys-convection-types.other</dd>
     </dl>
   </body>
 </html></richcontent></node></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="langmuir_cells_mixing"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
@@ -2256,63 +2557,63 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.boundary-layer-mixing.momentum.type.constant-value</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>bndlayer-mixing-types.constant-value</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Imbeded as isopycnic vertical coordinate"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.boundary-layer-mixing.momentum.type.imbeded-as-isopycnic-vertical-coordinate</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>bndlayer-mixing-types.imbeded-as-isopycnic-vertical-coordinate</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Other"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.boundary-layer-mixing.momentum.type.other</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>bndlayer-mixing-types.other</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Richardson number dependent - KT"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.boundary-layer-mixing.momentum.type.richardson-number-dependent---kt</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>bndlayer-mixing-types.richardson-number-dependent---kt</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Richardson number dependent - PP"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.boundary-layer-mixing.momentum.type.richardson-number-dependent---pp</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>bndlayer-mixing-types.richardson-number-dependent---pp</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Turbulent closure - Bulk Mixed Layer"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.boundary-layer-mixing.momentum.type.turbulent-closure---bulk-mixed-layer</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>bndlayer-mixing-types.turbulent-closure---bulk-mixed-layer</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Turbulent closure - KPP"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.boundary-layer-mixing.momentum.type.turbulent-closure---kpp</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>bndlayer-mixing-types.turbulent-closure---kpp</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Turbulent closure - Mellor-Yamada"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.boundary-layer-mixing.momentum.type.turbulent-closure---mellor-yamada</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>bndlayer-mixing-types.turbulent-closure---mellor-yamada</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Turbulent closure - TKE"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.boundary-layer-mixing.momentum.type.turbulent-closure---tke</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>bndlayer-mixing-types.turbulent-closure---tke</dd>
     </dl>
   </body>
 </html></richcontent></node></node></node><node BACKGROUND_COLOR="#F3FFE2" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="tracers"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
@@ -2382,63 +2683,63 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.boundary-layer-mixing.tracers.type.constant-value</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>bndlayer-mixing-types.constant-value</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Imbeded as isopycnic vertical coordinate"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.boundary-layer-mixing.tracers.type.imbeded-as-isopycnic-vertical-coordinate</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>bndlayer-mixing-types.imbeded-as-isopycnic-vertical-coordinate</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Other"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.boundary-layer-mixing.tracers.type.other</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>bndlayer-mixing-types.other</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Richardson number dependent - KT"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.boundary-layer-mixing.tracers.type.richardson-number-dependent---kt</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>bndlayer-mixing-types.richardson-number-dependent---kt</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Richardson number dependent - PP"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.boundary-layer-mixing.tracers.type.richardson-number-dependent---pp</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>bndlayer-mixing-types.richardson-number-dependent---pp</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Turbulent closure - Bulk Mixed Layer"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.boundary-layer-mixing.tracers.type.turbulent-closure---bulk-mixed-layer</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>bndlayer-mixing-types.turbulent-closure---bulk-mixed-layer</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Turbulent closure - KPP"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.boundary-layer-mixing.tracers.type.turbulent-closure---kpp</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>bndlayer-mixing-types.turbulent-closure---kpp</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Turbulent closure - Mellor-Yamada"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.boundary-layer-mixing.tracers.type.turbulent-closure---mellor-yamada</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>bndlayer-mixing-types.turbulent-closure---mellor-yamada</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Turbulent closure - TKE"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.boundary-layer-mixing.tracers.type.turbulent-closure---tke</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>bndlayer-mixing-types.turbulent-closure---tke</dd>
     </dl>
   </body>
 </html></richcontent></node></node></node></node><node BACKGROUND_COLOR="#ACF0F2" COLOR="#000000" FOLDED="false" LINK="https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/ocean_vertical_physics.py" STYLE="bubble" TEXT="interior_mixing"><font BOLD="True" NAME="courier" SIZE="12" /><richcontent TYPE="NOTE"><html>
@@ -2515,49 +2816,49 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.interior-mixing.momentum.type.constant-value</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>interior-mixing-types.constant-value</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Imbeded as isopycnic vertical coordinate"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.interior-mixing.momentum.type.imbeded-as-isopycnic-vertical-coordinate</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>interior-mixing-types.imbeded-as-isopycnic-vertical-coordinate</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Other"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.interior-mixing.momentum.type.other</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>interior-mixing-types.other</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Richardson number dependent - KT"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.interior-mixing.momentum.type.richardson-number-dependent---kt</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>interior-mixing-types.richardson-number-dependent---kt</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Richardson number dependent - PP"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.interior-mixing.momentum.type.richardson-number-dependent---pp</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>interior-mixing-types.richardson-number-dependent---pp</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Turbulent closure - Mellor-Yamada"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.interior-mixing.momentum.type.turbulent-closure---mellor-yamada</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>interior-mixing-types.turbulent-closure---mellor-yamada</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Turbulent closure / TKE"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.interior-mixing.momentum.type.turbulent-closure-/-tke</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>interior-mixing-types.turbulent-closure-/-tke</dd>
     </dl>
   </body>
 </html></richcontent></node></node></node><node BACKGROUND_COLOR="#F3FFE2" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="tracers"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
@@ -2627,49 +2928,49 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.interior-mixing.tracers.type.constant-value</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>interior-mixing-types.constant-value</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Imbeded as isopycnic vertical coordinate"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.interior-mixing.tracers.type.imbeded-as-isopycnic-vertical-coordinate</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>interior-mixing-types.imbeded-as-isopycnic-vertical-coordinate</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Other"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.interior-mixing.tracers.type.other</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>interior-mixing-types.other</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Richardson number dependent - KT"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.interior-mixing.tracers.type.richardson-number-dependent---kt</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>interior-mixing-types.richardson-number-dependent---kt</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Richardson number dependent - PP"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.interior-mixing.tracers.type.richardson-number-dependent---pp</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>interior-mixing-types.richardson-number-dependent---pp</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Turbulent closure - Mellor-Yamada"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.interior-mixing.tracers.type.turbulent-closure---mellor-yamada</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>interior-mixing-types.turbulent-closure---mellor-yamada</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Turbulent closure / TKE"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>cmip6.ocean.vertical-physics.interior-mixing.tracers.type.turbulent-closure-/-tke</dd>
+        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>interior-mixing-types.turbulent-closure-/-tke</dd>
     </dl>
   </body>
 </html></richcontent></node></node></node></node></node></node></map>

@@ -103,7 +103,7 @@ EXTENT_DETAILS = OrderedDict()
 RESOLUTION = OrderedDict()
 
 RESOLUTION['resolution'] = {
-    'description': '',
+    'description': 'Resolution in the ocean grid',
     'details' : ['thickness_of_surface_level'],
 }
 
@@ -116,7 +116,8 @@ RESOLUTION_DETAILS = OrderedDict()
 
 RESOLUTION_DETAILS['thickness_of_surface_level'] = (
     'float', '0.1',
-    'Thickness in metres of surface ocean level (e.g. 1)')
+    'Thickness in metres of surface ocean level (e.g. 1)'
+    )
 
 # --------------------------------------------------------------------
 # KEY PROPERTIES: TUNING APPLIED
