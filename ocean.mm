@@ -2448,13 +2448,6 @@
         <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>vertphys-convection-types.non-penetrative-convective-adjustment</dd>
     </dl>
   </body>
-</html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="Other"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
-  <head />
-  <body>
-    <dl>
-        <dt><b>Description</b></dt><dd>tbd</dd><dt><b>ID</b></dt><dd>vertphys-convection-types.other</dd>
-    </dl>
-  </body>
 </html></richcontent></node></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="langmuir_cells_mixing"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
