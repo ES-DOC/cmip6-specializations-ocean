@@ -13,6 +13,7 @@ import collections
 import json
 
 
+from utils import get_label
 from utils_model import Grid
 from utils_model import GridDiscretisation
 from utils_model import KeyProperties
@@ -29,25 +30,6 @@ _JSON_KEYS = {
     Process: "process"
 }
 
-
-
-class _Configuration(object):
-    """Wraps access to configuration information stored in associated config file.
-
-    """
-    def __init__(self, fpath):
-        """Instance constructor.
-
-        """
-        with open(fpath, 'r') as fstream:
-            self._data = json.loads(fstream.read())
-
-
-    def get_section(self, key):
-        """Returns a section within the config file.
-
-        """
-        return self._data.get(key, {})
 
 
 class Generator(Parser):
@@ -160,7 +142,7 @@ class Generator(Parser):
 
         """
         obj = collections.OrderedDict()
-        obj['label'] = self._get_label(subprocess.name)
+        obj['label'] = get_label(subprocess.name)
         obj['description'] = subprocess.description
         obj['id'] = subprocess.id
 
@@ -179,7 +161,7 @@ class Generator(Parser):
             return
 
         obj = collections.OrderedDict()
-        obj['label'] = self._get_label(detail.name)
+        obj['label'] = get_label(detail.name)
         obj['description'] = detail.description
         obj['id'] = detail.id
 
@@ -195,7 +177,7 @@ class Generator(Parser):
 
         """
         obj = collections.OrderedDict()
-        obj['label'] = self._get_label(prop.name)
+        obj['label'] = get_label(prop.name)
         obj['description'] = prop.description
         obj['id'] = prop.id
 
@@ -236,18 +218,9 @@ class Generator(Parser):
 
         """
         obj = collections.OrderedDict()
-        obj['label'] = self._get_label(mod.name)
+        obj['label'] = get_label(mod.name)
         obj['description'] = mod.description
         obj['id'] = mod.id
         obj['contact'] = mod.contact
 
         return obj
-
-
-    def _get_label(self, name):
-        """Returns a name formatted as a label for UI purposes.
-
-        """
-        name = name.replace("_", " ")
-
-        return " ".join("{}{}".format(n[0].upper(), n[1:]) for n in name.split(" "))

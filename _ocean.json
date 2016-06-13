@@ -1657,6 +1657,10 @@
                                     {
                                         "label": "Non-penetrative convective adjustment", 
                                         "description": "tbd"
+                                    }, 
+                                    {
+                                        "label": "Other", 
+                                        "description": "tbd"
                                     }
                                 ], 
                                 "id": "vertphys_convection_types", 

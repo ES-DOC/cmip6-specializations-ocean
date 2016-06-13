@@ -61,3 +61,12 @@ def log(msg):
     else:
         print("ES-DOC :: {}".format(msg))
 
+
+def get_label(name):
+    """Returns a name formatted as a label for UI purposes.
+
+    """
+    name = name.replace("_", " ")
+
+    return " ".join("{}{}".format(n[0].upper(), n[1:]) for n in name.split(" "))
+
