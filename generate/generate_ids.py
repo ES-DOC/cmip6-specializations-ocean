@@ -76,8 +76,8 @@ class Generator(Parser):
                 for i, j, k, _ in sorted(self._ids, key=lambda i: i[-1])]
 
 
-    def set_null(self, owner):
-        """Sets a null row.
+    def emit_null_row(self, owner):
+        """Emits a null row.
 
         """
         self._ids.append(("", "", "", owner.id))
