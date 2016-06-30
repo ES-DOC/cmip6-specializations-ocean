@@ -93,6 +93,7 @@ class Generator(Parser):
         obj = collections.OrderedDict()
         obj['label'] = "Discretisation"
         obj['description'] = discretisation.description
+        obj['id'] = discretisation.id
 
         self._maps[discretisation] = obj
         self._maps[grid]['discretisation'] = obj
@@ -152,6 +153,8 @@ class Generator(Parser):
         obj = collections.OrderedDict()
         obj['label'] = get_label(detail.name)
         obj['description'] = detail.description
+        if detail.id is None:
+            detail.id = "{}.{}".format(owner.id, detail.name)
         obj['id'] = detail.id
         obj['properties'] = []
 

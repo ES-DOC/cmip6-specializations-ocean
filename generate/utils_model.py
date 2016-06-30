@@ -87,7 +87,7 @@ class SpecializationDetailCollection(Specialization):
     """Wraps a detail collection, e.g. TUNNING_APPLIED.
 
     """
-    def __init__(self, mod, name, collection):
+    def __init__(self, mod, owner, name, collection):
         """Instance constructor.
 
         """
@@ -100,6 +100,8 @@ class SpecializationDetailCollection(Specialization):
         self.details = [Detail(mod, self, i, j) for i, j in details.items() if isinstance(j, dict)]
         self.detail_keys = obj['details']
         self.name = name
+        self.owner = owner
+        self.id = "{}.{}".format(owner.id, name)
 
 
     @property
@@ -160,19 +162,19 @@ class Grid(SpecializationModule):
         super(Grid, self).__init__(realm, mod, "grid")
 
         self._set_details()
-        self.discretisation = GridDiscretisation(mod)
+        self.discretisation = GridDiscretisation(mod, self)
 
 
 class GridDiscretisation(SpecializationDetailCollection):
     """Wraps a grid discretization specialization.
 
     """
-    def __init__(self, mod):
+    def __init__(self, mod, owner):
         """Instance constructor.
 
         """
         super(GridDiscretisation, self).__init__(
-            mod, "discretisation", "DISCRETISATION")
+            mod, owner, "discretisation", "DISCRETISATION")
 
 
 class KeyProperties(SpecializationModule):
@@ -188,19 +190,19 @@ class KeyProperties(SpecializationModule):
         self._set_details()
 
         try:
-            self.conservation = KeyPropertiesConservation(mod)
+            self.conservation = KeyPropertiesConservation(mod, self)
         except KeyError:
             self.conservation = None
         try:
-            self.extent = KeyPropertiesExtent(mod)
+            self.extent = KeyPropertiesExtent(mod, self)
         except KeyError:
             self.extent = None
         try:
-            self.resolution = KeyPropertiesResolution(mod)
+            self.resolution = KeyPropertiesResolution(mod, self)
         except KeyError:
             self.resolution = None
         try:
-            self.tuning = KeyPropertiesTuning(mod)
+            self.tuning = KeyPropertiesTuning(mod, self)
         except KeyError:
             self.tuning = None
 
@@ -209,48 +211,48 @@ class KeyPropertiesConservation(SpecializationDetailCollection):
     """Wraps a key properties conservation specialization.
 
     """
-    def __init__(self, mod):
+    def __init__(self, mod, kp):
         """Instance constructor.
 
         """
         super(KeyPropertiesConservation, self).__init__(
-            mod, "conservation", "EXTRA_CONSERVATION_PROPERTIES")
+            mod, kp, "conservation", "EXTRA_CONSERVATION_PROPERTIES")
 
 
 class KeyPropertiesExtent(SpecializationDetailCollection):
     """Wraps a key properties extent specialization.
 
     """
-    def __init__(self, mod):
+    def __init__(self, mod, kp):
         """Instance constructor.
 
         """
         super(KeyPropertiesExtent, self).__init__(
-            mod, "extent", "EXTENT")
+            mod, kp, "extent", "EXTENT")
 
 
 class KeyPropertiesResolution(SpecializationDetailCollection):
     """Wraps a key properties resolution specialization.
 
     """
-    def __init__(self, mod):
+    def __init__(self, mod, kp):
         """Instance constructor.
 
         """
         super(KeyPropertiesResolution, self).__init__(
-            mod, "resolution", "RESOLUTION")
+            mod, kp, "resolution", "RESOLUTION")
 
 
 class KeyPropertiesTuning(SpecializationDetailCollection):
     """Wraps a key properties tuning specialization.
 
     """
-    def __init__(self, mod):
+    def __init__(self, mod, kp):
         """Instance constructor.
 
         """
         super(KeyPropertiesTuning, self).__init__(
-            mod, "tuning", "TUNING_APPLIED")
+            mod, kp, "tuning", "TUNING_APPLIED")
 
 
 class SubProcess(Specialization):

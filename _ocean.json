@@ -1628,16 +1628,17 @@
         "discretisation": {
             "label": "Discretisation", 
             "description": "Type of discretisation scheme in ocean", 
+            "id": "cmip6.ocean.grid.discretisation", 
             "details": [
                 {
                     "label": "Vertical Discretisation", 
                     "description": "Properties of vertical coordinate in ocean", 
-                    "id": null, 
+                    "id": "cmip6.ocean.grid.discretisation.vertical_discretisation", 
                     "properties": [
                         {
                             "label": "Partial Steps", 
                             "description": "Using partial steps with Z or Z* vertical coordinate in ocean ?", 
-                            "id": "None.partial_steps", 
+                            "id": "cmip6.ocean.grid.discretisation.vertical_discretisation.partial_steps", 
                             "uiOrdinal": 1, 
                             "cardinality": "1.1", 
                             "type": "bool"
@@ -1645,7 +1646,7 @@
                         {
                             "label": "Vertical Coord Type", 
                             "description": "Type of vertical coordinates in ocean", 
-                            "id": "None.vertical_coord_type", 
+                            "id": "cmip6.ocean.grid.discretisation.vertical_discretisation.vertical_coord_type", 
                             "uiOrdinal": 2, 
                             "cardinality": "1.1", 
                             "type": "enum", 
@@ -1723,12 +1724,12 @@
                 {
                     "label": "Horizontal Discretisation", 
                     "description": "Type of horizontal discretisation scheme in ocean", 
-                    "id": null, 
+                    "id": "cmip6.ocean.grid.discretisation.horizontal_discretisation", 
                     "properties": [
                         {
                             "label": "Horiz Discret Scheme", 
                             "description": "Horizontal discretisation scheme in ocean", 
-                            "id": "None.horiz_discret_scheme", 
+                            "id": "cmip6.ocean.grid.discretisation.horizontal_discretisation.horiz_discret_scheme", 
                             "uiOrdinal": 1, 
                             "cardinality": "1.1", 
                             "type": "enum", 
@@ -1768,7 +1769,7 @@
                         {
                             "label": "Ocean Pole Singularity Treatment", 
                             "description": "Describe how the North Pole singularity is treated (filter, pole rotation/displacement, artificial island, ...)", 
-                            "id": "None.ocean_pole_singularity_treatment", 
+                            "id": "cmip6.ocean.grid.discretisation.horizontal_discretisation.ocean_pole_singularity_treatment", 
                             "uiOrdinal": 2, 
                             "cardinality": "1.1", 
                             "type": "str"
@@ -2041,12 +2042,12 @@
                 {
                     "label": "Conservation Details", 
                     "description": "Properties conserved in the ocean component", 
-                    "id": null, 
+                    "id": "cmip6.ocean.key_properties.conservation.conservation_details", 
                     "properties": [
                         {
                             "label": "Conservation Scheme", 
                             "description": "Conservation scheme in ocean", 
-                            "id": "None.conservation_scheme", 
+                            "id": "cmip6.ocean.key_properties.conservation.conservation_details.conservation_scheme", 
                             "uiOrdinal": 1, 
                             "cardinality": "1.N", 
                             "type": "enum", 
@@ -2082,7 +2083,7 @@
                         {
                             "label": "Ocean Conservation Method", 
                             "description": "Describe how conservation properties are ensured in ocean", 
-                            "id": "None.ocean_conservation_method", 
+                            "id": "cmip6.ocean.key_properties.conservation.conservation_details.ocean_conservation_method", 
                             "uiOrdinal": 2, 
                             "cardinality": "1.1", 
                             "type": "str"
