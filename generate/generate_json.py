@@ -176,10 +176,14 @@ class Generator(Parser):
         """On detail property parse event handler.
 
         """
+        detail = self._maps[detail]
+        detail['properties'] = detail.get('properties', [])
+
         obj = collections.OrderedDict()
         obj['label'] = get_label(prop.name)
         obj['description'] = prop.description
         obj['id'] = prop.id
+        obj['uiOrdinal'] = len(detail['properties']) + 1
 
         obj['cardinality'] = prop.cardinality
         obj['type'] = "enum" if prop.typeof.find("ENUM") >= 0 else prop.typeof
@@ -193,8 +197,6 @@ class Generator(Parser):
                 'choices': []
             }
 
-        detail = self._maps[detail]
-        detail['properties'] = detail.get('properties') or []
         detail['properties'].append(obj)
 
         self._maps[prop] = obj
@@ -209,7 +211,7 @@ class Generator(Parser):
         obj['description'] = choice.description
 
         prop = self._maps[prop]
-        prop['enum']['choices'] = prop['enum']['choices'] or []
+        prop['enum']['choices'] = prop['enum'].get('choices', [])
         prop['enum']['choices'].append(obj)
 
 
