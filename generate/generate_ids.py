@@ -57,7 +57,7 @@ class Generator(Parser):
         """
         super(Generator, self).__init__(realm)
 
-        self._ids = [("cmip6-label (long)", "cmip6-id", "cmip6-type", "AAA")]
+        self._ids = [("cmip6-label (long)", "cmip6-id", "cmip6-type", "")]
 
 
     @property

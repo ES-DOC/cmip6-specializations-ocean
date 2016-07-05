@@ -49,15 +49,15 @@ DETAILS['timestepping_attributes'] = {
 
 # This is the compact notation used of only one property
 DETAILS['timestepping_tracers_scheme'] = (
-    'ENUM:ocean_timestepping_types','1.1',
+    'ENUM:ocean_timestepping_types', '1.1',
     'Time stepping tracer scheme')
 
 DETAILS['barotropic_solver_scheme'] = (
-    'ENUM:ocean_timestepping_types','1.1',
+    'ENUM:ocean_timestepping_types', '1.1',
     'Barotropic solver scheme')
 
 DETAILS['barotropic_momentum_scheme'] = (
-    'ENUM:ocean_timestepping_types','1.1',
+    'ENUM:ocean_timestepping_types', '1.1',
     'Barotropic momentum scheme')
 
 # --------------------------------------------------------------------
@@ -81,20 +81,22 @@ ENUMERATIONS = OrderedDict()
 
 ENUMERATIONS['diurnal_cycle_types'] = {
     'description': 'Types of diurnal cycle resolution in ocean',
+    'is_open': True,
     'members': [
-        ('None','No diurnal cycle in ocean'),
-        ('Via coupling','Diurnal cycle via coupling frequency'),
+        ('None', 'No diurnal cycle in ocean'),
+        ('Via coupling', 'Diurnal cycle via coupling frequency'),
         ('Specific treatment', 'Specific treament'),
-    ]
+        ]
 }
-    
+
 ENUMERATIONS['ocean_timestepping_types'] = {
     'description': 'Type of timestepping scheme in ocean',
+    'is_open': True,
     'members': [
         ('Leap-frog + Asselin filter', 'Leap-frog scheme with Asselin filter'),
         ('Leap-frog + Periodic Euler backward solver', 'Leap-frog scheme with Periodic Euler backward solver'),
         ('Predictor-corrector', 'Predictor-corrector scheme'),
         ('AM3-LF (ROMS)', 'AM3-LF used in ROMS'),
         ('Forward-backward', 'Forward-backward scheme'),
-    ]
+        ]
 }

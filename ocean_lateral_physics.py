@@ -86,13 +86,13 @@ SUB_PROCESS_DETAILS['momentum:eddy_viscosity_coeff'] = {
     'properties': [
         ('type', 'ENUM:latphys_eddy_visc_coeff_types', '1.1',
             'Lateral physics momemtum eddy viscosity coeff type in the ocean'),
-        ('eddy_visc_coeff_cst','int','0.1',
+        ('eddy_visc_coeff_cst', 'int', '0.1',
             'If constant, value of eddy viscosity coeff in lateral physics momemtum scheme (in m2/s)'),
-        ('eddy_visc_coeff_var','str','0.1',
+        ('eddy_visc_coeff_var', 'str', '0.1',
             'If space-varying, describe variations of eddy viscosity coeff in lateral physics momemtum scheme'),
-        ('eddy_visc_coeff_background','int','1.1',
+        ('eddy_visc_coeff_background', 'int', '1.1',
             'Background value of eddy viscosity coeff in lateral physics momemtum scheme (in m2/s)'),
-        ('eddy_visc_coeff_backscatter','bool','1.1',
+        ('eddy_visc_coeff_backscatter', 'bool', '1.1',
             'Is there backscatter in eddy viscosity coeff in lateral physics momemtum scheme ?')
         ]
 }
@@ -100,7 +100,7 @@ SUB_PROCESS_DETAILS['momentum:eddy_viscosity_coeff'] = {
 SUB_PROCESS_DETAILS['tracers:details'] = {
     'description': 'Properties of lateral physics for tracers in ocean',
     'properties': [
-        ('mesoscale_closure','bool','1.1',
+        ('mesoscale_closure', 'bool', '1.1',
             'Is there a mesoscale closure in the lateral physics tracers scheme ?')
         ]
 }
@@ -122,13 +122,13 @@ SUB_PROCESS_DETAILS['tracers:eddy_viscosity_coeff'] = {
     'properties': [
         ('type', 'ENUM:latphys_eddy_visc_coeff_types', '1.1',
             'Lateral physics tracers eddy viscosity coeff type in the ocean'),
-        ('eddy_visc_coeff_cst','int','0.1',
+        ('eddy_visc_coeff_cst', 'int', '0.1',
             'If constant, value of eddy viscosity coeff in lateral physics tracers scheme (in m2/s)'),
-        ('eddy_visc_coeff_var','str','0.1',
+        ('eddy_visc_coeff_var', 'str', '0.1',
             'If space-varying, describe variations of eddy viscosity coeff in lateral physics tracers scheme'),
-        ('eddy_visc_coeff_background','int','1.1',
+        ('eddy_visc_coeff_background', 'int', '1.1',
             'Background value of eddy viscosity coeff in lateral physics tracers scheme (in m2/s)'),
-        ('eddy_visc_coeff_backscatter','bool','1.1',
+        ('eddy_visc_coeff_backscatter', 'bool', '1.1',
             'Is there backscatter in eddy viscosity coeff in lateral physics tracers scheme ?')
         ]
 }
@@ -138,11 +138,11 @@ SUB_PROCESS_DETAILS['tracers:eddy_induced_velocity'] = {
     'properties': [
         ('type', 'ENUM:latphys_eiv_types', '1.1',
             'Type of EIV in lateral physics tracers in the ocean'),
-        ('eiv_constant_val','int','0.1',
+        ('eiv_constant_val', 'int', '0.1',
             'If EIV scheme for tracers is constant, specify coefficient value (M2/s)'),
-        ('eiv_flux_type','str','1.1',
+        ('eiv_flux_type', 'str', '1.1',
             'Type of EIV flux (advective or skew)'),
-        ('eiv_added_diff','str','1.1',
+        ('eiv_added_diff', 'str', '1.1',
             'Type of EIV added diffusivity (constant, flow dependent or none)')
         ]
 }
@@ -154,58 +154,59 @@ ENUMERATIONS = OrderedDict()
 
 ENUMERATIONS['latphys_transient_eddy_types'] = {
     'description': 'Type of transient eddy representation in ocean',
+    'is_open': False,
     'members': [
-        ('None','No transient eddies in ocean'),
-        ('Eddy active','Full resolution of eddies'),
+        ('None', 'No transient eddies in ocean'),
+        ('Eddy active', 'Full resolution of eddies'),
         ('Eddy admitting', 'Some eddy activity permitted by resolution'),
-     ]
+        ]
 }
 
 ENUMERATIONS['latphys_operator_direc_types'] = {
     'description':'Type of lateral physics direction in ocean',
+    'is_open': True,
     'members':[
-        ('Horizontal', 'tbd'),
-        ('Isopycnal', 'tbd'),
-        ('Isoneutral', 'tbd'),
-        ('Geopotential', 'tbd'),
-        ('Iso-level', 'tbd'),
-        ('Other', 'tbd'),
-     ]
+        ('Horizontal', None),
+        ('Isopycnal', None),
+        ('Isoneutral', None),
+        ('Geopotential', None),
+        ('Iso-level', None)
+        ]
 }
 
 ENUMERATIONS['latphys_operator_order_types'] = {
     'description':'Type of lateral physics order in ocean',
+    'is_open': True,
     'members':[
         ('Harmonic', 'Second order'),
-        ('Bi-harmonic', 'Fourth order'),
-        ('Other', 'tbd'),
-     ]
+        ('Bi-harmonic', 'Fourth order')
+        ]
 }
 
 ENUMERATIONS['latphys_operator_discret_types'] = {
     'description':'Type of lateral physics discretisation in ocean',
+    'is_open': True,
     'members':[
         ('Second order', 'Second order'),
         ('Fourth order', 'Fourth order'),
-        ('Flux limiter', 'tbd'),
-        ('Other', 'tbd'),
-     ]
+        ('Flux limiter', None)
+        ]
 }
 
 ENUMERATIONS['latphys_eddy_visc_coeff_types'] = {
     'description':'Type of lateral physics eddy viscosity coeff in ocean',
+    'is_open': True,
     'members':[
-        ('Constant', 'tbd'),
-        ('Space varying', 'tbd'),
-        ('Time + space varying (Smagorinsky)', 'tbd'),
-        ('Other', 'tbd'),
-     ]
+        ('Constant', None),
+        ('Space varying', None),
+        ('Time + space varying (Smagorinsky)', None)
+        ]
 }
 
 ENUMERATIONS['latphys_eiv_types'] = {
     'description':'Type of lateral physics eddy induced velocity in ocean',
+    'is_open': True,
     'members':[
-        ('GM', 'Gent & McWilliams'),
-        ('Other', 'tbd'),
-     ]
+        ('GM', 'Gent & McWilliams')
+        ]
 }

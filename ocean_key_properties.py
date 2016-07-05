@@ -170,69 +170,68 @@ ENUMERATIONS = OrderedDict()
 
 ENUMERATIONS['model_family_types'] = {
     'description': 'Types of ocean models',
+    'is_open': True,
     'members': [
-        ('OGCM','tbd'),
-        ('slab ocean', 'tbd'),
-        ('mixed layer ocean', 'tbd'),
-        ('Other', 'tbd'),
-
+        ('OGCM', None),
+        ('slab ocean', None),
+        ('mixed layer ocean', None)
     ]
 }
 
 ENUMERATIONS['ocean_basic_approx_types'] = {
     'description': 'Types of basic approximation in ocean',
+    'is_open': True,
     'members': [
-        ('Primitive equations','tbd'),
-        ('Non-hydrostatic', 'tbd'),
-        ('Boussinesq', 'tbd'),
-        ('Other', 'tbd')
+        ('Primitive equations', None),
+        ('Non-hydrostatic', None),
+        ('Boussinesq', None)
     ]
 }
 
 ENUMERATIONS['prognostic_vars_types'] = {
     'description': 'Types of basic approximation in ocean',
+    'is_open': True,
     'members': [
-        ('Potential temperature','tbd'),
-        ('Conservative temperature','tbd'),
-        ('Salinity','tbd'),
-        ('U-velocity','tbd'),
-        ('V-velocity','tbd'),
-        ('W-velocity','tbd'),
-        ('SSH','Sea Surface Height'),
-        ('Other', 'Other prognostic variables')
+        ('Potential temperature', None),
+        ('Conservative temperature', None),
+        ('Salinity', None),
+        ('U-velocity', None),
+        ('V-velocity', None),
+        ('W-velocity', None),
+        ('SSH', 'Sea Surface Height')
     ]
 }
 
 ENUMERATIONS['seawater_eos_types'] = {
     'description': 'Types of seawater Equation of State in ocean',
+    'is_open': True,
     'members': [
-        ('Linear','tbd'),
-        ('Mc Dougall et al.', 'tbd'),
-        ('Jackett et al. 2006', 'tbd'),
-        ('TEOS 2010', 'tbd'),
-        ('Other', 'tbd')
-    ]
+        ('Linear', None),
+        ('Mc Dougall et al.', None),
+        ('Jackett et al. 2006', None),
+        ('TEOS 2010', None)
+        ]
 }
 
 ENUMERATIONS['bathymetry_ref_dates'] = {
     'description': 'List of reference dates for bathymetry in ocean',
+    'is_open': True,
     'members': [
-        ('Present day','tbd'),
-        ('21000 years BP', 'tbd'),
-        ('6000 years BP', 'tbd'),
+        ('Present day', None),
+        ('21000 years BP', None),
+        ('6000 years BP', None),
         ('LGM', 'Last Glacial Maximum'),
-        ('Pliocene', 'tbd'),
-        ('Other', 'tbd')
-    ]
+        ('Pliocene', None)
+        ]
 }
-             
+
 ENUMERATIONS['conservation_props_types'] = {
     'description': 'Types of conservation properties in ocean',
+    'is_open': True,
     'members': [
-        ('Energy','tbd'),
-        ('Enstrophy','tbd'),
-        ('Salt', 'tbd'),
-        ('Volume of ocean', 'tbd'),
-        ('Other', 'tbd')
-    ]
+        ('Energy', None),
+        ('Enstrophy', None),
+        ('Salt', None),
+        ('Volume of ocean', None)
+        ]
 }
