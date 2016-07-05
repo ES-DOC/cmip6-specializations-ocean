@@ -1,3 +1,9 @@
+"""A realm sepecialization.
+
+For further information goto http://wordpress.es-doc.org/cmip6-model-specializations.
+
+"""
+
 # --------------------------------------------------------------------
 # CONTACT
 #
@@ -8,14 +14,14 @@ CONTACT = 'Eric Guilyardi'
 # --------------------------------------------------------------------
 # AUTHORS
 #
-# Set to realm specialization authors.
+# Set to realm specialization authors (comma delimited).
 # --------------------------------------------------------------------
 AUTHORS = 'Eric Guilyardi'
 
 # --------------------------------------------------------------------
 # CONTRIBUTORS
 #
-# Set to realm specialization contributors.
+# Set to realm specialization contributors (comma delimited).
 # --------------------------------------------------------------------
 CONTRIBUTORS = 'David Hassle, Mark Greenslade'
 
