@@ -1,9 +1,4 @@
 # --------------------------------------------------------------------
-# INTERNAL VARIABLES (do not change)
-# --------------------------------------------------------------------
-_TYPE = 'cim.2.science.scientific_realm'
-
-# --------------------------------------------------------------------
 # CONTACT
 #
 # Set to realm specialization co-ordinator.
@@ -11,15 +6,26 @@ _TYPE = 'cim.2.science.scientific_realm'
 CONTACT = 'Eric Guilyardi'
 
 # --------------------------------------------------------------------
-# CONTACT
+# AUTHORS
 #
 # Set to realm specialization authors.
 # --------------------------------------------------------------------
 AUTHORS = 'Eric Guilyardi'
-CONTRIBUTORS = 'David Hassle'
+
+# --------------------------------------------------------------------
+# CONTRIBUTORS
+#
+# Set to realm specialization contributors.
+# --------------------------------------------------------------------
+CONTRIBUTORS = 'David Hassle, Mark Greenslade'
+
+# --------------------------------------------------------------------
+# CHANGE HISTORY
+#
+# Set to list: (version, date, comment, who).
+# --------------------------------------------------------------------
 CHANGE_HISTORY = [
-{'date':'now', 'what':'ewirfuhgweuyfgewy', 'who':'me'},
-{'date':'now', 'what':'ewirfuhgweuyfgewy', 'who':'me'}
+	("0.1.0", "2016-07-01", "Initialised", "Eric Guilyardi"),
     ]
 
 # --------------------------------------------------------------------

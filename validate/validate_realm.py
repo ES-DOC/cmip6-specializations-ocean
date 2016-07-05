@@ -24,6 +24,21 @@ def validate(ctx):
     # Validate standard attributes.
     validate_std(ctx)
 
+    # Validate CONTRIBUTORS.
+    if not hasattr(ctx.module, 'CONTRIBUTORS'):
+        ctx.error("CONTRIBUTORS property is missing")
+    elif not isinstance(ctx.module.CONTRIBUTORS, str):
+        ctx.error("CONTRIBUTORS property must be a string")
+
+    # Validate CHANGE_HISTORY.
+    if not hasattr(ctx.module, 'CHANGE_HISTORY'):
+        ctx.error("CHANGE_HISTORY property is missing")
+    elif not isinstance(ctx.module.CHANGE_HISTORY, list):
+        ctx.error("CHANGE_HISTORY property must be a list")
+    elif [i for i in ctx.module.CHANGE_HISTORY if not isinstance(i, tuple) or len(i) != 4]:
+        ctx.error("CHANGE_HISTORY entries must be 4 member tuples: (version, date, comment, who)")
+
+
     # Validate REALM.
     if not hasattr(mod, "REALM"):
         ctx.error("REALM is missing")
