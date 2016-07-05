@@ -19,9 +19,6 @@ from utils import set_default
 
 
 
-# CIM 2 type name.
-_CIM_2_GRID = "cim.2.science.grid"
-
 # Set of fields.
 _FIELDS = {
     'DETAILS': (dict, tuple),
@@ -55,7 +52,7 @@ def validate(ctx):
         set_default(mod, field, collections.OrderedDict())
 
     # Level-1 validation.
-    validate_std(ctx, _CIM_2_GRID)
+    validate_std(ctx)
     for field, types in _FIELDS.items():
         validate_spec(ctx, field, types)
 

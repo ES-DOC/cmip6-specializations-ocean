@@ -2,7 +2,6 @@
 # INTERNAL (do not change)
 # --------------------------------------------------------------------
 from collections import OrderedDict
-_TYPE = 'cim.2.science.process'
 
 # --------------------------------------------------------------------
 # CONTACT
@@ -24,13 +23,6 @@ AUTHORS = 'Eric Guilyardi'
 # Set to 'draft' or 'complete'
 # --------------------------------------------------------------------
 QC_STATUS = 'draft'
-
-# --------------------------------------------------------------------
-# PROCESS IDENTIFIER
-#
-# Set to 'cmip6.<REALM>.<PROCESS>
-# --------------------------------------------------------------------
-ID = 'cmip6.ocean.lateral_physics'
 
 # --------------------------------------------------------------------
 # PROCESS: DESCRIPTION

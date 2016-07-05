@@ -12,10 +12,6 @@ from utils import validate_std
 
 
 
-# CIM 2 type name.
-_CIM_2_REALM = "cim.2.science.scientific_realm"
-
-
 def validate(ctx):
     """Validates a scientific realm specialization.
 
@@ -26,7 +22,7 @@ def validate(ctx):
     mod = ctx.realm
 
     # Validate standard attributes.
-    validate_std(ctx, _CIM_2_REALM)
+    validate_std(ctx)
 
     # Validate REALM.
     if not hasattr(mod, "REALM"):

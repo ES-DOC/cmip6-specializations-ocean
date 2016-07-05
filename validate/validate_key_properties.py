@@ -18,9 +18,6 @@ from utils import validate_spec
 from utils import validate_std
 
 
-# CIM 2 type name.
-_CIM_2_KEY_PROPERTIES = "cim.2.science.key_properties"
-
 # Set of fields.
 _FIELDS = {
     'DETAILS': (dict, tuple),
@@ -60,7 +57,7 @@ def validate(ctx):
         set_default(mod, field, collections.OrderedDict())
 
     # Level-1 validation.
-    validate_std(ctx, _CIM_2_KEY_PROPERTIES)
+    validate_std(ctx)
     for field, types in _FIELDS.items():
         validate_spec(ctx, field, types)
 

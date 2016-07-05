@@ -20,9 +20,6 @@ from utils import validate_std
 
 
 
-# CIM 2 type name.
-_CIM_2_PROCESS = "cim.2.science.process"
-
 # Map of fields to acceptable file value types.
 _FIELDS = {
     'DETAILS': (dict, tuple),
@@ -68,7 +65,7 @@ def validate(ctx):
         set_default(mod, field, collections.OrderedDict())
 
     # Level-1 validation.
-    validate_std(ctx, _CIM_2_PROCESS)
+    validate_std(ctx)
     for field, types in _FIELDS.items():
         validate_spec(ctx, field, types)
 

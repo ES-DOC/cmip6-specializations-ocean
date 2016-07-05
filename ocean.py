@@ -30,13 +30,6 @@ CHANGE_HISTORY = [
 QC_STATUS = 'draft'
 
 # --------------------------------------------------------------------
-# REALM IDENTIFIER
-#
-# Set to 'cmip6.<REALM>'
-# --------------------------------------------------------------------
-ID = 'cmip6.ocean'
-
-# --------------------------------------------------------------------
 # REALM: DESCRIPTION
 #
 # Scientific context of this scientific realm

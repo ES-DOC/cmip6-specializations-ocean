@@ -26,7 +26,7 @@ def get_cim_id(module):
     return "cmip6.{}".format(".".join(parts))
 
 
-def validate_std(ctx, cim_type):
+def validate_std(ctx):
     """Validates a modules standard attributes.
 
     """
@@ -47,20 +47,6 @@ def validate_std(ctx, cim_type):
         ctx.error("DESCRIPTION property is missing")
     elif not isinstance(ctx.module.DESCRIPTION, str):
         ctx.error("DESCRIPTION property must be a string")
-
-    # Validate ID.
-    if not hasattr(ctx.module, 'ID'):
-        ctx.error("ID property is missing")
-    elif not isinstance(ctx.module.ID, str):
-        ctx.error("ID property must be a string")
-    elif not ctx.module.ID == get_cim_id(ctx.module):
-        ctx.error("ID must be = {}".format(get_cim_id(ctx.module)))
-
-    # Validate _TYPE.
-    if not hasattr(ctx.module, '_TYPE'):
-        ctx.error("_TYPE property is missing")
-    elif ctx.module._TYPE != cim_type:
-        ctx.error("_TYPE must be = {}".format(cim_type))
 
     # Validate QC_STATUS.
     if not hasattr(ctx.module, 'QC_STATUS'):
