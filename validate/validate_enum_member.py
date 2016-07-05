@@ -37,8 +37,8 @@ def validate(defn):
 
     # Description is mandatory.
     description = defn[1]
-    # if description is None or description.lower() == "tbd":
     if description is None:
-        errors.append("member description is missing :: member-name={}".format(name))
+        pass
+        # errors.append("member description is missing :: member-name={}".format(name))
 
     return errors
