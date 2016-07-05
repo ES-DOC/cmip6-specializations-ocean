@@ -42,8 +42,8 @@ DETAILS['ocean_transient_eddy_representation'] = {
     'description': 'Type of transient eddy representation in ocean',
     'properties': [
         ('scheme', 'ENUM:latphys_transient_eddy_types', '1.1',
-         'Type of transient eddy representation in ocean'),
-    ]
+            'Type of transient eddy representation in ocean'),
+        ]
 }
 
 # --------------------------------------------------------------------
@@ -55,12 +55,20 @@ SUB_PROCESSES = OrderedDict()
 
 SUB_PROCESSES['momentum'] = {
     'description': 'Properties of lateral physics for momentum in ocean',
-    'details': ['operator', 'eddy_viscosity_coeff']
+    'details': [
+        'operator',
+        'eddy_viscosity_coeff'
+        ]
  }
 
 SUB_PROCESSES['tracers'] = {
     'description': 'Properties of lateral physics for tracers in ocean',
-    'details': ['details', 'operator', 'eddy_viscosity_coeff', 'eddy_induced_velocity']
+    'details': [
+        'details',
+        'operator',
+        'eddy_viscosity_coeff',
+        'eddy_induced_velocity'
+        ]
 }
 
 # --------------------------------------------------------------------

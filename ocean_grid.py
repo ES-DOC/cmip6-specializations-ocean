@@ -43,7 +43,7 @@ DETAILS['vertical_grid'] = {
     'properties': [
         ('number_of_levels', 'int', '1.1',
             'Number of vertical levels'),
-    ]
+        ]
 }
 
 DETAILS['horizontal_grid'] = {
@@ -53,7 +53,7 @@ DETAILS['horizontal_grid'] = {
             'Horizontal grid type'),
         ('number_of_xy_gridpoints', 'int', '0.1',
             'Total number of horizontal points on computational grid'),
-    ]
+        ]
 }
 
 # --------------------------------------------------------------------
@@ -85,7 +85,7 @@ DISCRETISATION_DETAILS['vertical_discretisation'] = {
             'Type of vertical coordinates in ocean'),
         ('partial_steps', 'bool', '1.1',
             'Using partial steps with Z or Z* vertical coordinate in ocean ?'),
-    ]
+        ]
 }
 
 DISCRETISATION_DETAILS['horizontal_discretisation'] = {
@@ -95,7 +95,7 @@ DISCRETISATION_DETAILS['horizontal_discretisation'] = {
             'Horizontal discretisation scheme in ocean'),
         ('ocean_pole_singularity_treatment', 'str', '1.1',
             'Describe how the North Pole singularity is treated (filter, pole rotation/displacement, artificial island, ...)'),
-    ]
+        ]
 }
 
 # --------------------------------------------------------------------

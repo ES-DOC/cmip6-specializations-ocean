@@ -47,7 +47,7 @@ DETAILS['vertical_physics_details'] = {
             'Describe how tide induced mixing is modelled (barotropic, baroclinic, none)'),
         ('langmuir_cells_mixing', 'bool', '1.1',
             'Is there Langmuir cells mixing in upper ocean ?'),
-    ]
+        ]
 }
 
 # --------------------------------------------------------------------
@@ -91,7 +91,7 @@ SUB_PROCESS_DETAILS['boundary_layer_mixing:tracers'] = {
             'If constant BL mixing of tracers, specific coefficient (m2/s)'),
         ('background', 'str', '1.1',
             'Background BL mixing of tracers coefficient, (schema and value in m2/s - may by none)'),
-    ]
+        ]
 }
 
 SUB_PROCESS_DETAILS['boundary_layer_mixing:momentum'] = {
@@ -105,7 +105,7 @@ SUB_PROCESS_DETAILS['boundary_layer_mixing:momentum'] = {
             'If constant BL mixing of momentum, specific coefficient (m2/s)'),
         ('background', 'str', '1.1',
             'Background BL mixing of momentum coefficient, (schema and value in m2/s - may by none)'),
-    ]
+        ]
 }
 
 SUB_PROCESS_DETAILS['interior_mixing:tracers'] = {
@@ -119,7 +119,7 @@ SUB_PROCESS_DETAILS['interior_mixing:tracers'] = {
             'Is the background interior mixing using a vertical profile for tracers (i.e is NOT constant) ?'),
         ('background', 'str', '1.1',
             'Background interior mixing of tracers coefficient, (schema and value in m2/s - may by none)'),
-    ]
+        ]
 }
 
 SUB_PROCESS_DETAILS['interior_mixing:momentum'] = {
@@ -133,7 +133,7 @@ SUB_PROCESS_DETAILS['interior_mixing:momentum'] = {
             'Is the background interior mixing using a vertical profile for momentum (i.e is NOT constant) ?'),
         ('background', 'str', '1.1',
             'Background interior mixing of momentum coefficient, (schema and value in m2/s - may by none)'),
-    ]
+        ]
 }
 
 # --------------------------------------------------------------------
