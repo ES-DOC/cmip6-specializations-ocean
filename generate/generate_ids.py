@@ -73,6 +73,8 @@ class Generator(Parser):
 
         """
         return ["{}, {}, {}".format(i, j, k)
+                for i, j, k, _ in self._ids]
+        return ["{}, {}, {}".format(i, j, k)
                 for i, j, k, _ in sorted(self._ids, key=lambda i: i[-1])]
 
 
@@ -80,7 +82,8 @@ class Generator(Parser):
         """Emits a null row.
 
         """
-        self._ids.append(("", "", "", owner.id))
+        if len(self._ids[-1][0]):
+            self._ids.append(("", "", "", owner.id))
 
 
     def set_id(self, owner, identifier=None):

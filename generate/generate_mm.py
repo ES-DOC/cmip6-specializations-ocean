@@ -161,7 +161,14 @@ class Generator(Parser):
             self._emit_node(detail_property, choice, text=choice.value)
 
 
-    def _emit_node(self, parent, owner, text=None, style=None, cfg_section=None):
+    def _emit_node(
+        self,
+        parent,
+        owner,
+        text=None,
+        style=None,
+        cfg_section=None
+        ):
         """Sets a mindmap node.
 
         """

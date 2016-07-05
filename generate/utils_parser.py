@@ -79,6 +79,13 @@ class Parser(object):
         pass
 
 
+    def on_grid_parsed(self, realm, grid):
+        """On grid parsed event handler.
+
+        """
+        pass
+
+
     def on_key_properties_parse(self, realm, key_properties):
         """On key_properties parse event handler.
 
@@ -114,6 +121,13 @@ class Parser(object):
         pass
 
 
+    def on_key_properties_parsed(self, realm, key_properties):
+        """On key_properties parsed event handler.
+
+        """
+        pass
+
+
     def on_process_parse(self, realm, process):
         """On process parse event handler.
 
@@ -121,8 +135,22 @@ class Parser(object):
         pass
 
 
+    def on_process_parsed(self, realm, process):
+        """On process parsed event handler.
+
+        """
+        pass
+
+
     def on_subprocess_parse(self, process, subprocess):
         """On sub-process parse event handler.
+
+        """
+        pass
+
+
+    def on_subprocess_parsed(self, process, subprocess):
+        """On sub-process parsed event handler.
 
         """
         pass
@@ -161,6 +189,7 @@ class Parser(object):
         if grid.discretisation:
             self.on_grid_discretisation_parse(realm, grid, grid.discretisation)
             self._parse_details(grid.discretisation)
+        self.on_grid_parsed(realm, grid)
 
 
     def _parse_key_properties(self, realm, key_properties):
@@ -184,6 +213,7 @@ class Parser(object):
         if key_properties.tuning:
             self.on_key_properties_tuning_parse(realm, key_properties, key_properties.tuning)
             self._parse_details(key_properties.tuning)
+        self.on_key_properties_parsed(realm, key_properties)
 
 
     def _parse_process(self, realm, process):
@@ -203,6 +233,9 @@ class Parser(object):
         for sub_process in sub_processes:
             self._parse_subprocess(realm, process, sub_process)
 
+        # Raise process parsed event.
+        self.on_process_parsed(realm, process)
+
 
     def _parse_subprocess(self, realm, process, sub_process):
         """Parses a realm sub process.
@@ -215,6 +248,9 @@ class Parser(object):
 
         # Iterate set of sub-process details.
         self._parse_details(sub_process)
+
+        # Raise sub-process parsed event.
+        self.on_subprocess_parsed(process, sub_process)
 
 
     def _parse_details(self, owner):

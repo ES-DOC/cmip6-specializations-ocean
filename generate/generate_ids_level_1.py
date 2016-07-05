@@ -28,6 +28,7 @@ class Generator(IdentifierGenerator):
         """On grid parse event handler.
 
         """
+        self.emit_null_row(grid)
         self.set_id(grid)
 
 
@@ -42,6 +43,7 @@ class Generator(IdentifierGenerator):
         """On key_properties parse event handler.
 
         """
+        self.emit_null_row(key_properties)
         self.set_id(key_properties)
 
 
@@ -56,6 +58,7 @@ class Generator(IdentifierGenerator):
         """On process parse event handler.
 
         """
+        self.emit_null_row(process)
         self.set_id(process)
 
 
@@ -64,4 +67,3 @@ class Generator(IdentifierGenerator):
 
         """
         self.set_id(subprocess)
-

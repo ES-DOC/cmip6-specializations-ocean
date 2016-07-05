@@ -147,7 +147,7 @@ EXTRA_CONSERVATION_PROPERTIES = OrderedDict()
 
 EXTRA_CONSERVATION_PROPERTIES['conservation'] = {
     'description': 'Conservation in the ocean component',
-    'details': ['conservation_details'],
+    'details': ['details'],
 }
 
 # --------------------------------------------------------------------
@@ -157,12 +157,12 @@ EXTRA_CONSERVATION_PROPERTIES['conservation'] = {
 # --------------------------------------------------------------------
 EXTRA_CONSERVATION_PROPERTIES_DETAILS = OrderedDict()
 
-EXTRA_CONSERVATION_PROPERTIES_DETAILS['conservation_details'] = {
+EXTRA_CONSERVATION_PROPERTIES_DETAILS['details'] = {
     'description': 'Properties conserved in the ocean component',
     'properties': [
-        ('conservation_scheme', 'ENUM:conservation_props_types', '1.N',
+        ('scheme', 'ENUM:conservation_props_types', '1.N',
             'Conservation scheme in ocean'),
-        ('ocean_conservation_method', 'str', '1.1',
+        ('method', 'str', '1.1',
             'Describe how conservation properties are ensured in ocean'),
         ]
 }

@@ -86,12 +86,14 @@ class SpecializationDetailCollection(Specialization):
         details = getattr(mod, "{}_DETAILS".format(collection))
         obj = getattr(mod, collection)[name]
 
+        self.id = "{}.{}".format(owner.id, name)
         self.description = obj['description']
-        self.details = [Detail(mod, self, i, j) for i, j in details.items() if isinstance(j, dict)]
         self.detail_keys = obj['details']
+        self.details = [Detail(mod, self, i, j)
+                        for i, j in details.items()
+                        if isinstance(j, dict)]
         self.name = name
         self.owner = owner
-        self.id = "{}.{}".format(owner.id, name)
 
 
     @property
@@ -100,7 +102,8 @@ class SpecializationDetailCollection(Specialization):
 
         """
         return [
-            ("Description", self.description)
+            ("Description", self.description),
+            ("ID", self.id),
         ]
 
 
