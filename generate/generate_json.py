@@ -193,6 +193,9 @@ class Generator(Parser):
         """On process detail property choice parse event handler.
 
         """
+        if choice.is_other:
+            return
+
         obj = collections.OrderedDict()
         obj['label'] = choice.value
         obj['description'] = choice.description

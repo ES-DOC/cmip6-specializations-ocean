@@ -396,6 +396,7 @@ class EnumChoice(Specialization):
         self.id = "{}.{}".format(owner.id, value)
         self.value = value
         self.cfg_section = "enum-choice"
+        self.is_other = value == 'Other'
 
 
     @property
