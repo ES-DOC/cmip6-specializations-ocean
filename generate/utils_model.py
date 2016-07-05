@@ -9,10 +9,6 @@
 
 
 """
-# Base url for linking back to meta-definitions.
-_URL = "https://github.com/ES-DOC/esdoc-mp/blob/master/esdoc_mp/specializations/cmip6/schema/"
-
-
 class Specialization(object):
     """Wraps a specialization.
 
@@ -45,15 +41,22 @@ class SpecializationModule(Specialization):
         self.full_name = mod.__name__.split(".")[-1]
         self.mod = mod
         self.qc_status = mod.QC_STATUS
+
         if owner:
             self.name = "_".join(mod.__name__.split(".")[-1].split("_")[1:])
             self.id = "{}.{}".format(owner.id, self.name)
-            self.url = "{}{}.py".format(_URL, self.full_name)
         else:
             self.name = mod.REALM
             self.id = "cmip6.{}".format(self.name)
-            self.url = "{}{}.py".format(_URL, self.name)
 
+        try:
+            self.mod.DETAILS
+        except AttributeError:
+            self.details = []
+        else:
+            self.details = [Detail(self.mod, self, i, j)
+                            for i, j in self.mod.DETAILS.items()
+                            if isinstance(j, dict)]
 
     @property
     def notes(self):
@@ -63,24 +66,11 @@ class SpecializationModule(Specialization):
         return [
             ("Description", self.description),
             ("ID", self.id),
-            ("Python Definition", self.url),
             ("QC status", self.qc_status),
             ("Contact", self.contact),
             ("Authors", self.authors),
             ("Contributors", self.contributors)
         ]
-
-
-    def _set_details(self):
-        """Sets a detail collection attribute.
-
-        """
-        try:
-            self.mod.DETAILS
-        except AttributeError:
-            self.details = []
-        else:
-            self.details = [Detail(self.mod, self, i, j) for i, j in self.mod.DETAILS.items() if isinstance(j, dict)]
 
 
 class SpecializationDetailCollection(Specialization):
@@ -144,7 +134,6 @@ class Process(SpecializationModule):
         """
         super(Process, self).__init__(realm, mod, "process")
 
-        self._set_details()
         try:
             self.sub_processes = [SubProcess(self, i, j) for i, j in mod.SUB_PROCESSES.items()]
         except AttributeError:
@@ -161,7 +150,6 @@ class Grid(SpecializationModule):
         """
         super(Grid, self).__init__(realm, mod, "grid")
 
-        self._set_details()
         self.discretisation = GridDiscretisation(mod, self)
 
 
@@ -186,8 +174,6 @@ class KeyProperties(SpecializationModule):
 
         """
         super(KeyProperties, self).__init__(owner, mod, "key-properties")
-
-        self._set_details()
 
         try:
             self.conservation = KeyPropertiesConservation(mod, self)
@@ -274,7 +260,6 @@ class SubProcess(Specialization):
         self.id = "{}.{}".format(process.id, name)
         self.process = process
         self.cfg_section = "sub-process"
-        self.url = process.url
         self.details = [Detail(process.mod, self, i, process.mod.SUB_PROCESS_DETAILS[i])
                         for i in obj['details']]
 
@@ -286,8 +271,7 @@ class SubProcess(Specialization):
         """
         return [
             ("Description", self.description),
-            ("ID", self.id),
-            ("Python Definition", self.url)
+            ("ID", self.id)
         ]
 
 

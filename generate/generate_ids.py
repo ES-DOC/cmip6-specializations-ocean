@@ -57,7 +57,7 @@ class Generator(Parser):
         """
         super(Generator, self).__init__(realm)
 
-        self._ids = [("cmip6-label (long)", "cmip6-id", "cmip6-type", "")]
+        self._ids = [("cmip6-id", "cmip6-label", "cmip6-type", "")]
 
 
     @property
@@ -100,5 +100,5 @@ class Generator(Parser):
         label = " > ".join([get_label(i) for i in identifier.split(".")[1:]])
 
         # Append to managed collection.
-        self._ids.append((label, identifier, _ID_TYPES[type(owner)], identifier))
+        self._ids.append((identifier, label, _ID_TYPES[type(owner)], identifier))
 
