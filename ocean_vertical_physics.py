@@ -1,5 +1,21 @@
+# --------------------------------------------------------------------
+# INTERNAL (do not change)
+# --------------------------------------------------------------------
+from collections import OrderedDict
+_TYPE = 'cim.2.science.process'
+
+# --------------------------------------------------------------------
+# CONTACT
+#
+# Set to realm specialization co-ordinator.
+# --------------------------------------------------------------------
 CONTACT = 'Eric Guilyardi'
 
+# --------------------------------------------------------------------
+# AUTHORS
+#
+# Set to realm specialization authors.
+# --------------------------------------------------------------------
 AUTHORS = 'Eric Guilyardi'
 
 # --------------------------------------------------------------------
@@ -15,13 +31,6 @@ QC_STATUS = 'draft'
 # Set to 'cmip6.<REALM>.<PROCESS>
 # --------------------------------------------------------------------
 ID = 'cmip6.ocean.vertical_physics'
-
-# --------------------------------------------------------------------
-# INTERNAL VARIABLES (do not change)
-# --------------------------------------------------------------------
-_TYPE = 'cim.2.science.process'
-
-from collections import OrderedDict
 
 # --------------------------------------------------------------------
 # PROCESS: DESCRIPTION
@@ -41,11 +50,11 @@ DETAILS['vertical_physics_details'] = {
     'description': 'Properties of vertical physics in ocean',
     'properties': [
         ('convection_type', 'ENUM:vertphys_convection_types', '1.1',
-         'Type of vertical convection in ocean'),
+            'Type of vertical convection in ocean'),
         ('tide_induced_mixing', 'str', '1.1',
-        'Describe how tide induced mixing is modelled (barotropic, baroclinic, none)'),
+            'Describe how tide induced mixing is modelled (barotropic, baroclinic, none)'),
         ('langmuir_cells_mixing', 'bool', '1.1',
-        'Is there Langmuir cells mixing in upper ocean ?'),
+            'Is there Langmuir cells mixing in upper ocean ?'),
     ]
 }
 
@@ -58,12 +67,18 @@ SUB_PROCESSES = OrderedDict()
 
 SUB_PROCESSES['boundary_layer_mixing'] = {
     'description': 'Properties of boundary layer mixing in the ocean (aka mixed layer)',
-    'details': ['tracers', 'momentum']
+    'details': [
+        'tracers',
+        'momentum'
+        ]
 }
 
 SUB_PROCESSES['interior_mixing'] = {
     'description': 'Properties of interior vertical mixing in the ocean',
-    'details': ['tracers', 'momentum']
+    'details': [
+        'tracers',
+        'momentum'
+        ]
 }
 
 # --------------------------------------------------------------------
@@ -141,7 +156,7 @@ ENUMERATIONS['vertphys_convection_types'] = {
         ('Non-penetrative convective adjustment', None),
         ('Enhanced vertical diffusion', None),
         ('Included in turbulence closure', None)
-     ]
+        ]
 }
 
 ENUMERATIONS['bndlayer_mixing_types'] = {
@@ -156,7 +171,7 @@ ENUMERATIONS['bndlayer_mixing_types'] = {
         ('Richardson number dependent - PP', None),
         ('Richardson number dependent - KT', None),
         ('Imbeded as isopycnic vertical coordinate', None)
-     ]
+        ]
 }
 
 ENUMERATIONS['interior_mixing_types'] = {
@@ -169,5 +184,5 @@ ENUMERATIONS['interior_mixing_types'] = {
         ('Richardson number dependent - PP', None),
         ('Richardson number dependent - KT', None),
         ('Imbeded as isopycnic vertical coordinate', None)
-     ]
+        ]
 }

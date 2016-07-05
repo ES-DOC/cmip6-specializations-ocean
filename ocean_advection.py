@@ -1,5 +1,21 @@
+# --------------------------------------------------------------------
+# INTERNAL (do not change)
+# --------------------------------------------------------------------
+from collections import OrderedDict
+_TYPE = 'cim.2.science.process'
+
+# --------------------------------------------------------------------
+# CONTACT
+#
+# Set to realm specialization co-ordinator.
+# --------------------------------------------------------------------
 CONTACT = 'Eric Guilyardi'
 
+# --------------------------------------------------------------------
+# AUTHORS
+#
+# Set to realm specialization authors.
+# --------------------------------------------------------------------
 AUTHORS = 'Eric Guilyardi'
 
 # --------------------------------------------------------------------
@@ -15,13 +31,6 @@ QC_STATUS = 'draft'
 # Set to 'cmip6.<REALM>.<PROCESS>
 # --------------------------------------------------------------------
 ID = 'cmip6.ocean.advection'
-
-# --------------------------------------------------------------------
-# INTERNAL VARIABLES (do not change)
-# --------------------------------------------------------------------
-_TYPE = 'cim.2.science.process'
-
-from collections import OrderedDict
 
 # --------------------------------------------------------------------
 # PROCESS: DESCRIPTION
@@ -58,7 +67,6 @@ SUB_PROCESSES['vert_tra_adv_scheme'] = {
     'description': 'Properties of vertical momemtum advection scheme in ocean',
     'details': ['details']
 }
-
 
 # --------------------------------------------------------------------
 # PROCESS: SUB PROCESSES: DETAILS

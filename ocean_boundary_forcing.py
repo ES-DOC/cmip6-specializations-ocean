@@ -1,5 +1,21 @@
+# --------------------------------------------------------------------
+# INTERNAL (do not change)
+# --------------------------------------------------------------------
+from collections import OrderedDict
+_TYPE = 'cim.2.science.process'
+
+# --------------------------------------------------------------------
+# CONTACT
+#
+# Set to realm specialization co-ordinator.
+# --------------------------------------------------------------------
 CONTACT = 'Eric Guilyardi'
 
+# --------------------------------------------------------------------
+# AUTHORS
+#
+# Set to realm specialization authors.
+# --------------------------------------------------------------------
 AUTHORS = 'Eric Guilyardi'
 
 # --------------------------------------------------------------------
@@ -15,13 +31,6 @@ QC_STATUS = 'draft'
 # Set to 'cmip6.<REALM>.<PROCESS>
 # --------------------------------------------------------------------
 ID = 'cmip6.ocean.boundary_forcing'
-
-# --------------------------------------------------------------------
-# INTERNAL VARIABLES (do not change)
-# --------------------------------------------------------------------
-_TYPE = 'cim.2.science.process'
-
-from collections import OrderedDict
 
 # --------------------------------------------------------------------
 # PROCESS: DESCRIPTION
@@ -64,12 +73,19 @@ SUB_PROCESSES = OrderedDict()
 
 SUB_PROCESSES['momentum'] = {
     'description': 'Key properties of momentum boundary forcing in the ocean',
-    'details': ['bottom_friction', 'lateral_friction']
+    'details': [
+        'bottom_friction',
+        'lateral_friction'
+        ]
 }
 
 SUB_PROCESSES['tracers'] = {
     'description': 'Key properties of tracer boundary forcing in the ocean',
-    'details': ['sunlight_penetration', 'surface_salinity_atmos', 'surface_salinity_seaice']
+    'details': [
+        'sunlight_penetration',
+        'surface_salinity_atmos',
+        'surface_salinity_seaice'
+        ]
 }
 
 # --------------------------------------------------------------------

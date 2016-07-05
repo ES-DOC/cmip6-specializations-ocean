@@ -1,5 +1,21 @@
+# --------------------------------------------------------------------
+# INTERNAL (do not change)
+# --------------------------------------------------------------------
+from collections import OrderedDict
+_TYPE = 'cim.2.science.process'
+
+# --------------------------------------------------------------------
+# CONTACT
+#
+# Set to realm specialization co-ordinator.
+# --------------------------------------------------------------------
 CONTACT = 'Eric Guilyardi'
 
+# --------------------------------------------------------------------
+# AUTHORS
+#
+# Set to realm specialization authors.
+# --------------------------------------------------------------------
 AUTHORS = 'Eric Guilyardi'
 
 # --------------------------------------------------------------------
@@ -15,13 +31,6 @@ QC_STATUS = 'draft'
 # Set to 'cmip6.<REALM>.<PROCESS>
 # --------------------------------------------------------------------
 ID = 'cmip6.ocean.timestepping_framework'
-
-# --------------------------------------------------------------------
-# INTERNAL VARIABLES (do not change)
-# --------------------------------------------------------------------
-_TYPE = 'cim.2.science.process'
-
-from collections import OrderedDict
 
 # --------------------------------------------------------------------
 # PROCESS: DESCRIPTION
@@ -48,17 +57,14 @@ DETAILS['timestepping_attributes'] = {
 }
 
 # This is the compact notation used of only one property
-DETAILS['timestepping_tracers_scheme'] = (
-    'ENUM:ocean_timestepping_types', '1.1',
-    'Time stepping tracer scheme')
+DETAILS['timestepping_tracers_scheme'] = \
+    ('ENUM:ocean_timestepping_types', '1.1', 'Time stepping tracer scheme')
 
-DETAILS['barotropic_solver_scheme'] = (
-    'ENUM:ocean_timestepping_types', '1.1',
-    'Barotropic solver scheme')
+DETAILS['barotropic_solver_scheme'] = \
+    ('ENUM:ocean_timestepping_types', '1.1', 'Barotropic solver scheme')
 
-DETAILS['barotropic_momentum_scheme'] = (
-    'ENUM:ocean_timestepping_types', '1.1',
-    'Barotropic momentum scheme')
+DETAILS['barotropic_momentum_scheme'] = \
+    ('ENUM:ocean_timestepping_types', '1.1', 'Barotropic momentum scheme')
 
 # --------------------------------------------------------------------
 # PROCESS: SUB PROCESSES

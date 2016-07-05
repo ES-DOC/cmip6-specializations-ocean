@@ -1,5 +1,21 @@
+# --------------------------------------------------------------------
+# INTERNAL (do not change)
+# --------------------------------------------------------------------
+from collections import OrderedDict
+_TYPE = 'cim.2.science.key_properties'
+
+# --------------------------------------------------------------------
+# CONTACT
+#
+# Set to realm specialization co-ordinator.
+# --------------------------------------------------------------------
 CONTACT = 'Eric Guilyardi'
 
+# --------------------------------------------------------------------
+# AUTHORS
+#
+# Set to realm specialization authors.
+# --------------------------------------------------------------------
 AUTHORS = 'Eric Guilyardi'
 
 # --------------------------------------------------------------------
@@ -15,13 +31,6 @@ QC_STATUS = 'draft'
 # Set to 'cmip6.<REALM>.key_properties'
 # --------------------------------------------------------------------
 ID = 'cmip6.ocean.key_properties'
-
-# --------------------------------------------------------------------
-# INTERNAL VARIABLES (do not change)
-# --------------------------------------------------------------------
-_TYPE = 'cim.2.science.key_properties'
-
-from collections import OrderedDict
 
 # --------------------------------------------------------------------
 # KEY PROPERTIES: DESCRIPTION
@@ -76,9 +85,7 @@ DETAILS['bathymetry'] = {
 }
 
 DETAILS['nonoceanic_waters'] = (
-    'str',
-    '0.1',
-    'Describe if/how isolated seas and river mouth mixing or other specific treatment is performed'
+    'str', '0.1', 'Describe if/how isolated seas and river mouth mixing or other specific treatment is performed'
     )
 
 # --------------------------------------------------------------------
@@ -104,7 +111,9 @@ RESOLUTION = OrderedDict()
 
 RESOLUTION['resolution'] = {
     'description': 'Resolution in the ocean grid',
-    'details' : ['thickness_of_surface_level'],
+    'details' : [
+        'thickness_of_surface_level'
+        ],
 }
 
 # --------------------------------------------------------------------
@@ -114,10 +123,8 @@ RESOLUTION['resolution'] = {
 # --------------------------------------------------------------------
 RESOLUTION_DETAILS = OrderedDict()
 
-RESOLUTION_DETAILS['thickness_of_surface_level'] = (
-    'float', '0.1',
-    'Thickness in metres of surface ocean level (e.g. 1)'
-    )
+RESOLUTION_DETAILS['thickness_of_surface_level'] = \
+    ('float', '0.1', 'Thickness in metres of surface ocean level (e.g. 1)')
 
 # --------------------------------------------------------------------
 # KEY PROPERTIES: TUNING APPLIED
