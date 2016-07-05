@@ -341,17 +341,6 @@ class DetailProperty(Specialization):
 
 
     @property
-    def choices(self):
-        """Get set of enumeration choices associated with property.
-
-        """
-        if not self.enum:
-            return []
-
-        return self.enum.choices
-
-
-    @property
     def notes(self):
         """Returns notes.
 
@@ -377,11 +366,13 @@ class Enum(Specialization):
         self.id = name
         self.cfg_section = "enum"
         self.description = mod.ENUMERATIONS[name]['description']
+        self.is_open = mod.ENUMERATIONS[name]['is_open']
         self.label = name
         self.name = name
         self.choices = [EnumChoice(self, i[0], i[1]) for i in
                         sorted(mod.ENUMERATIONS[name]['members'])]
-
+        if self.is_open:
+            self.choices.append(EnumChoice(self, "Other", None))
 
     @property
     def notes(self):

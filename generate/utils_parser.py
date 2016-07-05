@@ -272,5 +272,6 @@ class Parser(object):
                 self.on_detail_property_parse(detail, prop)
 
                 # Iterate set of detail property choices.
-                for choice in prop.choices:
-                    self.on_detail_property_choice_parse(detail, prop, choice)
+                if prop.enum:
+                    for choice in prop.enum.choices:
+                        self.on_detail_property_choice_parse(detail, prop, choice)

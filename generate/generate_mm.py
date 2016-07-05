@@ -157,8 +157,9 @@ class Generator(Parser):
         """
         self._emit_node(detail, detail_property)
         self._emit_notes(detail_property)
-        for choice in detail_property.choices:
-            self._emit_node(detail_property, choice, text=choice.value)
+        if detail_property.enum:
+            for choice in detail_property.enum.choices:
+                self._emit_node(detail_property, choice, text=choice.value)
 
 
     def _emit_node(
