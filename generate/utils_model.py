@@ -20,6 +20,16 @@ class Specialization(object):
         self.mod = mod
 
 
+    @property
+    def doc_name(self):
+        """A simplified name useful in documentation scenrios.
+
+        """
+        name = self.name
+
+        return " ".join(["{}{}".format(i[0].upper(), i[1:]) for i in name.split("_")])
+
+
 class SpecializationModule(Specialization):
     """Wraps a standard specialization module.
 
@@ -340,6 +350,47 @@ class DetailProperty(Specialization):
         return "{}.{}".format(self.container.id, self.name)
 
 
+    def short_id(self, idx):
+        return ".".join(self.id.split(".")[idx:])
+
+
+    @property
+    def is_mandatory(self):
+        """Gets flag indicating whether cardinality is mandatory or not.
+
+        """
+        return self.cardinality.split(".")[0] == "0"
+
+
+    @property
+    def is_collection(self):
+        """Gets flag indicating whether property is a collection or not.
+
+        """
+        try:
+            int(self.cardinality.split(".")[1])
+        except TypeError:
+            return True
+        else:
+            return False
+
+    @property
+    def typeof_label(self):
+        """Gets label for the property type.
+
+        """
+        if self.typeof == 'str':
+            return "STRING"
+        elif self.typeof == 'bool':
+            return "BOOLEAN"
+        elif self.typeof == 'int':
+            return "INTEGER"
+        elif self.typeof == 'float':
+            return "FLOAT"
+
+        return self.typeof.upper()
+
+
     @property
     def notes(self):
         """Returns notes.
@@ -373,6 +424,7 @@ class Enum(Specialization):
                         sorted(mod.ENUMERATIONS[name]['members'])]
         if self.is_open:
             self.choices.append(EnumChoice(self, "Other", None))
+
 
     @property
     def notes(self):

@@ -1,0 +1,62 @@
+
+class {{ r.py_cls_name }}(object):
+    """{{ r.py_cls_name }} modelling realm.
+
+    """
+    def __init__(self):
+        """Instance constructor.
+
+        """
+#		{% for p in r.processes %}
+    	self.{{ p.name }} = {{ r.py_cls_name }}.{{ p.py_cls_name }}()
+#		{% end %}
+
+
+#{% for p in r.processes %}
+	class {{ p.py_cls_name }}(object):
+	    """Process: {{ r.py_cls_name }} - {{ p.name }}.
+
+	    """
+	    def __init__(self):
+	        """Instance constructor.
+
+	        """
+#			{% for sp in p.sub_processes %}
+    		self.{{ sp.name }} = {{ r.py_cls_name }}.{{ p.py_cls_name }}.{{ sp.py_cls_name }}()
+#			{% end %}
+#			{% if not len(p.sub_processes) %}
+			pass
+#			{% end %}
+
+
+#		{% for sp in p.sub_processes %}
+		class {{ sp.py_cls_name }}(object):
+		    """Sub-process: {{ sp.name }}.
+
+		    """
+		    def __init__(self):
+		        """Instance constructor.
+
+		        """
+#				{% for d in sp.details %}
+    			self.{{ d.name }} = {{ r.py_cls_name }}.{{ p.py_cls_name }}.{{ sp.py_cls_name }}.{{ d.py_cls_name }}()
+#				{% end %}
+
+
+#			{% for d in sp.details %}
+			class {{ d.py_cls_name }}(object):
+			    """Detail: {{ d.name }}.
+
+			    """
+			    def __init__(self):
+			        """Instance constructor.
+
+			        """
+#				{% for prp in d.properties %}
+					self.{{ prp.name }} = None
+#				{% end %}
+
+
+#			{% end %}
+#		{% end %}
+#{% end %}

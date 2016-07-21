@@ -1,0 +1,151 @@
+{
+    "cells": [
+        {
+            "cell_type": "markdown",
+            "metadata": {},
+            "source": [
+                "## ES-DOC Model Documentation"
+            ]
+        },
+        {
+            "cell_type": "markdown",
+            "metadata": {},
+            "source": [
+                "**MIP Era**: {{ mip_era }}  \n",
+                "**Institute**: {{ institute }}  \n",
+                "**Model**: {{ model.upper() }}  \n",
+                "**Realm**: {{ r.py_cls_name }}  \n",
+                "**Realm Processes**: {% for p in r.processes %}{{ p.py_cls_name[1:] }}{% if p == r.processes[-1] %}.{% else %},{% end %} {% end %}  \n",
+                "\n",
+                "**Notebook Help**: [Goto notebook help page](http://wordpress.es-doc.org/how-to-document-cmip6-models)  \n",
+                "**Notebook Initialised**: {{ unicode(now)[0:19] }}"
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": null,
+            "metadata": {
+                "collapsed": true,
+                "scrolled": true
+            },
+            "outputs": [],
+            "source": [
+                "# Initialise documentation - do not edit !\n",
+                "import pyesdoc\n",
+                "DOC = pyesdoc.create_notebook_output({\n",
+                "        'MIP_ERA': \"{{ mip_era.lower() }}\",\n",
+                "        'INSTITUTE': \"{{ institute.lower() }}\",\n",
+                "        'MODEL': \"{{ model.lower() }}\",\n",
+                "        'REALM': \"{{ r.name.lower() }}\"\n",
+                "    })"
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": null,
+            "metadata": {
+                "collapsed": true,
+                "scrolled": true
+            },
+            "outputs": [],
+            "source": [
+                "# Specify authors.\n",
+                "DOC['AUTHORS'] = \"\""
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": null,
+            "metadata": {
+                "collapsed": true,
+                "scrolled": true
+            },
+            "outputs": [],
+            "source": [
+                "# Specify contributors.\n",
+                "DOC['CONTRIBUTORS'] = \"\""
+            ]
+        },
+
+{% for p in r.processes %}
+{% for sp in p.sub_processes %}
+        {
+            "cell_type": "markdown",
+            "metadata": {},
+            "source": [
+                "### {{ r.py_cls_name }} -->  {{ p.doc_name }} --> {{ sp.doc_name }}\n",
+                "*{{ sp.description }}*"
+            ]
+        },
+
+{% for d in sp.details %}
+{% for prp in d.properties %}
+        {
+            "cell_type": "code",
+            "execution_count": null,
+            "metadata": {
+                "collapsed": true
+            },
+            "outputs": [],
+            "source": [
+                "DOC['{{ prp.short_id(2) }}'] = {% if prp.is_collection %}[]{% else %}\"\"{% end %}\n",
+                "# {{ prp.description }}\n",
+                {% if prp.typeof == 'bool' %}
+                "# {% if prp.is_mandatory %}MANDATORY{% else %}OPTIONAL{% end %} {{ prp.typeof_label }} - choose 1 from: \n",
+                "#    True\n",
+                "#    False"
+                {% elif prp.typeof == 'enum' %}
+                "# {% if prp.is_mandatory %}MANDATORY{% else %}OPTIONAL{% end %} {{ prp.typeof_label }} - choose 1 from: \n",
+{% for c in prp.enum.choices %}
+                "#    {{ c.value }}{% if c.is_other %}: [Please specify]{% end %} {% if c != prp.enum.choices[-1] %}\n{% end %}"{% if c != prp.enum.choices[-1] %},{% end %}
+{% end %}
+                {% else %}
+                "# {% if prp.is_mandatory %}MANDATORY{% else %}OPTIONAL{% end %} {{ prp.typeof_label }}"
+                {% end %}
+            ]
+        },
+{% end %}
+{% end %}
+{% end %}
+{% end %}
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## ES-DOC: Persist Documentation - do not edit !"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 55,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [],
+   "source": [
+    "pyesdoc.save_notebook_output(DOC)"
+   ]
+  }
+    ],
+    "metadata": {
+        "kernelspec": {
+            "display_name": "Python 2",
+            "language": "python",
+            "name": "python2"
+        },
+        "language_info": {
+            "codemirror_mode": {
+                "name": "ipython",
+                "version": 2
+            },
+            "file_extension": ".py",
+            "mimetype": "text/x-python",
+            "name": "python",
+            "nbconvert_exporter": "python",
+            "pygments_lexer": "ipython2",
+            "version": "2.7.10"
+        }
+    },
+    "nbformat": 4,
+    "nbformat_minor": 0
+}

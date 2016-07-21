@@ -12,7 +12,9 @@ import argparse
 import os
 
 from generate_mm import Generator as MindmapGenerator
+from generate_typeset import Generator as TypesetGenerator
 from generate_json import Generator as JsonGenerator
+from generate_ipynb import Generator as IPythonNotebookGenerator
 from generate_ids_level_1 import Generator as Level1IdentifierGenerator
 from generate_ids_level_2 import Generator as Level2IdentifierGenerator
 from generate_ids_level_3 import Generator as Level3IdentifierGenerator
@@ -27,7 +29,9 @@ _GENERATORS = {
     'json': JsonGenerator,
     'ids-level-1': Level1IdentifierGenerator,
     'ids-level-2': Level2IdentifierGenerator,
-    'ids-level-3': Level3IdentifierGenerator
+    'ids-level-3': Level3IdentifierGenerator,
+    'ipynb': IPythonNotebookGenerator,
+    'typeset': TypesetGenerator
 }
 
 # Map of generator types to encoding type.
@@ -35,6 +39,7 @@ _ENCODINGS = {
     'ids-level-1': 'csv',
     'ids-level-2': 'csv',
     'ids-level-3': 'csv',
+    'typeset': 'py'
 }
 
 # Map of generator types to file suffixes.
@@ -42,6 +47,7 @@ _FILE_SUFFIXES = {
     'ids-level-1': 'ids-level-1',
     'ids-level-2': 'ids-level-2',
     'ids-level-3': 'ids-level-3',
+    'typeset': 'typeset'
 }
 
 class ArgumentError(ValueError):
@@ -106,6 +112,9 @@ try:
     fname = "{}-{}".format(_ARGS.realm, _FILE_SUFFIXES[_ARGS.typeof])
 except KeyError:
     fname = _ARGS.realm
+finally:
+    if encoding == 'py':
+        fname = fname.replace("-", "_")
 
 # Write output.
 fpath = os.path.join(_ARGS.output_dir, "_{}.{}".format(fname, encoding))
