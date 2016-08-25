@@ -90,12 +90,21 @@
             "source": [
                 "DOC['{{ prp.short_id(2) }}'] = {% if prp.is_collection %}[]{% else %}\"\"{% end %}\n",
                 "# {{ prp.description }}\n",
-                {% if prp.typeof == 'bool' %}
-                "# {% if prp.is_mandatory %}MANDATORY{% else %}OPTIONAL{% end %} {{ prp.typeof_label }} - choose 1 from: \n",
+                {% if prp.typeof == 'bool' and prp.is_collection %}
+                "# {% if prp.is_mandatory %}MANDATORY{% else %}OPTIONAL{% end %} {{ prp.typeof_label }} - choose MANY from: \n",
                 "#    True\n",
                 "#    False"
-                {% elif prp.typeof == 'enum' %}
-                "# {% if prp.is_mandatory %}MANDATORY{% else %}OPTIONAL{% end %} {{ prp.typeof_label }} - choose 1 from: \n",
+                {% elif prp.typeof == 'bool' and not prp.is_collection %}
+                "# {% if prp.is_mandatory %}MANDATORY{% else %}OPTIONAL{% end %} {{ prp.typeof_label }} - choose ONE from: \n",
+                "#    True\n",
+                "#    False"
+                {% elif prp.typeof == 'enum' and prp.is_collection %}
+                "# {% if prp.is_mandatory %}MANDATORY{% else %}OPTIONAL{% end %} {{ prp.typeof_label }} - choose MANY from: \n",
+{% for c in prp.enum.choices %}
+                "#    {{ c.value }}{% if c.is_other %}: [Please specify]{% end %} {% if c != prp.enum.choices[-1] %}\n{% end %}"{% if c != prp.enum.choices[-1] %},{% end %}
+{% end %}
+                {% elif prp.typeof == 'enum' and not prp.is_collection %}
+                "# {% if prp.is_mandatory %}MANDATORY{% else %}OPTIONAL{% end %} {{ prp.typeof_label }} - choose ONE from: \n",
 {% for c in prp.enum.choices %}
                 "#    {{ c.value }}{% if c.is_other %}: [Please specify]{% end %} {% if c != prp.enum.choices[-1] %}\n{% end %}"{% if c != prp.enum.choices[-1] %},{% end %}
 {% end %}
@@ -108,24 +117,28 @@
 {% end %}
 {% end %}
 {% end %}
-  {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "## ES-DOC: Persist Documentation - do not edit !"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 55,
-   "metadata": {
-    "collapsed": false
-   },
-   "outputs": [],
-   "source": [
-    "pyesdoc.save_notebook_output(DOC)"
-   ]
-  }
+    {
+        "cell_type": "markdown",
+        "metadata": {},
+        "source": [
+            "## ES-DOC: Persist Documentation - do not edit !"
+        ]
+    },
+    {
+        "cell_type": "code",
+        "execution_count": null,
+        "metadata": {
+            "collapsed": true
+        },
+        "outputs": [],
+        "source": [
+            "# If write fails then list validation errors.\n",
+            "try:\n",
+            "    pyesdoc.write_notebook_output(DOC)\n",
+            "except pyesdoc.NoteBookValidationError:\n",
+            "    pyesdoc.list_notebook_output_errors(DOC)"
+        ]
+    }
     ],
     "metadata": {
         "kernelspec": {

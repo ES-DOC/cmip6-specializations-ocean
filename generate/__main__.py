@@ -12,7 +12,6 @@ import argparse
 import os
 
 from generate_mm import Generator as MindmapGenerator
-from generate_typeset import Generator as TypesetGenerator
 from generate_json import Generator as JsonGenerator
 from generate_ipynb import Generator as IPythonNotebookGenerator
 from generate_ids_level_1 import Generator as Level1IdentifierGenerator
@@ -30,24 +29,21 @@ _GENERATORS = {
     'ids-level-1': Level1IdentifierGenerator,
     'ids-level-2': Level2IdentifierGenerator,
     'ids-level-3': Level3IdentifierGenerator,
-    'ipynb': IPythonNotebookGenerator,
-    'typeset': TypesetGenerator
+    'ipynb': IPythonNotebookGenerator
 }
 
 # Map of generator types to encoding type.
 _ENCODINGS = {
     'ids-level-1': 'csv',
     'ids-level-2': 'csv',
-    'ids-level-3': 'csv',
-    'typeset': 'py'
+    'ids-level-3': 'csv'
 }
 
 # Map of generator types to file suffixes.
 _FILE_SUFFIXES = {
     'ids-level-1': 'ids-level-1',
     'ids-level-2': 'ids-level-2',
-    'ids-level-3': 'ids-level-3',
-    'typeset': 'typeset'
+    'ids-level-3': 'ids-level-3'
 }
 
 class ArgumentError(ValueError):

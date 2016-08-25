@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 """
-.. module:: generate_typeset.py
+.. module:: generate_ipynb.py
    :platform: Unix, Windows
-   :synopsis: Generates a specialisation typeset for use in downstream tools.
+   :synopsis: Generates an IPython notebook for use in downstream tools.
 
 .. moduleauthor:: Mark Conway-Greenslade <momipsl@ipsl.jussieu.fr>
 
@@ -18,7 +18,7 @@ from utils_parser import Parser
 
 
 class Generator(Parser):
-    """Specialization to typeset generator.
+    """Specialization to IPython notebook generator.
 
     """
     @property

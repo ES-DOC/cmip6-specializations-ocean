@@ -2,7 +2,7 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Ocean realm specialization</dd><dt><b>ID</b></dt><dd>cmip6.ocean</dd><dt><b>QC status</b></dt><dd>draft</dd><dt><b>Contact</b></dt><dd>Eric Guilyardi</dd><dt><b>Authors</b></dt><dd>Eric Guilyardi</dd><dt><b>Contributors</b></dt><dd>David Hassle, Mark Greenslade</dd>
+        <dt><b>Description</b></dt><dd>Ocean realm specialization</dd><dt><b>ID</b></dt><dd>cmip6.ocean</dd><dt><b>QC status</b></dt><dd>draft</dd><dt><b>Contact</b></dt><dd>Eric Guilyardi</dd><dt><b>Authors</b></dt><dd>Eric Guilyardi</dd><dt><b>Contributors</b></dt><dd>David Hassell, Mark Greenslade</dd>
     </dl>
   </body>
 </html></richcontent><node POSITION="left" STYLE="bubble" TEXT="legend"><node BACKGROUND_COLOR="" COLOR="#000000" STYLE="bubble" TEXT="realm"><richcontent TYPE="NOTE"><html>
