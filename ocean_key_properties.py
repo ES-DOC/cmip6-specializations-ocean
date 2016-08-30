@@ -59,12 +59,20 @@ DETAILS['general'] = {
 DETAILS['seawater_properties'] = {
     'description': 'Physical properties of seawater in ocean',
     'properties' : [
-        ('seawater_eos_type', 'ENUM:seawater_eos_types', '1.1',
+        ('eos_type', 'ENUM:seawater_eos_types', '1.1',
             'Type of EOS for sea water'),
-        ('ocean_freezing_point', 'str', '1.1',
-            'Describe freezing point in ocean (fixed or varying)'),
-        ('ocean_specific_heat', 'str', '1.1',
-            'Describe specific heat in ocean (fixed or varying)'),
+        ('eos_functional_temp', 'ENUM:seawater_eos_func_temp', '1.1',
+            'Temperature used in EOS for sea water'),
+        ('eos_functional_salt', 'ENUM:seawater_eos_func_salt', '1.1',
+            'Salinity used in EOS for sea water'),
+        ('eos_functional_depth', 'ENUM:seawater_eos_func_depth', '1.1',
+            'Depth or pressure used in EOS for sea water ?'),
+        ('ocean_freezing_point', 'ENUM:seawater_freezing_point', '1.1',
+            'Equation used to compute the freezing point (in deg C) of seawater, as a function of salinity and pressure'),
+        ('ocean_specific_heat', 'float', '1.1',
+            'Specific heat in ocean (cpocean) in J/(kg K)'),
+        ('ocean_reference_density', 'float', '1.1',
+            'Boussinesq reference density (rhozero) in kg / m3'),
         ]
 }
 
@@ -213,6 +221,41 @@ ENUMERATIONS['seawater_eos_types'] = {
         ('Linear', None),
         ('Mc Dougall et al.', None),
         ('Jackett et al. 2006', None),
+        ('TEOS 2010', None)
+        ]
+}
+
+ENUMERATIONS['seawater_eos_func_temp'] = {
+    'description': 'Types of temperature used in EOS in ocean',
+    'is_open': False,
+    'members': [
+        ('Potential temperature', None),
+        ('Conservative temperature', None),
+        ]
+}
+
+ENUMERATIONS['seawater_eos_func_salt'] = {
+    'description': 'Types of salinity used in EOS in ocean',
+    'is_open': False,
+    'members': [
+        ('Practical salinity Sp', None),
+        ('Absolute salinity Sa', None),
+        ]
+}
+
+ENUMERATIONS['seawater_eos_func_depth'] = {
+    'description': 'Types of depth used in EOS in ocean',
+    'is_open': False,
+    'members': [
+        ('Pressure (dbars)', None),
+        ('Depth (meters)', None),
+        ]
+}
+
+ENUMERATIONS['seawater_freezing_point'] = {
+    'description': 'Types of seawater freezing point equation in ocean',
+    'is_open': True,
+    'members': [
         ('TEOS 2010', None)
         ]
 }
