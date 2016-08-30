@@ -81,8 +81,7 @@ SUB_PROCESSES['tracers'] = {
     'description': 'Key properties of tracer boundary forcing in the ocean',
     'details': [
         'sunlight_penetration',
-        'surface_salinity_atmos',
-        'surface_salinity_seaice'
+        'fresh_water_forcing',
         ]
 }
 
@@ -121,21 +120,18 @@ SUB_PROCESS_DETAILS['tracers:sunlight_penetration'] = {
         ]
 }
 
-SUB_PROCESS_DETAILS['tracers:surface_salinity_atmos'] = {
-    'description': 'Properties of surface salinity forcing from atmos in ocean',
+SUB_PROCESS_DETAILS['tracers:fresh_water_forcing'] = {
+    'description': 'Properties of surface fresh water forcing in ocean',
     'properties': [
-        ('scheme', 'ENUM:surface_salinity_forcing_types', '1.1',
-            'Type of surface salinity forcing from atmos in ocean'),
+        ('from_atmopshere', 'ENUM:surface_fresh_water_forcing_atmos_types', '1.1',
+            'Type of surface fresh water forcing from atmos in ocean'),
+        ('from_sea_ice', 'ENUM:surface_fresh_water_forcing_seaice_types', '1.1',
+            'Type of surface fresh water forcing from sea-ice in ocean'),
+        ('forced_mode_restoring', 'str', '1.1',
+            'Type of surface salinity restoring in forced mode (OMIP)'),
         ]
 }
 
-SUB_PROCESS_DETAILS['tracers:surface_salinity_seaice'] = {
-    'description': 'Properties of surface salinity forcing from sea ice in ocean',
-    'properties': [
-        ('scheme', 'ENUM:surface_salinity_forcing_types', '1.1',
-            'Type of surface salinity forcing from sea ice in ocean'),
-        ]
-}
 
 # --------------------------------------------------------------------
 # ENUMERATIONS
@@ -174,11 +170,21 @@ ENUMERATIONS['sunlight_penetration_scheme_types'] = {
         ]
 }
 
-ENUMERATIONS['surface_salinity_forcing_types'] = {
-    'description': 'ype of surface salinity forcing in ocean',
+ENUMERATIONS['surface_fresh_water_forcing_atmos_types'] = {
+    'description': 'Types of surface fresh water forcing from atmosphere in ocean',
     'is_open': True,
     'members': [
         ('Freshwater flux', None),
         ('Virtual salt flux', None),
+        ]
+}
+
+ENUMERATIONS['surface_fresh_water_forcing_seaice_types'] = {
+    'description': 'Types of surface fresh water forcing from sea-ice in ocean',
+    'is_open': True,
+    'members': [
+        ('Freshwater flux', None),
+        ('Virtual salt flux', None),
+        ('Real salt flux', None),
         ]
 }

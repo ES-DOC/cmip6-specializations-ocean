@@ -101,9 +101,9 @@ SUB_PROCESS_DETAILS['momentum:eddy_viscosity_coeff'] = {
     'properties': [
         ('type', 'ENUM:latphys_eddy_visc_coeff_types', '1.1',
             'Lateral physics momemtum eddy viscosity coeff type in the ocean'),
-        ('coeff_cst', 'int', '0.1',
+        ('constant_coefficient', 'int', '0.1',
             'If constant, value of eddy viscosity coeff in lateral physics momemtum scheme (in m2/s)'),
-        ('coeff_var', 'str', '0.1',
+        ('variable_coefficient', 'str', '0.1',
             'If space-varying, describe variations of eddy viscosity coeff in lateral physics momemtum scheme'),
         ('coeff_background', 'int', '1.1',
             'Background value of eddy viscosity coeff in lateral physics momemtum scheme (in m2/s)'),
@@ -116,7 +116,9 @@ SUB_PROCESS_DETAILS['tracers:details'] = {
     'description': 'Properties of lateral physics for tracers in ocean',
     'properties': [
         ('mesoscale_closure', 'bool', '1.1',
-            'Is there a mesoscale closure in the lateral physics tracers scheme ?')
+            'Is there a mesoscale closure in the lateral physics tracers scheme ?'),
+        ('submesoscale_mixing', 'bool', '1.1',
+            'Is there a submesoscale mixing parameterisation (i.e Fox-Kemper) in the lateral physics tracers scheme ?')
         ]
 }
 
@@ -137,9 +139,9 @@ SUB_PROCESS_DETAILS['tracers:eddy_viscosity_coeff'] = {
     'properties': [
         ('type', 'ENUM:latphys_eddy_visc_coeff_types', '1.1',
             'Lateral physics tracers eddy viscosity coeff type in the ocean'),
-        ('coeff_cst', 'int', '0.1',
+        ('constant_coefficient', 'int', '0.1',
             'If constant, value of eddy viscosity coeff in lateral physics tracers scheme (in m2/s)'),
-        ('coeff_var', 'str', '0.1',
+        ('variable_coefficient', 'str', '0.1',
             'If space-varying, describe variations of eddy viscosity coeff in lateral physics tracers scheme'),
         ('coeff_background', 'int', '1.1',
             'Background value of eddy viscosity coeff in lateral physics tracers scheme (in m2/s)'),
@@ -157,7 +159,7 @@ SUB_PROCESS_DETAILS['tracers:eddy_induced_velocity'] = {
             'If EIV scheme for tracers is constant, specify coefficient value (M2/s)'),
         ('flux_type', 'str', '1.1',
             'Type of EIV flux (advective or skew)'),
-        ('added_diff', 'str', '1.1',
+        ('added_diffusivity', 'str', '1.1',
             'Type of EIV added diffusivity (constant, flow dependent or none)')
         ]
 }
@@ -203,7 +205,7 @@ ENUMERATIONS['latphys_operator_discret_types'] = {
     'is_open': True,
     'members':[
         ('Second order', 'Second order'),
-        ('Fourth order', 'Fourth order'),
+        ('Higher order', 'Higher order'),
         ('Flux limiter', None)
         ]
 }

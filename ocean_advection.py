@@ -92,6 +92,10 @@ SUB_PROCESS_DETAILS['lateral_tracers:details'] = {
             'Type of lateral tracer advection scheme in ocean'),
         ('flux_limiter', 'bool', '1.1',
             'Monotonic flux limiter for vertical tracer advection scheme in ocean ?'),
+        ('passive_tracers','ENUM:passive_tracers_list','0.N',
+            'Passive tracers advected'),
+        ('passive_tracers_advection','str','0.1',
+            'Is advection of passive tracers different than active ? if so, describe')
         ]
 }
 
@@ -130,6 +134,18 @@ ENUMERATIONS['adv_tra_scheme_types'] = {
         ('QUICKEST', None),
         ('Piecewise Parabolic method', None),
         ('Sweby', None),
-        ('Prather 2nd moment (PSOM)', None)
+        ('Prather 2nd moment (PSOM)', None),
+        ('3rd order upwind')
+        ]
+}
+
+ENUMERATIONS['passive_tracers_list'] = {
+    'description': 'Passive tracers in ocean',
+    'is_open': True,
+    'members': [
+        ('Ideal age', None),
+        ('CFC 11', None),
+        ('CFC 12', None),
+        ('SF6', None)
         ]
 }

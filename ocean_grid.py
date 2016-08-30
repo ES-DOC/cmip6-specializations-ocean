@@ -127,7 +127,8 @@ ENUMERATIONS['horizontal_scheme_types'] = {
         ('Finite difference / Arakawa C-grid', None),
         ('Finite difference / Arakawa E-grid', None),
         ('Finite volumes', None),
-        ('Finite elements', None)
+        ('Finite elements', None),
+        ('Unstructured grid', None)
         ]
 }
 

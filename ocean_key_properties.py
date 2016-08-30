@@ -90,8 +90,15 @@ DETAILS['bathymetry'] = {
         ]
 }
 
-DETAILS['nonoceanic_waters'] = \
-    ('str', '0.1', 'Describe if/how isolated seas and river mouth mixing or other specific treatment is performed')
+DETAILS['nonoceanic_waters'] = {
+    'description': 'Non oceanic waters treatement in ocean',
+    'properties' :[
+        ('isolated_seas','str', '0.1',
+         'Describe if/how isolated seas is performed'),
+        ('river_mouth','str', '0.1',
+         'Describe if/how river mouth mixing or estuaries specific treatment is performed'),
+       ]
+}
 
 # --------------------------------------------------------------------
 # KEY PROPERTIES: EXTENT
@@ -172,6 +179,8 @@ EXTRA_CONSERVATION_PROPERTIES_DETAILS['details'] = {
             'Conservation scheme in ocean'),
         ('method', 'str', '1.1',
             'Describe how conservation properties are ensured in ocean'),
+        ('consistency_properties', 'str','0.1',
+            'Any additional consistency properties (energy conversion, pressure gradient discretisation, ...)?')
         ]
 }
 
@@ -279,6 +288,7 @@ ENUMERATIONS['conservation_props_types'] = {
         ('Energy', None),
         ('Enstrophy', None),
         ('Salt', None),
-        ('Volume of ocean', None)
+        ('Volume of ocean', None),
+        ('Momentum', None)
         ]
 }

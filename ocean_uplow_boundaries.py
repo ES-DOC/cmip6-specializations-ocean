@@ -57,7 +57,7 @@ DETAILS['free_surface'] = {
 DETAILS['bottom_boundary_layer'] = {
     'description': 'Properties of bottom boundary layer in ocean',
     'properties': [
-        ('type', 'ENUM:bottom_bl_types', '1.1',
+        ('type_of_bbl', 'ENUM:bottom_bl_types', '1.1',
             'Type of bottom boundary layer in ocean'),
         ('lateral_mixing_coef', 'int', '0.1',
             'If bottom BL is diffusive, specify value of lateral mixing coefficient (in m2/s)'),

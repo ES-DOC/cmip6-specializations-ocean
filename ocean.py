@@ -16,14 +16,14 @@ CONTACT = 'Eric Guilyardi'
 #
 # Set to realm specialization authors (comma delimited).
 # --------------------------------------------------------------------
-AUTHORS = 'Eric Guilyardi'
+AUTHORS = 'Eric Guilyardi, David Hassell, Mark Greenslade'
 
 # --------------------------------------------------------------------
 # CONTRIBUTORS
 #
 # Set to realm specialization contributors (comma delimited).
 # --------------------------------------------------------------------
-CONTRIBUTORS = 'David Hassell, Mark Greenslade'
+CONTRIBUTORS = 'CMIP5 version +, Julie Dehayes, Steve Griffies, Gokhan Danabasoglu'
 
 # --------------------------------------------------------------------
 # CHANGE HISTORY
@@ -32,7 +32,8 @@ CONTRIBUTORS = 'David Hassell, Mark Greenslade'
 # --------------------------------------------------------------------
 CHANGE_HISTORY = [
 	("0.1.0", "2016-07-01", "Initialised", "Eric Guilyardi"),
-    ]
+	("0.2.0", "2016-08-30", "Update science following inputs fron Gokhan Danabasoglu and Steve Griffies", "Eric Guilyardi"),
+     ]
 
 # --------------------------------------------------------------------
 # QUALITY CONTROL STATUS
