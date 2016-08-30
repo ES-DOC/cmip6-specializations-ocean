@@ -114,9 +114,9 @@ SUB_PROCESS_DETAILS['tracers:sunlight_penetration'] = {
     'properties': [
          ('scheme', 'ENUM:sunlight_penetration_scheme_types', '1.1',
             'Type of sunlight penetration scheme in ocean'),
-         ('tracers_sun_ocean_colour', 'bool', '1.1',
+         ('ocean_colour', 'bool', '1.1',
             'Is the ocean sunlight penetration scheme ocean colour dependent ?'),
-         ('tracers_sun_extinct_depth', 'str', '0.1',
+         ('extinct_depth', 'str', '0.1',
             'Describe and list extinctions depths for sunlight penetration scheme (if applicable).'),
         ]
 }

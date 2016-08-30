@@ -55,7 +55,7 @@ DETAILS['vertical_grid'] = {
 DETAILS['horizontal_grid'] = {
     'description': 'Properties of H coordinate in ocean',
     'properties': [
-        ('horizontal_grid_type', 'ENUM:horizontal_grid_types', '1.1',
+        ('type', 'ENUM:horizontal_grid_types', '1.1',
             'Horizontal grid type'),
         ('number_of_xy_gridpoints', 'int', '0.1',
             'Total number of horizontal points on computational grid'),

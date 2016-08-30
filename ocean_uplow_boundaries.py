@@ -49,7 +49,7 @@ DETAILS['free_surface'] = {
     'properties': [
         ('scheme', 'ENUM:free_surface_types', '1.1',
             'Free surface scheme in ocean'),
-        ('ocean_embeded_seaice', 'bool', '1.1',
+        ('embeded_seaice', 'bool', '1.1',
             'Is the sea-ice embeded in the ocean model (instead of levitating) ?'),
      ]
 }
@@ -59,9 +59,9 @@ DETAILS['bottom_boundary_layer'] = {
     'properties': [
         ('type', 'ENUM:bottom_bl_types', '1.1',
             'Type of bottom boundary layer in ocean'),
-        ('ocean_bbl_lateral_mixing_coef', 'int', '0.1',
+        ('lateral_mixing_coef', 'int', '0.1',
             'If bottom BL is diffusive, specify value of lateral mixing coefficient (in m2/s)'),
-        ('ocean_sill_overflow', 'str', '1.1',
+        ('sill_overflow', 'str', '1.1',
             'Describe any specific treatment of sill overflows')
      ]
 }

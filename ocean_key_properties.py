@@ -79,13 +79,13 @@ DETAILS['seawater_properties'] = {
 DETAILS['bathymetry'] = {
     'description': 'Properties of bathymetry in ocean',
     'properties' : [
-        ('bathymetry_reference_dates', 'ENUM:bathymetry_ref_dates', '1.1',
+        ('reference_dates', 'ENUM:bathymetry_ref_dates', '1.1',
             'Reference date of bathymetry'),
-        ('ocean_bathymetry_type', 'bool', '1.1',
+        ('type', 'bool', '1.1',
             'Is the bathymetry fixed in time in the ocean ?'),
         ('ocean_smoothing', 'str', '1.1',
             'Describe any smoothing or hand editing of bathymetry in ocean'),
-        ('ocean_bathymetry_source', 'str', '1.1',
+        ('source', 'str', '1.1',
             'Describe source of bathymetry in ocean'),
         ]
 }
