@@ -126,7 +126,7 @@ ENUMERATIONS['adv_mom_scheme_types'] = {
 ENUMERATIONS['adv_tra_scheme_types'] = {
     'description': 'Type of tracer advection scheme in ocean',
     'is_open': True,
-    'members':[
+    'members': [
         ('Centred 2nd order', None),
         ('Centred 4th order', None),
         ('Total Variance Dissipation (TVD)', None),
@@ -135,7 +135,7 @@ ENUMERATIONS['adv_tra_scheme_types'] = {
         ('Piecewise Parabolic method', None),
         ('Sweby', None),
         ('Prather 2nd moment (PSOM)', None),
-        ('3rd order upwind')
+        ('3rd order upwind', None)
         ]
 }
 
