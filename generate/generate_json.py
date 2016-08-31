@@ -48,8 +48,7 @@ class Generator(Parser):
         self._maps = collections.OrderedDict()
 
 
-    @property
-    def output(self):
+    def get_output(self):
         """Returns generated output as a text blob.
 
         """

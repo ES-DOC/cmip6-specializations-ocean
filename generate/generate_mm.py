@@ -84,8 +84,7 @@ class Generator(Parser):
         self.nodes = {}
 
 
-    @property
-    def output(self):
+    def get_output(self):
         """Returns generated output as a text blob.
 
         """

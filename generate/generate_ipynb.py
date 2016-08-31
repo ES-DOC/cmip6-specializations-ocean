@@ -21,8 +21,7 @@ class Generator(Parser):
     """Specialization to IPython notebook generator.
 
     """
-    @property
-    def output(self):
+    def get_output(self):
         """Returns generated output as a text blob.
 
         """

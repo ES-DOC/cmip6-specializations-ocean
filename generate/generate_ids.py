@@ -60,8 +60,7 @@ class Generator(Parser):
         self._ids = [("cmip6-id", "cmip6-label", "cmip6-type", "")]
 
 
-    @property
-    def output(self):
+    def get_output(self):
         """Returns generated output as a text blob.
 
         """

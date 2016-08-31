@@ -9,10 +9,6 @@
 
 
 """
-from utils import log
-
-
-
 class Parser(object):
     """An event driven CMIP6 realm specializations parser.
 
@@ -43,7 +39,7 @@ class Parser(object):
             self._parse_key_properties(self.realm, self.realm.key_properties)
 
         # Parse processes.
-        processes = sorted(self.realm.processes, key = lambda p: p.name)
+        processes = sorted(self.realm.processes, key=lambda p: p.name)
         for process in processes:
             self._parse_process(self.realm, process)
 
@@ -229,7 +225,7 @@ class Parser(object):
         self._parse_details(process)
 
         # Parse child sub-processes.
-        sub_processes = sorted(process.sub_processes, key = lambda sp: sp.name)
+        sub_processes = sorted(process.sub_processes, key=lambda sp: sp.name)
         for sub_process in sub_processes:
             self._parse_subprocess(realm, process, sub_process)
 
@@ -258,14 +254,14 @@ class Parser(object):
 
         """
         # Iterate set of details.
-        for detail in sorted(owner.details, key = lambda i: i.id):
+        for detail in sorted(owner.details, key=lambda i: i.id):
             # Raise detail parse event.
             if self.verbose:
                 log("parsing: {}".format(detail.id))
             self.on_detail_parse(owner, detail)
 
             # Iterate set of detail properties.
-            for prop in sorted(detail.properties, key = lambda i: i.id):
+            for prop in sorted(detail.properties, key=lambda i: i.id):
                 # Raise detail-property parse event.
                 if self.verbose:
                     log("parsing: {}".format(prop.id))
@@ -275,3 +271,15 @@ class Parser(object):
                 if prop.enum:
                     for choice in prop.enum.choices:
                         self.on_detail_property_choice_parse(detail, prop, choice)
+
+
+def log(msg):
+    """Outputs a message to log.
+
+    :param str msg: Logging message.
+
+    """
+    if msg.startswith('-'):
+        print(msg)
+    else:
+        print("ES-DOC :: {}".format(msg))

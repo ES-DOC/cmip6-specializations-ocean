@@ -90,13 +90,6 @@ if _ARGS.typeof not in _GENERATORS.keys():
     err = err.format(_ARGS.typeof, " | ".join(sorted(_GENERATORS.keys())))
     raise ArgumentError(err)
 
-# Set realm.
-realm = Realm(get_specializations(_ARGS.input_dir, _ARGS.realm))
-
-# Run generator.
-generator = _GENERATORS[_ARGS.typeof](realm)
-generator.run()
-
 # Set output encoding.
 try:
     encoding = _ENCODINGS[_ARGS.typeof]
@@ -112,7 +105,14 @@ finally:
     if encoding == 'py':
         fname = fname.replace("-", "_")
 
-# Write output.
+# Set realm.
+realm = Realm(get_specializations(_ARGS.input_dir, _ARGS.realm))
+
+# Run generator.
+generator = _GENERATORS[_ARGS.typeof](realm)
+generator.run()
+
+# Write generated output to file system.
 fpath = os.path.join(_ARGS.output_dir, "_{}.{}".format(fname, encoding))
 with open(fpath, 'w') as fstream:
-    fstream.write(generator.output)
+    fstream.write(generator.get_output())
