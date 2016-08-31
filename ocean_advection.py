@@ -51,17 +51,17 @@ DETAILS = OrderedDict()
 # --------------------------------------------------------------------
 SUB_PROCESSES = OrderedDict()
 
-SUB_PROCESSES['momemtum_adv_scheme'] = {
+SUB_PROCESSES['momemtum'] = {
     'description': 'Properties of lateral momemtum advection scheme in ocean',
     'details': ['details']
 }
 
-SUB_PROCESSES['lat_tra_adv_scheme'] = {
+SUB_PROCESSES['lateral_tracers'] = {
     'description': 'Properties of lateral tracer advection scheme in ocean',
     'details': ['details']
 }
 
-SUB_PROCESSES['vert_tra_adv_scheme'] = {
+SUB_PROCESSES['vertical_tracers'] = {
     'description': 'Properties of vertical momemtum advection scheme in ocean',
     'details': ['details']
 }
@@ -73,29 +73,33 @@ SUB_PROCESSES['vert_tra_adv_scheme'] = {
 # --------------------------------------------------------------------
 SUB_PROCESS_DETAILS = OrderedDict()
 
-SUB_PROCESS_DETAILS['momemtum_adv_scheme:details'] = {
+SUB_PROCESS_DETAILS['momemtum:details'] = {
     'description': 'Properties of lateral momemtum advection scheme in ocean',
     'properties': [
         ('type', 'ENUM:adv_mom_scheme_types', '1.1',
             'Type of lateral momemtum advection scheme in ocean'),
-        ('mom_adv_scheme_name', 'str', '1.1',
+        ('scheme_name', 'str', '1.1',
             'Name of ocean momemtum advection scheme'),
-        ('mom_adv_ALE', 'bool', '0.1',
+        ('ALE', 'bool', '0.1',
             'Using ALE for vertical advection ? (if vertical coordinates are sigma)'),
         ]
 }
 
-SUB_PROCESS_DETAILS['lat_tra_adv_scheme:details'] = {
+SUB_PROCESS_DETAILS['lateral_tracers:details'] = {
     'description':'Properties of lateral tracer advection scheme in ocean',
     'properties': [
         ('type', 'ENUM:adv_tra_scheme_types', '1.1',
             'Type of lateral tracer advection scheme in ocean'),
         ('flux_limiter', 'bool', '1.1',
             'Monotonic flux limiter for vertical tracer advection scheme in ocean ?'),
+        ('passive_tracers','ENUM:passive_tracers_list','0.N',
+            'Passive tracers advected'),
+        ('passive_tracers_advection','str','0.1',
+            'Is advection of passive tracers different than active ? if so, describe')
         ]
 }
 
-SUB_PROCESS_DETAILS['vert_tra_adv_scheme:details'] = {
+SUB_PROCESS_DETAILS['vertical_tracers:details'] = {
     'description': 'Properties of vertical tracer advection scheme in ocean',
     'properties': [
         ('type', 'ENUM:adv_tra_scheme_types', '1.1',
@@ -130,6 +134,18 @@ ENUMERATIONS['adv_tra_scheme_types'] = {
         ('QUICKEST', None),
         ('Piecewise Parabolic method', None),
         ('Sweby', None),
-        ('Prather 2nd moment (PSOM)', None)
+        ('Prather 2nd moment (PSOM)', None),
+        ('3rd order upwind')
+        ]
+}
+
+ENUMERATIONS['passive_tracers_list'] = {
+    'description': 'Passive tracers in ocean',
+    'is_open': True,
+    'members': [
+        ('Ideal age', None),
+        ('CFC 11', None),
+        ('CFC 12', None),
+        ('SF6', None)
         ]
 }

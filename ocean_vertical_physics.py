@@ -44,17 +44,6 @@ DESCRIPTION = 'Characteristics of ocean vertical physics'
 # --------------------------------------------------------------------
 DETAILS = OrderedDict()
 
-DETAILS['vertical_physics_details'] = {
-    'description': 'Properties of vertical physics in ocean',
-    'properties': [
-        ('convection_type', 'ENUM:vertphys_convection_types', '1.1',
-            'Type of vertical convection in ocean'),
-        ('tide_induced_mixing', 'str', '1.1',
-            'Describe how tide induced mixing is modelled (barotropic, baroclinic, none)'),
-        ('langmuir_cells_mixing', 'bool', '1.1',
-            'Is there Langmuir cells mixing in upper ocean ?'),
-        ]
-}
 
 # --------------------------------------------------------------------
 # PROCESS: SUB PROCESSES
@@ -66,6 +55,7 @@ SUB_PROCESSES = OrderedDict()
 SUB_PROCESSES['boundary_layer_mixing'] = {
     'description': 'Properties of boundary layer mixing in the ocean (aka mixed layer)',
     'details': [
+        'details',
         'tracers',
         'momentum'
         ]
@@ -74,6 +64,7 @@ SUB_PROCESSES['boundary_layer_mixing'] = {
 SUB_PROCESSES['interior_mixing'] = {
     'description': 'Properties of interior vertical mixing in the ocean',
     'details': [
+        'details',
         'tracers',
         'momentum'
         ]
@@ -85,6 +76,15 @@ SUB_PROCESSES['interior_mixing'] = {
 # Sets of details for the sub processes
 # --------------------------------------------------------------------
 SUB_PROCESS_DETAILS = OrderedDict()
+
+SUB_PROCESS_DETAILS['boundary_layer_mixing:details'] = {
+    'description': 'Properties of vertical physics in ocean',
+    'properties': [
+        ('langmuir_cells_mixing', 'bool', '1.1',
+            'Is there Langmuir cells mixing in upper ocean ?'),
+        ]
+}
+
 
 SUB_PROCESS_DETAILS['boundary_layer_mixing:tracers'] = {
     'description': 'Properties of boundary layer (BL) mixing on tracers in the ocean ',
@@ -111,6 +111,21 @@ SUB_PROCESS_DETAILS['boundary_layer_mixing:momentum'] = {
             'If constant BL mixing of momentum, specific coefficient (m2/s)'),
         ('background', 'str', '1.1',
             'Background BL mixing of momentum coefficient, (schema and value in m2/s - may by none)'),
+
+        ]
+}
+
+SUB_PROCESS_DETAILS['interior_mixing:details'] = {
+    'description': 'Properties of interior mixing in the ocean ',
+    'properties': [
+        ('convection_type', 'ENUM:vertphys_convection_types', '1.1',
+            'Type of vertical convection in ocean'),
+        ('tide_induced_mixing', 'str', '1.1',
+            'Describe how tide induced mixing is modelled (barotropic, baroclinic, none)'),
+        ('double_diffusion', 'bool', '1.1',
+            'Is there double diffusion'),
+        ('shear_mixing', 'bool', '1.1',
+            'Is there interior shear mixing'),
         ]
 }
 

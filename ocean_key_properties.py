@@ -59,31 +59,46 @@ DETAILS['general'] = {
 DETAILS['seawater_properties'] = {
     'description': 'Physical properties of seawater in ocean',
     'properties' : [
-        ('seawater_eos_type', 'ENUM:seawater_eos_types', '1.1',
+        ('eos_type', 'ENUM:seawater_eos_types', '1.1',
             'Type of EOS for sea water'),
-        ('ocean_freezing_point', 'str', '1.1',
-            'Describe freezing point in ocean (fixed or varying)'),
-        ('ocean_specific_heat', 'str', '1.1',
-            'Describe specific heat in ocean (fixed or varying)'),
+        ('eos_functional_temp', 'ENUM:seawater_eos_func_temp', '1.1',
+            'Temperature used in EOS for sea water'),
+        ('eos_functional_salt', 'ENUM:seawater_eos_func_salt', '1.1',
+            'Salinity used in EOS for sea water'),
+        ('eos_functional_depth', 'ENUM:seawater_eos_func_depth', '1.1',
+            'Depth or pressure used in EOS for sea water ?'),
+        ('ocean_freezing_point', 'ENUM:seawater_freezing_point', '1.1',
+            'Equation used to compute the freezing point (in deg C) of seawater, as a function of salinity and pressure'),
+        ('ocean_specific_heat', 'float', '1.1',
+            'Specific heat in ocean (cpocean) in J/(kg K)'),
+        ('ocean_reference_density', 'float', '1.1',
+            'Boussinesq reference density (rhozero) in kg / m3'),
         ]
 }
 
 DETAILS['bathymetry'] = {
     'description': 'Properties of bathymetry in ocean',
     'properties' : [
-        ('bathymetry_reference_dates', 'ENUM:bathymetry_ref_dates', '1.1',
+        ('reference_dates', 'ENUM:bathymetry_ref_dates', '1.1',
             'Reference date of bathymetry'),
-        ('ocean_bathymetry_type', 'bool', '1.1',
+        ('type', 'bool', '1.1',
             'Is the bathymetry fixed in time in the ocean ?'),
         ('ocean_smoothing', 'str', '1.1',
             'Describe any smoothing or hand editing of bathymetry in ocean'),
-        ('ocean_bathymetry_source', 'str', '1.1',
+        ('source', 'str', '1.1',
             'Describe source of bathymetry in ocean'),
         ]
 }
 
-DETAILS['nonoceanic_waters'] = \
-    ('str', '0.1', 'Describe if/how isolated seas and river mouth mixing or other specific treatment is performed')
+DETAILS['nonoceanic_waters'] = {
+    'description': 'Non oceanic waters treatement in ocean',
+    'properties' :[
+        ('isolated_seas','str', '0.1',
+         'Describe if/how isolated seas is performed'),
+        ('river_mouth','str', '0.1',
+         'Describe if/how river mouth mixing or estuaries specific treatment is performed'),
+       ]
+}
 
 # --------------------------------------------------------------------
 # KEY PROPERTIES: EXTENT
@@ -164,6 +179,8 @@ EXTRA_CONSERVATION_PROPERTIES_DETAILS['details'] = {
             'Conservation scheme in ocean'),
         ('method', 'str', '1.1',
             'Describe how conservation properties are ensured in ocean'),
+        ('consistency_properties', 'str','0.1',
+            'Any additional consistency properties (energy conversion, pressure gradient discretisation, ...)?')
         ]
 }
 
@@ -217,6 +234,41 @@ ENUMERATIONS['seawater_eos_types'] = {
         ]
 }
 
+ENUMERATIONS['seawater_eos_func_temp'] = {
+    'description': 'Types of temperature used in EOS in ocean',
+    'is_open': False,
+    'members': [
+        ('Potential temperature', None),
+        ('Conservative temperature', None),
+        ]
+}
+
+ENUMERATIONS['seawater_eos_func_salt'] = {
+    'description': 'Types of salinity used in EOS in ocean',
+    'is_open': False,
+    'members': [
+        ('Practical salinity Sp', None),
+        ('Absolute salinity Sa', None),
+        ]
+}
+
+ENUMERATIONS['seawater_eos_func_depth'] = {
+    'description': 'Types of depth used in EOS in ocean',
+    'is_open': False,
+    'members': [
+        ('Pressure (dbars)', None),
+        ('Depth (meters)', None),
+        ]
+}
+
+ENUMERATIONS['seawater_freezing_point'] = {
+    'description': 'Types of seawater freezing point equation in ocean',
+    'is_open': True,
+    'members': [
+        ('TEOS 2010', None)
+        ]
+}
+
 ENUMERATIONS['bathymetry_ref_dates'] = {
     'description': 'List of reference dates for bathymetry in ocean',
     'is_open': True,
@@ -236,6 +288,7 @@ ENUMERATIONS['conservation_props_types'] = {
         ('Energy', None),
         ('Enstrophy', None),
         ('Salt', None),
-        ('Volume of ocean', None)
+        ('Volume of ocean', None),
+        ('Momentum', None)
         ]
 }

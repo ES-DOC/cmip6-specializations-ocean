@@ -55,14 +55,26 @@ DETAILS['timestepping_attributes'] = {
 }
 
 # This is the compact notation used of only one property
-DETAILS['timestepping_tracers_scheme'] = \
-    ('ENUM:ocean_timestepping_types', '1.1', 'Time stepping tracer scheme')
+DETAILS['timestepping_tracers_scheme'] = {
+    'description': 'Properties of tracers time stepping in ocean',
+    'properties': [
+        ('tracers','ENUM:ocean_timestepping_types', '1.1', 'Time stepping tracer scheme')
+    ]
+}
 
-DETAILS['barotropic_solver_scheme'] = \
-    ('ENUM:ocean_timestepping_types', '1.1', 'Barotropic solver scheme')
-
-DETAILS['barotropic_momentum_scheme'] = \
-    ('ENUM:ocean_timestepping_types', '1.1', 'Barotropic momentum scheme')
+DETAILS['barotropic_solver_scheme'] = {
+    'description': 'Barotropic solver in ocean',
+    'properties': [
+        ('barotropic_solver','ENUM:ocean_timestepping_types', '1.1', 'Barotropic solver scheme'),
+        ('type','ENUM:barotropic_solver_types','1.1', 'Barotropic solver type')
+    ]
+}
+DETAILS['barotropic_momentum_scheme'] = {
+    'description': 'Barotropic momentum solver in ocean',
+    'properties': [
+        ('barotropic_momentum','ENUM:ocean_timestepping_types', '1.1', 'Barotropic momentum scheme')
+    ]
+}
 
 # --------------------------------------------------------------------
 # PROCESS: SUB PROCESSES
@@ -102,5 +114,15 @@ ENUMERATIONS['ocean_timestepping_types'] = {
         ('Predictor-corrector', 'Predictor-corrector scheme'),
         ('AM3-LF (ROMS)', 'AM3-LF used in ROMS'),
         ('Forward-backward', 'Forward-backward scheme'),
+        ('Forward operator', 'Forward operator scheme')
+        ]
+}
+
+ENUMERATIONS['barotropic_solver_types'] = {
+    'description': 'Type of barotropic solver in ocean',
+    'is_open': True,
+    'members': [
+        ('Preconditioned conjugate gradient', None),
+        ('Sub cyling', None),
         ]
 }
