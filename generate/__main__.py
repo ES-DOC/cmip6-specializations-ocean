@@ -13,7 +13,6 @@ import os
 
 from generate_mm import Generator as MindmapGenerator
 from generate_json import Generator as JsonGenerator
-from generate_ipynb import Generator as IPythonNotebookGenerator
 from generate_ids_level_1 import Generator as Level1IdentifierGenerator
 from generate_ids_level_2 import Generator as Level2IdentifierGenerator
 from generate_ids_level_3 import Generator as Level3IdentifierGenerator
@@ -28,8 +27,7 @@ _GENERATORS = {
     'json': JsonGenerator,
     'ids-level-1': Level1IdentifierGenerator,
     'ids-level-2': Level2IdentifierGenerator,
-    'ids-level-3': Level3IdentifierGenerator,
-    'ipynb': IPythonNotebookGenerator
+    'ids-level-3': Level3IdentifierGenerator
 }
 
 # Map of generator types to encoding type.

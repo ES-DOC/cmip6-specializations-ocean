@@ -18,7 +18,6 @@ class Specialization(object):
 
         """
         self.mod = mod
-        self.py_cls_name = to_camel_case(self.name)
 
 
     @property
@@ -59,7 +58,8 @@ class SpecializationModule(Specialization):
         else:
             self.name = mod.REALM
             self.id = "cmip6.{}".format(self.name)
-        self.py_cls_name = to_camel_case(self.name)
+        self.name_camel_case = to_camel_case(self.name)
+        self.name_camel_case_spaced = to_camel_case_spaced(self.name)
 
         try:
             self.mod.DETAILS
@@ -371,7 +371,7 @@ class DetailProperty(Specialization):
         """
         try:
             int(self.cardinality.split(".")[1])
-        except TypeError:
+        except ValueError:
             return True
         else:
             return False
@@ -462,6 +462,23 @@ class EnumChoice(Specialization):
             ("Description", self.description.replace("&", "and")),
             ("ID", self.id.lower().replace(" ", "-").replace("_", "-"))
         ]
+
+
+def to_camel_case_spaced(name, separator='_'):
+    """Converts passed name to camel case with space.
+
+    :param str name: A name as specified in ontology specification.
+    :param str separator: Separator to use in order to split name into constituent parts.
+
+    """
+    s = to_camel_case(name, separator)
+    r = s[0]
+    for s in s[1:]:
+        if s.upper() == s:
+            r += " "
+        r += s
+
+    return r
 
 
 def to_camel_case(name, separator='_'):
