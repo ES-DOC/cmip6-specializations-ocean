@@ -1,9 +1,7 @@
 cmip6-id, cmip6-label, cmip6-type
-cmip6.ocean.grid.vertical_grid.number_of_levels, Ocean > Grid > Vertical Grid > Number Of Levels, detail-property
-cmip6.ocean.grid.horizontal_grid.type, Ocean > Grid > Horizontal Grid > Type, detail-property
-cmip6.ocean.grid.horizontal_grid.number_of_xy_gridpoints, Ocean > Grid > Horizontal Grid > Number Of Xy Gridpoints, detail-property
 cmip6.ocean.grid.discretisation.vertical.coordinates, Ocean > Grid > Discretisation > Vertical > Coordinates, detail-property
 cmip6.ocean.grid.discretisation.vertical.partial_steps, Ocean > Grid > Discretisation > Vertical > Partial Steps, detail-property
+cmip6.ocean.grid.discretisation.horizontal.type, Ocean > Grid > Discretisation > Horizontal > Type, detail-property
 cmip6.ocean.grid.discretisation.horizontal.scheme, Ocean > Grid > Discretisation > Horizontal > Scheme, detail-property
 cmip6.ocean.grid.discretisation.horizontal.pole_singularity_treatment, Ocean > Grid > Discretisation > Horizontal > Pole Singularity Treatment, detail-property
 , , 
