@@ -124,7 +124,8 @@ RESOLUTION = OrderedDict()
 RESOLUTION['resolution'] = {
     'description': 'Resolution in the ocean grid',
     'details' : [
-        'thickness_of_surface_level'
+        'vertical_resolution',
+        'horizontal_resolution',
         ],
 }
 
@@ -135,8 +136,21 @@ RESOLUTION['resolution'] = {
 # --------------------------------------------------------------------
 RESOLUTION_DETAILS = OrderedDict()
 
-RESOLUTION_DETAILS['thickness_of_surface_level'] = \
-    ('float', '0.1', 'Thickness in metres of surface ocean level (e.g. 1)')
+RESOLUTION_DETAILS['vertical_resolution'] = {
+    'properties':[
+        ('number_of_levels', 'int', '1.1',
+            'Number of vertical levels'),
+        ('thickness_level_1','float', '1.1',
+            'Thickness of first surface ocean level (in meters)')
+    ]
+}
+
+RESOLUTION_DETAILS['horizontal_resolution'] = {
+    'properties':[
+        ('number_of_xy_gridpoints', 'int', '1.1',
+            'Total number of horizontal points on computational grid'),
+    ]
+}
 
 # --------------------------------------------------------------------
 # KEY PROPERTIES: TUNING APPLIED

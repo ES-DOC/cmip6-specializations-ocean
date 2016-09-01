@@ -44,24 +44,6 @@ DESCRIPTION = 'Ocean grid and discretisation'
 # --------------------------------------------------------------------
 DETAILS = OrderedDict()
 
-DETAILS['vertical_grid'] = {
-    'description': 'Properties of vertical coordinate in ocean',
-    'properties': [
-        ('number_of_levels', 'int', '1.1',
-            'Number of vertical levels'),
-        ]
-}
-
-DETAILS['horizontal_grid'] = {
-    'description': 'Properties of H coordinate in ocean',
-    'properties': [
-        ('type', 'ENUM:horizontal_grid_types', '1.1',
-            'Horizontal grid type'),
-        ('number_of_xy_gridpoints', 'int', '0.1',
-            'Total number of horizontal points on computational grid'),
-        ]
-}
-
 # --------------------------------------------------------------------
 # DISCRETISATION
 #
@@ -97,6 +79,8 @@ DISCRETISATION_DETAILS['vertical'] = {
 DISCRETISATION_DETAILS['horizontal'] = {
     'description': 'Type of horizontal discretisation scheme in ocean',
     'properties': [
+        ('type', 'ENUM:horizontal_grid_types', '1.1',
+            'Horizontal grid type'),
         ('scheme', 'ENUM:horizontal_scheme_types', '1.1',
             'Horizontal discretisation scheme in ocean'),
         ('pole_singularity_treatment', 'str', '1.1',
@@ -113,7 +97,7 @@ ENUMERATIONS['horizontal_grid_types'] = {
     'description': 'Types of horizonal grid in ocean',
     'is_open': True,
     'members': [
-        ('Latlon', None),
+        ('Lat-lon', None),
         ('Rotated north pole', None),
         ('Two north poles (ORCA-style)', None)
         ]

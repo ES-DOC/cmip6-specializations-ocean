@@ -23,7 +23,7 @@ AUTHORS = 'Eric Guilyardi, David Hassell, Mark Greenslade'
 #
 # Set to realm specialization contributors (comma delimited).
 # --------------------------------------------------------------------
-CONTRIBUTORS = 'CMIP5 version +, Julie Dehayes, Steve Griffies, Gokhan Danabasoglu'
+CONTRIBUTORS = 'CMIP5 version +, Julie Dehayes (LOCEAN/IPSL), Steve Griffies (GFDL), Gokhan Danabasoglu (NCAR)'
 
 # --------------------------------------------------------------------
 # CHANGE HISTORY
