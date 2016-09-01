@@ -83,8 +83,6 @@ DISCRETISATION_DETAILS['horizontal'] = {
             'Horizontal grid type'),
         ('scheme', 'ENUM:horizontal_scheme_types', '1.1',
             'Horizontal discretisation scheme in ocean'),
-        ('pole_singularity_treatment', 'str', '1.1',
-            'Describe how the North Pole singularity is treated (filter, pole rotation/displacement, artificial island, ...)'),
         ]
 }
 
