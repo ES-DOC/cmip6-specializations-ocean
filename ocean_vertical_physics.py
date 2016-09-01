@@ -85,7 +85,6 @@ SUB_PROCESS_DETAILS['boundary_layer_mixing:details'] = {
         ]
 }
 
-
 SUB_PROCESS_DETAILS['boundary_layer_mixing:tracers'] = {
     'description': 'Properties of boundary layer (BL) mixing on tracers in the ocean ',
     'properties': [

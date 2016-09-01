@@ -21,6 +21,7 @@ class Generator(IdentifierGenerator):
         """On realm parse event handler.
 
         """
+        super(Generator, self).on_realm_parse(realm)
         self.set_id(realm)
 
 
