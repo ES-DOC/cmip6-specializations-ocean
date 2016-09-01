@@ -8,9 +8,9 @@ cmip6.ocean.key_properties, Ocean > Key Properties, key-properties
 cmip6.ocean.key_properties.conservation, Ocean > Key Properties > Conservation, key-properties-conservation
 , , 
 cmip6.ocean.advection, Ocean > Advection, process
-cmip6.ocean.advection.lat_tra_adv_scheme, Ocean > Advection > Lat Tra Adv Scheme, sub-process
-cmip6.ocean.advection.momemtum_adv_scheme, Ocean > Advection > Momemtum Adv Scheme, sub-process
-cmip6.ocean.advection.vert_tra_adv_scheme, Ocean > Advection > Vert Tra Adv Scheme, sub-process
+cmip6.ocean.advection.lateral_tracers, Ocean > Advection > Lateral Tracers, sub-process
+cmip6.ocean.advection.momemtum, Ocean > Advection > Momemtum, sub-process
+cmip6.ocean.advection.vertical_tracers, Ocean > Advection > Vertical Tracers, sub-process
 , , 
 cmip6.ocean.boundary_forcing, Ocean > Boundary Forcing, process
 cmip6.ocean.boundary_forcing.momentum, Ocean > Boundary Forcing > Momentum, sub-process
