@@ -55,7 +55,7 @@ class Generator(Parser):
         """Instance constructor.
 
         """
-        super(Generator, self).__init__(realm, sort_collections=True)
+        super(Generator, self).__init__(realm)
 
         self._ids = [("cmip6-id", "cmip6-label", "cmip6-type", "")]
 

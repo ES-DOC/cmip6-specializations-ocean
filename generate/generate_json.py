@@ -43,7 +43,7 @@ class Generator(Parser):
         """Instance constructor.
 
         """
-        super(Generator, self).__init__(realm, sort_collections=True)
+        super(Generator, self).__init__(realm)
 
         self._maps = collections.OrderedDict()
 

@@ -13,12 +13,11 @@ class Parser(object):
     """An event driven CMIP6 realm specializations parser.
 
     """
-    def __init__(self, realm, verbose=False, sort_collections=False):
+    def __init__(self, realm, verbose=False):
         """Instance constructor.
 
         """
         self.realm = realm
-        self.sort_collections = sort_collections
         self.verbose = verbose
 
 
@@ -28,10 +27,6 @@ class Parser(object):
         """
         if self.verbose:
             log("parsing: {}".format(self.realm.id))
-
-        # Apply sorting priot to parsing.
-        if self.sort_collections:
-            self._sort()
 
         # Raise realm parse event.
         self.on_realm_parse(self.realm)

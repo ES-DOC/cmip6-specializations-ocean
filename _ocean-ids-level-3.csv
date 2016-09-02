@@ -27,30 +27,22 @@ cmip6.ocean.key_properties.conservation.details.scheme, Ocean > Key Properties >
 cmip6.ocean.key_properties.conservation.details.method, Ocean > Key Properties > Conservation > Details > Method, detail-property
 cmip6.ocean.key_properties.conservation.details.consistency_properties, Ocean > Key Properties > Conservation > Details > Consistency Properties, detail-property
 , , 
+cmip6.ocean.timestepping_framework.timestepping_attributes.time_step, Ocean > Timestepping Framework > Timestepping Attributes > Time Step, detail-property
+cmip6.ocean.timestepping_framework.timestepping_attributes.diurnal_cycle, Ocean > Timestepping Framework > Timestepping Attributes > Diurnal Cycle, detail-property
+cmip6.ocean.timestepping_framework.timestepping_tracers_scheme.tracers, Ocean > Timestepping Framework > Timestepping Tracers Scheme > Tracers, detail-property
+cmip6.ocean.timestepping_framework.barotropic_solver_scheme.barotropic_solver, Ocean > Timestepping Framework > Barotropic Solver Scheme > Barotropic Solver, detail-property
+cmip6.ocean.timestepping_framework.barotropic_solver_scheme.type, Ocean > Timestepping Framework > Barotropic Solver Scheme > Type, detail-property
+cmip6.ocean.timestepping_framework.barotropic_momentum_scheme.barotropic_momentum, Ocean > Timestepping Framework > Barotropic Momentum Scheme > Barotropic Momentum, detail-property
+, , 
+cmip6.ocean.advection.momemtum.details.type, Ocean > Advection > Momemtum > Details > Type, detail-property
+cmip6.ocean.advection.momemtum.details.scheme_name, Ocean > Advection > Momemtum > Details > Scheme Name, detail-property
+cmip6.ocean.advection.momemtum.details.ALE, Ocean > Advection > Momemtum > Details > ALE, detail-property
 cmip6.ocean.advection.lateral_tracers.details.type, Ocean > Advection > Lateral Tracers > Details > Type, detail-property
 cmip6.ocean.advection.lateral_tracers.details.flux_limiter, Ocean > Advection > Lateral Tracers > Details > Flux Limiter, detail-property
 cmip6.ocean.advection.lateral_tracers.details.passive_tracers, Ocean > Advection > Lateral Tracers > Details > Passive Tracers, detail-property
 cmip6.ocean.advection.lateral_tracers.details.passive_tracers_advection, Ocean > Advection > Lateral Tracers > Details > Passive Tracers Advection, detail-property
-cmip6.ocean.advection.momemtum.details.type, Ocean > Advection > Momemtum > Details > Type, detail-property
-cmip6.ocean.advection.momemtum.details.scheme_name, Ocean > Advection > Momemtum > Details > Scheme Name, detail-property
-cmip6.ocean.advection.momemtum.details.ALE, Ocean > Advection > Momemtum > Details > ALE, detail-property
 cmip6.ocean.advection.vertical_tracers.details.type, Ocean > Advection > Vertical Tracers > Details > Type, detail-property
 cmip6.ocean.advection.vertical_tracers.details.flux_limiter, Ocean > Advection > Vertical Tracers > Details > Flux Limiter, detail-property
-, , 
-cmip6.ocean.boundary_forcing.boundary_forcing_details.surface_pressure, Ocean > Boundary Forcing > Boundary Forcing Details > Surface Pressure, detail-property
-cmip6.ocean.boundary_forcing.boundary_forcing_details.momentum_flux_correction, Ocean > Boundary Forcing > Boundary Forcing Details > Momentum Flux Correction, detail-property
-cmip6.ocean.boundary_forcing.boundary_forcing_details.tracers_flux_correction, Ocean > Boundary Forcing > Boundary Forcing Details > Tracers Flux Correction, detail-property
-cmip6.ocean.boundary_forcing.boundary_forcing_details.wave_effects, Ocean > Boundary Forcing > Boundary Forcing Details > Wave Effects, detail-property
-cmip6.ocean.boundary_forcing.boundary_forcing_details.river_runoff_budget, Ocean > Boundary Forcing > Boundary Forcing Details > River Runoff Budget, detail-property
-cmip6.ocean.boundary_forcing.boundary_forcing_details.geothermal_heating, Ocean > Boundary Forcing > Boundary Forcing Details > Geothermal Heating, detail-property
-cmip6.ocean.boundary_forcing.momentum.bottom_friction.type, Ocean > Boundary Forcing > Momentum > Bottom Friction > Type, detail-property
-cmip6.ocean.boundary_forcing.momentum.lateral_friction.type, Ocean > Boundary Forcing > Momentum > Lateral Friction > Type, detail-property
-cmip6.ocean.boundary_forcing.tracers.sunlight_penetration.scheme, Ocean > Boundary Forcing > Tracers > Sunlight Penetration > Scheme, detail-property
-cmip6.ocean.boundary_forcing.tracers.sunlight_penetration.ocean_colour, Ocean > Boundary Forcing > Tracers > Sunlight Penetration > Ocean Colour, detail-property
-cmip6.ocean.boundary_forcing.tracers.sunlight_penetration.extinction_depth, Ocean > Boundary Forcing > Tracers > Sunlight Penetration > Extinction Depth, detail-property
-cmip6.ocean.boundary_forcing.tracers.fresh_water_forcing.from_atmopshere, Ocean > Boundary Forcing > Tracers > Fresh Water Forcing > From Atmopshere, detail-property
-cmip6.ocean.boundary_forcing.tracers.fresh_water_forcing.from_sea_ice, Ocean > Boundary Forcing > Tracers > Fresh Water Forcing > From Sea Ice, detail-property
-cmip6.ocean.boundary_forcing.tracers.fresh_water_forcing.forced_mode_restoring, Ocean > Boundary Forcing > Tracers > Fresh Water Forcing > Forced Mode Restoring, detail-property
 , , 
 cmip6.ocean.lateral_physics.ocean_transient_eddy_representation.scheme, Ocean > Lateral Physics > Ocean Transient Eddy Representation > Scheme, detail-property
 cmip6.ocean.lateral_physics.momentum.operator.direction, Ocean > Lateral Physics > Momentum > Operator > Direction, detail-property
@@ -76,19 +68,6 @@ cmip6.ocean.lateral_physics.tracers.eddy_induced_velocity.constant_val, Ocean > 
 cmip6.ocean.lateral_physics.tracers.eddy_induced_velocity.flux_type, Ocean > Lateral Physics > Tracers > Eddy Induced Velocity > Flux Type, detail-property
 cmip6.ocean.lateral_physics.tracers.eddy_induced_velocity.added_diffusivity, Ocean > Lateral Physics > Tracers > Eddy Induced Velocity > Added Diffusivity, detail-property
 , , 
-cmip6.ocean.timestepping_framework.timestepping_attributes.time_step, Ocean > Timestepping Framework > Timestepping Attributes > Time Step, detail-property
-cmip6.ocean.timestepping_framework.timestepping_attributes.diurnal_cycle, Ocean > Timestepping Framework > Timestepping Attributes > Diurnal Cycle, detail-property
-cmip6.ocean.timestepping_framework.timestepping_tracers_scheme.tracers, Ocean > Timestepping Framework > Timestepping Tracers Scheme > Tracers, detail-property
-cmip6.ocean.timestepping_framework.barotropic_solver_scheme.barotropic_solver, Ocean > Timestepping Framework > Barotropic Solver Scheme > Barotropic Solver, detail-property
-cmip6.ocean.timestepping_framework.barotropic_solver_scheme.type, Ocean > Timestepping Framework > Barotropic Solver Scheme > Type, detail-property
-cmip6.ocean.timestepping_framework.barotropic_momentum_scheme.barotropic_momentum, Ocean > Timestepping Framework > Barotropic Momentum Scheme > Barotropic Momentum, detail-property
-, , 
-cmip6.ocean.uplow_boundaries.free_surface.scheme, Ocean > Uplow Boundaries > Free Surface > Scheme, detail-property
-cmip6.ocean.uplow_boundaries.free_surface.embeded_seaice, Ocean > Uplow Boundaries > Free Surface > Embeded Seaice, detail-property
-cmip6.ocean.uplow_boundaries.bottom_boundary_layer.type_of_bbl, Ocean > Uplow Boundaries > Bottom Boundary Layer > Type Of Bbl, detail-property
-cmip6.ocean.uplow_boundaries.bottom_boundary_layer.lateral_mixing_coef, Ocean > Uplow Boundaries > Bottom Boundary Layer > Lateral Mixing Coef, detail-property
-cmip6.ocean.uplow_boundaries.bottom_boundary_layer.sill_overflow, Ocean > Uplow Boundaries > Bottom Boundary Layer > Sill Overflow, detail-property
-, , 
 cmip6.ocean.vertical_physics.boundary_layer_mixing.details.langmuir_cells_mixing, Ocean > Vertical Physics > Boundary Layer Mixing > Details > Langmuir Cells Mixing, detail-property
 cmip6.ocean.vertical_physics.boundary_layer_mixing.tracers.type, Ocean > Vertical Physics > Boundary Layer Mixing > Tracers > Type, detail-property
 cmip6.ocean.vertical_physics.boundary_layer_mixing.tracers.closure_order, Ocean > Vertical Physics > Boundary Layer Mixing > Tracers > Closure Order, detail-property
@@ -110,4 +89,25 @@ cmip6.ocean.vertical_physics.interior_mixing.momentum.type, Ocean > Vertical Phy
 cmip6.ocean.vertical_physics.interior_mixing.momentum.constant, Ocean > Vertical Physics > Interior Mixing > Momentum > Constant, detail-property
 cmip6.ocean.vertical_physics.interior_mixing.momentum.profile, Ocean > Vertical Physics > Interior Mixing > Momentum > Profile, detail-property
 cmip6.ocean.vertical_physics.interior_mixing.momentum.background, Ocean > Vertical Physics > Interior Mixing > Momentum > Background, detail-property
+, , 
+cmip6.ocean.uplow_boundaries.free_surface.scheme, Ocean > Uplow Boundaries > Free Surface > Scheme, detail-property
+cmip6.ocean.uplow_boundaries.free_surface.embeded_seaice, Ocean > Uplow Boundaries > Free Surface > Embeded Seaice, detail-property
+cmip6.ocean.uplow_boundaries.bottom_boundary_layer.type_of_bbl, Ocean > Uplow Boundaries > Bottom Boundary Layer > Type Of Bbl, detail-property
+cmip6.ocean.uplow_boundaries.bottom_boundary_layer.lateral_mixing_coef, Ocean > Uplow Boundaries > Bottom Boundary Layer > Lateral Mixing Coef, detail-property
+cmip6.ocean.uplow_boundaries.bottom_boundary_layer.sill_overflow, Ocean > Uplow Boundaries > Bottom Boundary Layer > Sill Overflow, detail-property
+, , 
+cmip6.ocean.boundary_forcing.boundary_forcing_details.surface_pressure, Ocean > Boundary Forcing > Boundary Forcing Details > Surface Pressure, detail-property
+cmip6.ocean.boundary_forcing.boundary_forcing_details.momentum_flux_correction, Ocean > Boundary Forcing > Boundary Forcing Details > Momentum Flux Correction, detail-property
+cmip6.ocean.boundary_forcing.boundary_forcing_details.tracers_flux_correction, Ocean > Boundary Forcing > Boundary Forcing Details > Tracers Flux Correction, detail-property
+cmip6.ocean.boundary_forcing.boundary_forcing_details.wave_effects, Ocean > Boundary Forcing > Boundary Forcing Details > Wave Effects, detail-property
+cmip6.ocean.boundary_forcing.boundary_forcing_details.river_runoff_budget, Ocean > Boundary Forcing > Boundary Forcing Details > River Runoff Budget, detail-property
+cmip6.ocean.boundary_forcing.boundary_forcing_details.geothermal_heating, Ocean > Boundary Forcing > Boundary Forcing Details > Geothermal Heating, detail-property
+cmip6.ocean.boundary_forcing.momentum.bottom_friction.type, Ocean > Boundary Forcing > Momentum > Bottom Friction > Type, detail-property
+cmip6.ocean.boundary_forcing.momentum.lateral_friction.type, Ocean > Boundary Forcing > Momentum > Lateral Friction > Type, detail-property
+cmip6.ocean.boundary_forcing.tracers.sunlight_penetration.scheme, Ocean > Boundary Forcing > Tracers > Sunlight Penetration > Scheme, detail-property
+cmip6.ocean.boundary_forcing.tracers.sunlight_penetration.ocean_colour, Ocean > Boundary Forcing > Tracers > Sunlight Penetration > Ocean Colour, detail-property
+cmip6.ocean.boundary_forcing.tracers.sunlight_penetration.extinction_depth, Ocean > Boundary Forcing > Tracers > Sunlight Penetration > Extinction Depth, detail-property
+cmip6.ocean.boundary_forcing.tracers.fresh_water_forcing.from_atmopshere, Ocean > Boundary Forcing > Tracers > Fresh Water Forcing > From Atmopshere, detail-property
+cmip6.ocean.boundary_forcing.tracers.fresh_water_forcing.from_sea_ice, Ocean > Boundary Forcing > Tracers > Fresh Water Forcing > From Sea Ice, detail-property
+cmip6.ocean.boundary_forcing.tracers.fresh_water_forcing.forced_mode_restoring, Ocean > Boundary Forcing > Tracers > Fresh Water Forcing > Forced Mode Restoring, detail-property
 , , 
