@@ -1716,66 +1716,6 @@
         "description": "Ocean grid and discretisation", 
         "id": "cmip6.ocean.grid", 
         "contact": "Eric Guilyardi", 
-        "details": [
-            {
-                "label": "Vertical Grid", 
-                "description": "Properties of vertical coordinate in ocean", 
-                "id": "cmip6.ocean.grid.vertical_grid", 
-                "properties": [
-                    {
-                        "label": "Number Of Levels", 
-                        "description": "Number of vertical levels", 
-                        "id": "cmip6.ocean.grid.vertical_grid.number_of_levels", 
-                        "uiOrdinal": 1, 
-                        "cardinality": "1.1", 
-                        "type": "int"
-                    }
-                ]
-            }, 
-            {
-                "label": "Horizontal Grid", 
-                "description": "Properties of H coordinate in ocean", 
-                "id": "cmip6.ocean.grid.horizontal_grid", 
-                "properties": [
-                    {
-                        "label": "Type", 
-                        "description": "Horizontal grid type", 
-                        "id": "cmip6.ocean.grid.horizontal_grid.type", 
-                        "uiOrdinal": 1, 
-                        "cardinality": "1.1", 
-                        "type": "enum", 
-                        "enum": {
-                            "description": "Types of horizonal grid in ocean", 
-                            "choices": [
-                                {
-                                    "label": "Latlon", 
-                                    "description": null
-                                }, 
-                                {
-                                    "label": "Rotated north pole", 
-                                    "description": null
-                                }, 
-                                {
-                                    "label": "Two north poles (ORCA-style)", 
-                                    "description": null
-                                }
-                            ], 
-                            "id": "horizontal_grid_types", 
-                            "isOpen": true, 
-                            "label": "horizontal_grid_types"
-                        }
-                    }, 
-                    {
-                        "label": "Number Of Xy Gridpoints", 
-                        "description": "Total number of horizontal points on computational grid", 
-                        "id": "cmip6.ocean.grid.horizontal_grid.number_of_xy_gridpoints", 
-                        "uiOrdinal": 2, 
-                        "cardinality": "0.1", 
-                        "type": "int"
-                    }
-                ]
-            }
-        ], 
         "discretisation": {
             "label": "Discretisation", 
             "description": "Type of discretisation scheme in ocean", 
@@ -1874,10 +1814,38 @@
                     "id": "cmip6.ocean.grid.discretisation.horizontal", 
                     "properties": [
                         {
+                            "label": "Type", 
+                            "description": "Horizontal grid type", 
+                            "id": "cmip6.ocean.grid.discretisation.horizontal.type", 
+                            "uiOrdinal": 1, 
+                            "cardinality": "1.1", 
+                            "type": "enum", 
+                            "enum": {
+                                "description": "Types of horizonal grid in ocean", 
+                                "choices": [
+                                    {
+                                        "label": "Lat-lon", 
+                                        "description": null
+                                    }, 
+                                    {
+                                        "label": "Rotated north pole", 
+                                        "description": null
+                                    }, 
+                                    {
+                                        "label": "Two north poles (ORCA-style)", 
+                                        "description": null
+                                    }
+                                ], 
+                                "id": "horizontal_grid_types", 
+                                "isOpen": true, 
+                                "label": "horizontal_grid_types"
+                            }
+                        }, 
+                        {
                             "label": "Scheme", 
                             "description": "Horizontal discretisation scheme in ocean", 
                             "id": "cmip6.ocean.grid.discretisation.horizontal.scheme", 
-                            "uiOrdinal": 1, 
+                            "uiOrdinal": 2, 
                             "cardinality": "1.1", 
                             "type": "enum", 
                             "enum": {
@@ -1917,7 +1885,7 @@
                             "label": "Pole Singularity Treatment", 
                             "description": "Describe how the North Pole singularity is treated (filter, pole rotation/displacement, artificial island, ...)", 
                             "id": "cmip6.ocean.grid.discretisation.horizontal.pole_singularity_treatment", 
-                            "uiOrdinal": 2, 
+                            "uiOrdinal": 3, 
                             "cardinality": "1.1", 
                             "type": "str"
                         }

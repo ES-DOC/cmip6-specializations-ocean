@@ -1,6 +1,4 @@
 cmip6-id, cmip6-label, cmip6-type
-cmip6.ocean.grid.vertical_grid, Ocean > Grid > Vertical Grid, detail
-cmip6.ocean.grid.horizontal_grid, Ocean > Grid > Horizontal Grid, detail
 cmip6.ocean.grid.discretisation, Ocean > Grid > Discretisation, grid-discretisation
 cmip6.ocean.grid.discretisation.vertical, Ocean > Grid > Discretisation > Vertical, detail
 cmip6.ocean.grid.discretisation.horizontal, Ocean > Grid > Discretisation > Horizontal, detail
