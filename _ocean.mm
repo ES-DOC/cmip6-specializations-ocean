@@ -516,6 +516,20 @@
         <dt><b>Description</b></dt><dd>Any additional consistency properties (energy conversion, pressure gradient discretisation, ...)?</dd><dt><b>ID</b></dt><dd>cmip6.ocean.key_properties.conservation.details.consistency_properties</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd>
     </dl>
   </body>
+</html></richcontent></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="citations"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>Set of pertinent citations.</dd><dt><b>ID</b></dt><dd>cmip6.ocean.key_properties.conservation.details.citations</dd><dt><b>Type</b></dt><dd>shared.citation</dd><dt><b>Cardinality</b></dt><dd>0.N</dd>
+    </dl>
+  </body>
+</html></richcontent><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>Set of pertinent citations.</dd><dt><b>ID</b></dt><dd>cmip6.ocean.key_properties.conservation.details.citations</dd><dt><b>Type</b></dt><dd>shared.citation</dd><dt><b>Cardinality</b></dt><dd>0.N</dd>
+    </dl>
+  </body>
 </html></richcontent></node></node></node></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="false" STYLE="bubble" TEXT="timestepping_framework"><font BOLD="True" NAME="courier" SIZE="12" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
