@@ -24,6 +24,7 @@ cmip6.ocean.key_properties.nonoceanic_waters.river_mouth, Ocean > Key Properties
 cmip6.ocean.key_properties.conservation.details.scheme, Ocean > Key Properties > Conservation > Details > Scheme, detail-property
 cmip6.ocean.key_properties.conservation.details.method, Ocean > Key Properties > Conservation > Details > Method, detail-property
 cmip6.ocean.key_properties.conservation.details.consistency_properties, Ocean > Key Properties > Conservation > Details > Consistency Properties, detail-property
+cmip6.ocean.key_properties.conservation.details.citations, Ocean > Key Properties > Conservation > Details > Citations, detail-property
 , , 
 cmip6.ocean.timestepping_framework.timestepping_attributes.time_step, Ocean > Timestepping Framework > Timestepping Attributes > Time Step, detail-property
 cmip6.ocean.timestepping_framework.timestepping_attributes.diurnal_cycle, Ocean > Timestepping Framework > Timestepping Attributes > Diurnal Cycle, detail-property

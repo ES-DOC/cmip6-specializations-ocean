@@ -31,11 +31,21 @@ AUTHORS = 'Eric Guilyardi'
 QC_STATUS = 'draft'
 
 # --------------------------------------------------------------------
-# PROCESS: DESCRIPTION
+# PROCESS
 #
-# Scientific context of the process
+# Provides structure for description of a process simulated within a
+# particular area (or domain/realm/component) of a model. This will
+# often be subclassed within a specific implementation so that
+# constraints can be used to ensure that the process details requested
+# are consistent with project requirements for information.
 # --------------------------------------------------------------------
 DESCRIPTION = 'Characteristics of ocean time stepping framework'
+
+IMPLEMENTATION_OVERVIEW = ('str', '1.1', "General overview description of the implementation of this part of the process.")
+
+KEYWORDS = ('str', '0.1', "keywords to help re-use and discovery of this information.")
+
+CITATIONS = ('shared.citation', '0.N', "Set of pertinent citations.")
 
 # --------------------------------------------------------------------
 # PROCESS: DETAILS
@@ -79,9 +89,23 @@ DETAILS['barotropic_momentum_scheme'] = {
 # --------------------------------------------------------------------
 # PROCESS: SUB PROCESSES
 #
-# Sets of discrete portions of the process
+# Sets of discrete portions of the process. Each sub-process needsa
+# <name> and <description>
 # --------------------------------------------------------------------
 SUB_PROCESSES = OrderedDict()
+
+#SUB_PROCESSES[<name>] = {
+#    'description': <description>
+#    'properties': [
+#        ('implementation_overview', 'str', '1.1',
+#             "General overview description of the implementation of this part of the process."),
+#        ('citations', 'shared.citation', '0.N',
+#             "Set of pertinent citations."), 
+#    ],
+#    # Extra properties
+#    'details': [],
+#}
+
 
 # --------------------------------------------------------------------
 # PROCESS: SUB PROCESSES: DETAILS

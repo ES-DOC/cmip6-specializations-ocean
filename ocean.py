@@ -33,6 +33,7 @@ CONTRIBUTORS = 'CMIP5 version +, Julie Dehayes (LOCEAN/IPSL), Steve Griffies (GF
 CHANGE_HISTORY = [
 	("0.1.0", "2016-07-01", "Initialised", "Eric Guilyardi"),
 	("0.2.0", "2016-08-30", "Update science following inputs fron Gokhan Danabasoglu and Steve Griffies", "Eric Guilyardi"),
+	("0.3.0", "2016-09-05", "Added hidden CIM2 properties to key_properties and timestepping_framework", "David Hassell"),
      ]
 
 # --------------------------------------------------------------------

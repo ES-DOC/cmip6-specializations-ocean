@@ -2305,6 +2305,14 @@
                             "uiOrdinal": 3, 
                             "cardinality": "0.1", 
                             "type": "str"
+                        }, 
+                        {
+                            "label": "Citations", 
+                            "description": "Set of pertinent citations.", 
+                            "id": "cmip6.ocean.key_properties.conservation.details.citations", 
+                            "uiOrdinal": 4, 
+                            "cardinality": "0.N", 
+                            "type": "shared.citation"
                         }
                     ]
                 }

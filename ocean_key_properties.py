@@ -31,11 +31,19 @@ AUTHORS = 'Eric Guilyardi'
 QC_STATUS = 'draft'
 
 # --------------------------------------------------------------------
-# KEY PROPERTIES: DESCRIPTION
+# KEY PROPERTIES
 #
-# Scientific context of the key properties
+# High level list of key properties.
 # --------------------------------------------------------------------
 DESCRIPTION = 'Key properties of the ocean'
+
+IMPLEMENTATION_OVERVIEW = ('str', '1.1', "General overview description of the implementation of this part of the process.")
+
+KEYWORDS = ('str', '0.1', "keywords to help re-use and discovery of this information.")
+
+TIME_STEP = ('float', '0.1', "Timestep (in seconds) of overall component.")
+
+CITATIONS = ('shared.citation', '0.N', "Set of pertinent citations."),
 
 # --------------------------------------------------------------------
 # KEY PROPERTIES: DETAILS
@@ -92,7 +100,7 @@ DETAILS['bathymetry'] = {
 
 DETAILS['nonoceanic_waters'] = {
     'description': 'Non oceanic waters treatement in ocean',
-    'properties' :[
+    'properties': [
         ('isolated_seas','str', '0.1',
          'Describe if/how isolated seas is performed'),
         ('river_mouth','str', '0.1',
@@ -123,10 +131,26 @@ RESOLUTION = OrderedDict()
 
 RESOLUTION['resolution'] = {
     'description': 'Resolution in the ocean grid',
-    'details' : [
-        'vertical_resolution',
-        'horizontal_resolution',
-        ],
+    'properties': [
+        ('implementation_overview', 'str', '1.1',
+             "General overview description of the implementation of this part of the process."),
+        ('canonical_horizontal_resolution', 'str', '0.1',
+             "Expression quoted for gross comparisons of resolution, eg. 50km or 0.1 degrees etc."),
+        ('is_adaptive_grid', 'bool', '0.1',
+             "Default is False. Set true if grid resolution changes during execution."),
+        ('name', 'str', '1.1',
+             "This is a string usually used by the modelling group to describe the resolution of this grid, e.g. N512L180 or T512L70 etc."),
+        ('number_of_horizontal_gridpoints', 'int', '0.1',
+             "Total number of horizontal (XY) points (or degrees of freedom) on computational grid."),
+        ('number_of_vertical_levels', 'int', '0.1',
+             "Number of vertical levels resolved on computational grid."),
+        ('citations', 'shared.citation', '0.N',
+             "Set of pertinent citations."), 
+    ],
+    # Sets of extra properties
+    'details': [ 
+        'thickness_level_1',
+    ],
 }
 
 # --------------------------------------------------------------------
@@ -136,21 +160,8 @@ RESOLUTION['resolution'] = {
 # --------------------------------------------------------------------
 RESOLUTION_DETAILS = OrderedDict()
 
-RESOLUTION_DETAILS['vertical_resolution'] = {
-    'properties':[
-        ('number_of_levels', 'int', '1.1',
-            'Number of vertical levels'),
-        ('thickness_level_1','float', '1.1',
-            'Thickness of first surface ocean level (in meters)')
-    ]
-}
-
-RESOLUTION_DETAILS['horizontal_resolution'] = {
-    'properties':[
-        ('number_of_xy_gridpoints', 'int', '1.1',
-            'Total number of horizontal points on computational grid'),
-    ]
-}
+RESOLUTION_DETAILS['thickness_level_1'] = (
+    'float', '1.1', 'Thickness of first surface ocean level (in meters)')
 
 # --------------------------------------------------------------------
 # KEY PROPERTIES: TUNING APPLIED
@@ -158,6 +169,24 @@ RESOLUTION_DETAILS['horizontal_resolution'] = {
 # Any tuning used to optimise the parameters in this realm
 # --------------------------------------------------------------------
 TUNING_APPLIED = OrderedDict()
+
+TUNING_APPLIED['tuning_applied'] = {
+    'description': 'Tuning methodology for ocean component',
+    'properties': [
+        ('implementation_overview', 'str', '1.1',
+             "General overview description of the implementation of this part of the process."),
+        ('global_mean_metrics_used', 'data.variable_collection', '0.1',
+             "Set of metrics of the global mean state used in tuning model parameters."),
+        ('regional_metrics_used', 'data.variable_collection', '0.1',
+             "Which regional metrics of mean state (e.g Monsoons, tropical means etc) have been used in tuning."),
+        ('trend_metrics_used', 'data.variable_collection', '0.1',
+             "Which observed trend metrics have been used in tuning model parameters."),
+        ('citations', 'shared.citation', '0.N',
+             "Set of pertinent citations."), 
+    ],
+    # Extra properties
+    'details': [],
+}
 
 # --------------------------------------------------------------------
 # KEY PROPERTIES: TUNING APPLIED DETAILS
@@ -176,6 +205,17 @@ EXTRA_CONSERVATION_PROPERTIES = OrderedDict()
 
 EXTRA_CONSERVATION_PROPERTIES['conservation'] = {
     'description': 'Conservation in the ocean component',
+    'properties': [
+        ('implementation_overview', 'str', '1.1',
+             "General overview description of the implementation of this part of the process."),
+        ('corrected_conserved_prognostic_variables', 'data.variable_collection', '0.1',
+             "Set of variables which are conserved by *more* than the numerical scheme alone."),
+        ('flux_correction_was_used', 'bool', '0.1',
+             "Flag to indicate if correction involved flux correction."),
+        ('citations', 'shared.citation', '0.N',
+             "Set of pertinent citations."), 
+    ],
+    # Extra properties
     'details': ['details'],
 }
 
@@ -194,8 +234,10 @@ EXTRA_CONSERVATION_PROPERTIES_DETAILS['details'] = {
         ('method', 'str', '1.1',
             'Describe how conservation properties are ensured in ocean'),
         ('consistency_properties', 'str','0.1',
-            'Any additional consistency properties (energy conversion, pressure gradient discretisation, ...)?')
-        ]
+            'Any additional consistency properties (energy conversion, pressure gradient discretisation, ...)?'),
+        ('citations', 'shared.citation', '0.N',
+             "Set of pertinent citations."), 
+    ]
 }
 
 # --------------------------------------------------------------------
