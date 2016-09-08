@@ -3,7 +3,6 @@ cmip6.ocean.grid.discretisation.vertical.coordinates, Ocean > Grid > Discretisat
 cmip6.ocean.grid.discretisation.vertical.partial_steps, Ocean > Grid > Discretisation > Vertical > Partial Steps, detail-property
 cmip6.ocean.grid.discretisation.horizontal.type, Ocean > Grid > Discretisation > Horizontal > Type, detail-property
 cmip6.ocean.grid.discretisation.horizontal.scheme, Ocean > Grid > Discretisation > Horizontal > Scheme, detail-property
-cmip6.ocean.grid.discretisation.horizontal.pole_singularity_treatment, Ocean > Grid > Discretisation > Horizontal > Pole Singularity Treatment, detail-property
 , , 
 cmip6.ocean.key_properties.general.model_family, Ocean > Key Properties > General > Model Family, detail-property
 cmip6.ocean.key_properties.general.basic_approximations, Ocean > Key Properties > General > Basic Approximations, detail-property

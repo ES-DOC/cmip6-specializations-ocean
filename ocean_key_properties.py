@@ -132,18 +132,16 @@ RESOLUTION = OrderedDict()
 RESOLUTION['resolution'] = {
     'description': 'Resolution in the ocean grid',
     'properties': [
-        ('implementation_overview', 'str', '1.1',
-             "General overview description of the implementation of this part of the process."),
-        ('canonical_horizontal_resolution', 'str', '0.1',
-             "Expression quoted for gross comparisons of resolution, eg. 50km or 0.1 degrees etc."),
-        ('is_adaptive_grid', 'bool', '0.1',
-             "Default is False. Set true if grid resolution changes during execution."),
         ('name', 'str', '1.1',
              "This is a string usually used by the modelling group to describe the resolution of this grid, e.g. N512L180 or T512L70 etc."),
+        ('canonical_horizontal_resolution', 'str', '0.1',
+             "Expression quoted for gross comparisons of resolution, eg. 50km or 0.1 degrees etc."),
         ('number_of_horizontal_gridpoints', 'int', '0.1',
              "Total number of horizontal (XY) points (or degrees of freedom) on computational grid."),
         ('number_of_vertical_levels', 'int', '0.1',
              "Number of vertical levels resolved on computational grid."),
+        ('is_adaptive_grid', 'bool', '0.1',
+             "Default is False. Set true if grid resolution changes during execution."),
         ('citations', 'shared.citation', '0.N',
              "Set of pertinent citations."), 
     ],
@@ -170,15 +168,16 @@ RESOLUTION_DETAILS['thickness_level_1'] = (
 # --------------------------------------------------------------------
 TUNING_APPLIED = OrderedDict()
 
+# TODO review !!
 TUNING_APPLIED['tuning_applied'] = {
     'description': 'Tuning methodology for ocean component',
     'properties': [
         ('implementation_overview', 'str', '1.1',
-             "General overview description of the implementation of this part of the process."),
+             "General overview description of tuning."),
         ('global_mean_metrics_used', 'data.variable_collection', '0.1',
              "Set of metrics of the global mean state used in tuning model parameters."),
         ('regional_metrics_used', 'data.variable_collection', '0.1',
-             "Which regional metrics of mean state (e.g Monsoons, tropical means etc) have been used in tuning."),
+             "Which regional metrics of mean state (e.g THC, AABW, regional means etc) have been used in tuning."),
         ('trend_metrics_used', 'data.variable_collection', '0.1',
              "Which observed trend metrics have been used in tuning model parameters."),
         ('citations', 'shared.citation', '0.N',
@@ -207,7 +206,7 @@ EXTRA_CONSERVATION_PROPERTIES['conservation'] = {
     'description': 'Conservation in the ocean component',
     'properties': [
         ('implementation_overview', 'str', '1.1',
-             "General overview description of the implementation of this part of the process."),
+             "General overview description of the implementation of conservation"),
         ('corrected_conserved_prognostic_variables', 'data.variable_collection', '0.1',
              "Set of variables which are conserved by *more* than the numerical scheme alone."),
         ('flux_correction_was_used', 'bool', '0.1',

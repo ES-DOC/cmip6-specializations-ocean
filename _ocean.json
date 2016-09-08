@@ -1880,14 +1880,6 @@
                                 "isOpen": true, 
                                 "label": "horizontal_scheme_types"
                             }
-                        }, 
-                        {
-                            "label": "Pole Singularity Treatment", 
-                            "description": "Describe how the North Pole singularity is treated (filter, pole rotation/displacement, artificial island, ...)", 
-                            "id": "cmip6.ocean.grid.discretisation.horizontal.pole_singularity_treatment", 
-                            "uiOrdinal": 3, 
-                            "cardinality": "1.1", 
-                            "type": "str"
                         }
                     ]
                 }
