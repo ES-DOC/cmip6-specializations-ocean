@@ -168,16 +168,17 @@ RESOLUTION_DETAILS['thickness_level_1'] = (
 # --------------------------------------------------------------------
 TUNING_APPLIED = OrderedDict()
 
-# TODO review !!
+# TODO review wrt toplevel tuning questions !!
+# TODO not sure it is right to have data.variable.collection in the following - should be free text
 TUNING_APPLIED['tuning_applied'] = {
     'description': 'Tuning methodology for ocean component',
     'properties': [
-        ('implementation_overview', 'str', '1.1',
+        ('description', 'str', '1.1',
              "General overview description of tuning."),
         ('global_mean_metrics_used', 'data.variable_collection', '0.1',
              "Set of metrics of the global mean state used in tuning model parameters."),
         ('regional_metrics_used', 'data.variable_collection', '0.1',
-             "Which regional metrics of mean state (e.g THC, AABW, regional means etc) have been used in tuning."),
+             "Which regional metrics of mean state (e.g THC, AABW, regional means etc) have been used in tuning ? "),
         ('trend_metrics_used', 'data.variable_collection', '0.1',
              "Which observed trend metrics have been used in tuning model parameters."),
         ('citations', 'shared.citation', '0.N',
@@ -205,12 +206,11 @@ EXTRA_CONSERVATION_PROPERTIES = OrderedDict()
 EXTRA_CONSERVATION_PROPERTIES['conservation'] = {
     'description': 'Conservation in the ocean component',
     'properties': [
-        ('implementation_overview', 'str', '1.1',
-             "General overview description of the implementation of conservation"),
-        ('corrected_conserved_prognostic_variables', 'data.variable_collection', '0.1',
+        ('description', 'str', '1.1', 'Brief description of conservation methodology'),
+        ('corrected_conserved_prognostic_variables', 'data.variable_collection', '0.1', # Can we constrains these variable
              "Set of variables which are conserved by *more* than the numerical scheme alone."),
         ('flux_correction_was_used', 'bool', '0.1',
-             "Flag to indicate if correction involved flux correction."),
+             "Does conservation involved flux correction ?"),
         ('citations', 'shared.citation', '0.N',
              "Set of pertinent citations."), 
     ],
@@ -226,12 +226,10 @@ EXTRA_CONSERVATION_PROPERTIES['conservation'] = {
 EXTRA_CONSERVATION_PROPERTIES_DETAILS = OrderedDict()
 
 EXTRA_CONSERVATION_PROPERTIES_DETAILS['details'] = {
-    'description': 'Properties conserved in the ocean component',
+    'description': 'Extra properties of conservation in the ocean component',
     'properties': [
         ('scheme', 'ENUM:conservation_props_types', '1.N',
-            'Conservation scheme in ocean'),
-        ('method', 'str', '1.1',
-            'Describe how conservation properties are ensured in ocean'),
+            'Properties conserved in the ocean by the numerical schemes'),
         ('consistency_properties', 'str','0.1',
             'Any additional consistency properties (energy conversion, pressure gradient discretisation, ...)?'),
         ('citations', 'shared.citation', '0.N',
@@ -265,7 +263,7 @@ ENUMERATIONS['ocean_basic_approx_types'] = {
 }
 
 ENUMERATIONS['prognostic_vars_types'] = {
-    'description': 'Types of basic approximation in ocean',
+    'description': 'List of prognostic variables in ocean',
     'is_open': True,
     'members': [
         ('Potential temperature', None),
@@ -337,7 +335,7 @@ ENUMERATIONS['bathymetry_ref_dates'] = {
 }
 
 ENUMERATIONS['conservation_props_types'] = {
-    'description': 'Types of conservation properties in ocean',
+    'description': 'List of properties that can be conserved in ocean',
     'is_open': True,
     'members': [
         ('Energy', None),
