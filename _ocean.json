@@ -1961,7 +1961,7 @@
                         "cardinality": "1.N", 
                         "type": "enum", 
                         "enum": {
-                            "description": "Types of basic approximation in ocean", 
+                            "description": "List of prognostic variables in ocean", 
                             "choices": [
                                 {
                                     "label": "Conservative temperature", 
@@ -2243,18 +2243,18 @@
             "details": [
                 {
                     "label": "Details", 
-                    "description": "Properties conserved in the ocean component", 
+                    "description": "Extra properties of conservation in the ocean component", 
                     "id": "cmip6.ocean.key_properties.conservation.details", 
                     "properties": [
                         {
                             "label": "Scheme", 
-                            "description": "Conservation scheme in ocean", 
+                            "description": "Properties conserved in the ocean by the numerical schemes", 
                             "id": "cmip6.ocean.key_properties.conservation.details.scheme", 
                             "uiOrdinal": 1, 
                             "cardinality": "1.N", 
                             "type": "enum", 
                             "enum": {
-                                "description": "Types of conservation properties in ocean", 
+                                "description": "List of properties that can be conserved in ocean", 
                                 "choices": [
                                     {
                                         "label": "Energy", 
@@ -2283,18 +2283,10 @@
                             }
                         }, 
                         {
-                            "label": "Method", 
-                            "description": "Describe how conservation properties are ensured in ocean", 
-                            "id": "cmip6.ocean.key_properties.conservation.details.method", 
-                            "uiOrdinal": 2, 
-                            "cardinality": "1.1", 
-                            "type": "str"
-                        }, 
-                        {
                             "label": "Consistency Properties", 
                             "description": "Any additional consistency properties (energy conversion, pressure gradient discretisation, ...)?", 
                             "id": "cmip6.ocean.key_properties.conservation.details.consistency_properties", 
-                            "uiOrdinal": 3, 
+                            "uiOrdinal": 2, 
                             "cardinality": "0.1", 
                             "type": "str"
                         }, 
@@ -2302,7 +2294,7 @@
                             "label": "Citations", 
                             "description": "Set of pertinent citations.", 
                             "id": "cmip6.ocean.key_properties.conservation.details.citations", 
-                            "uiOrdinal": 4, 
+                            "uiOrdinal": 3, 
                             "cardinality": "0.N", 
                             "type": "shared.citation"
                         }
