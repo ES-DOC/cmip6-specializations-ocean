@@ -232,8 +232,6 @@ EXTRA_CONSERVATION_PROPERTIES_DETAILS['details'] = {
             'Properties conserved in the ocean by the numerical schemes'),
         ('consistency_properties', 'str','0.1',
             'Any additional consistency properties (energy conversion, pressure gradient discretisation, ...)?'),
-        ('citations', 'shared.citation', '0.N',
-             "Set of pertinent citations."), 
     ]
 }
 
