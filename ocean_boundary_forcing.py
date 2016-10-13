@@ -37,6 +37,12 @@ QC_STATUS = 'draft'
 # --------------------------------------------------------------------
 DESCRIPTION = 'Properties of boundary forcing within the ocean component'
 
+IMPLEMENTATION_OVERVIEW = ('str', '1.1', "General overview description of the implementation of this part of the process.")
+
+KEYWORDS = ('str', '0.1', "keywords to help re-use and discovery of this information.")
+
+CITATIONS = ('shared.citation', '0.N', "Set of pertinent citations."),
+
 # --------------------------------------------------------------------
 # PROCESS: DETAILS
 #

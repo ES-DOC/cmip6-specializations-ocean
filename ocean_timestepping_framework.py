@@ -31,13 +31,9 @@ AUTHORS = 'Eric Guilyardi'
 QC_STATUS = 'draft'
 
 # --------------------------------------------------------------------
-# PROCESS
+# PROCESS: DESCRIPTION
 #
-# Provides structure for description of a process simulated within a
-# particular area (or domain/realm/component) of a model. This will
-# often be subclassed within a specific implementation so that
-# constraints can be used to ensure that the process details requested
-# are consistent with project requirements for information.
+# Scientific context of the process
 # --------------------------------------------------------------------
 DESCRIPTION = 'Characteristics of ocean time stepping framework'
 

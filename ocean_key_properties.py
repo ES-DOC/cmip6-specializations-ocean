@@ -41,9 +41,9 @@ IMPLEMENTATION_OVERVIEW = ('str', '1.1', "General overview description of the im
 
 KEYWORDS = ('str', '0.1', "keywords to help re-use and discovery of this information.")
 
-TIME_STEP = ('float', '0.1', "Timestep (in seconds) of overall component.")
-
 CITATIONS = ('shared.citation', '0.N', "Set of pertinent citations."),
+
+#TIME_STEP = ('float', '0.1', "Timestep (in seconds) of overall component.") -> see ocean_timestepping_framework.py
 
 # --------------------------------------------------------------------
 # KEY PROPERTIES: DETAILS
@@ -133,7 +133,7 @@ RESOLUTION['resolution'] = {
     'description': 'Resolution in the ocean grid',
     'properties': [
         ('name', 'str', '1.1',
-             "This is a string usually used by the modelling group to describe the resolution of this grid, e.g. N512L180 or T512L70 etc."),
+             "This is a string usually used by the modelling group to describe the resolution of this grid, e.g. ORCA025, N512L180, T512L70 etc."),
         ('canonical_horizontal_resolution', 'str', '0.1',
              "Expression quoted for gross comparisons of resolution, eg. 50km or 0.1 degrees etc."),
         ('number_of_horizontal_gridpoints', 'int', '0.1',
@@ -168,24 +168,24 @@ RESOLUTION_DETAILS['thickness_level_1'] = (
 # --------------------------------------------------------------------
 TUNING_APPLIED = OrderedDict()
 
-# TODO review wrt toplevel tuning questions !!
-# TODO not sure it is right to have data.variable.collection in the following - should be free text
+#
 TUNING_APPLIED['tuning_applied'] = {
     'description': 'Tuning methodology for ocean component',
     'properties': [
         ('description', 'str', '1.1',
-             "General overview description of tuning."),
-        ('global_mean_metrics_used', 'data.variable_collection', '0.1',
-             "Set of metrics of the global mean state used in tuning model parameters."),
-        ('regional_metrics_used', 'data.variable_collection', '0.1',
-             "Which regional metrics of mean state (e.g THC, AABW, regional means etc) have been used in tuning ? "),
-        ('trend_metrics_used', 'data.variable_collection', '0.1',
-             "Which observed trend metrics have been used in tuning model parameters."),
+             "General overview description of tuning: explain and motivate the main targets and metrics retained. &"
+             "Document the relative weight given to climate performance metrics versus process oriented metrics, &"
+             "and on the possible conflicts with parameterization level tuning. In particular describe any struggle &"
+             "with a parameter value that required pushing it to its limits to solve a particular model deficiency."),
+        ('global_mean_metrics_used', 'str', '0.N',
+             "List set of metrics of the global mean state used in tuning model/component"),
+        ('regional_metrics_used', 'str', '0.N',
+             "List of regional metrics of mean state (e.g THC, AABW, regional means etc) used in tuning model/component"),
+        ('trend_metrics_used', 'str', '0.N',
+             "List observed trend metrics used in tuning model/component"),
         ('citations', 'shared.citation', '0.N',
              "Set of pertinent citations."), 
     ],
-    # Extra properties
-    'details': [],
 }
 
 # --------------------------------------------------------------------

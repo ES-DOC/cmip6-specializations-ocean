@@ -50,12 +50,18 @@ QC_STATUS = 'draft'
 # --------------------------------------------------------------------
 DESCRIPTION = 'Ocean realm specialization'
 
+CITATIONS = ('shared.citation', '0.N', "Set of pertinent citations."),
+
 # --------------------------------------------------------------------
 # REALM: REALM
 #
 # Canonical name for the domain of this scientific realm
 # --------------------------------------------------------------------
 REALM = 'ocean'
+
+NAME = ''
+
+LONG_NAME = ''
 
 # --------------------------------------------------------------------
 # REALM: GRID
