@@ -186,6 +186,7 @@ TUNING_APPLIED['tuning_applied'] = {
         ('citations', 'shared.citation', '0.N',
              "Set of pertinent citations."), 
     ],
+    'details':[]
 }
 
 # --------------------------------------------------------------------
