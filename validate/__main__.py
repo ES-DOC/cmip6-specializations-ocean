@@ -19,6 +19,7 @@ from validate_key_properties import validate as validate_key_properties
 from validate_process import validate as validate_process
 from validate_realm import validate as validate_realm
 import utils
+import utils_loader
 
 
 # Define command line options.
@@ -44,9 +45,9 @@ _REPORT_BREAK = "---------------------------------------------------------------
 
 # Set specializations.
 realm, grid, key_properties, processes = \
-    utils.get_specializations(_ARGS.input_dir, _ARGS.realm)
+    utils_loader.get_specializations(_ARGS.input_dir, _ARGS.realm)
 
-# Set validator.
+# Validate.
 validator = ValidationContext(realm, grid, key_properties, processes)
 validator.validate()
 

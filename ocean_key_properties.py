@@ -102,9 +102,9 @@ DETAILS['nonoceanic_waters'] = {
     'description': 'Non oceanic waters treatement in ocean',
     'properties': [
         ('isolated_seas','str', '0.1',
-         'Describe if/how isolated seas is performed'),
+            'Describe if/how isolated seas is performed'),
         ('river_mouth','str', '0.1',
-         'Describe if/how river mouth mixing or estuaries specific treatment is performed'),
+            'Describe if/how river mouth mixing or estuaries specific treatment is performed'),
        ]
 }
 

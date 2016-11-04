@@ -9,8 +9,6 @@
 
 """
 import collections
-import imp
-import os
 
 import constants
 
@@ -68,42 +66,6 @@ def validate_spec(ctx, attr, types=(dict, )):
             if not isinstance(defn, types):
                 err = "{}[{}]: must be a {}".format(attr, key, " or ".join([i.__name__ for i in types]))
                 ctx.error(err)
-
-def get_specializations(input_dir, realm):
-    """Returns specialization modules organized by type.
-
-    :param str input_dir: Directory within which modules reside.
-    :param str realm: Name of realm being processed.
-
-    """
-    def is_target(filename):
-        """Returns flag indicating whether a module is a specialization target or not.
-
-        """
-        return not filename.startswith('_') and \
-               filename.endswith('.py') and \
-               filename.startswith(realm)
-
-    # Load specialization modules.
-    modules = sorted([i for i in os.listdir(input_dir) if is_target(i)])
-    modules = [os.path.join(input_dir, m) for m in modules]
-    modules = [(m.split("/")[-1].split(".")[0], m) for m in modules]
-    modules = [imp.load_source(name, fpath) for name, fpath in modules]
-
-    # Organize specialization modules.
-    realm = grid = key_properties = None
-    processes = []
-    for module in modules:
-        if realm is None:
-            realm = module
-        elif module.__name__.endswith('_grid'):
-            grid = module
-        elif module.__name__.endswith('_key_properties'):
-            key_properties = module
-        else:
-            processes.append(module)
-
-    return realm, grid, key_properties, processes
 
 
 def set_default(target, attr, value):

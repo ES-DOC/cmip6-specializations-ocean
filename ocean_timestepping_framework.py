@@ -64,21 +64,25 @@ DETAILS['timestepping_attributes'] = {
 DETAILS['timestepping_tracers_scheme'] = {
     'description': 'Properties of tracers time stepping in ocean',
     'properties': [
-        ('tracers','ENUM:ocean_timestepping_types', '1.1', 'Time stepping tracer scheme')
+        ('tracers', 'ENUM:ocean_timestepping_types', '1.1',
+            'Time stepping tracer scheme')
     ]
 }
 
 DETAILS['barotropic_solver_scheme'] = {
     'description': 'Barotropic solver in ocean',
     'properties': [
-        ('barotropic_solver','ENUM:ocean_timestepping_types', '1.1', 'Barotropic solver scheme'),
-        ('type','ENUM:barotropic_solver_types','1.1', 'Barotropic solver type')
+        ('barotropic_solver', 'ENUM:ocean_timestepping_types', '1.1',
+            'Barotropic solver scheme'),
+        ('type', 'ENUM:barotropic_solver_types', '1.1',
+            'Barotropic solver type')
     ]
 }
 DETAILS['barotropic_momentum_scheme'] = {
     'description': 'Barotropic momentum solver in ocean',
     'properties': [
-        ('barotropic_momentum','ENUM:ocean_timestepping_types', '1.1', 'Barotropic momentum scheme')
+        ('barotropic_momentum', 'ENUM:ocean_timestepping_types', '1.1',
+            'Barotropic momentum scheme')
     ]
 }
 
