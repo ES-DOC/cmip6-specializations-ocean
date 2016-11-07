@@ -1716,174 +1716,180 @@
         "description": "Ocean grid and discretisation", 
         "id": "cmip6.ocean.grid", 
         "contact": "Eric Guilyardi", 
+        "details": [
+            {
+                "label": "Discretisation", 
+                "description": "Type of discretisation scheme in ocean", 
+                "id": "cmip6.ocean.grid.discretisation", 
+                "properties": []
+            }, 
+            {
+                "label": "Vertical", 
+                "description": "Properties of vertical coordinate in ocean", 
+                "id": "cmip6.ocean.grid.vertical", 
+                "properties": [
+                    {
+                        "label": "Type", 
+                        "description": "Horizontal grid type", 
+                        "id": "cmip6.ocean.grid.vertical.type", 
+                        "uiOrdinal": 1, 
+                        "cardinality": "1.1", 
+                        "type": "enum", 
+                        "enum": {
+                            "description": "Types of horizonal grid in ocean", 
+                            "choices": [
+                                {
+                                    "label": "Lat-lon", 
+                                    "description": null
+                                }, 
+                                {
+                                    "label": "Rotated north pole", 
+                                    "description": null
+                                }, 
+                                {
+                                    "label": "Two north poles (ORCA-style)", 
+                                    "description": null
+                                }
+                            ], 
+                            "id": "horizontal_grid_types", 
+                            "isOpen": true, 
+                            "label": "horizontal_grid_types"
+                        }
+                    }, 
+                    {
+                        "label": "Scheme", 
+                        "description": "Horizontal discretisation scheme in ocean", 
+                        "id": "cmip6.ocean.grid.vertical.scheme", 
+                        "uiOrdinal": 2, 
+                        "cardinality": "1.1", 
+                        "type": "enum", 
+                        "enum": {
+                            "description": "Types of horizonal scheme in ocean", 
+                            "choices": [
+                                {
+                                    "label": "Finite difference / Arakawa B-grid", 
+                                    "description": null
+                                }, 
+                                {
+                                    "label": "Finite difference / Arakawa C-grid", 
+                                    "description": null
+                                }, 
+                                {
+                                    "label": "Finite difference / Arakawa E-grid", 
+                                    "description": null
+                                }, 
+                                {
+                                    "label": "Finite elements", 
+                                    "description": null
+                                }, 
+                                {
+                                    "label": "Finite volumes", 
+                                    "description": null
+                                }, 
+                                {
+                                    "label": "Unstructured grid", 
+                                    "description": null
+                                }
+                            ], 
+                            "id": "horizontal_scheme_types", 
+                            "isOpen": true, 
+                            "label": "horizontal_scheme_types"
+                        }
+                    }
+                ]
+            }, 
+            {
+                "label": "Horizontal", 
+                "description": "Type of horizontal discretisation scheme in ocean", 
+                "id": "cmip6.ocean.grid.horizontal", 
+                "properties": [
+                    {
+                        "label": "Coordinates", 
+                        "description": "Type of vertical coordinates in ocean", 
+                        "id": "cmip6.ocean.grid.horizontal.coordinates", 
+                        "uiOrdinal": 1, 
+                        "cardinality": "1.1", 
+                        "type": "enum", 
+                        "enum": {
+                            "description": "Types of vertical coordinates in ocean", 
+                            "choices": [
+                                {
+                                    "label": "Hybrid / ALE", 
+                                    "description": null
+                                }, 
+                                {
+                                    "label": "Hybrid / Z+S", 
+                                    "description": null
+                                }, 
+                                {
+                                    "label": "Hybrid / Z+isopycnic", 
+                                    "description": null
+                                }, 
+                                {
+                                    "label": "Hybrid / other", 
+                                    "description": null
+                                }, 
+                                {
+                                    "label": "Isopycnic - other", 
+                                    "description": "Other density-based coordinate"
+                                }, 
+                                {
+                                    "label": "Isopycnic - sigma 0", 
+                                    "description": "Density referenced to the surface"
+                                }, 
+                                {
+                                    "label": "Isopycnic - sigma 2", 
+                                    "description": "Density referenced to 2000 m"
+                                }, 
+                                {
+                                    "label": "Isopycnic - sigma 4", 
+                                    "description": "Density referenced to 4000 m"
+                                }, 
+                                {
+                                    "label": "P*", 
+                                    "description": null
+                                }, 
+                                {
+                                    "label": "Pressure referenced (P)", 
+                                    "description": null
+                                }, 
+                                {
+                                    "label": "S-coordinate", 
+                                    "description": null
+                                }, 
+                                {
+                                    "label": "Z**", 
+                                    "description": null
+                                }, 
+                                {
+                                    "label": "Z*-coordinate", 
+                                    "description": null
+                                }, 
+                                {
+                                    "label": "Z-coordinate", 
+                                    "description": null
+                                }
+                            ], 
+                            "id": "vertical_coordinate_types", 
+                            "isOpen": true, 
+                            "label": "vertical_coordinate_types"
+                        }
+                    }, 
+                    {
+                        "label": "Partial Steps", 
+                        "description": "Using partial steps with Z or Z* vertical coordinate in ocean ?", 
+                        "id": "cmip6.ocean.grid.horizontal.partial_steps", 
+                        "uiOrdinal": 2, 
+                        "cardinality": "1.1", 
+                        "type": "bool"
+                    }
+                ]
+            }
+        ], 
         "discretisation": {
             "label": "Discretisation", 
             "description": "Type of discretisation scheme in ocean", 
-            "id": "cmip6.ocean.grid.discretisation", 
-            "details": [
-                {
-                    "label": "Vertical", 
-                    "description": "Properties of vertical coordinate in ocean", 
-                    "id": "cmip6.ocean.grid.discretisation.vertical", 
-                    "properties": [
-                        {
-                            "label": "Coordinates", 
-                            "description": "Type of vertical coordinates in ocean", 
-                            "id": "cmip6.ocean.grid.discretisation.vertical.coordinates", 
-                            "uiOrdinal": 1, 
-                            "cardinality": "1.1", 
-                            "type": "enum", 
-                            "enum": {
-                                "description": "Types of vertical coordinates in ocean", 
-                                "choices": [
-                                    {
-                                        "label": "Hybrid / ALE", 
-                                        "description": null
-                                    }, 
-                                    {
-                                        "label": "Hybrid / Z+S", 
-                                        "description": null
-                                    }, 
-                                    {
-                                        "label": "Hybrid / Z+isopycnic", 
-                                        "description": null
-                                    }, 
-                                    {
-                                        "label": "Hybrid / other", 
-                                        "description": null
-                                    }, 
-                                    {
-                                        "label": "Isopycnic - other", 
-                                        "description": "Other density-based coordinate"
-                                    }, 
-                                    {
-                                        "label": "Isopycnic - sigma 0", 
-                                        "description": "Density referenced to the surface"
-                                    }, 
-                                    {
-                                        "label": "Isopycnic - sigma 2", 
-                                        "description": "Density referenced to 2000 m"
-                                    }, 
-                                    {
-                                        "label": "Isopycnic - sigma 4", 
-                                        "description": "Density referenced to 4000 m"
-                                    }, 
-                                    {
-                                        "label": "P*", 
-                                        "description": null
-                                    }, 
-                                    {
-                                        "label": "Pressure referenced (P)", 
-                                        "description": null
-                                    }, 
-                                    {
-                                        "label": "S-coordinate", 
-                                        "description": null
-                                    }, 
-                                    {
-                                        "label": "Z**", 
-                                        "description": null
-                                    }, 
-                                    {
-                                        "label": "Z*-coordinate", 
-                                        "description": null
-                                    }, 
-                                    {
-                                        "label": "Z-coordinate", 
-                                        "description": null
-                                    }
-                                ], 
-                                "id": "vertical_coordinate_types", 
-                                "isOpen": true, 
-                                "label": "vertical_coordinate_types"
-                            }
-                        }, 
-                        {
-                            "label": "Partial Steps", 
-                            "description": "Using partial steps with Z or Z* vertical coordinate in ocean ?", 
-                            "id": "cmip6.ocean.grid.discretisation.vertical.partial_steps", 
-                            "uiOrdinal": 2, 
-                            "cardinality": "1.1", 
-                            "type": "bool"
-                        }
-                    ]
-                }, 
-                {
-                    "label": "Horizontal", 
-                    "description": "Type of horizontal discretisation scheme in ocean", 
-                    "id": "cmip6.ocean.grid.discretisation.horizontal", 
-                    "properties": [
-                        {
-                            "label": "Type", 
-                            "description": "Horizontal grid type", 
-                            "id": "cmip6.ocean.grid.discretisation.horizontal.type", 
-                            "uiOrdinal": 1, 
-                            "cardinality": "1.1", 
-                            "type": "enum", 
-                            "enum": {
-                                "description": "Types of horizonal grid in ocean", 
-                                "choices": [
-                                    {
-                                        "label": "Lat-lon", 
-                                        "description": null
-                                    }, 
-                                    {
-                                        "label": "Rotated north pole", 
-                                        "description": null
-                                    }, 
-                                    {
-                                        "label": "Two north poles (ORCA-style)", 
-                                        "description": null
-                                    }
-                                ], 
-                                "id": "horizontal_grid_types", 
-                                "isOpen": true, 
-                                "label": "horizontal_grid_types"
-                            }
-                        }, 
-                        {
-                            "label": "Scheme", 
-                            "description": "Horizontal discretisation scheme in ocean", 
-                            "id": "cmip6.ocean.grid.discretisation.horizontal.scheme", 
-                            "uiOrdinal": 2, 
-                            "cardinality": "1.1", 
-                            "type": "enum", 
-                            "enum": {
-                                "description": "Types of horizonal scheme in ocean", 
-                                "choices": [
-                                    {
-                                        "label": "Finite difference / Arakawa B-grid", 
-                                        "description": null
-                                    }, 
-                                    {
-                                        "label": "Finite difference / Arakawa C-grid", 
-                                        "description": null
-                                    }, 
-                                    {
-                                        "label": "Finite difference / Arakawa E-grid", 
-                                        "description": null
-                                    }, 
-                                    {
-                                        "label": "Finite elements", 
-                                        "description": null
-                                    }, 
-                                    {
-                                        "label": "Finite volumes", 
-                                        "description": null
-                                    }, 
-                                    {
-                                        "label": "Unstructured grid", 
-                                        "description": null
-                                    }
-                                ], 
-                                "id": "horizontal_scheme_types", 
-                                "isOpen": true, 
-                                "label": "horizontal_scheme_types"
-                            }
-                        }
-                    ]
-                }
-            ]
+            "id": "cmip6.ocean.grid.discretisation"
         }
     }, 
     "keyProperties": {
@@ -2289,14 +2295,6 @@
                             "uiOrdinal": 2, 
                             "cardinality": "0.1", 
                             "type": "str"
-                        }, 
-                        {
-                            "label": "Citations", 
-                            "description": "Set of pertinent citations.", 
-                            "id": "cmip6.ocean.key_properties.conservation.details.citations", 
-                            "uiOrdinal": 3, 
-                            "cardinality": "0.N", 
-                            "type": "shared.citation"
                         }
                     ]
                 }

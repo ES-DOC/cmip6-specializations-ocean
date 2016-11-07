@@ -1,7 +1,8 @@
 cmip6-id, cmip6-label, cmip6-type
+cmip6.ocean.grid.discretisation, Ocean > Grid > Discretisation, detail
+cmip6.ocean.grid.vertical, Ocean > Grid > Vertical, detail
+cmip6.ocean.grid.horizontal, Ocean > Grid > Horizontal, detail
 cmip6.ocean.grid.discretisation, Ocean > Grid > Discretisation, grid-discretisation
-cmip6.ocean.grid.discretisation.vertical, Ocean > Grid > Discretisation > Vertical, detail
-cmip6.ocean.grid.discretisation.horizontal, Ocean > Grid > Discretisation > Horizontal, detail
 , , 
 cmip6.ocean.key_properties.general, Ocean > Key Properties > General, detail
 cmip6.ocean.key_properties.seawater_properties, Ocean > Key Properties > Seawater Properties, detail
