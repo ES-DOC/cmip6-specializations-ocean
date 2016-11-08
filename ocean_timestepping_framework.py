@@ -3,11 +3,27 @@
 For further information goto http://wordpress.es-doc.org/cmip6-model-specializations.
 
 """
-
 # --------------------------------------------------------------------
 # INTERNAL (do not change)
 # --------------------------------------------------------------------
 from collections import OrderedDict
+
+DETAILS = OrderedDict()
+SUB_PROCESSES = OrderedDict()
+ENUMERATIONS = OrderedDict()
+
+# Default process details pulled from CIM.
+DETAILS['CIM'] = {
+    'description': 'Key properties of the ocean advection',
+    'properties':[
+        ('implementation_overview','str', '1.1',
+            "General overview description of the implementation of this part of the process."),
+        ('keywords','str', '0.N',
+            "Keywords to help re-use and discovery of this information."),
+        ('citations','shared.citation', '0.N',
+            "Set of pertinent citations."),
+    ]
+}
 
 # --------------------------------------------------------------------
 # CONTACT
@@ -31,29 +47,10 @@ AUTHORS = 'Eric Guilyardi'
 QC_STATUS = 'draft'
 
 # --------------------------------------------------------------------
-# PROCESS: DESCRIPTION
-#
-# Scientific context of the process
-# --------------------------------------------------------------------
-DETAILS = OrderedDict()
-
-# Inherited from the CIM class - DO NOT CHANGE
-DETAILS['cim'] ={
-    'description': 'Key properties of the ocean time stepping framework',
-    'properties':[
-        ('implementation_overview','str', '1.1',
-        "General overview description of the implementation of this part of the process."),
-        ('keywords','str', '0.N', "keywords to help re-use and discovery of this information."),
-        ('citations','shared.citation', '0.N', "Set of pertinent citations."),
-    ]
-}
-
-# --------------------------------------------------------------------
 # PROCESS: DETAILS
 #
-# Sets of details for the process
+# Sets of user defined process details.
 # --------------------------------------------------------------------
-
 DETAILS['timestepping_attributes'] = {
     'description': 'Properties of time stepping in ocean',
     'properties': [
@@ -90,12 +87,9 @@ DETAILS['barotropic_momentum_scheme'] = {
     ]
 }
 
-
 # --------------------------------------------------------------------
 # ENUMERATIONS
 # --------------------------------------------------------------------
-ENUMERATIONS = OrderedDict()
-
 ENUMERATIONS['diurnal_cycle_types'] = {
     'description': 'Types of diurnal cycle resolution in ocean',
     'is_open': True,

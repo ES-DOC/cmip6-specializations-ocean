@@ -3,11 +3,27 @@
 For further information goto http://wordpress.es-doc.org/cmip6-model-specializations.
 
 """
-
 # --------------------------------------------------------------------
 # INTERNAL (do not change)
 # --------------------------------------------------------------------
 from collections import OrderedDict
+
+DETAILS = OrderedDict()
+SUB_PROCESSES = OrderedDict()
+ENUMERATIONS = OrderedDict()
+
+# Default process details pulled from CIM.
+DETAILS['CIM'] = {
+    'description': 'Key properties of the ocean advection',
+    'properties':[
+        ('implementation_overview','str', '1.1',
+            "General overview description of the implementation of this part of the process."),
+        ('keywords','str', '0.N',
+            "Keywords to help re-use and discovery of this information."),
+        ('citations','shared.citation', '0.N',
+            "Set of pertinent citations."),
+    ]
+}
 
 # --------------------------------------------------------------------
 # CONTACT
@@ -31,29 +47,10 @@ AUTHORS = 'Eric Guilyardi'
 QC_STATUS = 'draft'
 
 # --------------------------------------------------------------------
-# PROCESS: DESCRIPTION
-#
-# Scientific context of the process
-# --------------------------------------------------------------------
-DETAILS = OrderedDict()
-
-# Inherited from the CIM class - DO NOT CHANGE
-DETAILS['cim'] ={
-    'description': 'Key properties of the ocean boundary forcing',
-    'properties':[
-        ('implementation_overview','str', '1.1',
-        "General overview description of the implementation of this part of the process."),
-        ('keywords','str', '0.N', "keywords to help re-use and discovery of this information."),
-        ('citations','shared.citation', '0.N', "Set of pertinent citations."),
-    ]
-}
-
-# --------------------------------------------------------------------
 # PROCESS: DETAILS
 #
-# Sets of details for the process
+# Sets of user defined process details.
 # --------------------------------------------------------------------
-
 DETAILS['boundary_forcing_details'] = {
     'description': 'Properties of boundary forcing',
     'properties': [
@@ -73,12 +70,8 @@ DETAILS['boundary_forcing_details'] = {
 }
 
 # --------------------------------------------------------------------
-# PROCESS: SUB PROCESSES
-#
-# Sets of discrete portions of the process
+# SUB-PROCESS: Momentum.
 # --------------------------------------------------------------------
-SUB_PROCESSES = OrderedDict()
-
 SUB_PROCESSES['momentum'] = {
     'description': 'Key properties of momentum boundary forcing in the ocean',
     'detail_sets': [
@@ -86,20 +79,6 @@ SUB_PROCESSES['momentum'] = {
         'lateral_friction'
         ]
 }
-
-SUB_PROCESSES['tracers'] = {
-    'description': 'Key properties of tracer boundary forcing in the ocean',
-    'detail_sets': [
-        'sunlight_penetration',
-        'fresh_water_forcing',
-        ]
-}
-
-# --------------------------------------------------------------------
-# PROCESS: SUB PROCESSES: DETAILS
-#
-# Sets of details for the sub processes
-# --------------------------------------------------------------------
 
 SUB_PROCESSES['momentum:bottom_friction'] = {
     'description': 'Properties of momentum bottom friction in ocean',
@@ -114,6 +93,17 @@ SUB_PROCESSES['momentum:lateral_friction'] = {
     'properties': [
         ('type', 'ENUM:mom_lateral_friction_types', '1.1',
             'Type of momentum lateral friction in ocean'),
+        ]
+}
+
+# --------------------------------------------------------------------
+# SUB-PROCESS: Tracers.
+# --------------------------------------------------------------------
+SUB_PROCESSES['tracers'] = {
+    'description': 'Key properties of tracer boundary forcing in the ocean',
+    'detail_sets': [
+        'sunlight_penetration',
+        'fresh_water_forcing',
         ]
 }
 
@@ -141,12 +131,9 @@ SUB_PROCESSES['tracers:fresh_water_forcing'] = {
         ]
 }
 
-
 # --------------------------------------------------------------------
 # ENUMERATIONS
 # --------------------------------------------------------------------
-ENUMERATIONS = OrderedDict()
-
 ENUMERATIONS['mom_bottom_friction_types'] = {
     'description': 'Type of momentum bottom friction in ocean',
     'is_open': True,
