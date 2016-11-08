@@ -35,22 +35,24 @@ QC_STATUS = 'draft'
 #
 # High level list of key properties.
 # --------------------------------------------------------------------
-DESCRIPTION = 'Key properties of the ocean'
+DETAILS = OrderedDict()
 
-IMPLEMENTATION_OVERVIEW = ('str', '1.1', "General overview description of the implementation of this part of the process.")
-
-KEYWORDS = ('str', '0.1', "keywords to help re-use and discovery of this information.")
-
-CITATIONS = ('shared.citation', '0.N', "Set of pertinent citations."),
-
-#TIME_STEP = ('float', '0.1', "Timestep (in seconds) of overall component.") -> see ocean_timestepping_framework.py
+# Inherited from the CIM class - DO NOT CHANGE
+DETAILS['cim'] ={
+    'description': 'Key properties of the ocean',
+    'properties':[
+        ('implementation_overview','str', '1.1',
+        "General overview description of the implementation of this part of the process."),
+        ('keywords','str', '0.N', "keywords to help re-use and discovery of this information."),
+        ('citations','shared.citation', '0.N', "Set of pertinent citations."),
+ ]
+}
 
 # --------------------------------------------------------------------
 # KEY PROPERTIES: DETAILS
 #
 # Sets of details for the key properties
 # --------------------------------------------------------------------
-DETAILS = OrderedDict()
 
 DETAILS['general'] = {
     'description': 'General key properties in ocean',
@@ -108,28 +110,14 @@ DETAILS['nonoceanic_waters'] = {
        ]
 }
 
-# --------------------------------------------------------------------
-# KEY PROPERTIES: EXTENT
-#
-# <DESCRIPTION NEEDED>
-# --------------------------------------------------------------------
-EXTENT = OrderedDict()
-
-# --------------------------------------------------------------------
-# KEY PROPERTIES: EXTENT DETAILS
-#
-# Sets of details for the extent.
-# --------------------------------------------------------------------
-EXTENT_DETAILS = OrderedDict()
 
 # --------------------------------------------------------------------
 # KEY PROPERTIES: RESOLUTION
 #
 # The resolution of the grid.
 # --------------------------------------------------------------------
-RESOLUTION = OrderedDict()
 
-RESOLUTION['resolution'] = {
+DETAILS['resolution'] = {
     'description': 'Resolution in the ocean grid',
     'properties': [
         ('name', 'str', '1.1',
@@ -142,34 +130,19 @@ RESOLUTION['resolution'] = {
              "Number of vertical levels resolved on computational grid."),
         ('is_adaptive_grid', 'bool', '0.1',
              "Default is False. Set true if grid resolution changes during execution."),
-        ('citations', 'shared.citation', '0.N',
-             "Set of pertinent citations."), 
-    ],
-    # Sets of extra properties
-    'details': [ 
-        'thickness_level_1',
+        ('thickness_level_1','float', '1.1',
+             "Thickness of first surface ocean level (in meters)")
     ],
 }
-
-# --------------------------------------------------------------------
-# KEY PROPERTIES: RESOLUTION DETAILS
-#
-# Sets of details for the resolution
-# --------------------------------------------------------------------
-RESOLUTION_DETAILS = OrderedDict()
-
-RESOLUTION_DETAILS['thickness_level_1'] = (
-    'float', '1.1', 'Thickness of first surface ocean level (in meters)')
 
 # --------------------------------------------------------------------
 # KEY PROPERTIES: TUNING APPLIED
 #
 # Any tuning used to optimise the parameters in this realm
 # --------------------------------------------------------------------
-TUNING_APPLIED = OrderedDict()
 
 #
-TUNING_APPLIED['tuning_applied'] = {
+DETAILS['tuning_applied'] = {
     'description': 'Tuning methodology for ocean component',
     'properties': [
         ('description', 'str', '1.1',
@@ -183,57 +156,29 @@ TUNING_APPLIED['tuning_applied'] = {
              "List of regional metrics of mean state (e.g THC, AABW, regional means etc) used in tuning model/component"),
         ('trend_metrics_used', 'str', '0.N',
              "List observed trend metrics used in tuning model/component"),
-        ('citations', 'shared.citation', '0.N',
-             "Set of pertinent citations."), 
-    ],
-    'details':[]
+    ]
 }
 
 # --------------------------------------------------------------------
-# KEY PROPERTIES: TUNING APPLIED DETAILS
-#
-# Sets of details for the tuning
-# --------------------------------------------------------------------
-TUNING_APPLIED_DETAILS = OrderedDict()
-
-# --------------------------------------------------------------------
-# KEY PROPERTIES: EXTRA CONSERVATION PROPERTIES
+# KEY PROPERTIES: CONSERVATION PROPERTIES
 #
 # Details of methodology needed to conserve variables between
 # processes
 # --------------------------------------------------------------------
-EXTRA_CONSERVATION_PROPERTIES = OrderedDict()
 
-EXTRA_CONSERVATION_PROPERTIES['conservation'] = {
+DETAILS['conservation'] = {
     'description': 'Conservation in the ocean component',
     'properties': [
         ('description', 'str', '1.1', 'Brief description of conservation methodology'),
-        ('corrected_conserved_prognostic_variables', 'data.variable_collection', '0.1', # Can we constrains these variable
-             "Set of variables which are conserved by *more* than the numerical scheme alone."),
-        ('flux_correction_was_used', 'bool', '0.1',
-             "Does conservation involved flux correction ?"),
-        ('citations', 'shared.citation', '0.N',
-             "Set of pertinent citations."), 
-    ],
-    # Extra properties
-    'details': ['details'],
-}
-
-# --------------------------------------------------------------------
-# KEY PROPERTIES: EXTRA CONSERVATION PROPERTIES DETAILS
-#
-# Sets of details for the conservation
-# --------------------------------------------------------------------
-EXTRA_CONSERVATION_PROPERTIES_DETAILS = OrderedDict()
-
-EXTRA_CONSERVATION_PROPERTIES_DETAILS['details'] = {
-    'description': 'Extra properties of conservation in the ocean component',
-    'properties': [
         ('scheme', 'ENUM:conservation_props_types', '1.N',
             'Properties conserved in the ocean by the numerical schemes'),
         ('consistency_properties', 'str','0.1',
             'Any additional consistency properties (energy conversion, pressure gradient discretisation, ...)?'),
-    ]
+        ('corrected_conserved_prognostic_variables', 'data.variable_collection', '0.1', # Can we constrains these variable
+             "Set of variables which are conserved by *more* than the numerical scheme alone."),
+        ('was_flux_correction_used', 'bool', '0.1',
+             "Does conservation involved flux correction ?"),
+    ],
 }
 
 # --------------------------------------------------------------------

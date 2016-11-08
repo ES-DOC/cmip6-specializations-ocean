@@ -35,45 +35,35 @@ QC_STATUS = 'draft'
 #
 # Scientific context of the grid
 # --------------------------------------------------------------------
-DESCRIPTION = 'Ocean grid and discretisation'
-
-IMPLEMENTATION_OVERVIEW = ('str', '1.1', "General overview description of the implementation of this part of the process.")
-
-KEYWORDS = ('str', '0.1', "keywords to help re-use and discovery of this information.")
-
-CITATIONS = ('shared.citation', '0.N', "Set of pertinent citations."),
-
-# --------------------------------------------------------------------
-# GRID: DETAILS
-#
-# Sets of details for the grid
-# --------------------------------------------------------------------
 DETAILS = OrderedDict()
+
+# Inherited from the CIM class - DO NOT CHANGE
+DETAILS['cim'] ={
+    'description': 'Key properties of the ocean grid',
+    'properties':[
+        ('implementation_overview','str', '1.1',
+        "General overview description of the implementation of this part of the process."),
+        ('keywords','str', '0.N', "keywords to help re-use and discovery of this information."),
+        ('citations','shared.citation', '0.N', "Set of pertinent citations."),
+ ]
+}
 
 # --------------------------------------------------------------------
 # DISCRETISATION
 #
 # Description of the numerics of the discretisation
 # --------------------------------------------------------------------
-DISCRETISATION = OrderedDict()
 
-DISCRETISATION['discretisation'] = {
+DETAILS['discretisation'] = {
     'description': 'Type of discretisation scheme in ocean',
-    'details': [
+    'detail_sets': [
         'horizontal',
         'vertical'
         ]
 }
 
-# --------------------------------------------------------------------
-# DISCRETISATION: DETAILS
-#
-# Sets of details for the discretisation
-# --------------------------------------------------------------------
-DISCRETISATION_DETAILS = OrderedDict()
-
-DISCRETISATION_DETAILS['vertical'] = {
-    'description': 'Properties of vertical coordinate in ocean',
+DETAILS['discretisation:vertical'] = {
+    'description': 'Properties of vertical discretisation in ocean',
     'properties': [
         ('coordinates', 'ENUM:vertical_coordinate_types', '1.1',
             'Type of vertical coordinates in ocean'),
@@ -82,7 +72,7 @@ DISCRETISATION_DETAILS['vertical'] = {
         ]
 }
 
-DISCRETISATION_DETAILS['horizontal'] = {
+DETAILS['discretisation:horizontal'] = {
     'description': 'Type of horizontal discretisation scheme in ocean',
     'properties': [
         ('type', 'ENUM:horizontal_grid_types', '1.1',

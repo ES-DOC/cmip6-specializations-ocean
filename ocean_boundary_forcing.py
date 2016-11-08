@@ -77,7 +77,7 @@ SUB_PROCESSES = OrderedDict()
 
 SUB_PROCESSES['momentum'] = {
     'description': 'Key properties of momentum boundary forcing in the ocean',
-    'details': [
+    'detail_sets': [
         'bottom_friction',
         'lateral_friction'
         ]
@@ -85,7 +85,7 @@ SUB_PROCESSES['momentum'] = {
 
 SUB_PROCESSES['tracers'] = {
     'description': 'Key properties of tracer boundary forcing in the ocean',
-    'details': [
+    'detail_sets': [
         'sunlight_penetration',
         'fresh_water_forcing',
         ]
@@ -96,9 +96,8 @@ SUB_PROCESSES['tracers'] = {
 #
 # Sets of details for the sub processes
 # --------------------------------------------------------------------
-SUB_PROCESS_DETAILS = OrderedDict()
 
-SUB_PROCESS_DETAILS['momentum:bottom_friction'] = {
+SUB_PROCESSES['momentum:bottom_friction'] = {
     'description': 'Properties of momentum bottom friction in ocean',
     'properties': [
         ('type', 'ENUM:mom_bottom_friction_types', '1.1',
@@ -106,7 +105,7 @@ SUB_PROCESS_DETAILS['momentum:bottom_friction'] = {
         ]
 }
 
-SUB_PROCESS_DETAILS['momentum:lateral_friction'] = {
+SUB_PROCESSES['momentum:lateral_friction'] = {
    'description': 'Properties of momentum lateral friction in ocean',
     'properties': [
         ('type', 'ENUM:mom_lateral_friction_types', '1.1',
@@ -114,7 +113,7 @@ SUB_PROCESS_DETAILS['momentum:lateral_friction'] = {
         ]
 }
 
-SUB_PROCESS_DETAILS['tracers:sunlight_penetration'] = {
+SUB_PROCESSES['tracers:sunlight_penetration'] = {
     'description': 'Properties of sunlight penetration scheme in ocean',
     'properties': [
          ('scheme', 'ENUM:sunlight_penetration_scheme_types', '1.1',
@@ -126,7 +125,7 @@ SUB_PROCESS_DETAILS['tracers:sunlight_penetration'] = {
         ]
 }
 
-SUB_PROCESS_DETAILS['tracers:fresh_water_forcing'] = {
+SUB_PROCESSES['tracers:fresh_water_forcing'] = {
     'description': 'Properties of surface fresh water forcing in ocean',
     'properties': [
         ('from_atmopshere', 'ENUM:surface_fresh_water_forcing_atmos_types', '1.1',

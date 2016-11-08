@@ -57,29 +57,13 @@ DETAILS = OrderedDict()
 # --------------------------------------------------------------------
 SUB_PROCESSES = OrderedDict()
 
-SUB_PROCESSES['momemtum'] = {
-    'description': 'Properties of lateral momemtum advection scheme in ocean',
-    'details': ['details']
-}
-
-SUB_PROCESSES['lateral_tracers'] = {
-    'description': 'Properties of lateral tracer advection scheme in ocean',
-    'details': ['details']
-}
-
-SUB_PROCESSES['vertical_tracers'] = {
-    'description': 'Properties of vertical momemtum advection scheme in ocean',
-    'details': ['details']
-}
-
 # --------------------------------------------------------------------
 # PROCESS: SUB PROCESSES: DETAILS
 #
 # Sets of details for the sub processes
 # --------------------------------------------------------------------
-SUB_PROCESS_DETAILS = OrderedDict()
 
-SUB_PROCESS_DETAILS['momemtum:details'] = {
+SUB_PROCESSES['momentum'] = {
     'description': 'Properties of lateral momemtum advection scheme in ocean',
     'properties': [
         ('type', 'ENUM:adv_mom_scheme_types', '1.1',
@@ -91,7 +75,7 @@ SUB_PROCESS_DETAILS['momemtum:details'] = {
         ]
 }
 
-SUB_PROCESS_DETAILS['lateral_tracers:details'] = {
+SUB_PROCESSES['lateral_tracers'] = {
     'description':'Properties of lateral tracer advection scheme in ocean',
     'properties': [
         ('type', 'ENUM:adv_tra_scheme_types', '1.1',
@@ -105,7 +89,7 @@ SUB_PROCESS_DETAILS['lateral_tracers:details'] = {
         ]
 }
 
-SUB_PROCESS_DETAILS['vertical_tracers:details'] = {
+SUB_PROCESSES['vertical_tracers'] = {
     'description': 'Properties of vertical tracer advection scheme in ocean',
     'properties': [
         ('type', 'ENUM:adv_tra_scheme_types', '1.1',

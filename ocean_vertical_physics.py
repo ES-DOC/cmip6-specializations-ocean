@@ -81,9 +81,9 @@ SUB_PROCESSES['interior_mixing'] = {
 #
 # Sets of details for the sub processes
 # --------------------------------------------------------------------
-SUB_PROCESS_DETAILS = OrderedDict()
+SUB_PROCESSES = OrderedDict()
 
-SUB_PROCESS_DETAILS['boundary_layer_mixing:details'] = {
+SUB_PROCESSES['boundary_layer_mixing:details'] = {
     'description': 'Properties of vertical physics in ocean',
     'properties': [
         ('langmuir_cells_mixing', 'bool', '1.1',
@@ -91,7 +91,7 @@ SUB_PROCESS_DETAILS['boundary_layer_mixing:details'] = {
         ]
 }
 
-SUB_PROCESS_DETAILS['boundary_layer_mixing:tracers'] = {
+SUB_PROCESSES['boundary_layer_mixing:tracers'] = {
     'description': 'Properties of boundary layer (BL) mixing on tracers in the ocean ',
     'properties': [
         ('type', 'ENUM:bndlayer_mixing_types', '1.1',
@@ -105,7 +105,7 @@ SUB_PROCESS_DETAILS['boundary_layer_mixing:tracers'] = {
         ]
 }
 
-SUB_PROCESS_DETAILS['boundary_layer_mixing:momentum'] = {
+SUB_PROCESSES['boundary_layer_mixing:momentum'] = {
     'description': 'Properties of boundary layer (BL) mixing on momentum in the ocean ',
     'properties': [
         ('type', 'ENUM:bndlayer_mixing_types', '1.1',
@@ -120,7 +120,7 @@ SUB_PROCESS_DETAILS['boundary_layer_mixing:momentum'] = {
         ]
 }
 
-SUB_PROCESS_DETAILS['interior_mixing:details'] = {
+SUB_PROCESSES['interior_mixing:details'] = {
     'description': 'Properties of interior mixing in the ocean ',
     'properties': [
         ('convection_type', 'ENUM:vertphys_convection_types', '1.1',
@@ -134,7 +134,7 @@ SUB_PROCESS_DETAILS['interior_mixing:details'] = {
         ]
 }
 
-SUB_PROCESS_DETAILS['interior_mixing:tracers'] = {
+SUB_PROCESSES['interior_mixing:tracers'] = {
     'description': 'Properties of interior mixing on tracers in the ocean ',
     'properties': [
         ('type', 'ENUM:interior_mixing_types', '1.1',
@@ -148,7 +148,7 @@ SUB_PROCESS_DETAILS['interior_mixing:tracers'] = {
         ]
 }
 
-SUB_PROCESS_DETAILS['interior_mixing:momentum'] = {
+SUB_PROCESSES['interior_mixing:momentum'] = {
     'description': 'Properties of interior mixing on momentum in the ocean ',
     'properties': [
         ('type', 'ENUM:interior_mixing_types', '1.1',

@@ -86,33 +86,6 @@ DETAILS['barotropic_momentum_scheme'] = {
     ]
 }
 
-# --------------------------------------------------------------------
-# PROCESS: SUB PROCESSES
-#
-# Sets of discrete portions of the process. Each sub-process needsa
-# <name> and <description>
-# --------------------------------------------------------------------
-SUB_PROCESSES = OrderedDict()
-
-#SUB_PROCESSES[<name>] = {
-#    'description': <description>
-#    'properties': [
-#        ('implementation_overview', 'str', '1.1',
-#             "General overview description of the implementation of this part of the process."),
-#        ('citations', 'shared.citation', '0.N',
-#             "Set of pertinent citations."), 
-#    ],
-#    # Extra properties
-#    'details': [],
-#}
-
-
-# --------------------------------------------------------------------
-# PROCESS: SUB PROCESSES: DETAILS
-#
-# Sets of details for the sub processes
-# --------------------------------------------------------------------
-SUB_PROCESSES_DETAILS = OrderedDict()
 
 # --------------------------------------------------------------------
 # ENUMERATIONS
