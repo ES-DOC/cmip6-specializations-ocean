@@ -9,6 +9,22 @@ For further information goto http://wordpress.es-doc.org/cmip6-model-specializat
 # --------------------------------------------------------------------
 from collections import OrderedDict
 
+DETAILS = OrderedDict()
+ENUMERATIONS = OrderedDict()
+
+# Default process details pulled from CIM.
+DETAILS['CIM'] = {
+    'description': 'Key properties of the ocean advection',
+    'properties':[
+        ('implementation_overview','str', '1.1',
+            "General overview description of the implementation of this part of the process."),
+        ('keywords','str', '0.N',
+            "Keywords to help re-use and discovery of this information."),
+        ('citations','shared.citation', '0.N',
+            "Set of pertinent citations."),
+    ]
+}
+
 # --------------------------------------------------------------------
 # CONTACT
 #
@@ -31,29 +47,10 @@ AUTHORS = 'Eric Guilyardi'
 QC_STATUS = 'draft'
 
 # --------------------------------------------------------------------
-# KEY PROPERTIES
-#
-# High level list of key properties.
-# --------------------------------------------------------------------
-DETAILS = OrderedDict()
-
-# Inherited from the CIM class - DO NOT CHANGE
-DETAILS['cim'] ={
-    'description': 'Key properties of the ocean',
-    'properties':[
-        ('implementation_overview','str', '1.1',
-        "General overview description of the implementation of this part of the process."),
-        ('keywords','str', '0.N', "keywords to help re-use and discovery of this information."),
-        ('citations','shared.citation', '0.N', "Set of pertinent citations."),
- ]
-}
-
-# --------------------------------------------------------------------
 # KEY PROPERTIES: DETAILS
 #
-# Sets of details for the key properties
+# Sets of details for the key properties.
 # --------------------------------------------------------------------
-
 DETAILS['general'] = {
     'description': 'General key properties in ocean',
     'properties': [
@@ -110,13 +107,11 @@ DETAILS['nonoceanic_waters'] = {
        ]
 }
 
-
 # --------------------------------------------------------------------
 # KEY PROPERTIES: RESOLUTION
 #
 # The resolution of the grid.
 # --------------------------------------------------------------------
-
 DETAILS['resolution'] = {
     'description': 'Resolution in the ocean grid',
     'properties': [
@@ -140,8 +135,6 @@ DETAILS['resolution'] = {
 #
 # Any tuning used to optimise the parameters in this realm
 # --------------------------------------------------------------------
-
-#
 DETAILS['tuning_applied'] = {
     'description': 'Tuning methodology for ocean component',
     'properties': [
@@ -165,7 +158,6 @@ DETAILS['tuning_applied'] = {
 # Details of methodology needed to conserve variables between
 # processes
 # --------------------------------------------------------------------
-
 DETAILS['conservation'] = {
     'description': 'Conservation in the ocean component',
     'properties': [
@@ -184,8 +176,6 @@ DETAILS['conservation'] = {
 # --------------------------------------------------------------------
 # KEY PROPERTIES: ENUMERATIONS
 # --------------------------------------------------------------------
-ENUMERATIONS = OrderedDict()
-
 ENUMERATIONS['model_family_types'] = {
     'description': 'Types of ocean models',
     'is_open': True,

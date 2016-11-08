@@ -9,6 +9,22 @@ For further information goto http://wordpress.es-doc.org/cmip6-model-specializat
 # --------------------------------------------------------------------
 from collections import OrderedDict
 
+DETAILS = OrderedDict()
+ENUMERATIONS = OrderedDict()
+
+# Default process details pulled from CIM.
+DETAILS['CIM'] = {
+    'description': 'Key properties of the ocean advection',
+    'properties':[
+        ('implementation_overview','str', '1.1',
+            "General overview description of the implementation of this part of the process."),
+        ('keywords','str', '0.N',
+            "Keywords to help re-use and discovery of this information."),
+        ('citations','shared.citation', '0.N',
+            "Set of pertinent citations."),
+    ]
+}
+
 # --------------------------------------------------------------------
 # CONTACT
 #
@@ -31,29 +47,8 @@ AUTHORS = 'Eric Guilyardi'
 QC_STATUS = 'draft'
 
 # --------------------------------------------------------------------
-# GRID: DESCRIPTION
-#
-# Scientific context of the grid
+# DISCRETISATION: Description of the numerics of the discretisation.
 # --------------------------------------------------------------------
-DETAILS = OrderedDict()
-
-# Inherited from the CIM class - DO NOT CHANGE
-DETAILS['cim'] ={
-    'description': 'Key properties of the ocean grid',
-    'properties':[
-        ('implementation_overview','str', '1.1',
-        "General overview description of the implementation of this part of the process."),
-        ('keywords','str', '0.N', "keywords to help re-use and discovery of this information."),
-        ('citations','shared.citation', '0.N', "Set of pertinent citations."),
- ]
-}
-
-# --------------------------------------------------------------------
-# DISCRETISATION
-#
-# Description of the numerics of the discretisation
-# --------------------------------------------------------------------
-
 DETAILS['discretisation'] = {
     'description': 'Type of discretisation scheme in ocean',
     'detail_sets': [
@@ -85,8 +80,6 @@ DETAILS['discretisation:horizontal'] = {
 # --------------------------------------------------------------------
 # ENUMERATIONS
 # --------------------------------------------------------------------
-ENUMERATIONS = OrderedDict()
-
 ENUMERATIONS['horizontal_grid_types'] = {
     'description': 'Types of horizonal grid in ocean',
     'is_open': True,

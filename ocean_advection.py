@@ -3,11 +3,27 @@
 For further information goto http://wordpress.es-doc.org/cmip6-model-specializations.
 
 """
-
 # --------------------------------------------------------------------
 # INTERNAL (do not change)
 # --------------------------------------------------------------------
 from collections import OrderedDict
+
+DETAILS = OrderedDict()
+SUB_PROCESSES = OrderedDict()
+ENUMERATIONS = OrderedDict()
+
+# Default process details pulled from CIM.
+DETAILS['CIM'] = {
+    'description': 'Key properties of the ocean advection',
+    'properties':[
+        ('implementation_overview','str', '1.1',
+            "General overview description of the implementation of this part of the process."),
+        ('keywords','str', '0.N',
+            "Keywords to help re-use and discovery of this information."),
+        ('citations','shared.citation', '0.N',
+            "Set of pertinent citations."),
+    ]
+}
 
 # --------------------------------------------------------------------
 # CONTACT
@@ -31,41 +47,8 @@ AUTHORS = 'Eric Guilyardi'
 QC_STATUS = 'draft'
 
 # --------------------------------------------------------------------
-# PROCESS: DESCRIPTION
-#
-# Scientific context of the process
+# SUB-PROCESS: Momentum.
 # --------------------------------------------------------------------
-DETAILS = OrderedDict()
-# Inherited from the CIM class - DO NOT CHANGE
-DETAILS['cim'] ={
-    'description': 'Key properties of the ocean advection',
-    'properties':[
-        ('implementation_overview','str', '1.1',
-        "General overview description of the implementation of this part of the process."),
-        ('keywords','str', '0.N', "keywords to help re-use and discovery of this information."),
-        ('citations','shared.citation', '0.N', "Set of pertinent citations."),
-    ]
-}
-
-# --------------------------------------------------------------------
-# PROCESS: DETAILS
-#
-# Sets of details for the process
-# --------------------------------------------------------------------
-
-# --------------------------------------------------------------------
-# PROCESS: SUB PROCESSES
-#
-# Sets of discrete portions of the process
-# --------------------------------------------------------------------
-SUB_PROCESSES = OrderedDict()
-
-# --------------------------------------------------------------------
-# PROCESS: SUB PROCESSES: DETAILS
-#
-# Sets of details for the sub processes
-# --------------------------------------------------------------------
-
 SUB_PROCESSES['momentum'] = {
     'description': 'Properties of lateral momemtum advection scheme in ocean',
     'properties': [
@@ -78,35 +61,39 @@ SUB_PROCESSES['momentum'] = {
         ]
 }
 
+# --------------------------------------------------------------------
+# SUB-PROCESS: Lateral tracers.
+# --------------------------------------------------------------------
 SUB_PROCESSES['lateral_tracers'] = {
     'description':'Properties of lateral tracer advection scheme in ocean',
     'properties': [
         ('type', 'ENUM:adv_tra_scheme_types', '1.1',
-            'Type of lateral tracer advection scheme in ocean'),
+            "Type of lateral tracer advection scheme in ocean"),
         ('flux_limiter', 'bool', '1.1',
-            'Monotonic flux limiter for vertical tracer advection scheme in ocean ?'),
+            "Monotonic flux limiter for vertical tracer advection scheme in ocean ?"),
         ('passive_tracers','ENUM:passive_tracers_list','0.N',
-            'Passive tracers advected'),
+            "Passive tracers advected"),
         ('passive_tracers_advection','str','0.1',
-            'Is advection of passive tracers different than active ? if so, describe')
+            "Is advection of passive tracers different than active ? if so, describe.")
         ]
 }
 
+# --------------------------------------------------------------------
+# SUB-PROCESS: Vertical tracers.
+# --------------------------------------------------------------------
 SUB_PROCESSES['vertical_tracers'] = {
     'description': 'Properties of vertical tracer advection scheme in ocean',
     'properties': [
         ('type', 'ENUM:adv_tra_scheme_types', '1.1',
-            'Type of vertical tracer advection scheme in ocean'),
+            "Type of vertical tracer advection scheme in ocean"),
         ('flux_limiter', 'bool', '1.1',
-            'Monotonic flux limiter for vertical tracer advection scheme in ocean ?'),
+            "Monotonic flux limiter for vertical tracer advection scheme in ocean ?"),
         ]
 }
 
 # --------------------------------------------------------------------
 # ENUMERATIONS
 # --------------------------------------------------------------------
-ENUMERATIONS = OrderedDict()
-
 ENUMERATIONS['adv_mom_scheme_types'] = {
     'description': 'Type of lateral momemtum advection scheme in ocean',
     'is_open': False,
