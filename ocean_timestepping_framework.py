@@ -39,7 +39,7 @@ DETAILS = OrderedDict()
 
 # Inherited from the CIM class - DO NOT CHANGE
 DETAILS['cim'] ={
-    'description': 'Key properties of the ocean timestepping framework',
+    'description': 'Key properties of the ocean time stepping framework',
     'properties':[
         ('implementation_overview','str', '1.1',
         "General overview description of the implementation of this part of the process."),
