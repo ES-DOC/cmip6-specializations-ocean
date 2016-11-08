@@ -123,9 +123,3 @@ CIM_PROFILE["science.realm[ocean].key_properties"] = {
 		"keywords",
 	]
 }
-
-# Null constraints used as plahceholders.
-NULL_CIM_PROFILE = {
-	"include": [],
-	"exclude": []
-}
