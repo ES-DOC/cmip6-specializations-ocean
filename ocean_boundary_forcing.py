@@ -35,20 +35,24 @@ QC_STATUS = 'draft'
 #
 # Scientific context of the process
 # --------------------------------------------------------------------
-DESCRIPTION = 'Properties of boundary forcing within the ocean component'
+DETAILS = OrderedDict()
 
-IMPLEMENTATION_OVERVIEW = ('str', '1.1', "General overview description of the implementation of this part of the process.")
-
-KEYWORDS = ('str', '0.1', "keywords to help re-use and discovery of this information.")
-
-CITATIONS = ('shared.citation', '0.N', "Set of pertinent citations."),
+# Inherited from the CIM class - DO NOT CHANGE
+DETAILS['cim'] ={
+    'description': 'Key properties of the ocean boundary forcing',
+    'properties':[
+        ('implementation_overview','str', '1.1',
+        "General overview description of the implementation of this part of the process."),
+        ('keywords','str', '0.N', "keywords to help re-use and discovery of this information."),
+        ('citations','shared.citation', '0.N', "Set of pertinent citations."),
+    ]
+}
 
 # --------------------------------------------------------------------
 # PROCESS: DETAILS
 #
 # Sets of details for the process
 # --------------------------------------------------------------------
-DETAILS = OrderedDict()
 
 DETAILS['boundary_forcing_details'] = {
     'description': 'Properties of boundary forcing',
