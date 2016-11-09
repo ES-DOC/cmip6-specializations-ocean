@@ -60,6 +60,8 @@ CITATIONS = ('shared.citation', '0.N', "Set of pertinent citations."),
 # --------------------------------------------------------------------
 REALM = 'ocean'
 
+#TODO: are these needed here or they come as part of the CIM ?
+
 NAME = ''
 
 LONG_NAME = ''
