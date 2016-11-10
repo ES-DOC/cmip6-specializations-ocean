@@ -14,9 +14,7 @@ import json
 
 
 from utils import get_label
-from utils_model import Grid
-from utils_model import GridDiscretisation
-from utils_model import KeyProperties
+from utils_model import Topic
 from utils_model import Process
 from utils_model import Realm
 from utils_parser import Parser
@@ -25,8 +23,6 @@ from utils_parser import Parser
 
 # Map of output types to keys.
 _JSON_KEYS = {
-    Grid: "grid",
-    KeyProperties: "keyProperties",
     Process: "process"
 }
 
@@ -85,19 +81,6 @@ class Generator(Parser):
         self._maps[grid] = obj
 
 
-    def on_grid_discretisation_parse(self, realm, grid, discretisation):
-        """On grid discretisation parse event handler.
-
-        """
-        obj = collections.OrderedDict()
-        obj['label'] = "Discretisation"
-        obj['description'] = discretisation.description
-        obj['id'] = discretisation.id
-
-        self._maps[discretisation] = obj
-        self._maps[grid]['discretisation'] = obj
-
-
     def on_key_properties_parse(self, realm, key_properties):
         """On key_properties parse event handler.
 
@@ -105,18 +88,6 @@ class Generator(Parser):
         obj = self._map_module(key_properties)
 
         self._maps[key_properties] = obj
-
-
-    def on_key_properties_conservation_parse(self, realm, grid, conservation):
-        """On key-properties conservation parse event handler.
-
-        """
-        obj = collections.OrderedDict()
-        obj['label'] = "Conservation"
-        obj['description'] = conservation.description
-
-        self._maps[conservation] = obj
-        self._maps[grid]['conservation'] = obj
 
 
     def on_process_parse(self, realm, process):
@@ -142,26 +113,26 @@ class Generator(Parser):
         self._maps[subprocess] = obj
 
 
-    def on_detail_parse(self, owner, detail):
-        """On process detail parse event handler.
+    def on_detail_set_parse(self, owner, detail_set):
+        """On process detail set parse event handler.
 
         """
         if owner not in self._maps:
             return
 
         obj = collections.OrderedDict()
-        obj['label'] = get_label(detail.name)
-        obj['description'] = detail.description
-        if detail.id is None:
-            detail.id = "{}.{}".format(owner.id, detail.name)
-        obj['id'] = detail.id
+        obj['label'] = get_label(detail_set.name)
+        obj['description'] = detail_set.description
+        if detail_set.id is None:
+            detail_set.id = "{}.{}".format(owner.id, detail_set.name)
+        obj['id'] = detail_set.id
         obj['properties'] = []
 
         owner = self._maps[owner]
         owner['details'] = owner.get('details', [])
         owner['details'].append(obj)
 
-        self._maps[detail] = obj
+        self._maps[detail_set] = obj
 
 
     def on_detail_property_parse(self, detail, prop):

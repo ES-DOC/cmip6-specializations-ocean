@@ -14,11 +14,6 @@ import operator
 import os
 
 from context import ValidationContext
-from validate_grid import validate as validate_grid
-from validate_key_properties import validate as validate_key_properties
-from validate_process import validate as validate_process
-from validate_realm import validate as validate_realm
-import utils
 import utils_loader
 
 
@@ -71,7 +66,7 @@ else:
     report.append(_REPORT_BREAK)
 
     # Set report errors.
-    for module, errors in in_error.items():
+    for module, errors in sorted(in_error.items()):
         report.append("{}.py".format(module.__name__))
         for idx, err in enumerate(errors):
             report.append("Error #{}:\t{}.".format(idx + 1, err))

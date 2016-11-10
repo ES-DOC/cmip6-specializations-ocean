@@ -16,12 +16,14 @@ ENUMERATIONS = OrderedDict()
 DETAILS['CIM'] = {
     'description': 'Key properties of the ocean advection',
     'properties':[
-        ('implementation_overview','str', '1.1',
-            "General overview description of the implementation of this part of the process."),
-        ('keywords','str', '0.N',
-            "Keywords to help re-use and discovery of this information."),
         ('citations','shared.citation', '0.N',
             "Set of pertinent citations."),
+        ('keywords','str', '0.N',
+            "Keywords to help re-use and discovery of this information."),
+        ('overview','str', '1.1',
+            "General implementation overview."),
+        ('responsibile_parties','shared.responsibility', '0.N',
+            "Set of parties responsible for providing this information."),
     ]
 }
 
@@ -47,6 +49,13 @@ AUTHORS = 'Eric Guilyardi'
 QC_STATUS = 'draft'
 
 # --------------------------------------------------------------------
+# DESCRIPTION
+#
+# Short description of the specialization.
+# --------------------------------------------------------------------
+DESCRIPTION = 'Ocean key properties'
+
+# --------------------------------------------------------------------
 # KEY PROPERTIES: DETAILS
 #
 # Sets of details for the key properties.
@@ -61,7 +70,7 @@ DETAILS['general'] = {
         ('prognostic_variables', 'ENUM:prognostic_vars_types', '1.N',
             'List of prognostic variables in the ocean component.'),
         ]
-}
+    }
 
 DETAILS['seawater_properties'] = {
     'description': 'Physical properties of seawater in ocean',
@@ -81,7 +90,7 @@ DETAILS['seawater_properties'] = {
         ('ocean_reference_density', 'float', '1.1',
             'Boussinesq reference density (rhozero) in kg / m3'),
         ]
-}
+    }
 
 DETAILS['bathymetry'] = {
     'description': 'Properties of bathymetry in ocean',
@@ -95,7 +104,7 @@ DETAILS['bathymetry'] = {
         ('source', 'str', '1.1',
             'Describe source of bathymetry in ocean'),
         ]
-}
+    }
 
 DETAILS['nonoceanic_waters'] = {
     'description': 'Non oceanic waters treatement in ocean',
@@ -105,7 +114,7 @@ DETAILS['nonoceanic_waters'] = {
         ('river_mouth','str', '0.1',
             'Describe if/how river mouth mixing or estuaries specific treatment is performed'),
        ]
-}
+    }
 
 # --------------------------------------------------------------------
 # KEY PROPERTIES: RESOLUTION
@@ -127,8 +136,8 @@ DETAILS['resolution'] = {
              "Default is False. Set true if grid resolution changes during execution."),
         ('thickness_level_1','float', '1.1',
              "Thickness of first surface ocean level (in meters)")
-    ],
-}
+        ],
+    }
 
 # --------------------------------------------------------------------
 # KEY PROPERTIES: TUNING APPLIED
@@ -149,8 +158,8 @@ DETAILS['tuning_applied'] = {
              "List of regional metrics of mean state (e.g THC, AABW, regional means etc) used in tuning model/component"),
         ('trend_metrics_used', 'str', '0.N',
              "List observed trend metrics used in tuning model/component"),
-    ]
-}
+        ]
+    }
 
 # --------------------------------------------------------------------
 # KEY PROPERTIES: CONSERVATION PROPERTIES
@@ -166,12 +175,12 @@ DETAILS['conservation'] = {
             'Properties conserved in the ocean by the numerical schemes'),
         ('consistency_properties', 'str','0.1',
             'Any additional consistency properties (energy conversion, pressure gradient discretisation, ...)?'),
-        ('corrected_conserved_prognostic_variables', 'data.variable_collection', '0.1', # Can we constrains these variable
+        ('corrected_conserved_prognostic_variables', 'str', '0.1', # Can we constrains these variable
              "Set of variables which are conserved by *more* than the numerical scheme alone."),
         ('was_flux_correction_used', 'bool', '0.1',
              "Does conservation involved flux correction ?"),
-    ],
-}
+        ],
+    }
 
 # --------------------------------------------------------------------
 # KEY PROPERTIES: ENUMERATIONS
@@ -183,8 +192,8 @@ ENUMERATIONS['model_family_types'] = {
         ('OGCM', None),
         ('slab ocean', None),
         ('mixed layer ocean', None)
-    ]
-}
+        ]
+    }
 
 ENUMERATIONS['ocean_basic_approx_types'] = {
     'description': 'Types of basic approximation in ocean',
@@ -193,8 +202,8 @@ ENUMERATIONS['ocean_basic_approx_types'] = {
         ('Primitive equations', None),
         ('Non-hydrostatic', None),
         ('Boussinesq', None)
-    ]
-}
+        ]
+    }
 
 ENUMERATIONS['prognostic_vars_types'] = {
     'description': 'List of prognostic variables in ocean',
@@ -207,8 +216,8 @@ ENUMERATIONS['prognostic_vars_types'] = {
         ('V-velocity', None),
         ('W-velocity', None),
         ('SSH', 'Sea Surface Height')
-    ]
-}
+        ]
+    }
 
 ENUMERATIONS['seawater_eos_types'] = {
     'description': 'Types of seawater Equation of State in ocean',
@@ -219,7 +228,7 @@ ENUMERATIONS['seawater_eos_types'] = {
         ('Jackett et al. 2006', None),
         ('TEOS 2010', None)
         ]
-}
+    }
 
 ENUMERATIONS['seawater_eos_func_temp'] = {
     'description': 'Types of temperature used in EOS in ocean',
@@ -228,7 +237,7 @@ ENUMERATIONS['seawater_eos_func_temp'] = {
         ('Potential temperature', None),
         ('Conservative temperature', None),
         ]
-}
+    }
 
 ENUMERATIONS['seawater_eos_func_salt'] = {
     'description': 'Types of salinity used in EOS in ocean',
@@ -237,7 +246,7 @@ ENUMERATIONS['seawater_eos_func_salt'] = {
         ('Practical salinity Sp', None),
         ('Absolute salinity Sa', None),
         ]
-}
+    }
 
 ENUMERATIONS['seawater_eos_func_depth'] = {
     'description': 'Types of depth used in EOS in ocean',
@@ -246,7 +255,7 @@ ENUMERATIONS['seawater_eos_func_depth'] = {
         ('Pressure (dbars)', None),
         ('Depth (meters)', None),
         ]
-}
+    }
 
 ENUMERATIONS['seawater_freezing_point'] = {
     'description': 'Types of seawater freezing point equation in ocean',
@@ -254,7 +263,7 @@ ENUMERATIONS['seawater_freezing_point'] = {
     'members': [
         ('TEOS 2010', None)
         ]
-}
+    }
 
 ENUMERATIONS['bathymetry_ref_dates'] = {
     'description': 'List of reference dates for bathymetry in ocean',
@@ -266,7 +275,7 @@ ENUMERATIONS['bathymetry_ref_dates'] = {
         ('LGM', 'Last Glacial Maximum'),
         ('Pliocene', None)
         ]
-}
+    }
 
 ENUMERATIONS['conservation_props_types'] = {
     'description': 'List of properties that can be conserved in ocean',
@@ -278,4 +287,4 @@ ENUMERATIONS['conservation_props_types'] = {
         ('Volume of ocean', None),
         ('Momentum', None)
         ]
-}
+    }

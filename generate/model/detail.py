@@ -14,7 +14,7 @@ from .specialization import Specialization
 
 
 
-class Detail(Specialization):
+class DetailSet(Specialization):
     """Wraps a detail specialization.
 
     """
@@ -22,7 +22,7 @@ class Detail(Specialization):
         """Instance constructor.
 
         """
-        super(Detail, self).__init__(mod)
+        super(DetailSet, self).__init__(mod)
 
         # Contract name where container is referenced as part of the name.
         name = name.split(":")[-1]
@@ -34,10 +34,10 @@ class Detail(Specialization):
         self.obj = obj
         self.cfg_section = "detail"
         self.description = self.obj['description']
-        self.properties = [DetailProperty(mod, self, i) for i in self.obj['properties']]
+        self.properties = [Detail(mod, self, i) for i in self.obj['properties']]
 
 
-class DetailProperty(Specialization):
+class Detail(Specialization):
     """Wraps a detail-property specialization.
 
     """
@@ -45,7 +45,7 @@ class DetailProperty(Specialization):
         """Instance constructor.
 
         """
-        super(DetailProperty, self).__init__(mod)
+        super(Detail, self).__init__(mod)
 
         self.name, self.typeof, self.cardinality, self.description = obj
         self.container = container

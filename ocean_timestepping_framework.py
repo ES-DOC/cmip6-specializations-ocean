@@ -16,12 +16,14 @@ ENUMERATIONS = OrderedDict()
 DETAILS['CIM'] = {
     'description': 'Key properties of the ocean advection',
     'properties':[
-        ('implementation_overview','str', '1.1',
-            "General overview description of the implementation of this part of the process."),
-        ('keywords','str', '0.N',
-            "Keywords to help re-use and discovery of this information."),
         ('citations','shared.citation', '0.N',
             "Set of pertinent citations."),
+        ('keywords','str', '0.N',
+            "Keywords to help re-use and discovery of this information."),
+        ('overview','str', '1.1',
+            "General implementation overview."),
+        ('responsibile_parties','shared.responsibility', '0.N',
+            "Set of parties responsible for providing this information."),
     ]
 }
 
@@ -47,6 +49,13 @@ AUTHORS = 'Eric Guilyardi'
 QC_STATUS = 'draft'
 
 # --------------------------------------------------------------------
+# DESCRIPTION
+#
+# Short description of the specialization.
+# --------------------------------------------------------------------
+DESCRIPTION = 'Ocean Timestepping Framework'
+
+# --------------------------------------------------------------------
 # PROCESS: DETAILS
 #
 # Sets of user defined process details.
@@ -58,8 +67,8 @@ DETAILS['timestepping_attributes'] = {
             'Ocean time step in seconds'),
         ('diurnal_cycle', 'ENUM:diurnal_cycle_types', '1.1',
             'Diurnal cycle type'),
-    ]
-}
+        ]
+    }
 
 # This is the compact notation used of only one property
 DETAILS['timestepping_tracers_scheme'] = {
@@ -67,8 +76,8 @@ DETAILS['timestepping_tracers_scheme'] = {
     'properties': [
         ('tracers', 'ENUM:ocean_timestepping_types', '1.1',
             'Time stepping tracer scheme')
-    ]
-}
+        ]
+    }
 
 DETAILS['barotropic_solver_scheme'] = {
     'description': 'Barotropic solver in ocean',
@@ -77,15 +86,16 @@ DETAILS['barotropic_solver_scheme'] = {
             'Barotropic solver scheme'),
         ('type', 'ENUM:barotropic_solver_types', '1.1',
             'Barotropic solver type')
-    ]
-}
+        ]
+    }
+
 DETAILS['barotropic_momentum_scheme'] = {
     'description': 'Barotropic momentum solver in ocean',
     'properties': [
         ('barotropic_momentum', 'ENUM:ocean_timestepping_types', '1.1',
             'Barotropic momentum scheme')
-    ]
-}
+        ]
+    }
 
 # --------------------------------------------------------------------
 # ENUMERATIONS
@@ -98,7 +108,7 @@ ENUMERATIONS['diurnal_cycle_types'] = {
         ('Via coupling', 'Diurnal cycle via coupling frequency'),
         ('Specific treatment', 'Specific treament'),
         ]
-}
+    }
 
 ENUMERATIONS['ocean_timestepping_types'] = {
     'description': 'Type of timestepping scheme in ocean',
@@ -111,7 +121,7 @@ ENUMERATIONS['ocean_timestepping_types'] = {
         ('Forward-backward', 'Forward-backward scheme'),
         ('Forward operator', 'Forward operator scheme')
         ]
-}
+    }
 
 ENUMERATIONS['barotropic_solver_types'] = {
     'description': 'Type of barotropic solver in ocean',
@@ -120,4 +130,4 @@ ENUMERATIONS['barotropic_solver_types'] = {
         ('Preconditioned conjugate gradient', None),
         ('Sub cyling', None),
         ]
-}
+    }

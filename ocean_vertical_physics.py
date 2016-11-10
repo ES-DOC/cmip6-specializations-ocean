@@ -16,12 +16,14 @@ ENUMERATIONS = OrderedDict()
 DETAILS['CIM'] = {
     'description': 'Key properties of the ocean advection',
     'properties':[
-        ('implementation_overview','str', '1.1',
-            "General overview description of the implementation of this part of the process."),
-        ('keywords','str', '0.N',
-            "Keywords to help re-use and discovery of this information."),
         ('citations','shared.citation', '0.N',
             "Set of pertinent citations."),
+        ('keywords','str', '0.N',
+            "Keywords to help re-use and discovery of this information."),
+        ('overview','str', '1.1',
+            "General implementation overview."),
+        ('responsibile_parties','shared.responsibility', '0.N',
+            "Set of parties responsible for providing this information."),
     ]
 }
 
@@ -47,16 +49,24 @@ AUTHORS = 'Eric Guilyardi'
 QC_STATUS = 'draft'
 
 # --------------------------------------------------------------------
+# DESCRIPTION
+#
+# Short description of the specialization.
+# --------------------------------------------------------------------
+DESCRIPTION = 'Ocean Vertical Physics'
+
+# --------------------------------------------------------------------
 # SUB-PROCESS: Boundary Layer Mixing.
 # --------------------------------------------------------------------
 SUB_PROCESSES['boundary_layer_mixing'] = {
     'description': 'Properties of boundary layer mixing in the ocean (aka mixed layer)',
+    'properties': [],
     'detail_sets': [
         'details',
         'tracers',
         'momentum'
         ]
-}
+    }
 
 SUB_PROCESSES['boundary_layer_mixing:details'] = {
     'description': 'Properties of vertical physics in ocean',
@@ -64,7 +74,7 @@ SUB_PROCESSES['boundary_layer_mixing:details'] = {
         ('langmuir_cells_mixing', 'bool', '1.1',
             'Is there Langmuir cells mixing in upper ocean ?'),
         ]
-}
+    }
 
 SUB_PROCESSES['boundary_layer_mixing:tracers'] = {
     'description': 'Properties of boundary layer (BL) mixing on tracers in the ocean ',
@@ -78,7 +88,7 @@ SUB_PROCESSES['boundary_layer_mixing:tracers'] = {
         ('background', 'str', '1.1',
             'Background BL mixing of tracers coefficient, (schema and value in m2/s - may by none)'),
         ]
-}
+    }
 
 SUB_PROCESSES['boundary_layer_mixing:momentum'] = {
     'description': 'Properties of boundary layer (BL) mixing on momentum in the ocean ',
@@ -93,19 +103,20 @@ SUB_PROCESSES['boundary_layer_mixing:momentum'] = {
             'Background BL mixing of momentum coefficient, (schema and value in m2/s - may by none)'),
 
         ]
-}
+    }
 
 # --------------------------------------------------------------------
 # SUB-PROCESS: Interior Layer Mixing.
 # --------------------------------------------------------------------
 SUB_PROCESSES['interior_mixing'] = {
     'description': 'Properties of interior vertical mixing in the ocean',
+    'properties': [],
     'detail_sets': [
         'details',
         'tracers',
         'momentum'
         ]
-}
+    }
 
 SUB_PROCESSES['interior_mixing:details'] = {
     'description': 'Properties of interior mixing in the ocean ',
@@ -119,7 +130,7 @@ SUB_PROCESSES['interior_mixing:details'] = {
         ('shear_mixing', 'bool', '1.1',
             'Is there interior shear mixing'),
         ]
-}
+    }
 
 SUB_PROCESSES['interior_mixing:tracers'] = {
     'description': 'Properties of interior mixing on tracers in the ocean ',
@@ -133,7 +144,7 @@ SUB_PROCESSES['interior_mixing:tracers'] = {
         ('background', 'str', '1.1',
             'Background interior mixing of tracers coefficient, (schema and value in m2/s - may by none)'),
         ]
-}
+    }
 
 SUB_PROCESSES['interior_mixing:momentum'] = {
     'description': 'Properties of interior mixing on momentum in the ocean ',
@@ -147,7 +158,7 @@ SUB_PROCESSES['interior_mixing:momentum'] = {
         ('background', 'str', '1.1',
             'Background interior mixing of momentum coefficient, (schema and value in m2/s - may by none)'),
         ]
-}
+    }
 
 # --------------------------------------------------------------------
 # ENUMERATIONS
@@ -160,7 +171,7 @@ ENUMERATIONS['vertphys_convection_types'] = {
         ('Enhanced vertical diffusion', None),
         ('Included in turbulence closure', None)
         ]
-}
+    }
 
 ENUMERATIONS['bndlayer_mixing_types'] = {
     'description': 'Types of boundary layer mixing in ocean',
@@ -175,7 +186,7 @@ ENUMERATIONS['bndlayer_mixing_types'] = {
         ('Richardson number dependent - KT', None),
         ('Imbeded as isopycnic vertical coordinate', None)
         ]
-}
+    }
 
 ENUMERATIONS['interior_mixing_types'] = {
     'description': 'Types of interior mixing in ocean',
@@ -188,4 +199,4 @@ ENUMERATIONS['interior_mixing_types'] = {
         ('Richardson number dependent - KT', None),
         ('Imbeded as isopycnic vertical coordinate', None)
         ]
-}
+    }

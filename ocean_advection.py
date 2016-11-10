@@ -16,12 +16,14 @@ ENUMERATIONS = OrderedDict()
 DETAILS['CIM'] = {
     'description': 'Key properties of the ocean advection',
     'properties':[
-        ('implementation_overview','str', '1.1',
-            "General overview description of the implementation of this part of the process."),
-        ('keywords','str', '0.N',
-            "Keywords to help re-use and discovery of this information."),
         ('citations','shared.citation', '0.N',
             "Set of pertinent citations."),
+        ('keywords','str', '0.N',
+            "Keywords to help re-use and discovery of this information."),
+        ('overview','str', '1.1',
+            "General implementation overview."),
+        ('responsibile_parties','shared.responsibility', '0.N',
+            "Set of parties responsible for providing this information."),
     ]
 }
 
@@ -47,6 +49,13 @@ AUTHORS = 'Eric Guilyardi'
 QC_STATUS = 'draft'
 
 # --------------------------------------------------------------------
+# DESCRIPTION
+#
+# Short description of the specialization.
+# --------------------------------------------------------------------
+DESCRIPTION = 'Ocean advection'
+
+# --------------------------------------------------------------------
 # SUB-PROCESS: Momentum.
 # --------------------------------------------------------------------
 SUB_PROCESSES['momentum'] = {
@@ -59,7 +68,7 @@ SUB_PROCESSES['momentum'] = {
         ('ALE', 'bool', '0.1',
             'Using ALE for vertical advection ? (if vertical coordinates are sigma)'),
         ]
-}
+    }
 
 # --------------------------------------------------------------------
 # SUB-PROCESS: Lateral tracers.
@@ -76,7 +85,7 @@ SUB_PROCESSES['lateral_tracers'] = {
         ('passive_tracers_advection','str','0.1',
             "Is advection of passive tracers different than active ? if so, describe.")
         ]
-}
+    }
 
 # --------------------------------------------------------------------
 # SUB-PROCESS: Vertical tracers.
@@ -89,7 +98,7 @@ SUB_PROCESSES['vertical_tracers'] = {
         ('flux_limiter', 'bool', '1.1',
             "Monotonic flux limiter for vertical tracer advection scheme in ocean ?"),
         ]
-}
+    }
 
 # --------------------------------------------------------------------
 # ENUMERATIONS
@@ -101,7 +110,7 @@ ENUMERATIONS['adv_mom_scheme_types'] = {
         ('Flux form', None),
         ('Vector form', None)
         ]
-}
+    }
 
 ENUMERATIONS['adv_tra_scheme_types'] = {
     'description': 'Type of tracer advection scheme in ocean',
@@ -117,7 +126,7 @@ ENUMERATIONS['adv_tra_scheme_types'] = {
         ('Prather 2nd moment (PSOM)', None),
         ('3rd order upwind', None)
         ]
-}
+    }
 
 ENUMERATIONS['passive_tracers_list'] = {
     'description': 'Passive tracers in ocean',
@@ -128,4 +137,4 @@ ENUMERATIONS['passive_tracers_list'] = {
         ('CFC 12', None),
         ('SF6', None)
         ]
-}
+    }

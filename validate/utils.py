@@ -24,48 +24,35 @@ def get_cim_id(module):
     return "cmip6.{}".format(".".join(parts))
 
 
-def validate_std(ctx):
-    """Validates a modules standard attributes.
+def validate_std(ctx, module, sections=[]):
+    """Validates a module's standard attributes.
 
     """
-    # Validate AUTHORS.
-    if not hasattr(ctx.module, 'AUTHORS'):
-        ctx.error("AUTHORS property is missing")
-    elif not isinstance(ctx.module.AUTHORS, str):
-        ctx.error("AUTHORS property must be a string")
+    # Validate expected fields.
+    for field in {'AUTHORS', 'CONTACT', 'DESCRIPTION', 'QC_STATUS'}:
+        if not hasattr(module, field):
+            ctx.error("{} property is missing".format(field))
+        elif not isinstance(getattr(module, field), (str, unicode)):
+            ctx.error("{} property must be a string".format(field))
+        # TODO: use regex
 
-    # Validate AUTHORS.
-    if not hasattr(ctx.module, 'CONTACT'):
-        ctx.error("CONTACT property is missing")
-    elif not isinstance(ctx.module.CONTACT, str):
-        ctx.error("CONTACT property must be a string")
-
-    # Validate DESCRIPTION.
-    if not hasattr(ctx.module, 'DESCRIPTION'):
-        ctx.error("DESCRIPTION property is missing")
-    elif not isinstance(ctx.module.DESCRIPTION, str):
-        ctx.error("DESCRIPTION property must be a string")
-
-    # Validate QC_STATUS.
-    if not hasattr(ctx.module, 'QC_STATUS'):
-        ctx.error("QC_STATUS property is missing")
-    elif ctx.module.QC_STATUS not in constants.QC_STATES:
-        ctx.error("QC_STATUS is invalid. Valid set = {}".format(list(constants.QC_STATES)))
-
-
-def validate_spec(ctx, attr, types=(dict, )):
-    """Validates a specialization collection.
-
-    """
-    if not hasattr(ctx.module, attr):
-        ctx.error("{} is missing".format(attr))
-    elif not isinstance(getattr(ctx.module, attr), collections.OrderedDict):
-        ctx.error("{} must be an OrderedDict".format(attr))
-    else:
-        for key, defn in getattr(ctx.module, attr).items():
-            if not isinstance(defn, types):
-                err = "{}[{}]: must be a {}".format(attr, key, " or ".join([i.__name__ for i in types]))
-                ctx.error(err)
+    # Validate expected section.
+    for section in sections:
+        if not hasattr(module, section):
+            ctx.error("{} is missing".format(section))
+        elif not isinstance(getattr(module, section), collections.OrderedDict):
+            ctx.error("{} must be an OrderedDict".format(section))
+        else:
+            for key, obj in getattr(module, section).items():
+                if key == 'CIM':
+                    continue
+                if not isinstance(key, (str, unicode)):
+                    err = "{}: all keys must be strings".format(section)
+                elif len(key.strip()) == 0:
+                    err = "{}: all keys must be strings".format(section)
+                elif not isinstance(obj, dict):
+                    err = "{}[{}]: must be a dictionary".format(section, key)
+                    ctx.error(err)
 
 
 def set_default(target, attr, value):

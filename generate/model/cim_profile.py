@@ -60,7 +60,7 @@ CIM_PROFILE["science.process"] = {
 	   "citations",
 	   "detail_sets",
 	   "description",
-	   "implementation_overview",
+	   "overview",
 	   "keywords",
 	   "short_name",
 	   "specialization_id",
@@ -76,7 +76,7 @@ CIM_PROFILE["science.sub_process"] = {
 	   "detail_sets",
 	   "description",
 	   "specialization_id",
-	   "implementation_overview",
+	   "overview",
 	   "short_name"
 	],
 	"exclude": []
@@ -97,7 +97,7 @@ CIM_PROFILE["science.key_properties"] = {
 	"exclude": [
 		"extent",
 		"extra_conservation_properties",
-		"implementation_overview",
+		"overview",
 		"keywords",
 		"resolution"
 	]
@@ -119,7 +119,7 @@ CIM_PROFILE["science.realm[ocean].key_properties"] = {
 	],
 	"exclude": [
 		"extent",
-		"implementation_overview",
+		"overview",
 		"keywords",
 	]
 }

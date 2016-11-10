@@ -9,12 +9,12 @@
 
 
 """
-from .detail import Detail
+from .detail import DetailSet
 from .specialization import Specialization
 
 
 
-class SpecializationModule(Specialization):
+class Topic(Specialization):
     """Wraps a standard specialization module.
 
     """
@@ -22,7 +22,7 @@ class SpecializationModule(Specialization):
         """Instance constructor.
 
         """
-        super(SpecializationModule, self).__init__(mod)
+        super(Topic, self).__init__(mod)
 
         self.authors = mod.AUTHORS
         self.cfg_section = cfg_section
@@ -40,7 +40,7 @@ class SpecializationModule(Specialization):
             self.name = "_".join(mod.__name__.split(".")[-1].split("_")[1:])
             self.id = "{}.{}".format(owner.id, self.name)
         else:
-            self.name = mod.REALM
+            self.name = mod.__name__
             self.id = "cmip6.{}".format(self.name)
         self.name_camel_case = to_camel_case(self.name)
         self.name_camel_case_spaced = to_camel_case_spaced(self.name)
@@ -50,7 +50,7 @@ class SpecializationModule(Specialization):
         except AttributeError:
             self.details = []
         else:
-            self.details = [Detail(self.mod, self, i, j)
+            self.details = [DetailSet(self.mod, self, i, j)
                             for i, j in self.mod.DETAILS.items()
                             if isinstance(j, dict)]
 

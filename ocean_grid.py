@@ -16,12 +16,14 @@ ENUMERATIONS = OrderedDict()
 DETAILS['CIM'] = {
     'description': 'Key properties of the ocean advection',
     'properties':[
-        ('implementation_overview','str', '1.1',
-            "General overview description of the implementation of this part of the process."),
-        ('keywords','str', '0.N',
-            "Keywords to help re-use and discovery of this information."),
         ('citations','shared.citation', '0.N',
             "Set of pertinent citations."),
+        ('keywords','str', '0.N',
+            "Keywords to help re-use and discovery of this information."),
+        ('overview','str', '1.1',
+            "General implementation overview."),
+        ('responsibile_parties','shared.responsibility', '0.N',
+            "Set of parties responsible for providing this information."),
     ]
 }
 
@@ -47,15 +49,23 @@ AUTHORS = 'Eric Guilyardi'
 QC_STATUS = 'draft'
 
 # --------------------------------------------------------------------
+# DESCRIPTION
+#
+# Short description of the specialization.
+# --------------------------------------------------------------------
+DESCRIPTION = 'Ocean grid'
+
+# --------------------------------------------------------------------
 # DISCRETISATION: Description of the numerics of the discretisation.
 # --------------------------------------------------------------------
 DETAILS['discretisation'] = {
     'description': 'Type of discretisation scheme in ocean',
+    'properties': [],
     'detail_sets': [
         'horizontal',
         'vertical'
         ]
-}
+    }
 
 DETAILS['discretisation:vertical'] = {
     'description': 'Properties of vertical discretisation in ocean',
@@ -65,7 +75,7 @@ DETAILS['discretisation:vertical'] = {
         ('partial_steps', 'bool', '1.1',
             'Using partial steps with Z or Z* vertical coordinate in ocean ?'),
         ]
-}
+    }
 
 DETAILS['discretisation:horizontal'] = {
     'description': 'Type of horizontal discretisation scheme in ocean',
@@ -75,7 +85,7 @@ DETAILS['discretisation:horizontal'] = {
         ('scheme', 'ENUM:horizontal_scheme_types', '1.1',
             'Horizontal discretisation scheme in ocean'),
         ]
-}
+    }
 
 # --------------------------------------------------------------------
 # ENUMERATIONS
@@ -88,7 +98,7 @@ ENUMERATIONS['horizontal_grid_types'] = {
         ('Rotated north pole', None),
         ('Two north poles (ORCA-style)', None)
         ]
-}
+    }
 
 ENUMERATIONS['horizontal_scheme_types'] = {
     'description': 'Types of horizonal scheme in ocean',
@@ -101,7 +111,7 @@ ENUMERATIONS['horizontal_scheme_types'] = {
         ('Finite elements', None),
         ('Unstructured grid', None)
         ]
-}
+    }
 
 ENUMERATIONS['vertical_coordinate_types'] = {
     'description': 'Types of vertical coordinates in ocean',
@@ -122,4 +132,4 @@ ENUMERATIONS['vertical_coordinate_types'] = {
         ('P*', None),
         ('Z**', None)
         ]
-}
+    }

@@ -45,6 +45,6 @@ def get_specializations(input_dir, realm_name):
     realm = get_module(modules, realm_name)
     grid = get_module(modules, "{}_grid".format(realm_name))
     key_properties = get_module(modules, "{}_key_properties".format(realm_name))
-    processes = [get_module(modules, p) for p in realm.PROCESSES]
+    processes = [get_module(modules, i) for i in realm.PROCESSES]
 
-    return realm, grid, key_properties, processes
+    return realm, grid, key_properties, [i for i in processes if i]

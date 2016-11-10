@@ -25,6 +25,4 @@ class Specialization(object):
         """A simplified name useful in documentation scenrios.
 
         """
-        name = self.name
-
-        return " ".join(["{}{}".format(i[0].upper(), i[1:]) for i in name.split("_")])
+        return " ".join(["{}{}".format(i[0].upper(), i[1:]) for i in self.name.split("_")])

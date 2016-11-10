@@ -16,12 +16,14 @@ ENUMERATIONS = OrderedDict()
 DETAILS['CIM'] = {
     'description': 'Key properties of the ocean advection',
     'properties':[
-        ('implementation_overview','str', '1.1',
-            "General overview description of the implementation of this part of the process."),
-        ('keywords','str', '0.N',
-            "Keywords to help re-use and discovery of this information."),
         ('citations','shared.citation', '0.N',
             "Set of pertinent citations."),
+        ('keywords','str', '0.N',
+            "Keywords to help re-use and discovery of this information."),
+        ('overview','str', '1.1',
+            "General implementation overview."),
+        ('responsibile_parties','shared.responsibility', '0.N',
+            "Set of parties responsible for providing this information."),
     ]
 }
 
@@ -47,6 +49,13 @@ AUTHORS = 'Eric Guilyardi'
 QC_STATUS = 'draft'
 
 # --------------------------------------------------------------------
+# DESCRIPTION
+#
+# Short specialization description.
+# --------------------------------------------------------------------
+DESCRIPTION = 'Ocean upper / lower boundaries'
+
+# --------------------------------------------------------------------
 # PROCESS: DETAILS
 #
 # Sets of user defined process details.
@@ -58,8 +67,8 @@ DETAILS['free_surface'] = {
             'Free surface scheme in ocean'),
         ('embeded_seaice', 'bool', '1.1',
             'Is the sea-ice embeded in the ocean model (instead of levitating) ?'),
-     ]
-}
+        ]
+    }
 
 DETAILS['bottom_boundary_layer'] = {
     'description': 'Properties of bottom boundary layer in ocean',
@@ -70,8 +79,8 @@ DETAILS['bottom_boundary_layer'] = {
             'If bottom BL is diffusive, specify value of lateral mixing coefficient (in m2/s)'),
         ('sill_overflow', 'str', '1.1',
             'Describe any specific treatment of sill overflows')
-     ]
-}
+        ]
+    }
 
 # --------------------------------------------------------------------
 # ENUMERATIONS
@@ -87,7 +96,7 @@ ENUMERATIONS['free_surface_types'] = {
         ('Non-linear filtered', None),
         ('Non-linear semi-explicit', None)
         ]
-}
+    }
 
 ENUMERATIONS['bottom_bl_types'] = {
     'description': 'Type of bottom boundary layer in ocean',
@@ -96,4 +105,4 @@ ENUMERATIONS['bottom_bl_types'] = {
         ('Diffusive', None),
         ('Acvective', None)
         ]
-}
+    }

@@ -16,12 +16,14 @@ ENUMERATIONS = OrderedDict()
 DETAILS['CIM'] = {
     'description': 'Key properties of the ocean advection',
     'properties':[
-        ('implementation_overview','str', '1.1',
-            "General overview description of the implementation of this part of the process."),
-        ('keywords','str', '0.N',
-            "Keywords to help re-use and discovery of this information."),
         ('citations','shared.citation', '0.N',
             "Set of pertinent citations."),
+        ('keywords','str', '0.N',
+            "Keywords to help re-use and discovery of this information."),
+        ('overview','str', '1.1',
+            "General implementation overview."),
+        ('responsibile_parties','shared.responsibility', '0.N',
+            "Set of parties responsible for providing this information."),
     ]
 }
 
@@ -47,6 +49,13 @@ AUTHORS = 'Eric Guilyardi'
 QC_STATUS = 'draft'
 
 # --------------------------------------------------------------------
+# DESCRIPTION
+#
+# Short description of the specialization.
+# --------------------------------------------------------------------
+DESCRIPTION = 'Ocean boundary forcing'
+
+# --------------------------------------------------------------------
 # PROCESS: DETAILS
 #
 # Sets of user defined process details.
@@ -67,18 +76,19 @@ DETAILS['boundary_forcing_details'] = {
         ('geothermal_heating', 'str', '1.1',
             'Describe if/how geothermal heating is present at ocean bottom.'),
         ]
-}
+    }
 
 # --------------------------------------------------------------------
 # SUB-PROCESS: Momentum.
 # --------------------------------------------------------------------
 SUB_PROCESSES['momentum'] = {
     'description': 'Key properties of momentum boundary forcing in the ocean',
+    'properties': [],
     'detail_sets': [
         'bottom_friction',
         'lateral_friction'
         ]
-}
+    }
 
 SUB_PROCESSES['momentum:bottom_friction'] = {
     'description': 'Properties of momentum bottom friction in ocean',
@@ -86,7 +96,7 @@ SUB_PROCESSES['momentum:bottom_friction'] = {
         ('type', 'ENUM:mom_bottom_friction_types', '1.1',
             'Type of momentum bottom friction in ocean'),
         ]
-}
+    }
 
 SUB_PROCESSES['momentum:lateral_friction'] = {
    'description': 'Properties of momentum lateral friction in ocean',
@@ -94,18 +104,19 @@ SUB_PROCESSES['momentum:lateral_friction'] = {
         ('type', 'ENUM:mom_lateral_friction_types', '1.1',
             'Type of momentum lateral friction in ocean'),
         ]
-}
+    }
 
 # --------------------------------------------------------------------
 # SUB-PROCESS: Tracers.
 # --------------------------------------------------------------------
 SUB_PROCESSES['tracers'] = {
     'description': 'Key properties of tracer boundary forcing in the ocean',
+    'properties': [],
     'detail_sets': [
         'sunlight_penetration',
         'fresh_water_forcing',
         ]
-}
+    }
 
 SUB_PROCESSES['tracers:sunlight_penetration'] = {
     'description': 'Properties of sunlight penetration scheme in ocean',
@@ -117,7 +128,7 @@ SUB_PROCESSES['tracers:sunlight_penetration'] = {
          ('extinction_depth', 'str', '0.1',
             'Describe and list extinctions depths for sunlight penetration scheme (if applicable).'),
         ]
-}
+    }
 
 SUB_PROCESSES['tracers:fresh_water_forcing'] = {
     'description': 'Properties of surface fresh water forcing in ocean',
@@ -129,7 +140,7 @@ SUB_PROCESSES['tracers:fresh_water_forcing'] = {
         ('forced_mode_restoring', 'str', '1.1',
             'Type of surface salinity restoring in forced mode (OMIP)'),
         ]
-}
+    }
 
 # --------------------------------------------------------------------
 # ENUMERATIONS
@@ -144,7 +155,7 @@ ENUMERATIONS['mom_bottom_friction_types'] = {
         ('Constant drag coefficient', None),
         ('None', None),
         ]
-}
+    }
 
 ENUMERATIONS['mom_lateral_friction_types'] = {
     'description': 'Type of momentum lateral friction in ocean',
@@ -154,7 +165,7 @@ ENUMERATIONS['mom_lateral_friction_types'] = {
         ('Free-slip', None),
         ('No-slip', None),
         ]
-}
+    }
 
 ENUMERATIONS['sunlight_penetration_scheme_types'] = {
     'description': 'Type of sunlight penetration scheme in ocean',
@@ -164,7 +175,7 @@ ENUMERATIONS['sunlight_penetration_scheme_types'] = {
         ('2 extinction depth', None),
         ('3 extinction depth', None),
         ]
-}
+    }
 
 ENUMERATIONS['surface_fresh_water_forcing_atmos_types'] = {
     'description': 'Types of surface fresh water forcing from atmosphere in ocean',
@@ -173,7 +184,7 @@ ENUMERATIONS['surface_fresh_water_forcing_atmos_types'] = {
         ('Freshwater flux', None),
         ('Virtual salt flux', None),
         ]
-}
+    }
 
 ENUMERATIONS['surface_fresh_water_forcing_seaice_types'] = {
     'description': 'Types of surface fresh water forcing from sea-ice in ocean',
@@ -183,4 +194,4 @@ ENUMERATIONS['surface_fresh_water_forcing_seaice_types'] = {
         ('Virtual salt flux', None),
         ('Real salt flux', None),
         ]
-}
+    }

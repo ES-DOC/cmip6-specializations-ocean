@@ -9,12 +9,11 @@
 
 
 """
-from .specialization_module import SpecializationModule
-from .sub_process import SubProcess
+from .topic import Topic
 
 
 
-class Process(SpecializationModule):
+class Process(Topic):
     """Wraps a process specialization.
 
     """
@@ -24,7 +23,8 @@ class Process(SpecializationModule):
         """
         super(Process, self).__init__(realm, mod, "process")
 
-        try:
-            self.sub_processes = [SubProcess(self, i, j, sort_collections) for i, j in mod.SUB_PROCESSES.items()]
-        except AttributeError:
-            self.sub_processes = []
+        self.sub_processes = []
+        # try:
+        #     self.sub_processes = [Process(realm, mod, i, j, sort_collections) for i, j in mod.SUB_PROCESSES.items()]
+        # except AttributeError:
+        #     self.sub_processes = []

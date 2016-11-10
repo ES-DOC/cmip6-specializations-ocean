@@ -16,12 +16,14 @@ ENUMERATIONS = OrderedDict()
 DETAILS['CIM'] = {
     'description': 'Key properties of the ocean advection',
     'properties':[
-        ('implementation_overview','str', '1.1',
-            "General overview description of the implementation of this part of the process."),
-        ('keywords','str', '0.N',
-            "Keywords to help re-use and discovery of this information."),
         ('citations','shared.citation', '0.N',
             "Set of pertinent citations."),
+        ('keywords','str', '0.N',
+            "Keywords to help re-use and discovery of this information."),
+        ('overview','str', '1.1',
+            "General implementation overview."),
+        ('responsibile_parties','shared.responsibility', '0.N',
+            "Set of parties responsible for providing this information."),
     ]
 }
 
@@ -47,6 +49,13 @@ AUTHORS = 'Eric Guilyardi'
 QC_STATUS = 'draft'
 
 # --------------------------------------------------------------------
+# DESCRIPTION
+#
+# Short description of the specialization.
+# --------------------------------------------------------------------
+DESCRIPTION = 'Ocean lateral physics'
+
+# --------------------------------------------------------------------
 # PROCESS: DETAILS
 #
 # Sets of user defined process details.
@@ -57,18 +66,19 @@ DETAILS['ocean_transient_eddy_representation'] = {
         ('scheme', 'ENUM:latphys_transient_eddy_types', '1.1',
             'Type of transient eddy representation in ocean'),
         ]
-}
+    }
 
 # --------------------------------------------------------------------
 # SUB-PROCESS: Momentum.
 # --------------------------------------------------------------------
 SUB_PROCESSES['momentum'] = {
     'description': 'Properties of lateral physics for momentum in ocean',
+    'properties': [],
     'detail_sets': [
         'operator',
         'eddy_viscosity_coeff'
         ]
- }
+    }
 
 SUB_PROCESSES['momentum:operator'] = {
     'description': 'Properties of lateral physics operator for momentum in ocean',
@@ -80,7 +90,7 @@ SUB_PROCESSES['momentum:operator'] = {
         ('discretisation', 'ENUM:latphys_operator_discret_types', '1.1',
             'Discretisation of lateral physics momemtum scheme in the ocean'),
         ]
-}
+    }
 
 SUB_PROCESSES['momentum:eddy_viscosity_coeff'] = {
     'description': 'Properties of eddy viscosity coeff in lateral physics momemtum scheme in the ocean',
@@ -96,20 +106,21 @@ SUB_PROCESSES['momentum:eddy_viscosity_coeff'] = {
         ('coeff_backscatter', 'bool', '1.1',
             'Is there backscatter in eddy viscosity coeff in lateral physics momemtum scheme ?')
         ]
-}
+    }
 
 # --------------------------------------------------------------------
 # SUB-PROCESS: Tracers.
 # --------------------------------------------------------------------
 SUB_PROCESSES['tracers'] = {
     'description': 'Properties of lateral physics for tracers in ocean',
+    'properties': [],
     'detail_sets': [
         'details',
         'operator',
         'eddy_viscosity_coeff',
         'eddy_induced_velocity'
         ]
-}
+    }
 
 SUB_PROCESSES['tracers:details'] = {
     'description': 'Properties of lateral physics for tracers in ocean',
@@ -119,7 +130,7 @@ SUB_PROCESSES['tracers:details'] = {
         ('submesoscale_mixing', 'bool', '1.1',
             'Is there a submesoscale mixing parameterisation (i.e Fox-Kemper) in the lateral physics tracers scheme ?')
         ]
-}
+    }
 
 SUB_PROCESSES['tracers:operator'] = {
     'description': 'Properties of lateral physics operator for tracers in ocean',
@@ -131,7 +142,7 @@ SUB_PROCESSES['tracers:operator'] = {
         ('discretisation', 'ENUM:latphys_operator_discret_types', '1.1',
             'Discretisation of lateral physics tracers scheme in the ocean'),
         ]
-}
+    }
 
 SUB_PROCESSES['tracers:eddy_viscosity_coeff'] = {
     'description': 'Properties of eddy viscosity coeff in lateral physics tracers scheme in the ocean',
@@ -161,7 +172,7 @@ SUB_PROCESSES['tracers:eddy_induced_velocity'] = {
         ('added_diffusivity', 'str', '1.1',
             'Type of EIV added diffusivity (constant, flow dependent or none)')
         ]
-}
+    }
 
 # --------------------------------------------------------------------
 # ENUMERATIONS
@@ -174,7 +185,7 @@ ENUMERATIONS['latphys_transient_eddy_types'] = {
         ('Eddy active', 'Full resolution of eddies'),
         ('Eddy admitting', 'Some eddy activity permitted by resolution'),
         ]
-}
+    }
 
 ENUMERATIONS['latphys_operator_direc_types'] = {
     'description':'Type of lateral physics direction in ocean',
@@ -186,7 +197,7 @@ ENUMERATIONS['latphys_operator_direc_types'] = {
         ('Geopotential', None),
         ('Iso-level', None)
         ]
-}
+    }
 
 ENUMERATIONS['latphys_operator_order_types'] = {
     'description':'Type of lateral physics order in ocean',
@@ -195,7 +206,7 @@ ENUMERATIONS['latphys_operator_order_types'] = {
         ('Harmonic', 'Second order'),
         ('Bi-harmonic', 'Fourth order')
         ]
-}
+    }
 
 ENUMERATIONS['latphys_operator_discret_types'] = {
     'description':'Type of lateral physics discretisation in ocean',
@@ -205,7 +216,7 @@ ENUMERATIONS['latphys_operator_discret_types'] = {
         ('Higher order', 'Higher order'),
         ('Flux limiter', None)
         ]
-}
+    }
 
 ENUMERATIONS['latphys_eddy_visc_coeff_types'] = {
     'description':'Type of lateral physics eddy viscosity coeff in ocean',
@@ -215,7 +226,7 @@ ENUMERATIONS['latphys_eddy_visc_coeff_types'] = {
         ('Space varying', None),
         ('Time + space varying (Smagorinsky)', None)
         ]
-}
+    }
 
 ENUMERATIONS['latphys_eiv_types'] = {
     'description':'Type of lateral physics eddy induced velocity in ocean',
@@ -223,4 +234,4 @@ ENUMERATIONS['latphys_eiv_types'] = {
     'members':[
         ('GM', 'Gent & McWilliams')
         ]
-}
+    }

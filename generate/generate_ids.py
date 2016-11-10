@@ -11,39 +11,25 @@
 """
 from utils import get_label
 from utils_model import Detail
-from utils_model import DetailProperty
+from utils_model import DetailSet
 from utils_model import Enum
 from utils_model import EnumChoice
-from utils_model import Grid
-from utils_model import GridDiscretisation
-from utils_model import KeyProperties
-from utils_model import KeyPropertiesConservation
-from utils_model import KeyPropertiesExtent
-from utils_model import KeyPropertiesResolution
-from utils_model import KeyPropertiesTuning
 from utils_model import Process
 from utils_model import Realm
-from utils_model import SubProcess
+from utils_model import Topic
 from utils_parser import Parser
 
 
 
 # Map of specialization types to identifier types.
 _ID_TYPES = {
-    Detail: "detail",
-    DetailProperty: "detail-property",
+    Detail: "detail-property",
+    DetailSet: "detail",
     Enum: "enum",
     EnumChoice: "enum-choice",
-    Grid: "grid",
-    GridDiscretisation: "grid-discretisation",
-    KeyProperties: "key-properties",
-    KeyPropertiesConservation: "key-properties-conservation",
-    KeyPropertiesExtent: "key-properties-extent",
-    KeyPropertiesResolution: "key-properties-resolution",
-    KeyPropertiesTuning: "key-properties-tuning",
     Process: "process",
     Realm: "realm",
-    SubProcess: "sub-process"
+    Topic: "topic"
 }
 
 

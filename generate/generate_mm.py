@@ -15,8 +15,8 @@ import json
 import xml.etree.ElementTree as ET
 
 from utils_model import CIM_PROFILE
-from utils_model import DetailProperty
-from utils_model import SpecializationModule
+from utils_model import Detail
+from utils_model import Topic
 from utils_parser import Parser
 
 
@@ -107,25 +107,11 @@ class Generator(Parser):
         self._emit_node(realm, grid)
 
 
-    def on_grid_discretisation_parse(self, realm, grid, discretisation):
-        """On grid discretisation parse event handler.
-
-        """
-        self._emit_node(grid, discretisation, cfg_section="grid")
-
-
     def on_key_properties_parse(self, realm, key_properties):
         """On key_properties parse event handler.
 
         """
         self._emit_node(realm, key_properties)
-
-
-    def on_key_properties_conservation_parse(self, realm, key_properties, conservation):
-        """On grid discretisation parse event handler.
-
-        """
-        self._emit_node(key_properties, conservation, cfg_section="key-properties")
 
 
     def on_process_parse(self, realm, process):
@@ -143,11 +129,11 @@ class Generator(Parser):
         self._emit_node(process, subprocess)
 
 
-    def on_detail_parse(self, owner, detail):
-        """On process detail parse event handler.
+    def on_detail_set_parse(self, owner, detail_set):
+        """On process detail set parse event handler.
 
         """
-        self._emit_node(owner, detail)
+        self._emit_node(owner, detail_set)
 
 
     def on_detail_property_parse(self, detail, detail_property):
@@ -309,12 +295,12 @@ def _get_notes(spec):
         ("Description", lambda i: None if i.description is None else i.description.replace("&", "and")),
         ("Specialization ID", lambda i: i.id)
     ]
-    if isinstance(spec, DetailProperty):
+    if isinstance(spec, Detail):
         result += [
             ("Type", lambda i: i.typeof),
             ("Cardinality", lambda i: i.cardinality)
         ]
-    elif isinstance(spec, SpecializationModule):
+    elif isinstance(spec, Topic):
         result += [
             ("QC status", lambda i: i.qc_status),
             ("Contact", lambda i: i.contact),

@@ -9,14 +9,12 @@
 
 
 """
-from .specialization_module import SpecializationModule
-from .grid import Grid
-from .key_properties import KeyProperties
+from .topic import Topic
 from .process import Process
 
 
 
-class Realm(SpecializationModule):
+class Realm(Topic):
     """Wraps a realm specialization.
 
     """
@@ -31,6 +29,6 @@ class Realm(SpecializationModule):
 
         super(Realm, self).__init__(None, mod, "realm")
 
-        self.grid = Grid(self, grid) if grid else None
-        self.key_properties = KeyProperties(self, key_properties) if key_properties else None
+        self.grid = Topic(self, grid, "grid") if grid else None
+        self.key_properties = Topic(self, key_properties, "key-properties") if key_properties else None
         self.processes = [Process(self, i, sort_collections) for i in processes]
