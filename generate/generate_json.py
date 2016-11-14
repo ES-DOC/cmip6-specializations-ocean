@@ -49,8 +49,6 @@ class Generator(Parser):
         """
         obj = self._map_module(realm)
         obj['processes'] = []
-        obj['grid'] = {}
-        obj['keyProperties'] = {}
 
 
     def on_grid_parse(self, realm, grid):
@@ -59,12 +57,16 @@ class Generator(Parser):
         """
         obj = self._map_module(grid)
 
+        self._maps[realm]['grid'] = obj
+
 
     def on_key_properties_parse(self, realm, key_properties):
         """On key_properties parse event handler.
 
         """
         obj = self._map_module(key_properties)
+
+        self._maps[realm]['keyProperties'] = obj
 
 
     def on_process_parse(self, realm, process):
@@ -73,6 +75,8 @@ class Generator(Parser):
         """
         obj = self._map_module(process)
         obj['subProcesses'] = []
+
+        self._maps[realm]['processes'].append(obj)
 
 
     def on_subprocess_parse(self, process, subprocess):
@@ -85,7 +89,6 @@ class Generator(Parser):
         obj['id'] = subprocess.id
 
         self._maps[process]['subProcesses'].append(obj)
-
         self._maps[subprocess] = obj
 
 
@@ -107,7 +110,6 @@ class Generator(Parser):
         owner = self._maps[owner]
         owner['detailSets'] = owner.get('detailSets', [])
         owner['detailSets'].append(obj)
-
         self._maps[detail_set] = obj
 
 
@@ -134,36 +136,25 @@ class Generator(Parser):
         self._maps[detail] = obj
 
 
-    def on_enum_item_parse(self, detail, prop, choice):
+    def on_enum_item_parse(self, detail_set, detail, item):
         """On process detail property choice parse event handler.
 
         """
-        if choice.is_other:
+        if item.is_other:
             return
 
         obj = collections.OrderedDict()
-        obj['label'] = choice.value
-        obj['description'] = choice.description
+        obj['label'] = item.value
+        obj['description'] = item.description
 
-        self._maps[prop]['enum']['choices'].append(obj)
+        self._maps[detail]['enum']['choices'].append(obj)
 
 
     def get_output(self):
         """Returns generated output as a text blob.
 
         """
-        # Set realm map.
-        obj = self._maps[self.realm]
-
-        # Append process, grid, key properties maps.
-        for mod, mod_obj in self._maps.items():
-            if isinstance(mod, _JSON_TYPES):
-                if isinstance(mod, ProcessSpecialization):
-                    obj['processes'].append(mod_obj)
-                else:
-                    obj[_JSON_KEYS[type(mod)]] = mod_obj
-
-        return json.dumps(obj, indent=4)
+        return json.dumps(self._maps[self.realm], indent=4)
 
 
     def _map_module(self, mod):

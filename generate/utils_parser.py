@@ -126,14 +126,14 @@ class Parser(object):
         pass
 
 
-    def on_enum_item_parse(self, detail, prop, choice):
+    def on_enum_item_parse(self, detail_set, detail, item):
         """On enum item parse event handler.
 
         """
         pass
 
 
-    def on_enum_item_parsed(self, detail, prop, choice):
+    def on_enum_item_parsed(self, detail_set, detail, item):
         """On enum item parsed event handler.
 
         """
