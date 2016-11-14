@@ -102,37 +102,36 @@ class Generator(Parser):
         if detail_set.id is None:
             detail_set.id = "{}.{}".format(owner.id, detail_set.name)
         obj['id'] = detail_set.id
-        obj['properties'] = []
+        obj['details'] = []
 
         owner = self._maps[owner]
-        owner['details'] = owner.get('details', [])
-        owner['details'].append(obj)
+        owner['detailSets'] = owner.get('detailSets', [])
+        owner['detailSets'].append(obj)
 
         self._maps[detail_set] = obj
 
 
-    def on_detail_parse(self, detail, prop):
-        """On detail property parse event handler.
+    def on_detail_parse(self, detail_set, detail):
+        """On detail parse event handler.
 
         """
         obj = collections.OrderedDict()
-        obj['label'] = get_label(prop.name)
-        obj['description'] = prop.description
-        obj['id'] = prop.id
-        obj['uiOrdinal'] = len(self._maps[detail]['properties']) + 1
-        obj['cardinality'] = prop.cardinality
-        obj['type'] = "enum" if prop.typeof.find("ENUM") >= 0 else prop.typeof
-        if prop.enum:
+        obj['label'] = get_label(detail.name)
+        obj['description'] = detail.description
+        obj['id'] = detail.id
+        obj['uiOrdinal'] = len(self._maps[detail_set]['details']) + 1
+        obj['cardinality'] = detail.cardinality
+        obj['type'] = "enum" if detail.typeof.find("ENUM") >= 0 else detail.typeof
+        if detail.enum:
             obj['enum'] = {
-                'label': prop.enum.name,
-                'id': prop.enum.id,
-                'description': prop.enum.description,
+                'label': detail.enum.name,
+                'description': detail.enum.description,
                 'isOpen': True,
                 'choices': []
             }
 
-        self._maps[detail]['properties'].append(obj)
-        self._maps[prop] = obj
+        self._maps[detail_set]['details'].append(obj)
+        self._maps[detail] = obj
 
 
     def on_enum_item_parse(self, detail, prop, choice):

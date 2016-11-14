@@ -140,16 +140,16 @@ class Generator(Parser):
         self._emit_node(owner, detail_set)
 
 
-    def on_detail_parse(self, detail, detail_property):
+    def on_detail_parse(self, detail_set, detail):
         """On detail property parse event handler.
 
         """
-        self._emit_node(detail, detail_property)
-        self._emit_notes(detail_property)
+        self._emit_node(detail_set, detail)
+        self._emit_notes(detail)
 
-        if detail_property.enum:
-            for choice in detail_property.enum.choices:
-                self._emit_node(detail_property, choice, text=choice.value)
+        if detail.enum:
+            for choice in detail.enum.choices:
+                self._emit_node(detail, choice, text=choice.value)
 
 
     def _emit_node(

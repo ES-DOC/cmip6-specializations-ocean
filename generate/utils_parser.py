@@ -112,14 +112,14 @@ class Parser(object):
         pass
 
 
-    def on_detail_parse(self, detail, prop):
+    def on_detail_parse(self, detail_set, detail):
         """On detail parse event handler.
 
         """
         pass
 
 
-    def on_detail_parsed(self, detail, prop):
+    def on_detail_parsed(self, detail_set, detail):
         """On detail parsed event handler.
 
         """
