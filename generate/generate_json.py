@@ -14,16 +14,15 @@ import json
 
 
 from utils import get_label
-from utils_model import Topic
-from utils_model import Process
-from utils_model import Realm
+from utils_model import ProcessSpecialization
+from utils_model import RealmSpecialization
 from utils_parser import Parser
 
 
 
 # Map of output types to keys.
 _JSON_KEYS = {
-    Process: "process"
+    ProcessSpecialization: "process"
 }
 
 # Type that are to be emitted as JSON.
@@ -44,32 +43,14 @@ class Generator(Parser):
         self._maps = collections.OrderedDict()
 
 
-    def get_output(self):
-        """Returns generated output as a text blob.
-
-        """
-        # Set realm map.
-        obj = self._maps[self.realm]
-
-        # Append process, grid, key properties maps.
-        for mod, mod_obj in self._maps.items():
-            if isinstance(mod, _JSON_TYPES):
-                if isinstance(mod, Process):
-                    obj['processes'].append(mod_obj)
-                else:
-                    obj[_JSON_KEYS[type(mod)]] = mod_obj
-
-        return json.dumps(obj, indent=4)
-
-
     def on_realm_parse(self, realm):
         """On realm parse event handler.
 
         """
         obj = self._map_module(realm)
         obj['processes'] = []
-
-        self._maps[realm] = obj
+        obj['grid'] = {}
+        obj['keyProperties'] = {}
 
 
     def on_grid_parse(self, realm, grid):
@@ -78,16 +59,12 @@ class Generator(Parser):
         """
         obj = self._map_module(grid)
 
-        self._maps[grid] = obj
-
 
     def on_key_properties_parse(self, realm, key_properties):
         """On key_properties parse event handler.
 
         """
         obj = self._map_module(key_properties)
-
-        self._maps[key_properties] = obj
 
 
     def on_process_parse(self, realm, process):
@@ -96,8 +73,6 @@ class Generator(Parser):
         """
         obj = self._map_module(process)
         obj['subProcesses'] = []
-
-        self._maps[process] = obj
 
 
     def on_subprocess_parse(self, process, subprocess):
@@ -108,6 +83,7 @@ class Generator(Parser):
         obj['label'] = get_label(subprocess.name)
         obj['description'] = subprocess.description
         obj['id'] = subprocess.id
+
         self._maps[process]['subProcesses'].append(obj)
 
         self._maps[subprocess] = obj
@@ -135,7 +111,7 @@ class Generator(Parser):
         self._maps[detail_set] = obj
 
 
-    def on_detail_property_parse(self, detail, prop):
+    def on_detail_parse(self, detail, prop):
         """On detail property parse event handler.
 
         """
@@ -159,7 +135,7 @@ class Generator(Parser):
         self._maps[prop] = obj
 
 
-    def on_detail_property_choice_parse(self, detail, prop, choice):
+    def on_enum_item_parse(self, detail, prop, choice):
         """On process detail property choice parse event handler.
 
         """
@@ -173,6 +149,24 @@ class Generator(Parser):
         self._maps[prop]['enum']['choices'].append(obj)
 
 
+    def get_output(self):
+        """Returns generated output as a text blob.
+
+        """
+        # Set realm map.
+        obj = self._maps[self.realm]
+
+        # Append process, grid, key properties maps.
+        for mod, mod_obj in self._maps.items():
+            if isinstance(mod, _JSON_TYPES):
+                if isinstance(mod, ProcessSpecialization):
+                    obj['processes'].append(mod_obj)
+                else:
+                    obj[_JSON_KEYS[type(mod)]] = mod_obj
+
+        return json.dumps(obj, indent=4)
+
+
     def _map_module(self, mod):
         """Maps a specialization module to a dictionary.
 
@@ -182,5 +176,6 @@ class Generator(Parser):
         obj['description'] = mod.description
         obj['id'] = mod.id
         obj['contact'] = mod.contact
+        self._maps[mod] = obj
 
         return obj

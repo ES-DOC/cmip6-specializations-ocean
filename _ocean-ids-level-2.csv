@@ -1,35 +1,46 @@
 cmip6-id, cmip6-label, cmip6-type
-cmip6.ocean.grid.CIM, Ocean > Grid > CIM, detail
-cmip6.ocean.grid.discretisation, Ocean > Grid > Discretisation, detail
-cmip6.ocean.grid.vertical, Ocean > Grid > Vertical, detail
-cmip6.ocean.grid.horizontal, Ocean > Grid > Horizontal, detail
+cmip6.ocean.grid.discretisation, Ocean > Grid > Discretisation, detail-set
+cmip6.ocean.grid.vertical, Ocean > Grid > Vertical, detail-set
+cmip6.ocean.grid.horizontal, Ocean > Grid > Horizontal, detail-set
 , , 
-cmip6.ocean.key_properties.CIM, Ocean > Key Properties > CIM, detail
-cmip6.ocean.key_properties.general, Ocean > Key Properties > General, detail
-cmip6.ocean.key_properties.seawater_properties, Ocean > Key Properties > Seawater Properties, detail
-cmip6.ocean.key_properties.bathymetry, Ocean > Key Properties > Bathymetry, detail
-cmip6.ocean.key_properties.nonoceanic_waters, Ocean > Key Properties > Nonoceanic Waters, detail
-cmip6.ocean.key_properties.resolution, Ocean > Key Properties > Resolution, detail
-cmip6.ocean.key_properties.tuning_applied, Ocean > Key Properties > Tuning Applied, detail
-cmip6.ocean.key_properties.conservation, Ocean > Key Properties > Conservation, detail
+cmip6.ocean.key_properties.general, Ocean > Key Properties > General, detail-set
+cmip6.ocean.key_properties.seawater_properties, Ocean > Key Properties > Seawater Properties, detail-set
+cmip6.ocean.key_properties.bathymetry, Ocean > Key Properties > Bathymetry, detail-set
+cmip6.ocean.key_properties.nonoceanic_waters, Ocean > Key Properties > Nonoceanic Waters, detail-set
+cmip6.ocean.key_properties.resolution, Ocean > Key Properties > Resolution, detail-set
+cmip6.ocean.key_properties.tuning_applied, Ocean > Key Properties > Tuning Applied, detail-set
+cmip6.ocean.key_properties.conservation, Ocean > Key Properties > Conservation, detail-set
 , , 
-cmip6.ocean.timestepping_framework.CIM, Ocean > Timestepping Framework > CIM, detail
-cmip6.ocean.timestepping_framework.timestepping_attributes, Ocean > Timestepping Framework > Timestepping Attributes, detail
-cmip6.ocean.timestepping_framework.timestepping_tracers_scheme, Ocean > Timestepping Framework > Timestepping Tracers Scheme, detail
-cmip6.ocean.timestepping_framework.barotropic_solver_scheme, Ocean > Timestepping Framework > Barotropic Solver Scheme, detail
-cmip6.ocean.timestepping_framework.barotropic_momentum_scheme, Ocean > Timestepping Framework > Barotropic Momentum Scheme, detail
+cmip6.ocean.timestepping_framework.timestepping_attributes, Ocean > Timestepping Framework > Timestepping Attributes, detail-set
+cmip6.ocean.timestepping_framework.timestepping_tracers_scheme, Ocean > Timestepping Framework > Timestepping Tracers Scheme, detail-set
+cmip6.ocean.timestepping_framework.barotropic_solver_scheme, Ocean > Timestepping Framework > Barotropic Solver Scheme, detail-set
+cmip6.ocean.timestepping_framework.barotropic_momentum_scheme, Ocean > Timestepping Framework > Barotropic Momentum Scheme, detail-set
 , , 
-cmip6.ocean.advection.CIM, Ocean > Advection > CIM, detail
+cmip6.ocean.advection.momentum.default, Ocean > Advection > Momentum > Default, detail-set
+cmip6.ocean.advection.lateral_tracers.default, Ocean > Advection > Lateral Tracers > Default, detail-set
+cmip6.ocean.advection.vertical_tracers.default, Ocean > Advection > Vertical Tracers > Default, detail-set
 , , 
-cmip6.ocean.lateral_physics.CIM, Ocean > Lateral Physics > CIM, detail
-cmip6.ocean.lateral_physics.ocean_transient_eddy_representation, Ocean > Lateral Physics > Ocean Transient Eddy Representation, detail
+cmip6.ocean.lateral_physics.ocean_transient_eddy_representation, Ocean > Lateral Physics > Ocean Transient Eddy Representation, detail-set
+cmip6.ocean.lateral_physics.momentum.operator, Ocean > Lateral Physics > Momentum > Operator, detail-set
+cmip6.ocean.lateral_physics.momentum.eddy_viscosity_coeff, Ocean > Lateral Physics > Momentum > Eddy Viscosity Coeff, detail-set
+cmip6.ocean.lateral_physics.tracers.details, Ocean > Lateral Physics > Tracers > Details, detail-set
+cmip6.ocean.lateral_physics.tracers.operator, Ocean > Lateral Physics > Tracers > Operator, detail-set
+cmip6.ocean.lateral_physics.tracers.eddy_viscosity_coeff, Ocean > Lateral Physics > Tracers > Eddy Viscosity Coeff, detail-set
+cmip6.ocean.lateral_physics.tracers.eddy_induced_velocity, Ocean > Lateral Physics > Tracers > Eddy Induced Velocity, detail-set
 , , 
-cmip6.ocean.vertical_physics.CIM, Ocean > Vertical Physics > CIM, detail
+cmip6.ocean.vertical_physics.boundary_layer_mixing.details, Ocean > Vertical Physics > Boundary Layer Mixing > Details, detail-set
+cmip6.ocean.vertical_physics.boundary_layer_mixing.tracers, Ocean > Vertical Physics > Boundary Layer Mixing > Tracers, detail-set
+cmip6.ocean.vertical_physics.boundary_layer_mixing.momentum, Ocean > Vertical Physics > Boundary Layer Mixing > Momentum, detail-set
+cmip6.ocean.vertical_physics.interior_mixing.details, Ocean > Vertical Physics > Interior Mixing > Details, detail-set
+cmip6.ocean.vertical_physics.interior_mixing.tracers, Ocean > Vertical Physics > Interior Mixing > Tracers, detail-set
+cmip6.ocean.vertical_physics.interior_mixing.momentum, Ocean > Vertical Physics > Interior Mixing > Momentum, detail-set
 , , 
-cmip6.ocean.uplow_boundaries.CIM, Ocean > Uplow Boundaries > CIM, detail
-cmip6.ocean.uplow_boundaries.free_surface, Ocean > Uplow Boundaries > Free Surface, detail
-cmip6.ocean.uplow_boundaries.bottom_boundary_layer, Ocean > Uplow Boundaries > Bottom Boundary Layer, detail
+cmip6.ocean.uplow_boundaries.free_surface, Ocean > Uplow Boundaries > Free Surface, detail-set
+cmip6.ocean.uplow_boundaries.bottom_boundary_layer, Ocean > Uplow Boundaries > Bottom Boundary Layer, detail-set
 , , 
-cmip6.ocean.boundary_forcing.CIM, Ocean > Boundary Forcing > CIM, detail
-cmip6.ocean.boundary_forcing.boundary_forcing_details, Ocean > Boundary Forcing > Boundary Forcing Details, detail
+cmip6.ocean.boundary_forcing.boundary_forcing_details, Ocean > Boundary Forcing > Boundary Forcing Details, detail-set
+cmip6.ocean.boundary_forcing.momentum.bottom_friction, Ocean > Boundary Forcing > Momentum > Bottom Friction, detail-set
+cmip6.ocean.boundary_forcing.momentum.lateral_friction, Ocean > Boundary Forcing > Momentum > Lateral Friction, detail-set
+cmip6.ocean.boundary_forcing.tracers.sunlight_penetration, Ocean > Boundary Forcing > Tracers > Sunlight Penetration, detail-set
+cmip6.ocean.boundary_forcing.tracers.fresh_water_forcing, Ocean > Boundary Forcing > Tracers > Fresh Water Forcing, detail-set
 , , 

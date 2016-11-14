@@ -14,7 +14,7 @@ ENUMERATIONS = OrderedDict()
 
 # Default process details pulled from CIM.
 DETAILS['CIM'] = {
-    'description': 'Key properties of the ocean advection',
+    'description': 'Key properties of the ocean vertical physics',
     'properties':[
         ('citations','shared.citation', '0.N',
             "Set of pertinent citations."),

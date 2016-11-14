@@ -38,7 +38,7 @@ class Generator(IdentifierGenerator):
         self.emit_null_row(key_properties)
 
 
-    def on_detail_property_parse(self, detail, prop):
+    def on_detail_parse(self, detail, prop):
         """On process detail parse event handler.
 
         """

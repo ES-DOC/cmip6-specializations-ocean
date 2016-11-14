@@ -15,8 +15,12 @@ import json
 import xml.etree.ElementTree as ET
 
 from utils_model import CIM_PROFILE
-from utils_model import Detail
-from utils_model import Topic
+from utils_model import DetailSpecialization
+from utils_model import GridSpecialization
+from utils_model import KeyPropertiesSpecialization
+from utils_model import ProcessSpecialization
+from utils_model import SubProcessSpecialization
+
 from utils_parser import Parser
 
 
@@ -136,7 +140,7 @@ class Generator(Parser):
         self._emit_node(owner, detail_set)
 
 
-    def on_detail_property_parse(self, detail, detail_property):
+    def on_detail_parse(self, detail, detail_property):
         """On detail property parse event handler.
 
         """
@@ -295,12 +299,12 @@ def _get_notes(spec):
         ("Description", lambda i: None if i.description is None else i.description.replace("&", "and")),
         ("Specialization ID", lambda i: i.id)
     ]
-    if isinstance(spec, Detail):
+    if isinstance(spec, DetailSpecialization):
         result += [
             ("Type", lambda i: i.typeof),
             ("Cardinality", lambda i: i.cardinality)
         ]
-    elif isinstance(spec, Topic):
+    elif isinstance(spec, (GridSpecialization, KeyPropertiesSpecialization, ProcessSpecialization)):
         result += [
             ("QC status", lambda i: i.qc_status),
             ("Contact", lambda i: i.contact),
