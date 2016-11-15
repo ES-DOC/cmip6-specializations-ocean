@@ -49,7 +49,6 @@ class Generator(Parser):
         """
         obj = self._map_module(realm)
         obj['processes'] = []
-        obj['details'] = []
 
 
     def on_grid_parse(self, realm, grid):

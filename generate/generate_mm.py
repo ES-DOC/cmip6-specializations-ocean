@@ -100,6 +100,7 @@ class Generator(Parser):
         """
         self.mmap = ET.Element('map', {})
         self._emit_node(self.mmap, realm, style="fork")
+        self._emit_change_history(realm)
         self._emit_legend(realm)
         self._emit_cim_profile(realm)
 
@@ -240,6 +241,7 @@ class Generator(Parser):
         """
         cfg = self.cfg.get_section
         legend = ET.SubElement(self.nodes[realm], 'node', {
+            'FOLDED': "true",
             'STYLE': "bubble",
             'TEXT': "LEGEND",
             'POSITION': "left"
@@ -262,8 +264,9 @@ class Generator(Parser):
         """
         cfg = self.cfg.get_section
         constraints = ET.SubElement(self.nodes[realm], 'node', {
+            'FOLDED': "true",
             'STYLE': "bubble",
-            'TEXT': "CIM v2 PROFILE",
+            'TEXT': "DETAILS INHERITED FROM CIM",
             'POSITION': "left"
             })
 
@@ -285,6 +288,32 @@ class Generator(Parser):
                     'STYLE': "bubble",
                     'TEXT': name
                     })
+
+
+    def _emit_change_history(self, realm):
+        """Emits mindmap realm change history.
+
+        """
+        cfg = self.cfg.get_section
+        change_history = ET.SubElement(self.nodes[realm], 'node', {
+            'FOLDED': "true",
+            'STYLE': "bubble",
+            'TEXT': "CHANGE HISTORY",
+            'POSITION': "left"
+            })
+        for version, date, person, comment in realm.defn.CHANGE_HISTORY:
+            node = ET.SubElement(change_history, 'node', {
+                # 'BACKGROUND_COLOR': cfg(section)['bg-color'],
+                # 'COLOR': cfg(section)['font-color'],
+                'STYLE': "bubble",
+                'TEXT': version
+                })
+            self._emit_notes(node, [
+                ("Version", version),
+                ("Date", date),
+                ("Person", person),
+                ("Comment", comment),
+            ])
 
 
 def _get_notes(spec):

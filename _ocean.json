@@ -1688,7 +1688,6 @@
             ]
         }
     ], 
-    "details": [], 
     "grid": {
         "label": "Grid", 
         "description": "Ocean grid", 
