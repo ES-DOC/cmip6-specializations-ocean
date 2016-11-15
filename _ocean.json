@@ -10,6 +10,7 @@
             "id": "cmip6.ocean.timestepping_framework", 
             "contact": "Eric Guilyardi", 
             "subProcesses": [], 
+            "details": [], 
             "detailSets": [
                 {
                     "label": "Timestepping Attributes", 
@@ -226,52 +227,45 @@
                     "label": "Momentum", 
                     "description": "Properties of lateral momemtum advection scheme in ocean", 
                     "id": "cmip6.ocean.advection.momentum", 
-                    "detailSets": [
+                    "details": [
                         {
-                            "label": "Default", 
-                            "description": "Properties of lateral momemtum advection scheme in ocean", 
-                            "id": "cmip6.ocean.advection.momentum.default", 
-                            "details": [
-                                {
-                                    "label": "Type", 
-                                    "description": "Type of lateral momemtum advection scheme in ocean", 
-                                    "id": "cmip6.ocean.advection.momentum.default.type", 
-                                    "uiOrdinal": 1, 
-                                    "cardinality": "1.1", 
-                                    "type": "enum", 
-                                    "enum": {
-                                        "choices": [
-                                            {
-                                                "label": "Flux form", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Vector form", 
-                                                "description": null
-                                            }
-                                        ], 
-                                        "description": "Type of lateral momemtum advection scheme in ocean", 
-                                        "isOpen": true, 
-                                        "label": "adv_mom_scheme_types"
+                            "label": "Type", 
+                            "description": "Type of lateral momemtum advection scheme in ocean", 
+                            "id": "cmip6.ocean.advection.momentum.type", 
+                            "uiOrdinal": 1, 
+                            "cardinality": "1.1", 
+                            "type": "enum", 
+                            "enum": {
+                                "choices": [
+                                    {
+                                        "label": "Flux form", 
+                                        "description": null
+                                    }, 
+                                    {
+                                        "label": "Vector form", 
+                                        "description": null
                                     }
-                                }, 
-                                {
-                                    "label": "Scheme Name", 
-                                    "description": "Name of ocean momemtum advection scheme", 
-                                    "id": "cmip6.ocean.advection.momentum.default.scheme_name", 
-                                    "uiOrdinal": 2, 
-                                    "cardinality": "1.1", 
-                                    "type": "str"
-                                }, 
-                                {
-                                    "label": "ALE", 
-                                    "description": "Using ALE for vertical advection ? (if vertical coordinates are sigma)", 
-                                    "id": "cmip6.ocean.advection.momentum.default.ALE", 
-                                    "uiOrdinal": 3, 
-                                    "cardinality": "0.1", 
-                                    "type": "bool"
-                                }
-                            ]
+                                ], 
+                                "description": "Type of lateral momemtum advection scheme in ocean", 
+                                "isOpen": true, 
+                                "label": "adv_mom_scheme_types"
+                            }
+                        }, 
+                        {
+                            "label": "Scheme Name", 
+                            "description": "Name of ocean momemtum advection scheme", 
+                            "id": "cmip6.ocean.advection.momentum.scheme_name", 
+                            "uiOrdinal": 2, 
+                            "cardinality": "1.1", 
+                            "type": "str"
+                        }, 
+                        {
+                            "label": "ALE", 
+                            "description": "Using ALE for vertical advection ? (if vertical coordinates are sigma)", 
+                            "id": "cmip6.ocean.advection.momentum.ALE", 
+                            "uiOrdinal": 3, 
+                            "cardinality": "0.1", 
+                            "type": "bool"
                         }
                     ]
                 }, 
@@ -279,111 +273,104 @@
                     "label": "Lateral Tracers", 
                     "description": "Properties of lateral tracer advection scheme in ocean", 
                     "id": "cmip6.ocean.advection.lateral_tracers", 
-                    "detailSets": [
+                    "details": [
                         {
-                            "label": "Default", 
-                            "description": "Properties of lateral tracer advection scheme in ocean", 
-                            "id": "cmip6.ocean.advection.lateral_tracers.default", 
-                            "details": [
-                                {
-                                    "label": "Type", 
-                                    "description": "Type of lateral tracer advection scheme in ocean", 
-                                    "id": "cmip6.ocean.advection.lateral_tracers.default.type", 
-                                    "uiOrdinal": 1, 
-                                    "cardinality": "1.1", 
-                                    "type": "enum", 
-                                    "enum": {
-                                        "choices": [
-                                            {
-                                                "label": "3rd order upwind", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Centred 2nd order", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Centred 4th order", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "MUSCL", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Piecewise Parabolic method", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Prather 2nd moment (PSOM)", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "QUICKEST", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Sweby", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Total Variance Dissipation (TVD)", 
-                                                "description": null
-                                            }
-                                        ], 
-                                        "description": "Type of tracer advection scheme in ocean", 
-                                        "isOpen": true, 
-                                        "label": "adv_tra_scheme_types"
+                            "label": "Type", 
+                            "description": "Type of lateral tracer advection scheme in ocean", 
+                            "id": "cmip6.ocean.advection.lateral_tracers.type", 
+                            "uiOrdinal": 1, 
+                            "cardinality": "1.1", 
+                            "type": "enum", 
+                            "enum": {
+                                "choices": [
+                                    {
+                                        "label": "3rd order upwind", 
+                                        "description": null
+                                    }, 
+                                    {
+                                        "label": "Centred 2nd order", 
+                                        "description": null
+                                    }, 
+                                    {
+                                        "label": "Centred 4th order", 
+                                        "description": null
+                                    }, 
+                                    {
+                                        "label": "MUSCL", 
+                                        "description": null
+                                    }, 
+                                    {
+                                        "label": "Piecewise Parabolic method", 
+                                        "description": null
+                                    }, 
+                                    {
+                                        "label": "Prather 2nd moment (PSOM)", 
+                                        "description": null
+                                    }, 
+                                    {
+                                        "label": "QUICKEST", 
+                                        "description": null
+                                    }, 
+                                    {
+                                        "label": "Sweby", 
+                                        "description": null
+                                    }, 
+                                    {
+                                        "label": "Total Variance Dissipation (TVD)", 
+                                        "description": null
                                     }
-                                }, 
-                                {
-                                    "label": "Flux Limiter", 
-                                    "description": "Monotonic flux limiter for vertical tracer advection scheme in ocean ?", 
-                                    "id": "cmip6.ocean.advection.lateral_tracers.default.flux_limiter", 
-                                    "uiOrdinal": 2, 
-                                    "cardinality": "1.1", 
-                                    "type": "bool"
-                                }, 
-                                {
-                                    "label": "Passive Tracers", 
-                                    "description": "Passive tracers advected", 
-                                    "id": "cmip6.ocean.advection.lateral_tracers.default.passive_tracers", 
-                                    "uiOrdinal": 3, 
-                                    "cardinality": "0.N", 
-                                    "type": "enum", 
-                                    "enum": {
-                                        "choices": [
-                                            {
-                                                "label": "CFC 11", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "CFC 12", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Ideal age", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "SF6", 
-                                                "description": null
-                                            }
-                                        ], 
-                                        "description": "Passive tracers in ocean", 
-                                        "isOpen": true, 
-                                        "label": "passive_tracers_list"
+                                ], 
+                                "description": "Type of tracer advection scheme in ocean", 
+                                "isOpen": true, 
+                                "label": "adv_tra_scheme_types"
+                            }
+                        }, 
+                        {
+                            "label": "Flux Limiter", 
+                            "description": "Monotonic flux limiter for vertical tracer advection scheme in ocean ?", 
+                            "id": "cmip6.ocean.advection.lateral_tracers.flux_limiter", 
+                            "uiOrdinal": 2, 
+                            "cardinality": "1.1", 
+                            "type": "bool"
+                        }, 
+                        {
+                            "label": "Passive Tracers", 
+                            "description": "Passive tracers advected", 
+                            "id": "cmip6.ocean.advection.lateral_tracers.passive_tracers", 
+                            "uiOrdinal": 3, 
+                            "cardinality": "0.N", 
+                            "type": "enum", 
+                            "enum": {
+                                "choices": [
+                                    {
+                                        "label": "CFC 11", 
+                                        "description": null
+                                    }, 
+                                    {
+                                        "label": "CFC 12", 
+                                        "description": null
+                                    }, 
+                                    {
+                                        "label": "Ideal age", 
+                                        "description": null
+                                    }, 
+                                    {
+                                        "label": "SF6", 
+                                        "description": null
                                     }
-                                }, 
-                                {
-                                    "label": "Passive Tracers Advection", 
-                                    "description": "Is advection of passive tracers different than active ? if so, describe.", 
-                                    "id": "cmip6.ocean.advection.lateral_tracers.default.passive_tracers_advection", 
-                                    "uiOrdinal": 4, 
-                                    "cardinality": "0.1", 
-                                    "type": "str"
-                                }
-                            ]
+                                ], 
+                                "description": "Passive tracers in ocean", 
+                                "isOpen": true, 
+                                "label": "passive_tracers_list"
+                            }
+                        }, 
+                        {
+                            "label": "Passive Tracers Advection", 
+                            "description": "Is advection of passive tracers different than active ? if so, describe.", 
+                            "id": "cmip6.ocean.advection.lateral_tracers.passive_tracers_advection", 
+                            "uiOrdinal": 4, 
+                            "cardinality": "0.1", 
+                            "type": "str"
                         }
                     ]
                 }, 
@@ -391,76 +378,70 @@
                     "label": "Vertical Tracers", 
                     "description": "Properties of vertical tracer advection scheme in ocean", 
                     "id": "cmip6.ocean.advection.vertical_tracers", 
-                    "detailSets": [
+                    "details": [
                         {
-                            "label": "Default", 
-                            "description": "Properties of vertical tracer advection scheme in ocean", 
-                            "id": "cmip6.ocean.advection.vertical_tracers.default", 
-                            "details": [
-                                {
-                                    "label": "Type", 
-                                    "description": "Type of vertical tracer advection scheme in ocean", 
-                                    "id": "cmip6.ocean.advection.vertical_tracers.default.type", 
-                                    "uiOrdinal": 1, 
-                                    "cardinality": "1.1", 
-                                    "type": "enum", 
-                                    "enum": {
-                                        "choices": [
-                                            {
-                                                "label": "3rd order upwind", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Centred 2nd order", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Centred 4th order", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "MUSCL", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Piecewise Parabolic method", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Prather 2nd moment (PSOM)", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "QUICKEST", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Sweby", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Total Variance Dissipation (TVD)", 
-                                                "description": null
-                                            }
-                                        ], 
-                                        "description": "Type of tracer advection scheme in ocean", 
-                                        "isOpen": true, 
-                                        "label": "adv_tra_scheme_types"
+                            "label": "Type", 
+                            "description": "Type of vertical tracer advection scheme in ocean", 
+                            "id": "cmip6.ocean.advection.vertical_tracers.type", 
+                            "uiOrdinal": 1, 
+                            "cardinality": "1.1", 
+                            "type": "enum", 
+                            "enum": {
+                                "choices": [
+                                    {
+                                        "label": "3rd order upwind", 
+                                        "description": null
+                                    }, 
+                                    {
+                                        "label": "Centred 2nd order", 
+                                        "description": null
+                                    }, 
+                                    {
+                                        "label": "Centred 4th order", 
+                                        "description": null
+                                    }, 
+                                    {
+                                        "label": "MUSCL", 
+                                        "description": null
+                                    }, 
+                                    {
+                                        "label": "Piecewise Parabolic method", 
+                                        "description": null
+                                    }, 
+                                    {
+                                        "label": "Prather 2nd moment (PSOM)", 
+                                        "description": null
+                                    }, 
+                                    {
+                                        "label": "QUICKEST", 
+                                        "description": null
+                                    }, 
+                                    {
+                                        "label": "Sweby", 
+                                        "description": null
+                                    }, 
+                                    {
+                                        "label": "Total Variance Dissipation (TVD)", 
+                                        "description": null
                                     }
-                                }, 
-                                {
-                                    "label": "Flux Limiter", 
-                                    "description": "Monotonic flux limiter for vertical tracer advection scheme in ocean ?", 
-                                    "id": "cmip6.ocean.advection.vertical_tracers.default.flux_limiter", 
-                                    "uiOrdinal": 2, 
-                                    "cardinality": "1.1", 
-                                    "type": "bool"
-                                }
-                            ]
+                                ], 
+                                "description": "Type of tracer advection scheme in ocean", 
+                                "isOpen": true, 
+                                "label": "adv_tra_scheme_types"
+                            }
+                        }, 
+                        {
+                            "label": "Flux Limiter", 
+                            "description": "Monotonic flux limiter for vertical tracer advection scheme in ocean ?", 
+                            "id": "cmip6.ocean.advection.vertical_tracers.flux_limiter", 
+                            "uiOrdinal": 2, 
+                            "cardinality": "1.1", 
+                            "type": "bool"
                         }
                     ]
                 }
-            ]
+            ], 
+            "details": []
         }, 
         {
             "label": "Lateral Physics", 
@@ -472,6 +453,7 @@
                     "label": "Momentum", 
                     "description": "Properties of lateral physics for momentum in ocean", 
                     "id": "cmip6.ocean.lateral_physics.momentum", 
+                    "details": [], 
                     "detailSets": [
                         {
                             "label": "Operator", 
@@ -637,6 +619,24 @@
                     "label": "Tracers", 
                     "description": "Properties of lateral physics for tracers in ocean", 
                     "id": "cmip6.ocean.lateral_physics.tracers", 
+                    "details": [
+                        {
+                            "label": "Mesoscale Closure", 
+                            "description": "Is there a mesoscale closure in the lateral physics tracers scheme ?", 
+                            "id": "cmip6.ocean.lateral_physics.tracers.mesoscale_closure", 
+                            "uiOrdinal": 1, 
+                            "cardinality": "1.1", 
+                            "type": "bool"
+                        }, 
+                        {
+                            "label": "Submesoscale Mixing", 
+                            "description": "Is there a submesoscale mixing parameterisation (i.e Fox-Kemper) in the lateral physics tracers scheme ?", 
+                            "id": "cmip6.ocean.lateral_physics.tracers.submesoscale_mixing", 
+                            "uiOrdinal": 2, 
+                            "cardinality": "1.1", 
+                            "type": "bool"
+                        }
+                    ], 
                     "detailSets": [
                         {
                             "label": "Details", 
@@ -872,6 +872,7 @@
                     ]
                 }
             ], 
+            "details": [], 
             "detailSets": [
                 {
                     "label": "Ocean Transient Eddy Representation", 
@@ -919,6 +920,7 @@
                     "label": "Boundary Layer Mixing", 
                     "description": "Properties of boundary layer mixing in the ocean (aka mixed layer)", 
                     "id": "cmip6.ocean.vertical_physics.boundary_layer_mixing", 
+                    "details": [], 
                     "detailSets": [
                         {
                             "label": "Details", 
@@ -1097,6 +1099,7 @@
                     "label": "Interior Mixing", 
                     "description": "Properties of interior vertical mixing in the ocean", 
                     "id": "cmip6.ocean.vertical_physics.interior_mixing", 
+                    "details": [], 
                     "detailSets": [
                         {
                             "label": "Details", 
@@ -1298,7 +1301,8 @@
                         }
                     ]
                 }
-            ]
+            ], 
+            "details": []
         }, 
         {
             "label": "Uplow Boundaries", 
@@ -1306,6 +1310,7 @@
             "id": "cmip6.ocean.uplow_boundaries", 
             "contact": "Eric Guilyardi", 
             "subProcesses": [], 
+            "details": [], 
             "detailSets": [
                 {
                     "label": "Free Surface", 
@@ -1419,6 +1424,7 @@
                     "label": "Momentum", 
                     "description": "Key properties of momentum boundary forcing in the ocean", 
                     "id": "cmip6.ocean.boundary_forcing.momentum", 
+                    "details": [], 
                     "detailSets": [
                         {
                             "label": "Bottom Friction", 
@@ -1502,6 +1508,7 @@
                     "label": "Tracers", 
                     "description": "Key properties of tracer boundary forcing in the ocean", 
                     "id": "cmip6.ocean.boundary_forcing.tracers", 
+                    "details": [], 
                     "detailSets": [
                         {
                             "label": "Sunlight Penetration", 
@@ -1621,6 +1628,7 @@
                     ]
                 }
             ], 
+            "details": [], 
             "detailSets": [
                 {
                     "label": "Boundary Forcing Details", 
@@ -1680,6 +1688,7 @@
             ]
         }
     ], 
+    "details": [], 
     "grid": {
         "label": "Grid", 
         "description": "Ocean grid", 
@@ -1690,164 +1699,166 @@
                 "label": "Discretisation", 
                 "description": "Type of discretisation scheme in ocean", 
                 "id": "cmip6.ocean.grid.discretisation", 
-                "details": []
-            }, 
-            {
-                "label": "Vertical", 
-                "description": "Properties of vertical discretisation in ocean", 
-                "id": "cmip6.ocean.grid.vertical", 
-                "details": [
+                "details": [], 
+                "detailSets": [
                     {
-                        "label": "Coordinates", 
-                        "description": "Type of vertical coordinates in ocean", 
-                        "id": "cmip6.ocean.grid.vertical.coordinates", 
-                        "uiOrdinal": 1, 
-                        "cardinality": "1.1", 
-                        "type": "enum", 
-                        "enum": {
-                            "choices": [
-                                {
-                                    "label": "Hybrid / ALE", 
-                                    "description": null
-                                }, 
-                                {
-                                    "label": "Hybrid / Z+S", 
-                                    "description": null
-                                }, 
-                                {
-                                    "label": "Hybrid / Z+isopycnic", 
-                                    "description": null
-                                }, 
-                                {
-                                    "label": "Hybrid / other", 
-                                    "description": null
-                                }, 
-                                {
-                                    "label": "Isopycnic - other", 
-                                    "description": "Other density-based coordinate"
-                                }, 
-                                {
-                                    "label": "Isopycnic - sigma 0", 
-                                    "description": "Density referenced to the surface"
-                                }, 
-                                {
-                                    "label": "Isopycnic - sigma 2", 
-                                    "description": "Density referenced to 2000 m"
-                                }, 
-                                {
-                                    "label": "Isopycnic - sigma 4", 
-                                    "description": "Density referenced to 4000 m"
-                                }, 
-                                {
-                                    "label": "P*", 
-                                    "description": null
-                                }, 
-                                {
-                                    "label": "Pressure referenced (P)", 
-                                    "description": null
-                                }, 
-                                {
-                                    "label": "S-coordinate", 
-                                    "description": null
-                                }, 
-                                {
-                                    "label": "Z**", 
-                                    "description": null
-                                }, 
-                                {
-                                    "label": "Z*-coordinate", 
-                                    "description": null
-                                }, 
-                                {
-                                    "label": "Z-coordinate", 
-                                    "description": null
+                        "label": "Vertical", 
+                        "description": "Properties of vertical discretisation in ocean", 
+                        "id": "cmip6.ocean.grid.vertical", 
+                        "details": [
+                            {
+                                "label": "Coordinates", 
+                                "description": "Type of vertical coordinates in ocean", 
+                                "id": "cmip6.ocean.grid.vertical.coordinates", 
+                                "uiOrdinal": 1, 
+                                "cardinality": "1.1", 
+                                "type": "enum", 
+                                "enum": {
+                                    "choices": [
+                                        {
+                                            "label": "Hybrid / ALE", 
+                                            "description": null
+                                        }, 
+                                        {
+                                            "label": "Hybrid / Z+S", 
+                                            "description": null
+                                        }, 
+                                        {
+                                            "label": "Hybrid / Z+isopycnic", 
+                                            "description": null
+                                        }, 
+                                        {
+                                            "label": "Hybrid / other", 
+                                            "description": null
+                                        }, 
+                                        {
+                                            "label": "Isopycnic - other", 
+                                            "description": "Other density-based coordinate"
+                                        }, 
+                                        {
+                                            "label": "Isopycnic - sigma 0", 
+                                            "description": "Density referenced to the surface"
+                                        }, 
+                                        {
+                                            "label": "Isopycnic - sigma 2", 
+                                            "description": "Density referenced to 2000 m"
+                                        }, 
+                                        {
+                                            "label": "Isopycnic - sigma 4", 
+                                            "description": "Density referenced to 4000 m"
+                                        }, 
+                                        {
+                                            "label": "P*", 
+                                            "description": null
+                                        }, 
+                                        {
+                                            "label": "Pressure referenced (P)", 
+                                            "description": null
+                                        }, 
+                                        {
+                                            "label": "S-coordinate", 
+                                            "description": null
+                                        }, 
+                                        {
+                                            "label": "Z**", 
+                                            "description": null
+                                        }, 
+                                        {
+                                            "label": "Z*-coordinate", 
+                                            "description": null
+                                        }, 
+                                        {
+                                            "label": "Z-coordinate", 
+                                            "description": null
+                                        }
+                                    ], 
+                                    "description": "Types of vertical coordinates in ocean", 
+                                    "isOpen": true, 
+                                    "label": "vertical_coordinate_types"
                                 }
-                            ], 
-                            "description": "Types of vertical coordinates in ocean", 
-                            "isOpen": true, 
-                            "label": "vertical_coordinate_types"
-                        }
+                            }, 
+                            {
+                                "label": "Partial Steps", 
+                                "description": "Using partial steps with Z or Z* vertical coordinate in ocean ?", 
+                                "id": "cmip6.ocean.grid.vertical.partial_steps", 
+                                "uiOrdinal": 2, 
+                                "cardinality": "1.1", 
+                                "type": "bool"
+                            }
+                        ]
                     }, 
                     {
-                        "label": "Partial Steps", 
-                        "description": "Using partial steps with Z or Z* vertical coordinate in ocean ?", 
-                        "id": "cmip6.ocean.grid.vertical.partial_steps", 
-                        "uiOrdinal": 2, 
-                        "cardinality": "1.1", 
-                        "type": "bool"
-                    }
-                ]
-            }, 
-            {
-                "label": "Horizontal", 
-                "description": "Type of horizontal discretisation scheme in ocean", 
-                "id": "cmip6.ocean.grid.horizontal", 
-                "details": [
-                    {
-                        "label": "Type", 
-                        "description": "Horizontal grid type", 
-                        "id": "cmip6.ocean.grid.horizontal.type", 
-                        "uiOrdinal": 1, 
-                        "cardinality": "1.1", 
-                        "type": "enum", 
-                        "enum": {
-                            "choices": [
-                                {
-                                    "label": "Lat-lon", 
-                                    "description": null
-                                }, 
-                                {
-                                    "label": "Rotated north pole", 
-                                    "description": null
-                                }, 
-                                {
-                                    "label": "Two north poles (ORCA-style)", 
-                                    "description": null
+                        "label": "Horizontal", 
+                        "description": "Type of horizontal discretisation scheme in ocean", 
+                        "id": "cmip6.ocean.grid.horizontal", 
+                        "details": [
+                            {
+                                "label": "Type", 
+                                "description": "Horizontal grid type", 
+                                "id": "cmip6.ocean.grid.horizontal.type", 
+                                "uiOrdinal": 1, 
+                                "cardinality": "1.1", 
+                                "type": "enum", 
+                                "enum": {
+                                    "choices": [
+                                        {
+                                            "label": "Lat-lon", 
+                                            "description": null
+                                        }, 
+                                        {
+                                            "label": "Rotated north pole", 
+                                            "description": null
+                                        }, 
+                                        {
+                                            "label": "Two north poles (ORCA-style)", 
+                                            "description": null
+                                        }
+                                    ], 
+                                    "description": "Types of horizonal grid in ocean", 
+                                    "isOpen": true, 
+                                    "label": "horizontal_grid_types"
                                 }
-                            ], 
-                            "description": "Types of horizonal grid in ocean", 
-                            "isOpen": true, 
-                            "label": "horizontal_grid_types"
-                        }
-                    }, 
-                    {
-                        "label": "Scheme", 
-                        "description": "Horizontal discretisation scheme in ocean", 
-                        "id": "cmip6.ocean.grid.horizontal.scheme", 
-                        "uiOrdinal": 2, 
-                        "cardinality": "1.1", 
-                        "type": "enum", 
-                        "enum": {
-                            "choices": [
-                                {
-                                    "label": "Finite difference / Arakawa B-grid", 
-                                    "description": null
-                                }, 
-                                {
-                                    "label": "Finite difference / Arakawa C-grid", 
-                                    "description": null
-                                }, 
-                                {
-                                    "label": "Finite difference / Arakawa E-grid", 
-                                    "description": null
-                                }, 
-                                {
-                                    "label": "Finite elements", 
-                                    "description": null
-                                }, 
-                                {
-                                    "label": "Finite volumes", 
-                                    "description": null
-                                }, 
-                                {
-                                    "label": "Unstructured grid", 
-                                    "description": null
+                            }, 
+                            {
+                                "label": "Scheme", 
+                                "description": "Horizontal discretisation scheme in ocean", 
+                                "id": "cmip6.ocean.grid.horizontal.scheme", 
+                                "uiOrdinal": 2, 
+                                "cardinality": "1.1", 
+                                "type": "enum", 
+                                "enum": {
+                                    "choices": [
+                                        {
+                                            "label": "Finite difference / Arakawa B-grid", 
+                                            "description": null
+                                        }, 
+                                        {
+                                            "label": "Finite difference / Arakawa C-grid", 
+                                            "description": null
+                                        }, 
+                                        {
+                                            "label": "Finite difference / Arakawa E-grid", 
+                                            "description": null
+                                        }, 
+                                        {
+                                            "label": "Finite elements", 
+                                            "description": null
+                                        }, 
+                                        {
+                                            "label": "Finite volumes", 
+                                            "description": null
+                                        }, 
+                                        {
+                                            "label": "Unstructured grid", 
+                                            "description": null
+                                        }
+                                    ], 
+                                    "description": "Types of horizonal scheme in ocean", 
+                                    "isOpen": true, 
+                                    "label": "horizontal_scheme_types"
                                 }
-                            ], 
-                            "description": "Types of horizonal scheme in ocean", 
-                            "isOpen": true, 
-                            "label": "horizontal_scheme_types"
-                        }
+                            }
+                        ]
                     }
                 ]
             }

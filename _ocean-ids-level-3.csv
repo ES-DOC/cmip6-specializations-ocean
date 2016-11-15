@@ -43,15 +43,15 @@ cmip6.ocean.timestepping_framework.barotropic_solver_scheme.barotropic_solver, O
 cmip6.ocean.timestepping_framework.barotropic_solver_scheme.type, Ocean > Timestepping Framework > Barotropic Solver Scheme > Type, detail
 cmip6.ocean.timestepping_framework.barotropic_momentum_scheme.barotropic_momentum, Ocean > Timestepping Framework > Barotropic Momentum Scheme > Barotropic Momentum, detail
 , , 
-cmip6.ocean.advection.momentum.default.type, Ocean > Advection > Momentum > Default > Type, detail
-cmip6.ocean.advection.momentum.default.scheme_name, Ocean > Advection > Momentum > Default > Scheme Name, detail
-cmip6.ocean.advection.momentum.default.ALE, Ocean > Advection > Momentum > Default > ALE, detail
-cmip6.ocean.advection.lateral_tracers.default.type, Ocean > Advection > Lateral Tracers > Default > Type, detail
-cmip6.ocean.advection.lateral_tracers.default.flux_limiter, Ocean > Advection > Lateral Tracers > Default > Flux Limiter, detail
-cmip6.ocean.advection.lateral_tracers.default.passive_tracers, Ocean > Advection > Lateral Tracers > Default > Passive Tracers, detail
-cmip6.ocean.advection.lateral_tracers.default.passive_tracers_advection, Ocean > Advection > Lateral Tracers > Default > Passive Tracers Advection, detail
-cmip6.ocean.advection.vertical_tracers.default.type, Ocean > Advection > Vertical Tracers > Default > Type, detail
-cmip6.ocean.advection.vertical_tracers.default.flux_limiter, Ocean > Advection > Vertical Tracers > Default > Flux Limiter, detail
+cmip6.ocean.advection.momentum.type, Ocean > Advection > Momentum > Type, detail
+cmip6.ocean.advection.momentum.scheme_name, Ocean > Advection > Momentum > Scheme Name, detail
+cmip6.ocean.advection.momentum.ALE, Ocean > Advection > Momentum > ALE, detail
+cmip6.ocean.advection.lateral_tracers.type, Ocean > Advection > Lateral Tracers > Type, detail
+cmip6.ocean.advection.lateral_tracers.flux_limiter, Ocean > Advection > Lateral Tracers > Flux Limiter, detail
+cmip6.ocean.advection.lateral_tracers.passive_tracers, Ocean > Advection > Lateral Tracers > Passive Tracers, detail
+cmip6.ocean.advection.lateral_tracers.passive_tracers_advection, Ocean > Advection > Lateral Tracers > Passive Tracers Advection, detail
+cmip6.ocean.advection.vertical_tracers.type, Ocean > Advection > Vertical Tracers > Type, detail
+cmip6.ocean.advection.vertical_tracers.flux_limiter, Ocean > Advection > Vertical Tracers > Flux Limiter, detail
 , , 
 cmip6.ocean.lateral_physics.ocean_transient_eddy_representation.scheme, Ocean > Lateral Physics > Ocean Transient Eddy Representation > Scheme, detail
 cmip6.ocean.lateral_physics.momentum.operator.direction, Ocean > Lateral Physics > Momentum > Operator > Direction, detail
@@ -62,6 +62,8 @@ cmip6.ocean.lateral_physics.momentum.eddy_viscosity_coeff.constant_coefficient, 
 cmip6.ocean.lateral_physics.momentum.eddy_viscosity_coeff.variable_coefficient, Ocean > Lateral Physics > Momentum > Eddy Viscosity Coeff > Variable Coefficient, detail
 cmip6.ocean.lateral_physics.momentum.eddy_viscosity_coeff.coeff_background, Ocean > Lateral Physics > Momentum > Eddy Viscosity Coeff > Coeff Background, detail
 cmip6.ocean.lateral_physics.momentum.eddy_viscosity_coeff.coeff_backscatter, Ocean > Lateral Physics > Momentum > Eddy Viscosity Coeff > Coeff Backscatter, detail
+cmip6.ocean.lateral_physics.tracers.mesoscale_closure, Ocean > Lateral Physics > Tracers > Mesoscale Closure, detail
+cmip6.ocean.lateral_physics.tracers.submesoscale_mixing, Ocean > Lateral Physics > Tracers > Submesoscale Mixing, detail
 cmip6.ocean.lateral_physics.tracers.details.mesoscale_closure, Ocean > Lateral Physics > Tracers > Details > Mesoscale Closure, detail
 cmip6.ocean.lateral_physics.tracers.details.submesoscale_mixing, Ocean > Lateral Physics > Tracers > Details > Submesoscale Mixing, detail
 cmip6.ocean.lateral_physics.tracers.operator.direction, Ocean > Lateral Physics > Tracers > Operator > Direction, detail

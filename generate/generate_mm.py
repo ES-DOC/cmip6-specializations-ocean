@@ -291,18 +291,14 @@ def _get_notes(spec):
     """Returns notes to be appended to a mindmap node.
 
     """
-    # EnumChoice: [
-    #     ("Description", self.description.replace("&", "and")),
-    #     ("Specialization ID", self.id.lower().replace(" ", "-").replace("_", "-"))
-    # ],
     result = [
-        ("Description", lambda i: None if i.description is None else i.description.replace("&", "and")),
-        ("Specialization ID", lambda i: i.id)
+        ("Description", lambda i: None if i.description is None else i.description.replace("&", "and"))
     ]
     if isinstance(spec, DetailSpecialization):
         result += [
             ("Type", lambda i: i.typeof),
-            ("Cardinality", lambda i: i.cardinality)
+            ("Cardinality", lambda i: i.cardinality),
+            ("Specialization ID", lambda i: i.id)
         ]
     elif isinstance(spec, (GridSpecialization, KeyPropertiesSpecialization, ProcessSpecialization)):
         result += [

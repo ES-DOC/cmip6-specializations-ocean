@@ -98,7 +98,13 @@ SUB_PROCESSES['momentum:eddy_viscosity_coeff'] = {
 # --------------------------------------------------------------------
 SUB_PROCESSES['tracers'] = {
     'description': 'Properties of lateral physics for tracers in ocean',
-    'properties': [],
+    'properties': [
+        ('mesoscale_closure', 'bool', '1.1',
+            'Is there a mesoscale closure in the lateral physics tracers scheme ?'),
+        ('submesoscale_mixing', 'bool', '1.1',
+            'Is there a submesoscale mixing parameterisation (i.e Fox-Kemper) in the lateral physics tracers scheme ?')
+
+    ],
     'detail_sets': [
         'details',
         'operator',
