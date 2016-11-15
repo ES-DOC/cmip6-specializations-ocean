@@ -240,14 +240,14 @@ class Generator(Parser):
 
         """
         cfg = self.cfg.get_section
-        legend = ET.SubElement(self.nodes[realm], 'node', {
+        root_node = ET.SubElement(self.nodes[realm], 'node', {
             'FOLDED': "true",
             'STYLE': "bubble",
             'TEXT': "LEGEND",
             'POSITION': "left"
             })
         for section in _SECTIONS:
-            node = ET.SubElement(legend, 'node', {
+            node = ET.SubElement(root_node, 'node', {
                 'BACKGROUND_COLOR': cfg(section)['bg-color'],
                 'COLOR': cfg(section)['font-color'],
                 'STYLE': "bubble",
@@ -263,46 +263,41 @@ class Generator(Parser):
 
         """
         cfg = self.cfg.get_section
-        constraints = ET.SubElement(self.nodes[realm], 'node', {
+        root_node = ET.SubElement(self.nodes[realm], 'node', {
             'FOLDED': "true",
             'STYLE': "bubble",
             'TEXT': "DETAILS INHERITED FROM CIM",
             'POSITION': "left"
             })
-
-        # Iterate each section within profile.
         for section, cim_type in _SECTIONS.iteritems():
-            if cim_type not in CIM_PROFILE:
-                continue
-
-            node = ET.SubElement(constraints, 'node', {
-                'BACKGROUND_COLOR': cfg(section)['bg-color'],
-                'COLOR': cfg(section)['font-color'],
-                'STYLE': "bubble",
-                'TEXT': section
-                })
-            for name in CIM_PROFILE[cim_type]['include']:
-                ET.SubElement(node, 'node', {
+            if cim_type in CIM_PROFILE:
+                node = ET.SubElement(root_node, 'node', {
                     'BACKGROUND_COLOR': cfg(section)['bg-color'],
                     'COLOR': cfg(section)['font-color'],
                     'STYLE': "bubble",
-                    'TEXT': name
+                    'TEXT': section
                     })
+                for name in CIM_PROFILE[cim_type]['include']:
+                    ET.SubElement(node, 'node', {
+                        'BACKGROUND_COLOR': cfg(section)['bg-color'],
+                        'COLOR': cfg(section)['font-color'],
+                        'STYLE': "bubble",
+                        'TEXT': name
+                        })
 
 
     def _emit_change_history(self, realm):
         """Emits mindmap realm change history.
 
         """
-        cfg = self.cfg.get_section
-        change_history = ET.SubElement(self.nodes[realm], 'node', {
+        root_node = ET.SubElement(self.nodes[realm], 'node', {
             'FOLDED': "true",
             'STYLE': "bubble",
             'TEXT': "CHANGE HISTORY",
             'POSITION': "left"
             })
         for version, date, person, comment in realm.defn.CHANGE_HISTORY:
-            node = ET.SubElement(change_history, 'node', {
+            node = ET.SubElement(root_node, 'node', {
                 # 'BACKGROUND_COLOR': cfg(section)['bg-color'],
                 # 'COLOR': cfg(section)['font-color'],
                 'STYLE': "bubble",
