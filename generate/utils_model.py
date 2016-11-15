@@ -116,7 +116,7 @@ class DetailSetSpecialization(object):
 
         """
         self.name = name.split(":")[-1]
-        self.cfg_section = "detail"
+        self.cfg_section = "detail-set"
         self.defn = defn
         self.description = defn['description']
         self.detail_sets = []
@@ -138,7 +138,7 @@ class DetailSpecialization(object):
         """
         self.name, self.typeof, self.cardinality, self.description = defn
         self.container = container
-        self.cfg_section = "detail-property"
+        self.cfg_section = "detail"
         if self.typeof.startswith("ENUM"):
             enum_name = self.typeof.split(":")[-1]
             self.enum = EnumSpecialization(enum_name, enumerations[enum_name])
@@ -149,7 +149,7 @@ class DetailSpecialization(object):
 
     @property
     def id(self):
-        """Gets id associated with detail-property.
+        """Gets detail id - very important when building a comparator.
 
         """
         return "{}.{}".format(self.container.id, self.name)

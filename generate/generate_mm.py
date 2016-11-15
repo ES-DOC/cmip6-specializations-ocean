@@ -47,8 +47,8 @@ _SECTIONS['process'] = "science.process"
 _SECTIONS['sub-process'] = "science.sub_process"
 _SECTIONS['key-properties'] = "science.key_properties"
 _SECTIONS['grid'] = "science.grid"
-_SECTIONS['detail'] = "science.detail"
-_SECTIONS['detail-property'] = None
+_SECTIONS['detail-set'] = "science.detail"
+_SECTIONS['detail'] = None
 _SECTIONS['enum-choice'] = None
 
 
