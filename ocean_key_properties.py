@@ -12,21 +12,6 @@ from collections import OrderedDict
 DETAILS = OrderedDict()
 ENUMERATIONS = OrderedDict()
 
-# Default process details pulled from CIM.
-DETAILS['CIM'] = {
-    'description': 'Key properties of the ocean',
-    'properties':[
-        ('citations','shared.citation', '0.N',
-            "Set of pertinent citations."),
-        ('keywords','str', '0.N',
-            "Keywords to help re-use and discovery of this information."),
-        ('overview','str', '1.1',
-            "General implementation overview."),
-        ('responsibile_parties','shared.responsibility', '0.N',
-            "Set of parties responsible for providing this information."),
-    ]
-}
-
 # --------------------------------------------------------------------
 # CONTACT
 #
