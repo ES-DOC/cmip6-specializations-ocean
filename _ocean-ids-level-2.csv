@@ -19,7 +19,6 @@ cmip6.ocean.timestepping_framework.barotropic_momentum_scheme, Ocean > Timestepp
 cmip6.ocean.lateral_physics.ocean_transient_eddy_representation, Ocean > Lateral Physics > Ocean Transient Eddy Representation, detail-set
 cmip6.ocean.lateral_physics.momentum.operator, Ocean > Lateral Physics > Momentum > Operator, detail-set
 cmip6.ocean.lateral_physics.momentum.eddy_viscosity_coeff, Ocean > Lateral Physics > Momentum > Eddy Viscosity Coeff, detail-set
-cmip6.ocean.lateral_physics.tracers.details, Ocean > Lateral Physics > Tracers > Details, detail-set
 cmip6.ocean.lateral_physics.tracers.operator, Ocean > Lateral Physics > Tracers > Operator, detail-set
 cmip6.ocean.lateral_physics.tracers.eddy_viscosity_coeff, Ocean > Lateral Physics > Tracers > Eddy Viscosity Coeff, detail-set
 cmip6.ocean.lateral_physics.tracers.eddy_induced_velocity, Ocean > Lateral Physics > Tracers > Eddy Induced Velocity, detail-set

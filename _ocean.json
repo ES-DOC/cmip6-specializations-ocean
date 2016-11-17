@@ -639,29 +639,6 @@
                     ], 
                     "detailSets": [
                         {
-                            "label": "Details", 
-                            "description": "Properties of lateral physics for tracers in ocean", 
-                            "id": "cmip6.ocean.lateral_physics.tracers.details", 
-                            "details": [
-                                {
-                                    "label": "Mesoscale Closure", 
-                                    "description": "Is there a mesoscale closure in the lateral physics tracers scheme ?", 
-                                    "id": "cmip6.ocean.lateral_physics.tracers.details.mesoscale_closure", 
-                                    "uiOrdinal": 1, 
-                                    "cardinality": "1.1", 
-                                    "type": "bool"
-                                }, 
-                                {
-                                    "label": "Submesoscale Mixing", 
-                                    "description": "Is there a submesoscale mixing parameterisation (i.e Fox-Kemper) in the lateral physics tracers scheme ?", 
-                                    "id": "cmip6.ocean.lateral_physics.tracers.details.submesoscale_mixing", 
-                                    "uiOrdinal": 2, 
-                                    "cardinality": "1.1", 
-                                    "type": "bool"
-                                }
-                            ]
-                        }, 
-                        {
                             "label": "Operator", 
                             "description": "Properties of lateral physics operator for tracers in ocean", 
                             "id": "cmip6.ocean.lateral_physics.tracers.operator", 

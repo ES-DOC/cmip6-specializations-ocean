@@ -64,8 +64,6 @@ cmip6.ocean.lateral_physics.momentum.eddy_viscosity_coeff.coeff_background, Ocea
 cmip6.ocean.lateral_physics.momentum.eddy_viscosity_coeff.coeff_backscatter, Ocean > Lateral Physics > Momentum > Eddy Viscosity Coeff > Coeff Backscatter, detail
 cmip6.ocean.lateral_physics.tracers.mesoscale_closure, Ocean > Lateral Physics > Tracers > Mesoscale Closure, detail
 cmip6.ocean.lateral_physics.tracers.submesoscale_mixing, Ocean > Lateral Physics > Tracers > Submesoscale Mixing, detail
-cmip6.ocean.lateral_physics.tracers.details.mesoscale_closure, Ocean > Lateral Physics > Tracers > Details > Mesoscale Closure, detail
-cmip6.ocean.lateral_physics.tracers.details.submesoscale_mixing, Ocean > Lateral Physics > Tracers > Details > Submesoscale Mixing, detail
 cmip6.ocean.lateral_physics.tracers.operator.direction, Ocean > Lateral Physics > Tracers > Operator > Direction, detail
 cmip6.ocean.lateral_physics.tracers.operator.order, Ocean > Lateral Physics > Tracers > Operator > Order, detail
 cmip6.ocean.lateral_physics.tracers.operator.discretisation, Ocean > Lateral Physics > Tracers > Operator > Discretisation, detail
