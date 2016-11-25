@@ -9,41 +9,32 @@ For further information goto http://wordpress.es-doc.org/cmip6-model-specializat
 from collections import OrderedDict
 
 DETAILS = OrderedDict()
-SUB_PROCESSES = OrderedDict()
 ENUMERATIONS = OrderedDict()
 
 # --------------------------------------------------------------------
-# CONTACT
-#
-# Set to realm specialization co-ordinator.
+# CONTACT: Set to realm specialization co-ordinator.
 # --------------------------------------------------------------------
 CONTACT = 'Eric Guilyardi'
 
 # --------------------------------------------------------------------
-# AUTHORS
-#
-# Set to realm specialization authors (comma delimited).
+# AUTHORS: Set to realm specialization authors (comma delimited).
 # --------------------------------------------------------------------
 AUTHORS = 'Eric Guilyardi'
 
 # --------------------------------------------------------------------
-# QUALITY CONTROL STATUS
-#
-# Set to 'draft' or 'complete'
+# QUALITY CONTROL STATUS: Set to 'draft' or 'complete'
 # --------------------------------------------------------------------
 QC_STATUS = 'draft'
 
 # --------------------------------------------------------------------
-# DESCRIPTION
-#
-# Short description of the specialization.
+# DESCRIPTION: Short description of the specialization.
 # --------------------------------------------------------------------
 DESCRIPTION = 'Ocean advection'
 
 # --------------------------------------------------------------------
 # SUB-PROCESS: Momentum.
 # --------------------------------------------------------------------
-SUB_PROCESSES['momentum'] = {
+DETAILS['momentum'] = {
     'description': 'Properties of lateral momemtum advection scheme in ocean',
     'properties': [
         ('type', 'ENUM:adv_mom_scheme_types', '1.1',
@@ -58,7 +49,7 @@ SUB_PROCESSES['momentum'] = {
 # --------------------------------------------------------------------
 # SUB-PROCESS: Lateral tracers.
 # --------------------------------------------------------------------
-SUB_PROCESSES['lateral_tracers'] = {
+DETAILS['lateral_tracers'] = {
     'description':'Properties of lateral tracer advection scheme in ocean',
     'properties': [
         ('type', 'ENUM:adv_tra_scheme_types', '1.1',
@@ -75,7 +66,7 @@ SUB_PROCESSES['lateral_tracers'] = {
 # --------------------------------------------------------------------
 # SUB-PROCESS: Vertical tracers.
 # --------------------------------------------------------------------
-SUB_PROCESSES['vertical_tracers'] = {
+DETAILS['vertical_tracers'] = {
     'description': 'Properties of vertical tracer advection scheme in ocean',
     'properties': [
         ('type', 'ENUM:adv_tra_scheme_types', '1.1',

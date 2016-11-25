@@ -9,43 +9,32 @@ For further information goto http://wordpress.es-doc.org/cmip6-model-specializat
 from collections import OrderedDict
 
 DETAILS = OrderedDict()
-SUB_PROCESSES = OrderedDict()
 ENUMERATIONS = OrderedDict()
 
 # --------------------------------------------------------------------
-# CONTACT
-#
-# Set to realm specialization co-ordinator.
+# CONTACT: Set to realm specialization co-ordinator.
 # --------------------------------------------------------------------
 CONTACT = 'Eric Guilyardi'
 
 # --------------------------------------------------------------------
-# AUTHORS
-#
-# Set to realm specialization authors (comma delimited).
+# AUTHORS: Set to realm specialization authors (comma delimited).
 # --------------------------------------------------------------------
 AUTHORS = 'Eric Guilyardi'
 
 # --------------------------------------------------------------------
-# QUALITY CONTROL STATUS
-#
-# Set to 'draft' or 'complete'
+# QUALITY CONTROL STATUS: Set to 'draft' or 'complete'
 # --------------------------------------------------------------------
 QC_STATUS = 'draft'
 
 # --------------------------------------------------------------------
-# DESCRIPTION
-#
-# Short specialization description.
+# DESCRIPTION: Short description of the specialization.
 # --------------------------------------------------------------------
 DESCRIPTION = 'Ocean upper / lower boundaries'
 
 # --------------------------------------------------------------------
-# PROCESS: DETAILS
-#
-# Sets of user defined process details.
+# PROCESS: top level
 # --------------------------------------------------------------------
-DETAILS['free_surface'] = {
+DETAILS['toplevel:free_surface'] = {
     'description': 'Properties of free surface in ocean',
     'properties': [
         ('scheme', 'ENUM:free_surface_types', '1.1',
@@ -55,7 +44,7 @@ DETAILS['free_surface'] = {
         ]
     }
 
-DETAILS['bottom_boundary_layer'] = {
+DETAILS['toplevel:bottom_boundary_layer'] = {
     'description': 'Properties of bottom boundary layer in ocean',
     'properties': [
         ('type_of_bbl', 'ENUM:bottom_bl_types', '1.1',

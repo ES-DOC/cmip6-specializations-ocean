@@ -9,43 +9,32 @@ For further information goto http://wordpress.es-doc.org/cmip6-model-specializat
 from collections import OrderedDict
 
 DETAILS = OrderedDict()
-SUB_PROCESSES = OrderedDict()
 ENUMERATIONS = OrderedDict()
 
 # --------------------------------------------------------------------
-# CONTACT
-#
-# Set to realm specialization co-ordinator.
+# CONTACT: Set to realm specialization co-ordinator.
 # --------------------------------------------------------------------
 CONTACT = 'Eric Guilyardi'
 
 # --------------------------------------------------------------------
-# AUTHORS
-#
-# Set to realm specialization authors (comma delimited).
+# AUTHORS: Set to realm specialization authors (comma delimited).
 # --------------------------------------------------------------------
 AUTHORS = 'Eric Guilyardi'
 
 # --------------------------------------------------------------------
-# QUALITY CONTROL STATUS
-#
-# Set to 'draft' or 'complete'
+# QUALITY CONTROL STATUS: Set to 'draft' or 'complete'
 # --------------------------------------------------------------------
 QC_STATUS = 'draft'
 
 # --------------------------------------------------------------------
-# DESCRIPTION
-#
-# Short description of the specialization.
+# DESCRIPTION: Short description of the specialization.
 # --------------------------------------------------------------------
 DESCRIPTION = 'Ocean Timestepping Framework'
 
 # --------------------------------------------------------------------
-# PROCESS: DETAILS
-#
-# Sets of user defined process details.
+# PROCESS: top level
 # --------------------------------------------------------------------
-DETAILS['timestepping_attributes'] = {
+DETAILS['toplevel:timestepping_attributes'] = {
     'description': 'Properties of time stepping in ocean',
     'properties': [
         ('time_step', 'int', '1.1',
@@ -56,7 +45,7 @@ DETAILS['timestepping_attributes'] = {
     }
 
 # This is the compact notation used of only one property
-DETAILS['timestepping_tracers_scheme'] = {
+DETAILS['toplevel:timestepping_tracers_scheme'] = {
     'description': 'Properties of tracers time stepping in ocean',
     'properties': [
         ('tracers', 'ENUM:ocean_timestepping_types', '1.1',
@@ -64,7 +53,7 @@ DETAILS['timestepping_tracers_scheme'] = {
         ]
     }
 
-DETAILS['barotropic_solver_scheme'] = {
+DETAILS['toplevel:barotropic_solver_scheme'] = {
     'description': 'Barotropic solver in ocean',
     'properties': [
         ('barotropic_solver', 'ENUM:ocean_timestepping_types', '1.1',
@@ -74,7 +63,7 @@ DETAILS['barotropic_solver_scheme'] = {
         ]
     }
 
-DETAILS['barotropic_momentum_scheme'] = {
+DETAILS['toplevel:barotropic_momentum_scheme'] = {
     'description': 'Barotropic momentum solver in ocean',
     'properties': [
         ('barotropic_momentum', 'ENUM:ocean_timestepping_types', '1.1',

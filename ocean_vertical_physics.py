@@ -9,41 +9,32 @@ For further information goto http://wordpress.es-doc.org/cmip6-model-specializat
 from collections import OrderedDict
 
 DETAILS = OrderedDict()
-SUB_PROCESSES = OrderedDict()
 ENUMERATIONS = OrderedDict()
 
 # --------------------------------------------------------------------
-# CONTACT
-#
-# Set to realm specialization co-ordinator.
+# CONTACT: Set to realm specialization co-ordinator.
 # --------------------------------------------------------------------
 CONTACT = 'Eric Guilyardi'
 
 # --------------------------------------------------------------------
-# AUTHORS
-#
-# Set to realm specialization authors (comma delimited).
+# AUTHORS: Set to realm specialization authors (comma delimited).
 # --------------------------------------------------------------------
 AUTHORS = 'Eric Guilyardi'
 
 # --------------------------------------------------------------------
-# QUALITY CONTROL STATUS
-#
-# Set to 'draft' or 'complete'
+# QUALITY CONTROL STATUS: Set to 'draft' or 'complete'
 # --------------------------------------------------------------------
 QC_STATUS = 'draft'
 
 # --------------------------------------------------------------------
-# DESCRIPTION
-#
-# Short description of the specialization.
+# DESCRIPTION: Short description of the specialization.
 # --------------------------------------------------------------------
 DESCRIPTION = 'Ocean Vertical Physics'
 
 # --------------------------------------------------------------------
 # SUB-PROCESS: Boundary Layer Mixing.
 # --------------------------------------------------------------------
-SUB_PROCESSES['boundary_layer_mixing'] = {
+DETAILS['boundary_layer_mixing'] = {
     'description': 'Properties of boundary layer mixing in the ocean (aka mixed layer)',
     'properties': [],
     'detail_sets': [
@@ -53,7 +44,7 @@ SUB_PROCESSES['boundary_layer_mixing'] = {
         ]
     }
 
-SUB_PROCESSES['boundary_layer_mixing:details'] = {
+DETAILS['boundary_layer_mixing:details'] = {
     'description': 'Properties of vertical physics in ocean',
     'properties': [
         ('langmuir_cells_mixing', 'bool', '1.1',
@@ -61,7 +52,7 @@ SUB_PROCESSES['boundary_layer_mixing:details'] = {
         ]
     }
 
-SUB_PROCESSES['boundary_layer_mixing:tracers'] = {
+DETAILS['boundary_layer_mixing:tracers'] = {
     'description': 'Properties of boundary layer (BL) mixing on tracers in the ocean ',
     'properties': [
         ('type', 'ENUM:bndlayer_mixing_types', '1.1',
@@ -75,7 +66,7 @@ SUB_PROCESSES['boundary_layer_mixing:tracers'] = {
         ]
     }
 
-SUB_PROCESSES['boundary_layer_mixing:momentum'] = {
+DETAILS['boundary_layer_mixing:momentum'] = {
     'description': 'Properties of boundary layer (BL) mixing on momentum in the ocean ',
     'properties': [
         ('type', 'ENUM:bndlayer_mixing_types', '1.1',
@@ -93,7 +84,7 @@ SUB_PROCESSES['boundary_layer_mixing:momentum'] = {
 # --------------------------------------------------------------------
 # SUB-PROCESS: Interior Layer Mixing.
 # --------------------------------------------------------------------
-SUB_PROCESSES['interior_mixing'] = {
+DETAILS['interior_mixing'] = {
     'description': 'Properties of interior vertical mixing in the ocean',
     'properties': [],
     'detail_sets': [
@@ -103,7 +94,7 @@ SUB_PROCESSES['interior_mixing'] = {
         ]
     }
 
-SUB_PROCESSES['interior_mixing:details'] = {
+DETAILS['interior_mixing:details'] = {
     'description': 'Properties of interior mixing in the ocean ',
     'properties': [
         ('convection_type', 'ENUM:vertphys_convection_types', '1.1',
@@ -117,7 +108,7 @@ SUB_PROCESSES['interior_mixing:details'] = {
         ]
     }
 
-SUB_PROCESSES['interior_mixing:tracers'] = {
+DETAILS['interior_mixing:tracers'] = {
     'description': 'Properties of interior mixing on tracers in the ocean ',
     'properties': [
         ('type', 'ENUM:interior_mixing_types', '1.1',
@@ -131,7 +122,7 @@ SUB_PROCESSES['interior_mixing:tracers'] = {
         ]
     }
 
-SUB_PROCESSES['interior_mixing:momentum'] = {
+DETAILS['interior_mixing:momentum'] = {
     'description': 'Properties of interior mixing on momentum in the ocean ',
     'properties': [
         ('type', 'ENUM:interior_mixing_types', '1.1',

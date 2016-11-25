@@ -3,7 +3,6 @@
 For further information goto http://wordpress.es-doc.org/cmip6-model-specializations.
 
 """
-
 # --------------------------------------------------------------------
 # INTERNAL (do not change)
 # --------------------------------------------------------------------
@@ -13,39 +12,29 @@ DETAILS = OrderedDict()
 ENUMERATIONS = OrderedDict()
 
 # --------------------------------------------------------------------
-# CONTACT
-#
-# Set to realm specialization co-ordinator.
+# CONTACT: Set to realm specialization co-ordinator.
 # --------------------------------------------------------------------
 CONTACT = 'Eric Guilyardi'
 
 # --------------------------------------------------------------------
-# AUTHORS
-#
-# Set to realm specialization authors (comma delimited).
+# AUTHORS: Set to realm specialization authors (comma delimited).
 # --------------------------------------------------------------------
 AUTHORS = 'Eric Guilyardi'
 
 # --------------------------------------------------------------------
-# QUALITY CONTROL STATUS
-#
-# Set to 'draft' or 'complete'
+# QUALITY CONTROL STATUS: Set to 'draft' or 'complete'
 # --------------------------------------------------------------------
 QC_STATUS = 'draft'
 
 # --------------------------------------------------------------------
-# DESCRIPTION
-#
-# Short description of the specialization.
+# DESCRIPTION: Short description of the specialization.
 # --------------------------------------------------------------------
 DESCRIPTION = 'Ocean key properties'
 
 # --------------------------------------------------------------------
-# KEY PROPERTIES: DETAILS
-#
-# Sets of details for the key properties.
+# KEY PROPERTIES: top level
 # --------------------------------------------------------------------
-DETAILS['general'] = {
+DETAILS['toplevel'] = {
     'description': 'General key properties in ocean',
     'properties': [
         ('model_family', 'ENUM:model_family_types', '1.1',
@@ -102,9 +91,7 @@ DETAILS['nonoceanic_waters'] = {
     }
 
 # --------------------------------------------------------------------
-# KEY PROPERTIES: RESOLUTION
-#
-# The resolution of the grid.
+# RESOLUTION: The resolution of the grid.
 # --------------------------------------------------------------------
 DETAILS['resolution'] = {
     'description': 'Resolution in the ocean grid',
@@ -125,9 +112,7 @@ DETAILS['resolution'] = {
     }
 
 # --------------------------------------------------------------------
-# KEY PROPERTIES: TUNING APPLIED
-#
-# Any tuning used to optimise the parameters in this realm
+# TUNING APPLIED: Any tuning used to optimise the parameters in this realm
 # --------------------------------------------------------------------
 DETAILS['tuning_applied'] = {
     'description': 'Tuning methodology for ocean component',
@@ -147,10 +132,7 @@ DETAILS['tuning_applied'] = {
     }
 
 # --------------------------------------------------------------------
-# KEY PROPERTIES: CONSERVATION PROPERTIES
-#
-# Details of methodology needed to conserve variables between
-# processes
+# CONSERVATION PROPERTIES: Details of methodology needed to conserve variables between processes
 # --------------------------------------------------------------------
 DETAILS['conservation'] = {
     'description': 'Conservation in the ocean component',

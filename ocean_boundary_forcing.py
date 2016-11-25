@@ -9,44 +9,33 @@ For further information goto http://wordpress.es-doc.org/cmip6-model-specializat
 from collections import OrderedDict
 
 DETAILS = OrderedDict()
-SUB_PROCESSES = OrderedDict()
 ENUMERATIONS = OrderedDict()
 
 # --------------------------------------------------------------------
-# CONTACT
-#
-# Set to realm specialization co-ordinator.
+# CONTACT: Set to realm specialization co-ordinator.
 # --------------------------------------------------------------------
 CONTACT = 'Eric Guilyardi'
 
 # --------------------------------------------------------------------
-# AUTHORS
-#
-# Set to realm specialization authors (comma delimited).
+# AUTHORS: Set to realm specialization authors (comma delimited).
 # --------------------------------------------------------------------
 AUTHORS = 'Eric Guilyardi'
 
 # --------------------------------------------------------------------
-# QUALITY CONTROL STATUS
-#
-# Set to 'draft' or 'complete'
+# QUALITY CONTROL STATUS: Set to 'draft' or 'complete'
 # --------------------------------------------------------------------
 QC_STATUS = 'draft'
 
 # --------------------------------------------------------------------
-# DESCRIPTION
-#
-# Short description of the specialization.
+# DESCRIPTION: Short description of the specialization.
 # --------------------------------------------------------------------
 DESCRIPTION = 'Ocean boundary forcing'
 
 # --------------------------------------------------------------------
-# PROCESS: DETAILS
-#
-# Sets of user defined process details.
+# PROCESS: top level
 # --------------------------------------------------------------------
-DETAILS['boundary_forcing_details'] = {
-    'description': 'Properties of boundary forcing',
+DETAILS['toplevel'] = {
+    'description': 'Top level properties of boundary forcing',
     'properties': [
         ('surface_pressure', 'str', '1.1',
             'Describe how surface pressure is transmitted to ocean (via sea-ice, nothing specific,...)'),
@@ -66,7 +55,7 @@ DETAILS['boundary_forcing_details'] = {
 # --------------------------------------------------------------------
 # SUB-PROCESS: Momentum.
 # --------------------------------------------------------------------
-SUB_PROCESSES['momentum'] = {
+DETAILS['momentum'] = {
     'description': 'Key properties of momentum boundary forcing in the ocean',
     'properties': [],
     'detail_sets': [
@@ -75,7 +64,7 @@ SUB_PROCESSES['momentum'] = {
         ]
     }
 
-SUB_PROCESSES['momentum:bottom_friction'] = {
+DETAILS['momentum:bottom_friction'] = {
     'description': 'Properties of momentum bottom friction in ocean',
     'properties': [
         ('type', 'ENUM:mom_bottom_friction_types', '1.1',
@@ -83,7 +72,7 @@ SUB_PROCESSES['momentum:bottom_friction'] = {
         ]
     }
 
-SUB_PROCESSES['momentum:lateral_friction'] = {
+DETAILS['momentum:lateral_friction'] = {
    'description': 'Properties of momentum lateral friction in ocean',
     'properties': [
         ('type', 'ENUM:mom_lateral_friction_types', '1.1',
@@ -94,7 +83,7 @@ SUB_PROCESSES['momentum:lateral_friction'] = {
 # --------------------------------------------------------------------
 # SUB-PROCESS: Tracers.
 # --------------------------------------------------------------------
-SUB_PROCESSES['tracers'] = {
+DETAILS['tracers'] = {
     'description': 'Key properties of tracer boundary forcing in the ocean',
     'properties': [],
     'detail_sets': [
@@ -103,7 +92,7 @@ SUB_PROCESSES['tracers'] = {
         ]
     }
 
-SUB_PROCESSES['tracers:sunlight_penetration'] = {
+DETAILS['tracers:sunlight_penetration'] = {
     'description': 'Properties of sunlight penetration scheme in ocean',
     'properties': [
          ('scheme', 'ENUM:sunlight_penetration_scheme_types', '1.1',
@@ -115,7 +104,7 @@ SUB_PROCESSES['tracers:sunlight_penetration'] = {
         ]
     }
 
-SUB_PROCESSES['tracers:fresh_water_forcing'] = {
+DETAILS['tracers:fresh_water_forcing'] = {
     'description': 'Properties of surface fresh water forcing in ocean',
     'properties': [
         ('from_atmopshere', 'ENUM:surface_fresh_water_forcing_atmos_types', '1.1',
