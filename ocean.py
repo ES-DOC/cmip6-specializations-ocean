@@ -4,6 +4,14 @@ For further information goto http://wordpress.es-doc.org/cmip6-model-specializat
 
 """
 # --------------------------------------------------------------------
+# INTERNAL (do not change)
+# --------------------------------------------------------------------
+from collections import OrderedDict
+
+DETAILS = OrderedDict()
+ENUMERATIONS = OrderedDict()
+
+# --------------------------------------------------------------------
 # CONTACT: Set to realm specialization co-ordinator.
 # --------------------------------------------------------------------
 CONTACT = 'Eric Guilyardi'
@@ -65,3 +73,13 @@ PROCESSES = [
     'ocean_uplow_boundaries',
     'ocean_boundary_forcing',
     ]
+
+# --------------------------------------------------------------------
+# REALM: top level details
+# --------------------------------------------------------------------
+DETAILS = OrderedDict()
+
+# --------------------------------------------------------------------
+# REALM: ENUMERATIONS
+# --------------------------------------------------------------------
+ENUMERATIONS = OrderedDict()

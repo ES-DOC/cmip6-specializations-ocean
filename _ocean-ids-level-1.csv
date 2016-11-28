@@ -8,20 +8,20 @@ cmip6.ocean.key_properties, Ocean > Key Properties, key-properties
 cmip6.ocean.timestepping_framework, Ocean > Timestepping Framework, process
 , , 
 cmip6.ocean.advection, Ocean > Advection, process
-cmip6.ocean.advection.momentum, Ocean > Advection > Momentum, process
-cmip6.ocean.advection.lateral_tracers, Ocean > Advection > Lateral Tracers, process
-cmip6.ocean.advection.vertical_tracers, Ocean > Advection > Vertical Tracers, process
+cmip6.ocean.advection.momentum, Ocean > Advection > Momentum, sub-process
+cmip6.ocean.advection.lateral_tracers, Ocean > Advection > Lateral Tracers, sub-process
+cmip6.ocean.advection.vertical_tracers, Ocean > Advection > Vertical Tracers, sub-process
 , , 
 cmip6.ocean.lateral_physics, Ocean > Lateral Physics, process
-cmip6.ocean.lateral_physics.momentum, Ocean > Lateral Physics > Momentum, process
-cmip6.ocean.lateral_physics.tracers, Ocean > Lateral Physics > Tracers, process
+cmip6.ocean.lateral_physics.momentum, Ocean > Lateral Physics > Momentum, sub-process
+cmip6.ocean.lateral_physics.tracers, Ocean > Lateral Physics > Tracers, sub-process
 , , 
 cmip6.ocean.vertical_physics, Ocean > Vertical Physics, process
-cmip6.ocean.vertical_physics.boundary_layer_mixing, Ocean > Vertical Physics > Boundary Layer Mixing, process
-cmip6.ocean.vertical_physics.interior_mixing, Ocean > Vertical Physics > Interior Mixing, process
+cmip6.ocean.vertical_physics.boundary_layer_mixing, Ocean > Vertical Physics > Boundary Layer Mixing, sub-process
+cmip6.ocean.vertical_physics.interior_mixing, Ocean > Vertical Physics > Interior Mixing, sub-process
 , , 
 cmip6.ocean.uplow_boundaries, Ocean > Uplow Boundaries, process
 , , 
 cmip6.ocean.boundary_forcing, Ocean > Boundary Forcing, process
-cmip6.ocean.boundary_forcing.momentum, Ocean > Boundary Forcing > Momentum, process
-cmip6.ocean.boundary_forcing.tracers, Ocean > Boundary Forcing > Tracers, process
+cmip6.ocean.boundary_forcing.momentum, Ocean > Boundary Forcing > Momentum, sub-process
+cmip6.ocean.boundary_forcing.tracers, Ocean > Boundary Forcing > Tracers, sub-process
