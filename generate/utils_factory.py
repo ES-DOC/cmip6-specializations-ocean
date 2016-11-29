@@ -127,7 +127,7 @@ def _set_detailset(owner, key, obj, enumerations):
     """
     ds = DetailSetSpecialization()
     ds.description = obj['description']
-    ds.id = "{}::{}".format(owner.id, key)
+    ds.id = "{}.{}".format(owner.id, key.split(":")[-1])
     ds.key = key
     ds.name = key.split(":")[-1]
     ds.owner = owner
@@ -145,14 +145,11 @@ def _set_details(owner, key, obj, enumerations):
         d.cardinality = cardinality
         d.description = description
         d.enum = _create_enum(d, typeof, enumerations) if typeof.startswith("ENUM:") else None
+        d.id = "{}.{}".format(owner.id, name)
         d.key = name
         d.name = name
         d.owner = owner
         d.typeof = typeof
-        if isinstance(owner, TopicSpecialization):
-            d.id = "{}::{}::{}".format(owner.id, key, name)
-        else:
-            d.id = "{}::{}".format(owner.id, name)
 
         owner.details.append(d)
 

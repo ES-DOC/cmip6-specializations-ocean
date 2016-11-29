@@ -113,37 +113,57 @@ class Generator(Parser):
         obj['grid'] = self._maps[realm.grid]
         obj['keyProperties'] = self._maps[realm.key_properties]
         obj['processes'] = [self._maps[i] for i in realm.processes]
-        if not obj['details']:
-            del obj['details']
-        if not obj['detailSets']:
-            del obj['detailSets']
+        self._strip(obj)
+
+
+    def on_grid_parsed(self, grid):
+        """On grid parsed event handler.
+
+        """
+        self._strip(self._maps[grid])
+
+
+    def on_keyproperties_parsed(self, keyproperties):
+        """On key properties parsed event handler.
+
+        """
+        self._strip(self._maps[keyproperties])
 
 
     def on_process_parsed(self, process):
         """On process parse event handler.
 
         """
+        obj = self._maps[process]
+        self._strip(obj)
+
         realm = self._maps[self.realm]
         realm['processes'] = realm.get('processes', [])
-        realm['processes'].append(self._maps[process])
+        realm['processes'].append(obj)
 
 
     def on_subprocess_parsed(self, subprocess):
         """On sub-process parsed event handler.
 
         """
+        obj = self._maps[subprocess]
+        self._strip(obj)
+
         process = self._maps[subprocess.parent]
         process['subProcesses'] = process.get('subProcesses', [])
-        process['subProcesses'].append(self._maps[subprocess])
+        process['subProcesses'].append(obj)
 
 
     def on_detailset_parsed(self, detailset):
         """On process detail set parse event handler.
 
         """
+        obj = self._maps[detailset]
+        self._strip(obj)
+
         owner = self._maps[detailset.owner]
         owner['detailSets'] = owner.get('detailSets', [])
-        owner['detailSets'].append(self._maps[detailset])
+        owner['detailSets'].append(obj)
 
 
     def on_detail_parsed(self, detail):
@@ -189,3 +209,13 @@ class Generator(Parser):
         self._maps[topic] = obj
 
         return obj
+
+
+    def _strip(self, obj):
+        """Strips null keys from mapped objects.
+
+        """
+        if not obj['details']:
+            del obj['details']
+        if not obj['detailSets']:
+            del obj['detailSets']

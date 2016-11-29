@@ -9,17 +9,16 @@
             "description": "Ocean Timestepping Framework", 
             "id": "cmip6.ocean.timestepping_framework", 
             "contact": "Eric Guilyardi", 
-            "details": [], 
             "detailSets": [
                 {
                     "label": "Timestepping Attributes", 
                     "description": "Properties of time stepping in ocean", 
-                    "id": "cmip6.ocean.timestepping_framework::toplevel:timestepping_attributes", 
+                    "id": "cmip6.ocean.timestepping_framework.timestepping_attributes", 
                     "details": [
                         {
                             "label": "Time Step", 
                             "description": "Ocean time step in seconds", 
-                            "id": "cmip6.ocean.timestepping_framework::toplevel:timestepping_attributes::time_step", 
+                            "id": "cmip6.ocean.timestepping_framework.timestepping_attributes.time_step", 
                             "cardinality": "1.1", 
                             "type": "int", 
                             "uiOrdinal": 1
@@ -27,7 +26,7 @@
                         {
                             "label": "Diurnal Cycle", 
                             "description": "Diurnal cycle type", 
-                            "id": "cmip6.ocean.timestepping_framework::toplevel:timestepping_attributes::diurnal_cycle", 
+                            "id": "cmip6.ocean.timestepping_framework.timestepping_attributes.diurnal_cycle", 
                             "cardinality": "1.1", 
                             "type": "enum", 
                             "enum": {
@@ -51,18 +50,17 @@
                             }, 
                             "uiOrdinal": 2
                         }
-                    ], 
-                    "detailSets": []
+                    ]
                 }, 
                 {
                     "label": "Timestepping Tracers Scheme", 
                     "description": "Properties of tracers time stepping in ocean", 
-                    "id": "cmip6.ocean.timestepping_framework::toplevel:timestepping_tracers_scheme", 
+                    "id": "cmip6.ocean.timestepping_framework.timestepping_tracers_scheme", 
                     "details": [
                         {
                             "label": "Tracers", 
                             "description": "Time stepping tracer scheme", 
-                            "id": "cmip6.ocean.timestepping_framework::toplevel:timestepping_tracers_scheme::tracers", 
+                            "id": "cmip6.ocean.timestepping_framework.timestepping_tracers_scheme.tracers", 
                             "cardinality": "1.1", 
                             "type": "enum", 
                             "enum": {
@@ -98,18 +96,17 @@
                             }, 
                             "uiOrdinal": 1
                         }
-                    ], 
-                    "detailSets": []
+                    ]
                 }, 
                 {
                     "label": "Barotropic Solver Scheme", 
                     "description": "Barotropic solver in ocean", 
-                    "id": "cmip6.ocean.timestepping_framework::toplevel:barotropic_solver_scheme", 
+                    "id": "cmip6.ocean.timestepping_framework.barotropic_solver_scheme", 
                     "details": [
                         {
                             "label": "Barotropic Solver", 
                             "description": "Barotropic solver scheme", 
-                            "id": "cmip6.ocean.timestepping_framework::toplevel:barotropic_solver_scheme::barotropic_solver", 
+                            "id": "cmip6.ocean.timestepping_framework.barotropic_solver_scheme.barotropic_solver", 
                             "cardinality": "1.1", 
                             "type": "enum", 
                             "enum": {
@@ -148,7 +145,7 @@
                         {
                             "label": "Type", 
                             "description": "Barotropic solver type", 
-                            "id": "cmip6.ocean.timestepping_framework::toplevel:barotropic_solver_scheme::type", 
+                            "id": "cmip6.ocean.timestepping_framework.barotropic_solver_scheme.type", 
                             "cardinality": "1.1", 
                             "type": "enum", 
                             "enum": {
@@ -168,18 +165,17 @@
                             }, 
                             "uiOrdinal": 2
                         }
-                    ], 
-                    "detailSets": []
+                    ]
                 }, 
                 {
                     "label": "Barotropic Momentum Scheme", 
                     "description": "Barotropic momentum solver in ocean", 
-                    "id": "cmip6.ocean.timestepping_framework::toplevel:barotropic_momentum_scheme", 
+                    "id": "cmip6.ocean.timestepping_framework.barotropic_momentum_scheme", 
                     "details": [
                         {
                             "label": "Barotropic Momentum", 
                             "description": "Barotropic momentum scheme", 
-                            "id": "cmip6.ocean.timestepping_framework::toplevel:barotropic_momentum_scheme::barotropic_momentum", 
+                            "id": "cmip6.ocean.timestepping_framework.barotropic_momentum_scheme.barotropic_momentum", 
                             "cardinality": "1.1", 
                             "type": "enum", 
                             "enum": {
@@ -215,8 +211,7 @@
                             }, 
                             "uiOrdinal": 1
                         }
-                    ], 
-                    "detailSets": []
+                    ]
                 }
             ]
         }, 
@@ -225,8 +220,6 @@
             "description": "Ocean advection", 
             "id": "cmip6.ocean.advection", 
             "contact": "Eric Guilyardi", 
-            "details": [], 
-            "detailSets": [], 
             "subProcesses": [
                 {
                     "label": "Momentum", 
@@ -237,7 +230,7 @@
                         {
                             "label": "Type", 
                             "description": "Type of lateral momemtum advection scheme in ocean", 
-                            "id": "cmip6.ocean.advection.momentum::momentum::type", 
+                            "id": "cmip6.ocean.advection.momentum.type", 
                             "cardinality": "1.1", 
                             "type": "enum", 
                             "enum": {
@@ -260,7 +253,7 @@
                         {
                             "label": "Scheme Name", 
                             "description": "Name of ocean momemtum advection scheme", 
-                            "id": "cmip6.ocean.advection.momentum::momentum::scheme_name", 
+                            "id": "cmip6.ocean.advection.momentum.scheme_name", 
                             "cardinality": "1.1", 
                             "type": "str", 
                             "uiOrdinal": 2
@@ -268,13 +261,12 @@
                         {
                             "label": "ALE", 
                             "description": "Using ALE for vertical advection ? (if vertical coordinates are sigma)", 
-                            "id": "cmip6.ocean.advection.momentum::momentum::ALE", 
+                            "id": "cmip6.ocean.advection.momentum.ALE", 
                             "cardinality": "0.1", 
                             "type": "bool", 
                             "uiOrdinal": 3
                         }
-                    ], 
-                    "detailSets": []
+                    ]
                 }, 
                 {
                     "label": "Lateral Tracers", 
@@ -285,7 +277,7 @@
                         {
                             "label": "Type", 
                             "description": "Type of lateral tracer advection scheme in ocean", 
-                            "id": "cmip6.ocean.advection.lateral_tracers::lateral_tracers::type", 
+                            "id": "cmip6.ocean.advection.lateral_tracers.type", 
                             "cardinality": "1.1", 
                             "type": "enum", 
                             "enum": {
@@ -336,7 +328,7 @@
                         {
                             "label": "Flux Limiter", 
                             "description": "Monotonic flux limiter for vertical tracer advection scheme in ocean ?", 
-                            "id": "cmip6.ocean.advection.lateral_tracers::lateral_tracers::flux_limiter", 
+                            "id": "cmip6.ocean.advection.lateral_tracers.flux_limiter", 
                             "cardinality": "1.1", 
                             "type": "bool", 
                             "uiOrdinal": 2
@@ -344,7 +336,7 @@
                         {
                             "label": "Passive Tracers", 
                             "description": "Passive tracers advected", 
-                            "id": "cmip6.ocean.advection.lateral_tracers::lateral_tracers::passive_tracers", 
+                            "id": "cmip6.ocean.advection.lateral_tracers.passive_tracers", 
                             "cardinality": "0.N", 
                             "type": "enum", 
                             "enum": {
@@ -375,13 +367,12 @@
                         {
                             "label": "Passive Tracers Advection", 
                             "description": "Is advection of passive tracers different than active ? if so, describe.", 
-                            "id": "cmip6.ocean.advection.lateral_tracers::lateral_tracers::passive_tracers_advection", 
+                            "id": "cmip6.ocean.advection.lateral_tracers.passive_tracers_advection", 
                             "cardinality": "0.1", 
                             "type": "str", 
                             "uiOrdinal": 4
                         }
-                    ], 
-                    "detailSets": []
+                    ]
                 }, 
                 {
                     "label": "Vertical Tracers", 
@@ -392,7 +383,7 @@
                         {
                             "label": "Type", 
                             "description": "Type of vertical tracer advection scheme in ocean", 
-                            "id": "cmip6.ocean.advection.vertical_tracers::vertical_tracers::type", 
+                            "id": "cmip6.ocean.advection.vertical_tracers.type", 
                             "cardinality": "1.1", 
                             "type": "enum", 
                             "enum": {
@@ -443,13 +434,12 @@
                         {
                             "label": "Flux Limiter", 
                             "description": "Monotonic flux limiter for vertical tracer advection scheme in ocean ?", 
-                            "id": "cmip6.ocean.advection.vertical_tracers::vertical_tracers::flux_limiter", 
+                            "id": "cmip6.ocean.advection.vertical_tracers.flux_limiter", 
                             "cardinality": "1.1", 
                             "type": "bool", 
                             "uiOrdinal": 2
                         }
-                    ], 
-                    "detailSets": []
+                    ]
                 }
             ]
         }, 
@@ -462,7 +452,7 @@
                 {
                     "label": "Scheme", 
                     "description": "Type of transient eddy representation in ocean", 
-                    "id": "cmip6.ocean.lateral_physics::toplevel::scheme", 
+                    "id": "cmip6.ocean.lateral_physics.scheme", 
                     "cardinality": "1.1", 
                     "type": "enum", 
                     "enum": {
@@ -487,24 +477,22 @@
                     "uiOrdinal": 1
                 }
             ], 
-            "detailSets": [], 
             "subProcesses": [
                 {
                     "label": "Momentum", 
                     "description": "Properties of lateral physics for momentum in ocean", 
                     "id": "cmip6.ocean.lateral_physics.momentum", 
                     "contact": "Eric Guilyardi", 
-                    "details": [], 
                     "detailSets": [
                         {
                             "label": "Operator", 
                             "description": "Properties of lateral physics operator for momentum in ocean", 
-                            "id": "cmip6.ocean.lateral_physics.momentum::momentum:operator", 
+                            "id": "cmip6.ocean.lateral_physics.momentum.operator", 
                             "details": [
                                 {
                                     "label": "Direction", 
                                     "description": "Direction of lateral physics momemtum scheme in the ocean", 
-                                    "id": "cmip6.ocean.lateral_physics.momentum::momentum:operator::direction", 
+                                    "id": "cmip6.ocean.lateral_physics.momentum.operator.direction", 
                                     "cardinality": "1.1", 
                                     "type": "enum", 
                                     "enum": {
@@ -539,7 +527,7 @@
                                 {
                                     "label": "Order", 
                                     "description": "Order of lateral physics momemtum scheme in the ocean", 
-                                    "id": "cmip6.ocean.lateral_physics.momentum::momentum:operator::order", 
+                                    "id": "cmip6.ocean.lateral_physics.momentum.operator.order", 
                                     "cardinality": "1.1", 
                                     "type": "enum", 
                                     "enum": {
@@ -562,7 +550,7 @@
                                 {
                                     "label": "Discretisation", 
                                     "description": "Discretisation of lateral physics momemtum scheme in the ocean", 
-                                    "id": "cmip6.ocean.lateral_physics.momentum::momentum:operator::discretisation", 
+                                    "id": "cmip6.ocean.lateral_physics.momentum.operator.discretisation", 
                                     "cardinality": "1.1", 
                                     "type": "enum", 
                                     "enum": {
@@ -586,18 +574,17 @@
                                     }, 
                                     "uiOrdinal": 3
                                 }
-                            ], 
-                            "detailSets": []
+                            ]
                         }, 
                         {
                             "label": "Eddy Viscosity Coeff", 
                             "description": "Properties of eddy viscosity coeff in lateral physics momemtum scheme in the ocean", 
-                            "id": "cmip6.ocean.lateral_physics.momentum::momentum:eddy_viscosity_coeff", 
+                            "id": "cmip6.ocean.lateral_physics.momentum.eddy_viscosity_coeff", 
                             "details": [
                                 {
                                     "label": "Type", 
                                     "description": "Lateral physics momemtum eddy viscosity coeff type in the ocean", 
-                                    "id": "cmip6.ocean.lateral_physics.momentum::momentum:eddy_viscosity_coeff::type", 
+                                    "id": "cmip6.ocean.lateral_physics.momentum.eddy_viscosity_coeff.type", 
                                     "cardinality": "1.1", 
                                     "type": "enum", 
                                     "enum": {
@@ -624,7 +611,7 @@
                                 {
                                     "label": "Constant Coefficient", 
                                     "description": "If constant, value of eddy viscosity coeff in lateral physics momemtum scheme (in m2/s)", 
-                                    "id": "cmip6.ocean.lateral_physics.momentum::momentum:eddy_viscosity_coeff::constant_coefficient", 
+                                    "id": "cmip6.ocean.lateral_physics.momentum.eddy_viscosity_coeff.constant_coefficient", 
                                     "cardinality": "0.1", 
                                     "type": "int", 
                                     "uiOrdinal": 2
@@ -632,7 +619,7 @@
                                 {
                                     "label": "Variable Coefficient", 
                                     "description": "If space-varying, describe variations of eddy viscosity coeff in lateral physics momemtum scheme", 
-                                    "id": "cmip6.ocean.lateral_physics.momentum::momentum:eddy_viscosity_coeff::variable_coefficient", 
+                                    "id": "cmip6.ocean.lateral_physics.momentum.eddy_viscosity_coeff.variable_coefficient", 
                                     "cardinality": "0.1", 
                                     "type": "str", 
                                     "uiOrdinal": 3
@@ -640,7 +627,7 @@
                                 {
                                     "label": "Coeff Background", 
                                     "description": "Background value of eddy viscosity coeff in lateral physics momemtum scheme (in m2/s)", 
-                                    "id": "cmip6.ocean.lateral_physics.momentum::momentum:eddy_viscosity_coeff::coeff_background", 
+                                    "id": "cmip6.ocean.lateral_physics.momentum.eddy_viscosity_coeff.coeff_background", 
                                     "cardinality": "1.1", 
                                     "type": "int", 
                                     "uiOrdinal": 4
@@ -648,173 +635,12 @@
                                 {
                                     "label": "Coeff Backscatter", 
                                     "description": "Is there backscatter in eddy viscosity coeff in lateral physics momemtum scheme ?", 
-                                    "id": "cmip6.ocean.lateral_physics.momentum::momentum:eddy_viscosity_coeff::coeff_backscatter", 
+                                    "id": "cmip6.ocean.lateral_physics.momentum.eddy_viscosity_coeff.coeff_backscatter", 
                                     "cardinality": "1.1", 
                                     "type": "bool", 
                                     "uiOrdinal": 5
                                 }
-                            ], 
-                            "detailSets": []
-                        }, 
-                        {
-                            "label": "Operator", 
-                            "description": "Properties of lateral physics operator for momentum in ocean", 
-                            "id": "cmip6.ocean.lateral_physics.momentum::momentum:operator", 
-                            "details": [
-                                {
-                                    "label": "Direction", 
-                                    "description": "Direction of lateral physics momemtum scheme in the ocean", 
-                                    "id": "cmip6.ocean.lateral_physics.momentum::momentum:operator::direction", 
-                                    "cardinality": "1.1", 
-                                    "type": "enum", 
-                                    "enum": {
-                                        "label": "Latphys Operator Direc Types", 
-                                        "description": "Type of lateral physics direction in ocean", 
-                                        "isOpen": true, 
-                                        "choices": [
-                                            {
-                                                "label": "Horizontal", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Isopycnal", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Isoneutral", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Geopotential", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Iso-level", 
-                                                "description": null
-                                            }
-                                        ]
-                                    }, 
-                                    "uiOrdinal": 1
-                                }, 
-                                {
-                                    "label": "Order", 
-                                    "description": "Order of lateral physics momemtum scheme in the ocean", 
-                                    "id": "cmip6.ocean.lateral_physics.momentum::momentum:operator::order", 
-                                    "cardinality": "1.1", 
-                                    "type": "enum", 
-                                    "enum": {
-                                        "label": "Latphys Operator Order Types", 
-                                        "description": "Type of lateral physics order in ocean", 
-                                        "isOpen": true, 
-                                        "choices": [
-                                            {
-                                                "label": "Harmonic", 
-                                                "description": "Second order"
-                                            }, 
-                                            {
-                                                "label": "Bi-harmonic", 
-                                                "description": "Fourth order"
-                                            }
-                                        ]
-                                    }, 
-                                    "uiOrdinal": 2
-                                }, 
-                                {
-                                    "label": "Discretisation", 
-                                    "description": "Discretisation of lateral physics momemtum scheme in the ocean", 
-                                    "id": "cmip6.ocean.lateral_physics.momentum::momentum:operator::discretisation", 
-                                    "cardinality": "1.1", 
-                                    "type": "enum", 
-                                    "enum": {
-                                        "label": "Latphys Operator Discret Types", 
-                                        "description": "Type of lateral physics discretisation in ocean", 
-                                        "isOpen": true, 
-                                        "choices": [
-                                            {
-                                                "label": "Second order", 
-                                                "description": "Second order"
-                                            }, 
-                                            {
-                                                "label": "Higher order", 
-                                                "description": "Higher order"
-                                            }, 
-                                            {
-                                                "label": "Flux limiter", 
-                                                "description": null
-                                            }
-                                        ]
-                                    }, 
-                                    "uiOrdinal": 3
-                                }
-                            ], 
-                            "detailSets": []
-                        }, 
-                        {
-                            "label": "Eddy Viscosity Coeff", 
-                            "description": "Properties of eddy viscosity coeff in lateral physics momemtum scheme in the ocean", 
-                            "id": "cmip6.ocean.lateral_physics.momentum::momentum:eddy_viscosity_coeff", 
-                            "details": [
-                                {
-                                    "label": "Type", 
-                                    "description": "Lateral physics momemtum eddy viscosity coeff type in the ocean", 
-                                    "id": "cmip6.ocean.lateral_physics.momentum::momentum:eddy_viscosity_coeff::type", 
-                                    "cardinality": "1.1", 
-                                    "type": "enum", 
-                                    "enum": {
-                                        "label": "Latphys Eddy Visc Coeff Types", 
-                                        "description": "Type of lateral physics eddy viscosity coeff in ocean", 
-                                        "isOpen": true, 
-                                        "choices": [
-                                            {
-                                                "label": "Constant", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Space varying", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Time + space varying (Smagorinsky)", 
-                                                "description": null
-                                            }
-                                        ]
-                                    }, 
-                                    "uiOrdinal": 1
-                                }, 
-                                {
-                                    "label": "Constant Coefficient", 
-                                    "description": "If constant, value of eddy viscosity coeff in lateral physics momemtum scheme (in m2/s)", 
-                                    "id": "cmip6.ocean.lateral_physics.momentum::momentum:eddy_viscosity_coeff::constant_coefficient", 
-                                    "cardinality": "0.1", 
-                                    "type": "int", 
-                                    "uiOrdinal": 2
-                                }, 
-                                {
-                                    "label": "Variable Coefficient", 
-                                    "description": "If space-varying, describe variations of eddy viscosity coeff in lateral physics momemtum scheme", 
-                                    "id": "cmip6.ocean.lateral_physics.momentum::momentum:eddy_viscosity_coeff::variable_coefficient", 
-                                    "cardinality": "0.1", 
-                                    "type": "str", 
-                                    "uiOrdinal": 3
-                                }, 
-                                {
-                                    "label": "Coeff Background", 
-                                    "description": "Background value of eddy viscosity coeff in lateral physics momemtum scheme (in m2/s)", 
-                                    "id": "cmip6.ocean.lateral_physics.momentum::momentum:eddy_viscosity_coeff::coeff_background", 
-                                    "cardinality": "1.1", 
-                                    "type": "int", 
-                                    "uiOrdinal": 4
-                                }, 
-                                {
-                                    "label": "Coeff Backscatter", 
-                                    "description": "Is there backscatter in eddy viscosity coeff in lateral physics momemtum scheme ?", 
-                                    "id": "cmip6.ocean.lateral_physics.momentum::momentum:eddy_viscosity_coeff::coeff_backscatter", 
-                                    "cardinality": "1.1", 
-                                    "type": "bool", 
-                                    "uiOrdinal": 5
-                                }
-                            ], 
-                            "detailSets": []
+                            ]
                         }
                     ]
                 }, 
@@ -827,7 +653,7 @@
                         {
                             "label": "Mesoscale Closure", 
                             "description": "Is there a mesoscale closure in the lateral physics tracers scheme ?", 
-                            "id": "cmip6.ocean.lateral_physics.tracers::tracers::mesoscale_closure", 
+                            "id": "cmip6.ocean.lateral_physics.tracers.mesoscale_closure", 
                             "cardinality": "1.1", 
                             "type": "bool", 
                             "uiOrdinal": 1
@@ -835,7 +661,7 @@
                         {
                             "label": "Submesoscale Mixing", 
                             "description": "Is there a submesoscale mixing parameterisation (i.e Fox-Kemper) in the lateral physics tracers scheme ?", 
-                            "id": "cmip6.ocean.lateral_physics.tracers::tracers::submesoscale_mixing", 
+                            "id": "cmip6.ocean.lateral_physics.tracers.submesoscale_mixing", 
                             "cardinality": "1.1", 
                             "type": "bool", 
                             "uiOrdinal": 2
@@ -845,12 +671,12 @@
                         {
                             "label": "Operator", 
                             "description": "Properties of lateral physics operator for tracers in ocean", 
-                            "id": "cmip6.ocean.lateral_physics.tracers::tracers:operator", 
+                            "id": "cmip6.ocean.lateral_physics.tracers.operator", 
                             "details": [
                                 {
                                     "label": "Direction", 
                                     "description": "Direction of lateral physics tracers scheme in the ocean", 
-                                    "id": "cmip6.ocean.lateral_physics.tracers::tracers:operator::direction", 
+                                    "id": "cmip6.ocean.lateral_physics.tracers.operator.direction", 
                                     "cardinality": "1.1", 
                                     "type": "enum", 
                                     "enum": {
@@ -885,7 +711,7 @@
                                 {
                                     "label": "Order", 
                                     "description": "Order of lateral physics tracers scheme in the ocean", 
-                                    "id": "cmip6.ocean.lateral_physics.tracers::tracers:operator::order", 
+                                    "id": "cmip6.ocean.lateral_physics.tracers.operator.order", 
                                     "cardinality": "1.1", 
                                     "type": "enum", 
                                     "enum": {
@@ -908,7 +734,7 @@
                                 {
                                     "label": "Discretisation", 
                                     "description": "Discretisation of lateral physics tracers scheme in the ocean", 
-                                    "id": "cmip6.ocean.lateral_physics.tracers::tracers:operator::discretisation", 
+                                    "id": "cmip6.ocean.lateral_physics.tracers.operator.discretisation", 
                                     "cardinality": "1.1", 
                                     "type": "enum", 
                                     "enum": {
@@ -932,18 +758,17 @@
                                     }, 
                                     "uiOrdinal": 3
                                 }
-                            ], 
-                            "detailSets": []
+                            ]
                         }, 
                         {
                             "label": "Eddy Viscosity Coeff", 
                             "description": "Properties of eddy viscosity coeff in lateral physics tracers scheme in the ocean", 
-                            "id": "cmip6.ocean.lateral_physics.tracers::tracers:eddy_viscosity_coeff", 
+                            "id": "cmip6.ocean.lateral_physics.tracers.eddy_viscosity_coeff", 
                             "details": [
                                 {
                                     "label": "Type", 
                                     "description": "Lateral physics tracers eddy viscosity coeff type in the ocean", 
-                                    "id": "cmip6.ocean.lateral_physics.tracers::tracers:eddy_viscosity_coeff::type", 
+                                    "id": "cmip6.ocean.lateral_physics.tracers.eddy_viscosity_coeff.type", 
                                     "cardinality": "1.1", 
                                     "type": "enum", 
                                     "enum": {
@@ -970,7 +795,7 @@
                                 {
                                     "label": "Constant Coefficient", 
                                     "description": "If constant, value of eddy viscosity coeff in lateral physics tracers scheme (in m2/s)", 
-                                    "id": "cmip6.ocean.lateral_physics.tracers::tracers:eddy_viscosity_coeff::constant_coefficient", 
+                                    "id": "cmip6.ocean.lateral_physics.tracers.eddy_viscosity_coeff.constant_coefficient", 
                                     "cardinality": "0.1", 
                                     "type": "int", 
                                     "uiOrdinal": 2
@@ -978,7 +803,7 @@
                                 {
                                     "label": "Variable Coefficient", 
                                     "description": "If space-varying, describe variations of eddy viscosity coeff in lateral physics tracers scheme", 
-                                    "id": "cmip6.ocean.lateral_physics.tracers::tracers:eddy_viscosity_coeff::variable_coefficient", 
+                                    "id": "cmip6.ocean.lateral_physics.tracers.eddy_viscosity_coeff.variable_coefficient", 
                                     "cardinality": "0.1", 
                                     "type": "str", 
                                     "uiOrdinal": 3
@@ -986,7 +811,7 @@
                                 {
                                     "label": "Coeff Background", 
                                     "description": "Background value of eddy viscosity coeff in lateral physics tracers scheme (in m2/s)", 
-                                    "id": "cmip6.ocean.lateral_physics.tracers::tracers:eddy_viscosity_coeff::coeff_background", 
+                                    "id": "cmip6.ocean.lateral_physics.tracers.eddy_viscosity_coeff.coeff_background", 
                                     "cardinality": "1.1", 
                                     "type": "int", 
                                     "uiOrdinal": 4
@@ -994,23 +819,22 @@
                                 {
                                     "label": "Coeff Backscatter", 
                                     "description": "Is there backscatter in eddy viscosity coeff in lateral physics tracers scheme ?", 
-                                    "id": "cmip6.ocean.lateral_physics.tracers::tracers:eddy_viscosity_coeff::coeff_backscatter", 
+                                    "id": "cmip6.ocean.lateral_physics.tracers.eddy_viscosity_coeff.coeff_backscatter", 
                                     "cardinality": "1.1", 
                                     "type": "bool", 
                                     "uiOrdinal": 5
                                 }
-                            ], 
-                            "detailSets": []
+                            ]
                         }, 
                         {
                             "label": "Eddy Induced Velocity", 
                             "description": "Properties of eddy induced velocity (EIV) in lateral physics tracers scheme in the ocean", 
-                            "id": "cmip6.ocean.lateral_physics.tracers::tracers:eddy_induced_velocity", 
+                            "id": "cmip6.ocean.lateral_physics.tracers.eddy_induced_velocity", 
                             "details": [
                                 {
                                     "label": "Type", 
                                     "description": "Type of EIV in lateral physics tracers in the ocean", 
-                                    "id": "cmip6.ocean.lateral_physics.tracers::tracers:eddy_induced_velocity::type", 
+                                    "id": "cmip6.ocean.lateral_physics.tracers.eddy_induced_velocity.type", 
                                     "cardinality": "1.1", 
                                     "type": "enum", 
                                     "enum": {
@@ -1029,7 +853,7 @@
                                 {
                                     "label": "Constant Val", 
                                     "description": "If EIV scheme for tracers is constant, specify coefficient value (M2/s)", 
-                                    "id": "cmip6.ocean.lateral_physics.tracers::tracers:eddy_induced_velocity::constant_val", 
+                                    "id": "cmip6.ocean.lateral_physics.tracers.eddy_induced_velocity.constant_val", 
                                     "cardinality": "0.1", 
                                     "type": "int", 
                                     "uiOrdinal": 2
@@ -1037,7 +861,7 @@
                                 {
                                     "label": "Flux Type", 
                                     "description": "Type of EIV flux (advective or skew)", 
-                                    "id": "cmip6.ocean.lateral_physics.tracers::tracers:eddy_induced_velocity::flux_type", 
+                                    "id": "cmip6.ocean.lateral_physics.tracers.eddy_induced_velocity.flux_type", 
                                     "cardinality": "1.1", 
                                     "type": "str", 
                                     "uiOrdinal": 3
@@ -1045,224 +869,12 @@
                                 {
                                     "label": "Added Diffusivity", 
                                     "description": "Type of EIV added diffusivity (constant, flow dependent or none)", 
-                                    "id": "cmip6.ocean.lateral_physics.tracers::tracers:eddy_induced_velocity::added_diffusivity", 
+                                    "id": "cmip6.ocean.lateral_physics.tracers.eddy_induced_velocity.added_diffusivity", 
                                     "cardinality": "1.1", 
                                     "type": "str", 
                                     "uiOrdinal": 4
                                 }
-                            ], 
-                            "detailSets": []
-                        }, 
-                        {
-                            "label": "Operator", 
-                            "description": "Properties of lateral physics operator for tracers in ocean", 
-                            "id": "cmip6.ocean.lateral_physics.tracers::tracers:operator", 
-                            "details": [
-                                {
-                                    "label": "Direction", 
-                                    "description": "Direction of lateral physics tracers scheme in the ocean", 
-                                    "id": "cmip6.ocean.lateral_physics.tracers::tracers:operator::direction", 
-                                    "cardinality": "1.1", 
-                                    "type": "enum", 
-                                    "enum": {
-                                        "label": "Latphys Operator Direc Types", 
-                                        "description": "Type of lateral physics direction in ocean", 
-                                        "isOpen": true, 
-                                        "choices": [
-                                            {
-                                                "label": "Horizontal", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Isopycnal", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Isoneutral", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Geopotential", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Iso-level", 
-                                                "description": null
-                                            }
-                                        ]
-                                    }, 
-                                    "uiOrdinal": 1
-                                }, 
-                                {
-                                    "label": "Order", 
-                                    "description": "Order of lateral physics tracers scheme in the ocean", 
-                                    "id": "cmip6.ocean.lateral_physics.tracers::tracers:operator::order", 
-                                    "cardinality": "1.1", 
-                                    "type": "enum", 
-                                    "enum": {
-                                        "label": "Latphys Operator Order Types", 
-                                        "description": "Type of lateral physics order in ocean", 
-                                        "isOpen": true, 
-                                        "choices": [
-                                            {
-                                                "label": "Harmonic", 
-                                                "description": "Second order"
-                                            }, 
-                                            {
-                                                "label": "Bi-harmonic", 
-                                                "description": "Fourth order"
-                                            }
-                                        ]
-                                    }, 
-                                    "uiOrdinal": 2
-                                }, 
-                                {
-                                    "label": "Discretisation", 
-                                    "description": "Discretisation of lateral physics tracers scheme in the ocean", 
-                                    "id": "cmip6.ocean.lateral_physics.tracers::tracers:operator::discretisation", 
-                                    "cardinality": "1.1", 
-                                    "type": "enum", 
-                                    "enum": {
-                                        "label": "Latphys Operator Discret Types", 
-                                        "description": "Type of lateral physics discretisation in ocean", 
-                                        "isOpen": true, 
-                                        "choices": [
-                                            {
-                                                "label": "Second order", 
-                                                "description": "Second order"
-                                            }, 
-                                            {
-                                                "label": "Higher order", 
-                                                "description": "Higher order"
-                                            }, 
-                                            {
-                                                "label": "Flux limiter", 
-                                                "description": null
-                                            }
-                                        ]
-                                    }, 
-                                    "uiOrdinal": 3
-                                }
-                            ], 
-                            "detailSets": []
-                        }, 
-                        {
-                            "label": "Eddy Viscosity Coeff", 
-                            "description": "Properties of eddy viscosity coeff in lateral physics tracers scheme in the ocean", 
-                            "id": "cmip6.ocean.lateral_physics.tracers::tracers:eddy_viscosity_coeff", 
-                            "details": [
-                                {
-                                    "label": "Type", 
-                                    "description": "Lateral physics tracers eddy viscosity coeff type in the ocean", 
-                                    "id": "cmip6.ocean.lateral_physics.tracers::tracers:eddy_viscosity_coeff::type", 
-                                    "cardinality": "1.1", 
-                                    "type": "enum", 
-                                    "enum": {
-                                        "label": "Latphys Eddy Visc Coeff Types", 
-                                        "description": "Type of lateral physics eddy viscosity coeff in ocean", 
-                                        "isOpen": true, 
-                                        "choices": [
-                                            {
-                                                "label": "Constant", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Space varying", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Time + space varying (Smagorinsky)", 
-                                                "description": null
-                                            }
-                                        ]
-                                    }, 
-                                    "uiOrdinal": 1
-                                }, 
-                                {
-                                    "label": "Constant Coefficient", 
-                                    "description": "If constant, value of eddy viscosity coeff in lateral physics tracers scheme (in m2/s)", 
-                                    "id": "cmip6.ocean.lateral_physics.tracers::tracers:eddy_viscosity_coeff::constant_coefficient", 
-                                    "cardinality": "0.1", 
-                                    "type": "int", 
-                                    "uiOrdinal": 2
-                                }, 
-                                {
-                                    "label": "Variable Coefficient", 
-                                    "description": "If space-varying, describe variations of eddy viscosity coeff in lateral physics tracers scheme", 
-                                    "id": "cmip6.ocean.lateral_physics.tracers::tracers:eddy_viscosity_coeff::variable_coefficient", 
-                                    "cardinality": "0.1", 
-                                    "type": "str", 
-                                    "uiOrdinal": 3
-                                }, 
-                                {
-                                    "label": "Coeff Background", 
-                                    "description": "Background value of eddy viscosity coeff in lateral physics tracers scheme (in m2/s)", 
-                                    "id": "cmip6.ocean.lateral_physics.tracers::tracers:eddy_viscosity_coeff::coeff_background", 
-                                    "cardinality": "1.1", 
-                                    "type": "int", 
-                                    "uiOrdinal": 4
-                                }, 
-                                {
-                                    "label": "Coeff Backscatter", 
-                                    "description": "Is there backscatter in eddy viscosity coeff in lateral physics tracers scheme ?", 
-                                    "id": "cmip6.ocean.lateral_physics.tracers::tracers:eddy_viscosity_coeff::coeff_backscatter", 
-                                    "cardinality": "1.1", 
-                                    "type": "bool", 
-                                    "uiOrdinal": 5
-                                }
-                            ], 
-                            "detailSets": []
-                        }, 
-                        {
-                            "label": "Eddy Induced Velocity", 
-                            "description": "Properties of eddy induced velocity (EIV) in lateral physics tracers scheme in the ocean", 
-                            "id": "cmip6.ocean.lateral_physics.tracers::tracers:eddy_induced_velocity", 
-                            "details": [
-                                {
-                                    "label": "Type", 
-                                    "description": "Type of EIV in lateral physics tracers in the ocean", 
-                                    "id": "cmip6.ocean.lateral_physics.tracers::tracers:eddy_induced_velocity::type", 
-                                    "cardinality": "1.1", 
-                                    "type": "enum", 
-                                    "enum": {
-                                        "label": "Latphys Eiv Types", 
-                                        "description": "Type of lateral physics eddy induced velocity in ocean", 
-                                        "isOpen": true, 
-                                        "choices": [
-                                            {
-                                                "label": "GM", 
-                                                "description": "Gent & McWilliams"
-                                            }
-                                        ]
-                                    }, 
-                                    "uiOrdinal": 1
-                                }, 
-                                {
-                                    "label": "Constant Val", 
-                                    "description": "If EIV scheme for tracers is constant, specify coefficient value (M2/s)", 
-                                    "id": "cmip6.ocean.lateral_physics.tracers::tracers:eddy_induced_velocity::constant_val", 
-                                    "cardinality": "0.1", 
-                                    "type": "int", 
-                                    "uiOrdinal": 2
-                                }, 
-                                {
-                                    "label": "Flux Type", 
-                                    "description": "Type of EIV flux (advective or skew)", 
-                                    "id": "cmip6.ocean.lateral_physics.tracers::tracers:eddy_induced_velocity::flux_type", 
-                                    "cardinality": "1.1", 
-                                    "type": "str", 
-                                    "uiOrdinal": 3
-                                }, 
-                                {
-                                    "label": "Added Diffusivity", 
-                                    "description": "Type of EIV added diffusivity (constant, flow dependent or none)", 
-                                    "id": "cmip6.ocean.lateral_physics.tracers::tracers:eddy_induced_velocity::added_diffusivity", 
-                                    "cardinality": "1.1", 
-                                    "type": "str", 
-                                    "uiOrdinal": 4
-                                }
-                            ], 
-                            "detailSets": []
+                            ]
                         }
                     ]
                 }
@@ -1273,41 +885,37 @@
             "description": "Ocean Vertical Physics", 
             "id": "cmip6.ocean.vertical_physics", 
             "contact": "Eric Guilyardi", 
-            "details": [], 
-            "detailSets": [], 
             "subProcesses": [
                 {
                     "label": "Boundary Layer Mixing", 
                     "description": "Properties of boundary layer mixing in the ocean (aka mixed layer)", 
                     "id": "cmip6.ocean.vertical_physics.boundary_layer_mixing", 
                     "contact": "Eric Guilyardi", 
-                    "details": [], 
                     "detailSets": [
                         {
                             "label": "Details", 
                             "description": "Properties of vertical physics in ocean", 
-                            "id": "cmip6.ocean.vertical_physics.boundary_layer_mixing::boundary_layer_mixing:details", 
+                            "id": "cmip6.ocean.vertical_physics.boundary_layer_mixing.details", 
                             "details": [
                                 {
                                     "label": "Langmuir Cells Mixing", 
                                     "description": "Is there Langmuir cells mixing in upper ocean ?", 
-                                    "id": "cmip6.ocean.vertical_physics.boundary_layer_mixing::boundary_layer_mixing:details::langmuir_cells_mixing", 
+                                    "id": "cmip6.ocean.vertical_physics.boundary_layer_mixing.details.langmuir_cells_mixing", 
                                     "cardinality": "1.1", 
                                     "type": "bool", 
                                     "uiOrdinal": 1
                                 }
-                            ], 
-                            "detailSets": []
+                            ]
                         }, 
                         {
                             "label": "Tracers", 
                             "description": "Properties of boundary layer (BL) mixing on tracers in the ocean ", 
-                            "id": "cmip6.ocean.vertical_physics.boundary_layer_mixing::boundary_layer_mixing:tracers", 
+                            "id": "cmip6.ocean.vertical_physics.boundary_layer_mixing.tracers", 
                             "details": [
                                 {
                                     "label": "Type", 
                                     "description": "Type of boundary layer mixing for tracers in ocean", 
-                                    "id": "cmip6.ocean.vertical_physics.boundary_layer_mixing::boundary_layer_mixing:tracers::type", 
+                                    "id": "cmip6.ocean.vertical_physics.boundary_layer_mixing.tracers.type", 
                                     "cardinality": "1.1", 
                                     "type": "enum", 
                                     "enum": {
@@ -1354,7 +962,7 @@
                                 {
                                     "label": "Closure Order", 
                                     "description": "If turbulent BL mixing of tracers, specific order of closure (0, 1, 2.5, 3)", 
-                                    "id": "cmip6.ocean.vertical_physics.boundary_layer_mixing::boundary_layer_mixing:tracers::closure_order", 
+                                    "id": "cmip6.ocean.vertical_physics.boundary_layer_mixing.tracers.closure_order", 
                                     "cardinality": "0.1", 
                                     "type": "float", 
                                     "uiOrdinal": 2
@@ -1362,7 +970,7 @@
                                 {
                                     "label": "Constant", 
                                     "description": "If constant BL mixing of tracers, specific coefficient (m2/s)", 
-                                    "id": "cmip6.ocean.vertical_physics.boundary_layer_mixing::boundary_layer_mixing:tracers::constant", 
+                                    "id": "cmip6.ocean.vertical_physics.boundary_layer_mixing.tracers.constant", 
                                     "cardinality": "0.1", 
                                     "type": "int", 
                                     "uiOrdinal": 3
@@ -1370,23 +978,22 @@
                                 {
                                     "label": "Background", 
                                     "description": "Background BL mixing of tracers coefficient, (schema and value in m2/s - may by none)", 
-                                    "id": "cmip6.ocean.vertical_physics.boundary_layer_mixing::boundary_layer_mixing:tracers::background", 
+                                    "id": "cmip6.ocean.vertical_physics.boundary_layer_mixing.tracers.background", 
                                     "cardinality": "1.1", 
                                     "type": "str", 
                                     "uiOrdinal": 4
                                 }
-                            ], 
-                            "detailSets": []
+                            ]
                         }, 
                         {
                             "label": "Momentum", 
                             "description": "Properties of boundary layer (BL) mixing on momentum in the ocean ", 
-                            "id": "cmip6.ocean.vertical_physics.boundary_layer_mixing::boundary_layer_mixing:momentum", 
+                            "id": "cmip6.ocean.vertical_physics.boundary_layer_mixing.momentum", 
                             "details": [
                                 {
                                     "label": "Type", 
                                     "description": "Type of boundary layer mixing for momentum in ocean", 
-                                    "id": "cmip6.ocean.vertical_physics.boundary_layer_mixing::boundary_layer_mixing:momentum::type", 
+                                    "id": "cmip6.ocean.vertical_physics.boundary_layer_mixing.momentum.type", 
                                     "cardinality": "1.1", 
                                     "type": "enum", 
                                     "enum": {
@@ -1433,7 +1040,7 @@
                                 {
                                     "label": "Closure Order", 
                                     "description": "If turbulent BL mixing of momentum, specific order of closure (0, 1, 2.5, 3)", 
-                                    "id": "cmip6.ocean.vertical_physics.boundary_layer_mixing::boundary_layer_mixing:momentum::closure_order", 
+                                    "id": "cmip6.ocean.vertical_physics.boundary_layer_mixing.momentum.closure_order", 
                                     "cardinality": "0.1", 
                                     "type": "float", 
                                     "uiOrdinal": 2
@@ -1441,7 +1048,7 @@
                                 {
                                     "label": "Constant", 
                                     "description": "If constant BL mixing of momentum, specific coefficient (m2/s)", 
-                                    "id": "cmip6.ocean.vertical_physics.boundary_layer_mixing::boundary_layer_mixing:momentum::constant", 
+                                    "id": "cmip6.ocean.vertical_physics.boundary_layer_mixing.momentum.constant", 
                                     "cardinality": "0.1", 
                                     "type": "int", 
                                     "uiOrdinal": 3
@@ -1449,187 +1056,12 @@
                                 {
                                     "label": "Background", 
                                     "description": "Background BL mixing of momentum coefficient, (schema and value in m2/s - may by none)", 
-                                    "id": "cmip6.ocean.vertical_physics.boundary_layer_mixing::boundary_layer_mixing:momentum::background", 
+                                    "id": "cmip6.ocean.vertical_physics.boundary_layer_mixing.momentum.background", 
                                     "cardinality": "1.1", 
                                     "type": "str", 
                                     "uiOrdinal": 4
                                 }
-                            ], 
-                            "detailSets": []
-                        }, 
-                        {
-                            "label": "Details", 
-                            "description": "Properties of vertical physics in ocean", 
-                            "id": "cmip6.ocean.vertical_physics.boundary_layer_mixing::boundary_layer_mixing:details", 
-                            "details": [
-                                {
-                                    "label": "Langmuir Cells Mixing", 
-                                    "description": "Is there Langmuir cells mixing in upper ocean ?", 
-                                    "id": "cmip6.ocean.vertical_physics.boundary_layer_mixing::boundary_layer_mixing:details::langmuir_cells_mixing", 
-                                    "cardinality": "1.1", 
-                                    "type": "bool", 
-                                    "uiOrdinal": 1
-                                }
-                            ], 
-                            "detailSets": []
-                        }, 
-                        {
-                            "label": "Tracers", 
-                            "description": "Properties of boundary layer (BL) mixing on tracers in the ocean ", 
-                            "id": "cmip6.ocean.vertical_physics.boundary_layer_mixing::boundary_layer_mixing:tracers", 
-                            "details": [
-                                {
-                                    "label": "Type", 
-                                    "description": "Type of boundary layer mixing for tracers in ocean", 
-                                    "id": "cmip6.ocean.vertical_physics.boundary_layer_mixing::boundary_layer_mixing:tracers::type", 
-                                    "cardinality": "1.1", 
-                                    "type": "enum", 
-                                    "enum": {
-                                        "label": "Bndlayer Mixing Types", 
-                                        "description": "Types of boundary layer mixing in ocean", 
-                                        "isOpen": true, 
-                                        "choices": [
-                                            {
-                                                "label": "Constant value", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Turbulent closure - TKE", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Turbulent closure - KPP", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Turbulent closure - Mellor-Yamada", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Turbulent closure - Bulk Mixed Layer", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Richardson number dependent - PP", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Richardson number dependent - KT", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Imbeded as isopycnic vertical coordinate", 
-                                                "description": null
-                                            }
-                                        ]
-                                    }, 
-                                    "uiOrdinal": 1
-                                }, 
-                                {
-                                    "label": "Closure Order", 
-                                    "description": "If turbulent BL mixing of tracers, specific order of closure (0, 1, 2.5, 3)", 
-                                    "id": "cmip6.ocean.vertical_physics.boundary_layer_mixing::boundary_layer_mixing:tracers::closure_order", 
-                                    "cardinality": "0.1", 
-                                    "type": "float", 
-                                    "uiOrdinal": 2
-                                }, 
-                                {
-                                    "label": "Constant", 
-                                    "description": "If constant BL mixing of tracers, specific coefficient (m2/s)", 
-                                    "id": "cmip6.ocean.vertical_physics.boundary_layer_mixing::boundary_layer_mixing:tracers::constant", 
-                                    "cardinality": "0.1", 
-                                    "type": "int", 
-                                    "uiOrdinal": 3
-                                }, 
-                                {
-                                    "label": "Background", 
-                                    "description": "Background BL mixing of tracers coefficient, (schema and value in m2/s - may by none)", 
-                                    "id": "cmip6.ocean.vertical_physics.boundary_layer_mixing::boundary_layer_mixing:tracers::background", 
-                                    "cardinality": "1.1", 
-                                    "type": "str", 
-                                    "uiOrdinal": 4
-                                }
-                            ], 
-                            "detailSets": []
-                        }, 
-                        {
-                            "label": "Momentum", 
-                            "description": "Properties of boundary layer (BL) mixing on momentum in the ocean ", 
-                            "id": "cmip6.ocean.vertical_physics.boundary_layer_mixing::boundary_layer_mixing:momentum", 
-                            "details": [
-                                {
-                                    "label": "Type", 
-                                    "description": "Type of boundary layer mixing for momentum in ocean", 
-                                    "id": "cmip6.ocean.vertical_physics.boundary_layer_mixing::boundary_layer_mixing:momentum::type", 
-                                    "cardinality": "1.1", 
-                                    "type": "enum", 
-                                    "enum": {
-                                        "label": "Bndlayer Mixing Types", 
-                                        "description": "Types of boundary layer mixing in ocean", 
-                                        "isOpen": true, 
-                                        "choices": [
-                                            {
-                                                "label": "Constant value", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Turbulent closure - TKE", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Turbulent closure - KPP", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Turbulent closure - Mellor-Yamada", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Turbulent closure - Bulk Mixed Layer", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Richardson number dependent - PP", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Richardson number dependent - KT", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Imbeded as isopycnic vertical coordinate", 
-                                                "description": null
-                                            }
-                                        ]
-                                    }, 
-                                    "uiOrdinal": 1
-                                }, 
-                                {
-                                    "label": "Closure Order", 
-                                    "description": "If turbulent BL mixing of momentum, specific order of closure (0, 1, 2.5, 3)", 
-                                    "id": "cmip6.ocean.vertical_physics.boundary_layer_mixing::boundary_layer_mixing:momentum::closure_order", 
-                                    "cardinality": "0.1", 
-                                    "type": "float", 
-                                    "uiOrdinal": 2
-                                }, 
-                                {
-                                    "label": "Constant", 
-                                    "description": "If constant BL mixing of momentum, specific coefficient (m2/s)", 
-                                    "id": "cmip6.ocean.vertical_physics.boundary_layer_mixing::boundary_layer_mixing:momentum::constant", 
-                                    "cardinality": "0.1", 
-                                    "type": "int", 
-                                    "uiOrdinal": 3
-                                }, 
-                                {
-                                    "label": "Background", 
-                                    "description": "Background BL mixing of momentum coefficient, (schema and value in m2/s - may by none)", 
-                                    "id": "cmip6.ocean.vertical_physics.boundary_layer_mixing::boundary_layer_mixing:momentum::background", 
-                                    "cardinality": "1.1", 
-                                    "type": "str", 
-                                    "uiOrdinal": 4
-                                }
-                            ], 
-                            "detailSets": []
+                            ]
                         }
                     ]
                 }, 
@@ -1638,17 +1070,16 @@
                     "description": "Properties of interior vertical mixing in the ocean", 
                     "id": "cmip6.ocean.vertical_physics.interior_mixing", 
                     "contact": "Eric Guilyardi", 
-                    "details": [], 
                     "detailSets": [
                         {
                             "label": "Details", 
                             "description": "Properties of interior mixing in the ocean ", 
-                            "id": "cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:details", 
+                            "id": "cmip6.ocean.vertical_physics.interior_mixing.details", 
                             "details": [
                                 {
                                     "label": "Convection Type", 
                                     "description": "Type of vertical convection in ocean", 
-                                    "id": "cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:details::convection_type", 
+                                    "id": "cmip6.ocean.vertical_physics.interior_mixing.details.convection_type", 
                                     "cardinality": "1.1", 
                                     "type": "enum", 
                                     "enum": {
@@ -1675,7 +1106,7 @@
                                 {
                                     "label": "Tide Induced Mixing", 
                                     "description": "Describe how tide induced mixing is modelled (barotropic, baroclinic, none)", 
-                                    "id": "cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:details::tide_induced_mixing", 
+                                    "id": "cmip6.ocean.vertical_physics.interior_mixing.details.tide_induced_mixing", 
                                     "cardinality": "1.1", 
                                     "type": "str", 
                                     "uiOrdinal": 2
@@ -1683,7 +1114,7 @@
                                 {
                                     "label": "Double Diffusion", 
                                     "description": "Is there double diffusion", 
-                                    "id": "cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:details::double_diffusion", 
+                                    "id": "cmip6.ocean.vertical_physics.interior_mixing.details.double_diffusion", 
                                     "cardinality": "1.1", 
                                     "type": "bool", 
                                     "uiOrdinal": 3
@@ -1691,23 +1122,22 @@
                                 {
                                     "label": "Shear Mixing", 
                                     "description": "Is there interior shear mixing", 
-                                    "id": "cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:details::shear_mixing", 
+                                    "id": "cmip6.ocean.vertical_physics.interior_mixing.details.shear_mixing", 
                                     "cardinality": "1.1", 
                                     "type": "bool", 
                                     "uiOrdinal": 4
                                 }
-                            ], 
-                            "detailSets": []
+                            ]
                         }, 
                         {
                             "label": "Tracers", 
                             "description": "Properties of interior mixing on tracers in the ocean ", 
-                            "id": "cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:tracers", 
+                            "id": "cmip6.ocean.vertical_physics.interior_mixing.tracers", 
                             "details": [
                                 {
                                     "label": "Type", 
                                     "description": "Type of interior mixing for tracers in ocean", 
-                                    "id": "cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:tracers::type", 
+                                    "id": "cmip6.ocean.vertical_physics.interior_mixing.tracers.type", 
                                     "cardinality": "1.1", 
                                     "type": "enum", 
                                     "enum": {
@@ -1746,7 +1176,7 @@
                                 {
                                     "label": "Constant", 
                                     "description": "If constant interior mixing of tracers, specific coefficient (m2/s)", 
-                                    "id": "cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:tracers::constant", 
+                                    "id": "cmip6.ocean.vertical_physics.interior_mixing.tracers.constant", 
                                     "cardinality": "0.1", 
                                     "type": "int", 
                                     "uiOrdinal": 2
@@ -1754,7 +1184,7 @@
                                 {
                                     "label": "Profile", 
                                     "description": "Is the background interior mixing using a vertical profile for tracers (i.e is NOT constant) ?", 
-                                    "id": "cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:tracers::profile", 
+                                    "id": "cmip6.ocean.vertical_physics.interior_mixing.tracers.profile", 
                                     "cardinality": "1.1", 
                                     "type": "str", 
                                     "uiOrdinal": 3
@@ -1762,23 +1192,22 @@
                                 {
                                     "label": "Background", 
                                     "description": "Background interior mixing of tracers coefficient, (schema and value in m2/s - may by none)", 
-                                    "id": "cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:tracers::background", 
+                                    "id": "cmip6.ocean.vertical_physics.interior_mixing.tracers.background", 
                                     "cardinality": "1.1", 
                                     "type": "str", 
                                     "uiOrdinal": 4
                                 }
-                            ], 
-                            "detailSets": []
+                            ]
                         }, 
                         {
                             "label": "Momentum", 
                             "description": "Properties of interior mixing on momentum in the ocean ", 
-                            "id": "cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:momentum", 
+                            "id": "cmip6.ocean.vertical_physics.interior_mixing.momentum", 
                             "details": [
                                 {
                                     "label": "Type", 
                                     "description": "Type of interior mixing for momentum in ocean", 
-                                    "id": "cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:momentum::type", 
+                                    "id": "cmip6.ocean.vertical_physics.interior_mixing.momentum.type", 
                                     "cardinality": "1.1", 
                                     "type": "enum", 
                                     "enum": {
@@ -1817,7 +1246,7 @@
                                 {
                                     "label": "Constant", 
                                     "description": "If constant interior mixing of momentum, specific coefficient (m2/s)", 
-                                    "id": "cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:momentum::constant", 
+                                    "id": "cmip6.ocean.vertical_physics.interior_mixing.momentum.constant", 
                                     "cardinality": "0.1", 
                                     "type": "int", 
                                     "uiOrdinal": 2
@@ -1825,7 +1254,7 @@
                                 {
                                     "label": "Profile", 
                                     "description": "Is the background interior mixing using a vertical profile for momentum (i.e is NOT constant) ?", 
-                                    "id": "cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:momentum::profile", 
+                                    "id": "cmip6.ocean.vertical_physics.interior_mixing.momentum.profile", 
                                     "cardinality": "1.1", 
                                     "type": "str", 
                                     "uiOrdinal": 3
@@ -1833,214 +1262,12 @@
                                 {
                                     "label": "Background", 
                                     "description": "Background interior mixing of momentum coefficient, (schema and value in m2/s - may by none)", 
-                                    "id": "cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:momentum::background", 
+                                    "id": "cmip6.ocean.vertical_physics.interior_mixing.momentum.background", 
                                     "cardinality": "1.1", 
                                     "type": "str", 
                                     "uiOrdinal": 4
                                 }
-                            ], 
-                            "detailSets": []
-                        }, 
-                        {
-                            "label": "Details", 
-                            "description": "Properties of interior mixing in the ocean ", 
-                            "id": "cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:details", 
-                            "details": [
-                                {
-                                    "label": "Convection Type", 
-                                    "description": "Type of vertical convection in ocean", 
-                                    "id": "cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:details::convection_type", 
-                                    "cardinality": "1.1", 
-                                    "type": "enum", 
-                                    "enum": {
-                                        "label": "Vertphys Convection Types", 
-                                        "description": "Types of convection scheme in ocean", 
-                                        "isOpen": true, 
-                                        "choices": [
-                                            {
-                                                "label": "Non-penetrative convective adjustment", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Enhanced vertical diffusion", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Included in turbulence closure", 
-                                                "description": null
-                                            }
-                                        ]
-                                    }, 
-                                    "uiOrdinal": 1
-                                }, 
-                                {
-                                    "label": "Tide Induced Mixing", 
-                                    "description": "Describe how tide induced mixing is modelled (barotropic, baroclinic, none)", 
-                                    "id": "cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:details::tide_induced_mixing", 
-                                    "cardinality": "1.1", 
-                                    "type": "str", 
-                                    "uiOrdinal": 2
-                                }, 
-                                {
-                                    "label": "Double Diffusion", 
-                                    "description": "Is there double diffusion", 
-                                    "id": "cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:details::double_diffusion", 
-                                    "cardinality": "1.1", 
-                                    "type": "bool", 
-                                    "uiOrdinal": 3
-                                }, 
-                                {
-                                    "label": "Shear Mixing", 
-                                    "description": "Is there interior shear mixing", 
-                                    "id": "cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:details::shear_mixing", 
-                                    "cardinality": "1.1", 
-                                    "type": "bool", 
-                                    "uiOrdinal": 4
-                                }
-                            ], 
-                            "detailSets": []
-                        }, 
-                        {
-                            "label": "Tracers", 
-                            "description": "Properties of interior mixing on tracers in the ocean ", 
-                            "id": "cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:tracers", 
-                            "details": [
-                                {
-                                    "label": "Type", 
-                                    "description": "Type of interior mixing for tracers in ocean", 
-                                    "id": "cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:tracers::type", 
-                                    "cardinality": "1.1", 
-                                    "type": "enum", 
-                                    "enum": {
-                                        "label": "Interior Mixing Types", 
-                                        "description": "Types of interior mixing in ocean", 
-                                        "isOpen": true, 
-                                        "choices": [
-                                            {
-                                                "label": "Constant value", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Turbulent closure / TKE", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Turbulent closure - Mellor-Yamada", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Richardson number dependent - PP", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Richardson number dependent - KT", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Imbeded as isopycnic vertical coordinate", 
-                                                "description": null
-                                            }
-                                        ]
-                                    }, 
-                                    "uiOrdinal": 1
-                                }, 
-                                {
-                                    "label": "Constant", 
-                                    "description": "If constant interior mixing of tracers, specific coefficient (m2/s)", 
-                                    "id": "cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:tracers::constant", 
-                                    "cardinality": "0.1", 
-                                    "type": "int", 
-                                    "uiOrdinal": 2
-                                }, 
-                                {
-                                    "label": "Profile", 
-                                    "description": "Is the background interior mixing using a vertical profile for tracers (i.e is NOT constant) ?", 
-                                    "id": "cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:tracers::profile", 
-                                    "cardinality": "1.1", 
-                                    "type": "str", 
-                                    "uiOrdinal": 3
-                                }, 
-                                {
-                                    "label": "Background", 
-                                    "description": "Background interior mixing of tracers coefficient, (schema and value in m2/s - may by none)", 
-                                    "id": "cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:tracers::background", 
-                                    "cardinality": "1.1", 
-                                    "type": "str", 
-                                    "uiOrdinal": 4
-                                }
-                            ], 
-                            "detailSets": []
-                        }, 
-                        {
-                            "label": "Momentum", 
-                            "description": "Properties of interior mixing on momentum in the ocean ", 
-                            "id": "cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:momentum", 
-                            "details": [
-                                {
-                                    "label": "Type", 
-                                    "description": "Type of interior mixing for momentum in ocean", 
-                                    "id": "cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:momentum::type", 
-                                    "cardinality": "1.1", 
-                                    "type": "enum", 
-                                    "enum": {
-                                        "label": "Interior Mixing Types", 
-                                        "description": "Types of interior mixing in ocean", 
-                                        "isOpen": true, 
-                                        "choices": [
-                                            {
-                                                "label": "Constant value", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Turbulent closure / TKE", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Turbulent closure - Mellor-Yamada", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Richardson number dependent - PP", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Richardson number dependent - KT", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Imbeded as isopycnic vertical coordinate", 
-                                                "description": null
-                                            }
-                                        ]
-                                    }, 
-                                    "uiOrdinal": 1
-                                }, 
-                                {
-                                    "label": "Constant", 
-                                    "description": "If constant interior mixing of momentum, specific coefficient (m2/s)", 
-                                    "id": "cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:momentum::constant", 
-                                    "cardinality": "0.1", 
-                                    "type": "int", 
-                                    "uiOrdinal": 2
-                                }, 
-                                {
-                                    "label": "Profile", 
-                                    "description": "Is the background interior mixing using a vertical profile for momentum (i.e is NOT constant) ?", 
-                                    "id": "cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:momentum::profile", 
-                                    "cardinality": "1.1", 
-                                    "type": "str", 
-                                    "uiOrdinal": 3
-                                }, 
-                                {
-                                    "label": "Background", 
-                                    "description": "Background interior mixing of momentum coefficient, (schema and value in m2/s - may by none)", 
-                                    "id": "cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:momentum::background", 
-                                    "cardinality": "1.1", 
-                                    "type": "str", 
-                                    "uiOrdinal": 4
-                                }
-                            ], 
-                            "detailSets": []
+                            ]
                         }
                     ]
                 }
@@ -2051,17 +1278,16 @@
             "description": "Ocean upper / lower boundaries", 
             "id": "cmip6.ocean.uplow_boundaries", 
             "contact": "Eric Guilyardi", 
-            "details": [], 
             "detailSets": [
                 {
                     "label": "Free Surface", 
                     "description": "Properties of free surface in ocean", 
-                    "id": "cmip6.ocean.uplow_boundaries::toplevel:free_surface", 
+                    "id": "cmip6.ocean.uplow_boundaries.free_surface", 
                     "details": [
                         {
                             "label": "Scheme", 
                             "description": "Free surface scheme in ocean", 
-                            "id": "cmip6.ocean.uplow_boundaries::toplevel:free_surface::scheme", 
+                            "id": "cmip6.ocean.uplow_boundaries.free_surface.scheme", 
                             "cardinality": "1.1", 
                             "type": "enum", 
                             "enum": {
@@ -2100,23 +1326,22 @@
                         {
                             "label": "Embeded Seaice", 
                             "description": "Is the sea-ice embeded in the ocean model (instead of levitating) ?", 
-                            "id": "cmip6.ocean.uplow_boundaries::toplevel:free_surface::embeded_seaice", 
+                            "id": "cmip6.ocean.uplow_boundaries.free_surface.embeded_seaice", 
                             "cardinality": "1.1", 
                             "type": "bool", 
                             "uiOrdinal": 2
                         }
-                    ], 
-                    "detailSets": []
+                    ]
                 }, 
                 {
                     "label": "Bottom Boundary Layer", 
                     "description": "Properties of bottom boundary layer in ocean", 
-                    "id": "cmip6.ocean.uplow_boundaries::toplevel:bottom_boundary_layer", 
+                    "id": "cmip6.ocean.uplow_boundaries.bottom_boundary_layer", 
                     "details": [
                         {
                             "label": "Type Of Bbl", 
                             "description": "Type of bottom boundary layer in ocean", 
-                            "id": "cmip6.ocean.uplow_boundaries::toplevel:bottom_boundary_layer::type_of_bbl", 
+                            "id": "cmip6.ocean.uplow_boundaries.bottom_boundary_layer.type_of_bbl", 
                             "cardinality": "1.1", 
                             "type": "enum", 
                             "enum": {
@@ -2139,7 +1364,7 @@
                         {
                             "label": "Lateral Mixing Coef", 
                             "description": "If bottom BL is diffusive, specify value of lateral mixing coefficient (in m2/s)", 
-                            "id": "cmip6.ocean.uplow_boundaries::toplevel:bottom_boundary_layer::lateral_mixing_coef", 
+                            "id": "cmip6.ocean.uplow_boundaries.bottom_boundary_layer.lateral_mixing_coef", 
                             "cardinality": "0.1", 
                             "type": "int", 
                             "uiOrdinal": 2
@@ -2147,13 +1372,12 @@
                         {
                             "label": "Sill Overflow", 
                             "description": "Describe any specific treatment of sill overflows", 
-                            "id": "cmip6.ocean.uplow_boundaries::toplevel:bottom_boundary_layer::sill_overflow", 
+                            "id": "cmip6.ocean.uplow_boundaries.bottom_boundary_layer.sill_overflow", 
                             "cardinality": "1.1", 
                             "type": "str", 
                             "uiOrdinal": 3
                         }
-                    ], 
-                    "detailSets": []
+                    ]
                 }
             ]
         }, 
@@ -2166,7 +1390,7 @@
                 {
                     "label": "Surface Pressure", 
                     "description": "Describe how surface pressure is transmitted to ocean (via sea-ice, nothing specific,...)", 
-                    "id": "cmip6.ocean.boundary_forcing::toplevel::surface_pressure", 
+                    "id": "cmip6.ocean.boundary_forcing.surface_pressure", 
                     "cardinality": "1.1", 
                     "type": "str", 
                     "uiOrdinal": 1
@@ -2174,7 +1398,7 @@
                 {
                     "label": "Momentum Flux Correction", 
                     "description": "Describe any type of ocean surface momentum flux correction and, if applicable, how it is applied and where.", 
-                    "id": "cmip6.ocean.boundary_forcing::toplevel::momentum_flux_correction", 
+                    "id": "cmip6.ocean.boundary_forcing.momentum_flux_correction", 
                     "cardinality": "0.1", 
                     "type": "str", 
                     "uiOrdinal": 2
@@ -2182,7 +1406,7 @@
                 {
                     "label": "Tracers Flux Correction", 
                     "description": "Describe any type of ocean surface tracers flux correction and, if applicable, how it is applied and where.", 
-                    "id": "cmip6.ocean.boundary_forcing::toplevel::tracers_flux_correction", 
+                    "id": "cmip6.ocean.boundary_forcing.tracers_flux_correction", 
                     "cardinality": "0.1", 
                     "type": "str", 
                     "uiOrdinal": 3
@@ -2190,7 +1414,7 @@
                 {
                     "label": "Wave Effects", 
                     "description": "Describe if/how wave effects are modelled at ocean surface.", 
-                    "id": "cmip6.ocean.boundary_forcing::toplevel::wave_effects", 
+                    "id": "cmip6.ocean.boundary_forcing.wave_effects", 
                     "cardinality": "1.1", 
                     "type": "str", 
                     "uiOrdinal": 4
@@ -2198,7 +1422,7 @@
                 {
                     "label": "River Runoff Budget", 
                     "description": "Describe how river runoff from land surface is routed to ocean and any global adjustment done.", 
-                    "id": "cmip6.ocean.boundary_forcing::toplevel::river_runoff_budget", 
+                    "id": "cmip6.ocean.boundary_forcing.river_runoff_budget", 
                     "cardinality": "1.1", 
                     "type": "str", 
                     "uiOrdinal": 5
@@ -2206,30 +1430,28 @@
                 {
                     "label": "Geothermal Heating", 
                     "description": "Describe if/how geothermal heating is present at ocean bottom.", 
-                    "id": "cmip6.ocean.boundary_forcing::toplevel::geothermal_heating", 
+                    "id": "cmip6.ocean.boundary_forcing.geothermal_heating", 
                     "cardinality": "1.1", 
                     "type": "str", 
                     "uiOrdinal": 6
                 }
             ], 
-            "detailSets": [], 
             "subProcesses": [
                 {
                     "label": "Momentum", 
                     "description": "Key properties of momentum boundary forcing in the ocean", 
                     "id": "cmip6.ocean.boundary_forcing.momentum", 
                     "contact": "Eric Guilyardi", 
-                    "details": [], 
                     "detailSets": [
                         {
                             "label": "Bottom Friction", 
                             "description": "Properties of momentum bottom friction in ocean", 
-                            "id": "cmip6.ocean.boundary_forcing.momentum::momentum:bottom_friction", 
+                            "id": "cmip6.ocean.boundary_forcing.momentum.bottom_friction", 
                             "details": [
                                 {
                                     "label": "Type", 
                                     "description": "Type of momentum bottom friction in ocean", 
-                                    "id": "cmip6.ocean.boundary_forcing.momentum::momentum:bottom_friction::type", 
+                                    "id": "cmip6.ocean.boundary_forcing.momentum.bottom_friction.type", 
                                     "cardinality": "1.1", 
                                     "type": "enum", 
                                     "enum": {
@@ -2261,18 +1483,17 @@
                                     }, 
                                     "uiOrdinal": 1
                                 }
-                            ], 
-                            "detailSets": []
+                            ]
                         }, 
                         {
                             "label": "Lateral Friction", 
                             "description": "Properties of momentum lateral friction in ocean", 
-                            "id": "cmip6.ocean.boundary_forcing.momentum::momentum:lateral_friction", 
+                            "id": "cmip6.ocean.boundary_forcing.momentum.lateral_friction", 
                             "details": [
                                 {
                                     "label": "Type", 
                                     "description": "Type of momentum lateral friction in ocean", 
-                                    "id": "cmip6.ocean.boundary_forcing.momentum::momentum:lateral_friction::type", 
+                                    "id": "cmip6.ocean.boundary_forcing.momentum.lateral_friction.type", 
                                     "cardinality": "1.1", 
                                     "type": "enum", 
                                     "enum": {
@@ -2296,86 +1517,7 @@
                                     }, 
                                     "uiOrdinal": 1
                                 }
-                            ], 
-                            "detailSets": []
-                        }, 
-                        {
-                            "label": "Bottom Friction", 
-                            "description": "Properties of momentum bottom friction in ocean", 
-                            "id": "cmip6.ocean.boundary_forcing.momentum::momentum:bottom_friction", 
-                            "details": [
-                                {
-                                    "label": "Type", 
-                                    "description": "Type of momentum bottom friction in ocean", 
-                                    "id": "cmip6.ocean.boundary_forcing.momentum::momentum:bottom_friction::type", 
-                                    "cardinality": "1.1", 
-                                    "type": "enum", 
-                                    "enum": {
-                                        "label": "Mom Bottom Friction Types", 
-                                        "description": "Type of momentum bottom friction in ocean", 
-                                        "isOpen": true, 
-                                        "choices": [
-                                            {
-                                                "label": "Linear", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Non-linear", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Non-linear (drag function of speed of tides)", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Constant drag coefficient", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "None", 
-                                                "description": null
-                                            }
-                                        ]
-                                    }, 
-                                    "uiOrdinal": 1
-                                }
-                            ], 
-                            "detailSets": []
-                        }, 
-                        {
-                            "label": "Lateral Friction", 
-                            "description": "Properties of momentum lateral friction in ocean", 
-                            "id": "cmip6.ocean.boundary_forcing.momentum::momentum:lateral_friction", 
-                            "details": [
-                                {
-                                    "label": "Type", 
-                                    "description": "Type of momentum lateral friction in ocean", 
-                                    "id": "cmip6.ocean.boundary_forcing.momentum::momentum:lateral_friction::type", 
-                                    "cardinality": "1.1", 
-                                    "type": "enum", 
-                                    "enum": {
-                                        "label": "Mom Lateral Friction Types", 
-                                        "description": "Type of momentum lateral friction in ocean", 
-                                        "isOpen": true, 
-                                        "choices": [
-                                            {
-                                                "label": "None", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Free-slip", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "No-slip", 
-                                                "description": null
-                                            }
-                                        ]
-                                    }, 
-                                    "uiOrdinal": 1
-                                }
-                            ], 
-                            "detailSets": []
+                            ]
                         }
                     ]
                 }, 
@@ -2384,17 +1526,16 @@
                     "description": "Key properties of tracer boundary forcing in the ocean", 
                     "id": "cmip6.ocean.boundary_forcing.tracers", 
                     "contact": "Eric Guilyardi", 
-                    "details": [], 
                     "detailSets": [
                         {
                             "label": "Sunlight Penetration", 
                             "description": "Properties of sunlight penetration scheme in ocean", 
-                            "id": "cmip6.ocean.boundary_forcing.tracers::tracers:sunlight_penetration", 
+                            "id": "cmip6.ocean.boundary_forcing.tracers.sunlight_penetration", 
                             "details": [
                                 {
                                     "label": "Scheme", 
                                     "description": "Type of sunlight penetration scheme in ocean", 
-                                    "id": "cmip6.ocean.boundary_forcing.tracers::tracers:sunlight_penetration::scheme", 
+                                    "id": "cmip6.ocean.boundary_forcing.tracers.sunlight_penetration.scheme", 
                                     "cardinality": "1.1", 
                                     "type": "enum", 
                                     "enum": {
@@ -2421,7 +1562,7 @@
                                 {
                                     "label": "Ocean Colour", 
                                     "description": "Is the ocean sunlight penetration scheme ocean colour dependent ?", 
-                                    "id": "cmip6.ocean.boundary_forcing.tracers::tracers:sunlight_penetration::ocean_colour", 
+                                    "id": "cmip6.ocean.boundary_forcing.tracers.sunlight_penetration.ocean_colour", 
                                     "cardinality": "1.1", 
                                     "type": "bool", 
                                     "uiOrdinal": 2
@@ -2429,23 +1570,22 @@
                                 {
                                     "label": "Extinction Depth", 
                                     "description": "Describe and list extinctions depths for sunlight penetration scheme (if applicable).", 
-                                    "id": "cmip6.ocean.boundary_forcing.tracers::tracers:sunlight_penetration::extinction_depth", 
+                                    "id": "cmip6.ocean.boundary_forcing.tracers.sunlight_penetration.extinction_depth", 
                                     "cardinality": "0.1", 
                                     "type": "str", 
                                     "uiOrdinal": 3
                                 }
-                            ], 
-                            "detailSets": []
+                            ]
                         }, 
                         {
                             "label": "Fresh Water Forcing", 
                             "description": "Properties of surface fresh water forcing in ocean", 
-                            "id": "cmip6.ocean.boundary_forcing.tracers::tracers:fresh_water_forcing", 
+                            "id": "cmip6.ocean.boundary_forcing.tracers.fresh_water_forcing", 
                             "details": [
                                 {
                                     "label": "From Atmopshere", 
                                     "description": "Type of surface fresh water forcing from atmos in ocean", 
-                                    "id": "cmip6.ocean.boundary_forcing.tracers::tracers:fresh_water_forcing::from_atmopshere", 
+                                    "id": "cmip6.ocean.boundary_forcing.tracers.fresh_water_forcing.from_atmopshere", 
                                     "cardinality": "1.1", 
                                     "type": "enum", 
                                     "enum": {
@@ -2468,7 +1608,7 @@
                                 {
                                     "label": "From Sea Ice", 
                                     "description": "Type of surface fresh water forcing from sea-ice in ocean", 
-                                    "id": "cmip6.ocean.boundary_forcing.tracers::tracers:fresh_water_forcing::from_sea_ice", 
+                                    "id": "cmip6.ocean.boundary_forcing.tracers.fresh_water_forcing.from_sea_ice", 
                                     "cardinality": "1.1", 
                                     "type": "enum", 
                                     "enum": {
@@ -2495,130 +1635,12 @@
                                 {
                                     "label": "Forced Mode Restoring", 
                                     "description": "Type of surface salinity restoring in forced mode (OMIP)", 
-                                    "id": "cmip6.ocean.boundary_forcing.tracers::tracers:fresh_water_forcing::forced_mode_restoring", 
+                                    "id": "cmip6.ocean.boundary_forcing.tracers.fresh_water_forcing.forced_mode_restoring", 
                                     "cardinality": "1.1", 
                                     "type": "str", 
                                     "uiOrdinal": 3
                                 }
-                            ], 
-                            "detailSets": []
-                        }, 
-                        {
-                            "label": "Sunlight Penetration", 
-                            "description": "Properties of sunlight penetration scheme in ocean", 
-                            "id": "cmip6.ocean.boundary_forcing.tracers::tracers:sunlight_penetration", 
-                            "details": [
-                                {
-                                    "label": "Scheme", 
-                                    "description": "Type of sunlight penetration scheme in ocean", 
-                                    "id": "cmip6.ocean.boundary_forcing.tracers::tracers:sunlight_penetration::scheme", 
-                                    "cardinality": "1.1", 
-                                    "type": "enum", 
-                                    "enum": {
-                                        "label": "Sunlight Penetration Scheme Types", 
-                                        "description": "Type of sunlight penetration scheme in ocean", 
-                                        "isOpen": true, 
-                                        "choices": [
-                                            {
-                                                "label": "1 extinction depth", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "2 extinction depth", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "3 extinction depth", 
-                                                "description": null
-                                            }
-                                        ]
-                                    }, 
-                                    "uiOrdinal": 1
-                                }, 
-                                {
-                                    "label": "Ocean Colour", 
-                                    "description": "Is the ocean sunlight penetration scheme ocean colour dependent ?", 
-                                    "id": "cmip6.ocean.boundary_forcing.tracers::tracers:sunlight_penetration::ocean_colour", 
-                                    "cardinality": "1.1", 
-                                    "type": "bool", 
-                                    "uiOrdinal": 2
-                                }, 
-                                {
-                                    "label": "Extinction Depth", 
-                                    "description": "Describe and list extinctions depths for sunlight penetration scheme (if applicable).", 
-                                    "id": "cmip6.ocean.boundary_forcing.tracers::tracers:sunlight_penetration::extinction_depth", 
-                                    "cardinality": "0.1", 
-                                    "type": "str", 
-                                    "uiOrdinal": 3
-                                }
-                            ], 
-                            "detailSets": []
-                        }, 
-                        {
-                            "label": "Fresh Water Forcing", 
-                            "description": "Properties of surface fresh water forcing in ocean", 
-                            "id": "cmip6.ocean.boundary_forcing.tracers::tracers:fresh_water_forcing", 
-                            "details": [
-                                {
-                                    "label": "From Atmopshere", 
-                                    "description": "Type of surface fresh water forcing from atmos in ocean", 
-                                    "id": "cmip6.ocean.boundary_forcing.tracers::tracers:fresh_water_forcing::from_atmopshere", 
-                                    "cardinality": "1.1", 
-                                    "type": "enum", 
-                                    "enum": {
-                                        "label": "Surface Fresh Water Forcing Atmos Types", 
-                                        "description": "Types of surface fresh water forcing from atmosphere in ocean", 
-                                        "isOpen": true, 
-                                        "choices": [
-                                            {
-                                                "label": "Freshwater flux", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Virtual salt flux", 
-                                                "description": null
-                                            }
-                                        ]
-                                    }, 
-                                    "uiOrdinal": 1
-                                }, 
-                                {
-                                    "label": "From Sea Ice", 
-                                    "description": "Type of surface fresh water forcing from sea-ice in ocean", 
-                                    "id": "cmip6.ocean.boundary_forcing.tracers::tracers:fresh_water_forcing::from_sea_ice", 
-                                    "cardinality": "1.1", 
-                                    "type": "enum", 
-                                    "enum": {
-                                        "label": "Surface Fresh Water Forcing Seaice Types", 
-                                        "description": "Types of surface fresh water forcing from sea-ice in ocean", 
-                                        "isOpen": true, 
-                                        "choices": [
-                                            {
-                                                "label": "Freshwater flux", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Virtual salt flux", 
-                                                "description": null
-                                            }, 
-                                            {
-                                                "label": "Real salt flux", 
-                                                "description": null
-                                            }
-                                        ]
-                                    }, 
-                                    "uiOrdinal": 2
-                                }, 
-                                {
-                                    "label": "Forced Mode Restoring", 
-                                    "description": "Type of surface salinity restoring in forced mode (OMIP)", 
-                                    "id": "cmip6.ocean.boundary_forcing.tracers::tracers:fresh_water_forcing::forced_mode_restoring", 
-                                    "cardinality": "1.1", 
-                                    "type": "str", 
-                                    "uiOrdinal": 3
-                                }
-                            ], 
-                            "detailSets": []
+                            ]
                         }
                     ]
                 }
@@ -2630,23 +1652,21 @@
         "description": "Ocean grid", 
         "id": "cmip6.ocean.grid", 
         "contact": "Eric Guilyardi", 
-        "details": [], 
         "detailSets": [
             {
                 "label": "Discretisation", 
                 "description": "Type of discretisation scheme in ocean", 
-                "id": "cmip6.ocean.grid::discretisation", 
-                "details": [], 
+                "id": "cmip6.ocean.grid.discretisation", 
                 "detailSets": [
                     {
                         "label": "Vertical", 
                         "description": "Properties of vertical discretisation in ocean", 
-                        "id": "cmip6.ocean.grid::discretisation::discretisation:vertical", 
+                        "id": "cmip6.ocean.grid.discretisation.vertical", 
                         "details": [
                             {
                                 "label": "Coordinates", 
                                 "description": "Type of vertical coordinates in ocean", 
-                                "id": "cmip6.ocean.grid::discretisation::discretisation:vertical::coordinates", 
+                                "id": "cmip6.ocean.grid.discretisation.vertical.coordinates", 
                                 "cardinality": "1.1", 
                                 "type": "enum", 
                                 "enum": {
@@ -2717,23 +1737,22 @@
                             {
                                 "label": "Partial Steps", 
                                 "description": "Using partial steps with Z or Z* vertical coordinate in ocean ?", 
-                                "id": "cmip6.ocean.grid::discretisation::discretisation:vertical::partial_steps", 
+                                "id": "cmip6.ocean.grid.discretisation.vertical.partial_steps", 
                                 "cardinality": "1.1", 
                                 "type": "bool", 
                                 "uiOrdinal": 2
                             }
-                        ], 
-                        "detailSets": []
+                        ]
                     }, 
                     {
                         "label": "Horizontal", 
                         "description": "Type of horizontal discretisation scheme in ocean", 
-                        "id": "cmip6.ocean.grid::discretisation::discretisation:horizontal", 
+                        "id": "cmip6.ocean.grid.discretisation.horizontal", 
                         "details": [
                             {
                                 "label": "Type", 
                                 "description": "Horizontal grid type", 
-                                "id": "cmip6.ocean.grid::discretisation::discretisation:horizontal::type", 
+                                "id": "cmip6.ocean.grid.discretisation.horizontal.type", 
                                 "cardinality": "1.1", 
                                 "type": "enum", 
                                 "enum": {
@@ -2760,7 +1779,7 @@
                             {
                                 "label": "Scheme", 
                                 "description": "Horizontal discretisation scheme in ocean", 
-                                "id": "cmip6.ocean.grid::discretisation::discretisation:horizontal::scheme", 
+                                "id": "cmip6.ocean.grid.discretisation.horizontal.scheme", 
                                 "cardinality": "1.1", 
                                 "type": "enum", 
                                 "enum": {
@@ -2796,8 +1815,7 @@
                                 }, 
                                 "uiOrdinal": 2
                             }
-                        ], 
-                        "detailSets": []
+                        ]
                     }
                 ]
             }
@@ -2812,7 +1830,7 @@
             {
                 "label": "Model Family", 
                 "description": "Type of ocean model.", 
-                "id": "cmip6.ocean.key_properties::toplevel::model_family", 
+                "id": "cmip6.ocean.key_properties.model_family", 
                 "cardinality": "1.1", 
                 "type": "enum", 
                 "enum": {
@@ -2839,7 +1857,7 @@
             {
                 "label": "Basic Approximations", 
                 "description": "Basic approximations made in the ocean.", 
-                "id": "cmip6.ocean.key_properties::toplevel::basic_approximations", 
+                "id": "cmip6.ocean.key_properties.basic_approximations", 
                 "cardinality": "1.N", 
                 "type": "enum", 
                 "enum": {
@@ -2866,7 +1884,7 @@
             {
                 "label": "Prognostic Variables", 
                 "description": "List of prognostic variables in the ocean component.", 
-                "id": "cmip6.ocean.key_properties::toplevel::prognostic_variables", 
+                "id": "cmip6.ocean.key_properties.prognostic_variables", 
                 "cardinality": "1.N", 
                 "type": "enum", 
                 "enum": {
@@ -2911,12 +1929,12 @@
             {
                 "label": "Seawater Properties", 
                 "description": "Physical properties of seawater in ocean", 
-                "id": "cmip6.ocean.key_properties::seawater_properties", 
+                "id": "cmip6.ocean.key_properties.seawater_properties", 
                 "details": [
                     {
                         "label": "Eos Type", 
                         "description": "Type of EOS for sea water", 
-                        "id": "cmip6.ocean.key_properties::seawater_properties::eos_type", 
+                        "id": "cmip6.ocean.key_properties.seawater_properties.eos_type", 
                         "cardinality": "1.1", 
                         "type": "enum", 
                         "enum": {
@@ -2947,7 +1965,7 @@
                     {
                         "label": "Eos Functional Temp", 
                         "description": "Temperature used in EOS for sea water", 
-                        "id": "cmip6.ocean.key_properties::seawater_properties::eos_functional_temp", 
+                        "id": "cmip6.ocean.key_properties.seawater_properties.eos_functional_temp", 
                         "cardinality": "1.1", 
                         "type": "enum", 
                         "enum": {
@@ -2970,7 +1988,7 @@
                     {
                         "label": "Eos Functional Salt", 
                         "description": "Salinity used in EOS for sea water", 
-                        "id": "cmip6.ocean.key_properties::seawater_properties::eos_functional_salt", 
+                        "id": "cmip6.ocean.key_properties.seawater_properties.eos_functional_salt", 
                         "cardinality": "1.1", 
                         "type": "enum", 
                         "enum": {
@@ -2993,7 +2011,7 @@
                     {
                         "label": "Eos Functional Depth", 
                         "description": "Depth or pressure used in EOS for sea water ?", 
-                        "id": "cmip6.ocean.key_properties::seawater_properties::eos_functional_depth", 
+                        "id": "cmip6.ocean.key_properties.seawater_properties.eos_functional_depth", 
                         "cardinality": "1.1", 
                         "type": "enum", 
                         "enum": {
@@ -3016,7 +2034,7 @@
                     {
                         "label": "Ocean Freezing Point", 
                         "description": "Equation used to compute the freezing point (in deg C) of seawater, as a function of salinity and pressure", 
-                        "id": "cmip6.ocean.key_properties::seawater_properties::ocean_freezing_point", 
+                        "id": "cmip6.ocean.key_properties.seawater_properties.ocean_freezing_point", 
                         "cardinality": "1.1", 
                         "type": "enum", 
                         "enum": {
@@ -3035,7 +2053,7 @@
                     {
                         "label": "Ocean Specific Heat", 
                         "description": "Specific heat in ocean (cpocean) in J/(kg K)", 
-                        "id": "cmip6.ocean.key_properties::seawater_properties::ocean_specific_heat", 
+                        "id": "cmip6.ocean.key_properties.seawater_properties.ocean_specific_heat", 
                         "cardinality": "1.1", 
                         "type": "float", 
                         "uiOrdinal": 6
@@ -3043,23 +2061,22 @@
                     {
                         "label": "Ocean Reference Density", 
                         "description": "Boussinesq reference density (rhozero) in kg / m3", 
-                        "id": "cmip6.ocean.key_properties::seawater_properties::ocean_reference_density", 
+                        "id": "cmip6.ocean.key_properties.seawater_properties.ocean_reference_density", 
                         "cardinality": "1.1", 
                         "type": "float", 
                         "uiOrdinal": 7
                     }
-                ], 
-                "detailSets": []
+                ]
             }, 
             {
                 "label": "Bathymetry", 
                 "description": "Properties of bathymetry in ocean", 
-                "id": "cmip6.ocean.key_properties::bathymetry", 
+                "id": "cmip6.ocean.key_properties.bathymetry", 
                 "details": [
                     {
                         "label": "Reference Dates", 
                         "description": "Reference date of bathymetry", 
-                        "id": "cmip6.ocean.key_properties::bathymetry::reference_dates", 
+                        "id": "cmip6.ocean.key_properties.bathymetry.reference_dates", 
                         "cardinality": "1.1", 
                         "type": "enum", 
                         "enum": {
@@ -3094,7 +2111,7 @@
                     {
                         "label": "Type", 
                         "description": "Is the bathymetry fixed in time in the ocean ?", 
-                        "id": "cmip6.ocean.key_properties::bathymetry::type", 
+                        "id": "cmip6.ocean.key_properties.bathymetry.type", 
                         "cardinality": "1.1", 
                         "type": "bool", 
                         "uiOrdinal": 2
@@ -3102,7 +2119,7 @@
                     {
                         "label": "Ocean Smoothing", 
                         "description": "Describe any smoothing or hand editing of bathymetry in ocean", 
-                        "id": "cmip6.ocean.key_properties::bathymetry::ocean_smoothing", 
+                        "id": "cmip6.ocean.key_properties.bathymetry.ocean_smoothing", 
                         "cardinality": "1.1", 
                         "type": "str", 
                         "uiOrdinal": 3
@@ -3110,23 +2127,22 @@
                     {
                         "label": "Source", 
                         "description": "Describe source of bathymetry in ocean", 
-                        "id": "cmip6.ocean.key_properties::bathymetry::source", 
+                        "id": "cmip6.ocean.key_properties.bathymetry.source", 
                         "cardinality": "1.1", 
                         "type": "str", 
                         "uiOrdinal": 4
                     }
-                ], 
-                "detailSets": []
+                ]
             }, 
             {
                 "label": "Nonoceanic Waters", 
                 "description": "Non oceanic waters treatement in ocean", 
-                "id": "cmip6.ocean.key_properties::nonoceanic_waters", 
+                "id": "cmip6.ocean.key_properties.nonoceanic_waters", 
                 "details": [
                     {
                         "label": "Isolated Seas", 
                         "description": "Describe if/how isolated seas is performed", 
-                        "id": "cmip6.ocean.key_properties::nonoceanic_waters::isolated_seas", 
+                        "id": "cmip6.ocean.key_properties.nonoceanic_waters.isolated_seas", 
                         "cardinality": "0.1", 
                         "type": "str", 
                         "uiOrdinal": 1
@@ -3134,23 +2150,22 @@
                     {
                         "label": "River Mouth", 
                         "description": "Describe if/how river mouth mixing or estuaries specific treatment is performed", 
-                        "id": "cmip6.ocean.key_properties::nonoceanic_waters::river_mouth", 
+                        "id": "cmip6.ocean.key_properties.nonoceanic_waters.river_mouth", 
                         "cardinality": "0.1", 
                         "type": "str", 
                         "uiOrdinal": 2
                     }
-                ], 
-                "detailSets": []
+                ]
             }, 
             {
                 "label": "Resolution", 
                 "description": "Resolution in the ocean grid", 
-                "id": "cmip6.ocean.key_properties::resolution", 
+                "id": "cmip6.ocean.key_properties.resolution", 
                 "details": [
                     {
                         "label": "Name", 
                         "description": "This is a string usually used by the modelling group to describe the resolution of this grid, e.g. ORCA025, N512L180, T512L70 etc.", 
-                        "id": "cmip6.ocean.key_properties::resolution::name", 
+                        "id": "cmip6.ocean.key_properties.resolution.name", 
                         "cardinality": "1.1", 
                         "type": "str", 
                         "uiOrdinal": 1
@@ -3158,7 +2173,7 @@
                     {
                         "label": "Canonical Horizontal Resolution", 
                         "description": "Expression quoted for gross comparisons of resolution, eg. 50km or 0.1 degrees etc.", 
-                        "id": "cmip6.ocean.key_properties::resolution::canonical_horizontal_resolution", 
+                        "id": "cmip6.ocean.key_properties.resolution.canonical_horizontal_resolution", 
                         "cardinality": "0.1", 
                         "type": "str", 
                         "uiOrdinal": 2
@@ -3166,7 +2181,7 @@
                     {
                         "label": "Number Of Horizontal Gridpoints", 
                         "description": "Total number of horizontal (XY) points (or degrees of freedom) on computational grid.", 
-                        "id": "cmip6.ocean.key_properties::resolution::number_of_horizontal_gridpoints", 
+                        "id": "cmip6.ocean.key_properties.resolution.number_of_horizontal_gridpoints", 
                         "cardinality": "0.1", 
                         "type": "int", 
                         "uiOrdinal": 3
@@ -3174,7 +2189,7 @@
                     {
                         "label": "Number Of Vertical Levels", 
                         "description": "Number of vertical levels resolved on computational grid.", 
-                        "id": "cmip6.ocean.key_properties::resolution::number_of_vertical_levels", 
+                        "id": "cmip6.ocean.key_properties.resolution.number_of_vertical_levels", 
                         "cardinality": "0.1", 
                         "type": "int", 
                         "uiOrdinal": 4
@@ -3182,7 +2197,7 @@
                     {
                         "label": "Is Adaptive Grid", 
                         "description": "Default is False. Set true if grid resolution changes during execution.", 
-                        "id": "cmip6.ocean.key_properties::resolution::is_adaptive_grid", 
+                        "id": "cmip6.ocean.key_properties.resolution.is_adaptive_grid", 
                         "cardinality": "0.1", 
                         "type": "bool", 
                         "uiOrdinal": 5
@@ -3190,23 +2205,22 @@
                     {
                         "label": "Thickness Level 1", 
                         "description": "Thickness of first surface ocean level (in meters)", 
-                        "id": "cmip6.ocean.key_properties::resolution::thickness_level_1", 
+                        "id": "cmip6.ocean.key_properties.resolution.thickness_level_1", 
                         "cardinality": "1.1", 
                         "type": "float", 
                         "uiOrdinal": 6
                     }
-                ], 
-                "detailSets": []
+                ]
             }, 
             {
                 "label": "Tuning Applied", 
                 "description": "Tuning methodology for ocean component", 
-                "id": "cmip6.ocean.key_properties::tuning_applied", 
+                "id": "cmip6.ocean.key_properties.tuning_applied", 
                 "details": [
                     {
                         "label": "Description", 
                         "description": "General overview description of tuning: explain and motivate the main targets and metrics retained. &Document the relative weight given to climate performance metrics versus process oriented metrics, &and on the possible conflicts with parameterization level tuning. In particular describe any struggle &with a parameter value that required pushing it to its limits to solve a particular model deficiency.", 
-                        "id": "cmip6.ocean.key_properties::tuning_applied::description", 
+                        "id": "cmip6.ocean.key_properties.tuning_applied.description", 
                         "cardinality": "1.1", 
                         "type": "str", 
                         "uiOrdinal": 1
@@ -3214,7 +2228,7 @@
                     {
                         "label": "Global Mean Metrics Used", 
                         "description": "List set of metrics of the global mean state used in tuning model/component", 
-                        "id": "cmip6.ocean.key_properties::tuning_applied::global_mean_metrics_used", 
+                        "id": "cmip6.ocean.key_properties.tuning_applied.global_mean_metrics_used", 
                         "cardinality": "0.N", 
                         "type": "str", 
                         "uiOrdinal": 2
@@ -3222,7 +2236,7 @@
                     {
                         "label": "Regional Metrics Used", 
                         "description": "List of regional metrics of mean state (e.g THC, AABW, regional means etc) used in tuning model/component", 
-                        "id": "cmip6.ocean.key_properties::tuning_applied::regional_metrics_used", 
+                        "id": "cmip6.ocean.key_properties.tuning_applied.regional_metrics_used", 
                         "cardinality": "0.N", 
                         "type": "str", 
                         "uiOrdinal": 3
@@ -3230,23 +2244,22 @@
                     {
                         "label": "Trend Metrics Used", 
                         "description": "List observed trend metrics used in tuning model/component", 
-                        "id": "cmip6.ocean.key_properties::tuning_applied::trend_metrics_used", 
+                        "id": "cmip6.ocean.key_properties.tuning_applied.trend_metrics_used", 
                         "cardinality": "0.N", 
                         "type": "str", 
                         "uiOrdinal": 4
                     }
-                ], 
-                "detailSets": []
+                ]
             }, 
             {
                 "label": "Conservation", 
                 "description": "Conservation in the ocean component", 
-                "id": "cmip6.ocean.key_properties::conservation", 
+                "id": "cmip6.ocean.key_properties.conservation", 
                 "details": [
                     {
                         "label": "Description", 
                         "description": "Brief description of conservation methodology", 
-                        "id": "cmip6.ocean.key_properties::conservation::description", 
+                        "id": "cmip6.ocean.key_properties.conservation.description", 
                         "cardinality": "1.1", 
                         "type": "str", 
                         "uiOrdinal": 1
@@ -3254,7 +2267,7 @@
                     {
                         "label": "Scheme", 
                         "description": "Properties conserved in the ocean by the numerical schemes", 
-                        "id": "cmip6.ocean.key_properties::conservation::scheme", 
+                        "id": "cmip6.ocean.key_properties.conservation.scheme", 
                         "cardinality": "1.N", 
                         "type": "enum", 
                         "enum": {
@@ -3289,7 +2302,7 @@
                     {
                         "label": "Consistency Properties", 
                         "description": "Any additional consistency properties (energy conversion, pressure gradient discretisation, ...)?", 
-                        "id": "cmip6.ocean.key_properties::conservation::consistency_properties", 
+                        "id": "cmip6.ocean.key_properties.conservation.consistency_properties", 
                         "cardinality": "0.1", 
                         "type": "str", 
                         "uiOrdinal": 3
@@ -3297,7 +2310,7 @@
                     {
                         "label": "Corrected Conserved Prognostic Variables", 
                         "description": "Set of variables which are conserved by *more* than the numerical scheme alone.", 
-                        "id": "cmip6.ocean.key_properties::conservation::corrected_conserved_prognostic_variables", 
+                        "id": "cmip6.ocean.key_properties.conservation.corrected_conserved_prognostic_variables", 
                         "cardinality": "0.1", 
                         "type": "str", 
                         "uiOrdinal": 4
@@ -3305,13 +2318,12 @@
                     {
                         "label": "Was Flux Correction Used", 
                         "description": "Does conservation involved flux correction ?", 
-                        "id": "cmip6.ocean.key_properties::conservation::was_flux_correction_used", 
+                        "id": "cmip6.ocean.key_properties.conservation.was_flux_correction_used", 
                         "cardinality": "0.1", 
                         "type": "bool", 
                         "uiOrdinal": 5
                     }
-                ], 
-                "detailSets": []
+                ]
             }
         ]
     }

@@ -1,171 +1,122 @@
 cmip6-id, cmip6-label, cmip6-type
-cmip6.ocean.grid::discretisation::discretisation:vertical::coordinates, Ocean > Grid::discretisation::discretisation:vertical::coordinates, detail
-cmip6.ocean.grid::discretisation::discretisation:vertical::partial_steps, Ocean > Grid::discretisation::discretisation:vertical::partial Steps, detail
-cmip6.ocean.grid::discretisation::discretisation:horizontal::type, Ocean > Grid::discretisation::discretisation:horizontal::type, detail
-cmip6.ocean.grid::discretisation::discretisation:horizontal::scheme, Ocean > Grid::discretisation::discretisation:horizontal::scheme, detail
+cmip6.ocean.grid.discretisation.vertical.coordinates, Ocean > Grid > Discretisation > Vertical > Coordinates, detail
+cmip6.ocean.grid.discretisation.vertical.partial_steps, Ocean > Grid > Discretisation > Vertical > Partial Steps, detail
+cmip6.ocean.grid.discretisation.horizontal.type, Ocean > Grid > Discretisation > Horizontal > Type, detail
+cmip6.ocean.grid.discretisation.horizontal.scheme, Ocean > Grid > Discretisation > Horizontal > Scheme, detail
 , , 
-cmip6.ocean.key_properties::toplevel::model_family, Ocean > Key Properties::toplevel::model Family, detail
-cmip6.ocean.key_properties::toplevel::basic_approximations, Ocean > Key Properties::toplevel::basic Approximations, detail
-cmip6.ocean.key_properties::toplevel::prognostic_variables, Ocean > Key Properties::toplevel::prognostic Variables, detail
-cmip6.ocean.key_properties::seawater_properties::eos_type, Ocean > Key Properties::seawater Properties::eos Type, detail
-cmip6.ocean.key_properties::seawater_properties::eos_functional_temp, Ocean > Key Properties::seawater Properties::eos Functional Temp, detail
-cmip6.ocean.key_properties::seawater_properties::eos_functional_salt, Ocean > Key Properties::seawater Properties::eos Functional Salt, detail
-cmip6.ocean.key_properties::seawater_properties::eos_functional_depth, Ocean > Key Properties::seawater Properties::eos Functional Depth, detail
-cmip6.ocean.key_properties::seawater_properties::ocean_freezing_point, Ocean > Key Properties::seawater Properties::ocean Freezing Point, detail
-cmip6.ocean.key_properties::seawater_properties::ocean_specific_heat, Ocean > Key Properties::seawater Properties::ocean Specific Heat, detail
-cmip6.ocean.key_properties::seawater_properties::ocean_reference_density, Ocean > Key Properties::seawater Properties::ocean Reference Density, detail
-cmip6.ocean.key_properties::bathymetry::reference_dates, Ocean > Key Properties::bathymetry::reference Dates, detail
-cmip6.ocean.key_properties::bathymetry::type, Ocean > Key Properties::bathymetry::type, detail
-cmip6.ocean.key_properties::bathymetry::ocean_smoothing, Ocean > Key Properties::bathymetry::ocean Smoothing, detail
-cmip6.ocean.key_properties::bathymetry::source, Ocean > Key Properties::bathymetry::source, detail
-cmip6.ocean.key_properties::nonoceanic_waters::isolated_seas, Ocean > Key Properties::nonoceanic Waters::isolated Seas, detail
-cmip6.ocean.key_properties::nonoceanic_waters::river_mouth, Ocean > Key Properties::nonoceanic Waters::river Mouth, detail
-cmip6.ocean.key_properties::resolution::name, Ocean > Key Properties::resolution::name, detail
-cmip6.ocean.key_properties::resolution::canonical_horizontal_resolution, Ocean > Key Properties::resolution::canonical Horizontal Resolution, detail
-cmip6.ocean.key_properties::resolution::number_of_horizontal_gridpoints, Ocean > Key Properties::resolution::number Of Horizontal Gridpoints, detail
-cmip6.ocean.key_properties::resolution::number_of_vertical_levels, Ocean > Key Properties::resolution::number Of Vertical Levels, detail
-cmip6.ocean.key_properties::resolution::is_adaptive_grid, Ocean > Key Properties::resolution::is Adaptive Grid, detail
-cmip6.ocean.key_properties::resolution::thickness_level_1, Ocean > Key Properties::resolution::thickness Level 1, detail
-cmip6.ocean.key_properties::tuning_applied::description, Ocean > Key Properties::tuning Applied::description, detail
-cmip6.ocean.key_properties::tuning_applied::global_mean_metrics_used, Ocean > Key Properties::tuning Applied::global Mean Metrics Used, detail
-cmip6.ocean.key_properties::tuning_applied::regional_metrics_used, Ocean > Key Properties::tuning Applied::regional Metrics Used, detail
-cmip6.ocean.key_properties::tuning_applied::trend_metrics_used, Ocean > Key Properties::tuning Applied::trend Metrics Used, detail
-cmip6.ocean.key_properties::conservation::description, Ocean > Key Properties::conservation::description, detail
-cmip6.ocean.key_properties::conservation::scheme, Ocean > Key Properties::conservation::scheme, detail
-cmip6.ocean.key_properties::conservation::consistency_properties, Ocean > Key Properties::conservation::consistency Properties, detail
-cmip6.ocean.key_properties::conservation::corrected_conserved_prognostic_variables, Ocean > Key Properties::conservation::corrected Conserved Prognostic Variables, detail
-cmip6.ocean.key_properties::conservation::was_flux_correction_used, Ocean > Key Properties::conservation::was Flux Correction Used, detail
+cmip6.ocean.key_properties.model_family, Ocean > Key Properties > Model Family, detail
+cmip6.ocean.key_properties.basic_approximations, Ocean > Key Properties > Basic Approximations, detail
+cmip6.ocean.key_properties.prognostic_variables, Ocean > Key Properties > Prognostic Variables, detail
+cmip6.ocean.key_properties.seawater_properties.eos_type, Ocean > Key Properties > Seawater Properties > Eos Type, detail
+cmip6.ocean.key_properties.seawater_properties.eos_functional_temp, Ocean > Key Properties > Seawater Properties > Eos Functional Temp, detail
+cmip6.ocean.key_properties.seawater_properties.eos_functional_salt, Ocean > Key Properties > Seawater Properties > Eos Functional Salt, detail
+cmip6.ocean.key_properties.seawater_properties.eos_functional_depth, Ocean > Key Properties > Seawater Properties > Eos Functional Depth, detail
+cmip6.ocean.key_properties.seawater_properties.ocean_freezing_point, Ocean > Key Properties > Seawater Properties > Ocean Freezing Point, detail
+cmip6.ocean.key_properties.seawater_properties.ocean_specific_heat, Ocean > Key Properties > Seawater Properties > Ocean Specific Heat, detail
+cmip6.ocean.key_properties.seawater_properties.ocean_reference_density, Ocean > Key Properties > Seawater Properties > Ocean Reference Density, detail
+cmip6.ocean.key_properties.bathymetry.reference_dates, Ocean > Key Properties > Bathymetry > Reference Dates, detail
+cmip6.ocean.key_properties.bathymetry.type, Ocean > Key Properties > Bathymetry > Type, detail
+cmip6.ocean.key_properties.bathymetry.ocean_smoothing, Ocean > Key Properties > Bathymetry > Ocean Smoothing, detail
+cmip6.ocean.key_properties.bathymetry.source, Ocean > Key Properties > Bathymetry > Source, detail
+cmip6.ocean.key_properties.nonoceanic_waters.isolated_seas, Ocean > Key Properties > Nonoceanic Waters > Isolated Seas, detail
+cmip6.ocean.key_properties.nonoceanic_waters.river_mouth, Ocean > Key Properties > Nonoceanic Waters > River Mouth, detail
+cmip6.ocean.key_properties.resolution.name, Ocean > Key Properties > Resolution > Name, detail
+cmip6.ocean.key_properties.resolution.canonical_horizontal_resolution, Ocean > Key Properties > Resolution > Canonical Horizontal Resolution, detail
+cmip6.ocean.key_properties.resolution.number_of_horizontal_gridpoints, Ocean > Key Properties > Resolution > Number Of Horizontal Gridpoints, detail
+cmip6.ocean.key_properties.resolution.number_of_vertical_levels, Ocean > Key Properties > Resolution > Number Of Vertical Levels, detail
+cmip6.ocean.key_properties.resolution.is_adaptive_grid, Ocean > Key Properties > Resolution > Is Adaptive Grid, detail
+cmip6.ocean.key_properties.resolution.thickness_level_1, Ocean > Key Properties > Resolution > Thickness Level 1, detail
+cmip6.ocean.key_properties.tuning_applied.description, Ocean > Key Properties > Tuning Applied > Description, detail
+cmip6.ocean.key_properties.tuning_applied.global_mean_metrics_used, Ocean > Key Properties > Tuning Applied > Global Mean Metrics Used, detail
+cmip6.ocean.key_properties.tuning_applied.regional_metrics_used, Ocean > Key Properties > Tuning Applied > Regional Metrics Used, detail
+cmip6.ocean.key_properties.tuning_applied.trend_metrics_used, Ocean > Key Properties > Tuning Applied > Trend Metrics Used, detail
+cmip6.ocean.key_properties.conservation.description, Ocean > Key Properties > Conservation > Description, detail
+cmip6.ocean.key_properties.conservation.scheme, Ocean > Key Properties > Conservation > Scheme, detail
+cmip6.ocean.key_properties.conservation.consistency_properties, Ocean > Key Properties > Conservation > Consistency Properties, detail
+cmip6.ocean.key_properties.conservation.corrected_conserved_prognostic_variables, Ocean > Key Properties > Conservation > Corrected Conserved Prognostic Variables, detail
+cmip6.ocean.key_properties.conservation.was_flux_correction_used, Ocean > Key Properties > Conservation > Was Flux Correction Used, detail
 , , 
-cmip6.ocean.timestepping_framework::toplevel:timestepping_attributes::time_step, Ocean > Timestepping Framework::toplevel:timestepping Attributes::time Step, detail
-cmip6.ocean.timestepping_framework::toplevel:timestepping_attributes::diurnal_cycle, Ocean > Timestepping Framework::toplevel:timestepping Attributes::diurnal Cycle, detail
-cmip6.ocean.timestepping_framework::toplevel:timestepping_tracers_scheme::tracers, Ocean > Timestepping Framework::toplevel:timestepping Tracers Scheme::tracers, detail
-cmip6.ocean.timestepping_framework::toplevel:barotropic_solver_scheme::barotropic_solver, Ocean > Timestepping Framework::toplevel:barotropic Solver Scheme::barotropic Solver, detail
-cmip6.ocean.timestepping_framework::toplevel:barotropic_solver_scheme::type, Ocean > Timestepping Framework::toplevel:barotropic Solver Scheme::type, detail
-cmip6.ocean.timestepping_framework::toplevel:barotropic_momentum_scheme::barotropic_momentum, Ocean > Timestepping Framework::toplevel:barotropic Momentum Scheme::barotropic Momentum, detail
+cmip6.ocean.timestepping_framework.timestepping_attributes.time_step, Ocean > Timestepping Framework > Timestepping Attributes > Time Step, detail
+cmip6.ocean.timestepping_framework.timestepping_attributes.diurnal_cycle, Ocean > Timestepping Framework > Timestepping Attributes > Diurnal Cycle, detail
+cmip6.ocean.timestepping_framework.timestepping_tracers_scheme.tracers, Ocean > Timestepping Framework > Timestepping Tracers Scheme > Tracers, detail
+cmip6.ocean.timestepping_framework.barotropic_solver_scheme.barotropic_solver, Ocean > Timestepping Framework > Barotropic Solver Scheme > Barotropic Solver, detail
+cmip6.ocean.timestepping_framework.barotropic_solver_scheme.type, Ocean > Timestepping Framework > Barotropic Solver Scheme > Type, detail
+cmip6.ocean.timestepping_framework.barotropic_momentum_scheme.barotropic_momentum, Ocean > Timestepping Framework > Barotropic Momentum Scheme > Barotropic Momentum, detail
 , , 
-cmip6.ocean.advection.momentum::momentum::type, Ocean > Advection > Momentum::momentum::type, detail
-cmip6.ocean.advection.momentum::momentum::scheme_name, Ocean > Advection > Momentum::momentum::scheme Name, detail
-cmip6.ocean.advection.momentum::momentum::ALE, Ocean > Advection > Momentum::momentum::ALE, detail
-cmip6.ocean.advection.lateral_tracers::lateral_tracers::type, Ocean > Advection > Lateral Tracers::lateral Tracers::type, detail
-cmip6.ocean.advection.lateral_tracers::lateral_tracers::flux_limiter, Ocean > Advection > Lateral Tracers::lateral Tracers::flux Limiter, detail
-cmip6.ocean.advection.lateral_tracers::lateral_tracers::passive_tracers, Ocean > Advection > Lateral Tracers::lateral Tracers::passive Tracers, detail
-cmip6.ocean.advection.lateral_tracers::lateral_tracers::passive_tracers_advection, Ocean > Advection > Lateral Tracers::lateral Tracers::passive Tracers Advection, detail
-cmip6.ocean.advection.vertical_tracers::vertical_tracers::type, Ocean > Advection > Vertical Tracers::vertical Tracers::type, detail
-cmip6.ocean.advection.vertical_tracers::vertical_tracers::flux_limiter, Ocean > Advection > Vertical Tracers::vertical Tracers::flux Limiter, detail
+cmip6.ocean.advection.momentum.type, Ocean > Advection > Momentum > Type, detail
+cmip6.ocean.advection.momentum.scheme_name, Ocean > Advection > Momentum > Scheme Name, detail
+cmip6.ocean.advection.momentum.ALE, Ocean > Advection > Momentum > ALE, detail
+cmip6.ocean.advection.lateral_tracers.type, Ocean > Advection > Lateral Tracers > Type, detail
+cmip6.ocean.advection.lateral_tracers.flux_limiter, Ocean > Advection > Lateral Tracers > Flux Limiter, detail
+cmip6.ocean.advection.lateral_tracers.passive_tracers, Ocean > Advection > Lateral Tracers > Passive Tracers, detail
+cmip6.ocean.advection.lateral_tracers.passive_tracers_advection, Ocean > Advection > Lateral Tracers > Passive Tracers Advection, detail
+cmip6.ocean.advection.vertical_tracers.type, Ocean > Advection > Vertical Tracers > Type, detail
+cmip6.ocean.advection.vertical_tracers.flux_limiter, Ocean > Advection > Vertical Tracers > Flux Limiter, detail
 , , 
-cmip6.ocean.lateral_physics::toplevel::scheme, Ocean > Lateral Physics::toplevel::scheme, detail
-cmip6.ocean.lateral_physics.momentum::momentum:operator::direction, Ocean > Lateral Physics > Momentum::momentum:operator::direction, detail
-cmip6.ocean.lateral_physics.momentum::momentum:operator::order, Ocean > Lateral Physics > Momentum::momentum:operator::order, detail
-cmip6.ocean.lateral_physics.momentum::momentum:operator::discretisation, Ocean > Lateral Physics > Momentum::momentum:operator::discretisation, detail
-cmip6.ocean.lateral_physics.momentum::momentum:eddy_viscosity_coeff::type, Ocean > Lateral Physics > Momentum::momentum:eddy Viscosity Coeff::type, detail
-cmip6.ocean.lateral_physics.momentum::momentum:eddy_viscosity_coeff::constant_coefficient, Ocean > Lateral Physics > Momentum::momentum:eddy Viscosity Coeff::constant Coefficient, detail
-cmip6.ocean.lateral_physics.momentum::momentum:eddy_viscosity_coeff::variable_coefficient, Ocean > Lateral Physics > Momentum::momentum:eddy Viscosity Coeff::variable Coefficient, detail
-cmip6.ocean.lateral_physics.momentum::momentum:eddy_viscosity_coeff::coeff_background, Ocean > Lateral Physics > Momentum::momentum:eddy Viscosity Coeff::coeff Background, detail
-cmip6.ocean.lateral_physics.momentum::momentum:eddy_viscosity_coeff::coeff_backscatter, Ocean > Lateral Physics > Momentum::momentum:eddy Viscosity Coeff::coeff Backscatter, detail
-cmip6.ocean.lateral_physics.momentum::momentum:operator::direction, Ocean > Lateral Physics > Momentum::momentum:operator::direction, detail
-cmip6.ocean.lateral_physics.momentum::momentum:operator::order, Ocean > Lateral Physics > Momentum::momentum:operator::order, detail
-cmip6.ocean.lateral_physics.momentum::momentum:operator::discretisation, Ocean > Lateral Physics > Momentum::momentum:operator::discretisation, detail
-cmip6.ocean.lateral_physics.momentum::momentum:eddy_viscosity_coeff::type, Ocean > Lateral Physics > Momentum::momentum:eddy Viscosity Coeff::type, detail
-cmip6.ocean.lateral_physics.momentum::momentum:eddy_viscosity_coeff::constant_coefficient, Ocean > Lateral Physics > Momentum::momentum:eddy Viscosity Coeff::constant Coefficient, detail
-cmip6.ocean.lateral_physics.momentum::momentum:eddy_viscosity_coeff::variable_coefficient, Ocean > Lateral Physics > Momentum::momentum:eddy Viscosity Coeff::variable Coefficient, detail
-cmip6.ocean.lateral_physics.momentum::momentum:eddy_viscosity_coeff::coeff_background, Ocean > Lateral Physics > Momentum::momentum:eddy Viscosity Coeff::coeff Background, detail
-cmip6.ocean.lateral_physics.momentum::momentum:eddy_viscosity_coeff::coeff_backscatter, Ocean > Lateral Physics > Momentum::momentum:eddy Viscosity Coeff::coeff Backscatter, detail
-cmip6.ocean.lateral_physics.tracers::tracers::mesoscale_closure, Ocean > Lateral Physics > Tracers::tracers::mesoscale Closure, detail
-cmip6.ocean.lateral_physics.tracers::tracers::submesoscale_mixing, Ocean > Lateral Physics > Tracers::tracers::submesoscale Mixing, detail
-cmip6.ocean.lateral_physics.tracers::tracers:operator::direction, Ocean > Lateral Physics > Tracers::tracers:operator::direction, detail
-cmip6.ocean.lateral_physics.tracers::tracers:operator::order, Ocean > Lateral Physics > Tracers::tracers:operator::order, detail
-cmip6.ocean.lateral_physics.tracers::tracers:operator::discretisation, Ocean > Lateral Physics > Tracers::tracers:operator::discretisation, detail
-cmip6.ocean.lateral_physics.tracers::tracers:eddy_viscosity_coeff::type, Ocean > Lateral Physics > Tracers::tracers:eddy Viscosity Coeff::type, detail
-cmip6.ocean.lateral_physics.tracers::tracers:eddy_viscosity_coeff::constant_coefficient, Ocean > Lateral Physics > Tracers::tracers:eddy Viscosity Coeff::constant Coefficient, detail
-cmip6.ocean.lateral_physics.tracers::tracers:eddy_viscosity_coeff::variable_coefficient, Ocean > Lateral Physics > Tracers::tracers:eddy Viscosity Coeff::variable Coefficient, detail
-cmip6.ocean.lateral_physics.tracers::tracers:eddy_viscosity_coeff::coeff_background, Ocean > Lateral Physics > Tracers::tracers:eddy Viscosity Coeff::coeff Background, detail
-cmip6.ocean.lateral_physics.tracers::tracers:eddy_viscosity_coeff::coeff_backscatter, Ocean > Lateral Physics > Tracers::tracers:eddy Viscosity Coeff::coeff Backscatter, detail
-cmip6.ocean.lateral_physics.tracers::tracers:eddy_induced_velocity::type, Ocean > Lateral Physics > Tracers::tracers:eddy Induced Velocity::type, detail
-cmip6.ocean.lateral_physics.tracers::tracers:eddy_induced_velocity::constant_val, Ocean > Lateral Physics > Tracers::tracers:eddy Induced Velocity::constant Val, detail
-cmip6.ocean.lateral_physics.tracers::tracers:eddy_induced_velocity::flux_type, Ocean > Lateral Physics > Tracers::tracers:eddy Induced Velocity::flux Type, detail
-cmip6.ocean.lateral_physics.tracers::tracers:eddy_induced_velocity::added_diffusivity, Ocean > Lateral Physics > Tracers::tracers:eddy Induced Velocity::added Diffusivity, detail
-cmip6.ocean.lateral_physics.tracers::tracers:operator::direction, Ocean > Lateral Physics > Tracers::tracers:operator::direction, detail
-cmip6.ocean.lateral_physics.tracers::tracers:operator::order, Ocean > Lateral Physics > Tracers::tracers:operator::order, detail
-cmip6.ocean.lateral_physics.tracers::tracers:operator::discretisation, Ocean > Lateral Physics > Tracers::tracers:operator::discretisation, detail
-cmip6.ocean.lateral_physics.tracers::tracers:eddy_viscosity_coeff::type, Ocean > Lateral Physics > Tracers::tracers:eddy Viscosity Coeff::type, detail
-cmip6.ocean.lateral_physics.tracers::tracers:eddy_viscosity_coeff::constant_coefficient, Ocean > Lateral Physics > Tracers::tracers:eddy Viscosity Coeff::constant Coefficient, detail
-cmip6.ocean.lateral_physics.tracers::tracers:eddy_viscosity_coeff::variable_coefficient, Ocean > Lateral Physics > Tracers::tracers:eddy Viscosity Coeff::variable Coefficient, detail
-cmip6.ocean.lateral_physics.tracers::tracers:eddy_viscosity_coeff::coeff_background, Ocean > Lateral Physics > Tracers::tracers:eddy Viscosity Coeff::coeff Background, detail
-cmip6.ocean.lateral_physics.tracers::tracers:eddy_viscosity_coeff::coeff_backscatter, Ocean > Lateral Physics > Tracers::tracers:eddy Viscosity Coeff::coeff Backscatter, detail
-cmip6.ocean.lateral_physics.tracers::tracers:eddy_induced_velocity::type, Ocean > Lateral Physics > Tracers::tracers:eddy Induced Velocity::type, detail
-cmip6.ocean.lateral_physics.tracers::tracers:eddy_induced_velocity::constant_val, Ocean > Lateral Physics > Tracers::tracers:eddy Induced Velocity::constant Val, detail
-cmip6.ocean.lateral_physics.tracers::tracers:eddy_induced_velocity::flux_type, Ocean > Lateral Physics > Tracers::tracers:eddy Induced Velocity::flux Type, detail
-cmip6.ocean.lateral_physics.tracers::tracers:eddy_induced_velocity::added_diffusivity, Ocean > Lateral Physics > Tracers::tracers:eddy Induced Velocity::added Diffusivity, detail
+cmip6.ocean.lateral_physics.scheme, Ocean > Lateral Physics > Scheme, detail
+cmip6.ocean.lateral_physics.momentum.operator.direction, Ocean > Lateral Physics > Momentum > Operator > Direction, detail
+cmip6.ocean.lateral_physics.momentum.operator.order, Ocean > Lateral Physics > Momentum > Operator > Order, detail
+cmip6.ocean.lateral_physics.momentum.operator.discretisation, Ocean > Lateral Physics > Momentum > Operator > Discretisation, detail
+cmip6.ocean.lateral_physics.momentum.eddy_viscosity_coeff.type, Ocean > Lateral Physics > Momentum > Eddy Viscosity Coeff > Type, detail
+cmip6.ocean.lateral_physics.momentum.eddy_viscosity_coeff.constant_coefficient, Ocean > Lateral Physics > Momentum > Eddy Viscosity Coeff > Constant Coefficient, detail
+cmip6.ocean.lateral_physics.momentum.eddy_viscosity_coeff.variable_coefficient, Ocean > Lateral Physics > Momentum > Eddy Viscosity Coeff > Variable Coefficient, detail
+cmip6.ocean.lateral_physics.momentum.eddy_viscosity_coeff.coeff_background, Ocean > Lateral Physics > Momentum > Eddy Viscosity Coeff > Coeff Background, detail
+cmip6.ocean.lateral_physics.momentum.eddy_viscosity_coeff.coeff_backscatter, Ocean > Lateral Physics > Momentum > Eddy Viscosity Coeff > Coeff Backscatter, detail
+cmip6.ocean.lateral_physics.tracers.mesoscale_closure, Ocean > Lateral Physics > Tracers > Mesoscale Closure, detail
+cmip6.ocean.lateral_physics.tracers.submesoscale_mixing, Ocean > Lateral Physics > Tracers > Submesoscale Mixing, detail
+cmip6.ocean.lateral_physics.tracers.operator.direction, Ocean > Lateral Physics > Tracers > Operator > Direction, detail
+cmip6.ocean.lateral_physics.tracers.operator.order, Ocean > Lateral Physics > Tracers > Operator > Order, detail
+cmip6.ocean.lateral_physics.tracers.operator.discretisation, Ocean > Lateral Physics > Tracers > Operator > Discretisation, detail
+cmip6.ocean.lateral_physics.tracers.eddy_viscosity_coeff.type, Ocean > Lateral Physics > Tracers > Eddy Viscosity Coeff > Type, detail
+cmip6.ocean.lateral_physics.tracers.eddy_viscosity_coeff.constant_coefficient, Ocean > Lateral Physics > Tracers > Eddy Viscosity Coeff > Constant Coefficient, detail
+cmip6.ocean.lateral_physics.tracers.eddy_viscosity_coeff.variable_coefficient, Ocean > Lateral Physics > Tracers > Eddy Viscosity Coeff > Variable Coefficient, detail
+cmip6.ocean.lateral_physics.tracers.eddy_viscosity_coeff.coeff_background, Ocean > Lateral Physics > Tracers > Eddy Viscosity Coeff > Coeff Background, detail
+cmip6.ocean.lateral_physics.tracers.eddy_viscosity_coeff.coeff_backscatter, Ocean > Lateral Physics > Tracers > Eddy Viscosity Coeff > Coeff Backscatter, detail
+cmip6.ocean.lateral_physics.tracers.eddy_induced_velocity.type, Ocean > Lateral Physics > Tracers > Eddy Induced Velocity > Type, detail
+cmip6.ocean.lateral_physics.tracers.eddy_induced_velocity.constant_val, Ocean > Lateral Physics > Tracers > Eddy Induced Velocity > Constant Val, detail
+cmip6.ocean.lateral_physics.tracers.eddy_induced_velocity.flux_type, Ocean > Lateral Physics > Tracers > Eddy Induced Velocity > Flux Type, detail
+cmip6.ocean.lateral_physics.tracers.eddy_induced_velocity.added_diffusivity, Ocean > Lateral Physics > Tracers > Eddy Induced Velocity > Added Diffusivity, detail
 , , 
-cmip6.ocean.vertical_physics.boundary_layer_mixing::boundary_layer_mixing:details::langmuir_cells_mixing, Ocean > Vertical Physics > Boundary Layer Mixing::boundary Layer Mixing:details::langmuir Cells Mixing, detail
-cmip6.ocean.vertical_physics.boundary_layer_mixing::boundary_layer_mixing:tracers::type, Ocean > Vertical Physics > Boundary Layer Mixing::boundary Layer Mixing:tracers::type, detail
-cmip6.ocean.vertical_physics.boundary_layer_mixing::boundary_layer_mixing:tracers::closure_order, Ocean > Vertical Physics > Boundary Layer Mixing::boundary Layer Mixing:tracers::closure Order, detail
-cmip6.ocean.vertical_physics.boundary_layer_mixing::boundary_layer_mixing:tracers::constant, Ocean > Vertical Physics > Boundary Layer Mixing::boundary Layer Mixing:tracers::constant, detail
-cmip6.ocean.vertical_physics.boundary_layer_mixing::boundary_layer_mixing:tracers::background, Ocean > Vertical Physics > Boundary Layer Mixing::boundary Layer Mixing:tracers::background, detail
-cmip6.ocean.vertical_physics.boundary_layer_mixing::boundary_layer_mixing:momentum::type, Ocean > Vertical Physics > Boundary Layer Mixing::boundary Layer Mixing:momentum::type, detail
-cmip6.ocean.vertical_physics.boundary_layer_mixing::boundary_layer_mixing:momentum::closure_order, Ocean > Vertical Physics > Boundary Layer Mixing::boundary Layer Mixing:momentum::closure Order, detail
-cmip6.ocean.vertical_physics.boundary_layer_mixing::boundary_layer_mixing:momentum::constant, Ocean > Vertical Physics > Boundary Layer Mixing::boundary Layer Mixing:momentum::constant, detail
-cmip6.ocean.vertical_physics.boundary_layer_mixing::boundary_layer_mixing:momentum::background, Ocean > Vertical Physics > Boundary Layer Mixing::boundary Layer Mixing:momentum::background, detail
-cmip6.ocean.vertical_physics.boundary_layer_mixing::boundary_layer_mixing:details::langmuir_cells_mixing, Ocean > Vertical Physics > Boundary Layer Mixing::boundary Layer Mixing:details::langmuir Cells Mixing, detail
-cmip6.ocean.vertical_physics.boundary_layer_mixing::boundary_layer_mixing:tracers::type, Ocean > Vertical Physics > Boundary Layer Mixing::boundary Layer Mixing:tracers::type, detail
-cmip6.ocean.vertical_physics.boundary_layer_mixing::boundary_layer_mixing:tracers::closure_order, Ocean > Vertical Physics > Boundary Layer Mixing::boundary Layer Mixing:tracers::closure Order, detail
-cmip6.ocean.vertical_physics.boundary_layer_mixing::boundary_layer_mixing:tracers::constant, Ocean > Vertical Physics > Boundary Layer Mixing::boundary Layer Mixing:tracers::constant, detail
-cmip6.ocean.vertical_physics.boundary_layer_mixing::boundary_layer_mixing:tracers::background, Ocean > Vertical Physics > Boundary Layer Mixing::boundary Layer Mixing:tracers::background, detail
-cmip6.ocean.vertical_physics.boundary_layer_mixing::boundary_layer_mixing:momentum::type, Ocean > Vertical Physics > Boundary Layer Mixing::boundary Layer Mixing:momentum::type, detail
-cmip6.ocean.vertical_physics.boundary_layer_mixing::boundary_layer_mixing:momentum::closure_order, Ocean > Vertical Physics > Boundary Layer Mixing::boundary Layer Mixing:momentum::closure Order, detail
-cmip6.ocean.vertical_physics.boundary_layer_mixing::boundary_layer_mixing:momentum::constant, Ocean > Vertical Physics > Boundary Layer Mixing::boundary Layer Mixing:momentum::constant, detail
-cmip6.ocean.vertical_physics.boundary_layer_mixing::boundary_layer_mixing:momentum::background, Ocean > Vertical Physics > Boundary Layer Mixing::boundary Layer Mixing:momentum::background, detail
-cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:details::convection_type, Ocean > Vertical Physics > Interior Mixing::interior Mixing:details::convection Type, detail
-cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:details::tide_induced_mixing, Ocean > Vertical Physics > Interior Mixing::interior Mixing:details::tide Induced Mixing, detail
-cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:details::double_diffusion, Ocean > Vertical Physics > Interior Mixing::interior Mixing:details::double Diffusion, detail
-cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:details::shear_mixing, Ocean > Vertical Physics > Interior Mixing::interior Mixing:details::shear Mixing, detail
-cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:tracers::type, Ocean > Vertical Physics > Interior Mixing::interior Mixing:tracers::type, detail
-cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:tracers::constant, Ocean > Vertical Physics > Interior Mixing::interior Mixing:tracers::constant, detail
-cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:tracers::profile, Ocean > Vertical Physics > Interior Mixing::interior Mixing:tracers::profile, detail
-cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:tracers::background, Ocean > Vertical Physics > Interior Mixing::interior Mixing:tracers::background, detail
-cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:momentum::type, Ocean > Vertical Physics > Interior Mixing::interior Mixing:momentum::type, detail
-cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:momentum::constant, Ocean > Vertical Physics > Interior Mixing::interior Mixing:momentum::constant, detail
-cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:momentum::profile, Ocean > Vertical Physics > Interior Mixing::interior Mixing:momentum::profile, detail
-cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:momentum::background, Ocean > Vertical Physics > Interior Mixing::interior Mixing:momentum::background, detail
-cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:details::convection_type, Ocean > Vertical Physics > Interior Mixing::interior Mixing:details::convection Type, detail
-cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:details::tide_induced_mixing, Ocean > Vertical Physics > Interior Mixing::interior Mixing:details::tide Induced Mixing, detail
-cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:details::double_diffusion, Ocean > Vertical Physics > Interior Mixing::interior Mixing:details::double Diffusion, detail
-cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:details::shear_mixing, Ocean > Vertical Physics > Interior Mixing::interior Mixing:details::shear Mixing, detail
-cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:tracers::type, Ocean > Vertical Physics > Interior Mixing::interior Mixing:tracers::type, detail
-cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:tracers::constant, Ocean > Vertical Physics > Interior Mixing::interior Mixing:tracers::constant, detail
-cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:tracers::profile, Ocean > Vertical Physics > Interior Mixing::interior Mixing:tracers::profile, detail
-cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:tracers::background, Ocean > Vertical Physics > Interior Mixing::interior Mixing:tracers::background, detail
-cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:momentum::type, Ocean > Vertical Physics > Interior Mixing::interior Mixing:momentum::type, detail
-cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:momentum::constant, Ocean > Vertical Physics > Interior Mixing::interior Mixing:momentum::constant, detail
-cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:momentum::profile, Ocean > Vertical Physics > Interior Mixing::interior Mixing:momentum::profile, detail
-cmip6.ocean.vertical_physics.interior_mixing::interior_mixing:momentum::background, Ocean > Vertical Physics > Interior Mixing::interior Mixing:momentum::background, detail
+cmip6.ocean.vertical_physics.boundary_layer_mixing.details.langmuir_cells_mixing, Ocean > Vertical Physics > Boundary Layer Mixing > Details > Langmuir Cells Mixing, detail
+cmip6.ocean.vertical_physics.boundary_layer_mixing.tracers.type, Ocean > Vertical Physics > Boundary Layer Mixing > Tracers > Type, detail
+cmip6.ocean.vertical_physics.boundary_layer_mixing.tracers.closure_order, Ocean > Vertical Physics > Boundary Layer Mixing > Tracers > Closure Order, detail
+cmip6.ocean.vertical_physics.boundary_layer_mixing.tracers.constant, Ocean > Vertical Physics > Boundary Layer Mixing > Tracers > Constant, detail
+cmip6.ocean.vertical_physics.boundary_layer_mixing.tracers.background, Ocean > Vertical Physics > Boundary Layer Mixing > Tracers > Background, detail
+cmip6.ocean.vertical_physics.boundary_layer_mixing.momentum.type, Ocean > Vertical Physics > Boundary Layer Mixing > Momentum > Type, detail
+cmip6.ocean.vertical_physics.boundary_layer_mixing.momentum.closure_order, Ocean > Vertical Physics > Boundary Layer Mixing > Momentum > Closure Order, detail
+cmip6.ocean.vertical_physics.boundary_layer_mixing.momentum.constant, Ocean > Vertical Physics > Boundary Layer Mixing > Momentum > Constant, detail
+cmip6.ocean.vertical_physics.boundary_layer_mixing.momentum.background, Ocean > Vertical Physics > Boundary Layer Mixing > Momentum > Background, detail
+cmip6.ocean.vertical_physics.interior_mixing.details.convection_type, Ocean > Vertical Physics > Interior Mixing > Details > Convection Type, detail
+cmip6.ocean.vertical_physics.interior_mixing.details.tide_induced_mixing, Ocean > Vertical Physics > Interior Mixing > Details > Tide Induced Mixing, detail
+cmip6.ocean.vertical_physics.interior_mixing.details.double_diffusion, Ocean > Vertical Physics > Interior Mixing > Details > Double Diffusion, detail
+cmip6.ocean.vertical_physics.interior_mixing.details.shear_mixing, Ocean > Vertical Physics > Interior Mixing > Details > Shear Mixing, detail
+cmip6.ocean.vertical_physics.interior_mixing.tracers.type, Ocean > Vertical Physics > Interior Mixing > Tracers > Type, detail
+cmip6.ocean.vertical_physics.interior_mixing.tracers.constant, Ocean > Vertical Physics > Interior Mixing > Tracers > Constant, detail
+cmip6.ocean.vertical_physics.interior_mixing.tracers.profile, Ocean > Vertical Physics > Interior Mixing > Tracers > Profile, detail
+cmip6.ocean.vertical_physics.interior_mixing.tracers.background, Ocean > Vertical Physics > Interior Mixing > Tracers > Background, detail
+cmip6.ocean.vertical_physics.interior_mixing.momentum.type, Ocean > Vertical Physics > Interior Mixing > Momentum > Type, detail
+cmip6.ocean.vertical_physics.interior_mixing.momentum.constant, Ocean > Vertical Physics > Interior Mixing > Momentum > Constant, detail
+cmip6.ocean.vertical_physics.interior_mixing.momentum.profile, Ocean > Vertical Physics > Interior Mixing > Momentum > Profile, detail
+cmip6.ocean.vertical_physics.interior_mixing.momentum.background, Ocean > Vertical Physics > Interior Mixing > Momentum > Background, detail
 , , 
-cmip6.ocean.uplow_boundaries::toplevel:free_surface::scheme, Ocean > Uplow Boundaries::toplevel:free Surface::scheme, detail
-cmip6.ocean.uplow_boundaries::toplevel:free_surface::embeded_seaice, Ocean > Uplow Boundaries::toplevel:free Surface::embeded Seaice, detail
-cmip6.ocean.uplow_boundaries::toplevel:bottom_boundary_layer::type_of_bbl, Ocean > Uplow Boundaries::toplevel:bottom Boundary Layer::type Of Bbl, detail
-cmip6.ocean.uplow_boundaries::toplevel:bottom_boundary_layer::lateral_mixing_coef, Ocean > Uplow Boundaries::toplevel:bottom Boundary Layer::lateral Mixing Coef, detail
-cmip6.ocean.uplow_boundaries::toplevel:bottom_boundary_layer::sill_overflow, Ocean > Uplow Boundaries::toplevel:bottom Boundary Layer::sill Overflow, detail
+cmip6.ocean.uplow_boundaries.free_surface.scheme, Ocean > Uplow Boundaries > Free Surface > Scheme, detail
+cmip6.ocean.uplow_boundaries.free_surface.embeded_seaice, Ocean > Uplow Boundaries > Free Surface > Embeded Seaice, detail
+cmip6.ocean.uplow_boundaries.bottom_boundary_layer.type_of_bbl, Ocean > Uplow Boundaries > Bottom Boundary Layer > Type Of Bbl, detail
+cmip6.ocean.uplow_boundaries.bottom_boundary_layer.lateral_mixing_coef, Ocean > Uplow Boundaries > Bottom Boundary Layer > Lateral Mixing Coef, detail
+cmip6.ocean.uplow_boundaries.bottom_boundary_layer.sill_overflow, Ocean > Uplow Boundaries > Bottom Boundary Layer > Sill Overflow, detail
 , , 
-cmip6.ocean.boundary_forcing::toplevel::surface_pressure, Ocean > Boundary Forcing::toplevel::surface Pressure, detail
-cmip6.ocean.boundary_forcing::toplevel::momentum_flux_correction, Ocean > Boundary Forcing::toplevel::momentum Flux Correction, detail
-cmip6.ocean.boundary_forcing::toplevel::tracers_flux_correction, Ocean > Boundary Forcing::toplevel::tracers Flux Correction, detail
-cmip6.ocean.boundary_forcing::toplevel::wave_effects, Ocean > Boundary Forcing::toplevel::wave Effects, detail
-cmip6.ocean.boundary_forcing::toplevel::river_runoff_budget, Ocean > Boundary Forcing::toplevel::river Runoff Budget, detail
-cmip6.ocean.boundary_forcing::toplevel::geothermal_heating, Ocean > Boundary Forcing::toplevel::geothermal Heating, detail
-cmip6.ocean.boundary_forcing.momentum::momentum:bottom_friction::type, Ocean > Boundary Forcing > Momentum::momentum:bottom Friction::type, detail
-cmip6.ocean.boundary_forcing.momentum::momentum:lateral_friction::type, Ocean > Boundary Forcing > Momentum::momentum:lateral Friction::type, detail
-cmip6.ocean.boundary_forcing.momentum::momentum:bottom_friction::type, Ocean > Boundary Forcing > Momentum::momentum:bottom Friction::type, detail
-cmip6.ocean.boundary_forcing.momentum::momentum:lateral_friction::type, Ocean > Boundary Forcing > Momentum::momentum:lateral Friction::type, detail
-cmip6.ocean.boundary_forcing.tracers::tracers:sunlight_penetration::scheme, Ocean > Boundary Forcing > Tracers::tracers:sunlight Penetration::scheme, detail
-cmip6.ocean.boundary_forcing.tracers::tracers:sunlight_penetration::ocean_colour, Ocean > Boundary Forcing > Tracers::tracers:sunlight Penetration::ocean Colour, detail
-cmip6.ocean.boundary_forcing.tracers::tracers:sunlight_penetration::extinction_depth, Ocean > Boundary Forcing > Tracers::tracers:sunlight Penetration::extinction Depth, detail
-cmip6.ocean.boundary_forcing.tracers::tracers:fresh_water_forcing::from_atmopshere, Ocean > Boundary Forcing > Tracers::tracers:fresh Water Forcing::from Atmopshere, detail
-cmip6.ocean.boundary_forcing.tracers::tracers:fresh_water_forcing::from_sea_ice, Ocean > Boundary Forcing > Tracers::tracers:fresh Water Forcing::from Sea Ice, detail
-cmip6.ocean.boundary_forcing.tracers::tracers:fresh_water_forcing::forced_mode_restoring, Ocean > Boundary Forcing > Tracers::tracers:fresh Water Forcing::forced Mode Restoring, detail
-cmip6.ocean.boundary_forcing.tracers::tracers:sunlight_penetration::scheme, Ocean > Boundary Forcing > Tracers::tracers:sunlight Penetration::scheme, detail
-cmip6.ocean.boundary_forcing.tracers::tracers:sunlight_penetration::ocean_colour, Ocean > Boundary Forcing > Tracers::tracers:sunlight Penetration::ocean Colour, detail
-cmip6.ocean.boundary_forcing.tracers::tracers:sunlight_penetration::extinction_depth, Ocean > Boundary Forcing > Tracers::tracers:sunlight Penetration::extinction Depth, detail
-cmip6.ocean.boundary_forcing.tracers::tracers:fresh_water_forcing::from_atmopshere, Ocean > Boundary Forcing > Tracers::tracers:fresh Water Forcing::from Atmopshere, detail
-cmip6.ocean.boundary_forcing.tracers::tracers:fresh_water_forcing::from_sea_ice, Ocean > Boundary Forcing > Tracers::tracers:fresh Water Forcing::from Sea Ice, detail
-cmip6.ocean.boundary_forcing.tracers::tracers:fresh_water_forcing::forced_mode_restoring, Ocean > Boundary Forcing > Tracers::tracers:fresh Water Forcing::forced Mode Restoring, detail
+cmip6.ocean.boundary_forcing.surface_pressure, Ocean > Boundary Forcing > Surface Pressure, detail
+cmip6.ocean.boundary_forcing.momentum_flux_correction, Ocean > Boundary Forcing > Momentum Flux Correction, detail
+cmip6.ocean.boundary_forcing.tracers_flux_correction, Ocean > Boundary Forcing > Tracers Flux Correction, detail
+cmip6.ocean.boundary_forcing.wave_effects, Ocean > Boundary Forcing > Wave Effects, detail
+cmip6.ocean.boundary_forcing.river_runoff_budget, Ocean > Boundary Forcing > River Runoff Budget, detail
+cmip6.ocean.boundary_forcing.geothermal_heating, Ocean > Boundary Forcing > Geothermal Heating, detail
+cmip6.ocean.boundary_forcing.momentum.bottom_friction.type, Ocean > Boundary Forcing > Momentum > Bottom Friction > Type, detail
+cmip6.ocean.boundary_forcing.momentum.lateral_friction.type, Ocean > Boundary Forcing > Momentum > Lateral Friction > Type, detail
+cmip6.ocean.boundary_forcing.tracers.sunlight_penetration.scheme, Ocean > Boundary Forcing > Tracers > Sunlight Penetration > Scheme, detail
+cmip6.ocean.boundary_forcing.tracers.sunlight_penetration.ocean_colour, Ocean > Boundary Forcing > Tracers > Sunlight Penetration > Ocean Colour, detail
+cmip6.ocean.boundary_forcing.tracers.sunlight_penetration.extinction_depth, Ocean > Boundary Forcing > Tracers > Sunlight Penetration > Extinction Depth, detail
+cmip6.ocean.boundary_forcing.tracers.fresh_water_forcing.from_atmopshere, Ocean > Boundary Forcing > Tracers > Fresh Water Forcing > From Atmopshere, detail
+cmip6.ocean.boundary_forcing.tracers.fresh_water_forcing.from_sea_ice, Ocean > Boundary Forcing > Tracers > Fresh Water Forcing > From Sea Ice, detail
+cmip6.ocean.boundary_forcing.tracers.fresh_water_forcing.forced_mode_restoring, Ocean > Boundary Forcing > Tracers > Fresh Water Forcing > Forced Mode Restoring, detail
 , , 
