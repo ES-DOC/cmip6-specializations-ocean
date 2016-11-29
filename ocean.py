@@ -27,6 +27,11 @@ AUTHORS = 'Eric Guilyardi, David Hassell, Mark Greenslade'
 CONTRIBUTORS = 'CMIP5 version +, Julie Dehayes (LOCEAN/IPSL), Steve Griffies (GFDL), Gokhan Danabasoglu (NCAR)'
 
 # --------------------------------------------------------------------
+# QUALITY CONTROL STATUS: Set to 'draft' or 'complete'
+# --------------------------------------------------------------------
+QC_STATUS = 'draft'
+
+# --------------------------------------------------------------------
 # CHANGE HISTORY: Set to list: (version, date, comment, who).
 # --------------------------------------------------------------------
 CHANGE_HISTORY = [
@@ -41,11 +46,6 @@ CHANGE_HISTORY = [
     ("0.5.0", "2016-11-25", "Mark Greenslade.",
         "Syntax simplification in respect of process/sub-process"),
     ]
-
-# --------------------------------------------------------------------
-# QUALITY CONTROL STATUS: Set to 'draft' or 'complete'
-# --------------------------------------------------------------------
-QC_STATUS = 'draft'
 
 # --------------------------------------------------------------------
 # DESCRIPTION: Scientific context of this scientific realm
