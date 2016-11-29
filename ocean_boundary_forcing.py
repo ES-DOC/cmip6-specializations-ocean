@@ -32,7 +32,7 @@ QC_STATUS = 'draft'
 DESCRIPTION = 'Ocean boundary forcing'
 
 # --------------------------------------------------------------------
-# PROCESS: top level
+# PROCESS: top level properties
 # --------------------------------------------------------------------
 DETAILS['toplevel'] = {
     'description': 'Top level properties of boundary forcing',
