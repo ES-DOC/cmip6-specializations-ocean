@@ -307,7 +307,7 @@ def _get_notes(spec):
 
     """
     result = [
-        ("Description", lambda i: None if i.description is None else i.description.replace("&", "and"))
+        ("Description", lambda i: "N/A" if i.description is None else i.description.replace("&", "and"))
     ]
     if isinstance(spec, DetailSpecialization):
         result += [

@@ -70,3 +70,4 @@ class Generator(Parser):
 
         # Append to managed collection.
         self._ids.append((identifier, label, owner.cfg_section, identifier))
+

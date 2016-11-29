@@ -41,6 +41,7 @@ def _create_topic(parent, spec, type_key, key=None):
     topic.cfg_section = type_key
     topic.type_key = type_key
     topic.spec = spec
+
     if isinstance(spec, dict):
         _set_topic_from_dict(parent, topic, key)
     else:
@@ -76,11 +77,11 @@ def _set_topic_from_module(parent, topic):
 
     # Assign detail / detail sets.
     for key, obj in topic.spec.DETAILS.items():
-        # ... process details
+        # ... topic toplevel details
         if key == "toplevel":
             _set_details(topic, key, obj, topic.spec.ENUMERATIONS)
 
-        # ... process detail set
+        # ... topic toplevel detail sets
         elif key.startswith("toplevel"):
             _set_detailset(topic, key, obj, topic.spec.ENUMERATIONS)
 
@@ -118,10 +119,6 @@ def _set_topic_from_dict(parent, topic, name):
     topic.id = "{}.{}".format(parent.id, name)
     topic.name = name
     topic.qc_status = parent.qc_status
-
-    for key, obj in parent.spec.DETAILS.items():
-        if len(key.split(":")) == 2 and key.split(":")[0] == name:
-            _set_detailset(topic, key, obj, parent.spec.ENUMERATIONS)
 
 
 def _set_detailset(owner, key, obj, enumerations):
