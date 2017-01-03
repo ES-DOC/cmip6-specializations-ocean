@@ -9,7 +9,7 @@
 
 
 """
-class Parser(object):
+class RealmSpecializationParser(object):
     """An event driven CMIP6 realm specializations parser.
 
     """
@@ -24,50 +24,36 @@ class Parser(object):
         """Runs the parser raising events as it does so.
 
         """
-        self._parse_realm(self.realm)
+        self.on_realm_parse(self.realm)
+        self._parse_topic(self.realm)
+
+        if self.realm.grid:
+            self.on_grid_parse(self.realm.grid)
+            self._parse_topic(self.realm.grid)
+            self.on_grid_parsed(self.realm.grid)
+
+        if self.realm.key_properties:
+            self.on_keyproperties_parse(self.realm.key_properties)
+            self._parse_topic(self.realm.key_properties)
+            self.on_keyproperties_parsed(self.realm.key_properties)
+
+        for p in self.realm.processes:
+            self.on_process_parse(p)
+            self._parse_topic(p)
+            for st in p.sub_topics:
+                self.on_subprocess_parse(st)
+                self._parse_topic(st)
+                self.on_subprocess_parsed(st)
+            self.on_process_parsed(p)
+
+        self.on_realm_parsed(self.realm)
 
 
-    def _parse_realm(self, r):
-        """Parses a realm.
-
-        """
-        self.on_realm_parse(r)
-        self._parse_property_container(r)
-
-        if r.grid:
-            self.on_grid_parse(r.grid)
-            self._parse_property_container(r.grid)
-            self.on_grid_parsed(r.grid)
-
-        if r.key_properties:
-            self.on_keyproperties_parse(r.key_properties)
-            self._parse_property_container(r.key_properties)
-            self.on_keyproperties_parsed(r.key_properties)
-
-        for p in r.processes:
-            self._parse_process(p)
-
-        self.on_realm_parsed(r)
-
-
-    def _parse_process(self, p):
-        """Parses a realm process.
-
-        """
-        self.on_process_parse(p)
-        self._parse_property_container(p)
-        for sp in p.sub_processes:
-            self.on_subprocess_parse(sp)
-            self._parse_property_container(sp)
-            self.on_subprocess_parsed(sp)
-        self.on_process_parsed(p)
-
-
-    def _parse_property_container(self, container):
-        """Parses a property container.
+    def _parse_topic(self, topic):
+        """Parses a topic.
 
         """
-        for p in container.properties:
+        for p in topic.properties:
             self.on_topic_property_parse(p)
             if p.enum:
                 self.on_enum_parse(p.enum)
@@ -77,9 +63,9 @@ class Parser(object):
                 self.on_enum_parsed(p.enum)
             self.on_topic_property_parsed(p)
 
-        for ps in container.property_sets:
+        for ps in topic.property_sets:
             self.on_topic_property_set_parse(ps)
-            self._parse_property_container(ps)
+            self._parse_topic(ps)
             self.on_topic_property_set_parsed(ps)
 
 

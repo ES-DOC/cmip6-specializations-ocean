@@ -13,7 +13,6 @@ from model import TopicPropertySetSpecialization
 from model import EnumSpecialization
 from model import EnumChoiceSpecialization
 from model import RealmSpecialization
-from model import ProcessSpecialization
 from model import TopicSpecialization
 
 
@@ -28,9 +27,9 @@ def create_specialization(spec):
 
     """
     r = _create_topic(None, spec[0], "realm", typeof=RealmSpecialization)
-    r.grid = _create_topic(r, spec[1], "grid", typeof=ProcessSpecialization)
-    r.key_properties = _create_topic(r, spec[2], "key-properties", typeof=ProcessSpecialization)
-    r.processes = [_create_topic(r, i, "process", typeof=ProcessSpecialization) for i in spec[3]]
+    r.grid = _create_topic(r, spec[1], "grid")
+    r.key_properties = _create_topic(r, spec[2], "key-properties")
+    r.processes = [_create_topic(r, i, "process") for i in spec[3]]
 
     return r
 
@@ -52,12 +51,7 @@ def _create_topic(parent, spec, type_key, key=None, typeof=TopicSpecialization):
     topic.name_camel_case_spaced = _to_camel_case_spaced(topic.name)
     if parent:
         topic.parent = parent
-        try:
-            parent.sub_processes
-        except AttributeError:
-            pass
-        else:
-            parent.sub_processes.append(topic)
+        parent.sub_topics.append(topic)
 
     return topic
 
@@ -83,24 +77,24 @@ def _set_topic_from_module(parent, topic):
 
     # Assign detail / detail sets.
     for key, obj in topic.spec.DETAILS.items():
-        # ... topic toplevel details
+        # ... topic toplevel properties
         if key == "toplevel":
             _set_property_collection(topic, key, obj, topic.spec.ENUMERATIONS)
 
-        # ... topic toplevel detail sets
+        # ... topic toplevel property sets
         elif key.startswith("toplevel"):
             _set_property_set(topic, key, obj, topic.spec.ENUMERATIONS)
 
-        # ... sub-process
+        # ... sub-process properties
         elif topic.type_key == "process" and len(key.split(":")) == 1:
-            _create_topic(topic, obj, "sub-process", key, typeof=ProcessSpecialization)
-            _set_property_collection(topic.sub_processes[-1], key, obj, topic.spec.ENUMERATIONS)
+            _create_topic(topic, obj, "sub-process", key)
+            _set_property_collection(topic.sub_topics[-1], key, obj, topic.spec.ENUMERATIONS)
 
-        # ... sub-process detail set
+        # ... sub-process property sets
         elif topic.type_key == "process" and len(key.split(":")) == 2:
-            for sp in topic.sub_processes:
-                if sp.name == key.split(":")[0]:
-                    _set_property_set(sp, key, obj, topic.spec.ENUMERATIONS)
+            for st in topic.sub_topics:
+                if st.name == key.split(":")[0]:
+                    _set_property_set(st, key, obj, topic.spec.ENUMERATIONS)
 
         # ... grid / key-properties top-level property set
         elif len(key.split(":")) == 1:

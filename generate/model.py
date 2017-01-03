@@ -30,11 +30,15 @@ class TopicSpecialization(object):
         self.properties = []
         self.property_sets = []
         self.spec = None
+        self.sub_topics = []
         self.type_key = None
 
 
     @property
     def ENUMS(self):
+        """Gets associated enumeration definitions.
+
+        """
         try:
             return self.spec.ENUMERATIONS
         except AttributeError:
@@ -167,15 +171,3 @@ class RealmSpecialization(TopicSpecialization):
         self.grid = None
         self.key_properties = None
         self.processes = None
-
-
-class ProcessSpecialization(TopicSpecialization):
-    """Wraps a process specialization.
-
-    """
-    def __init__(self):
-        """Instance initializer.
-
-        """
-        super(ProcessSpecialization, self).__init__()
-        self.sub_processes = []

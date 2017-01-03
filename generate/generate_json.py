@@ -14,11 +14,11 @@ import json
 
 
 from utils import get_label
-from parser import Parser
+from parser import RealmSpecializationParser
 
 
 
-class Generator(Parser):
+class Generator(RealmSpecializationParser):
     """Specialization to mindmap generator.
 
     """
