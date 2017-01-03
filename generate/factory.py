@@ -17,7 +17,7 @@ from model import TopicSpecialization
 
 
 
-def create_specialization(spec):
+def create_realm_specialization(spec):
     """Returns a realm specialization wrapper.
 
     :param spec: 4 member tuple of python modules: realm, grid, key-properties, processes.
@@ -75,7 +75,7 @@ def _set_topic_from_module(parent, topic):
         topic.name = topic.spec.__name__
         topic.id = "cmip6.{}".format(topic.name)
 
-    # Assign detail / detail sets.
+    # Assign properties / property sets.
     for key, obj in topic.spec.DETAILS.items():
         # ... topic toplevel properties
         if key == "toplevel":
@@ -85,26 +85,16 @@ def _set_topic_from_module(parent, topic):
         elif key.startswith("toplevel"):
             _set_property_set(topic, key, obj, topic.spec.ENUMERATIONS)
 
-        # ... sub-process properties
-        elif topic.type_key == "process" and len(key.split(":")) == 1:
+        # ... sub-topic properties
+        elif len(key.split(":")) == 1:
             _create_topic(topic, obj, "sub-process", key)
             _set_property_collection(topic.sub_topics[-1], key, obj, topic.spec.ENUMERATIONS)
 
-        # ... sub-process property sets
-        elif topic.type_key == "process" and len(key.split(":")) == 2:
+        # ... sub-topic property sets
+        elif len(key.split(":")) == 2:
             for st in topic.sub_topics:
                 if st.name == key.split(":")[0]:
                     _set_property_set(st, key, obj, topic.spec.ENUMERATIONS)
-
-        # ... grid / key-properties top-level property set
-        elif len(key.split(":")) == 1:
-            _set_property_set(topic, key, obj, topic.spec.ENUMERATIONS)
-
-        # ... grid / key-properties property set
-        elif len(key.split(":")) == 2:
-            for ps in topic.property_sets:
-                if ps.name == key.split(":")[0]:
-                    _set_property_set(ps, key, obj, topic.spec.ENUMERATIONS)
 
 
 def _set_topic_from_dict(parent, topic, name):
@@ -130,6 +120,8 @@ def _set_property_set(owner, key, obj, enumerations):
     ps.id = "{}.{}".format(owner.id, key.split(":")[-1])
     ps.key = key
     ps.name = key.split(":")[-1]
+    ps.name_camel_case = _to_camel_case(ps.name)
+    ps.name_camel_case_spaced = _to_camel_case_spaced(ps.name)
     ps.owner = owner
     _set_property_collection(ps, key, obj, enumerations)
 
@@ -148,6 +140,8 @@ def _set_property_collection(owner, key, obj, enumerations):
         d.id = "{}.{}".format(owner.id, name)
         d.key = name
         d.name = name
+        d.name_camel_case = _to_camel_case(name)
+        d.name_camel_case_spaced = _to_camel_case_spaced(name)
         d.owner = owner
         d.typeof = typeof
 

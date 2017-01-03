@@ -13,7 +13,7 @@ import os
 
 
 
-def get_specializations(input_dir, realm_name):
+def get_realm_specializations(input_dir, realm_name):
     """Returns specialization modules organized by type.
 
     :param str input_dir: Directory within which modules reside.

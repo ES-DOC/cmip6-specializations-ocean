@@ -61,6 +61,8 @@ class TopicPropertySetSpecialization(object):
         self.description = None
         self.id = None
         self.name = None
+        self.name_camel_case = None
+        self.name_camel_case_spaced = None
         self.owner = None
         self.properties = []
         self.property_sets = []
@@ -83,6 +85,8 @@ class TopicPropertySpecialization(object):
         self.enum = None
         self.id = None
         self.name = None
+        self.name_camel_case = None
+        self.name_camel_case_spaced = None
         self.owner = None
         self.topic = None
         self.typeof = None
