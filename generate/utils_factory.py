@@ -8,16 +8,20 @@
 
 
 """
-from model import TopicPropertySpecialization
-from model import TopicPropertySetSpecialization
-from model import EnumSpecialization
-from model import EnumChoiceSpecialization
-from model import RealmSpecialization
-from model import TopicSpecialization
+from utils_model import TopicPropertySpecialization
+from utils_model import TopicPropertySetSpecialization
+from utils_model import EnumSpecialization
+from utils_model import EnumChoiceSpecialization
+from utils_model import RealmSpecialization
+from utils_model import TopicSpecialization
 
 
 
-def create_realm_specialization(spec):
+# Map of specializations by id.
+CACHE = dict()
+
+
+def create_realm_specialization(specs):
     """Returns a realm specialization wrapper.
 
     :param spec: 4 member tuple of python modules: realm, grid, key-properties, processes.
@@ -26,10 +30,10 @@ def create_realm_specialization(spec):
     :rtype: TopicSpecialization
 
     """
-    r = _create_topic(None, spec[0], "realm", typeof=RealmSpecialization)
-    r.grid = _create_topic(r, spec[1], "grid")
-    r.key_properties = _create_topic(r, spec[2], "key-properties")
-    r.processes = [_create_topic(r, i, "process") for i in spec[3]]
+    r = _create_topic(None, specs[0], "realm", typeof=RealmSpecialization)
+    r.key_properties = _create_topic(r, specs[2], "key-properties")
+    r.grid = _create_topic(r, specs[1], "grid")
+    r.processes = [_create_topic(r, i, "process") for i in specs[3]]
 
     return r
 
@@ -52,6 +56,9 @@ def _create_topic(parent, spec, type_key, key=None, typeof=TopicSpecialization):
     if parent:
         topic.parent = parent
         parent.sub_topics.append(topic)
+
+    # Cache.
+    CACHE[topic.id] = topic
 
     return topic
 
@@ -127,25 +134,31 @@ def _set_property_set(owner, key, obj, enumerations):
 
     owner.property_sets.append(ps)
 
+    # Cache.
+    CACHE[ps.id] = ps
+
 
 def _set_property_collection(owner, key, obj, enumerations):
     """Set a collection of topic properties from a dictionary.
 
     """
     for name, typeof, cardinality, description in obj['properties']:
-        d = TopicPropertySpecialization()
-        d.cardinality = cardinality
-        d.description = description
-        d.enum = _create_enum(d, typeof, enumerations) if typeof.startswith("ENUM:") else None
-        d.id = "{}.{}".format(owner.id, name)
-        d.key = name
-        d.name = name
-        d.name_camel_case = _to_camel_case(name)
-        d.name_camel_case_spaced = _to_camel_case_spaced(name)
-        d.owner = owner
-        d.typeof = typeof
+        p = TopicPropertySpecialization()
+        p.cardinality = cardinality
+        p.description = description
+        p.enum = _create_enum(p, typeof, enumerations) if typeof.startswith("ENUM:") else None
+        p.id = "{}.{}".format(owner.id, name)
+        p.key = name
+        p.name = name
+        p.name_camel_case = _to_camel_case(name)
+        p.name_camel_case_spaced = _to_camel_case_spaced(name)
+        p.owner = owner
+        p.typeof = typeof
 
-        owner.properties.append(d)
+        owner.properties.append(p)
+
+        # Cache.
+        CACHE[p.id] = p
 
 
 def _create_enum(detail, typeof, enumerations):

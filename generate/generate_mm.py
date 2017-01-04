@@ -15,9 +15,9 @@ import json
 import xml.etree.ElementTree as ET
 
 from cim_profile import CIM_PROFILE
-from model import TopicPropertySpecialization
-from model import TopicSpecialization
-from parser import RealmSpecializationParser
+from utils_model import TopicPropertySpecialization
+from utils_model import TopicSpecialization
+from utils_parser import RealmSpecializationParser
 
 
 

@@ -40,6 +40,8 @@ def get_realm_specializations(input_dir, realm_name):
     modules = [os.path.join(input_dir, m) for m in modules]
     modules = [(m.split("/")[-1].split(".")[0], m) for m in modules]
     modules = [imp.load_source(name, fpath) for name, fpath in modules]
+    if not modules:
+        raise KeyError("Realm specializations not found")
 
     # Set specializations.
     realm = get_module(modules, realm_name)

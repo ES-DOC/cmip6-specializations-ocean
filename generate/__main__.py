@@ -16,8 +16,8 @@ from generate_json import Generator as JsonGenerator
 from generate_ids_level_1 import Generator as Level1IdentifierGenerator
 from generate_ids_level_2 import Generator as Level2IdentifierGenerator
 from generate_ids_level_3 import Generator as Level3IdentifierGenerator
-from loader import get_realm_specializations
-from factory import create_realm_specialization
+from utils_loader import get_realm_specializations
+from utils_factory import create_realm_specialization
 
 
 

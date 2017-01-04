@@ -10,7 +10,7 @@
 
 """
 from utils import get_label
-from parser import RealmSpecializationParser
+from utils_parser import RealmSpecializationParser
 
 
 

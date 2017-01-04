@@ -35,6 +35,22 @@ class TopicSpecialization(object):
 
 
     @property
+    def all_sub_topics(self):
+        """Returns a flattened topic hierarchy.
+
+        """
+        def _get(container):
+            result = []
+            for topic in container.sub_topics:
+                result.append(topic)
+                result += _get(topic)
+
+            return result
+
+        return _get(self)
+
+
+    @property
     def ENUMS(self):
         """Gets associated enumeration definitions.
 
@@ -46,6 +62,19 @@ class TopicSpecialization(object):
                 return self.parent.spec.ENUMERATIONS
             except AttributeError:
                 return []
+
+
+    def names(self, offset=None, seperator=" --> ", convertor=None):
+        """Returns set of topic names derived from topic specialization id.
+
+        """
+        if convertor is None:
+            convertor = _to_camel_case_spaced
+        names = self.id.split(".")
+        if offset is not None:
+            names = names[offset:]
+        names = [convertor(i) for i in names]
+        return seperator.join(names)
 
 
 class TopicPropertySetSpecialization(object):
@@ -68,6 +97,19 @@ class TopicPropertySetSpecialization(object):
         self.property_sets = []
         self.topic = None
         self.type_key = "property-set"
+
+
+    def names(self, offset=None, seperator=" --> ", convertor=None):
+        """Returns set of topic names derived from topic specialization id.
+
+        """
+        if convertor is None:
+            convertor = _to_camel_case_spaced
+        names = self.id.split(".")
+        if offset is not None:
+            names = names[offset:]
+        names = [convertor(i) for i in names]
+        return seperator.join(names)
 
 
 class TopicPropertySpecialization(object):
@@ -126,8 +168,35 @@ class TopicPropertySpecialization(object):
             return "INTEGER"
         elif self.typeof == 'float':
             return "FLOAT"
+        elif self.enum:
+            return "ENUM"
+        return self.typeof.split(":")[-1].upper()
 
-        return self.typeof.upper()
+
+    def validate_value(self, val):
+        """Validates a property value.
+
+        :param object val: Value to be validated.
+
+        """
+        if self.enum:
+            self.enum.validate_value(val)
+
+        if self.typeof == 'str':
+            if not isinstance(val, basestring) or not len(val.strip()):
+                raise ValueError("Invalid value: must be a non zero length string")
+
+        if self.typeof == 'bool':
+            if not isinstance(val, bool):
+                raise ValueError("Invalid value: must be a boolean")
+
+        if self.typeof == 'int':
+            if not isinstance(val, int):
+                raise ValueError("Invalid value: must be an integer")
+
+        if self.typeof == 'float':
+            if not isinstance(val, float):
+                raise ValueError("Invalid value: must be a float")
 
 
 class EnumSpecialization(object):
@@ -145,6 +214,34 @@ class EnumSpecialization(object):
         self.label = None
         self.name = None
         self.type_key = "enum"
+
+
+    def is_a_member(self, val):
+        """Returns flag indicating whether vlue is a member of the enumeration.
+
+        :param object val: Value to be validated.
+
+        """
+        return val in [i.value for i in self.choices]
+
+
+    def validate_value(self, val):
+        """Validates a value against the set of enum choices.
+
+        :param object val: Value to be validated.
+
+        """
+        if not isinstance(val, basestring) or not len(val.strip()):
+            raise ValueError("Invalid value: must be a non zero length string")
+        if self.is_a_member(val):
+            return
+        if not self.is_open:
+            raise ValueError("Invalid value: is not an enumeration member")
+        if not val.startswith("Other: "):
+            raise ValueError("Invalid value: new enumeration members must be prefixed with: 'Other: '")
+        other = val.split("Other: ")[-1]
+        if self.is_a_member(other):
+            raise ValueError("Invalid value: enumeration member already defined")
 
 
 class EnumChoiceSpecialization(object):
@@ -175,3 +272,39 @@ class RealmSpecialization(TopicSpecialization):
         self.grid = None
         self.key_properties = None
         self.processes = None
+
+
+
+def _to_camel_case_spaced(name, separator='_'):
+    """Converts passed name to camel case with space.
+
+    :param str name: A name as specified in ontology specification.
+    :param str separator: Separator to use in order to split name into constituent parts.
+
+    """
+    s = _to_camel_case(name, separator)
+    r = s[0]
+    for s in s[1:]:
+        if s.upper() == s:
+            r += " "
+        r += s
+
+    return r
+
+
+def _to_camel_case(name, separator='_'):
+    """Converts passed name to camel case.
+
+    :param str name: A name as specified in ontology specification.
+    :param str separator: Separator to use in order to split name into constituent parts.
+
+    """
+    r = ''
+    if name is not None:
+        s = name.split(separator)
+        for s in s:
+            if (len(s) > 0):
+                r += s[0].upper()
+                if (len(s) > 1):
+                    r += s[1:]
+    return r
