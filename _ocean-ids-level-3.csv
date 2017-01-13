@@ -4,6 +4,7 @@ cmip6.ocean.grid.discretisation.vertical.partial_steps, Ocean > Grid > Discretis
 cmip6.ocean.grid.discretisation.horizontal.type, Ocean > Grid > Discretisation > Horizontal > Type, property
 cmip6.ocean.grid.discretisation.horizontal.scheme, Ocean > Grid > Discretisation > Horizontal > Scheme, property
 , , 
+cmip6.ocean.key_properties.model_name, Ocean > Key Properties > Model Name, property
 cmip6.ocean.key_properties.model_family, Ocean > Key Properties > Model Family, property
 cmip6.ocean.key_properties.basic_approximations, Ocean > Key Properties > Basic Approximations, property
 cmip6.ocean.key_properties.prognostic_variables, Ocean > Key Properties > Prognostic Variables, property

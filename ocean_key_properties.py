@@ -37,6 +37,8 @@ DESCRIPTION = 'Ocean key properties'
 DETAILS['toplevel'] = {
     'description': 'General key properties in ocean',
     'properties': [
+        ('model_name', 'str', '1.1',
+            'Name of ocean model code (NEMO 3.6, MOM 5.0,...)'),
         ('model_family', 'ENUM:model_family_types', '1.1',
             'Type of ocean model.'),
         ('basic_approximations', 'ENUM:ocean_basic_approx_types', '1.N',
