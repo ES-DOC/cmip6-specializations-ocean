@@ -2169,6 +2169,38 @@
         ], 
         "subProcesses": [
             {
+                "label": "Software Properties", 
+                "description": "Software properties of ocean code", 
+                "id": "cmip6.ocean.key_properties.software_properties", 
+                "contact": "Eric Guilyardi", 
+                "properties": [
+                    {
+                        "label": "Repository", 
+                        "description": "Location of code for this component.", 
+                        "id": "cmip6.ocean.key_properties.software_properties.repository", 
+                        "cardinality": "0.1", 
+                        "type": "str", 
+                        "uiOrdinal": 1
+                    }, 
+                    {
+                        "label": "Code Version", 
+                        "description": "Code version identifier.", 
+                        "id": "cmip6.ocean.key_properties.software_properties.code_version", 
+                        "cardinality": "0.1", 
+                        "type": "str", 
+                        "uiOrdinal": 2
+                    }, 
+                    {
+                        "label": "Code Languages", 
+                        "description": "Code language(s).", 
+                        "id": "cmip6.ocean.key_properties.software_properties.code_languages", 
+                        "cardinality": "0.N", 
+                        "type": "str", 
+                        "uiOrdinal": 3
+                    }
+                ]
+            }, 
+            {
                 "label": "Resolution", 
                 "description": "Resolution in the ocean grid", 
                 "id": "cmip6.ocean.key_properties.resolution", 
