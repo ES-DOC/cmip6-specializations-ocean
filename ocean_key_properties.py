@@ -92,6 +92,17 @@ DETAILS['toplevel:nonoceanic_waters'] = {
        ]
     }
 
+DETAILS['software_properties'] = {
+    'description': 'Software properties of ocean code',
+    'properties':[
+        ('repository','str', '0.1',
+            "Location of code for this component."),
+        ('code_version','str', '0.1',
+            "Code version identifier."),
+        ('code_languages','str', '0.N',
+            "Code language(s)."),
+    ]
+}
 # --------------------------------------------------------------------
 # SUB-PROCESS: RESOLUTION: The resolution of the grid.
 # --------------------------------------------------------------------
