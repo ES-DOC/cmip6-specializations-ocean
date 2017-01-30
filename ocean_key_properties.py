@@ -103,6 +103,7 @@ DETAILS['software_properties'] = {
             "Code language(s)."),
     ]
 }
+
 # --------------------------------------------------------------------
 # SUB-PROCESS: RESOLUTION: The resolution of the grid.
 # --------------------------------------------------------------------
