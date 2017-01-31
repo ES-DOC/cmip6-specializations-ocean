@@ -40,6 +40,13 @@
         <dt><b>Version</b></dt><dd>0.5.0</dd><dt><b>Date</b></dt><dd>2016-11-25</dd><dt><b>Person</b></dt><dd>Mark Greenslade.</dd><dt><b>Comment</b></dt><dd>Syntax simplification in respect of process/sub-process</dd>
     </dl>
   </body>
+</html></richcontent></node><node STYLE="bubble" TEXT="0.6.0"><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Version</b></dt><dd>0.6.0</dd><dt><b>Date</b></dt><dd>2017-13-01</dd><dt><b>Person</b></dt><dd>Eric Guilyardi</dd><dt><b>Comment</b></dt><dd>Added ocean_short_table.py</dd>
+    </dl>
+  </body>
 </html></richcontent></node></node><node FOLDED="true" POSITION="left" STYLE="bubble" TEXT="LEGEND"><node BACKGROUND_COLOR="#66cc00" COLOR="#000000" STYLE="bubble" TEXT="realm"><richcontent TYPE="NOTE"><html>
   <head />
   <body>

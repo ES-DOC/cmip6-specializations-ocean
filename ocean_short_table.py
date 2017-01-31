@@ -27,10 +27,8 @@ QC_STATUS = 'draft'
 # CHANGE HISTORY: Set to list: (version, date, comment, who).
 # --------------------------------------------------------------------
 CHANGE_HISTORY = [
-    ("0.1.0", "2017-01-13", "Eric Guilyardi",
-        "Initialised"),
+    ("0.1.0", "2017-01-13", "Eric Guilyardi",  "Initialised"),
     ]
-
 
 # Short table properties
 
