@@ -11,6 +11,8 @@
 """
 from itertools import chain
 
+import constants
+
 
 
 class TopicSpecialization(object):
@@ -43,21 +45,18 @@ class TopicSpecialization(object):
         return self.id
 
 
-    def __getitem__(self, key):
+    def __getitem__(self, type_key):
         """Returns a child topic.
 
         """
-        result = []
-        key = str(key).strip().lower()
-        for topic in self.sub_topics:
-            if topic.type_key == key:
-                result.append(topic)
+        result = [i for i in self.sub_topics if i.type_key == type_key]
 
-        if len(result) == 1:
-            return result[0]
+        if type_key in {constants.TYPE_KEY_PROCESS, constants.TYPE_KEY_SUBPROCESS}:
+            return result
         elif len(result) > 1:
             return result
-        return result
+        elif len(result) == 1:
+            return result[0]
 
 
     @property
@@ -113,7 +112,7 @@ class TopicSpecialization(object):
 
     @property
     def all_properties(self):
-        """Returns all properties within realm.
+        """Returns all specialization properties.
 
         """
         return set(chain.from_iterable(i.properties for i in self.all_property_containers))
@@ -121,7 +120,7 @@ class TopicSpecialization(object):
 
     @property
     def all_required_properties(self):
-        """Returns all required properties within realm.
+        """Returns all required specialization properties.
 
         """
         return set([i for i in self.all_properties if i.is_required])
@@ -129,7 +128,7 @@ class TopicSpecialization(object):
 
     @property
     def all_optional_properties(self):
-        """Returns all optional properties within realm.
+        """Returns all optional specialization properties.
 
         """
         return self.all_properties - self.all_required_properties

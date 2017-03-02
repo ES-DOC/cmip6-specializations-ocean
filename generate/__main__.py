@@ -48,7 +48,7 @@ _FILE_SUFFIXES = {
 _DIR = os.path.dirname(__file__)
 
 # Set command line arguments.
-_ARGS = argparse.ArgumentParser("Encodes CMIP6 realm specializations.")
+_ARGS = argparse.ArgumentParser("Encodes a CMIP6 specialization.")
 _ARGS.add_argument(
     "--type",
     help="Type of generator to be executed.",
@@ -113,9 +113,9 @@ for generator_type, generator_cls in targets.iteritems():
 
     # Set output filename.
     try:
-        fname = "{}-{}".format(_ARGS.scope, _FILE_SUFFIXES[generator_type])
+        fname = "{}-{}".format(_TYPE, _FILE_SUFFIXES[generator_type])
     except KeyError:
-        fname = _ARGS.scope
+        fname = _TYPE
     finally:
         if encoding == 'py':
             fname = fname.replace("-", "_")

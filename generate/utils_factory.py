@@ -8,7 +8,7 @@
 
 
 """
-import constants
+from constants import *
 import utils_model as model
 
 
@@ -19,11 +19,11 @@ CACHE = dict()
 
 
 def get_specialization(modules):
-    """Returns a realm specialization wrapper.
+    """Returns a specialization wrapper.
 
-    :param modules: 4 member tuple of python modules: realm, grid, key-properties, processes.
+    :param modules: 4 member tuple of python modules: root, grid, key-properties, processes.
 
-    :returns: A realm specialization wrapper.
+    :returns: A specialization wrapper.
     :rtype: tuple
 
     """
@@ -31,15 +31,15 @@ def get_specialization(modules):
     mod_root, mod_grid, mod_keyprops, mod_processes = modules
 
     # Set root type key.
-    mod_root_type_key = constants.TYPE_KEY_REALM if mod_root.__name__ != "model" else constants.TYPE_KEY_MODEL
+    type_key = TYPE_KEY_REALM if mod_root.__name__ != "model" else TYPE_KEY_MODEL
 
     # Create topic tree.
-    result = _create_topic(None, mod_root, mod_root_type_key)
+    result = _create_topic(None, mod_root, type_key)
     if mod_grid is not None:
-        _create_topic(result, mod_grid, constants.TYPE_KEY_GRID)
-    _create_topic(result, mod_keyprops, constants.TYPE_KEY_KEYPROPS)
+        _create_topic(result, mod_grid, TYPE_KEY_GRID)
+    _create_topic(result, mod_keyprops, TYPE_KEY_KEYPROPS)
     for i in mod_processes:
-        _create_topic(result, i, constants.TYPE_KEY_PROCESS)
+        _create_topic(result, i, TYPE_KEY_PROCESS)
 
     return result
 
@@ -93,7 +93,7 @@ def _set_topic_from_module(parent, topic):
         for key, obj in topic.spec.DETAILS.items():
             # ... toplevel properties
             if key == "toplevel":
-                _set_property_collection(topic, key, obj, topic.spec.ENUMERATIONS)
+                _set_property_collection(topic, obj, topic.spec.ENUMERATIONS)
 
             # ... toplevel property sets
             elif key.startswith("toplevel"):
@@ -101,8 +101,8 @@ def _set_topic_from_module(parent, topic):
 
             # ... sub-topic properties
             elif len(key.split(":")) == 1:
-                _create_topic(topic, obj, "subprocess", key)
-                _set_property_collection(topic.sub_topics[-1], key, obj, topic.spec.ENUMERATIONS)
+                _create_topic(topic, obj, TYPE_KEY_SUBPROCESS, key)
+                _set_property_collection(topic.sub_topics[-1], obj, topic.spec.ENUMERATIONS)
 
             # ... sub-topic property sets
             elif len(key.split(":")) == 2:
@@ -135,7 +135,7 @@ def _set_property_set(owner, key, obj, enumerations):
     ps.key = key
     ps.name = key.split(":")[-1]
     ps.owner = owner
-    _set_property_collection(ps, key, obj, enumerations)
+    _set_property_collection(ps, obj, enumerations)
 
     owner.property_sets.append(ps)
 
@@ -143,7 +143,7 @@ def _set_property_set(owner, key, obj, enumerations):
     CACHE[ps.id] = ps
 
 
-def _set_property_collection(owner, key, obj, enumerations):
+def _set_property_collection(owner, obj, enumerations):
     """Set a collection of topic properties from a dictionary.
 
     """
