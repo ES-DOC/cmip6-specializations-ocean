@@ -4,14 +4,6 @@ For further information goto http://wordpress.es-doc.org/cmip6-model-specializat
 
 """
 # --------------------------------------------------------------------
-# INTERNAL (do not change)
-# --------------------------------------------------------------------
-from collections import OrderedDict
-
-DETAILS = OrderedDict()
-ENUMERATIONS = OrderedDict()
-
-# --------------------------------------------------------------------
 # CONTACT: Set to realm specialization co-ordinator.
 # --------------------------------------------------------------------
 CONTACT = 'Eric Guilyardi'
@@ -47,7 +39,6 @@ CHANGE_HISTORY = [
         "Syntax simplification in respect of process/sub-process"),
     ("0.6.0", "2017-01-13", "Eric Guilyardi",
         "Added ocean_short_table.py"),
-
     ]
 
 # --------------------------------------------------------------------
@@ -76,13 +67,3 @@ PROCESSES = [
     'ocean_uplow_boundaries',
     'ocean_boundary_forcing',
     ]
-
-# --------------------------------------------------------------------
-# DETAILS: top level realm details
-# --------------------------------------------------------------------
-DETAILS = OrderedDict()
-
-# --------------------------------------------------------------------
-# ENUMERATIONS: top level realm enumerations
-# --------------------------------------------------------------------
-ENUMERATIONS = OrderedDict()

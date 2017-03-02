@@ -11,24 +11,22 @@
 """
 import collections
 
-from validate_topic import validate as validate_topic
-from validate_realm import validate as validate_realm
-
 
 
 class ValidationContext(object):
-    """Encapsulates validation processing information.
+    """Validation context information.
 
     """
-    def __init__(self, realm, grid, key_properties, processes):
+    def __init__(self, specializations):
         """Instance constructor.
 
         """
         self.module = None
         self.errors = collections.defaultdict(list)
         self.warnings = collections.defaultdict(list)
-        self.realm = realm
-        self.realm_key = realm.__name__
+
+        root, grid, key_properties, processes = specializations
+        self.root = root
         self.grid = grid
         self.key_properties = key_properties
         self.processes = processes
@@ -39,9 +37,16 @@ class ValidationContext(object):
         """Gets set of specialization modules.
 
         """
-        result = [self.realm, self.grid, self.key_properties] + self.processes
+        result = [self.root, self.grid, self.key_properties] + self.processes
 
-        return [m for m in result if m]
+        return [m for m in result if m is not None]
+
+
+    def has_module(self, key):
+        """Returns flag indicating whether a module key can be mapped.
+
+        """
+        return key in [i.__name__ for i in self.modules]
 
 
     def error(self, msg):
@@ -58,19 +63,6 @@ class ValidationContext(object):
         self.warnings[self.module].append(msg)
 
 
-    def validate(self):
-        """Validates the specialization set.
-
-        """
-        validate_realm(self, self.realm)
-        if self.grid:
-            validate_topic(self, self.grid)
-        if self.key_properties:
-            validate_topic(self, self.key_properties)
-        for process in self.processes:
-            validate_topic(self, process)
-
-
     def get_errors(self):
         """Returns set of validation errors.
 
@@ -83,3 +75,4 @@ class ValidationContext(object):
 
         """
         return {k: v for k, v in self.warnings.items() if v}
+
