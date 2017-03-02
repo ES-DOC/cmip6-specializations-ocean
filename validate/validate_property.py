@@ -29,8 +29,8 @@ def validate(prop, enums):
     :rtype: list
 
     """
-    errors = []
     name, typeof, cardinality, description = prop
+    errors = []
     _validate_name(errors, name)
     _validate_type(errors, typeof, enums)
     _validate_cardinality(errors, cardinality)
