@@ -13,8 +13,8 @@
     ],
     "PROPERTIES": {
         "priority1": [
-            "cmip6.ocean.key_properties.model_name",
-            "cmip6.ocean.key_properties.basic_approximations",
+            "cmip6.ocean.key_properties.toplevel.model_name",
+            "cmip6.ocean.key_properties.toplevel.basic_approximations",
             "cmip6.ocean.key_properties.conservation.scheme",
             "cmip6.ocean.key_properties.resolution.name",
             "cmip6.ocean.key_properties.resolution.canonical_horizontal_resolution",
