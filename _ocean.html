@@ -1,0 +1,615 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <title>ES-DOC - Specialization</title>
+        <link href="media/app/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link href="media/ext/bootstrap-3.3.6/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="media/app/css/header.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="media/app/css/main.css" media="screen" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+    <header class="clearfix main">
+        <img alt="Earth System Documentation" class="pull-left" src="media/app/img/logo-1.png" title="Earth System Documentation" />
+        <h1 class="pull-right">
+            <small><b>Specializations Viewer</b>
+            </small>
+            <b class="h6"> v0.9.7.5</b>
+            <button class="esdoc-support btn btn-success">Support</button>
+        </h1>
+    </header>
+    <article id="cmip6.ocean">
+    <header>
+        <h2 class="bg-primary">CMIP6 Ocean Specializations</h2>
+    </header>
+<section id="cmip6.ocean.grid">
+    <header>
+        <h3 class="bg-primary">Grid</h3>
+    </header>
+    <table class="table table-striped table-hover table-condensed">
+        <thead>
+            <tr>
+                <th class="prop-name">Property Long Name</th>
+                <th class="prop-cardinality">Cardinality</th>
+                <th class="prop-typeof">Type</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr>
+    <td class="prop-name">Discretisation --&gt; Vertical --&gt; Coordinates</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof"><select><option>enum</option><option title="Z-coordinate">Z-coordinate</option><option title="Z*-coordinate">Z*-coordinate</option><option title="S-coordinate">S-coordinate</option><option title="Isopycnic - sigma 0">Isopycnic - sigma 0</option><option title="Isopycnic - sigma 2">Isopycnic - sigma 2</option><option title="Isopycnic - sigma 4">Isopycnic - sigma 4</option><option title="Isopycnic - other">Isopycnic - other</option><option title="Hybrid / Z+S">Hybrid / Z+S</option><option title="Hybrid / Z+isopycnic">Hybrid / Z+isopycnic</option><option title="Hybrid / ALE">Hybrid / ALE</option><option title="Hybrid / other">Hybrid / other</option><option title="Pressure referenced (P)">Pressure referenced (P)</option><option title="P*">P*</option><option title="Z**">Z**</option></select></td>
+</tr><tr>
+    <td class="prop-name">Discretisation --&gt; Vertical --&gt; Partial Steps</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof">bool</td>
+</tr><tr>
+    <td class="prop-name">Discretisation --&gt; Horizontal --&gt; Type</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof"><select><option>enum</option><option title="Lat-lon">Lat-lon</option><option title="Rotated north pole">Rotated north pole</option><option title="Two north poles (ORCA-style)">Two north poles (ORCA-style)</option></select></td>
+</tr><tr>
+    <td class="prop-name">Discretisation --&gt; Horizontal --&gt; Scheme</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof"><select><option>enum</option><option title="Finite difference / Arakawa B-grid">Finite difference / Arakawa B-grid</option><option title="Finite difference / Arakawa C-grid">Finite difference / Arakawa C-grid</option><option title="Finite difference / Arakawa E-grid">Finite difference / Arakawa E-grid</option><option title="Finite volumes">Finite volumes</option><option title="Finite elements">Finite elements</option><option title="Unstructured grid">Unstructured grid</option></select></td>
+</tr></tbody>
+    </table>
+</section><section id="cmip6.ocean.key_properties">
+    <header>
+        <h3 class="bg-primary">Key Properties</h3>
+    </header>
+    <table class="table table-striped table-hover table-condensed">
+        <thead>
+            <tr>
+                <th class="prop-name">Property Long Name</th>
+                <th class="prop-cardinality">Cardinality</th>
+                <th class="prop-typeof">Type</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr>
+    <td class="prop-name">Model Name</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof">str</td>
+</tr><tr>
+    <td class="prop-name">Model Family</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof"><select><option>enum</option><option title="OGCM">OGCM</option><option title="slab ocean">slab ocean</option><option title="mixed layer ocean">mixed layer ocean</option></select></td>
+</tr><tr>
+    <td class="prop-name">Basic Approximations</td>
+    <td class="prop-cardinality">1.N</td>
+    <td class="prop-typeof"><select><option>enum</option><option title="Primitive equations">Primitive equations</option><option title="Non-hydrostatic">Non-hydrostatic</option><option title="Boussinesq">Boussinesq</option></select></td>
+</tr><tr>
+    <td class="prop-name">Prognostic Variables</td>
+    <td class="prop-cardinality">1.N</td>
+    <td class="prop-typeof"><select><option>enum</option><option title="Potential temperature">Potential temperature</option><option title="Conservative temperature">Conservative temperature</option><option title="Salinity">Salinity</option><option title="U-velocity">U-velocity</option><option title="V-velocity">V-velocity</option><option title="W-velocity">W-velocity</option><option title="SSH">SSH</option></select></td>
+</tr><tr>
+    <td class="prop-name">Seawater Properties --&gt; Eos Type</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof"><select><option>enum</option><option title="Linear">Linear</option><option title="Mc Dougall et al.">Mc Dougall et al.</option><option title="Jackett et al. 2006">Jackett et al. 2006</option><option title="TEOS 2010">TEOS 2010</option></select></td>
+</tr><tr>
+    <td class="prop-name">Seawater Properties --&gt; Eos Functional Temp</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof"><select><option>enum</option><option title="Potential temperature">Potential temperature</option><option title="Conservative temperature">Conservative temperature</option></select></td>
+</tr><tr>
+    <td class="prop-name">Seawater Properties --&gt; Eos Functional Salt</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof"><select><option>enum</option><option title="Practical salinity Sp">Practical salinity Sp</option><option title="Absolute salinity Sa">Absolute salinity Sa</option></select></td>
+</tr><tr>
+    <td class="prop-name">Seawater Properties --&gt; Eos Functional Depth</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof"><select><option>enum</option><option title="Pressure (dbars)">Pressure (dbars)</option><option title="Depth (meters)">Depth (meters)</option></select></td>
+</tr><tr>
+    <td class="prop-name">Seawater Properties --&gt; Ocean Freezing Point</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof"><select><option>enum</option><option title="TEOS 2010">TEOS 2010</option></select></td>
+</tr><tr>
+    <td class="prop-name">Seawater Properties --&gt; Ocean Specific Heat</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof">float</td>
+</tr><tr>
+    <td class="prop-name">Seawater Properties --&gt; Ocean Reference Density</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof">float</td>
+</tr><tr>
+    <td class="prop-name">Bathymetry --&gt; Reference Dates</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof"><select><option>enum</option><option title="Present day">Present day</option><option title="21000 years BP">21000 years BP</option><option title="6000 years BP">6000 years BP</option><option title="LGM">LGM</option><option title="Pliocene">Pliocene</option></select></td>
+</tr><tr>
+    <td class="prop-name">Bathymetry --&gt; Type</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof">bool</td>
+</tr><tr>
+    <td class="prop-name">Bathymetry --&gt; Ocean Smoothing</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof">str</td>
+</tr><tr>
+    <td class="prop-name">Bathymetry --&gt; Source</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof">str</td>
+</tr><tr>
+    <td class="prop-name">Nonoceanic Waters --&gt; Isolated Seas</td>
+    <td class="prop-cardinality">0.1</td>
+    <td class="prop-typeof">str</td>
+</tr><tr>
+    <td class="prop-name">Nonoceanic Waters --&gt; River Mouth</td>
+    <td class="prop-cardinality">0.1</td>
+    <td class="prop-typeof">str</td>
+</tr><tr>
+    <td class="prop-name">Software Properties --&gt; Repository</td>
+    <td class="prop-cardinality">0.1</td>
+    <td class="prop-typeof">str</td>
+</tr><tr>
+    <td class="prop-name">Software Properties --&gt; Code Version</td>
+    <td class="prop-cardinality">0.1</td>
+    <td class="prop-typeof">str</td>
+</tr><tr>
+    <td class="prop-name">Software Properties --&gt; Code Languages</td>
+    <td class="prop-cardinality">0.N</td>
+    <td class="prop-typeof">str</td>
+</tr><tr>
+    <td class="prop-name">Resolution --&gt; Name</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof">str</td>
+</tr><tr>
+    <td class="prop-name">Resolution --&gt; Canonical Horizontal Resolution</td>
+    <td class="prop-cardinality">0.1</td>
+    <td class="prop-typeof">str</td>
+</tr><tr>
+    <td class="prop-name">Resolution --&gt; Number Of Horizontal Gridpoints</td>
+    <td class="prop-cardinality">0.1</td>
+    <td class="prop-typeof">int</td>
+</tr><tr>
+    <td class="prop-name">Resolution --&gt; Number Of Vertical Levels</td>
+    <td class="prop-cardinality">0.1</td>
+    <td class="prop-typeof">int</td>
+</tr><tr>
+    <td class="prop-name">Resolution --&gt; Is Adaptive Grid</td>
+    <td class="prop-cardinality">0.1</td>
+    <td class="prop-typeof">bool</td>
+</tr><tr>
+    <td class="prop-name">Resolution --&gt; Thickness Level 1</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof">float</td>
+</tr><tr>
+    <td class="prop-name">Tuning Applied --&gt; Description</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof">str</td>
+</tr><tr>
+    <td class="prop-name">Tuning Applied --&gt; Global Mean Metrics Used</td>
+    <td class="prop-cardinality">0.N</td>
+    <td class="prop-typeof">str</td>
+</tr><tr>
+    <td class="prop-name">Tuning Applied --&gt; Regional Metrics Used</td>
+    <td class="prop-cardinality">0.N</td>
+    <td class="prop-typeof">str</td>
+</tr><tr>
+    <td class="prop-name">Tuning Applied --&gt; Trend Metrics Used</td>
+    <td class="prop-cardinality">0.N</td>
+    <td class="prop-typeof">str</td>
+</tr><tr>
+    <td class="prop-name">Conservation --&gt; Description</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof">str</td>
+</tr><tr>
+    <td class="prop-name">Conservation --&gt; Scheme</td>
+    <td class="prop-cardinality">1.N</td>
+    <td class="prop-typeof"><select><option>enum</option><option title="Energy">Energy</option><option title="Enstrophy">Enstrophy</option><option title="Salt">Salt</option><option title="Volume of ocean">Volume of ocean</option><option title="Momentum">Momentum</option></select></td>
+</tr><tr>
+    <td class="prop-name">Conservation --&gt; Consistency Properties</td>
+    <td class="prop-cardinality">0.1</td>
+    <td class="prop-typeof">str</td>
+</tr><tr>
+    <td class="prop-name">Conservation --&gt; Corrected Conserved Prognostic Variables</td>
+    <td class="prop-cardinality">0.1</td>
+    <td class="prop-typeof">str</td>
+</tr><tr>
+    <td class="prop-name">Conservation --&gt; Was Flux Correction Used</td>
+    <td class="prop-cardinality">0.1</td>
+    <td class="prop-typeof">bool</td>
+</tr></tbody>
+    </table>
+</section><section id="cmip6.ocean.timestepping_framework">
+    <header>
+        <h3 class="bg-primary">Timestepping Framework</h3>
+    </header>
+    <table class="table table-striped table-hover table-condensed">
+        <thead>
+            <tr>
+                <th class="prop-name">Property Long Name</th>
+                <th class="prop-cardinality">Cardinality</th>
+                <th class="prop-typeof">Type</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr>
+    <td class="prop-name">Timestepping Attributes --&gt; Time Step</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof">int</td>
+</tr><tr>
+    <td class="prop-name">Timestepping Attributes --&gt; Diurnal Cycle</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof"><select><option>enum</option><option title="None">None</option><option title="Via coupling">Via coupling</option><option title="Specific treatment">Specific treatment</option></select></td>
+</tr><tr>
+    <td class="prop-name">Timestepping Tracers Scheme --&gt; Tracers</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof"><select><option>enum</option><option title="Leap-frog + Asselin filter">Leap-frog + Asselin filter</option><option title="Leap-frog + Periodic Euler backward solver">Leap-frog + Periodic Euler backward solver</option><option title="Predictor-corrector">Predictor-corrector</option><option title="AM3-LF (ROMS)">AM3-LF (ROMS)</option><option title="Forward-backward">Forward-backward</option><option title="Forward operator">Forward operator</option></select></td>
+</tr><tr>
+    <td class="prop-name">Barotropic Solver Scheme --&gt; Barotropic Solver</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof"><select><option>enum</option><option title="Leap-frog + Asselin filter">Leap-frog + Asselin filter</option><option title="Leap-frog + Periodic Euler backward solver">Leap-frog + Periodic Euler backward solver</option><option title="Predictor-corrector">Predictor-corrector</option><option title="AM3-LF (ROMS)">AM3-LF (ROMS)</option><option title="Forward-backward">Forward-backward</option><option title="Forward operator">Forward operator</option></select></td>
+</tr><tr>
+    <td class="prop-name">Barotropic Solver Scheme --&gt; Type</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof"><select><option>enum</option><option title="Preconditioned conjugate gradient">Preconditioned conjugate gradient</option><option title="Sub cyling">Sub cyling</option></select></td>
+</tr><tr>
+    <td class="prop-name">Barotropic Momentum Scheme --&gt; Barotropic Momentum</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof"><select><option>enum</option><option title="Leap-frog + Asselin filter">Leap-frog + Asselin filter</option><option title="Leap-frog + Periodic Euler backward solver">Leap-frog + Periodic Euler backward solver</option><option title="Predictor-corrector">Predictor-corrector</option><option title="AM3-LF (ROMS)">AM3-LF (ROMS)</option><option title="Forward-backward">Forward-backward</option><option title="Forward operator">Forward operator</option></select></td>
+</tr></tbody>
+    </table>
+</section><section id="cmip6.ocean.advection">
+    <header>
+        <h3 class="bg-primary">Advection</h3>
+    </header>
+    <table class="table table-striped table-hover table-condensed">
+        <thead>
+            <tr>
+                <th class="prop-name">Property Long Name</th>
+                <th class="prop-cardinality">Cardinality</th>
+                <th class="prop-typeof">Type</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr>
+    <td class="prop-name">Momentum --&gt; Type</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof"><select><option>enum</option><option title="Flux form">Flux form</option><option title="Vector form">Vector form</option></select></td>
+</tr><tr>
+    <td class="prop-name">Momentum --&gt; Scheme Name</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof">str</td>
+</tr><tr>
+    <td class="prop-name">Momentum --&gt; ALE</td>
+    <td class="prop-cardinality">0.1</td>
+    <td class="prop-typeof">bool</td>
+</tr><tr>
+    <td class="prop-name">Lateral Tracers --&gt; Type</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof"><select><option>enum</option><option title="Centred 2nd order">Centred 2nd order</option><option title="Centred 4th order">Centred 4th order</option><option title="Total Variance Dissipation (TVD)">Total Variance Dissipation (TVD)</option><option title="MUSCL">MUSCL</option><option title="QUICKEST">QUICKEST</option><option title="Piecewise Parabolic method">Piecewise Parabolic method</option><option title="Sweby">Sweby</option><option title="Prather 2nd moment (PSOM)">Prather 2nd moment (PSOM)</option><option title="3rd order upwind">3rd order upwind</option></select></td>
+</tr><tr>
+    <td class="prop-name">Lateral Tracers --&gt; Flux Limiter</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof">bool</td>
+</tr><tr>
+    <td class="prop-name">Lateral Tracers --&gt; Passive Tracers</td>
+    <td class="prop-cardinality">0.N</td>
+    <td class="prop-typeof"><select><option>enum</option><option title="Ideal age">Ideal age</option><option title="CFC 11">CFC 11</option><option title="CFC 12">CFC 12</option><option title="SF6">SF6</option></select></td>
+</tr><tr>
+    <td class="prop-name">Lateral Tracers --&gt; Passive Tracers Advection</td>
+    <td class="prop-cardinality">0.1</td>
+    <td class="prop-typeof">str</td>
+</tr><tr>
+    <td class="prop-name">Vertical Tracers --&gt; Type</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof"><select><option>enum</option><option title="Centred 2nd order">Centred 2nd order</option><option title="Centred 4th order">Centred 4th order</option><option title="Total Variance Dissipation (TVD)">Total Variance Dissipation (TVD)</option><option title="MUSCL">MUSCL</option><option title="QUICKEST">QUICKEST</option><option title="Piecewise Parabolic method">Piecewise Parabolic method</option><option title="Sweby">Sweby</option><option title="Prather 2nd moment (PSOM)">Prather 2nd moment (PSOM)</option><option title="3rd order upwind">3rd order upwind</option></select></td>
+</tr><tr>
+    <td class="prop-name">Vertical Tracers --&gt; Flux Limiter</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof">bool</td>
+</tr></tbody>
+    </table>
+</section><section id="cmip6.ocean.lateral_physics">
+    <header>
+        <h3 class="bg-primary">Lateral Physics</h3>
+    </header>
+    <table class="table table-striped table-hover table-condensed">
+        <thead>
+            <tr>
+                <th class="prop-name">Property Long Name</th>
+                <th class="prop-cardinality">Cardinality</th>
+                <th class="prop-typeof">Type</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr>
+    <td class="prop-name">Scheme</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof"><select><option>enum</option><option title="None">None</option><option title="Eddy active">Eddy active</option><option title="Eddy admitting">Eddy admitting</option></select></td>
+</tr><tr>
+    <td class="prop-name">Momentum --&gt; Operator --&gt; Direction</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof"><select><option>enum</option><option title="Horizontal">Horizontal</option><option title="Isopycnal">Isopycnal</option><option title="Isoneutral">Isoneutral</option><option title="Geopotential">Geopotential</option><option title="Iso-level">Iso-level</option></select></td>
+</tr><tr>
+    <td class="prop-name">Momentum --&gt; Operator --&gt; Order</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof"><select><option>enum</option><option title="Harmonic">Harmonic</option><option title="Bi-harmonic">Bi-harmonic</option></select></td>
+</tr><tr>
+    <td class="prop-name">Momentum --&gt; Operator --&gt; Discretisation</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof"><select><option>enum</option><option title="Second order">Second order</option><option title="Higher order">Higher order</option><option title="Flux limiter">Flux limiter</option></select></td>
+</tr><tr>
+    <td class="prop-name">Momentum --&gt; Eddy Viscosity Coeff --&gt; Type</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof"><select><option>enum</option><option title="Constant">Constant</option><option title="Space varying">Space varying</option><option title="Time + space varying (Smagorinsky)">Time + space varying (Smagorinsky)</option></select></td>
+</tr><tr>
+    <td class="prop-name">Momentum --&gt; Eddy Viscosity Coeff --&gt; Constant Coefficient</td>
+    <td class="prop-cardinality">0.1</td>
+    <td class="prop-typeof">int</td>
+</tr><tr>
+    <td class="prop-name">Momentum --&gt; Eddy Viscosity Coeff --&gt; Variable Coefficient</td>
+    <td class="prop-cardinality">0.1</td>
+    <td class="prop-typeof">str</td>
+</tr><tr>
+    <td class="prop-name">Momentum --&gt; Eddy Viscosity Coeff --&gt; Coeff Background</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof">int</td>
+</tr><tr>
+    <td class="prop-name">Momentum --&gt; Eddy Viscosity Coeff --&gt; Coeff Backscatter</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof">bool</td>
+</tr><tr>
+    <td class="prop-name">Tracers --&gt; Mesoscale Closure</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof">bool</td>
+</tr><tr>
+    <td class="prop-name">Tracers --&gt; Submesoscale Mixing</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof">bool</td>
+</tr><tr>
+    <td class="prop-name">Tracers --&gt; Operator --&gt; Direction</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof"><select><option>enum</option><option title="Horizontal">Horizontal</option><option title="Isopycnal">Isopycnal</option><option title="Isoneutral">Isoneutral</option><option title="Geopotential">Geopotential</option><option title="Iso-level">Iso-level</option></select></td>
+</tr><tr>
+    <td class="prop-name">Tracers --&gt; Operator --&gt; Order</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof"><select><option>enum</option><option title="Harmonic">Harmonic</option><option title="Bi-harmonic">Bi-harmonic</option></select></td>
+</tr><tr>
+    <td class="prop-name">Tracers --&gt; Operator --&gt; Discretisation</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof"><select><option>enum</option><option title="Second order">Second order</option><option title="Higher order">Higher order</option><option title="Flux limiter">Flux limiter</option></select></td>
+</tr><tr>
+    <td class="prop-name">Tracers --&gt; Eddy Viscosity Coeff --&gt; Type</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof"><select><option>enum</option><option title="Constant">Constant</option><option title="Space varying">Space varying</option><option title="Time + space varying (Smagorinsky)">Time + space varying (Smagorinsky)</option></select></td>
+</tr><tr>
+    <td class="prop-name">Tracers --&gt; Eddy Viscosity Coeff --&gt; Constant Coefficient</td>
+    <td class="prop-cardinality">0.1</td>
+    <td class="prop-typeof">int</td>
+</tr><tr>
+    <td class="prop-name">Tracers --&gt; Eddy Viscosity Coeff --&gt; Variable Coefficient</td>
+    <td class="prop-cardinality">0.1</td>
+    <td class="prop-typeof">str</td>
+</tr><tr>
+    <td class="prop-name">Tracers --&gt; Eddy Viscosity Coeff --&gt; Coeff Background</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof">int</td>
+</tr><tr>
+    <td class="prop-name">Tracers --&gt; Eddy Viscosity Coeff --&gt; Coeff Backscatter</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof">bool</td>
+</tr><tr>
+    <td class="prop-name">Tracers --&gt; Eddy Induced Velocity --&gt; Type</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof"><select><option>enum</option><option title="GM">GM</option></select></td>
+</tr><tr>
+    <td class="prop-name">Tracers --&gt; Eddy Induced Velocity --&gt; Constant Val</td>
+    <td class="prop-cardinality">0.1</td>
+    <td class="prop-typeof">int</td>
+</tr><tr>
+    <td class="prop-name">Tracers --&gt; Eddy Induced Velocity --&gt; Flux Type</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof">str</td>
+</tr><tr>
+    <td class="prop-name">Tracers --&gt; Eddy Induced Velocity --&gt; Added Diffusivity</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof">str</td>
+</tr></tbody>
+    </table>
+</section><section id="cmip6.ocean.vertical_physics">
+    <header>
+        <h3 class="bg-primary">Vertical Physics</h3>
+    </header>
+    <table class="table table-striped table-hover table-condensed">
+        <thead>
+            <tr>
+                <th class="prop-name">Property Long Name</th>
+                <th class="prop-cardinality">Cardinality</th>
+                <th class="prop-typeof">Type</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr>
+    <td class="prop-name">Boundary Layer Mixing --&gt; Details --&gt; Langmuir Cells Mixing</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof">bool</td>
+</tr><tr>
+    <td class="prop-name">Boundary Layer Mixing --&gt; Tracers --&gt; Type</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof"><select><option>enum</option><option title="Constant value">Constant value</option><option title="Turbulent closure - TKE">Turbulent closure - TKE</option><option title="Turbulent closure - KPP">Turbulent closure - KPP</option><option title="Turbulent closure - Mellor-Yamada">Turbulent closure - Mellor-Yamada</option><option title="Turbulent closure - Bulk Mixed Layer">Turbulent closure - Bulk Mixed Layer</option><option title="Richardson number dependent - PP">Richardson number dependent - PP</option><option title="Richardson number dependent - KT">Richardson number dependent - KT</option><option title="Imbeded as isopycnic vertical coordinate">Imbeded as isopycnic vertical coordinate</option></select></td>
+</tr><tr>
+    <td class="prop-name">Boundary Layer Mixing --&gt; Tracers --&gt; Closure Order</td>
+    <td class="prop-cardinality">0.1</td>
+    <td class="prop-typeof">float</td>
+</tr><tr>
+    <td class="prop-name">Boundary Layer Mixing --&gt; Tracers --&gt; Constant</td>
+    <td class="prop-cardinality">0.1</td>
+    <td class="prop-typeof">int</td>
+</tr><tr>
+    <td class="prop-name">Boundary Layer Mixing --&gt; Tracers --&gt; Background</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof">str</td>
+</tr><tr>
+    <td class="prop-name">Boundary Layer Mixing --&gt; Momentum --&gt; Type</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof"><select><option>enum</option><option title="Constant value">Constant value</option><option title="Turbulent closure - TKE">Turbulent closure - TKE</option><option title="Turbulent closure - KPP">Turbulent closure - KPP</option><option title="Turbulent closure - Mellor-Yamada">Turbulent closure - Mellor-Yamada</option><option title="Turbulent closure - Bulk Mixed Layer">Turbulent closure - Bulk Mixed Layer</option><option title="Richardson number dependent - PP">Richardson number dependent - PP</option><option title="Richardson number dependent - KT">Richardson number dependent - KT</option><option title="Imbeded as isopycnic vertical coordinate">Imbeded as isopycnic vertical coordinate</option></select></td>
+</tr><tr>
+    <td class="prop-name">Boundary Layer Mixing --&gt; Momentum --&gt; Closure Order</td>
+    <td class="prop-cardinality">0.1</td>
+    <td class="prop-typeof">float</td>
+</tr><tr>
+    <td class="prop-name">Boundary Layer Mixing --&gt; Momentum --&gt; Constant</td>
+    <td class="prop-cardinality">0.1</td>
+    <td class="prop-typeof">int</td>
+</tr><tr>
+    <td class="prop-name">Boundary Layer Mixing --&gt; Momentum --&gt; Background</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof">str</td>
+</tr><tr>
+    <td class="prop-name">Interior Mixing --&gt; Details --&gt; Convection Type</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof"><select><option>enum</option><option title="Non-penetrative convective adjustment">Non-penetrative convective adjustment</option><option title="Enhanced vertical diffusion">Enhanced vertical diffusion</option><option title="Included in turbulence closure">Included in turbulence closure</option></select></td>
+</tr><tr>
+    <td class="prop-name">Interior Mixing --&gt; Details --&gt; Tide Induced Mixing</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof">str</td>
+</tr><tr>
+    <td class="prop-name">Interior Mixing --&gt; Details --&gt; Double Diffusion</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof">bool</td>
+</tr><tr>
+    <td class="prop-name">Interior Mixing --&gt; Details --&gt; Shear Mixing</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof">bool</td>
+</tr><tr>
+    <td class="prop-name">Interior Mixing --&gt; Tracers --&gt; Type</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof"><select><option>enum</option><option title="Constant value">Constant value</option><option title="Turbulent closure / TKE">Turbulent closure / TKE</option><option title="Turbulent closure - Mellor-Yamada">Turbulent closure - Mellor-Yamada</option><option title="Richardson number dependent - PP">Richardson number dependent - PP</option><option title="Richardson number dependent - KT">Richardson number dependent - KT</option><option title="Imbeded as isopycnic vertical coordinate">Imbeded as isopycnic vertical coordinate</option></select></td>
+</tr><tr>
+    <td class="prop-name">Interior Mixing --&gt; Tracers --&gt; Constant</td>
+    <td class="prop-cardinality">0.1</td>
+    <td class="prop-typeof">int</td>
+</tr><tr>
+    <td class="prop-name">Interior Mixing --&gt; Tracers --&gt; Profile</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof">str</td>
+</tr><tr>
+    <td class="prop-name">Interior Mixing --&gt; Tracers --&gt; Background</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof">str</td>
+</tr><tr>
+    <td class="prop-name">Interior Mixing --&gt; Momentum --&gt; Type</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof"><select><option>enum</option><option title="Constant value">Constant value</option><option title="Turbulent closure / TKE">Turbulent closure / TKE</option><option title="Turbulent closure - Mellor-Yamada">Turbulent closure - Mellor-Yamada</option><option title="Richardson number dependent - PP">Richardson number dependent - PP</option><option title="Richardson number dependent - KT">Richardson number dependent - KT</option><option title="Imbeded as isopycnic vertical coordinate">Imbeded as isopycnic vertical coordinate</option></select></td>
+</tr><tr>
+    <td class="prop-name">Interior Mixing --&gt; Momentum --&gt; Constant</td>
+    <td class="prop-cardinality">0.1</td>
+    <td class="prop-typeof">int</td>
+</tr><tr>
+    <td class="prop-name">Interior Mixing --&gt; Momentum --&gt; Profile</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof">str</td>
+</tr><tr>
+    <td class="prop-name">Interior Mixing --&gt; Momentum --&gt; Background</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof">str</td>
+</tr></tbody>
+    </table>
+</section><section id="cmip6.ocean.uplow_boundaries">
+    <header>
+        <h3 class="bg-primary">Uplow Boundaries</h3>
+    </header>
+    <table class="table table-striped table-hover table-condensed">
+        <thead>
+            <tr>
+                <th class="prop-name">Property Long Name</th>
+                <th class="prop-cardinality">Cardinality</th>
+                <th class="prop-typeof">Type</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr>
+    <td class="prop-name">Free Surface --&gt; Scheme</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof"><select><option>enum</option><option title="Linear implicit">Linear implicit</option><option title="Linear filtered">Linear filtered</option><option title="Linear semi-explicit">Linear semi-explicit</option><option title="Non-linear implicit">Non-linear implicit</option><option title="Non-linear filtered">Non-linear filtered</option><option title="Non-linear semi-explicit">Non-linear semi-explicit</option></select></td>
+</tr><tr>
+    <td class="prop-name">Free Surface --&gt; Embeded Seaice</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof">bool</td>
+</tr><tr>
+    <td class="prop-name">Bottom Boundary Layer --&gt; Type Of Bbl</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof"><select><option>enum</option><option title="Diffusive">Diffusive</option><option title="Acvective">Acvective</option></select></td>
+</tr><tr>
+    <td class="prop-name">Bottom Boundary Layer --&gt; Lateral Mixing Coef</td>
+    <td class="prop-cardinality">0.1</td>
+    <td class="prop-typeof">int</td>
+</tr><tr>
+    <td class="prop-name">Bottom Boundary Layer --&gt; Sill Overflow</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof">str</td>
+</tr></tbody>
+    </table>
+</section><section id="cmip6.ocean.boundary_forcing">
+    <header>
+        <h3 class="bg-primary">Boundary Forcing</h3>
+    </header>
+    <table class="table table-striped table-hover table-condensed">
+        <thead>
+            <tr>
+                <th class="prop-name">Property Long Name</th>
+                <th class="prop-cardinality">Cardinality</th>
+                <th class="prop-typeof">Type</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr>
+    <td class="prop-name">Surface Pressure</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof">str</td>
+</tr><tr>
+    <td class="prop-name">Momentum Flux Correction</td>
+    <td class="prop-cardinality">0.1</td>
+    <td class="prop-typeof">str</td>
+</tr><tr>
+    <td class="prop-name">Tracers Flux Correction</td>
+    <td class="prop-cardinality">0.1</td>
+    <td class="prop-typeof">str</td>
+</tr><tr>
+    <td class="prop-name">Wave Effects</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof">str</td>
+</tr><tr>
+    <td class="prop-name">River Runoff Budget</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof">str</td>
+</tr><tr>
+    <td class="prop-name">Geothermal Heating</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof">str</td>
+</tr><tr>
+    <td class="prop-name">Momentum --&gt; Bottom Friction --&gt; Type</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof"><select><option>enum</option><option title="Linear">Linear</option><option title="Non-linear">Non-linear</option><option title="Non-linear (drag function of speed of tides)">Non-linear (drag function of speed of tides)</option><option title="Constant drag coefficient">Constant drag coefficient</option><option title="None">None</option></select></td>
+</tr><tr>
+    <td class="prop-name">Momentum --&gt; Lateral Friction --&gt; Type</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof"><select><option>enum</option><option title="None">None</option><option title="Free-slip">Free-slip</option><option title="No-slip">No-slip</option></select></td>
+</tr><tr>
+    <td class="prop-name">Tracers --&gt; Sunlight Penetration --&gt; Scheme</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof"><select><option>enum</option><option title="1 extinction depth">1 extinction depth</option><option title="2 extinction depth">2 extinction depth</option><option title="3 extinction depth">3 extinction depth</option></select></td>
+</tr><tr>
+    <td class="prop-name">Tracers --&gt; Sunlight Penetration --&gt; Ocean Colour</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof">bool</td>
+</tr><tr>
+    <td class="prop-name">Tracers --&gt; Sunlight Penetration --&gt; Extinction Depth</td>
+    <td class="prop-cardinality">0.1</td>
+    <td class="prop-typeof">str</td>
+</tr><tr>
+    <td class="prop-name">Tracers --&gt; Fresh Water Forcing --&gt; From Atmopshere</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof"><select><option>enum</option><option title="Freshwater flux">Freshwater flux</option><option title="Virtual salt flux">Virtual salt flux</option></select></td>
+</tr><tr>
+    <td class="prop-name">Tracers --&gt; Fresh Water Forcing --&gt; From Sea Ice</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof"><select><option>enum</option><option title="Freshwater flux">Freshwater flux</option><option title="Virtual salt flux">Virtual salt flux</option><option title="Real salt flux">Real salt flux</option></select></td>
+</tr><tr>
+    <td class="prop-name">Tracers --&gt; Fresh Water Forcing --&gt; Forced Mode Restoring</td>
+    <td class="prop-cardinality">1.1</td>
+    <td class="prop-typeof">str</td>
+</tr></tbody>
+    </table>
+</section></article></body>
+</html>
