@@ -11,6 +11,7 @@
 import argparse
 import os
 
+from generate_qconfig import Generator as QConfigGenerator
 from generate_json import Generator as JsonGenerator
 from generate_html import Generator as HTMLGenerator
 from generate_mm import Generator as MindmapGenerator
@@ -25,6 +26,7 @@ from utils_loader import get_short_tables
 
 # Map of generator types to generator.
 _GENERATORS = {
+    'qconfig': QConfigGenerator,
     'html': HTMLGenerator,
     'json': JsonGenerator,
     'mm': MindmapGenerator,
@@ -35,6 +37,7 @@ _GENERATORS = {
 
 # Map of generator types to encoding type.
 _ENCODINGS = {
+    'qconfig': 'json',
     'ids-level-1': 'csv',
     'ids-level-2': 'csv',
     'ids-level-3': 'csv'
@@ -42,6 +45,7 @@ _ENCODINGS = {
 
 # Map of generator types to file suffixes.
 _FILE_SUFFIXES = {
+    'qconfig': 'qconfig',
     'ids-level-1': 'ids-level-1',
     'ids-level-2': 'ids-level-2',
     'ids-level-3': 'ids-level-3'
