@@ -369,6 +369,14 @@ class Generator(SpecializationParser):
                 # assert parent_property is not None
 
         if prop.typeof_label == "ENUM":
+            enumeration_members = []
+            for i, member in enumerate(prop.enum.choices):
+                new_enumeration_member = collections.OrderedDict()
+                new_enumeration_member["order"] = i
+                new_enumeration_member["value"] = member.value
+                if member.description:
+                    new_enumeration_member["documentation"] = member.description
+                enumeration_members.append(new_enumeration_member)
             new_qconfig_property = self._emit_property(
                 name=prop.name,
                 id=prop.id,
@@ -377,14 +385,7 @@ class Generator(SpecializationParser):
                 category_id=None if parent_category is None else parent_category.get("id"),
                 property_type=QCONFIG_ENUMERATION_PROPERTY_TYPE,
                 enumeration_is_open=prop.enum.is_open,
-                enumeration_members=[
-                    {
-                        "order": i,
-                        "value": member.value,
-                        "documentation": member.description,
-                    }
-                    for i, member in enumerate(prop.enum.choices)
-                ]
+                enumeration_members=enumeration_members,
             )
         else:
             new_qconfig_property = self._emit_property(
