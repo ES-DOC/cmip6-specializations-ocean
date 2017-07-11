@@ -211,7 +211,7 @@ class Generator(SpecializationParser):
         new_qconfig_class["id"] = grid.id
         new_qconfig_class["package"] = new_qconfig_class_package
         new_qconfig_class["documentation"] = grid.description
-        new_qconfig_class["is_document"] = True
+        new_qconfig_class["is_document"] = False
 
         new_qconfig_class["categories"] = {"inherited": [], "excluded": [], "defined": []}
 
@@ -367,6 +367,8 @@ class Generator(SpecializationParser):
             if self.current_property:
                 parent_property = find_object_in_sequence({"name": self.current_property.name}, parent_model["properties"]["defined"])
                 # assert parent_property is not None
+
+        assert prop.id is not None
 
         if prop.typeof_label == "ENUM":
             enumeration_members = []
