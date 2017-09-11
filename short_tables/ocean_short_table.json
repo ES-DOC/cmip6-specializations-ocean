@@ -11,6 +11,7 @@
         "Steve Griffies (GFDL)",
         "Gokhan Danabasoglu (NCAR)"
     ],
+    "LABEL": "Main",
     "PROPERTIES": {
         "priority1": [
             "cmip6.ocean.key_properties.model_name",
