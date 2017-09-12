@@ -12,31 +12,27 @@
         "Gokhan Danabasoglu (NCAR)"
     ],
     "LABEL": "Main",
-    "PROPERTIES": {
-        "priority1": [
-            "cmip6.ocean.key_properties.model_name",
-            "cmip6.ocean.key_properties.basic_approximations",
-            "cmip6.ocean.key_properties.conservation.scheme",
-            "cmip6.ocean.key_properties.resolution.name",
-            "cmip6.ocean.key_properties.resolution.canonical_horizontal_resolution",
-            "cmip6.ocean.key_properties.resolution.number_of_vertical_levels",
-            "cmip6.ocean.grid.discretisation.horizontal.type",
-            "cmip6.ocean.grid.discretisation.vertical.coordinates",
-            "cmip6.ocean.timestepping_framework.timestepping_attributes.time_step",
-            "cmip6.ocean.lateral_physics.scheme",
-            "cmip6.ocean.lateral_physics.momentum.operator.direction",
-            "cmip6.ocean.lateral_physics.tracers.operator.direction",
-            "cmip6.ocean.vertical_physics.boundary_layer_mixing.tracers.type",
-            "cmip6.ocean.vertical_physics.interior_mixing.tracers.type"
-        ],
-        "priority2": [
-            "cmip6.ocean.advection.lateral_tracers.type",
-            "cmip6.ocean.timestepping_framework.timestepping_attributes.diurnal_cycle",
-            "cmip6.ocean.uplow_boundaries.free_surface.scheme",
-            "cmip6.ocean.uplow_boundaries.bottom_boundary_layer.type_of_bbl",
-            "cmip6.ocean.boundary_forcing.momentum_flux_correction",
-            "cmip6.ocean.boundary_forcing.tracers_flux_correction"
-        ]
-    },
+    "PROPERTIES": [
+        ["cmip6.ocean.key_properties.model_name", 1],
+        ["cmip6.ocean.key_properties.basic_approximations", 1],
+        ["cmip6.ocean.key_properties.conservation.scheme", 1],
+        ["cmip6.ocean.key_properties.resolution.name", 1],
+        ["cmip6.ocean.key_properties.resolution.canonical_horizontal_resolution", 1],
+        ["cmip6.ocean.key_properties.resolution.number_of_vertical_levels", 1],
+        ["cmip6.ocean.grid.discretisation.horizontal.type", 1],
+        ["cmip6.ocean.grid.discretisation.vertical.coordinates", 1],
+        ["cmip6.ocean.advection.lateral_tracers.type", 2],
+        ["cmip6.ocean.timestepping_framework.timestepping_attributes.time_step", 1],
+        ["cmip6.ocean.timestepping_framework.timestepping_attributes.diurnal_cycle", 2],
+        ["cmip6.ocean.lateral_physics.scheme", 1],
+        ["cmip6.ocean.lateral_physics.momentum.operator.direction", 1],
+        ["cmip6.ocean.lateral_physics.tracers.operator.direction", 1],
+        ["cmip6.ocean.vertical_physics.boundary_layer_mixing.tracers.type", 1],
+        ["cmip6.ocean.vertical_physics.interior_mixing.tracers.type", 1],
+        ["cmip6.ocean.uplow_boundaries.free_surface.scheme", 2],
+        ["cmip6.ocean.uplow_boundaries.bottom_boundary_layer.type_of_bbl", 2],
+        ["cmip6.ocean.boundary_forcing.momentum_flux_correction", 2],
+        ["cmip6.ocean.boundary_forcing.tracers_flux_correction", 2]
+    ],
     "QC_STATUS": "draft"
 }
