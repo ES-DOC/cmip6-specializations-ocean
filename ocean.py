@@ -52,14 +52,14 @@ CMIP5_MAPPINGS_SYNCED_AT = "0.4.0"
 DESCRIPTION = 'Ocean Realm'
 
 # --------------------------------------------------------------------
-# GRID: The grid used to layout the variables
-# --------------------------------------------------------------------
-GRID = 'ocean_grid'
-
-# --------------------------------------------------------------------
 # KEY PROPERTIES: Key properties (differing from defaults (grid, timestep etc))
 # --------------------------------------------------------------------
 KEY_PROPERTIES = 'ocean_key_properties'
+
+# --------------------------------------------------------------------
+# GRID: The grid used to layout the variables
+# --------------------------------------------------------------------
+GRID = 'ocean_grid'
 
 # --------------------------------------------------------------------
 # PROCESSES: Simulated processes
