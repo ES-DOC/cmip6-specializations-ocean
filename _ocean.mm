@@ -3575,14 +3575,14 @@
         <dt><b>Priority</b></dt><dd>2</dd>
     </dl>
   </body>
-</html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" STYLE="bubble" TEXT="cmip6.ocean.timestepping_framework.timestepping_attributes.time_step"><richcontent TYPE="NOTE"><html>
+</html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" STYLE="bubble" TEXT="cmip6.ocean.timestepping_framework.tracers.time_step"><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
         <dt><b>Priority</b></dt><dd>1</dd>
     </dl>
   </body>
-</html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" STYLE="bubble" TEXT="cmip6.ocean.timestepping_framework.timestepping_attributes.diurnal_cycle"><richcontent TYPE="NOTE"><html>
+</html></richcontent></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" STYLE="bubble" TEXT="cmip6.ocean.timestepping_framework.attributes.diurnal_cycle"><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
