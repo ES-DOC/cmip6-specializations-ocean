@@ -40,12 +40,16 @@ cmip6.ocean.grid.discretisation.vertical.partial_steps, Ocean > Grid > Discretis
 cmip6.ocean.grid.discretisation.horizontal.type, Ocean > Grid > Discretisation > Horizontal > Type, property
 cmip6.ocean.grid.discretisation.horizontal.scheme, Ocean > Grid > Discretisation > Horizontal > Scheme, property
 , , 
-cmip6.ocean.timestepping_framework.timestepping_attributes.time_step, Ocean > Timestepping Framework > Timestepping Attributes > Time Step, property
-cmip6.ocean.timestepping_framework.timestepping_attributes.diurnal_cycle, Ocean > Timestepping Framework > Timestepping Attributes > Diurnal Cycle, property
-cmip6.ocean.timestepping_framework.timestepping_tracers_scheme.tracers, Ocean > Timestepping Framework > Timestepping Tracers Scheme > Tracers, property
-cmip6.ocean.timestepping_framework.barotropic_solver_scheme.barotropic_solver, Ocean > Timestepping Framework > Barotropic Solver Scheme > Barotropic Solver, property
-cmip6.ocean.timestepping_framework.barotropic_solver_scheme.type, Ocean > Timestepping Framework > Barotropic Solver Scheme > Type, property
-cmip6.ocean.timestepping_framework.barotropic_momentum_scheme.barotropic_momentum, Ocean > Timestepping Framework > Barotropic Momentum Scheme > Barotropic Momentum, property
+cmip6.ocean.timestepping_framework.attributes.overal_description, Ocean > Timestepping Framework > Attributes > Overal Description, property
+cmip6.ocean.timestepping_framework.attributes.diurnal_cycle, Ocean > Timestepping Framework > Attributes > Diurnal Cycle, property
+cmip6.ocean.timestepping_framework.tracers.scheme, Ocean > Timestepping Framework > Tracers > Scheme, property
+cmip6.ocean.timestepping_framework.tracers.time_step, Ocean > Timestepping Framework > Tracers > Time Step, property
+cmip6.ocean.timestepping_framework.baroclinic_dynamics.type, Ocean > Timestepping Framework > Baroclinic Dynamics > Type, property
+cmip6.ocean.timestepping_framework.baroclinic_dynamics.scheme, Ocean > Timestepping Framework > Baroclinic Dynamics > Scheme, property
+cmip6.ocean.timestepping_framework.baroclinic_dynamics.time_step, Ocean > Timestepping Framework > Baroclinic Dynamics > Time Step, property
+cmip6.ocean.timestepping_framework.barotropic.splitting, Ocean > Timestepping Framework > Barotropic > Splitting, property
+cmip6.ocean.timestepping_framework.barotropic.time_step, Ocean > Timestepping Framework > Barotropic > Time Step, property
+cmip6.ocean.timestepping_framework.vertical_physics.method, Ocean > Timestepping Framework > Vertical Physics > Method, property
 , , 
 cmip6.ocean.advection.momentum.type, Ocean > Advection > Momentum > Type, property
 cmip6.ocean.advection.momentum.scheme_name, Ocean > Advection > Momentum > Scheme Name, property
