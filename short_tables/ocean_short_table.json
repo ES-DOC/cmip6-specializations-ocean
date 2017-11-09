@@ -3,13 +3,15 @@
         "Eric Guilyardi"
     ],
     "CHANGE_HISTORY": [
-        ["0.1.0", "2017-01-13", "Eric Guilyardi", "Initialised"]
+        ["0.1.0", "2017-01-13", "Eric Guilyardi", "Initialised"],
+        ["0.2.0", "2017-11-06", "Eric Guilyardi", "Revision following community review 2017"]
     ],
     "CONTACT": "Eric Guilyardi",
     "CONTRIBUTORS": [
         "Julie Dehayes (LOCEAN/IPSL)",
         "Steve Griffies (GFDL)",
-        "Gokhan Danabasoglu (NCAR)"
+        "Gokhan Danabasoglu (NCAR)",
+        "Frédéric Chevallier (CNRM)"
     ],
     "LABEL": "Ocean CMIP6 short table ",
     "PROPERTIES": [
@@ -29,7 +31,7 @@
         ["cmip6.ocean.lateral_physics.tracers.operator.direction", 1],
         ["cmip6.ocean.vertical_physics.boundary_layer_mixing.tracers.type", 1],
         ["cmip6.ocean.vertical_physics.interior_mixing.tracers.type", 1],
-        ["cmip6.ocean.uplow_boundaries.free_surface.scheme", 2],
+        ["cmip6.ocean.uplow_boundaries.free_surface.scheme", 1],
         ["cmip6.ocean.uplow_boundaries.bottom_boundary_layer.type_of_bbl", 2],
         ["cmip6.ocean.boundary_forcing.momentum_flux_correction", 2],
         ["cmip6.ocean.boundary_forcing.tracers_flux_correction", 2]
