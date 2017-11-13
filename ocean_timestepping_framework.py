@@ -39,7 +39,7 @@ DESCRIPTION = 'Ocean Timestepping Framework'
 DETAILS['toplevel:attributes'] = {
     'description': 'Properties of time stepping in ocean',
     'properties': [
-        ('overal_description','str','1.1',
+        ('overall_description','str','1.1',
             'Overview of lateral and vertical time stepping in ocean'),
         ('diurnal_cycle', 'ENUM:diurnal_cycle_types', '1.1',
             'Diurnal cycle type'),

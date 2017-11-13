@@ -75,8 +75,8 @@ DETAILS['momentum:eddy_viscosity_coeff'] = {
             'If constant, value of eddy viscosity coeff in lateral physics momemtum scheme (in m2/s)'),
         ('variable_coefficient', 'str', '0.1',
             'If space-varying, describe variations of eddy viscosity coeff in lateral physics momemtum scheme'),
-        ('coeff_background', 'int', '1.1',
-            'Background value of eddy viscosity coeff in lateral physics momemtum scheme (in m2/s)'),
+        ('coeff_background', 'str', '1.1',
+            'Describe background eddy viscosity coeff in lateral physics momemtum scheme (give values in m2/s)'),
         ('coeff_backscatter', 'bool', '1.1',
             'Is there backscatter in eddy viscosity coeff in lateral physics momemtum scheme ?')
         ]
@@ -123,7 +123,7 @@ DETAILS['tracers:eddy_viscosity_coeff'] = {
         ('variable_coefficient', 'str', '0.1',
             'If space-varying, describe variations of eddy viscosity coeff in lateral physics tracers scheme'),
         ('coeff_background', 'int', '1.1',
-            'Background value of eddy viscosity coeff in lateral physics tracers scheme (in m2/s)'),
+            'Describe background eddy viscosity coeff in lateral physics tracers scheme (give values in m2/s)'),
         ('coeff_backscatter', 'bool', '1.1',
             'Is there backscatter in eddy viscosity coeff in lateral physics tracers scheme ?')
         ]
