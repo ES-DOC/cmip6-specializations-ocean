@@ -37,6 +37,8 @@ DESCRIPTION = 'Ocean lateral physics'
 DETAILS['toplevel'] = {
     'description': 'Top level lateral physics properties',
     'properties': [
+        ('overview','str','1.1',
+            'Overview of lateral physics in ocean'),
         ('scheme', 'ENUM:latphys_transient_eddy_types', '1.1',
             'Type of transient eddy representation in ocean'),
         ]

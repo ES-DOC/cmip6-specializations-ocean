@@ -55,7 +55,7 @@ CMIP5_MAPPINGS_SYNCED_AT = "0.4.0"
 DESCRIPTION = 'Ocean Realm'
 
 # --------------------------------------------------------------------
-# KEY PROPERTIES: Key properties (differing from defaults (grid, timestep etc))
+# KEY PROPERTIES: Key properties
 # --------------------------------------------------------------------
 KEY_PROPERTIES = 'ocean_key_properties'
 
