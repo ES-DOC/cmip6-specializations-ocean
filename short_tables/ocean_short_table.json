@@ -13,7 +13,7 @@
         "Gokhan Danabasoglu (NCAR)",
         "Frédéric Chevallier (CNRM)"
     ],
-    "LABEL": "Ocean CMIP6 short table ",
+    "LABEL": "Ocean CMIP6 short table",
     "PROPERTIES": [
         ["cmip6.ocean.key_properties.model_name", 1],
         ["cmip6.ocean.key_properties.basic_approximations", 1],
