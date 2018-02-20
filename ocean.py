@@ -43,13 +43,16 @@ CHANGE_HISTORY = [
         "Updates following community review phase 2"),
     ("0.8.0", "2017-12-22", "Eric Guilyardi",
         "Updates following community review phase 3"),
+    ("1.0.0", "2018-02-21", "Eric Guilyardi",
+        "Version for release 1.0"),
+
     ]
 
 # --------------------------------------------------------------------
 # CMIP5_MAPPINGS_SYNCED_AT: Latest version that has been synced with CMIP5 mappings.
 # --------------------------------------------------------------------
 #
-CMIP5_MAPPINGS_SYNCED_AT = "0.8.0"
+CMIP5_MAPPINGS_SYNCED_AT = "1.0.0"
 
 # --------------------------------------------------------------------
 # DESCRIPTION: Scientific context of this specialization
