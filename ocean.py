@@ -45,7 +45,6 @@ CHANGE_HISTORY = [
         "Updates following community review phase 3"),
     ("1.0.0", "2018-02-21", "Eric Guilyardi",
         "Version for release 1.0"),
-
     ]
 
 # --------------------------------------------------------------------
