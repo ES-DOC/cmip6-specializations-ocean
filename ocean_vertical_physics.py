@@ -12,47 +12,15 @@ DETAILS = OrderedDict()
 ENUMERATIONS = OrderedDict()
 
 # --------------------------------------------------------------------
-# CONTACT: Set to specialization co-ordinator.
-# --------------------------------------------------------------------
-CONTACT = 'Eric Guilyardi'
-
-# --------------------------------------------------------------------
-# AUTHORS: Set to specialization authors (comma delimited).
-# --------------------------------------------------------------------
-AUTHORS = 'Eric Guilyardi'
-
-# --------------------------------------------------------------------
-# QUALITY CONTROL STATUS: Set to 'draft' or 'complete'
-# --------------------------------------------------------------------
-QC_STATUS = 'draft'
-
-# --------------------------------------------------------------------
 # DESCRIPTION: Short description of the specialization.
 # --------------------------------------------------------------------
 DESCRIPTION = 'Ocean Vertical Physics'
 
 # --------------------------------------------------------------------
-# PROCESS: top level
-# --------------------------------------------------------------------
-DETAILS['toplevel'] = {
-    'description': 'Top level vertical physics properties',
-    'properties': [
-        ('overview','str','1.1',
-            'Overview of vertical physics in ocean'),
-        ]
-    }
-
-# --------------------------------------------------------------------
 # SUB-PROCESS: Boundary Layer Mixing.
 # --------------------------------------------------------------------
 DETAILS['boundary_layer_mixing'] = {
-    'description': 'Properties of boundary layer mixing in the ocean (aka mixed layer)',
-    'properties': [],
-    'detail_sets': [
-        'details',
-        'tracers',
-        'momentum'
-        ]
+    'description': 'Properties of boundary layer mixing in the ocean (aka mixed layer)'
     }
 
 DETAILS['boundary_layer_mixing:details'] = {
@@ -96,13 +64,7 @@ DETAILS['boundary_layer_mixing:momentum'] = {
 # SUB-PROCESS: Interior Layer Mixing.
 # --------------------------------------------------------------------
 DETAILS['interior_mixing'] = {
-    'description': 'Properties of interior vertical mixing in the ocean',
-    'properties': [],
-    'detail_sets': [
-        'details',
-        'tracers',
-        'momentum'
-        ]
+    'description': 'Properties of interior vertical mixing in the ocean'
     }
 
 DETAILS['interior_mixing:details'] = {

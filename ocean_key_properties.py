@@ -12,21 +12,6 @@ DETAILS = OrderedDict()
 ENUMERATIONS = OrderedDict()
 
 # --------------------------------------------------------------------
-# CONTACT: Set to specialization co-ordinator.
-# --------------------------------------------------------------------
-CONTACT = 'Eric Guilyardi'
-
-# --------------------------------------------------------------------
-# AUTHORS: Set to specialization authors (comma delimited).
-# --------------------------------------------------------------------
-AUTHORS = 'Eric Guilyardi'
-
-# --------------------------------------------------------------------
-# QUALITY CONTROL STATUS: Set to 'draft' or 'complete'
-# --------------------------------------------------------------------
-QC_STATUS = 'draft'
-
-# --------------------------------------------------------------------
 # DESCRIPTION: Short description of the specialization.
 # --------------------------------------------------------------------
 DESCRIPTION = 'Ocean key properties'
@@ -37,10 +22,6 @@ DESCRIPTION = 'Ocean key properties'
 DETAILS['toplevel'] = {
     'description': 'General key properties in ocean',
     'properties': [
-        ('model_overview', 'str', '1.1',
-            'Overview of ocean model.'),
-        ('model_name', 'str', '1.1',
-            'Name of ocean model code (NEMO 3.6, MOM 5.0,...)'),
         ('model_family', 'ENUM:model_family_types', '1.1',
             'Type of ocean model.'),
         ('basic_approximations', 'ENUM:ocean_basic_approx_types', '1.N',

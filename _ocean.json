@@ -1,22 +1,30 @@
 {
     "label": "Ocean", 
-    "description": "Ocean Realm", 
+    "description": "Ocean", 
     "id": "cmip6.ocean", 
-    "contact": "Eric Guilyardi", 
+    "contact": null, 
     "processes": [
         {
             "label": "Timestepping Framework", 
             "description": "Ocean Timestepping Framework", 
             "id": "cmip6.ocean.timestepping_framework", 
-            "contact": "Eric Guilyardi", 
+            "contact": null, 
             "properties": [
                 {
-                    "label": "Overview", 
-                    "description": "Overview of time stepping in ocean", 
-                    "id": "cmip6.ocean.timestepping_framework.overview", 
-                    "cardinality": "1.1", 
+                    "label": "Name", 
+                    "description": "Commonly used name for the timestepping framework in ocean model.", 
+                    "id": "cmip6.ocean.timestepping_framework.name", 
+                    "cardinality": "0.1", 
                     "type": "str", 
                     "uiOrdinal": 1
+                }, 
+                {
+                    "label": "Overview", 
+                    "description": "Overview of ocean timestepping framework in ocean model.", 
+                    "id": "cmip6.ocean.timestepping_framework.overview", 
+                    "cardinality": "0.1", 
+                    "type": "str", 
+                    "uiOrdinal": 2
                 }, 
                 {
                     "label": "Diurnal Cycle", 
@@ -43,7 +51,7 @@
                             }
                         ]
                     }, 
-                    "uiOrdinal": 2
+                    "uiOrdinal": 3
                 }
             ], 
             "propertySets": [
@@ -249,15 +257,23 @@
             "label": "Advection", 
             "description": "Ocean advection", 
             "id": "cmip6.ocean.advection", 
-            "contact": "Eric Guilyardi", 
+            "contact": null, 
             "properties": [
                 {
-                    "label": "Overview", 
-                    "description": "Overview of advection in ocean", 
-                    "id": "cmip6.ocean.advection.overview", 
-                    "cardinality": "1.1", 
+                    "label": "Name", 
+                    "description": "Commonly used name for the advection in ocean model.", 
+                    "id": "cmip6.ocean.advection.name", 
+                    "cardinality": "0.1", 
                     "type": "str", 
                     "uiOrdinal": 1
+                }, 
+                {
+                    "label": "Overview", 
+                    "description": "Overview of ocean advection in ocean model.", 
+                    "id": "cmip6.ocean.advection.overview", 
+                    "cardinality": "0.1", 
+                    "type": "str", 
+                    "uiOrdinal": 2
                 }
             ], 
             "subProcesses": [
@@ -265,7 +281,7 @@
                     "label": "Momentum", 
                     "description": "Properties of lateral momemtum advection scheme in ocean", 
                     "id": "cmip6.ocean.advection.momentum", 
-                    "contact": "Eric Guilyardi", 
+                    "contact": null, 
                     "properties": [
                         {
                             "label": "Type", 
@@ -312,7 +328,7 @@
                     "label": "Lateral Tracers", 
                     "description": "Properties of lateral tracer advection scheme in ocean", 
                     "id": "cmip6.ocean.advection.lateral_tracers", 
-                    "contact": "Eric Guilyardi", 
+                    "contact": null, 
                     "properties": [
                         {
                             "label": "Order", 
@@ -391,7 +407,7 @@
                     "label": "Vertical Tracers", 
                     "description": "Properties of vertical tracer advection scheme in ocean", 
                     "id": "cmip6.ocean.advection.vertical_tracers", 
-                    "contact": "Eric Guilyardi", 
+                    "contact": null, 
                     "properties": [
                         {
                             "label": "Name", 
@@ -417,15 +433,23 @@
             "label": "Lateral Physics", 
             "description": "Ocean lateral physics", 
             "id": "cmip6.ocean.lateral_physics", 
-            "contact": "Eric Guilyardi", 
+            "contact": null, 
             "properties": [
                 {
-                    "label": "Overview", 
-                    "description": "Overview of lateral physics in ocean", 
-                    "id": "cmip6.ocean.lateral_physics.overview", 
-                    "cardinality": "1.1", 
+                    "label": "Name", 
+                    "description": "Commonly used name for the lateral physics in ocean model.", 
+                    "id": "cmip6.ocean.lateral_physics.name", 
+                    "cardinality": "0.1", 
                     "type": "str", 
                     "uiOrdinal": 1
+                }, 
+                {
+                    "label": "Overview", 
+                    "description": "Overview of ocean lateral physics in ocean model.", 
+                    "id": "cmip6.ocean.lateral_physics.overview", 
+                    "cardinality": "0.1", 
+                    "type": "str", 
+                    "uiOrdinal": 2
                 }, 
                 {
                     "label": "Scheme", 
@@ -452,7 +476,7 @@
                             }
                         ]
                     }, 
-                    "uiOrdinal": 2
+                    "uiOrdinal": 3
                 }
             ], 
             "subProcesses": [
@@ -460,7 +484,7 @@
                     "label": "Momentum", 
                     "description": "Properties of lateral physics for momentum in ocean", 
                     "id": "cmip6.ocean.lateral_physics.momentum", 
-                    "contact": "Eric Guilyardi", 
+                    "contact": null, 
                     "propertySets": [
                         {
                             "label": "Operator", 
@@ -626,7 +650,7 @@
                     "label": "Tracers", 
                     "description": "Properties of lateral physics for tracers in ocean", 
                     "id": "cmip6.ocean.lateral_physics.tracers", 
-                    "contact": "Eric Guilyardi", 
+                    "contact": null, 
                     "properties": [
                         {
                             "label": "Mesoscale Closure", 
@@ -862,15 +886,23 @@
             "label": "Vertical Physics", 
             "description": "Ocean Vertical Physics", 
             "id": "cmip6.ocean.vertical_physics", 
-            "contact": "Eric Guilyardi", 
+            "contact": null, 
             "properties": [
                 {
-                    "label": "Overview", 
-                    "description": "Overview of vertical physics in ocean", 
-                    "id": "cmip6.ocean.vertical_physics.overview", 
-                    "cardinality": "1.1", 
+                    "label": "Name", 
+                    "description": "Commonly used name for the vertical physics in ocean model.", 
+                    "id": "cmip6.ocean.vertical_physics.name", 
+                    "cardinality": "0.1", 
                     "type": "str", 
                     "uiOrdinal": 1
+                }, 
+                {
+                    "label": "Overview", 
+                    "description": "Overview of ocean vertical physics in ocean model.", 
+                    "id": "cmip6.ocean.vertical_physics.overview", 
+                    "cardinality": "0.1", 
+                    "type": "str", 
+                    "uiOrdinal": 2
                 }
             ], 
             "subProcesses": [
@@ -878,7 +910,7 @@
                     "label": "Boundary Layer Mixing", 
                     "description": "Properties of boundary layer mixing in the ocean (aka mixed layer)", 
                     "id": "cmip6.ocean.vertical_physics.boundary_layer_mixing", 
-                    "contact": "Eric Guilyardi", 
+                    "contact": null, 
                     "propertySets": [
                         {
                             "label": "Details", 
@@ -1057,7 +1089,7 @@
                     "label": "Interior Mixing", 
                     "description": "Properties of interior vertical mixing in the ocean", 
                     "id": "cmip6.ocean.vertical_physics.interior_mixing", 
-                    "contact": "Eric Guilyardi", 
+                    "contact": null, 
                     "propertySets": [
                         {
                             "label": "Details", 
@@ -1265,21 +1297,31 @@
             "label": "Uplow Boundaries", 
             "description": "Ocean upper / lower boundaries", 
             "id": "cmip6.ocean.uplow_boundaries", 
-            "contact": "Eric Guilyardi", 
+            "contact": null, 
+            "properties": [
+                {
+                    "label": "Name", 
+                    "description": "Commonly used name for the uplow boundaries in ocean model.", 
+                    "id": "cmip6.ocean.uplow_boundaries.name", 
+                    "cardinality": "0.1", 
+                    "type": "str", 
+                    "uiOrdinal": 1
+                }, 
+                {
+                    "label": "Overview", 
+                    "description": "Overview of ocean upper / lower boundaries in ocean model.", 
+                    "id": "cmip6.ocean.uplow_boundaries.overview", 
+                    "cardinality": "0.1", 
+                    "type": "str", 
+                    "uiOrdinal": 2
+                }
+            ], 
             "propertySets": [
                 {
                     "label": "Free Surface", 
                     "description": "Properties of free surface in ocean", 
                     "id": "cmip6.ocean.uplow_boundaries.free_surface", 
                     "properties": [
-                        {
-                            "label": "Overview", 
-                            "description": "Overview of free surface in ocean", 
-                            "id": "cmip6.ocean.uplow_boundaries.free_surface.overview", 
-                            "cardinality": "1.1", 
-                            "type": "str", 
-                            "uiOrdinal": 1
-                        }, 
                         {
                             "label": "Scheme", 
                             "description": "Free surface scheme in ocean", 
@@ -1321,7 +1363,7 @@
                                     }
                                 ]
                             }, 
-                            "uiOrdinal": 2
+                            "uiOrdinal": 1
                         }, 
                         {
                             "label": "Embeded Seaice", 
@@ -1329,7 +1371,7 @@
                             "id": "cmip6.ocean.uplow_boundaries.free_surface.embeded_seaice", 
                             "cardinality": "1.1", 
                             "type": "bool", 
-                            "uiOrdinal": 3
+                            "uiOrdinal": 2
                         }
                     ]
                 }, 
@@ -1393,15 +1435,23 @@
             "label": "Boundary Forcing", 
             "description": "Ocean boundary forcing", 
             "id": "cmip6.ocean.boundary_forcing", 
-            "contact": "Eric Guilyardi", 
+            "contact": null, 
             "properties": [
                 {
-                    "label": "Overview", 
-                    "description": "Overview of boundary forcing in ocean", 
-                    "id": "cmip6.ocean.boundary_forcing.overview", 
-                    "cardinality": "1.1", 
+                    "label": "Name", 
+                    "description": "Commonly used name for the boundary forcing in ocean model.", 
+                    "id": "cmip6.ocean.boundary_forcing.name", 
+                    "cardinality": "0.1", 
                     "type": "str", 
                     "uiOrdinal": 1
+                }, 
+                {
+                    "label": "Overview", 
+                    "description": "Overview of ocean boundary forcing in ocean model.", 
+                    "id": "cmip6.ocean.boundary_forcing.overview", 
+                    "cardinality": "0.1", 
+                    "type": "str", 
+                    "uiOrdinal": 2
                 }, 
                 {
                     "label": "Surface Pressure", 
@@ -1409,7 +1459,7 @@
                     "id": "cmip6.ocean.boundary_forcing.surface_pressure", 
                     "cardinality": "1.1", 
                     "type": "str", 
-                    "uiOrdinal": 2
+                    "uiOrdinal": 3
                 }, 
                 {
                     "label": "Momentum Flux Correction", 
@@ -1417,7 +1467,7 @@
                     "id": "cmip6.ocean.boundary_forcing.momentum_flux_correction", 
                     "cardinality": "0.1", 
                     "type": "str", 
-                    "uiOrdinal": 3
+                    "uiOrdinal": 4
                 }, 
                 {
                     "label": "Tracers Flux Correction", 
@@ -1425,7 +1475,7 @@
                     "id": "cmip6.ocean.boundary_forcing.tracers_flux_correction", 
                     "cardinality": "0.1", 
                     "type": "str", 
-                    "uiOrdinal": 4
+                    "uiOrdinal": 5
                 }, 
                 {
                     "label": "Wave Effects", 
@@ -1433,7 +1483,7 @@
                     "id": "cmip6.ocean.boundary_forcing.wave_effects", 
                     "cardinality": "1.1", 
                     "type": "str", 
-                    "uiOrdinal": 5
+                    "uiOrdinal": 6
                 }, 
                 {
                     "label": "River Runoff Budget", 
@@ -1441,7 +1491,7 @@
                     "id": "cmip6.ocean.boundary_forcing.river_runoff_budget", 
                     "cardinality": "1.1", 
                     "type": "str", 
-                    "uiOrdinal": 6
+                    "uiOrdinal": 7
                 }, 
                 {
                     "label": "Geothermal Heating", 
@@ -1449,7 +1499,7 @@
                     "id": "cmip6.ocean.boundary_forcing.geothermal_heating", 
                     "cardinality": "1.1", 
                     "type": "str", 
-                    "uiOrdinal": 7
+                    "uiOrdinal": 8
                 }
             ], 
             "subProcesses": [
@@ -1457,7 +1507,7 @@
                     "label": "Momentum", 
                     "description": "Key properties of momentum boundary forcing in the ocean", 
                     "id": "cmip6.ocean.boundary_forcing.momentum", 
-                    "contact": "Eric Guilyardi", 
+                    "contact": null, 
                     "propertySets": [
                         {
                             "label": "Bottom Friction", 
@@ -1541,7 +1591,7 @@
                     "label": "Tracers", 
                     "description": "Key properties of tracer boundary forcing in the ocean", 
                     "id": "cmip6.ocean.boundary_forcing.tracers", 
-                    "contact": "Eric Guilyardi", 
+                    "contact": null, 
                     "propertySets": [
                         {
                             "label": "Sunlight Penetration", 
@@ -1667,13 +1717,13 @@
         "label": "Grid", 
         "description": "Ocean grid", 
         "id": "cmip6.ocean.grid", 
-        "contact": "Eric Guilyardi", 
+        "contact": null, 
         "properties": [
             {
                 "label": "Overview", 
-                "description": "Overview of grid in ocean", 
+                "description": "Overview of grid in ocean model.", 
                 "id": "cmip6.ocean.grid.overview", 
-                "cardinality": "1.1", 
+                "cardinality": "0.1", 
                 "type": "str", 
                 "uiOrdinal": 1
             }
@@ -1683,7 +1733,7 @@
                 "label": "Discretisation", 
                 "description": "Type of discretisation scheme in ocean", 
                 "id": "cmip6.ocean.grid.discretisation", 
-                "contact": "Eric Guilyardi", 
+                "contact": null, 
                 "propertySets": [
                     {
                         "label": "Vertical", 
@@ -1871,20 +1921,20 @@
         "label": "Key Properties", 
         "description": "Ocean key properties", 
         "id": "cmip6.ocean.key_properties", 
-        "contact": "Eric Guilyardi", 
+        "contact": null, 
         "properties": [
             {
-                "label": "Model Overview", 
-                "description": "Overview of ocean model.", 
-                "id": "cmip6.ocean.key_properties.model_overview", 
+                "label": "Name", 
+                "description": "Name of ocean model code", 
+                "id": "cmip6.ocean.key_properties.name", 
                 "cardinality": "1.1", 
                 "type": "str", 
                 "uiOrdinal": 1
             }, 
             {
-                "label": "Model Name", 
-                "description": "Name of ocean model code (NEMO 3.6, MOM 5.0,...)", 
-                "id": "cmip6.ocean.key_properties.model_name", 
+                "label": "Overview", 
+                "description": "Overview of ocean model.", 
+                "id": "cmip6.ocean.key_properties.overview", 
                 "cardinality": "1.1", 
                 "type": "str", 
                 "uiOrdinal": 2
@@ -2260,7 +2310,7 @@
                 "label": "Resolution", 
                 "description": "Resolution in the ocean grid", 
                 "id": "cmip6.ocean.key_properties.resolution", 
-                "contact": "Eric Guilyardi", 
+                "contact": null, 
                 "properties": [
                     {
                         "label": "Name", 
@@ -2324,7 +2374,7 @@
                 "label": "Tuning Applied", 
                 "description": "Tuning methodology for ocean component", 
                 "id": "cmip6.ocean.key_properties.tuning_applied", 
-                "contact": "Eric Guilyardi", 
+                "contact": null, 
                 "properties": [
                     {
                         "label": "Description", 
@@ -2364,7 +2414,7 @@
                 "label": "Conservation", 
                 "description": "Conservation in the ocean component", 
                 "id": "cmip6.ocean.key_properties.conservation", 
-                "contact": "Eric Guilyardi", 
+                "contact": null, 
                 "properties": [
                     {
                         "label": "Description", 

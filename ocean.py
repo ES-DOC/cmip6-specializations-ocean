@@ -19,11 +19,6 @@ AUTHORS = 'Eric Guilyardi, David Hassell, Mark Greenslade'
 CONTRIBUTORS = 'CMIP5 version + Julie Dehayes (LOCEAN/IPSL), Steve Griffies (GFDL), Alistair Adcroft (GFDL), Gokhan Danabasoglu (NCAR), Gurvan Madec (LOCEAN/IPSL)'
 
 # --------------------------------------------------------------------
-# QUALITY CONTROL STATUS: Set to 'draft' or 'complete'
-# --------------------------------------------------------------------
-QC_STATUS = 'draft'
-
-# --------------------------------------------------------------------
 # CHANGE HISTORY: Set to list: (version, date, who, comment).
 # --------------------------------------------------------------------
 CHANGE_HISTORY = [
@@ -50,13 +45,12 @@ CHANGE_HISTORY = [
 # --------------------------------------------------------------------
 # CMIP5_MAPPINGS_SYNCED_AT: Latest version that has been synced with CMIP5 mappings.
 # --------------------------------------------------------------------
-#
 CMIP5_MAPPINGS_SYNCED_AT = "1.0.0"
 
 # --------------------------------------------------------------------
 # DESCRIPTION: Scientific context of this specialization
 # --------------------------------------------------------------------
-DESCRIPTION = 'Ocean Realm'
+DESCRIPTION = 'Ocean'
 
 # --------------------------------------------------------------------
 # KEY PROPERTIES: Key properties

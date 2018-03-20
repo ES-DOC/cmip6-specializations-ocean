@@ -12,21 +12,6 @@ DETAILS = OrderedDict()
 ENUMERATIONS = OrderedDict()
 
 # --------------------------------------------------------------------
-# CONTACT: Set to specialization co-ordinator.
-# --------------------------------------------------------------------
-CONTACT = 'Eric Guilyardi'
-
-# --------------------------------------------------------------------
-# AUTHORS: Set to specialization authors (comma delimited).
-# --------------------------------------------------------------------
-AUTHORS = 'Eric Guilyardi'
-
-# --------------------------------------------------------------------
-# QUALITY CONTROL STATUS: Set to 'draft' or 'complete'
-# --------------------------------------------------------------------
-QC_STATUS = 'draft'
-
-# --------------------------------------------------------------------
 # DESCRIPTION: Short description of the specialization.
 # --------------------------------------------------------------------
 DESCRIPTION = 'Ocean boundary forcing'
@@ -37,8 +22,6 @@ DESCRIPTION = 'Ocean boundary forcing'
 DETAILS['toplevel'] = {
     'description': 'Top level properties of boundary forcing',
     'properties': [
-        ('overview','str','1.1',
-            'Overview of boundary forcing in ocean'),
         ('surface_pressure', 'str', '1.1',
             'Describe how surface pressure is transmitted to ocean (via sea-ice, nothing specific,...)'),
         ('momentum_flux_correction', 'str', '0.1',
@@ -58,12 +41,7 @@ DETAILS['toplevel'] = {
 # SUB-PROCESS: Momentum.
 # --------------------------------------------------------------------
 DETAILS['momentum'] = {
-    'description': 'Key properties of momentum boundary forcing in the ocean',
-    'properties': [],
-    'detail_sets': [
-        'bottom_friction',
-        'lateral_friction'
-        ]
+    'description': 'Key properties of momentum boundary forcing in the ocean'
     }
 
 DETAILS['momentum:bottom_friction'] = {
@@ -86,12 +64,7 @@ DETAILS['momentum:lateral_friction'] = {
 # SUB-PROCESS: Tracers.
 # --------------------------------------------------------------------
 DETAILS['tracers'] = {
-    'description': 'Key properties of tracer boundary forcing in the ocean',
-    'properties': [],
-    'detail_sets': [
-        'sunlight_penetration',
-        'fresh_water_forcing',
-        ]
+    'description': 'Key properties of tracer boundary forcing in the ocean'
     }
 
 DETAILS['tracers:sunlight_penetration'] = {
