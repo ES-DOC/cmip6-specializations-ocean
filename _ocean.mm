@@ -3855,7 +3855,7 @@
         <dt><b>Description</b></dt><dd>Type of surface salinity restoring in forced mode (OMIP)</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.boundary_forcing.tracers.fresh_water_forcing.forced_mode_restoring</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.boundary_forcing.tracers.fresh_water_forcing.forced_mode_restoring</dd>
     </dl>
   </body>
-</html></richcontent></node></node></node></node><node FOLDED="true" POSITION="left" STYLE="bubble" TEXT="SHORT TABLES"><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" STYLE="bubble" TEXT="ocean"><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" STYLE="bubble" TEXT="cmip6.ocean.key_properties.model_name"><richcontent TYPE="NOTE"><html>
+</html></richcontent></node></node></node></node><node FOLDED="true" POSITION="left" STYLE="bubble" TEXT="SHORT TABLES"><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" STYLE="bubble" TEXT="ocean"><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" STYLE="bubble" TEXT="cmip6.ocean.key_properties.name"><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
