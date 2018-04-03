@@ -145,18 +145,32 @@
         <dt><b>Description</b></dt><dd>Name of ocean model code</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.name</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.name</dd>
     </dl>
   </body>
-</html></richcontent></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="overview"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
+</html></richcontent></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="keywords"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Overview of ocean model.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.overview</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.overview</dd>
+        <dt><b>Description</b></dt><dd>Keywords associated with ocean model code</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.keywords</dd><dt><b>Type</b></dt><dd>cs-str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.keywords</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Overview of ocean model.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.overview</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.overview</dd>
+        <dt><b>Description</b></dt><dd>Keywords associated with ocean model code</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.keywords</dd><dt><b>Type</b></dt><dd>cs-str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.keywords</dd>
+    </dl>
+  </body>
+</html></richcontent></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="overview"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>Overview of ocean model.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.overview</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.overview</dd>
+    </dl>
+  </body>
+</html></richcontent><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Description</b></dt><dd>Overview of ocean model.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.overview</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.overview</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="model_family"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
@@ -1010,14 +1024,14 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Overview of grid in ocean model.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.grid.overview</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.grid.overview</dd>
+        <dt><b>Description</b></dt><dd>Overview of grid in ocean model.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.grid.overview</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.grid.overview</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Overview of grid in ocean model.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.grid.overview</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.grid.overview</dd>
+        <dt><b>Description</b></dt><dd>Overview of grid in ocean model.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.grid.overview</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.grid.overview</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#ACF0F2" COLOR="#000000" FOLDED="false" STYLE="bubble" TEXT="discretisation"><font BOLD="True" NAME="courier" SIZE="12" /><richcontent TYPE="NOTE"><html>
@@ -1325,14 +1339,14 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Overview of ocean timestepping framework in ocean model.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.timestepping_framework.overview</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.timestepping_framework.overview</dd>
+        <dt><b>Description</b></dt><dd>Overview of ocean timestepping framework in ocean model.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.timestepping_framework.overview</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.timestepping_framework.overview</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Overview of ocean timestepping framework in ocean model.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.timestepping_framework.overview</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.timestepping_framework.overview</dd>
+        <dt><b>Description</b></dt><dd>Overview of ocean timestepping framework in ocean model.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.timestepping_framework.overview</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.timestepping_framework.overview</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="diurnal_cycle"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
@@ -1675,14 +1689,14 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Overview of ocean advection in ocean model.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.advection.overview</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.advection.overview</dd>
+        <dt><b>Description</b></dt><dd>Overview of ocean advection in ocean model.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.advection.overview</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.advection.overview</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Overview of ocean advection in ocean model.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.advection.overview</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.advection.overview</dd>
+        <dt><b>Description</b></dt><dd>Overview of ocean advection in ocean model.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.advection.overview</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.advection.overview</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#ACF0F2" COLOR="#000000" FOLDED="false" STYLE="bubble" TEXT="momentum"><font BOLD="True" NAME="courier" SIZE="12" /><richcontent TYPE="NOTE"><html>
@@ -1976,14 +1990,14 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Overview of ocean lateral physics in ocean model.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.lateral_physics.overview</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.lateral_physics.overview</dd>
+        <dt><b>Description</b></dt><dd>Overview of ocean lateral physics in ocean model.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.lateral_physics.overview</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.lateral_physics.overview</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Overview of ocean lateral physics in ocean model.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.lateral_physics.overview</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.lateral_physics.overview</dd>
+        <dt><b>Description</b></dt><dd>Overview of ocean lateral physics in ocean model.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.lateral_physics.overview</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.lateral_physics.overview</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="scheme"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
@@ -2627,14 +2641,14 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Overview of ocean vertical physics in ocean model.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.vertical_physics.overview</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.vertical_physics.overview</dd>
+        <dt><b>Description</b></dt><dd>Overview of ocean vertical physics in ocean model.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.vertical_physics.overview</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.vertical_physics.overview</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Overview of ocean vertical physics in ocean model.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.vertical_physics.overview</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.vertical_physics.overview</dd>
+        <dt><b>Description</b></dt><dd>Overview of ocean vertical physics in ocean model.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.vertical_physics.overview</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.vertical_physics.overview</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#ACF0F2" COLOR="#000000" FOLDED="false" STYLE="bubble" TEXT="boundary_layer_mixing"><font BOLD="True" NAME="courier" SIZE="12" /><richcontent TYPE="NOTE"><html>
@@ -3264,14 +3278,14 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Overview of ocean upper / lower boundaries in ocean model.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.uplow_boundaries.overview</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.uplow_boundaries.overview</dd>
+        <dt><b>Description</b></dt><dd>Overview of ocean upper / lower boundaries in ocean model.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.uplow_boundaries.overview</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.uplow_boundaries.overview</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Overview of ocean upper / lower boundaries in ocean model.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.uplow_boundaries.overview</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.uplow_boundaries.overview</dd>
+        <dt><b>Description</b></dt><dd>Overview of ocean upper / lower boundaries in ocean model.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.uplow_boundaries.overview</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.uplow_boundaries.overview</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#F3FFE2" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="free_surface"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
@@ -3467,14 +3481,14 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Overview of ocean boundary forcing in ocean model.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.boundary_forcing.overview</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.boundary_forcing.overview</dd>
+        <dt><b>Description</b></dt><dd>Overview of ocean boundary forcing in ocean model.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.boundary_forcing.overview</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.boundary_forcing.overview</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Overview of ocean boundary forcing in ocean model.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.boundary_forcing.overview</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.boundary_forcing.overview</dd>
+        <dt><b>Description</b></dt><dd>Overview of ocean boundary forcing in ocean model.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.boundary_forcing.overview</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.boundary_forcing.overview</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="surface_pressure"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>

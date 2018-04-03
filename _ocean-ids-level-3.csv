@@ -1,5 +1,6 @@
 cmip6-id, cmip6-label, cmip6-type
 cmip6.ocean.key_properties.name, Ocean > Key Properties > Name, property
+cmip6.ocean.key_properties.keywords, Ocean > Key Properties > Keywords, property
 cmip6.ocean.key_properties.overview, Ocean > Key Properties > Overview, property
 cmip6.ocean.key_properties.model_family, Ocean > Key Properties > Model Family, property
 cmip6.ocean.key_properties.basic_approximations, Ocean > Key Properties > Basic Approximations, property

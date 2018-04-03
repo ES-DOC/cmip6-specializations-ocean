@@ -23,7 +23,7 @@
                     "description": "Overview of ocean timestepping framework in ocean model.", 
                     "id": "cmip6.ocean.timestepping_framework.overview", 
                     "cardinality": "0.1", 
-                    "type": "str", 
+                    "type": "l", 
                     "uiOrdinal": 2
                 }, 
                 {
@@ -272,7 +272,7 @@
                     "description": "Overview of ocean advection in ocean model.", 
                     "id": "cmip6.ocean.advection.overview", 
                     "cardinality": "0.1", 
-                    "type": "str", 
+                    "type": "l", 
                     "uiOrdinal": 2
                 }
             ], 
@@ -472,7 +472,7 @@
                     "description": "Overview of ocean lateral physics in ocean model.", 
                     "id": "cmip6.ocean.lateral_physics.overview", 
                     "cardinality": "0.1", 
-                    "type": "str", 
+                    "type": "l", 
                     "uiOrdinal": 2
                 }, 
                 {
@@ -943,7 +943,7 @@
                     "description": "Overview of ocean vertical physics in ocean model.", 
                     "id": "cmip6.ocean.vertical_physics.overview", 
                     "cardinality": "0.1", 
-                    "type": "str", 
+                    "type": "l", 
                     "uiOrdinal": 2
                 }
             ], 
@@ -1374,7 +1374,7 @@
                     "description": "Overview of ocean upper / lower boundaries in ocean model.", 
                     "id": "cmip6.ocean.uplow_boundaries.overview", 
                     "cardinality": "0.1", 
-                    "type": "str", 
+                    "type": "l", 
                     "uiOrdinal": 2
                 }
             ], 
@@ -1512,7 +1512,7 @@
                     "description": "Overview of ocean boundary forcing in ocean model.", 
                     "id": "cmip6.ocean.boundary_forcing.overview", 
                     "cardinality": "0.1", 
-                    "type": "str", 
+                    "type": "l", 
                     "uiOrdinal": 2
                 }, 
                 {
@@ -1814,7 +1814,7 @@
                 "description": "Overview of grid in ocean model.", 
                 "id": "cmip6.ocean.grid.overview", 
                 "cardinality": "0.1", 
-                "type": "str", 
+                "type": "l", 
                 "uiOrdinal": 2
             }
         ], 
@@ -2032,12 +2032,20 @@
                 "uiOrdinal": 1
             }, 
             {
+                "label": "Keywords", 
+                "description": "Keywords associated with ocean model code", 
+                "id": "cmip6.ocean.key_properties.keywords", 
+                "cardinality": "1.1", 
+                "type": "cs", 
+                "uiOrdinal": 2
+            }, 
+            {
                 "label": "Overview", 
                 "description": "Overview of ocean model.", 
                 "id": "cmip6.ocean.key_properties.overview", 
                 "cardinality": "1.1", 
-                "type": "str", 
-                "uiOrdinal": 2
+                "type": "l", 
+                "uiOrdinal": 3
             }, 
             {
                 "label": "Model Family", 
@@ -2064,7 +2072,7 @@
                         }
                     ]
                 }, 
-                "uiOrdinal": 3
+                "uiOrdinal": 4
             }, 
             {
                 "label": "Basic Approximations", 
@@ -2091,7 +2099,7 @@
                         }
                     ]
                 }, 
-                "uiOrdinal": 4
+                "uiOrdinal": 5
             }, 
             {
                 "label": "Prognostic Variables", 
@@ -2134,7 +2142,7 @@
                         }
                     ]
                 }, 
-                "uiOrdinal": 5
+                "uiOrdinal": 6
             }
         ], 
         "propertySets": [
