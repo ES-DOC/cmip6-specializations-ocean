@@ -24,15 +24,15 @@ DETAILS['toplevel'] = {
     'properties': [
         ('surface_pressure', 'str', '1.1',
             'Describe how surface pressure is transmitted to ocean (via sea-ice, nothing specific,...)'),
-        ('momentum_flux_correction', 'str', '0.1',
+        ('momentum_flux_correction', 'l-str', '0.1',
             'Describe any type of ocean surface momentum flux correction and, if applicable, how it is applied and where.'),
-        ('tracers_flux_correction', 'str', '0.1',
+        ('tracers_flux_correction', 'l-str', '0.1',
             'Describe any type of ocean surface tracers flux correction and, if applicable, how it is applied and where.'),
-        ('wave_effects', 'str', '1.1',
+        ('wave_effects', 'l-str', '1.1',
             'Describe if/how wave effects are modelled at ocean surface.'),
-        ('river_runoff_budget', 'str', '1.1',
+        ('river_runoff_budget', 'l-str', '1.1',
             'Describe how river runoff from land surface is routed to ocean and any global adjustment done.'),
-        ('geothermal_heating', 'str', '1.1',
+        ('geothermal_heating', 'l-str', '1.1',
             'Describe if/how geothermal heating is present at ocean bottom.'),
         ]
     }
@@ -74,7 +74,7 @@ DETAILS['tracers:sunlight_penetration'] = {
             'Type of sunlight penetration scheme in ocean'),
          ('ocean_colour', 'bool', '1.1',
             'Is the ocean sunlight penetration scheme ocean colour dependent ?'),
-         ('extinction_depth', 'str', '0.1',
+         ('extinction_depth', 'l-str', '0.1',
             'Describe and list extinctions depths for sunlight penetration scheme (if applicable).'),
         ]
     }

@@ -32,13 +32,13 @@ DETAILS['toplevel:free_surface'] = {
 DETAILS['toplevel:bottom_boundary_layer'] = {
     'description': 'Properties of bottom boundary layer in ocean',
     'properties': [
-        ('overview','str','1.1',
+        ('overview','l-str','1.1',
             'Overview of bottom boundary layer in ocean'),
         ('type_of_bbl', 'ENUM:bottom_bl_types', '1.1',
             'Type of bottom boundary layer in ocean'),
         ('lateral_mixing_coef', 'int', '0.1',
             'If bottom BL is diffusive, specify value of lateral mixing coefficient (in m2/s)'),
-        ('sill_overflow', 'str', '1.1',
+        ('sill_overflow', 'l-str', '1.1',
             'Describe any specific treatment of sill overflows')
         ]
     }

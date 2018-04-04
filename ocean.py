@@ -40,6 +40,8 @@ CHANGE_HISTORY = [
         "Updates following community review phase 3"),
     ("1.0.0", "2018-02-21", "Eric Guilyardi",
         "Version for release 1.0"),
+    ("1.0.1", "2018-04-04", "David Hassell",
+        "Replaced some occurences of 'str' with 'cs-str' and 'l-str'"),
     ]
 
 # --------------------------------------------------------------------
