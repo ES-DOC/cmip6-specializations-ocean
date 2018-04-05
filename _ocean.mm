@@ -68,6 +68,20 @@
         <dt><b>Version</b></dt><dd>1.0.0</dd><dt><b>Date</b></dt><dd>2018-02-21</dd><dt><b>Person</b></dt><dd>Eric Guilyardi</dd><dt><b>Comment</b></dt><dd>Version for release 1.0</dd>
     </dl>
   </body>
+</html></richcontent></node><node STYLE="bubble" TEXT="1.0.1"><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Version</b></dt><dd>1.0.1</dd><dt><b>Date</b></dt><dd>2018-04-04</dd><dt><b>Person</b></dt><dd>David Hassell</dd><dt><b>Comment</b></dt><dd>Replaced some occurences of 'str' with 'cs-str' and 'l-str'</dd>
+    </dl>
+  </body>
+</html></richcontent></node><node STYLE="bubble" TEXT="1.0.2"><richcontent TYPE="NOTE"><html>
+  <head />
+  <body>
+    <dl>
+        <dt><b>Version</b></dt><dd>1.0.2</dd><dt><b>Date</b></dt><dd>2018-04-05</dd><dt><b>Person</b></dt><dd>David Hassell</dd><dt><b>Comment</b></dt><dd>changed str to bool for 'profile'</dd>
+    </dl>
+  </body>
 </html></richcontent></node></node><node FOLDED="true" POSITION="left" STYLE="bubble" TEXT="LEGEND"><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" STYLE="bubble" TEXT="enum-choice"><richcontent TYPE="NOTE"><html>
   <head />
   <body>
@@ -569,28 +583,28 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Describe any smoothing or hand editing of bathymetry in ocean</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.bathymetry.ocean_smoothing</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.bathymetry.ocean_smoothing</dd>
+        <dt><b>Description</b></dt><dd>Describe any smoothing or hand editing of bathymetry in ocean</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.bathymetry.ocean_smoothing</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.bathymetry.ocean_smoothing</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Describe any smoothing or hand editing of bathymetry in ocean</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.bathymetry.ocean_smoothing</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.bathymetry.ocean_smoothing</dd>
+        <dt><b>Description</b></dt><dd>Describe any smoothing or hand editing of bathymetry in ocean</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.bathymetry.ocean_smoothing</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.bathymetry.ocean_smoothing</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="source"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Describe source of bathymetry in ocean</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.bathymetry.source</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.bathymetry.source</dd>
+        <dt><b>Description</b></dt><dd>Describe source of bathymetry in ocean</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.bathymetry.source</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.bathymetry.source</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Describe source of bathymetry in ocean</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.bathymetry.source</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.bathymetry.source</dd>
+        <dt><b>Description</b></dt><dd>Describe source of bathymetry in ocean</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.bathymetry.source</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.bathymetry.source</dd>
     </dl>
   </body>
 </html></richcontent></node></node><node BACKGROUND_COLOR="#F3FFE2" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="nonoceanic_waters"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
@@ -604,28 +618,28 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Describe if/how isolated seas is performed</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.nonoceanic_waters.isolated_seas</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.nonoceanic_waters.isolated_seas</dd>
+        <dt><b>Description</b></dt><dd>Describe if/how isolated seas is performed</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.nonoceanic_waters.isolated_seas</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.nonoceanic_waters.isolated_seas</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Describe if/how isolated seas is performed</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.nonoceanic_waters.isolated_seas</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.nonoceanic_waters.isolated_seas</dd>
+        <dt><b>Description</b></dt><dd>Describe if/how isolated seas is performed</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.nonoceanic_waters.isolated_seas</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.nonoceanic_waters.isolated_seas</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="river_mouth"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Describe if/how river mouth mixing or estuaries specific treatment is performed</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.nonoceanic_waters.river_mouth</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.nonoceanic_waters.river_mouth</dd>
+        <dt><b>Description</b></dt><dd>Describe if/how river mouth mixing or estuaries specific treatment is performed</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.nonoceanic_waters.river_mouth</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.nonoceanic_waters.river_mouth</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Describe if/how river mouth mixing or estuaries specific treatment is performed</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.nonoceanic_waters.river_mouth</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.nonoceanic_waters.river_mouth</dd>
+        <dt><b>Description</b></dt><dd>Describe if/how river mouth mixing or estuaries specific treatment is performed</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.nonoceanic_waters.river_mouth</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.nonoceanic_waters.river_mouth</dd>
     </dl>
   </body>
 </html></richcontent></node></node><node BACKGROUND_COLOR="#F3FFE2" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="software_properties"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
@@ -667,14 +681,14 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Code language(s).</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.software_properties.code_languages</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>0.N</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.software_properties.code_languages</dd>
+        <dt><b>Description</b></dt><dd>Code language(s).</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.software_properties.code_languages</dd><dt><b>Type</b></dt><dd>cs-str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.software_properties.code_languages</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Code language(s).</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.software_properties.code_languages</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>0.N</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.software_properties.code_languages</dd>
+        <dt><b>Description</b></dt><dd>Code language(s).</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.software_properties.code_languages</dd><dt><b>Type</b></dt><dd>cs-str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.software_properties.code_languages</dd>
     </dl>
   </body>
 </html></richcontent></node></node><node BACKGROUND_COLOR="#ACF0F2" COLOR="#000000" FOLDED="false" STYLE="bubble" TEXT="resolution"><font BOLD="True" NAME="courier" SIZE="12" /><richcontent TYPE="NOTE"><html>
@@ -821,56 +835,56 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>General overview description of tuning: explain and motivate the main targets and metrics retained. andDocument the relative weight given to climate performance metrics versus process oriented metrics, andand on the possible conflicts with parameterization level tuning. In particular describe any struggle andwith a parameter value that required pushing it to its limits to solve a particular model deficiency.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.tuning_applied.description</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.tuning_applied.description</dd>
+        <dt><b>Description</b></dt><dd>General overview description of tuning: explain and motivate the main targets and metrics retained. andDocument the relative weight given to climate performance metrics versus process oriented metrics, andand on the possible conflicts with parameterization level tuning. In particular describe any struggle andwith a parameter value that required pushing it to its limits to solve a particular model deficiency.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.tuning_applied.description</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.tuning_applied.description</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>General overview description of tuning: explain and motivate the main targets and metrics retained. andDocument the relative weight given to climate performance metrics versus process oriented metrics, andand on the possible conflicts with parameterization level tuning. In particular describe any struggle andwith a parameter value that required pushing it to its limits to solve a particular model deficiency.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.tuning_applied.description</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.tuning_applied.description</dd>
+        <dt><b>Description</b></dt><dd>General overview description of tuning: explain and motivate the main targets and metrics retained. andDocument the relative weight given to climate performance metrics versus process oriented metrics, andand on the possible conflicts with parameterization level tuning. In particular describe any struggle andwith a parameter value that required pushing it to its limits to solve a particular model deficiency.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.tuning_applied.description</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.tuning_applied.description</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="global_mean_metrics_used"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>List set of metrics of the global mean state used in tuning model/component</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.tuning_applied.global_mean_metrics_used</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>0.N</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.tuning_applied.global_mean_metrics_used</dd>
+        <dt><b>Description</b></dt><dd>List set of metrics of the global mean state used in tuning model/component</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.tuning_applied.global_mean_metrics_used</dd><dt><b>Type</b></dt><dd>cs-str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.tuning_applied.global_mean_metrics_used</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>List set of metrics of the global mean state used in tuning model/component</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.tuning_applied.global_mean_metrics_used</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>0.N</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.tuning_applied.global_mean_metrics_used</dd>
+        <dt><b>Description</b></dt><dd>List set of metrics of the global mean state used in tuning model/component</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.tuning_applied.global_mean_metrics_used</dd><dt><b>Type</b></dt><dd>cs-str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.tuning_applied.global_mean_metrics_used</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="regional_metrics_used"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>List of regional metrics of mean state (e.g THC, AABW, regional means etc) used in tuning model/component</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.tuning_applied.regional_metrics_used</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>0.N</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.tuning_applied.regional_metrics_used</dd>
+        <dt><b>Description</b></dt><dd>List of regional metrics of mean state (e.g THC, AABW, regional means etc) used in tuning model/component</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.tuning_applied.regional_metrics_used</dd><dt><b>Type</b></dt><dd>cs-str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.tuning_applied.regional_metrics_used</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>List of regional metrics of mean state (e.g THC, AABW, regional means etc) used in tuning model/component</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.tuning_applied.regional_metrics_used</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>0.N</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.tuning_applied.regional_metrics_used</dd>
+        <dt><b>Description</b></dt><dd>List of regional metrics of mean state (e.g THC, AABW, regional means etc) used in tuning model/component</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.tuning_applied.regional_metrics_used</dd><dt><b>Type</b></dt><dd>cs-str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.tuning_applied.regional_metrics_used</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="trend_metrics_used"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>List observed trend metrics used in tuning model/component</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.tuning_applied.trend_metrics_used</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>0.N</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.tuning_applied.trend_metrics_used</dd>
+        <dt><b>Description</b></dt><dd>List observed trend metrics used in tuning model/component</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.tuning_applied.trend_metrics_used</dd><dt><b>Type</b></dt><dd>cs-str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.tuning_applied.trend_metrics_used</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>List observed trend metrics used in tuning model/component</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.tuning_applied.trend_metrics_used</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>0.N</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.tuning_applied.trend_metrics_used</dd>
+        <dt><b>Description</b></dt><dd>List observed trend metrics used in tuning model/component</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.tuning_applied.trend_metrics_used</dd><dt><b>Type</b></dt><dd>cs-str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.tuning_applied.trend_metrics_used</dd>
     </dl>
   </body>
 </html></richcontent></node></node><node BACKGROUND_COLOR="#ACF0F2" COLOR="#000000" FOLDED="false" STYLE="bubble" TEXT="conservation"><font BOLD="True" NAME="courier" SIZE="12" /><richcontent TYPE="NOTE"><html>
@@ -898,14 +912,14 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Brief description of conservation methodology</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.conservation.description</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.conservation.description</dd>
+        <dt><b>Description</b></dt><dd>Brief description of conservation methodology</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.conservation.description</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.conservation.description</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Brief description of conservation methodology</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.conservation.description</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.conservation.description</dd>
+        <dt><b>Description</b></dt><dd>Brief description of conservation methodology</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.conservation.description</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.conservation.description</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="scheme"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
@@ -961,28 +975,28 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Any additional consistency properties (energy conversion, pressure gradient discretisation, ...)?</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.conservation.consistency_properties</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.conservation.consistency_properties</dd>
+        <dt><b>Description</b></dt><dd>Any additional consistency properties (energy conversion, pressure gradient discretisation, ...)?</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.conservation.consistency_properties</dd><dt><b>Type</b></dt><dd>cs-str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.conservation.consistency_properties</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Any additional consistency properties (energy conversion, pressure gradient discretisation, ...)?</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.conservation.consistency_properties</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.conservation.consistency_properties</dd>
+        <dt><b>Description</b></dt><dd>Any additional consistency properties (energy conversion, pressure gradient discretisation, ...)?</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.conservation.consistency_properties</dd><dt><b>Type</b></dt><dd>cs-str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.conservation.consistency_properties</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="corrected_conserved_prognostic_variables"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Set of variables which are conserved by *more* than the numerical scheme alone.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.conservation.corrected_conserved_prognostic_variables</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.conservation.corrected_conserved_prognostic_variables</dd>
+        <dt><b>Description</b></dt><dd>Set of variables which are conserved by *more* than the numerical scheme alone.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.conservation.corrected_conserved_prognostic_variables</dd><dt><b>Type</b></dt><dd>cs-str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.conservation.corrected_conserved_prognostic_variables</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Set of variables which are conserved by *more* than the numerical scheme alone.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.conservation.corrected_conserved_prognostic_variables</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.conservation.corrected_conserved_prognostic_variables</dd>
+        <dt><b>Description</b></dt><dd>Set of variables which are conserved by *more* than the numerical scheme alone.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.key_properties.conservation.corrected_conserved_prognostic_variables</dd><dt><b>Type</b></dt><dd>cs-str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.key_properties.conservation.corrected_conserved_prognostic_variables</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="was_flux_correction_used"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
@@ -1647,14 +1661,14 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Details of vertical time stepping in ocean</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.timestepping_framework.vertical_physics.method</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.timestepping_framework.vertical_physics.method</dd>
+        <dt><b>Description</b></dt><dd>Details of vertical time stepping in ocean</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.timestepping_framework.vertical_physics.method</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.timestepping_framework.vertical_physics.method</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Details of vertical time stepping in ocean</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.timestepping_framework.vertical_physics.method</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.timestepping_framework.vertical_physics.method</dd>
+        <dt><b>Description</b></dt><dd>Details of vertical time stepping in ocean</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.timestepping_framework.vertical_physics.method</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.timestepping_framework.vertical_physics.method</dd>
     </dl>
   </body>
 </html></richcontent></node></node></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="false" STYLE="bubble" TEXT="advection"><font BOLD="True" NAME="courier" SIZE="12" /><richcontent TYPE="NOTE"><html>
@@ -1899,14 +1913,14 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Is advection of passive tracers different than active ? if so, describe.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.advection.lateral_tracers.passive_tracers_advection</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.advection.lateral_tracers.passive_tracers_advection</dd>
+        <dt><b>Description</b></dt><dd>Is advection of passive tracers different than active ? if so, describe.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.advection.lateral_tracers.passive_tracers_advection</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.advection.lateral_tracers.passive_tracers_advection</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Is advection of passive tracers different than active ? if so, describe.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.advection.lateral_tracers.passive_tracers_advection</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.advection.lateral_tracers.passive_tracers_advection</dd>
+        <dt><b>Description</b></dt><dd>Is advection of passive tracers different than active ? if so, describe.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.advection.lateral_tracers.passive_tracers_advection</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.advection.lateral_tracers.passive_tracers_advection</dd>
     </dl>
   </body>
 </html></richcontent></node></node><node BACKGROUND_COLOR="#ACF0F2" COLOR="#000000" FOLDED="false" STYLE="bubble" TEXT="vertical_tracers"><font BOLD="True" NAME="courier" SIZE="12" /><richcontent TYPE="NOTE"><html>
@@ -2235,14 +2249,14 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>If space-varying, describe variations of eddy viscosity coeff in lateral physics momemtum scheme</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.lateral_physics.momentum.eddy_viscosity_coeff.variable_coefficient</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.lateral_physics.momentum.eddy_viscosity_coeff.variable_coefficient</dd>
+        <dt><b>Description</b></dt><dd>If space-varying, describe variations of eddy viscosity coeff in lateral physics momemtum scheme</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.lateral_physics.momentum.eddy_viscosity_coeff.variable_coefficient</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.lateral_physics.momentum.eddy_viscosity_coeff.variable_coefficient</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>If space-varying, describe variations of eddy viscosity coeff in lateral physics momemtum scheme</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.lateral_physics.momentum.eddy_viscosity_coeff.variable_coefficient</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.lateral_physics.momentum.eddy_viscosity_coeff.variable_coefficient</dd>
+        <dt><b>Description</b></dt><dd>If space-varying, describe variations of eddy viscosity coeff in lateral physics momemtum scheme</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.lateral_physics.momentum.eddy_viscosity_coeff.variable_coefficient</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.lateral_physics.momentum.eddy_viscosity_coeff.variable_coefficient</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="coeff_background"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
@@ -2501,14 +2515,14 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>If space-varying, describe variations of eddy diffusity coeff in lateral physics tracers scheme</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.lateral_physics.tracers.eddy_diffusity_coeff.variable_coefficient</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.lateral_physics.tracers.eddy_diffusity_coeff.variable_coefficient</dd>
+        <dt><b>Description</b></dt><dd>If space-varying, describe variations of eddy diffusity coeff in lateral physics tracers scheme</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.lateral_physics.tracers.eddy_diffusity_coeff.variable_coefficient</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.lateral_physics.tracers.eddy_diffusity_coeff.variable_coefficient</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>If space-varying, describe variations of eddy diffusity coeff in lateral physics tracers scheme</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.lateral_physics.tracers.eddy_diffusity_coeff.variable_coefficient</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.lateral_physics.tracers.eddy_diffusity_coeff.variable_coefficient</dd>
+        <dt><b>Description</b></dt><dd>If space-varying, describe variations of eddy diffusity coeff in lateral physics tracers scheme</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.lateral_physics.tracers.eddy_diffusity_coeff.variable_coefficient</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.lateral_physics.tracers.eddy_diffusity_coeff.variable_coefficient</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="coeff_background"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
@@ -3117,14 +3131,14 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Is the background interior mixing using a vertical profile for tracers (i.e is NOT constant) ?</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.vertical_physics.interior_mixing.tracers.profile</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.vertical_physics.interior_mixing.tracers.profile</dd>
+        <dt><b>Description</b></dt><dd>Is the background interior mixing using a vertical profile for tracers (i.e is NOT constant) ?</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.vertical_physics.interior_mixing.tracers.profile</dd><dt><b>Type</b></dt><dd>bool</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.vertical_physics.interior_mixing.tracers.profile</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Is the background interior mixing using a vertical profile for tracers (i.e is NOT constant) ?</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.vertical_physics.interior_mixing.tracers.profile</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.vertical_physics.interior_mixing.tracers.profile</dd>
+        <dt><b>Description</b></dt><dd>Is the background interior mixing using a vertical profile for tracers (i.e is NOT constant) ?</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.vertical_physics.interior_mixing.tracers.profile</dd><dt><b>Type</b></dt><dd>bool</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.vertical_physics.interior_mixing.tracers.profile</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="background"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
@@ -3383,14 +3397,14 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Overview of bottom boundary layer in ocean</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.uplow_boundaries.bottom_boundary_layer.overview</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.uplow_boundaries.bottom_boundary_layer.overview</dd>
+        <dt><b>Description</b></dt><dd>Overview of bottom boundary layer in ocean</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.uplow_boundaries.bottom_boundary_layer.overview</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.uplow_boundaries.bottom_boundary_layer.overview</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Overview of bottom boundary layer in ocean</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.uplow_boundaries.bottom_boundary_layer.overview</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.uplow_boundaries.bottom_boundary_layer.overview</dd>
+        <dt><b>Description</b></dt><dd>Overview of bottom boundary layer in ocean</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.uplow_boundaries.bottom_boundary_layer.overview</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.uplow_boundaries.bottom_boundary_layer.overview</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="type_of_bbl"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
@@ -3439,14 +3453,14 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Describe any specific treatment of sill overflows</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.uplow_boundaries.bottom_boundary_layer.sill_overflow</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.uplow_boundaries.bottom_boundary_layer.sill_overflow</dd>
+        <dt><b>Description</b></dt><dd>Describe any specific treatment of sill overflows</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.uplow_boundaries.bottom_boundary_layer.sill_overflow</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.uplow_boundaries.bottom_boundary_layer.sill_overflow</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Describe any specific treatment of sill overflows</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.uplow_boundaries.bottom_boundary_layer.sill_overflow</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.uplow_boundaries.bottom_boundary_layer.sill_overflow</dd>
+        <dt><b>Description</b></dt><dd>Describe any specific treatment of sill overflows</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.uplow_boundaries.bottom_boundary_layer.sill_overflow</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.uplow_boundaries.bottom_boundary_layer.sill_overflow</dd>
     </dl>
   </body>
 </html></richcontent></node></node></node><node BACKGROUND_COLOR="#FFFFFF" COLOR="#000000" FOLDED="false" STYLE="bubble" TEXT="boundary_forcing"><font BOLD="True" NAME="courier" SIZE="12" /><richcontent TYPE="NOTE"><html>
@@ -3509,70 +3523,70 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Describe any type of ocean surface momentum flux correction and, if applicable, how it is applied and where.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.boundary_forcing.momentum_flux_correction</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.boundary_forcing.momentum_flux_correction</dd>
+        <dt><b>Description</b></dt><dd>Describe any type of ocean surface momentum flux correction and, if applicable, how it is applied and where.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.boundary_forcing.momentum_flux_correction</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.boundary_forcing.momentum_flux_correction</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Describe any type of ocean surface momentum flux correction and, if applicable, how it is applied and where.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.boundary_forcing.momentum_flux_correction</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.boundary_forcing.momentum_flux_correction</dd>
+        <dt><b>Description</b></dt><dd>Describe any type of ocean surface momentum flux correction and, if applicable, how it is applied and where.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.boundary_forcing.momentum_flux_correction</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.boundary_forcing.momentum_flux_correction</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="tracers_flux_correction"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Describe any type of ocean surface tracers flux correction and, if applicable, how it is applied and where.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.boundary_forcing.tracers_flux_correction</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.boundary_forcing.tracers_flux_correction</dd>
+        <dt><b>Description</b></dt><dd>Describe any type of ocean surface tracers flux correction and, if applicable, how it is applied and where.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.boundary_forcing.tracers_flux_correction</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.boundary_forcing.tracers_flux_correction</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Describe any type of ocean surface tracers flux correction and, if applicable, how it is applied and where.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.boundary_forcing.tracers_flux_correction</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.boundary_forcing.tracers_flux_correction</dd>
+        <dt><b>Description</b></dt><dd>Describe any type of ocean surface tracers flux correction and, if applicable, how it is applied and where.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.boundary_forcing.tracers_flux_correction</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.boundary_forcing.tracers_flux_correction</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="wave_effects"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Describe if/how wave effects are modelled at ocean surface.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.boundary_forcing.wave_effects</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.boundary_forcing.wave_effects</dd>
+        <dt><b>Description</b></dt><dd>Describe if/how wave effects are modelled at ocean surface.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.boundary_forcing.wave_effects</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.boundary_forcing.wave_effects</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Describe if/how wave effects are modelled at ocean surface.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.boundary_forcing.wave_effects</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.boundary_forcing.wave_effects</dd>
+        <dt><b>Description</b></dt><dd>Describe if/how wave effects are modelled at ocean surface.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.boundary_forcing.wave_effects</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.boundary_forcing.wave_effects</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="river_runoff_budget"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Describe how river runoff from land surface is routed to ocean and any global adjustment done.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.boundary_forcing.river_runoff_budget</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.boundary_forcing.river_runoff_budget</dd>
+        <dt><b>Description</b></dt><dd>Describe how river runoff from land surface is routed to ocean and any global adjustment done.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.boundary_forcing.river_runoff_budget</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.boundary_forcing.river_runoff_budget</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Describe how river runoff from land surface is routed to ocean and any global adjustment done.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.boundary_forcing.river_runoff_budget</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.boundary_forcing.river_runoff_budget</dd>
+        <dt><b>Description</b></dt><dd>Describe how river runoff from land surface is routed to ocean and any global adjustment done.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.boundary_forcing.river_runoff_budget</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.boundary_forcing.river_runoff_budget</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#C9D787" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="geothermal_heating"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Describe if/how geothermal heating is present at ocean bottom.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.boundary_forcing.geothermal_heating</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.boundary_forcing.geothermal_heating</dd>
+        <dt><b>Description</b></dt><dd>Describe if/how geothermal heating is present at ocean bottom.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.boundary_forcing.geothermal_heating</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.boundary_forcing.geothermal_heating</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Describe if/how geothermal heating is present at ocean bottom.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.boundary_forcing.geothermal_heating</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.boundary_forcing.geothermal_heating</dd>
+        <dt><b>Description</b></dt><dd>Describe if/how geothermal heating is present at ocean bottom.</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.boundary_forcing.geothermal_heating</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>1.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.boundary_forcing.geothermal_heating</dd>
     </dl>
   </body>
 </html></richcontent></node><node BACKGROUND_COLOR="#ACF0F2" COLOR="#000000" FOLDED="false" STYLE="bubble" TEXT="momentum"><font BOLD="True" NAME="courier" SIZE="12" /><richcontent TYPE="NOTE"><html>
@@ -3775,14 +3789,14 @@
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Describe and list extinctions depths for sunlight penetration scheme (if applicable).</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.boundary_forcing.tracers.sunlight_penetration.extinction_depth</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.boundary_forcing.tracers.sunlight_penetration.extinction_depth</dd>
+        <dt><b>Description</b></dt><dd>Describe and list extinctions depths for sunlight penetration scheme (if applicable).</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.boundary_forcing.tracers.sunlight_penetration.extinction_depth</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.boundary_forcing.tracers.sunlight_penetration.extinction_depth</dd>
     </dl>
   </body>
 </html></richcontent><richcontent TYPE="NOTE"><html>
   <head />
   <body>
     <dl>
-        <dt><b>Description</b></dt><dd>Describe and list extinctions depths for sunlight penetration scheme (if applicable).</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.boundary_forcing.tracers.sunlight_penetration.extinction_depth</dd><dt><b>Type</b></dt><dd>str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.boundary_forcing.tracers.sunlight_penetration.extinction_depth</dd>
+        <dt><b>Description</b></dt><dd>Describe and list extinctions depths for sunlight penetration scheme (if applicable).</dd><dt><b>Spec. ID</b></dt><dd>cmip6.ocean.boundary_forcing.tracers.sunlight_penetration.extinction_depth</dd><dt><b>Type</b></dt><dd>l-str</dd><dt><b>Cardinality</b></dt><dd>0.1</dd><dt><b>Specialization ID</b></dt><dd>cmip6.ocean.boundary_forcing.tracers.sunlight_penetration.extinction_depth</dd>
     </dl>
   </body>
 </html></richcontent></node></node><node BACKGROUND_COLOR="#F3FFE2" COLOR="#000000" FOLDED="true" STYLE="bubble" TEXT="fresh_water_forcing"><font BOLD="True" NAME="courier" SIZE="10" /><richcontent TYPE="NOTE"><html>

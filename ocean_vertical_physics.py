@@ -88,7 +88,7 @@ DETAILS['interior_mixing:tracers'] = {
          'Type of interior mixing for tracers in ocean'),
         ('constant', 'int', '0.1',
             'If constant interior mixing of tracers, specific coefficient (m2/s)'),
-        ('profile', 'str', '1.1',
+        ('profile', 'bool', '1.1',
             'Is the background interior mixing using a vertical profile for tracers (i.e is NOT constant) ?'),
         ('background', 'str', '1.1',
             'Background interior mixing of tracers coefficient, (schema and value in m2/s - may by none)'),
