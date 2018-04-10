@@ -23,7 +23,7 @@
                     "description": "Overview of ocean timestepping framework in ocean model.", 
                     "id": "cmip6.ocean.timestepping_framework.overview", 
                     "cardinality": "0.1", 
-                    "type": "l", 
+                    "type": "l-str", 
                     "uiOrdinal": 2
                 }, 
                 {
@@ -246,7 +246,7 @@
                             "description": "Details of vertical time stepping in ocean", 
                             "id": "cmip6.ocean.timestepping_framework.vertical_physics.method", 
                             "cardinality": "1.1", 
-                            "type": "l", 
+                            "type": "l-str", 
                             "uiOrdinal": 1
                         }
                     ]
@@ -272,7 +272,7 @@
                     "description": "Overview of ocean advection in ocean model.", 
                     "id": "cmip6.ocean.advection.overview", 
                     "cardinality": "0.1", 
-                    "type": "l", 
+                    "type": "l-str", 
                     "uiOrdinal": 2
                 }
             ], 
@@ -414,7 +414,7 @@
                             "description": "Is advection of passive tracers different than active ? if so, describe.", 
                             "id": "cmip6.ocean.advection.lateral_tracers.passive_tracers_advection", 
                             "cardinality": "0.1", 
-                            "type": "l", 
+                            "type": "l-str", 
                             "uiOrdinal": 7
                         }
                     ]
@@ -472,7 +472,7 @@
                     "description": "Overview of ocean lateral physics in ocean model.", 
                     "id": "cmip6.ocean.lateral_physics.overview", 
                     "cardinality": "0.1", 
-                    "type": "l", 
+                    "type": "l-str", 
                     "uiOrdinal": 2
                 }, 
                 {
@@ -657,7 +657,7 @@
                                     "description": "If space-varying, describe variations of eddy viscosity coeff in lateral physics momemtum scheme", 
                                     "id": "cmip6.ocean.lateral_physics.momentum.eddy_viscosity_coeff.variable_coefficient", 
                                     "cardinality": "0.1", 
-                                    "type": "l", 
+                                    "type": "l-str", 
                                     "uiOrdinal": 3
                                 }, 
                                 {
@@ -849,7 +849,7 @@
                                     "description": "If space-varying, describe variations of eddy diffusity coeff in lateral physics tracers scheme", 
                                     "id": "cmip6.ocean.lateral_physics.tracers.eddy_diffusity_coeff.variable_coefficient", 
                                     "cardinality": "0.1", 
-                                    "type": "l", 
+                                    "type": "l-str", 
                                     "uiOrdinal": 3
                                 }, 
                                 {
@@ -943,7 +943,7 @@
                     "description": "Overview of ocean vertical physics in ocean model.", 
                     "id": "cmip6.ocean.vertical_physics.overview", 
                     "cardinality": "0.1", 
-                    "type": "l", 
+                    "type": "l-str", 
                     "uiOrdinal": 2
                 }
             ], 
@@ -1374,7 +1374,7 @@
                     "description": "Overview of ocean upper / lower boundaries in ocean model.", 
                     "id": "cmip6.ocean.uplow_boundaries.overview", 
                     "cardinality": "0.1", 
-                    "type": "l", 
+                    "type": "l-str", 
                     "uiOrdinal": 2
                 }
             ], 
@@ -1447,7 +1447,7 @@
                             "description": "Overview of bottom boundary layer in ocean", 
                             "id": "cmip6.ocean.uplow_boundaries.bottom_boundary_layer.overview", 
                             "cardinality": "1.1", 
-                            "type": "l", 
+                            "type": "l-str", 
                             "uiOrdinal": 1
                         }, 
                         {
@@ -1486,7 +1486,7 @@
                             "description": "Describe any specific treatment of sill overflows", 
                             "id": "cmip6.ocean.uplow_boundaries.bottom_boundary_layer.sill_overflow", 
                             "cardinality": "1.1", 
-                            "type": "l", 
+                            "type": "l-str", 
                             "uiOrdinal": 4
                         }
                     ]
@@ -1512,7 +1512,7 @@
                     "description": "Overview of ocean boundary forcing in ocean model.", 
                     "id": "cmip6.ocean.boundary_forcing.overview", 
                     "cardinality": "0.1", 
-                    "type": "l", 
+                    "type": "l-str", 
                     "uiOrdinal": 2
                 }, 
                 {
@@ -1528,7 +1528,7 @@
                     "description": "Describe any type of ocean surface momentum flux correction and, if applicable, how it is applied and where.", 
                     "id": "cmip6.ocean.boundary_forcing.momentum_flux_correction", 
                     "cardinality": "0.1", 
-                    "type": "l", 
+                    "type": "l-str", 
                     "uiOrdinal": 4
                 }, 
                 {
@@ -1536,7 +1536,7 @@
                     "description": "Describe any type of ocean surface tracers flux correction and, if applicable, how it is applied and where.", 
                     "id": "cmip6.ocean.boundary_forcing.tracers_flux_correction", 
                     "cardinality": "0.1", 
-                    "type": "l", 
+                    "type": "l-str", 
                     "uiOrdinal": 5
                 }, 
                 {
@@ -1544,7 +1544,7 @@
                     "description": "Describe if/how wave effects are modelled at ocean surface.", 
                     "id": "cmip6.ocean.boundary_forcing.wave_effects", 
                     "cardinality": "1.1", 
-                    "type": "l", 
+                    "type": "l-str", 
                     "uiOrdinal": 6
                 }, 
                 {
@@ -1552,7 +1552,7 @@
                     "description": "Describe how river runoff from land surface is routed to ocean and any global adjustment done.", 
                     "id": "cmip6.ocean.boundary_forcing.river_runoff_budget", 
                     "cardinality": "1.1", 
-                    "type": "l", 
+                    "type": "l-str", 
                     "uiOrdinal": 7
                 }, 
                 {
@@ -1560,7 +1560,7 @@
                     "description": "Describe if/how geothermal heating is present at ocean bottom.", 
                     "id": "cmip6.ocean.boundary_forcing.geothermal_heating", 
                     "cardinality": "1.1", 
-                    "type": "l", 
+                    "type": "l-str", 
                     "uiOrdinal": 8
                 }
             ], 
@@ -1720,7 +1720,7 @@
                                     "description": "Describe and list extinctions depths for sunlight penetration scheme (if applicable).", 
                                     "id": "cmip6.ocean.boundary_forcing.tracers.sunlight_penetration.extinction_depth", 
                                     "cardinality": "0.1", 
-                                    "type": "l", 
+                                    "type": "l-str", 
                                     "uiOrdinal": 3
                                 }
                             ]
@@ -1814,7 +1814,7 @@
                 "description": "Overview of grid in ocean model.", 
                 "id": "cmip6.ocean.grid.overview", 
                 "cardinality": "0.1", 
-                "type": "l", 
+                "type": "l-str", 
                 "uiOrdinal": 2
             }
         ], 
@@ -2036,7 +2036,7 @@
                 "description": "Keywords associated with ocean model code", 
                 "id": "cmip6.ocean.key_properties.keywords", 
                 "cardinality": "1.1", 
-                "type": "cs", 
+                "type": "cs-str", 
                 "uiOrdinal": 2
             }, 
             {
@@ -2044,7 +2044,7 @@
                 "description": "Overview of ocean model.", 
                 "id": "cmip6.ocean.key_properties.overview", 
                 "cardinality": "1.1", 
-                "type": "l", 
+                "type": "l-str", 
                 "uiOrdinal": 3
             }, 
             {
@@ -2345,7 +2345,7 @@
                         "description": "Describe any smoothing or hand editing of bathymetry in ocean", 
                         "id": "cmip6.ocean.key_properties.bathymetry.ocean_smoothing", 
                         "cardinality": "1.1", 
-                        "type": "l", 
+                        "type": "l-str", 
                         "uiOrdinal": 3
                     }, 
                     {
@@ -2353,7 +2353,7 @@
                         "description": "Describe source of bathymetry in ocean", 
                         "id": "cmip6.ocean.key_properties.bathymetry.source", 
                         "cardinality": "1.1", 
-                        "type": "l", 
+                        "type": "l-str", 
                         "uiOrdinal": 4
                     }
                 ]
@@ -2368,7 +2368,7 @@
                         "description": "Describe if/how isolated seas is performed", 
                         "id": "cmip6.ocean.key_properties.nonoceanic_waters.isolated_seas", 
                         "cardinality": "0.1", 
-                        "type": "l", 
+                        "type": "l-str", 
                         "uiOrdinal": 1
                     }, 
                     {
@@ -2376,7 +2376,7 @@
                         "description": "Describe if/how river mouth mixing or estuaries specific treatment is performed", 
                         "id": "cmip6.ocean.key_properties.nonoceanic_waters.river_mouth", 
                         "cardinality": "0.1", 
-                        "type": "l", 
+                        "type": "l-str", 
                         "uiOrdinal": 2
                     }
                 ]
@@ -2407,7 +2407,7 @@
                         "description": "Code language(s).", 
                         "id": "cmip6.ocean.key_properties.software_properties.code_languages", 
                         "cardinality": "0.1", 
-                        "type": "cs", 
+                        "type": "cs-str", 
                         "uiOrdinal": 3
                     }
                 ]
@@ -2505,7 +2505,7 @@
                         "description": "General overview description of tuning: explain and motivate the main targets and metrics retained. &Document the relative weight given to climate performance metrics versus process oriented metrics, &and on the possible conflicts with parameterization level tuning. In particular describe any struggle &with a parameter value that required pushing it to its limits to solve a particular model deficiency.", 
                         "id": "cmip6.ocean.key_properties.tuning_applied.description", 
                         "cardinality": "1.1", 
-                        "type": "l", 
+                        "type": "l-str", 
                         "uiOrdinal": 2
                     }, 
                     {
@@ -2513,7 +2513,7 @@
                         "description": "List set of metrics of the global mean state used in tuning model/component", 
                         "id": "cmip6.ocean.key_properties.tuning_applied.global_mean_metrics_used", 
                         "cardinality": "0.1", 
-                        "type": "cs", 
+                        "type": "cs-str", 
                         "uiOrdinal": 3
                     }, 
                     {
@@ -2521,7 +2521,7 @@
                         "description": "List of regional metrics of mean state (e.g THC, AABW, regional means etc) used in tuning model/component", 
                         "id": "cmip6.ocean.key_properties.tuning_applied.regional_metrics_used", 
                         "cardinality": "0.1", 
-                        "type": "cs", 
+                        "type": "cs-str", 
                         "uiOrdinal": 4
                     }, 
                     {
@@ -2529,7 +2529,7 @@
                         "description": "List observed trend metrics used in tuning model/component", 
                         "id": "cmip6.ocean.key_properties.tuning_applied.trend_metrics_used", 
                         "cardinality": "0.1", 
-                        "type": "cs", 
+                        "type": "cs-str", 
                         "uiOrdinal": 5
                     }
                 ]
@@ -2553,7 +2553,7 @@
                         "description": "Brief description of conservation methodology", 
                         "id": "cmip6.ocean.key_properties.conservation.description", 
                         "cardinality": "1.1", 
-                        "type": "l", 
+                        "type": "l-str", 
                         "uiOrdinal": 2
                     }, 
                     {
@@ -2596,7 +2596,7 @@
                         "description": "Any additional consistency properties (energy conversion, pressure gradient discretisation, ...)?", 
                         "id": "cmip6.ocean.key_properties.conservation.consistency_properties", 
                         "cardinality": "0.1", 
-                        "type": "cs", 
+                        "type": "cs-str", 
                         "uiOrdinal": 4
                     }, 
                     {
@@ -2604,7 +2604,7 @@
                         "description": "Set of variables which are conserved by *more* than the numerical scheme alone.", 
                         "id": "cmip6.ocean.key_properties.conservation.corrected_conserved_prognostic_variables", 
                         "cardinality": "0.1", 
-                        "type": "cs", 
+                        "type": "cs-str", 
                         "uiOrdinal": 5
                     }, 
                     {
