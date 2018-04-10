@@ -60,7 +60,7 @@ DETAILS['toplevel:bathymetry'] = {
             'Is the bathymetry fixed in time in the ocean ?'),
         ('ocean_smoothing', 'l-str', '1.1',
             'Describe any smoothing or hand editing of bathymetry in ocean'),
-        ('source', 'l-str', '1.1',
+        ('source', 'str', '1.1',
             'Describe source of bathymetry in ocean'),
         ]
     }
@@ -136,7 +136,8 @@ DETAILS['tuning_applied'] = {
 DETAILS['conservation'] = {
     'description': 'Conservation in the ocean component',
     'properties': [
-        ('description', 'l-str', '1.1', 'Brief description of conservation methodology'),
+        ('description', 'l-str', '1.1',
+             'Brief description of conservation methodology'),
         ('scheme', 'ENUM:conservation_props_types', '1.N',
             'Properties conserved in the ocean by the numerical schemes'),
         ('consistency_properties', 'cs-str','0.1',

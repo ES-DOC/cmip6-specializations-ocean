@@ -67,7 +67,7 @@ DETAILS['toplevel:barotropic'] = {
 DETAILS['toplevel:vertical_physics'] = {
     'description': 'Vertical physics time stepping in ocean',
     'properties': [
-        ('method', 'l-str', '1.1',
+        ('method', 'str', '1.1',
             'Details of vertical time stepping in ocean'),
         ]
     }

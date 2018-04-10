@@ -47,7 +47,7 @@ DETAILS['lateral_tracers'] = {
             "Descriptive text for lateral tracer advection scheme in ocean (e.g. MUSCL, PPM-H5, PRATHER,...)"),
         ('passive_tracers','ENUM:passive_tracers_list','0.N',
             "Passive tracers advected"),
-        ('passive_tracers_advection','l-str','0.1',
+        ('passive_tracers_advection','str','0.1',
             "Is advection of passive tracers different than active ? if so, describe.")
         ]
     }
