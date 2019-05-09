@@ -24,19 +24,19 @@ will not be tolerated.
 
 * Pull requests can be made at any time, but they will not be merged
   until a public release of the specializations for all 9 realm
-  specializations is due (which is envisaged every ~6 months during
-  the CMIP6 project).
+  specializations is due (which is envisaged every ~6 months or longer
+  during the CMIP6 project).
 
 * When a public release is due, the Pull Requests will be merged into
   the master branch, ready to be used by downstream tools (such as the
-  spreadsheet generator).x
+  spreadsheet generator).
 
 ## Version strategy for the CMIP6 specializations
 
 Each individual specialization uses an internal three-level
 **major.minor.trivial** numeric version scheme, e.g 1.0.4, that is
 independent of other specializations. This version is stored in the
-<realm>.py file.
+[realm].py file.
 
 Public releases are defined by GitHub tags that are consistent across
 all specializations an use a **major.minor** numeric version scheme,
