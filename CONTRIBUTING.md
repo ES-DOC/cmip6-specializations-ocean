@@ -15,6 +15,10 @@ will not be tolerated.
 
 ## General Guidelines
 
+* All changes must be logged in the specialization request
+  spreadsheet:
+  https://docs.google.com/spreadsheets/d/1h1UQEGEBBbmM0Xs3E6ZVbS-5f7Vdiq1tT7e6tUAI4Nw/edit#gid=1921196076
+
 * All changes to the specializations will be in the form of Pull
   Requests (not Issues nor direct commits to the master branch).
 
@@ -25,7 +29,7 @@ will not be tolerated.
 
 * When a public release is due, the Pull Requests will be merged into
   the master branch, ready to be used by downstream tools (such as the
-  spreadsheet generator).
+  spreadsheet generator).x
 
 ## Version strategy for the CMIP6 specializations
 
