@@ -26,6 +26,8 @@ will not be tolerated.
   until a public release of the specializations for all 9 realm
   specializations is due (which is envisaged every ~6 months or longer
   during the CMIP6 project).
+  
+* Multiple changes by the same person should be made by updates to a single pull request. This is to simplify the subsequent merge procedure.
 
 * When a public release is due, the Pull Requests will be merged into
   the master branch, ready to be used by downstream tools (such as the
